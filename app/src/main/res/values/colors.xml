@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#467685</color>  // Color azul verdoso oscuro
-    <color name="colorSecondary">#E2F0F5</color> // Colora azul claro
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPrimary">#467685</color>  <!-- Color azul verdoso oscuro -->
+    <color name="colorPrimaryDark">#E2F0F5</color> <!-- Color azul verdoso claro -->
+    <color name="colorAccent">#FFFFFF</color>
 </resources>
