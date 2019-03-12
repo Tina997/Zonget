@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Zonget</string>
+
+    <!-- SignIn View -->
+    <string name="user_text_label">Usuario:</string>
+    <string name="password_text_label">Password:</string>
+    <string name="activity_label">Iniciar Seción</string>
+    <string name="password_forget_text_label">¿Has lvidado la contraseña?</string>
+    <string name="signIn_button_text_label">Entrar</string>
+    <string name="Not_SignIn_text_view">¿No eres usuario?</string>
+    <string name="signUp_button_text_label">Regístrate</string>
+    <string name="ask_date_button_text_label">Pedir Cita</string>
+
 </resources>

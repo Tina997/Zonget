@@ -3,6 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.SignIn;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -13,10 +16,27 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
     private SignInContract.Presenter presenter;
 
+    // Elementos de la vista
+    private EditText userEditText, passwordEditText;
+    private TextView passwordForgetTextView;
+    private Button signInButton, signUpButton, askDateButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Oculta la barra del título
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_sign_in);
+
+        userEditText = findViewById(R.id.userEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
+        passwordForgetTextView = findViewById(R.id.passwordForgetTextLabel);
+        signInButton = findViewById(R.id.signInButton);
+        signUpButton = findViewById(R.id.signUpButton);
+        askDateButton = findViewById(R.id.askDateButton);
 
         // do the setup
         SignInScreen.configure(this);
@@ -35,11 +55,12 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         this.presenter = presenter;
     }
 
+
+
     @Override
     public void displayData(SignInViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 }
