@@ -10,4 +10,12 @@
 
     </style>
 
+    <!-- AppBar theme. -->
+    <style name="AppTheme.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+    <!-- Toolbar theme. -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
