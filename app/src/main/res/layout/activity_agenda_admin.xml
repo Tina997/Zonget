@@ -59,12 +59,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:gravity="left"
             android:text="Esto es una prueba"/>
     </LinearLayout>
 
     //Lista de citas
+    <FrameLayout
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="318dp"
+        android:layout_marginTop="450dp">
+
+        <include layout="@layout/lista_citas_admin"/>
+    </FrameLayout>
+
 
 
 </android.support.design.widget.CoordinatorLayout>
