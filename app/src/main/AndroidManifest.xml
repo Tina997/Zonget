@@ -23,6 +23,8 @@
 
         <activity android:name=".SignUp.SignUpActivity"></activity>
 
+        <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
+
     </application>
 
 </manifest>

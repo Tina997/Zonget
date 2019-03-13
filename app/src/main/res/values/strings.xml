@@ -9,6 +9,9 @@
     <string name="sign_in_button_text_label">Entrar</string>
     <string name="not_sign_up_text_view">¿No eres usuario?</string>
     <string name="sign_up_button_text_label">Regístrate</string>
+
+    <!-- AgendaAdmin View-->
+    <string name="agenda_activity_name">Agenda</string>
     <string name="ask_date_button_text_label">Pedir Cita</string>
     <string name="user_sign_up_name_text_label">Nombre:</string>
     <string name="user_sign_up_dni_text_label">DNI:</string>
@@ -18,5 +21,6 @@
 
     <!-- SignUp View -->
 
+    <string name="citas_content">Content</string>
 
 </resources>

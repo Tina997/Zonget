@@ -7,8 +7,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.SignUp.SignUpState;
 
 public class AppMediator extends Application {
 
-    //JUJUJU
-    //Funciona maldito
     //Estados de las distintas activities de la aplicación
     private SignInState signInState;
 
