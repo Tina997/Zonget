@@ -18,14 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn.SignInActivity"></activity>
-        <activity android:name=".Animal.AnimalDetailActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".SignIn.SignInActivity"></activity>
+
+        <activity android:name=".SignUp.SignUpActivity"></activity>
+
     </application>
 
 </manifest>
