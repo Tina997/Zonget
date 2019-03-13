@@ -10,5 +10,13 @@
     <string name="not_sign_up_text_view">¿No eres usuario?</string>
     <string name="sign_up_button_text_label">Regístrate</string>
     <string name="ask_date_button_text_label">Pedir Cita</string>
+    <string name="user_sign_up_name_text_label">Nombre:</string>
+    <string name="user_sign_up_dni_text_label">DNI:</string>
+    <string name="user_sign_up_email_text_label">Email:</string>
+    <string name="user_sign_up_password_text_label">Password:</string>
+    <string name="sign_up_accept_button_text_label">Aceptar</string>
+
+    <!-- SignUp View -->
+
 
 </resources>

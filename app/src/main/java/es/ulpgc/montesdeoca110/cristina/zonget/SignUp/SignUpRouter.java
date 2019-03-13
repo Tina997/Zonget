@@ -3,6 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.SignUp;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.AppMediator;
+
+
 public class SignUpRouter implements SignUpContract.Router {
 
     public static String TAG = SignUpRouter.class.getSimpleName();
