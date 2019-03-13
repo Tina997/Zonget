@@ -20,9 +20,10 @@
         </activity>
 
         <activity android:name=".SignIn.SignInActivity"></activity>
-        <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
 
         <activity android:name=".SignUp.SignUpActivity"></activity>
+
+        <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
 
     </application>
 
