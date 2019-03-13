@@ -13,6 +13,5 @@
         android:layout_weight="1"
         android:paddingStart="130dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/logo_claro_completo"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/logo_claro_completo"/>
 </LinearLayout>
