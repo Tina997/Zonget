@@ -24,7 +24,7 @@
         <activity android:name=".SignUp.SignUpActivity"></activity>
 
         <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
-
+        <activity android:name=".Animal.AnimalDetailActivity"></activity>
     </application>
 
 </manifest>
