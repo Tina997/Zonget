@@ -4,6 +4,8 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+
 public class AgendaAdminRouter implements AgendaAdminContract.Router {
 
     public static String TAG = AgendaAdminRouter.class.getSimpleName();
@@ -23,12 +25,13 @@ public class AgendaAdminRouter implements AgendaAdminContract.Router {
 
     @Override
     public void passDataToNextScreen(AgendaAdminState state) {
-        mediator.setAgendaAdminState(state);
+       // mediator.setAgendaAdminState(state);
     }
 
     @Override
     public AgendaAdminState getDataFromPreviousScreen() {
-        AgendaAdminState state = mediator.getAgendaAdminState();
-        return state;
+       // AgendaAdminState state = mediator.getAgendaAdminState();
+      //  return state;
+        return null;
     }
 }

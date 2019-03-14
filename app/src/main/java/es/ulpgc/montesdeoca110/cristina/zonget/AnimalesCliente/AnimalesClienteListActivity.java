@@ -20,8 +20,8 @@ public class AnimalesClienteListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animales_cliente_list);
-        Toolbar toolbar = findViewById(R.id.appbarAnimalesCliente);
-        setSupportActionBar(toolbar);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAnimalesCliente);
+        /*setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el titulo en la action bar
         ActionBar actionBar = getSupportActionBar();
@@ -30,7 +30,7 @@ public class AnimalesClienteListActivity
             actionBar.setTitle("Animales de Cliente");
         }
         // do the setup
-        AnimalesClienteListScreen.configure(this);
+        AnimalesClienteListScreen.configure(this);*/
     }
 
     @Override
@@ -38,7 +38,7 @@ public class AnimalesClienteListActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+//        presenter.fetchData();
     }
 
     @Override
@@ -51,6 +51,5 @@ public class AnimalesClienteListActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 }

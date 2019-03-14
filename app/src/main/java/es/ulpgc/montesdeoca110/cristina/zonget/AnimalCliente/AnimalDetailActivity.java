@@ -19,8 +19,8 @@ public class AnimalDetailActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_detail);
-        Toolbar toolbar = findViewById(R.id.appbarAnimalCliente);
-        setSupportActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        /*setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el titulo en la action bar
         ActionBar actionBar = getSupportActionBar();
@@ -30,7 +30,7 @@ public class AnimalDetailActivity
         }
 
         // do the setup
-        AnimalDetailScreen.configure(this);
+        AnimalDetailScreen.configure(this);*/
     }
 
     @Override

@@ -4,6 +4,8 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+
 public class AnimalesClienteListRouter implements AnimalesClienteListContract.Router {
 
     public static String TAG = AnimalesClienteListRouter.class.getSimpleName();
@@ -23,12 +25,13 @@ public class AnimalesClienteListRouter implements AnimalesClienteListContract.Ro
 
     @Override
     public void passDataToNextScreen(AnimalesClienteListState state) {
-        mediator.setAnimalesClienteListState(state);
+       // mediator.setAnimalesClienteListState(state);
     }
 
     @Override
     public AnimalesClienteListState getDataFromPreviousScreen() {
-        AnimalesClienteListState state = mediator.getAnimalesClienteListState();
-        return state;
+      /*  AnimalesClienteListState state = mediator.getAnimalesClienteListState();
+        return state;*/
+      return null;
     }
 }

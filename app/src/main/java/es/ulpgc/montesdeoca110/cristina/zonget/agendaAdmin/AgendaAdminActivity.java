@@ -22,13 +22,13 @@ public class AgendaAdminActivity
         setContentView(R.layout.activity_agenda_admin);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+/*        setSupportActionBar(toolbar);
 
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        /*if (actionBar != null) {
             actionBar.setTitle(getString(R.string.agenda_activity_name));
-        }
+        }*/
 
         // do the setup
         AgendaAdminScreen.configure(this);
@@ -52,6 +52,6 @@ public class AgendaAdminActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+       // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 }

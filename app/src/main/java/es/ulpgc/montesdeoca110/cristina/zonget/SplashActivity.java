@@ -16,10 +16,11 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Mensaje de Cris: Cambie el tema y ahora no te hace falta esto por eso te lo comente
         // Oculta la barra del título
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-
+        */
         setContentView(R.layout.activity_splash);
 
         mWaitHandler.postDelayed(new Runnable() {
