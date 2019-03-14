@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    //AppBar y Toolbar
+    <!--AppBar y Toolbar-->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    //Botón Flotante
+    <!--Botón Flotante-->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/botonAgregarCita"
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:tint="@color/colorPrimary"/>
 
-    //Calendario
+    <!--Calendario-->
     <CalendarView
         android:id="@+id/calendarAdmin"
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:weekDayTextAppearance="@color/colorBlack" />
 
 
-    //Día seleccionado
+    <!--Día seleccionado-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -64,7 +64,7 @@
             android:text="Esto es una prueba"/>
     </LinearLayout>
 
-    //Lista de citas
+    <!--Lista de citas-->
     <FrameLayout
         android:id="@+id/listView"
         android:layout_width="match_parent"

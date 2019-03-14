@@ -1,7 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -18,7 +20,15 @@ public class AnimalesClienteListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animales_cliente_list);
+        Toolbar toolbar = findViewById(R.id.appbarAnimalesCliente);
+        setSupportActionBar(toolbar);
 
+        //Mostrar el botón atras y el titulo en la action bar
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Animales de Cliente");
+        }
         // do the setup
         AnimalesClienteListScreen.configure(this);
     }
