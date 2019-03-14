@@ -26,4 +26,5 @@
     <string name="raza_text_label">Raza:</string>
     <string name="numeroChip_text_label">Nº de chip:</string>
     <string name="fechaNac_text_label">Fecha de nacimiento:</string>
+    <!--AnimalListClient View-->
 </resources>
