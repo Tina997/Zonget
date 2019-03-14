@@ -1,9 +1,7 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.Animal;
+package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 

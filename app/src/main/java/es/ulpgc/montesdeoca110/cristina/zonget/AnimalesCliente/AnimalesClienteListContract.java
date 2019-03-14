@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.Animal;
+package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
 
 import java.lang.ref.WeakReference;
 
-interface AnimalDetailContract {
+interface AnimalesClienteListContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AnimalDetailViewModel viewModel);
+        void displayData(AnimalesClienteListViewModel viewModel);
     }
 
     interface Presenter {
@@ -27,8 +27,8 @@ interface AnimalDetailContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AnimalDetailState state);
+        void passDataToNextScreen(AnimalesClienteListState state);
 
-        AnimalDetailState getDataFromPreviousScreen();
+        AnimalesClienteListState getDataFromPreviousScreen();
     }
 }

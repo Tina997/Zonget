@@ -1,6 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.Animal;
-
-import android.util.Log;
+package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
 import java.lang.ref.WeakReference;
 

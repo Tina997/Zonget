@@ -1,11 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.Animal;
-
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
-
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
+package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
 public class AnimalDetailModel implements AnimalDetailContract.Model {
 

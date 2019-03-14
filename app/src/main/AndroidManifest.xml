@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".AppMediator"
+        android:name=".App.AppMediator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -24,7 +24,7 @@
         <activity android:name=".SignUp.SignUpActivity"></activity>
 
         <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
-        <activity android:name=".Animal.AnimalDetailActivity"></activity>
+        <activity android:name=".AnimalCliente.AnimalDetailActivity"></activity>
     </application>
 
 </manifest>

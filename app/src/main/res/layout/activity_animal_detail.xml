@@ -9,13 +9,13 @@
 
     //AppBar y Toolbar
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appbarAnimalCliente"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@color/colorPrimaryDark">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarAnimalCliente"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/colorPrimary"></android.support.v7.widget.Toolbar>

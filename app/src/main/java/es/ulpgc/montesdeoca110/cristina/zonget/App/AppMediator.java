@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget;
+package es.ulpgc.montesdeoca110.cristina.zonget.App;
 
 import android.app.Application;
 

@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.SignUp;
 import android.content.Intent;
 import android.content.Context;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
 
 
 public class SignUpRouter implements SignUpContract.Router {

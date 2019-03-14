@@ -17,6 +17,7 @@
     <string name="sign_up_accept_button_text_label">Aceptar</string>
 
     <!-- SignUp View -->
+    <!--agendaAdmin View -->
     <string name="citas_content">Content</string>
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>

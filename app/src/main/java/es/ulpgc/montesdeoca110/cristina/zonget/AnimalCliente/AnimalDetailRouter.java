@@ -1,10 +1,9 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.Animal;
+package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
 
 public class AnimalDetailRouter implements AnimalDetailContract.Router {
 

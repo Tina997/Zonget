@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.SignIn;
 import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
 
 public class SignInScreen {
 
