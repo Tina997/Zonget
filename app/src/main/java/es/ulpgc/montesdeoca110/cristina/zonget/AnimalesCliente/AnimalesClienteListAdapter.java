@@ -54,6 +54,11 @@ public class AnimalesClienteListAdapter extends ArrayAdapter<AnimalClientesItem>
 
         final TextView contentView = itemView.findViewById(R.id.content);
         contentView.setText(itemList.get(position).nombre);
+        contentView.setTextSize(25);
+        final TextView contentView2 = itemView.findViewById(R.id.content2);
+        contentView2.setText(itemList.get(position).especie);
+        contentView2.setTextSize(20);
+
 
         return itemView;
     }
