@@ -22,7 +22,7 @@ public class AgendaAdminActivity
         setContentView(R.layout.activity_agenda_admin);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-/*        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();

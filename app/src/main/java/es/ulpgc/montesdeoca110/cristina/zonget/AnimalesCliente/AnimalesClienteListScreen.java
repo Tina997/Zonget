@@ -14,7 +14,7 @@ public class AnimalesClienteListScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        /*AnimalesClienteListState state = mediator.getAnimalesClienteListState();
+        AnimalesClienteListState state = mediator.getAnimalesClienteListState();
 
         AnimalesClienteListContract.Router router = new AnimalesClienteListRouter(mediator);
         AnimalesClienteListContract.Presenter presenter = new AnimalesClienteListPresenter(state);
@@ -23,7 +23,7 @@ public class AnimalesClienteListScreen {
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);*/
+        view.injectPresenter(presenter);
 
     }
 }

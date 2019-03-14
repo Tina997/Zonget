@@ -1,13 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 
 interface AnimalesClienteListContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AnimalesClienteListViewModel viewModel);
+        void displayAnimalesListData(AnimalesClienteListViewModel viewModel);
     }
 
     interface Presenter {
@@ -17,11 +20,11 @@ interface AnimalesClienteListContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchAnimalesListData();
     }
 
     interface Model {
-        String fetchData();
+        List<AnimalClientesItem> fetchAnimalesListData();
     }
 
     interface Router {

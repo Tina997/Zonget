@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.App;
 
 import android.app.Application;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignUp.SignUpState;
 
@@ -11,6 +12,8 @@ public class AppMediator extends Application {
     private SignInState signInState;
 
     private SignUpState signUpState;
+
+    private AnimalesClienteListState animalesClienteListState = new AnimalesClienteListState();
 
     @Override
     public void onCreate() {
@@ -33,5 +36,13 @@ public class AppMediator extends Application {
 
     public void setSignUpState(SignUpState signUpState) {
         this.signUpState = signUpState;
+    }
+
+    public void setAnimalesClienteListState(AnimalesClienteListState state) {
+        animalesClienteListState = state;
+    }
+
+    public AnimalesClienteListState getAnimalesClienteListState() {
+        return animalesClienteListState;
     }
 }

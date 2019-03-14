@@ -33,27 +33,10 @@ public class AnimalesClienteListPresenter implements AnimalesClienteListContract
     }
 
     @Override
-    public void fetchData() {
+    public void fetchAnimalesListData() {
         // Log.e(TAG, "fetchData()");
-
-        // set passed state
-        AnimalesClienteListState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
-
+        viewModel.animales = model.fetchAnimalesListData();
+        view.get().displayAnimalesListData(viewModel);
     }
-
 
 }
