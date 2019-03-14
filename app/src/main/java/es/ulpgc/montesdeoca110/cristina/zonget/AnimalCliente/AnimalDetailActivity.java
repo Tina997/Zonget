@@ -2,8 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
 import android.drm.DrmStore;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -19,8 +19,9 @@ public class AnimalDetailActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_detail);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
-        /*setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el titulo en la action bar
         ActionBar actionBar = getSupportActionBar();
@@ -30,7 +31,7 @@ public class AnimalDetailActivity
         }
 
         // do the setup
-        AnimalDetailScreen.configure(this);*/
+        AnimalDetailScreen.configure(this);
     }
 
     @Override
