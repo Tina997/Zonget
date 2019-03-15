@@ -20,6 +20,7 @@
 
     <!--agendaAdmin View -->
     <string name="citas_content">Content</string>
+
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
     <string name="nombre_text_label">Nombre</string>
@@ -27,5 +28,7 @@
     <string name="raza_text_label">Raza:</string>
     <string name="numeroChip_text_label">Nº de chip:</string>
     <string name="fechaNac_text_label">Fecha de nacimiento:</string>
+
     <!--AnimalListClient View-->
+
 </resources>
