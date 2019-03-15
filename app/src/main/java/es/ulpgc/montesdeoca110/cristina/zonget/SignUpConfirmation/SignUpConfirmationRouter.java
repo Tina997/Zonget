@@ -4,6 +4,9 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+
+
 public class SignUpConfirmationRouter implements SignUpConfirmationContract.Router {
 
     public static String TAG = SignUpConfirmationRouter.class.getSimpleName();

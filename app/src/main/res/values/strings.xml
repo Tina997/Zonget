@@ -2,9 +2,9 @@
     <string name="app_name">Zonget</string>
 
     <!-- SignIn View -->
-    <string name="user_text_label">Usuario:</string>
-    <string name="password_text_label">Password:</string>
     <string name="activity_label">Iniciar Sesión</string>
+    <string name="sign_in_user_text_label">Usuario:</string>
+    <string name="sign_in_password_text_label">Password:</string>
     <string name="password_forget_text_label">¿Has olvidado la contraseña?</string>
     <string name="sign_in_button_text_label">Entrar</string>
     <string name="not_sign_up_text_view">¿No eres usuario?</string>
@@ -18,6 +18,9 @@
     <string name="user_sign_up_password_text_label">Password:</string>
     <string name="sign_up_accept_button_text_label">Aceptar</string>
 
+    <!-- SignUpConfirmation View -->
+    <string name="sing_up_confirmation_welcome_text_label">Bienvenido a Zonget</string>
+
     <!--agendaAdmin View -->
     <string name="citas_content">Content</string>
 
@@ -28,6 +31,8 @@
     <string name="raza_text_label">Raza:</string>
     <string name="numeroChip_text_label">Nº de chip:</string>
     <string name="fechaNac_text_label">Fecha de nacimiento:</string>
+    <string name="sign_up_confirmation_confirmed_email_text_label">Hemos enviado a su correo cun email de verficación.</string>
+
 
     <!--AnimalListClient View-->
 

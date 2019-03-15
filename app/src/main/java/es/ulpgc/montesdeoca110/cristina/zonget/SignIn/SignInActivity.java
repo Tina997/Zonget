@@ -24,11 +24,11 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Cris: Lo mismo que en el splash
+
         // Oculta la barra del título
-        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-*/
+
         setContentView(R.layout.activity_sign_in);
 
         userEditText = findViewById(R.id.userEditText);

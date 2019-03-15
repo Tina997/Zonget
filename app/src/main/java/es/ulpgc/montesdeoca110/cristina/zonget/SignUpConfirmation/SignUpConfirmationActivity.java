@@ -28,7 +28,7 @@ public class SignUpConfirmationActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        //presenter.fetchData();
     }
 
     @Override
@@ -41,6 +41,6 @@ public class SignUpConfirmationActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+
     }
 }
