@@ -18,6 +18,8 @@ interface ModificarCitaContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void modificarCita();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface ModificarCitaContract {
         void passDataToNextScreen(ModificarCitaState state);
 
         ModificarCitaState getDataFromPreviousScreen();
+
+        void navigateToAgendaAdminScreen();
     }
 }

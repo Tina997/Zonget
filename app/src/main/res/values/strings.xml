@@ -21,10 +21,15 @@
     <string name="agenda_activity_name">Agenda</string>
     <string name="citas_content">Content</string>
     <!--agregarCita View -->
-    <string name="agregarCita_activity_name">Agenda</string>
+    <string name="agregarCita_activity_name">Agregar una cita</string>
     <string name="agregarCita_description_text">Descripción:</string>
     <string name="agregarCita_date_text">Fecha y hora:</string>
     <string name="agregarCita_title_text">Título:</string>
+    <!--modificarCita View -->
+    <string name="modificarCita_activity_name">Modificar una cita</string>
+    <string name="modificarCita_description_text">Descripción:</string>
+    <string name="modificarCita_date_text">Fecha y hora:</string>
+    <string name="modificarCita_title_text">Título:</string>
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
     <string name="nombre_text_label">Nombre</string>

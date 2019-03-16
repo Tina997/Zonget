@@ -55,5 +55,10 @@ public class ModificarCitaPresenter implements ModificarCitaContract.Presenter {
 
     }
 
+    @Override
+    public void modificarCita(){
+        router.navigateToAgendaAdminScreen();
+    }
+
 
 }

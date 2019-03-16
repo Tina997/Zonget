@@ -4,6 +4,9 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin.AgendaAdminActivity;
+
 public class ModificarCitaRouter implements ModificarCitaContract.Router {
 
     public static String TAG = ModificarCitaRouter.class.getSimpleName();
@@ -30,5 +33,12 @@ public class ModificarCitaRouter implements ModificarCitaContract.Router {
     public ModificarCitaState getDataFromPreviousScreen() {
         ModificarCitaState state = mediator.getModificarCitaState();
         return state;
+    }
+
+    @Override
+    public void navigateToAgendaAdminScreen(){
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AgendaAdminActivity.class);
+        context.startActivity(intent);
     }
 }

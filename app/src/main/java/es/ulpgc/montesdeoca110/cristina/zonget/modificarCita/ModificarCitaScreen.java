@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+
 public class ModificarCitaScreen {
 
     public static void configure(ModificarCitaContract.View view) {
