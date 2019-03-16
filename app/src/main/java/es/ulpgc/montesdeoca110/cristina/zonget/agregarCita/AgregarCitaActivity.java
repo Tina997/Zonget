@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.agregarCita;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,17 +10,17 @@ import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class AgendaAdminActivity
-        extends AppCompatActivity implements AgendaAdminContract.View {
+public class AgregarCitaActivity
+        extends AppCompatActivity implements AgregarCitaContract.View {
 
-    public static String TAG = AgendaAdminActivity.class.getSimpleName();
+    public static String TAG = AgregarCitaActivity.class.getSimpleName();
 
-    private AgendaAdminContract.Presenter presenter;
+    private AgregarCitaContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agenda_admin);
+        setContentView(R.layout.activity_agregar_cita);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -28,11 +28,11 @@ public class AgendaAdminActivity
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(getString(R.string.agenda_activity_name));
+            actionBar.setTitle(getString(R.string.agregarCita_activity_name));
         }
 
         // do the setup
-        AgendaAdminScreen.configure(this);
+        AgregarCitaScreen.configure(this);
     }
 
     @Override
@@ -44,19 +44,19 @@ public class AgendaAdminActivity
     }
 
     @Override
-    public void injectPresenter(AgendaAdminContract.Presenter presenter) {
+    public void injectPresenter(AgregarCitaContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(AgendaAdminViewModel viewModel) {
+    public void displayData(AgregarCitaViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-       // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        //((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 
-    public void agregarCita(View view) {
-        presenter.agregarCita();
+    public void aceptarCita(View view) {
+        presenter.aceptarCita();
     }
 }

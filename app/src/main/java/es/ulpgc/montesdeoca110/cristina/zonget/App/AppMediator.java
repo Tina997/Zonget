@@ -5,6 +5,7 @@ import android.app.Application;
 import es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignUp.SignUpState;
+import es.ulpgc.montesdeoca110.cristina.zonget.agregarCita.AgregarCitaState;
 
 public class AppMediator extends Application {
 
@@ -14,6 +15,8 @@ public class AppMediator extends Application {
     private SignUpState signUpState;
 
     private AnimalesClienteListState animalesClienteListState = new AnimalesClienteListState();
+
+    private AgregarCitaState agregarCitaState = new AgregarCitaState();
 
     @Override
     public void onCreate() {
@@ -44,5 +47,14 @@ public class AppMediator extends Application {
 
     public AnimalesClienteListState getAnimalesClienteListState() {
         return animalesClienteListState;
+    }
+
+    //AgregarCita
+    public AgregarCitaState getAgregarCitaState() {
+        return agregarCitaState;
+    }
+
+    public void setAgregarCitaState(AgregarCitaState agregarCitaState) {
+        this.agregarCitaState = agregarCitaState;
     }
 }

@@ -18,7 +18,13 @@
 
     <!-- SignUp View -->
     <!--agendaAdmin View -->
+    <string name="agenda_activity_name">Agenda</string>
     <string name="citas_content">Content</string>
+    <!--agregarCita View -->
+    <string name="agregarCita_activity_name">Agenda</string>
+    <string name="agregarCita_description_text">Descripción:</string>
+    <string name="agregarCita_date_text">Fecha y hora:</string>
+    <string name="agregarCita_title_text">Título:</string>
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
     <string name="nombre_text_label">Nombre</string>
@@ -26,5 +32,6 @@
     <string name="raza_text_label">Raza:</string>
     <string name="numeroChip_text_label">Nº de chip:</string>
     <string name="fechaNac_text_label">Fecha de nacimiento:</string>
+    <string name="agregarCita_button_text">Aceptar</string>
     <!--AnimalListClient View-->
 </resources>

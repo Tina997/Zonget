@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.agregarCita;
 
 import java.lang.ref.WeakReference;
 
-interface AgendaAdminContract {
+interface AgregarCitaContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AgendaAdminViewModel viewModel);
+        void displayData(AgregarCitaViewModel viewModel);
     }
 
     interface Presenter {
@@ -19,7 +19,7 @@ interface AgendaAdminContract {
 
         void fetchData();
 
-        void agregarCita();
+        void aceptarCita();
     }
 
     interface Model {
@@ -29,11 +29,10 @@ interface AgendaAdminContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AgendaAdminState state);
+        void passDataToNextScreen(AgregarCitaState state);
 
-        AgendaAdminState getDataFromPreviousScreen();
+        AgregarCitaState getDataFromPreviousScreen();
 
-        //Navegar entre pantallas
-        void navigateToAgregarCitaScreen();
+        void navigateToAgendaAdminScreen();
     }
 }

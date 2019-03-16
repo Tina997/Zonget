@@ -32,7 +32,8 @@
         android:layout_marginTop="650dp"
         android:layout_marginLeft="330dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:tint="@color/colorPrimary"/>
+        android:tint="@color/colorPrimary"
+        android:onClick="agregarCita"/>
 
     <!--Calendario-->
     <CalendarView

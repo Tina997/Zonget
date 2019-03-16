@@ -55,5 +55,11 @@ public class AgendaAdminPresenter implements AgendaAdminContract.Presenter {
 
     }
 
+    //Navegar a las diferentes pantallas
+    @Override
+    public void agregarCita(){
+        router.navigateToAgregarCitaScreen();
+    }
+
 
 }
