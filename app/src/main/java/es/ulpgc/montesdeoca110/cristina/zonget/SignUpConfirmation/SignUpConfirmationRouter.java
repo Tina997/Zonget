@@ -26,12 +26,13 @@ public class SignUpConfirmationRouter implements SignUpConfirmationContract.Rout
 
     @Override
     public void passDataToNextScreen(SignUpConfirmationState state) {
-        mediator.setSignUpConfirmationState(state);
+        //mediator.setSignUpConfirmationState(state);
     }
 
     @Override
     public SignUpConfirmationState getDataFromPreviousScreen() {
-        SignUpConfirmationState state = mediator.getSignUpConfirmationState();
-        return state;
+        //SignUpConfirmationState state = mediator.getSignUpConfirmationState();
+        //return state;
+        return null;
     }
 }

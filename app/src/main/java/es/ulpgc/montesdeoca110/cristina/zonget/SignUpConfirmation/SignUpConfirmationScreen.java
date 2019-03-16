@@ -14,16 +14,16 @@ public class SignUpConfirmationScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        SignUpConfirmationState state = mediator.getSignUpConfirmationState();
+        ///SignUpConfirmationState state = mediator.getSignUpConfirmationState();
 
         SignUpConfirmationContract.Router router = new SignUpConfirmationRouter(mediator);
-        SignUpConfirmationContract.Presenter presenter = new SignUpConfirmationPresenter(state);
+        /*SignUpConfirmationContract.Presenter presenter = new SignUpConfirmationPresenter(state);
         SignUpConfirmationContract.Model model = new SignUpConfirmationModel();
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
 
         view.injectPresenter(presenter);
-
+*/
     }
 }

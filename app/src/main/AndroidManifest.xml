@@ -26,15 +26,16 @@
         <activity android:name=".SignUpConfirmation.SignUpConfirmationActivity"></activity>
 
         <activity android:name=".agendaAdmin.AgendaAdminActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
            </activity>
         <activity android:name=".AnimalCliente.AnimalDetailActivity">
             </activity>
-        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity"></activity>
+        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
     </application>
 
 </manifest>
