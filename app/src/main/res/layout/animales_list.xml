@@ -9,4 +9,5 @@
     tools:context=".AnimalCliente.AnimalDetailActivity"
     tools:listitem="@layout/animales_list_content"
     android:background="@color/colorPrimaryDark"
+
      />

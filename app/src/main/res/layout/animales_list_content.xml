@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         style="?android:attr/textAppearanceLarge"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
         />
 
     <TextView
@@ -29,6 +31,9 @@
         style="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorPrimary"
         android:layout_marginLeft="30dp"
+        android:padding="5dp"
+
+
         />
 
 </LinearLayout>
