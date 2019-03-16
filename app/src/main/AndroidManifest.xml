@@ -9,7 +9,7 @@
         android:name=".App.AppMediator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
 
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -23,15 +23,13 @@
 
         <activity android:name=".SignUp.SignUpActivity"></activity>
 
+        <activity android:name=".SignUpConfirmation.SignUpConfirmationActivity"></activity>
+
         <activity android:name=".agendaAdmin.AgendaAdminActivity">
            </activity>
         <activity android:name=".AnimalCliente.AnimalDetailActivity">
             </activity>
-        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity"></activity>
     </application>
 
 </manifest>
