@@ -3,6 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.App.CitaItem;
 
 public class AgendaAdminPresenter implements AgendaAdminContract.Presenter {
 
@@ -36,8 +39,14 @@ public class AgendaAdminPresenter implements AgendaAdminContract.Presenter {
     public void fetchDateListData() {
         // Log.e(TAG, "fetchDateListData()");
 
-        //llamar al modelo
-        viewModel.dateList = model.fetchData();
+      /*  if(viewModel.dateList == null){
+
+            //llamar al modelo
+            List<CitaItem> data = model.fetchData();
+
+            viewModel.dateList = data;
+        }*/
+
 
         //mostrar datos
         view.get().displayData(viewModel);

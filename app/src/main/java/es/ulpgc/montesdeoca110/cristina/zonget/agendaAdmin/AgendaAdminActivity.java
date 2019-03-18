@@ -44,7 +44,7 @@ public class AgendaAdminActivity
         super.onResume();
 
         // do some work
-        presenter.fetchDateListData();
+      //  presenter.fetchDateListData();
     }
 
     @Override
