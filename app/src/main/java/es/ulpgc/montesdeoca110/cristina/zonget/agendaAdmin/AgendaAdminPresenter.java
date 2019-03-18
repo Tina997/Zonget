@@ -39,13 +39,13 @@ public class AgendaAdminPresenter implements AgendaAdminContract.Presenter {
     public void fetchDateListData() {
         // Log.e(TAG, "fetchDateListData()");
 
-       /* if(viewModel.dateList == null){
+        if(viewModel.dateList == null){
 
             //llamar al modelo
             List<CitaItem> data = model.fetchData();
 
             viewModel.dateList = data;
-        }*/
+        }
 
 
         //mostrar datos

@@ -19,7 +19,6 @@ public class AgendaAdminActivity
     public static String TAG = AgendaAdminActivity.class.getSimpleName();
 
     private AgendaAdminContract.Presenter presenter;
-    private FloatingActionButton fab;
     public ListView listView;
 
     @Override
@@ -37,7 +36,6 @@ public class AgendaAdminActivity
             actionBar.setTitle(getString(R.string.agenda_activity_name));
         }
 
-        fab = findViewById(R.id.botonAgregarCita);
         listView = findViewById(R.id.lista_citas);
 
         // do the setup
@@ -50,7 +48,7 @@ public class AgendaAdminActivity
         super.onResume();
 
         // do some work
-      //  presenter.fetchDateListData();
+         presenter.fetchDateListData();
     }
 
     @Override
@@ -70,8 +68,6 @@ public class AgendaAdminActivity
     }
 
     public void agregarCita(View view) {
-        Context context =this.getApplicationContext();
-        Intent intent = new Intent(context, AgregarCitaActivity.class);
-        context.startActivity(intent);
+       presenter.agregarCita();
     }
 }
