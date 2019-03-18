@@ -1,9 +1,10 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente.AnimalDetailActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
 
 public class AnimalesClienteListRouter implements AnimalesClienteListContract.Router {
@@ -17,15 +18,16 @@ public class AnimalesClienteListRouter implements AnimalesClienteListContract.Ro
     }
 
     @Override
-    public void navigateToNextScreen() {
+    public void navigateToAnimalDetailScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AnimalesClienteListActivity.class);
+        Intent intent = new Intent(context, AnimalDetailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(AnimalesClienteListState state) {
-        mediator.setAnimalesClienteListState(state);
+    public void passDataToAnimalDetailScreen(AnimalClientesItem item) {
+        mediator.setAnimalesClienteList(item);
     }
 
     @Override

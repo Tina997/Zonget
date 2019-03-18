@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
+
 public class AnimalDetailPresenter implements AnimalDetailContract.Presenter {
 
     public static String TAG = AnimalDetailPresenter.class.getSimpleName();
@@ -35,17 +37,9 @@ public class AnimalDetailPresenter implements AnimalDetailContract.Presenter {
         // Log.e(TAG, "fetchDateListData()");
 
         // set passed state
-        AnimalDetailState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
+        AnimalClientesItem animal = router.getDataFromPreviousScreen();
+        if(animal != null){
+            viewModel.animal = animal;
         }
 
         // update the view

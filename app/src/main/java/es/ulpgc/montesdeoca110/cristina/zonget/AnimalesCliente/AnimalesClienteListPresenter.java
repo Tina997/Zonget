@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
+
 public class AnimalesClienteListPresenter implements AnimalesClienteListContract.Presenter {
 
     public static String TAG = AnimalesClienteListPresenter.class.getSimpleName();
@@ -37,6 +39,12 @@ public class AnimalesClienteListPresenter implements AnimalesClienteListContract
         // Log.e(TAG, "fetchDateListData()");
         viewModel.animales = model.fetchAnimalesListData();
         view.get().displayAnimalesListData(viewModel);
+    }
+
+    @Override
+    public void selectAnimalListData(AnimalClientesItem item) {
+        router.passDataToAnimalDetailScreen(item);
+        router.navigateToAnimalDetailScreen();
     }
 
 }

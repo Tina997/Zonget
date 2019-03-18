@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
 
 public class AnimalDetailRouter implements AnimalDetailContract.Router {
@@ -28,8 +29,9 @@ public class AnimalDetailRouter implements AnimalDetailContract.Router {
     }
 
     @Override
-    public AnimalDetailState getDataFromPreviousScreen() {
-        //AnimalDetailState state = mediator.getAnimal();
-        return null;
+    public AnimalClientesItem getDataFromPreviousScreen() {
+        AnimalClientesItem animal = mediator.getAnimal();
+
+        return animal;
     }
 }

@@ -18,7 +18,7 @@ public class AnimalesClienteListScreen {
 
         AnimalesClienteListContract.Router router = new AnimalesClienteListRouter(mediator);
         AnimalesClienteListContract.Presenter presenter = new AnimalesClienteListPresenter(state);
-        AnimalesClienteListContract.Model model = new AnimalesClienteListModel();
+        AnimalesClienteListModel model = new AnimalesClienteListModel();
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));

@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
+
 interface AnimalDetailContract {
 
     interface View {
@@ -29,6 +31,6 @@ interface AnimalDetailContract {
 
         void passDataToNextScreen(AnimalDetailState state);
 
-        AnimalDetailState getDataFromPreviousScreen();
+        AnimalClientesItem getDataFromPreviousScreen();
     }
 }

@@ -1,14 +1,17 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
 
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AnimalesClienteListActivity
@@ -62,9 +65,19 @@ public class AnimalesClienteListActivity
     listView.setAdapter(new AnimalesClienteListAdapter(this, viewModel.animales, new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            AnimalClientesItem item = (AnimalClientesItem) v.getTag();
+            presenter.selectAnimalListData(item);
         }
     }));
         // deal with the data
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

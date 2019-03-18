@@ -1,11 +1,17 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente;
 
+import android.content.Intent;
 import android.drm.DrmStore;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.TextView;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente.AnimalesClienteListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AnimalDetailActivity
@@ -32,6 +38,8 @@ public class AnimalDetailActivity
 
         // do the setup
         AnimalDetailScreen.configure(this);
+
+        presenter.fetchData();
     }
 
     @Override
@@ -52,5 +60,23 @@ public class AnimalDetailActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
+        AnimalClientesItem animalClientesItem = viewModel.animal;
+        if(animalClientesItem != null){
+            ((TextView)findViewById(R.id.fechaNacAnimalCliente)).setText(animalClientesItem.fechaNac);
+            ((TextView)findViewById(R.id.nombreAnimal)).setText(animalClientesItem.nombre);
+            ((TextView)findViewById(R.id.especieAnimalCliente)).setText(animalClientesItem.especie);
+            ((TextView)findViewById(R.id.razaAnimalCliente)).setText(animalClientesItem.raza);
+            ((TextView)findViewById(R.id.numeroAnimalCliente)).setText(animalClientesItem.numChip);
+        }
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            navigateUpTo(new Intent(this, AnimalesClienteListActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

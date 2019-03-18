@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.App;
 
 import android.app.Application;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente.AnimalDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignUp.SignUpState;
@@ -20,9 +21,14 @@ public class AppMediator extends Application {
 
     private AgendaAdminState agendaAdminState = new AgendaAdminState();
 
+    private AnimalDetailState animalClientesDetailState = new AnimalDetailState();
+
     private AgregarCitaState agregarCitaState = new AgregarCitaState();
 
     private ModificarCitaState modificarCitaState = new ModificarCitaState();
+
+    //Variables de las activities
+    private AnimalClientesItem animal;
 
     @Override
     public void onCreate() {
@@ -30,7 +36,22 @@ public class AppMediator extends Application {
 
         signInState = new SignInState();
     }
+    //Lista animales maestro y detalle
 
+    public void setAnimalesClienteList(AnimalClientesItem item) {
+        animal = item;
+    }
+    public AnimalDetailState getAnimalDetailState() {
+        return animalClientesDetailState;
+    }
+    public AnimalClientesItem getAnimal(){
+        AnimalClientesItem item = animal;
+        return item;
+    }
+    public AnimalesClienteListState getAnimalesClienteListState() {
+        return animalesClienteListState;
+    }
+    //SignIn
     public SignInState getSignInState() {
         return signInState;
     }
@@ -39,6 +60,7 @@ public class AppMediator extends Application {
         this.signInState = signInState;
     }
 
+    //SignUp
     public SignUpState getSignUpState() {
         return signUpState;
     }
@@ -51,9 +73,6 @@ public class AppMediator extends Application {
         animalesClienteListState = state;
     }
 
-    public AnimalesClienteListState getAnimalesClienteListState() {
-        return animalesClienteListState;
-    }
 
     //AgendaAdmin
     public AgendaAdminState getAgendaAdminState() {

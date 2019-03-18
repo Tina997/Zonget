@@ -21,6 +21,8 @@ interface AnimalesClienteListContract {
         void injectRouter(Router router);
 
         void fetchAnimalesListData();
+
+        void selectAnimalListData(AnimalClientesItem item);
     }
 
     interface Model {
@@ -28,9 +30,9 @@ interface AnimalesClienteListContract {
     }
 
     interface Router {
-        void navigateToNextScreen();
+        void navigateToAnimalDetailScreen();
 
-        void passDataToNextScreen(AnimalesClienteListState state);
+        void passDataToAnimalDetailScreen(AnimalClientesItem state);
 
         AnimalesClienteListState getDataFromPreviousScreen();
     }

@@ -57,9 +57,9 @@ public class AnimalesClienteListModel implements AnimalesClienteListContract.Mod
 
     private String fetchAnimalEspecie(int posicion) {
         if(posicion%2==0){
-            return "perro";
+            return "Perro";
         }else{
-            return "gato";
+            return "Gato";
         }
     }
 }
