@@ -37,6 +37,6 @@ public class AgendaAdminModel implements AgendaAdminContract.Model {
 
     private CitaItem createDate(int position){
         String content = "Cita" + position;
-        return new CitaItem(content);
+        return new CitaItem(content, position);
     }
 }
