@@ -60,7 +60,6 @@ public class AppMediator extends Application {
         this.signInState = signInState;
     }
 
-    //SignUp
     public SignUpState getSignUpState() {
         return signUpState;
     }
