@@ -17,7 +17,7 @@ public class ModificarCitaModel implements ModificarCitaContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
         return "Hello";
     }
 }

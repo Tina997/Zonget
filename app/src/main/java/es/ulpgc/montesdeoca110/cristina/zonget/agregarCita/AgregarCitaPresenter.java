@@ -34,7 +34,7 @@ public class AgregarCitaPresenter implements AgregarCitaContract.Presenter {
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
 
         // set passed state
         AgregarCitaState state = router.getDataFromPreviousScreen();

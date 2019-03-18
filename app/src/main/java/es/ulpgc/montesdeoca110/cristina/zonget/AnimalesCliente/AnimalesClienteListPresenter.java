@@ -34,7 +34,7 @@ public class AnimalesClienteListPresenter implements AnimalesClienteListContract
 
     @Override
     public void fetchAnimalesListData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
         viewModel.animales = model.fetchAnimalesListData();
         view.get().displayAnimalesListData(viewModel);
     }

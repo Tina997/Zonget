@@ -54,7 +54,7 @@ public class SignUpActivity
         super.onResume();
 
         // do some work
-        //presenter.fetchData();
+        //presenter.fetchDateListData();
     }
 
     @Override

@@ -26,7 +26,7 @@ public class AnimalesClienteListModel implements AnimalesClienteListContract.Mod
 
     @Override
     public List<AnimalClientesItem> fetchAnimalesListData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
         return itemList;
     }
     private void addPet(AnimalClientesItem animalClientesItem){

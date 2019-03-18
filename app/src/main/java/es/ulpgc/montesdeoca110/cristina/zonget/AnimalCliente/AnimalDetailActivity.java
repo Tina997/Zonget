@@ -39,7 +39,7 @@ public class AnimalDetailActivity
         super.onResume();
 
         // do some work
-//        presenter.fetchData();
+//        presenter.fetchDateListData();
     }
 
     @Override

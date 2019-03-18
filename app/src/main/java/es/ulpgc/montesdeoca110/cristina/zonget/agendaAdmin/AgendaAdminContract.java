@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.App.CitaItem;
 
 interface AgendaAdminContract {
 
@@ -17,13 +20,13 @@ interface AgendaAdminContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchDateListData();
 
         void agregarCita();
     }
 
     interface Model {
-        String fetchData();
+        List<CitaItem> fetchData();
     }
 
     interface Router {

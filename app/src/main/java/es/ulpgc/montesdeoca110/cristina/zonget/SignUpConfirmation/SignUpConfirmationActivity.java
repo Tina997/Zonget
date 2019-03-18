@@ -41,7 +41,7 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
         super.onResume();
 
         // do some work
-        //presenter.fetchData();
+        //presenter.fetchDateListData();
     }
 
     @Override

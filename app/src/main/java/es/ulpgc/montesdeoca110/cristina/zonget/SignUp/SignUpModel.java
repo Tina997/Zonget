@@ -10,7 +10,7 @@ public class SignUpModel implements SignUpContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
         return "Hello";
     }
 }

@@ -34,7 +34,7 @@ public class SignUpConfirmationPresenter implements SignUpConfirmationContract.P
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
 
         // set passed state
         SignUpConfirmationState state = router.getDataFromPreviousScreen();

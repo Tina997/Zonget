@@ -33,24 +33,13 @@ public class AgendaAdminPresenter implements AgendaAdminContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+    public void fetchDateListData() {
+        // Log.e(TAG, "fetchDateListData()");
 
-        // set passed state
-        AgendaAdminState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
+        //llamar al modelo
+        viewModel.dateList = model.fetchData();
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
+        //mostrar datos
         view.get().displayData(viewModel);
 
     }

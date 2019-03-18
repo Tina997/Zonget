@@ -4,9 +4,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -16,6 +15,7 @@ public class AgendaAdminActivity
     public static String TAG = AgendaAdminActivity.class.getSimpleName();
 
     private AgendaAdminContract.Presenter presenter;
+    public ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,15 @@ public class AgendaAdminActivity
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(getString(R.string.agenda_activity_name));
         }
 
+        listView = findViewById(R.id.lista_citas);
+
         // do the setup
         AgendaAdminScreen.configure(this);
+
     }
 
     @Override
@@ -40,7 +44,7 @@ public class AgendaAdminActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        presenter.fetchDateListData();
     }
 
     @Override
@@ -51,9 +55,12 @@ public class AgendaAdminActivity
     @Override
     public void displayData(AgendaAdminViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-
-        // deal with the data
-       // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        listView.setAdapter( new AgendaAdminListAdapter(this, viewModel.dateList, new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //TODO añadir método para que aparezca el pop up con el detalle
+            }
+        } ));
     }
 
     public void agregarCita(View view) {

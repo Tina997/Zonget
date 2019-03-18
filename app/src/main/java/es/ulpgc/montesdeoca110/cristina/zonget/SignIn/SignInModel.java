@@ -12,7 +12,7 @@ public class SignInModel implements SignInContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
         return "Hello";
     }
 }

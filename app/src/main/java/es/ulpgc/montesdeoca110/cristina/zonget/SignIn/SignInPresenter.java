@@ -34,7 +34,7 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
 
         // set passed state
         SignInState state = router.getDataFromPreviousScreen();

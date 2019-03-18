@@ -17,7 +17,7 @@ public class AgregarCitaModel implements AgregarCitaContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchDateListData()");
         return "Hello";
     }
 }
