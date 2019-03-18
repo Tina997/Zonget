@@ -1,5 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +11,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.agregarCita.AgregarCitaActivity;
 
 public class AgendaAdminActivity
         extends AppCompatActivity implements AgendaAdminContract.View {
@@ -15,6 +19,7 @@ public class AgendaAdminActivity
     public static String TAG = AgendaAdminActivity.class.getSimpleName();
 
     private AgendaAdminContract.Presenter presenter;
+    private FloatingActionButton fab;
     public ListView listView;
 
     @Override
@@ -32,6 +37,7 @@ public class AgendaAdminActivity
             actionBar.setTitle(getString(R.string.agenda_activity_name));
         }
 
+        fab = findViewById(R.id.botonAgregarCita);
         listView = findViewById(R.id.lista_citas);
 
         // do the setup
@@ -64,6 +70,8 @@ public class AgendaAdminActivity
     }
 
     public void agregarCita(View view) {
-        presenter.agregarCita();
+        Context context =this.getApplicationContext();
+        Intent intent = new Intent(context, AgregarCitaActivity.class);
+        context.startActivity(intent);
     }
 }

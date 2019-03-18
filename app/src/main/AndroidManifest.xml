@@ -32,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
            </activity>
+        <activity android:name=".agregarCita.AgregarCitaActivity">
+        </activity>
 
         <activity android:name=".AnimalCliente.AnimalDetailActivity">
             </activity>

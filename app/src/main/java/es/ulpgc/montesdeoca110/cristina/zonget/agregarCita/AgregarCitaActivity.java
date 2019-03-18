@@ -28,6 +28,7 @@ public class AgregarCitaActivity
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(getString(R.string.agregarCita_activity_name));
         }
 
@@ -40,7 +41,7 @@ public class AgregarCitaActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        //presenter.fetchData();
     }
 
     @Override
