@@ -6,6 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente.AnimalDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignUp.SignUpState;
+import es.ulpgc.montesdeoca110.cristina.zonget.SignUpConfirmation.SignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin.AgendaAdminState;
 import es.ulpgc.montesdeoca110.cristina.zonget.agregarCita.AgregarCitaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.modificarCita.ModificarCitaState;
@@ -16,6 +17,8 @@ public class AppMediator extends Application {
     private SignInState signInState;
 
     private SignUpState signUpState;
+
+    private SignUpConfirmationState signUpConfirmationState;
 
     private AnimalesClienteListState animalesClienteListState = new AnimalesClienteListState();
 
@@ -66,6 +69,14 @@ public class AppMediator extends Application {
 
     public void setSignUpState(SignUpState signUpState) {
         this.signUpState = signUpState;
+    }
+
+    public SignUpConfirmationState getSignUpConfirmationState() {
+        return signUpConfirmationState;
+    }
+
+    public void setSignUpConfirmationState(SignUpConfirmationState signUpConfirmationState) {
+        this.signUpConfirmationState = signUpConfirmationState;
     }
 
     public void setAnimalesClienteListState(AnimalesClienteListState state) {
