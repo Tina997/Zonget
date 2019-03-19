@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.ButtonsAdministratorMenu;
+package es.ulpgc.montesdeoca110.cristina.zonget.AdministratorButtonsMenuList;
 
 import java.lang.ref.WeakReference;
 
-interface ButtonsAdministratorMenuContract {
+interface AdministratorMenuButtonsListContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(ButtonsAdministratorMenuViewModel viewModel);
+        void displayData(AdministratorButtonsMenuListViewModel viewModel);
     }
 
     interface Presenter {
@@ -27,8 +27,8 @@ interface ButtonsAdministratorMenuContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(ButtonsAdministratorMenuState state);
+        void passDataToNextScreen(AdministratorButtonsMenuListState state);
 
-        ButtonsAdministratorMenuState getDataFromPreviousScreen();
+        AdministratorButtonsMenuListState getDataFromPreviousScreen();
     }
 }

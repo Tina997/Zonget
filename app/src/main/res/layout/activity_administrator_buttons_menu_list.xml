@@ -19,11 +19,15 @@
             app:titleTextColor="@color/colorPrimary"></android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <GridView
-        android:id="@+id/administrator_menu_buttons"
+    <FrameLayout
+        android:id="@+id/administrator_buttons_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="523dp"
-        android:layout_margin="20dp" />
+        android:layout_height="514dp"
+        android:layout_margin="20dp">
+
+        <include
+            layout="@layout/administrator_buttons_list"/>
+    </FrameLayout>
 
     <ImageView
         android:layout_width="160dp"

@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.App;
 
 import android.app.Application;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.ButtonsAdministratorMenu.ButtonsAdministratorMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.AdministratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.AnimalCliente.AnimalDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.SignIn.SignInState;
@@ -21,7 +21,7 @@ public class AppMediator extends Application {
 
     private SignUpConfirmationState signUpConfirmationState;
 
-    private ButtonsAdministratorMenuState administratorMenuState;
+    private AdministratorButtonsMenuListState administratorButtonsMenuListState;
 
     private AnimalesClienteListState animalesClienteListState = new AnimalesClienteListState();
 
@@ -83,18 +83,13 @@ public class AppMediator extends Application {
         this.signUpConfirmationState = signUpConfirmationState;
     }
 
-    //AdministratorMenu
-    public ButtonsAdministratorMenuState getAdministratorMenuState() {
-        return administratorMenuState;
+    //AdministratorMenuList
+    public AdministratorButtonsMenuListState getAdministratorMenuListState() {
+        return administratorButtonsMenuListState;
     }
 
-    public void setAdministratorMenuState(ButtonsAdministratorMenuState administratorMenuState) {
-        this.administratorMenuState = administratorMenuState;
-    }
-
-
-    public void setAnimalesClienteListState(AnimalesClienteListState state) {
-        animalesClienteListState = state;
+    public void setAdministratorMenuListState(AdministratorButtonsMenuListState administratorButtonsMenuListState) {
+        this.administratorButtonsMenuListState = administratorButtonsMenuListState;
     }
 
 

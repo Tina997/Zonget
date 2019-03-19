@@ -25,7 +25,13 @@
 
         <activity android:name=".SignUpConfirmation.SignUpConfirmationActivity"></activity>
 
-        <activity android:name=".ButtonsAdministratorMenu.ButtonsAdministratorMenuActivity"></activity>
+        <activity android:name=".AdministratorButtonsMenuList.AdministratorButtonsMenuListActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".agendaAdmin.AgendaAdminActivity">
             <intent-filter>
