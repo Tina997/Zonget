@@ -11,13 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".SplashActivity"></activity>
 
         <activity android:name=".SignIn.SignInActivity"></activity>
 
@@ -33,25 +27,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".agendaAdmin.AgendaAdminActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-           </activity>
-        <activity android:name=".agregarCita.AgregarCitaActivity">
-        </activity>
+        <activity android:name=".agregarCita.AgregarCitaActivity"></activity>
 
-        <activity android:name=".AnimalCliente.AnimalDetailActivity">
-            </activity>
-        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".AnimalCliente.AnimalDetailActivity"></activity>
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-</activity>
+        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity"></activity>
     </application>
 
 </manifest>

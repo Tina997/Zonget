@@ -1,13 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AdministratorButtonsMenuList;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
-interface AdministratorMenuButtonsListContract {
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AdministratorButtonMenuItem;
+
+interface AdministratorButtonsMenuListContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AdministratorButtonsMenuListViewModel viewModel);
+        void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
     }
 
     interface Presenter {
@@ -17,11 +20,13 @@ interface AdministratorMenuButtonsListContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchAdministratorButtonsMenuListData();
+
+        void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
     }
 
     interface Model {
-        String fetchData();
+        List<AdministratorButtonMenuItem> fetchAdministratorButtonsMenuListData();
     }
 
     interface Router {

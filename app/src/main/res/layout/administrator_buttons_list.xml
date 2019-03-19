@@ -6,6 +6,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdministratorButtonsMenuList.AdministratorButtonsMenuListActivity"
-    tools:listitem="@layout/administrator_buttons_list_content"
-
-    />
+    tools:listitem="@layout/administrator_buttons_list_content" />

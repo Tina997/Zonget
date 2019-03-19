@@ -5,9 +5,7 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
 
-public class AdministratorButtonsMenuListRouter implements AdministratorMenuButtonsListContract.Router {
-
-    public static String TAG = AdministratorButtonsMenuListRouter.class.getSimpleName();
+public class AdministratorButtonsMenuListRouter implements AdministratorButtonsMenuListContract.Router {
 
     private AppMediator mediator;
 

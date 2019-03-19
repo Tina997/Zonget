@@ -1,19 +1,22 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.AdministratorButtonsMenuList;
 
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class AdministratorButtonsMenuListActivity extends AppCompatActivity implements AdministratorMenuButtonsListContract.View {
+public class AdministratorButtonsMenuListActivity extends AppCompatActivity implements AdministratorButtonsMenuListContract.View {
 
     public static String TAG = AdministratorButtonsMenuListActivity.class.getSimpleName();
 
-    private AdministratorMenuButtonsListContract.Presenter presenter;
+    private AdministratorButtonsMenuListContract.Presenter presenter;
 
     //Elementos de la vista
     private Toolbar administrator_menu_toolbar;
@@ -42,19 +45,39 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         super.onResume();
 
         // do some work
-        //presenter.fetchData();
+        presenter.fetchAdministratorButtonsMenuListData();
     }
 
     @Override
-    public void injectPresenter(AdministratorMenuButtonsListContract.Presenter presenter) {
+    public void injectPresenter(AdministratorButtonsMenuListContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(AdministratorButtonsMenuListViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+    public void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel) {
 
         // deal with the data
-        //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        administrator_buttons_grid_view.setAdapter(new AdministratorButtonsMenuListAdapter(
+                this,viewModel.administrator_buttons,
+                new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        AdministratorButtonMenuItem item = (AdministratorButtonMenuItem) view.getTag();
+                        presenter.selectAdministratorButtonsMenuListData(item);
+                    }
+                })
+        );
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

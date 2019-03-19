@@ -2,55 +2,50 @@ package es.ulpgc.montesdeoca110.cristina.zonget.AdministratorButtonsMenuList;
 
 import java.lang.ref.WeakReference;
 
-public class AdministratorButtonsMenuListPresenter implements AdministratorMenuButtonsListContract.Presenter {
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AdministratorButtonMenuItem;
 
-    public static String TAG = AdministratorButtonsMenuListPresenter.class.getSimpleName();
+public class AdministratorButtonsMenuListPresenter implements AdministratorButtonsMenuListContract.Presenter {
 
-    private WeakReference<AdministratorMenuButtonsListContract.View> view;
+    private WeakReference<AdministratorButtonsMenuListContract.View> view;
     private AdministratorButtonsMenuListViewModel viewModel;
-    private AdministratorMenuButtonsListContract.Model model;
-    private AdministratorMenuButtonsListContract.Router router;
+    private AdministratorButtonsMenuListContract.Model model;
+    private AdministratorButtonsMenuListContract.Router router;
 
     public AdministratorButtonsMenuListPresenter(AdministratorButtonsMenuListState state) {
         viewModel = state;
     }
 
     @Override
-    public void injectView(WeakReference<AdministratorMenuButtonsListContract.View> view) {
+    public void injectView(WeakReference<AdministratorButtonsMenuListContract.View> view) {
         this.view = view;
     }
 
     @Override
-    public void injectModel(AdministratorMenuButtonsListContract.Model model) {
+    public void injectModel(AdministratorButtonsMenuListContract.Model model) {
         this.model = model;
     }
 
     @Override
-    public void injectRouter(AdministratorMenuButtonsListContract.Router router) {
+    public void injectRouter(AdministratorButtonsMenuListContract.Router router) {
         this.router = router;
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+    public void fetchAdministratorButtonsMenuListData() {
 
-        // set passed state
-        AdministratorButtonsMenuListState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
+        //TODO Error, se referencia a un objeto null
+        //Llamamos al modelo para que nos de la información
+        viewModel.administrator_buttons = model.fetchAdministratorButtonsMenuListData();
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
+        // Actualizamos la vista
+        view.get().displayAdministratorButtonsMenuListData(viewModel);
 
-            // set initial state
-            viewModel.data = data;
-        }
+    }
 
-        // update the view
-        view.get().displayData(viewModel);
-
+    @Override
+    public void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item) {
+        //router.passDataToProductListScreen(item);
+        //router.navigateToProductListScreen();
     }
 
 

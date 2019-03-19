@@ -34,6 +34,7 @@ public class AppMediator extends Application {
     private ModificarCitaState modificarCitaState = new ModificarCitaState();
 
     //Variables de las activities
+
     private AnimalClientesItem animal;
 
     @Override
