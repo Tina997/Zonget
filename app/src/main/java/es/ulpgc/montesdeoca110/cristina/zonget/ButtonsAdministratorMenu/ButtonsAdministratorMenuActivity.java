@@ -1,25 +1,23 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.AdministratorMenu;
+package es.ulpgc.montesdeoca110.cristina.zonget.ButtonsAdministratorMenu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class AdministratorMenuActivity extends AppCompatActivity implements AdministratorMenuContract.View {
+public class ButtonsAdministratorMenuActivity extends AppCompatActivity implements ButtonsAdministratorMenuContract.View {
 
-    public static String TAG = AdministratorMenuActivity.class.getSimpleName();
+    public static String TAG = ButtonsAdministratorMenuActivity.class.getSimpleName();
 
-    private AdministratorMenuContract.Presenter presenter;
+    private ButtonsAdministratorMenuContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_administrator_menu);
+        setContentView(R.layout.activity_administrator_menu_list);
 
         // do the setup
-        AdministratorMenuScreen.configure(this);
+        ButtonsAdministratorMenuScreen.configure(this);
     }
 
     @Override
@@ -31,12 +29,12 @@ public class AdministratorMenuActivity extends AppCompatActivity implements Admi
     }
 
     @Override
-    public void injectPresenter(AdministratorMenuContract.Presenter presenter) {
+    public void injectPresenter(ButtonsAdministratorMenuContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(AdministratorMenuViewModel viewModel) {
+    public void displayData(ButtonsAdministratorMenuViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data

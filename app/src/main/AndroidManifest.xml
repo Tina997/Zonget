@@ -25,7 +25,7 @@
 
         <activity android:name=".SignUpConfirmation.SignUpConfirmationActivity"></activity>
 
-        <activity android:name=".AdministratorMenu.AdministratorMenuActivity"></activity>
+        <activity android:name=".ButtonsAdministratorMenu.ButtonsAdministratorMenuActivity"></activity>
 
         <activity android:name=".agendaAdmin.AgendaAdminActivity">
             <intent-filter>

@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/user_text_label"
+                android:text="@string/sign_in_user_text_label"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
 
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/password_text_label"
+                android:text="@string/sign_in_password_text_label"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
 
@@ -128,7 +128,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="150dp" />
+            android:layout_height="130dp" />
 
         <TextView
             android:layout_width="wrap_content"
