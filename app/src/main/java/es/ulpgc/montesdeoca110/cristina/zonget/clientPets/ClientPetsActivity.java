@@ -5,26 +5,27 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
-public class ClientPetsListActivity
-        extends AppCompatActivity implements ClientPetsListContract.View {
+public class ClientPetsActivity
+        extends AppCompatActivity implements ClientPetsContract.View {
 
-    public static String TAG = ClientPetsListActivity.class.getSimpleName();
+    public static String TAG = ClientPetsActivity.class.getSimpleName();
 
-    private ClientPetsListContract.Presenter presenter;
-
+    private ClientPetsContract.Presenter presenter;
     private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pets_client_list);
+        setContentView(R.layout.activity_client_pets);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAnimalesCliente);
         setSupportActionBar(toolbar);
 
@@ -38,10 +39,8 @@ public class ClientPetsListActivity
         listView = findViewById(R.id.animal_list);
 
         // do the setup
-        ClientPetsListScreen.configure(this);
+        ClientPetsScreen.configure(this);
 
-        //do some work
-        presenter.fetchAnimalesListData();
     }
 
     @Override
@@ -49,24 +48,24 @@ public class ClientPetsListActivity
         super.onResume();
 
         // do some work
-//        presenter.fetchDateListData();
+        presenter.fetchClientPetsData();
     }
 
     @Override
-    public void injectPresenter(ClientPetsListContract.Presenter presenter) {
+    public void injectPresenter(ClientPetsContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayAnimalesListData(ClientPetsListViewModel viewModel) {
+    public void displayClientPetsData(ClientPetsViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-    listView.setAdapter(new ClientPetsListAdapter(this, viewModel.animales, new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            PetsItem item = (PetsItem) v.getTag();
-            presenter.selectAnimalListData(item);
-        }
-    }));
+        listView.setAdapter(new ClientPetsAdapter(this, viewModel.animales, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PetsItem item = (PetsItem) v.getTag();
+                presenter.selectClientPetsData(item);
+            }
+        }));
         // deal with the data
     }
     @Override

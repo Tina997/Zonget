@@ -4,8 +4,9 @@ import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.clientPets.ClientPetsState;
+//import es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail.ClientPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail.ClientPetsDetailState;
-import es.ulpgc.montesdeoca110.cristina.zonget.clientPets.ClientPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationState;
@@ -23,7 +24,7 @@ public class AppMediator extends Application {
 
     private AdministratorButtonsMenuListState administratorButtonsMenuListState;
 
-    private ClientPetsListState animalesClienteListState = new ClientPetsListState();
+    private ClientPetsState clientPetsState = new ClientPetsState();
 
     private AdministratorAdministratorAgendaState administratorAgendaState = new AdministratorAdministratorAgendaState();
 
@@ -49,18 +50,18 @@ public class AppMediator extends Application {
     }
     //Lista animales maestro y detalle
 
-    public void setAnimalesClienteList(PetsItem item) {
+    public void setClientPetsState(PetsItem item) {
         animal = item;
     }
-    public ClientPetsDetailState getAnimalDetailState() {
+    public ClientPetsDetailState getClientPetsDetailState() {
         return animalClientesDetailState;
     }
     public PetsItem getAnimal(){
         PetsItem item = animal;
         return item;
     }
-    public ClientPetsListState getAnimalesClienteListState() {
-        return animalesClienteListState;
+    public ClientPetsState getClientPetsState() {
+        return clientPetsState;
     }
     //SignIn
     public SignInState getSignInState() {

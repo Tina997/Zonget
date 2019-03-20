@@ -6,19 +6,19 @@ import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
-public class AnimalesClienteListScreen {
+public class ClientPetsScreen {
 
-    public static void configure(AnimalesClienteListContract.View view) {
+    public static void configure(ClientPetsContract.View view) {
 
         WeakReference<FragmentActivity> context =
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        AnimalesClienteListState state = mediator.getAnimalesClienteListState();
+        ClientPetsState state = mediator.getClientPetsState();
 
-        AnimalesClienteListContract.Router router = new AnimalesClienteListRouter(mediator);
-        AnimalesClienteListContract.Presenter presenter = new AnimalesClienteListPresenter(state);
-        AnimalesClienteListModel model = new AnimalesClienteListModel();
+        ClientPetsContract.Router router = new ClientPetsRouter(mediator);
+        ClientPetsContract.Presenter presenter = new ClientPetsPresenter(state);
+        ClientPetsContract.Model model = new ClientPetsModel();
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));

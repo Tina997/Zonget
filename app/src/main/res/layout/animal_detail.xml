@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/nombreAnimal"
+        android:id="@+id/nameAnimalClient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -36,7 +36,7 @@
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/especieAnimalCliente"
+            android:id="@+id/speciesAnimalClient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -66,7 +66,7 @@
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/razaAnimalCliente"
+            android:id="@+id/breedAnimalClient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -96,7 +96,7 @@
             android:text="@string/numeroChip_text_label" />
 
         <TextView
-            android:id="@+id/numeroAnimalCliente"
+            android:id="@+id/numberAnimalClient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -129,7 +129,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/fechaNacAnimalCliente"
+            android:id="@+id/birthdayAnimalClient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
