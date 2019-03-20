@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.agregarCita.AgregarCitaActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventActivity;
 
 public class AgendaAdminRouter implements AgendaAdminContract.Router {
 
@@ -39,7 +39,7 @@ public class AgendaAdminRouter implements AgendaAdminContract.Router {
     @Override
     public void navigateToAgregarCitaScreen(){
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AgregarCitaActivity.class);
+        Intent intent = new Intent(context, AddEventActivity.class);
         context.startActivity(intent);
     }
 }

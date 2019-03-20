@@ -27,10 +27,11 @@
     <string name="citas_content">Content</string>
 
     <!--agregarCita View -->
-    <string name="agregarCita_activity_name">Agregar una cita</string>
-    <string name="agregarCita_description_text">Descripción:</string>
-    <string name="agregarCita_date_text">Fecha y hora:</string>
-    <string name="agregarCita_title_text">Título:</string>
+    <string name="addEvent_activity_name">Agregar una cita</string>
+    <string name="addEvent_description_text">Descripción:</string>
+    <string name="addEvent__additional_description_text">Descripción adicional:</string>
+    <string name="addEvent_date_text">Fecha y hora:</string>
+    <string name="addEvent_title_text">Título:</string>
 
     <!--modificarCita View -->
     <string name="modificarCita_activity_name">Modificar una cita</string>

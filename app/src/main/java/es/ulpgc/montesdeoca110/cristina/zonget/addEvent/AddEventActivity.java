@@ -1,26 +1,24 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agregarCita;
+package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class AgregarCitaActivity
-        extends AppCompatActivity implements AgregarCitaContract.View {
+public class AddEventActivity
+        extends AppCompatActivity implements AddEventContract.View {
 
-    public static String TAG = AgregarCitaActivity.class.getSimpleName();
+    public static String TAG = AddEventActivity.class.getSimpleName();
 
-    private AgregarCitaContract.Presenter presenter;
+    private AddEventContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_cita);
+        setContentView(R.layout.activity_add_event);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -29,11 +27,11 @@ public class AgregarCitaActivity
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(getString(R.string.agregarCita_activity_name));
+            actionBar.setTitle(getString(R.string.addEvent_activity_name));
         }
 
         // do the setup
-        AgregarCitaScreen.configure(this);
+        AddEventScreen.configure(this);
     }
 
     @Override
@@ -45,19 +43,19 @@ public class AgregarCitaActivity
     }
 
     @Override
-    public void injectPresenter(AgregarCitaContract.Presenter presenter) {
+    public void injectPresenter(AddEventContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(AgregarCitaViewModel viewModel) {
+    public void displayData(AddEventViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data
         //((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 
-    public void aceptarCita(View view) {
-        presenter.aceptarCita();
+    public void addEvent(View view) {
+        presenter.addEvent();
     }
 }

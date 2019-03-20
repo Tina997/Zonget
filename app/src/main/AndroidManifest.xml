@@ -29,7 +29,7 @@
 
         <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
 
-        <activity android:name=".agregarCita.AgregarCitaActivity"></activity>
+        <activity android:name=".addEvent.AddEventActivity"></activity>
 
         <activity android:name=".animalCliente.AnimalDetailActivity"></activity>
 

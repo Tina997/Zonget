@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agregarCita;
+package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
 import java.lang.ref.WeakReference;
 
-interface AgregarCitaContract {
+interface AddEventContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AgregarCitaViewModel viewModel);
+        void displayData(AddEventViewModel viewModel);
     }
 
     interface Presenter {
@@ -19,7 +19,7 @@ interface AgregarCitaContract {
 
         void fetchData();
 
-        void aceptarCita();
+        void addEvent();
     }
 
     interface Model {
@@ -29,9 +29,9 @@ interface AgregarCitaContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AgregarCitaState state);
+        void passDataToNextScreen(AddEventState state);
 
-        AgregarCitaState getDataFromPreviousScreen();
+        AddEventState getDataFromPreviousScreen();
 
         void navigateToAgendaAdminScreen();
     }

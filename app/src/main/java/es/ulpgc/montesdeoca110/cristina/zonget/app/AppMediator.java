@@ -9,7 +9,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin.AgendaAdminState;
-import es.ulpgc.montesdeoca110.cristina.zonget.agregarCita.AgregarCitaState;
+import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventState;
 import es.ulpgc.montesdeoca110.cristina.zonget.modificarCita.ModificarCitaState;
 
 public class AppMediator extends Application {
@@ -29,7 +29,7 @@ public class AppMediator extends Application {
 
     private AnimalDetailState animalClientesDetailState = new AnimalDetailState();
 
-    private AgregarCitaState agregarCitaState = new AgregarCitaState();
+    private AddEventState addEventState = new AddEventState();
 
     private ModificarCitaState modificarCitaState = new ModificarCitaState();
 
@@ -109,12 +109,12 @@ public class AppMediator extends Application {
 
 
     //AgregarCita
-    public AgregarCitaState getAgregarCitaState() {
-        return agregarCitaState;
+    public AddEventState getAddEventState() {
+        return addEventState;
     }
 
-    public void setAgregarCitaState(AgregarCitaState agregarCitaState) {
-        this.agregarCitaState = agregarCitaState;
+    public void setAddEventState(AddEventState addEventState) {
+        this.addEventState = addEventState;
     }
 
     //ModificarCita

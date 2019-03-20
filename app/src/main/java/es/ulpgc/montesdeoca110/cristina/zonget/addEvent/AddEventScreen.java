@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agregarCita;
+package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
 import java.lang.ref.WeakReference;
 
@@ -6,19 +6,19 @@ import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
-public class AgregarCitaScreen {
+public class AddEventScreen {
 
-    public static void configure(AgregarCitaContract.View view) {
+    public static void configure(AddEventContract.View view) {
 
         WeakReference<FragmentActivity> context =
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        AgregarCitaState state = mediator.getAgregarCitaState();
+        AddEventState state = mediator.getAddEventState();
 
-        AgregarCitaContract.Router router = new AgregarCitaRouter(mediator);
-        AgregarCitaContract.Presenter presenter = new AgregarCitaPresenter(state);
-        AgregarCitaContract.Model model = new AgregarCitaModel();
+        AddEventContract.Router router = new AddEventRouter(mediator);
+        AddEventContract.Presenter presenter = new AddEventPresenter(state);
+        AddEventContract.Model model = new AddEventModel();
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
