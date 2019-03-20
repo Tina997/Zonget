@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AnimalesClienteListActivity
