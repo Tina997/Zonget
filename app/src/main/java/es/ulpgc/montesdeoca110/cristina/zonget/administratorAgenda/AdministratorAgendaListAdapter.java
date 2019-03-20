@@ -9,30 +9,30 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
-public class AdministratorAgendaListAdapter extends ArrayAdapter<CitaItem> {
+public class AdministratorAgendaListAdapter extends ArrayAdapter<EventItem> {
 
-    private final List<CitaItem> citaItemList;
+    private final List<EventItem> eventItemList;
     private final View.OnClickListener clickListener;
 
-    public AdministratorAgendaListAdapter(Context context, List<CitaItem> citaItemList,
+    public AdministratorAgendaListAdapter(Context context, List<EventItem> eventItemList,
                                           View.OnClickListener clickListener){
-        super(context, 0, citaItemList);
-        this.citaItemList = citaItemList;
+        super(context, 0, eventItemList);
+        this.eventItemList = eventItemList;
         this.clickListener = clickListener;
     }
 
     @Override
     public int getCount() {
-        return citaItemList.size();
+        return eventItemList.size();
     }
 
     @Override
-    public CitaItem getItem(int position) {
-        return citaItemList.get(position);
+    public EventItem getItem(int position) {
+        return eventItemList.get(position);
     }
 
     @Override
@@ -47,14 +47,14 @@ public class AdministratorAgendaListAdapter extends ArrayAdapter<CitaItem> {
         if (itemView == null) {
             itemView = LayoutInflater
                     .from(parent.getContext())
-                    .inflate(R.layout.lista_citas_content, parent, false);
+                    .inflate(R.layout.event_list_content, parent, false);
         }
 
-        itemView.setTag(citaItemList.get(position));
+        itemView.setTag(eventItemList.get(position));
         itemView.setOnClickListener(clickListener);
 
         final TextView contentView = itemView.findViewById(R.id.content);
-        contentView.setText(citaItemList.get(position).titulo);
+        contentView.setText(eventItemList.get(position).titulo);
 
         return itemView;
     }

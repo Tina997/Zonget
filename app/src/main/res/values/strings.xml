@@ -20,13 +20,13 @@
 
     <!-- SignUpConfirmation View -->
     <string name="sing_up_confirmation_welcome_text_label">Bienvenido a Zonget</string>
-    <string name="sign_up_confirmation_confirmed_email_text_label">Hemos enviado a su correo cun email de verficación.</string>
+    <string name="sign_up_confirmation_confirmed_email_text_label">Hemos enviado a su correo un email de verificación.</string>
 
     <!--agendaAdmin View -->
     <string name="agenda_activity_name">Agenda</string>
-    <string name="citas_content">Content</string>
+    <string name="event_content">Content</string>
 
-    <!--agregarCita View -->
+    <!--goToAddEvent View -->
     <string name="addEvent_activity_name">Agregar una cita</string>
     <string name="addEvent_description_text">Descripción:</string>
     <string name="addEvent__additional_description_text">Descripción adicional:</string>

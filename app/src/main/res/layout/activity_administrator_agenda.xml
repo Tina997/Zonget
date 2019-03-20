@@ -24,7 +24,7 @@
 
     <!--Botón Flotante-->
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/botonAgregarCita"
+        android:id="@+id/addEventButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:clickable="true"
@@ -35,11 +35,11 @@
         android:layout_marginLeft="330dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:tint="@color/colorPrimary"
-        android:onClick="agregarCita"/>
+        android:onClick="goToAddEvent"/>
 
     <!--Calendario-->
     <CalendarView
-        android:id="@+id/calendarAdmin"
+        android:id="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_marginTop="55dp"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         android:padding="15dp">
 
         <TextView
-            android:id="@+id/diaSeleccionado"
+            android:id="@+id/selectedDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
@@ -75,7 +75,7 @@
         android:layout_height="318dp"
         android:layout_marginTop="450dp">
 
-        <include layout="@layout/lista_citas_admin"/>
+        <include layout="@layout/administrator_event_list"/>
     </FrameLayout>
 
 

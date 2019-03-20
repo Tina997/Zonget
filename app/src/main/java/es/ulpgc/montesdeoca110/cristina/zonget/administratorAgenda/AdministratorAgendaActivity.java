@@ -18,7 +18,7 @@ public class AdministratorAgendaActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agenda_admin);
+        setContentView(R.layout.activity_administrator_agenda);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,7 +54,7 @@ public class AdministratorAgendaActivity
        // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 
-    public void agregarCita(View view) {
-        presenter.agregarCita();
+    public void goToAddEvent(View view) {
+        presenter.gotToAddEvent();
     }
 }

@@ -37,7 +37,7 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
 
     //Navegar entre pantallas
     @Override
-    public void navigateToAgregarCitaScreen(){
+    public void navigateToAddEventScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AddEventActivity.class);
         context.startActivity(intent);

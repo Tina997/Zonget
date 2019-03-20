@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 public class AdministratorAgendaPresenter implements AdministratorAgendaContract.Presenter {
 
@@ -40,7 +40,7 @@ public class AdministratorAgendaPresenter implements AdministratorAgendaContract
         if(viewModel.dateList == null){
 
             //llamar al modelo
-            List<CitaItem> data = model.fetchData();
+            List<EventItem> data = model.fetchData();
 
             viewModel.dateList = data;
         }
@@ -53,8 +53,8 @@ public class AdministratorAgendaPresenter implements AdministratorAgendaContract
 
     //Navegar a las diferentes pantallas
     @Override
-    public void agregarCita(){
-        router.navigateToAgregarCitaScreen();
+    public void gotToAddEvent(){
+        router.navigateToAddEventScreen();
     }
 
 

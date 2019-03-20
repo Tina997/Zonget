@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 interface AdministratorAgendaContract {
 
@@ -22,11 +22,11 @@ interface AdministratorAgendaContract {
 
         void fetchDateListData();
 
-        void agregarCita();
+        void gotToAddEvent();
     }
 
     interface Model {
-        List<CitaItem> fetchData();
+        List<EventItem> fetchData();
     }
 
     interface Router {
@@ -37,6 +37,6 @@ interface AdministratorAgendaContract {
         AdministratorAdministratorAgendaState getDataFromPreviousScreen();
 
         //Navegar entre pantallas
-        void navigateToAgregarCitaScreen();
+        void navigateToAddEventScreen();
     }
 }

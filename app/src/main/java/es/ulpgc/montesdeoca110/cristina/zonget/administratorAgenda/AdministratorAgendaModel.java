@@ -3,13 +3,13 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 public class AdministratorAgendaModel implements AdministratorAgendaContract.Model {
 
     public static String TAG = AdministratorAgendaModel.class.getSimpleName();
 
-    private final List<CitaItem> citaItems = new ArrayList<>();
+    private final List<EventItem> eventItems = new ArrayList<>();
     private final int COUNT = 10;
 
     public AdministratorAgendaModel() {
@@ -20,17 +20,17 @@ public class AdministratorAgendaModel implements AdministratorAgendaContract.Mod
     }
 
     @Override
-    public List<CitaItem> fetchData() {
+    public List<EventItem> fetchData() {
         // Log.e(TAG, "fetchDateListData()");
-        return citaItems;
+        return eventItems;
     }
 
-    private void addDate(CitaItem item){
-        citaItems.add(item);
+    private void addDate(EventItem item){
+        eventItems.add(item);
     }
 
-    private CitaItem createDate(int position){
+    private EventItem createDate(int position){
         String content = "Cita" + position;
-        return new CitaItem(content, position);
+        return new EventItem(content, position);
     }
 }
