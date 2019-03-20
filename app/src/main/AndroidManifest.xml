@@ -6,20 +6,20 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".App.AppMediator"
+        android:name=".app.AppMediator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity android:name=".SplashActivity"></activity>
 
-        <activity android:name=".SignIn.SignInActivity"></activity>
+        <activity android:name=".signIn.SignInActivity"></activity>
 
-        <activity android:name=".SignUp.SignUpActivity"></activity>
+        <activity android:name=".signUp.SignUpActivity"></activity>
 
-        <activity android:name=".SignUpConfirmation.SignUpConfirmationActivity"></activity>
+        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
 
-        <activity android:name=".AdministratorButtonsMenuList.AdministratorButtonsMenuListActivity">
+        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -31,9 +31,10 @@
 
         <activity android:name=".agregarCita.AgregarCitaActivity"></activity>
 
-        <activity android:name=".AnimalCliente.AnimalDetailActivity"></activity>
+        <activity android:name=".animalCliente.AnimalDetailActivity"></activity>
 
-        <activity android:name=".AnimalesCliente.AnimalesClienteListActivity"></activity>
+        <activity android:name=".animalesCliente.AnimalesClienteListActivity">
+        </activity>
     </application>
 
 </manifest>

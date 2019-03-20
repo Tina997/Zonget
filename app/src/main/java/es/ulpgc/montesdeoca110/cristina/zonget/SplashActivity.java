@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.SignIn.SignInActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

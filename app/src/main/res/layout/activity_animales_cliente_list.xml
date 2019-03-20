@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".AnimalesCliente.AnimalesClienteListActivity">
+    tools:context=".animalesCliente.AnimalesClienteListActivity">
 
     <!--AppBar y Toolbar-->
     <android.support.design.widget.AppBarLayout

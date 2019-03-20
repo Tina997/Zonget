@@ -1,9 +1,9 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.SignIn;
+package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import android.content.Intent;
 import android.content.Context;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
 public class SignInRouter implements SignInContract.Router {
 

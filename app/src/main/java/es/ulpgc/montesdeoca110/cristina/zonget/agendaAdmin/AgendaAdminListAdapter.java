@@ -5,12 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.App.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 

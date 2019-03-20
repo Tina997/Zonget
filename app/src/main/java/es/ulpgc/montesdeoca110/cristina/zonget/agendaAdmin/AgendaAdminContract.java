@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.App.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 
 interface AgendaAdminContract {
 

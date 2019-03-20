@@ -1,10 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.App.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.agregarCita.AgregarCitaActivity;
 
 public class AgendaAdminRouter implements AgendaAdminContract.Router {

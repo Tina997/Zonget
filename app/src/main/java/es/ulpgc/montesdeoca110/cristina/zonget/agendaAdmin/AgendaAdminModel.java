@@ -1,15 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
 
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
-
-import es.ulpgc.montesdeoca110.cristina.zonget.App.CitaItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 
 public class AgendaAdminModel implements AgendaAdminContract.Model {
 
