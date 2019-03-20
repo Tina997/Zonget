@@ -1,15 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
+package es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente;
 
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
