@@ -41,7 +41,11 @@ public class AppMediator extends Application {
     public void onCreate() {
         super.onCreate();
 
+        //Inicialización de los estados
         signInState = new SignInState();
+        signUpState = new SignUpState();
+        signUpConfirmationState = new SignUpConfirmationState();
+        administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
     }
     //Lista animales maestro y detalle
 
