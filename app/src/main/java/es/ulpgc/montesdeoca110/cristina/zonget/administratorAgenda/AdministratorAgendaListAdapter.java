@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,13 +13,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
-public class AgendaAdminListAdapter extends ArrayAdapter<CitaItem> {
+public class AdministratorAgendaListAdapter extends ArrayAdapter<CitaItem> {
 
     private final List<CitaItem> citaItemList;
     private final View.OnClickListener clickListener;
 
-    public AgendaAdminListAdapter(Context context, List<CitaItem> citaItemList,
-                                  View.OnClickListener clickListener){
+    public AdministratorAgendaListAdapter(Context context, List<CitaItem> citaItemList,
+                                          View.OnClickListener clickListener){
         super(context, 0, citaItemList);
         this.citaItemList = citaItemList;
         this.clickListener = clickListener;

@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import android.content.Intent;
 import android.content.Context;
@@ -6,31 +6,31 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventActivity;
 
-public class AgendaAdminRouter implements AgendaAdminContract.Router {
+public class AdministratorAgendaRouter implements AdministratorAgendaContract.Router {
 
-    public static String TAG = AgendaAdminRouter.class.getSimpleName();
+    public static String TAG = AdministratorAgendaRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
-    public AgendaAdminRouter(AppMediator mediator) {
+    public AdministratorAgendaRouter(AppMediator mediator) {
         this.mediator = mediator;
     }
 
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AgendaAdminActivity.class);
+        Intent intent = new Intent(context, AdministratorAgendaActivity.class);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(AgendaAdminState state) {
-       // mediator.setAgendaAdminState(state);
+    public void passDataToNextScreen(AdministratorAdministratorAgendaState state) {
+       // mediator.setAdministratorAgendaState(state);
     }
 
     @Override
-    public AgendaAdminState getDataFromPreviousScreen() {
-       // AgendaAdminState state = mediator.getAgendaAdminState();
+    public AdministratorAdministratorAgendaState getDataFromPreviousScreen() {
+       // AdministratorAdministratorAgendaState state = mediator.getAdministratorAgendaState();
       //  return state;
         return null;
     }

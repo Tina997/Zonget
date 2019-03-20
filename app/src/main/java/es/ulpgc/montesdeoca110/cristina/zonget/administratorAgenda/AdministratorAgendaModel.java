@@ -1,18 +1,18 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 
-public class AgendaAdminModel implements AgendaAdminContract.Model {
+public class AdministratorAgendaModel implements AdministratorAgendaContract.Model {
 
-    public static String TAG = AgendaAdminModel.class.getSimpleName();
+    public static String TAG = AdministratorAgendaModel.class.getSimpleName();
 
     private final List<CitaItem> citaItems = new ArrayList<>();
     private final int COUNT = 10;
 
-    public AgendaAdminModel() {
+    public AdministratorAgendaModel() {
         for(int index = 1; index <= COUNT; index++){
             addDate(createDate(index));
         }

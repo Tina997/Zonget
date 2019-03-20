@@ -1,16 +1,16 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 
-interface AgendaAdminContract {
+interface AdministratorAgendaContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AgendaAdminViewModel viewModel);
+        void displayData(AdministratorAgendaViewModel viewModel);
     }
 
     interface Presenter {
@@ -32,9 +32,9 @@ interface AgendaAdminContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AgendaAdminState state);
+        void passDataToNextScreen(AdministratorAdministratorAgendaState state);
 
-        AgendaAdminState getDataFromPreviousScreen();
+        AdministratorAdministratorAgendaState getDataFromPreviousScreen();
 
         //Navegar entre pantallas
         void navigateToAgregarCitaScreen();

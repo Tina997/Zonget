@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin.AgendaAdminActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaActivity;
 
 public class ModificarCitaRouter implements ModificarCitaContract.Router {
 
@@ -37,7 +37,7 @@ public class ModificarCitaRouter implements ModificarCitaContract.Router {
     @Override
     public void navigateToAgendaAdminScreen(){
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AgendaAdminActivity.class);
+        Intent intent = new Intent(context, AdministratorAgendaActivity.class);
         context.startActivity(intent);
     }
 }
