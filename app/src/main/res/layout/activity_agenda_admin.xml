@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".agendaAdmin.AgendaAdminActivity">
+    tools:context=".administratorAgenda.AdministratorAgendaActivity">
 
     <!--AppBar y Toolbar-->
     <android.support.design.widget.AppBarLayout

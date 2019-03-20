@@ -1,10 +1,10 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 
-public class AgendaAdminViewModel {
+public class AdministratorAgendaViewModel {
 
     public List<CitaItem> dateList;
 }

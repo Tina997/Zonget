@@ -2,13 +2,13 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.app.Application;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.animalCliente.AnimalDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationState;
-import es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin.AgendaAdminState;
 import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventState;
 import es.ulpgc.montesdeoca110.cristina.zonget.modificarCita.ModificarCitaState;
 
@@ -25,7 +25,7 @@ public class AppMediator extends Application {
 
     private AnimalesClienteListState animalesClienteListState = new AnimalesClienteListState();
 
-    private AgendaAdminState agendaAdminState = new AgendaAdminState();
+    private AdministratorAdministratorAgendaState administratorAgendaState = new AdministratorAdministratorAgendaState();
 
     private AnimalDetailState animalClientesDetailState = new AnimalDetailState();
 
@@ -99,12 +99,12 @@ public class AppMediator extends Application {
 
 
     //AgendaAdmin
-    public AgendaAdminState getAgendaAdminState() {
-        return agendaAdminState;
+    public AdministratorAdministratorAgendaState getAdministratorAgendaState() {
+        return administratorAgendaState;
     }
 
-    public void setAgendaAdminState(AgendaAdminState agendaAdminState) {
-        this.agendaAdminState = agendaAdminState;
+    public void setAdministratorAgendaState(AdministratorAdministratorAgendaState administratorAgendaState) {
+        this.administratorAgendaState = administratorAgendaState;
     }
 
 

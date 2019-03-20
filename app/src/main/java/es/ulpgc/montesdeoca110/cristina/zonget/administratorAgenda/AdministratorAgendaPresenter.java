@@ -1,35 +1,35 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.CitaItem;
 
-public class AgendaAdminPresenter implements AgendaAdminContract.Presenter {
+public class AdministratorAgendaPresenter implements AdministratorAgendaContract.Presenter {
 
-    public static String TAG = AgendaAdminPresenter.class.getSimpleName();
+    public static String TAG = AdministratorAgendaPresenter.class.getSimpleName();
 
-    private WeakReference<AgendaAdminContract.View> view;
-    private AgendaAdminViewModel viewModel;
-    private AgendaAdminContract.Model model;
-    private AgendaAdminContract.Router router;
+    private WeakReference<AdministratorAgendaContract.View> view;
+    private AdministratorAgendaViewModel viewModel;
+    private AdministratorAgendaContract.Model model;
+    private AdministratorAgendaContract.Router router;
 
-    public AgendaAdminPresenter(AgendaAdminState state) {
+    public AdministratorAgendaPresenter(AdministratorAdministratorAgendaState state) {
         viewModel = state;
     }
 
     @Override
-    public void injectView(WeakReference<AgendaAdminContract.View> view) {
+    public void injectView(WeakReference<AdministratorAgendaContract.View> view) {
         this.view = view;
     }
 
     @Override
-    public void injectModel(AgendaAdminContract.Model model) {
+    public void injectModel(AdministratorAgendaContract.Model model) {
         this.model = model;
     }
 
     @Override
-    public void injectRouter(AgendaAdminContract.Router router) {
+    public void injectRouter(AdministratorAgendaContract.Router router) {
         this.router = router;
     }
 

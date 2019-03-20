@@ -1,21 +1,19 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.agendaAdmin;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class AgendaAdminActivity
-        extends AppCompatActivity implements AgendaAdminContract.View {
+public class AdministratorAgendaActivity
+        extends AppCompatActivity implements AdministratorAgendaContract.View {
 
-    public static String TAG = AgendaAdminActivity.class.getSimpleName();
+    public static String TAG = AdministratorAgendaActivity.class.getSimpleName();
 
-    private AgendaAdminContract.Presenter presenter;
+    private AdministratorAgendaContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +30,7 @@ public class AgendaAdminActivity
         }
 
         // do the setup
-        AgendaAdminScreen.configure(this);
+        AdministratorAgendaScreen.configure(this);
     }
 
     @Override
@@ -44,12 +42,12 @@ public class AgendaAdminActivity
     }
 
     @Override
-    public void injectPresenter(AgendaAdminContract.Presenter presenter) {
+    public void injectPresenter(AdministratorAgendaContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(AgendaAdminViewModel viewModel) {
+    public void displayData(AdministratorAgendaViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data

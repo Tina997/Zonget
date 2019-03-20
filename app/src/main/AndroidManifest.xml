@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".agendaAdmin.AgendaAdminActivity"></activity>
+        <activity android:name=".administratorAgenda.AdministratorAgendaActivity"></activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
