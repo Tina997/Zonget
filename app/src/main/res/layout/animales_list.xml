@@ -6,7 +6,7 @@
     android:id="@+id/animal_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".animalCliente.AnimalDetailActivity"
+    tools:context=".clientPetsDetail.AnimalDetailActivity"
     tools:listitem="@layout/animales_list_content"
     android:background="@color/colorPrimaryDark"
 

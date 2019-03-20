@@ -31,9 +31,9 @@
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
-        <activity android:name=".animalCliente.AnimalDetailActivity"></activity>
+        <activity android:name=".clientPetsDetail.AnimalDetailActivity"></activity>
 
-        <activity android:name=".animalesCliente.AnimalesClienteListActivity">
+        <activity android:name=".clientPets.AnimalesClienteListActivity">
         </activity>
     </application>
 

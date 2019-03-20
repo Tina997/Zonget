@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente;
+package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
 
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;

@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente;
+package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
 
 import java.util.ArrayList;
 import java.util.List;

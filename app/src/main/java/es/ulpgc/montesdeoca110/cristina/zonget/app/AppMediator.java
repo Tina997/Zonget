@@ -4,8 +4,8 @@ import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
-import es.ulpgc.montesdeoca110.cristina.zonget.animalCliente.AnimalDetailState;
-import es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente.AnimalesClienteListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail.AnimalDetailState;
+import es.ulpgc.montesdeoca110.cristina.zonget.clientPets.AnimalesClienteListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationState;

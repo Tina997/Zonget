@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente;
+package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
 
 import android.content.Context;
 import android.view.LayoutInflater;

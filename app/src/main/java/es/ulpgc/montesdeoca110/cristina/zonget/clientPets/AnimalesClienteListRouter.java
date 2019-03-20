@@ -1,9 +1,9 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente;
+package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
 
 import android.content.Intent;
 import android.content.Context;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.animalCliente.AnimalDetailActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail.AnimalDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AnimalClientesItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
