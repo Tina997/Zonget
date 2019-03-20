@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.AdministratorButtonsMenuList;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;

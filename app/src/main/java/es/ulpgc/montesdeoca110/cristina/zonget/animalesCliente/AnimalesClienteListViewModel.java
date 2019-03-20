@@ -1,8 +1,8 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.animalesCliente;
+package es.ulpgc.montesdeoca110.cristina.zonget.AnimalesCliente;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AnimalClientesItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.App.AnimalClientesItem;
 
 public class AnimalesClienteListViewModel {
 
