@@ -1,16 +1,16 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
-interface ClientPetsContract {
+interface UserPetsContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayClientPetsData(ClientPetsViewModel viewModel);
+        void displayUserPetsData(UserPetsViewModel viewModel);
     }
 
     interface Presenter {
@@ -20,9 +20,9 @@ interface ClientPetsContract {
 
         void injectRouter(Router router);
 
-        void fetchClientPetsData();
+        void fetchUserPetsData();
 
-        void selectClientPetsData(PetsItem item);
+        void selectUserPetsData(PetsItem item);
     }
 
     interface Model {
@@ -34,6 +34,6 @@ interface ClientPetsContract {
 
         void passDataToPetsDetailScreen(PetsItem item);
 
-        ClientPetsState getDataFromPreviousScreen();
+        UserPetsState getDataFromPreviousScreen();
     }
 }

@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,11 +12,11 @@ import java.util.List;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
-public class ClientPetsAdapter extends ArrayAdapter<PetsItem> {
+public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
     private final List<PetsItem> itemList;
     private final View.OnClickListener clickListener;
 
-    public ClientPetsAdapter(Context context, List<PetsItem> itemList, View.OnClickListener clickListener) {
+    public UserPetsAdapter(Context context, List<PetsItem> itemList, View.OnClickListener clickListener) {
 
         super(context,0,itemList);
 

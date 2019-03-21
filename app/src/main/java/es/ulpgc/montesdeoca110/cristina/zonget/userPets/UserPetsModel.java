@@ -1,24 +1,18 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.clientPets;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
-public class ClientPetsModel implements ClientPetsContract.Model {
+public class UserPetsModel implements UserPetsContract.Model {
 
-    public static String TAG = ClientPetsModel.class.getSimpleName();
+    public static String TAG = UserPetsModel.class.getSimpleName();
 
     private final List<PetsItem> itemList = new ArrayList<>();
     private final int COUNT = 20;
 
-    public ClientPetsModel() {
+    public UserPetsModel() {
         for (int index = 1; index <= COUNT; index++) {
             addPet(createPet(index));
         }
@@ -31,8 +25,8 @@ public class ClientPetsModel implements ClientPetsContract.Model {
         return itemList;
     }
 
-    private void addPet(PetsItem clientPetItem) {
-        itemList.add(clientPetItem);
+    private void addPet(PetsItem userPetItem) {
+        itemList.add(userPetItem);
     }
 
     private PetsItem createPet(int posicion) {

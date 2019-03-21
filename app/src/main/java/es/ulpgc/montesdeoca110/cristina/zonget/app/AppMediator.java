@@ -4,14 +4,13 @@ import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
-import es.ulpgc.montesdeoca110.cristina.zonget.clientPets.ClientPetsState;
-//import es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail.ClientPetsDetailState;
-import es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail.ClientPetsDetailState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventState;
 import es.ulpgc.montesdeoca110.cristina.zonget.modificarCita.ModificarCitaState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailState;
 
 public class AppMediator extends Application {
 
@@ -24,11 +23,11 @@ public class AppMediator extends Application {
 
     private AdministratorButtonsMenuListState administratorButtonsMenuListState;
 
-    private ClientPetsState clientPetsState = new ClientPetsState();
+    private UserPetsState clientPetsState = new UserPetsState();
 
     private AdministratorAdministratorAgendaState administratorAgendaState = new AdministratorAdministratorAgendaState();
 
-    private ClientPetsDetailState animalClientesDetailState = new ClientPetsDetailState();
+    private UserPetsDetailState userPetDetailState = new UserPetsDetailState();
 
     private AddEventState addEventState = new AddEventState();
 
@@ -50,17 +49,17 @@ public class AppMediator extends Application {
     }
     //Lista animales maestro y detalle
 
-    public void setClientPetsState(PetsItem item) {
+    public void setUserPetsState(PetsItem item) {
         animal = item;
     }
-    public ClientPetsDetailState getClientPetsDetailState() {
-        return animalClientesDetailState;
+    public UserPetsDetailState getUserPetsDetailState() {
+        return userPetDetailState;
     }
     public PetsItem getAnimal(){
         PetsItem item = animal;
         return item;
     }
-    public ClientPetsState getClientPetsState() {
+    public UserPetsState getUserPetsState() {
         return clientPetsState;
     }
     //SignIn

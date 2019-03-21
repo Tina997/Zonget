@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".clientPetsDetail.ClientPetsDetailActivity">
+    tools:context=".userPetsDetail.UserPetsDetailActivity">
 
     <!--AppBar y Toolbar-->
     <android.support.design.widget.AppBarLayout
@@ -30,6 +30,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="50dp">
 
-        <include layout="@layout/animal_detail" />
+        <include layout="@layout/pet_detail" />
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>

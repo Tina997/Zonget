@@ -31,14 +31,14 @@
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
-        <activity android:name=".clientPets.ClientPetsActivity">
+        <activity android:name=".userPets.UserPetsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".clientPetsDetail.ClientPetsDetailActivity">
+        <activity android:name=".userPetsDetail.UserPetsDetailActivity">
 
         </activity>
     </application>

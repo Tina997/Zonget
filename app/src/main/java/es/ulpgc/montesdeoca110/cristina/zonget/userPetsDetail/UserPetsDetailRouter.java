@@ -1,31 +1,30 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.clientPetsDetail;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
-public class ClientPetsDetailRouter implements ClientPetsDetailContract.Router {
+public class UserPetsDetailRouter implements UserPetsDetailContract.Router {
 
-    public static String TAG = ClientPetsDetailRouter.class.getSimpleName();
+    public static String TAG = UserPetsDetailRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
-    public ClientPetsDetailRouter(AppMediator mediator) {
+    public UserPetsDetailRouter(AppMediator mediator) {
         this.mediator = mediator;
     }
 
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, ClientPetsDetailActivity.class);
+        Intent intent = new Intent(context, UserPetsDetailActivity.class);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(ClientPetsDetailState state) {
+    public void passDataToNextScreen(UserPetsDetailState state) {
        // mediator.setClientPetsDetailState(state);
     }
 
