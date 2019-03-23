@@ -55,7 +55,7 @@ public class AdministratorAgendaActivity
         listView.setAdapter(new AdministratorAgendaListAdapter(this, viewModel.eventList, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.showEventDetails();
+                presenter.createEventDetailsDialog();
             }
         }));;
     }

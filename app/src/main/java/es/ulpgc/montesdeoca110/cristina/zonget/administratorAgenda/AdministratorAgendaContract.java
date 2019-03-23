@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
+import android.app.AlertDialog;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -25,6 +27,8 @@ interface AdministratorAgendaContract {
         void gotToAddEvent();
 
         void showEventDetails();
+
+        void createEventDetailsDialog();
     }
 
     interface Model {
