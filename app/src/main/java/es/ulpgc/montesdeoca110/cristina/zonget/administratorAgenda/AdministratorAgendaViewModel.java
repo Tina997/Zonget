@@ -6,5 +6,5 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 public class AdministratorAgendaViewModel {
 
-    public List<EventItem> dateList;
+    public List<EventItem> eventList;
 }

@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
+import android.app.AlertDialog;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class AdministratorAgendaPresenter implements AdministratorAgendaContract
     private AdministratorAgendaContract.Model model;
     private AdministratorAgendaContract.Router router;
 
-    public AdministratorAgendaPresenter(AdministratorAdministratorAgendaState state) {
+    public AdministratorAgendaPresenter(AdministratorAgendaState state) {
         viewModel = state;
     }
 
@@ -37,17 +39,22 @@ public class AdministratorAgendaPresenter implements AdministratorAgendaContract
     public void fetchDateListData() {
         // Log.e(TAG, "fetchDateListData()");
 
-        if(viewModel.dateList == null){
+        if(viewModel.eventList == null){
 
             //llamar al modelo
             List<EventItem> data = model.fetchData();
 
-            viewModel.dateList = data;
+            viewModel.eventList = data;
         }
 
 
         //mostrar datos
         view.get().displayData(viewModel);
+
+    }
+
+    @Override
+    public void showEventDetails(){
 
     }
 

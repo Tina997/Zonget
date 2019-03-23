@@ -23,6 +23,8 @@ interface AdministratorAgendaContract {
         void fetchDateListData();
 
         void gotToAddEvent();
+
+        void showEventDetails();
     }
 
     interface Model {
@@ -32,9 +34,9 @@ interface AdministratorAgendaContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorAdministratorAgendaState state);
+        void passDataToNextScreen(AdministratorAgendaState state);
 
-        AdministratorAdministratorAgendaState getDataFromPreviousScreen();
+        AdministratorAgendaState getDataFromPreviousScreen();
 
         //Navegar entre pantallas
         void navigateToAddEventScreen();

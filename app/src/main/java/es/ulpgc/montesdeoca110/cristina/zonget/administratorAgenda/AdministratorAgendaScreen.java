@@ -14,7 +14,7 @@ public class AdministratorAgendaScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        AdministratorAdministratorAgendaState state = mediator.getAdministratorAgendaState();
+        AdministratorAgendaState state = mediator.getAdministratorAgendaState();
 
         AdministratorAgendaContract.Router router = new AdministratorAgendaRouter(mediator);
         AdministratorAgendaContract.Presenter presenter = new AdministratorAgendaPresenter(state);

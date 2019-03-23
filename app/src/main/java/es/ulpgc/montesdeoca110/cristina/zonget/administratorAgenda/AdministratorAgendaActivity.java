@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -14,6 +15,7 @@ public class AdministratorAgendaActivity
     public static String TAG = AdministratorAgendaActivity.class.getSimpleName();
 
     private AdministratorAgendaContract.Presenter presenter;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class AdministratorAgendaActivity
             actionBar.setTitle(getString(R.string.agenda_activity_name));
         }
 
+       listView = findViewById(R.id.event_list);
+
         // do the setup
         AdministratorAgendaScreen.configure(this);
     }
@@ -38,7 +42,7 @@ public class AdministratorAgendaActivity
         super.onResume();
 
         // do some work
-        //presenter.fetchData();
+        presenter.fetchDateListData();
     }
 
     @Override
@@ -48,10 +52,12 @@ public class AdministratorAgendaActivity
 
     @Override
     public void displayData(AdministratorAgendaViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
-
-        // deal with the data
-       // ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        listView.setAdapter(new AdministratorAgendaListAdapter(this, viewModel.eventList, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.showEventDetails();
+            }
+        }));;
     }
 
     public void goToAddEvent(View view) {

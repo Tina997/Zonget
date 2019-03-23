@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.app.Application;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAdministratorAgendaState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
@@ -25,7 +25,7 @@ public class AppMediator extends Application {
 
     private UserPetsState clientPetsState = new UserPetsState();
 
-    private AdministratorAdministratorAgendaState administratorAgendaState = new AdministratorAdministratorAgendaState();
+    private AdministratorAgendaState administratorAgendaState = new AdministratorAgendaState();
 
     private UserPetsDetailState userPetDetailState = new UserPetsDetailState();
 
@@ -99,11 +99,11 @@ public class AppMediator extends Application {
 
 
     //AdministratorAgenda
-    public AdministratorAdministratorAgendaState getAdministratorAgendaState() {
+    public AdministratorAgendaState getAdministratorAgendaState() {
         return administratorAgendaState;
     }
 
-    public void setAdministratorAgendaState(AdministratorAdministratorAgendaState administratorAgendaState) {
+    public void setAdministratorAgendaState(AdministratorAgendaState administratorAgendaState) {
         this.administratorAgendaState = administratorAgendaState;
     }
 
