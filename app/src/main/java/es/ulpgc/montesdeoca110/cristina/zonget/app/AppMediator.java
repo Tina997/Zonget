@@ -9,7 +9,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventState;
-import es.ulpgc.montesdeoca110.cristina.zonget.modificarCita.ModificarCitaState;
+import es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent.ModifyEventState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailState;
 
 public class AppMediator extends Application {
@@ -31,7 +31,7 @@ public class AppMediator extends Application {
 
     private AddEventState addEventState = new AddEventState();
 
-    private ModificarCitaState modificarCitaState = new ModificarCitaState();
+    private ModifyEventState modifyEventState = new ModifyEventState();
 
     //Variables de las activities
 
@@ -118,12 +118,12 @@ public class AppMediator extends Application {
     }
 
     //ModificarCita
-    public ModificarCitaState getModificarCitaState() {
-        return modificarCitaState;
+    public ModifyEventState getModifyEventState() {
+        return modifyEventState;
     }
 
-    public void setModificarCitaState(ModificarCitaState modificarCitaState) {
-        this.modificarCitaState = modificarCitaState;
+    public void setModifyEventState(ModifyEventState modifyEventState) {
+        this.modifyEventState = modifyEventState;
     }
 
 }

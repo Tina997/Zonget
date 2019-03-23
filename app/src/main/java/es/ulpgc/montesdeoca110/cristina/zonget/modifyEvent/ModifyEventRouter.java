@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.modificarCita;
+package es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent;
 
 import android.content.Intent;
 import android.content.Context;
@@ -6,31 +6,31 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaActivity;
 
-public class ModificarCitaRouter implements ModificarCitaContract.Router {
+public class ModifyEventRouter implements ModifyEventContract.Router {
 
-    public static String TAG = ModificarCitaRouter.class.getSimpleName();
+    public static String TAG = ModifyEventRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
-    public ModificarCitaRouter(AppMediator mediator) {
+    public ModifyEventRouter(AppMediator mediator) {
         this.mediator = mediator;
     }
 
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, ModificarCitaActivity.class);
+        Intent intent = new Intent(context, ModifyEventActivity.class);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(ModificarCitaState state) {
-        mediator.setModificarCitaState(state);
+    public void passDataToNextScreen(ModifyEventState state) {
+        mediator.setModifyEventState(state);
     }
 
     @Override
-    public ModificarCitaState getDataFromPreviousScreen() {
-        ModificarCitaState state = mediator.getModificarCitaState();
+    public ModifyEventState getDataFromPreviousScreen() {
+        ModifyEventState state = mediator.getModifyEventState();
         return state;
     }
 

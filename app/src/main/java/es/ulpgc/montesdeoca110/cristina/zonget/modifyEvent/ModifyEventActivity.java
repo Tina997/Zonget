@@ -1,26 +1,24 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.modificarCita;
+package es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class ModificarCitaActivity
-        extends AppCompatActivity implements ModificarCitaContract.View {
+public class ModifyEventActivity
+        extends AppCompatActivity implements ModifyEventContract.View {
 
-    public static String TAG = ModificarCitaActivity.class.getSimpleName();
+    public static String TAG = ModifyEventActivity.class.getSimpleName();
 
-    private ModificarCitaContract.Presenter presenter;
+    private ModifyEventContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificar_cita);
+        setContentView(R.layout.activity_modify_event);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -32,7 +30,7 @@ public class ModificarCitaActivity
         }
 
         // do the setup
-        ModificarCitaScreen.configure(this);
+        ModifyEventScreen.configure(this);
     }
 
     @Override
@@ -44,12 +42,12 @@ public class ModificarCitaActivity
     }
 
     @Override
-    public void injectPresenter(ModificarCitaContract.Presenter presenter) {
+    public void injectPresenter(ModifyEventContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(ModificarCitaViewModel viewModel) {
+    public void displayData(ModifyEventViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data

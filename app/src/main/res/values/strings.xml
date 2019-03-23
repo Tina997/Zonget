@@ -22,14 +22,14 @@
     <string name="sing_up_confirmation_welcome_text_label">Bienvenido a Zonget</string>
     <string name="sign_up_confirmation_confirmed_email_text_label">Hemos enviado a su correo un email de verificación.</string>
 
-    <!--agendaAdmin View -->
+    <!--AdministratorAgenda View -->
     <string name="agenda_activity_name">Agenda</string>
     <string name="event_content">Content</string>
 
-    <!--goToAddEvent View -->
+    <!--AddEvent View -->
     <string name="addEvent_activity_name">Agregar una cita</string>
     <string name="addEvent_description_text">Descripción:</string>
-    <string name="addEvent__additional_description_text">Descripción adicional:</string>
+    <string name="addEvent_additional_description_text">Descripción adicional:</string>
     <string name="addEvent_date_text">Fecha y hora:</string>
     <string name="addEvent_title_text">Título:</string>
 

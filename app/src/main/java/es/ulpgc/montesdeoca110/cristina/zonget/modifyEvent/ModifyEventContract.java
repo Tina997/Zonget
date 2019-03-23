@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.modificarCita;
+package es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent;
 
 import java.lang.ref.WeakReference;
 
-interface ModificarCitaContract {
+interface ModifyEventContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(ModificarCitaViewModel viewModel);
+        void displayData(ModifyEventViewModel viewModel);
     }
 
     interface Presenter {
@@ -29,9 +29,9 @@ interface ModificarCitaContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(ModificarCitaState state);
+        void passDataToNextScreen(ModifyEventState state);
 
-        ModificarCitaState getDataFromPreviousScreen();
+        ModifyEventState getDataFromPreviousScreen();
 
         void navigateToAgendaAdminScreen();
     }

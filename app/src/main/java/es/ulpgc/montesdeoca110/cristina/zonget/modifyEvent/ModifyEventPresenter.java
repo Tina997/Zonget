@@ -1,34 +1,32 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.modificarCita;
-
-import android.util.Log;
+package es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent;
 
 import java.lang.ref.WeakReference;
 
-public class ModificarCitaPresenter implements ModificarCitaContract.Presenter {
+public class ModifyEventPresenter implements ModifyEventContract.Presenter {
 
-    public static String TAG = ModificarCitaPresenter.class.getSimpleName();
+    public static String TAG = ModifyEventPresenter.class.getSimpleName();
 
-    private WeakReference<ModificarCitaContract.View> view;
-    private ModificarCitaViewModel viewModel;
-    private ModificarCitaContract.Model model;
-    private ModificarCitaContract.Router router;
+    private WeakReference<ModifyEventContract.View> view;
+    private ModifyEventViewModel viewModel;
+    private ModifyEventContract.Model model;
+    private ModifyEventContract.Router router;
 
-    public ModificarCitaPresenter(ModificarCitaState state) {
+    public ModifyEventPresenter(ModifyEventState state) {
         viewModel = state;
     }
 
     @Override
-    public void injectView(WeakReference<ModificarCitaContract.View> view) {
+    public void injectView(WeakReference<ModifyEventContract.View> view) {
         this.view = view;
     }
 
     @Override
-    public void injectModel(ModificarCitaContract.Model model) {
+    public void injectModel(ModifyEventContract.Model model) {
         this.model = model;
     }
 
     @Override
-    public void injectRouter(ModificarCitaContract.Router router) {
+    public void injectRouter(ModifyEventContract.Router router) {
         this.router = router;
     }
 
@@ -37,7 +35,7 @@ public class ModificarCitaPresenter implements ModificarCitaContract.Presenter {
         // Log.e(TAG, "fetchDateListData()");
 
         // set passed state
-        ModificarCitaState state = router.getDataFromPreviousScreen();
+        ModifyEventState state = router.getDataFromPreviousScreen();
         if (state != null) {
             viewModel.data = state.data;
         }
