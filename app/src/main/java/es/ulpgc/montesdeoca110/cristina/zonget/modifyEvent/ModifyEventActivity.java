@@ -26,7 +26,7 @@ public class ModifyEventActivity
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(getString(R.string.modificarCita_activity_name));
+            actionBar.setTitle(getString(R.string.modifyEvent_activity_name));
         }
 
         // do the setup
@@ -54,7 +54,7 @@ public class ModifyEventActivity
        //((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 
-    public void modificarCita(View view) {
-        presenter.modificarCita();
+    public void modifyEvent(View view) {
+        presenter.modifyEvent();
     }
 }

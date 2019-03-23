@@ -32,12 +32,15 @@
     <string name="addEvent_additional_description_text">Descripción adicional:</string>
     <string name="addEvent_date_text">Fecha y hora:</string>
     <string name="addEvent_title_text">Título:</string>
+    <string name="addEvent_button_text">Aceptar</string>
 
-    <!--modificarCita View -->
-    <string name="modificarCita_activity_name">Modificar una cita</string>
-    <string name="modificarCita_description_text">Descripción:</string>
-    <string name="modificarCita_date_text">Fecha y hora:</string>
-    <string name="modificarCita_title_text">Título:</string>
+    <!--ModifyEvent View -->
+    <string name="modifyEvent_activity_name">Modificar una cita</string>
+    <string name="modifyEvent_description_text">Descripción:</string>
+    <string name="modifyEvent_additional_description_text">Descripción adicional:</string>
+    <string name="modifyEvent_date_text">Fecha y hora:</string>
+    <string name="modifyEvent_title_text">Título:</string>
+    <string name="modifyEvent_button_text">Aceptar</string>
 
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
@@ -46,7 +49,7 @@
     <string name="raza_text_label">Raza:</string>
     <string name="numeroChip_text_label">Nº de chip:</string>
     <string name="fechaNac_text_label">Fecha de nacimiento:</string>
-    <string name="agregarCita_button_text">Aceptar</string>
+
 
     <!--AnimalListClient View-->
 

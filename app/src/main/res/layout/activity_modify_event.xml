@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:paddingBottom="16dp">
+    android:paddingBottom="16dp"
+    android:orientation="vertical">
 
     <!--AppBar y Toolbar-->
     <android.support.design.widget.AppBarLayout
@@ -21,19 +22,22 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
     <LinearLayout
         android:id="@+id/titleContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/modificarCita_title_text"
+            android:text="@string/modifyEvent_title_text"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
@@ -46,34 +50,64 @@
             android:background="@color/colorPrimaryDark"
             android:ems="10"
             android:inputType="textShortMessage"
-            android:textColor="@color/colorAccent"
-            android:padding="5px"/>
+            android:padding="5px"
+            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <LinearLayout
         android:id="@+id/descriptionContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="120dp"
+        android:orientation="horizontal"
         android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/modificarCita_description_text"
+            android:text="@string/modifyEvent_description_text"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
-        <EditText
+        <Spinner
+            android:layout_width="277dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/colorPrimaryDark"></Spinner>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/additionalDescriptionContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/modifyEvent_additional_description_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/descriptionEditText"
-            android:layout_width="351dp"
-            android:layout_height="135dp"
+            android:layout_width="372dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:layout_gravity="center"
             android:background="@color/colorPrimaryDark"
             android:ems="10"
             android:inputType="textShortMessage"
@@ -82,56 +116,60 @@
 
     </LinearLayout>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
     <LinearLayout
         android:id="@+id/dateContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="320dp"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/modificarCita_date_text"
+            android:text="@string/modifyEvent_date_text"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <DatePicker
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="85dp"
             android:layout_gravity="center"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:calendarTextColor="@color/colorPrimaryDark"
+            android:layout_marginTop="10dp"
             android:background="@color/colorAccent"
-            android:layout_marginTop="10dp"></DatePicker>
+            android:calendarTextColor="@color/colorPrimaryDark"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"></DatePicker>
 
         <TimePicker
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:timePickerMode="spinner"
+            android:layout_height="85dp"
             android:layout_gravity="center"
-            android:numbersTextColor="@color/colorPrimaryDark"
+            android:layout_marginTop="10dp"
             android:background="@color/colorAccent"
-            android:layout_marginTop="10dp"></TimePicker>
-
-
+            android:numbersTextColor="@color/colorPrimaryDark"
+            android:timePickerMode="spinner"></TimePicker>
 
 
     </LinearLayout>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
     <Button
-        android:id="@+id/aceptButton"
+        android:id="@+id/acceptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/agregarCita_button_text"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorPrimary"
-        android:layout_gravity="bottom"
         android:layout_marginLeft="160dp"
-        android:onClick="modificarCita"/>
+        android:background="@color/colorPrimaryDark"
+        android:onClick="modifyEvent"
+        android:text="@string/modifyEvent_button_text"
+        android:textColor="@color/colorPrimary" />
 
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

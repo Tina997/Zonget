@@ -98,7 +98,7 @@ public class AppMediator extends Application {
     }
 
 
-    //AgendaAdmin
+    //AdministratorAgenda
     public AdministratorAdministratorAgendaState getAdministratorAgendaState() {
         return administratorAgendaState;
     }
@@ -108,7 +108,7 @@ public class AppMediator extends Application {
     }
 
 
-    //AgregarCita
+    //AddEvent
     public AddEventState getAddEventState() {
         return addEventState;
     }
@@ -117,7 +117,7 @@ public class AppMediator extends Application {
         this.addEventState = addEventState;
     }
 
-    //ModificarCita
+    //ModifyEvent
     public ModifyEventState getModifyEventState() {
         return modifyEventState;
     }

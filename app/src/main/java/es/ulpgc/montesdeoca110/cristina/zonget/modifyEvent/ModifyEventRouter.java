@@ -35,7 +35,7 @@ public class ModifyEventRouter implements ModifyEventContract.Router {
     }
 
     @Override
-    public void navigateToAgendaAdminScreen(){
+    public void navigateToAdministratorAgendaScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorAgendaActivity.class);
         context.startActivity(intent);

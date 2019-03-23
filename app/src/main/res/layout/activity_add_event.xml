@@ -168,7 +168,7 @@
         android:layout_marginLeft="160dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="addEvent"
-        android:text="@string/agregarCita_button_text"
+        android:text="@string/addEvent_button_text"
         android:textColor="@color/colorPrimary" />
 
 

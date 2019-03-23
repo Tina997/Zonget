@@ -19,7 +19,7 @@ interface ModifyEventContract {
 
         void fetchData();
 
-        void modificarCita();
+        void modifyEvent();
     }
 
     interface Model {
@@ -33,6 +33,6 @@ interface ModifyEventContract {
 
         ModifyEventState getDataFromPreviousScreen();
 
-        void navigateToAgendaAdminScreen();
+        void navigateToAdministratorAgendaScreen();
     }
 }
