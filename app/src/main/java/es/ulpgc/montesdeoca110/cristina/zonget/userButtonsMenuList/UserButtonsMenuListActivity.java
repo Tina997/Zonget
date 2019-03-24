@@ -57,6 +57,14 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.user_appbar_buttons_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel) {
 
         // deal with the data
