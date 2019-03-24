@@ -24,7 +24,7 @@
     <FrameLayout
         android:id="@+id/user_buttons_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="462dp"
+        android:layout_height="442dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -33,16 +33,33 @@
         <include
             layout="@layout/user_buttons_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="442dp" />
     </FrameLayout>
 
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginBottom="20dp"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/logo_oscuro_completo" />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo_oscuro_completo" />
+
+        <Button
+            android:id="@+id/user_ask_date_button_user_buttons_menu_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/user_ask_date_user_buttons_menu_list_label"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
 
 </LinearLayout>

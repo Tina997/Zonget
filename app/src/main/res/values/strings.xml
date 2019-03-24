@@ -22,6 +22,9 @@
     <string name="sing_up_confirmation_welcome_text_label">Bienvenido a Zonget</string>
     <string name="sign_up_confirmation_confirmed_email_text_label">Hemos enviado a su correo un email de verificación.</string>
 
+    <!-- UserButtonsMenuList View -->
+    <string name="user_ask_date_user_buttons_menu_list_label">Pedir cita</string>
+
     <!--AdministratorAgenda View -->
     <string name="agenda_activity_name">Agenda</string>
     <string name="event_content">Content</string>
@@ -56,6 +59,7 @@
     <string name="insert_DNI_name_text_label">Nombre completo o DNI:</string>
     <string name="insert_DNI_name_text_input">Inserte nombre o DNI</string>
     <string name="search">Buscar</string>
+
 
 
 </resources>

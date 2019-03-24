@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -24,6 +25,7 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     //Elementos de la vista
     private Toolbar user_menu_toolbar;
     private GridView user_buttons_grid_view;
+    private Button user_ask_date_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,15 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         actionBar.setTitle("Menú");
 
         user_buttons_grid_view = findViewById(R.id.user_buttons_menu_list);
+        user_ask_date_button = findViewById(R.id.user_ask_date_button_user_buttons_menu_list);
+
+        //Botón
+        user_ask_date_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO Llamar al presenter
+            }
+        });
 
         // do the setup
         UserButtonsMenuListScreen.configure(this);
