@@ -8,6 +8,5 @@
     android:layout_height="match_parent"
     tools:context=".userPetsDetail.UserPetsDetailActivity"
     tools:listitem="@layout/pets_list_content"
-    android:background="@color/colorPrimaryDark"
 
      />
