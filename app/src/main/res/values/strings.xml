@@ -59,7 +59,7 @@
     <string name="insert_DNI_name_text_label">Nombre completo o DNI:</string>
     <string name="insert_DNI_name_text_input">Inserte nombre o DNI</string>
     <string name="search">Buscar</string>
-
+    <string name="new_query_text_view">Nueva Consulta</string>
 
 
 </resources>
