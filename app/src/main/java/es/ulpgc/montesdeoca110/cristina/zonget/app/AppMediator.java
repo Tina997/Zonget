@@ -43,6 +43,7 @@ public class AppMediator extends Application {
 
     private PetsItem animal;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
