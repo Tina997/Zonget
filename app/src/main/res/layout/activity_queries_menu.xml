@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".queriesMenu.QueriesMenuActivity">
@@ -11,14 +12,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:background="@color/colorPrimaryDark"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="60dp"
+            android:layout_width="152dp"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo_claro" />
+
+        <TextView
+            android:layout_width="216dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:text="@string/new_query_text_view"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="5dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/logo_claro" />
 
@@ -27,9 +57,72 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_vertical"
-            android:text="@string/new_query_text_view"
+            android:text="@string/pending_queries_text_view"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/pending_queries_counter_text_view"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:elevation="100dp"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo_claro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:text="@string/finished_queries_text_view"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/finished_queries_counter_text_view"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:elevation="100dp"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
 

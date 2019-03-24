@@ -25,6 +25,11 @@
     <!-- UserButtonsMenuList View -->
     <string name="user_ask_date_user_buttons_menu_list_label">Pedir cita</string>
 
+    <!-- QueriesMenu View -->
+    <string name="new_query_text_view">Nueva Consulta</string>
+    <string name="pending_queries_text_view">Pendientes</string>
+    <string name="finished_queries_text_view">Finalizadas</string>
+
     <!--AdministratorAgenda View -->
     <string name="agenda_activity_name">Agenda</string>
     <string name="event_content">Content</string>
@@ -59,7 +64,5 @@
     <string name="insert_DNI_name_text_label">Nombre completo o DNI:</string>
     <string name="insert_DNI_name_text_input">Inserte nombre o DNI</string>
     <string name="search">Buscar</string>
-    <string name="new_query_text_view">Nueva Consulta</string>
-
 
 </resources>
