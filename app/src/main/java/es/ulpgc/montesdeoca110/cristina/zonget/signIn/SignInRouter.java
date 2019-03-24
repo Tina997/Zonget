@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpActivity;
 
 public class SignInRouter implements SignInContract.Router {
 
@@ -32,4 +33,5 @@ public class SignInRouter implements SignInContract.Router {
         SignInState state = mediator.getSignInState();
         return state;
     }
+
 }

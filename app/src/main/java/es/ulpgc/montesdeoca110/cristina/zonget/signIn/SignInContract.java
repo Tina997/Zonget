@@ -18,6 +18,12 @@ interface SignInContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void signInButtonPressed();
+
+        void signUpButtonPressed();
+
+        void askDateButtonPressed();
     }
 
     interface Model {
@@ -30,5 +36,6 @@ interface SignInContract {
         void passDataToNextScreen(SignInState state);
 
         SignInState getDataFromPreviousScreen();
+
     }
 }

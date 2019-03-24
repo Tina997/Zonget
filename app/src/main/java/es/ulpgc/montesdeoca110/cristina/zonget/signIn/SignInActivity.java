@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +31,29 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         signInButton = findViewById(R.id.signInButton);
         signUpButton = findViewById(R.id.signUpButton);
         askDateButton = findViewById(R.id.askDateButton);
+
+        //Botones
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.signInButtonPressed();
+            }
+        });
+
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.signUpButtonPressed();
+            }
+        });
+
+        askDateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.askDateButtonPressed();
+            }
+        });
+
 
         // do the setup
         SignInScreen.configure(this);

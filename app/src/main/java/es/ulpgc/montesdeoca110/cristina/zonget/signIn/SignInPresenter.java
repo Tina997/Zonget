@@ -53,5 +53,20 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     }
 
+    @Override
+    public void signInButtonPressed() {
+
+    }
+
+    @Override
+    public void signUpButtonPressed() {
+
+    }
+
+    @Override
+    public void askDateButtonPressed() {
+
+    }
+
 
 }
