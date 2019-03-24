@@ -45,7 +45,7 @@ public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
         if (itemView == null) {
             itemView = LayoutInflater
                     .from(parent.getContext())
-                    .inflate(R.layout.animales_list_content, parent, false);
+                    .inflate(R.layout.pets_list_content, parent, false);
         }
 
         itemView.setTag(itemList.get(position));
