@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+
 public class AdministratorInboxScreen {
 
     public static void configure(AdministratorInboxContract.View view) {

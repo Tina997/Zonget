@@ -4,6 +4,8 @@ import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
@@ -32,6 +34,8 @@ public class AppMediator extends Application {
     private AddEventState addEventState = new AddEventState();
 
     private ModifyEventState modifyEventState = new ModifyEventState();
+
+    private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
 
     //Variables de las activities
 
@@ -125,5 +129,15 @@ public class AppMediator extends Application {
     public void setModifyEventState(ModifyEventState modifyEventState) {
         this.modifyEventState = modifyEventState;
     }
+
+    //AdministratorInbox
+    public AdministratorInboxState getAdministratorInboxState() {
+        return administratorInboxState;
+    }
+
+    public void setAdministratorInboxState(AdministratorInboxState administratorInboxState) {
+        this.administratorInboxState = administratorInboxState;
+    }
+
 
 }

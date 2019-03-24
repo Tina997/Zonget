@@ -1,7 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -18,6 +20,15 @@ public class AdministratorInboxActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator_inbox);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Show the title in the action bar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(getString(R.string.administrator_inbox_activity_name));
+        }
 
         // do the setup
         AdministratorInboxScreen.configure(this);
@@ -40,7 +51,5 @@ public class AdministratorInboxActivity
     public void displayData(AdministratorInboxViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
-        // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
     }
 }

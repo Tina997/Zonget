@@ -33,6 +33,8 @@
 
         <activity android:name=".modifyEvent.ModifyEventActivity"></activity>
 
+        <activity android:name=".administratorInbox.AdministratorInboxActivity"></activity>
+
         <activity android:name=".userPets.UserPetsActivity">
 
         </activity>

@@ -4,6 +4,8 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+
 public class AdministratorInboxRouter implements AdministratorInboxContract.Router {
 
     public static String TAG = AdministratorInboxRouter.class.getSimpleName();

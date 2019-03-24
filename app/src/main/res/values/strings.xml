@@ -42,6 +42,9 @@
     <string name="modifyEvent_title_text">Título:</string>
     <string name="modifyEvent_button_text">Aceptar</string>
 
+    <!--AdministratorInbox View -->
+    <string name="administrator_inbox_activity_name">Consultas</string>
+
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
     <string name="nombre_text_label">Nombre</string>
