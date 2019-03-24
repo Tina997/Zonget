@@ -29,7 +29,7 @@ public class AdministratorButtonsMenuListModel implements AdministratorButtonsMe
 
     private AdministratorButtonMenuItem createAdministratorButtonMenuItem(int position){
         String content = "Button" + position;
-        int image_id = R.drawable.logo_oscuro_completo;
+        int image_id = R.drawable.logo_claro_completo;
         return new AdministratorButtonMenuItem(position,content,image_id);
     }
 }

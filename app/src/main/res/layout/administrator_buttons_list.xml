@@ -6,6 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:horizontalSpacing="5dp"
     android:numColumns="2"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="5dp"
     tools:context=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"
     tools:listitem="@layout/administrator_buttons_list_content" />

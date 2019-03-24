@@ -25,17 +25,24 @@
     <FrameLayout
         android:id="@+id/administrator_buttons_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="514dp"
-        android:layout_margin="20dp">
+        android:layout_height="462dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp">
 
         <include
-            layout="@layout/administrator_buttons_list"/>
+            layout="@layout/administrator_buttons_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </FrameLayout>
 
     <ImageView
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/logo_oscuro_completo" />
 

@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
@@ -56,6 +58,14 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.administrator_appbar_buttons_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel) {
 
         // deal with the data
@@ -72,14 +82,22 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         );
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
-            return true;
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_sign_out:
+                return true;
+            case R.id.action_settings:
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    NavUtils.navigateUpFromSameTask(this);
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
+
 }
