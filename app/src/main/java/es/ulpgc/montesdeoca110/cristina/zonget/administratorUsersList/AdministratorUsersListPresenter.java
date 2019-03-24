@@ -33,7 +33,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
     }
 
     @Override
-    public void fetchData() {
+    public void fetchAdminUsersData() {
         // Log.e(TAG, "fetchData()");
 
         // set passed state

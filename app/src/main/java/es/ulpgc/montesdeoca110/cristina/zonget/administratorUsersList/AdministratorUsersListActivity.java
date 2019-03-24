@@ -1,15 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList;
 
+import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
+import android.view.MenuItem;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
 
 public class AdministratorUsersListActivity
         extends AppCompatActivity implements AdministratorUsersListContract.View {
@@ -23,7 +24,7 @@ public class AdministratorUsersListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator_users_list);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAnimalesCliente);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAdminUsers);
         setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el titulo en la action bar
@@ -44,7 +45,7 @@ public class AdministratorUsersListActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        presenter.fetchAdminUsersData();
     }
 
     @Override
@@ -57,5 +58,14 @@ public class AdministratorUsersListActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            navigateUpTo(new Intent(this, AdministratorSearchUsersActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
