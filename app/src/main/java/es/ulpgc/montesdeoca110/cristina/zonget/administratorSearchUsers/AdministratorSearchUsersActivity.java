@@ -1,13 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
+import android.annotation.SuppressLint;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -17,7 +20,8 @@ public class AdministratorSearchUsersActivity
     public static String TAG = AdministratorSearchUsersActivity.class.getSimpleName();
 
     private AdministratorSearchUsersContract.Presenter presenter;
-    private Button searchButton;
+    Button searchButton;
+    EditText dataSearched;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,8 @@ public class AdministratorSearchUsersActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Clientes");
         }
-        searchButton = findViewById(R.id.buttonUserSearch);
+        dataSearched = findViewById(R.id.user_name_edit_text);
+        searchButton = (Button) findViewById(R.id.buttonUserSearch);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +66,6 @@ public class AdministratorSearchUsersActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

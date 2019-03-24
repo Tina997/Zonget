@@ -29,8 +29,8 @@ interface AdministratorSearchUsersContract {
     interface Router {
         void navigateToNextScreen();
 
-       /* void passDataToNextScreen(AdministratorSearchUsersState state);
+        void passDataToNextScreen(AdministratorSearchUsersState state);
 
-        AdministratorSearchUsersState getDataFromPreviousScreen();*/
+        AdministratorSearchUsersState getDataFromPreviousScreen();
     }
 }

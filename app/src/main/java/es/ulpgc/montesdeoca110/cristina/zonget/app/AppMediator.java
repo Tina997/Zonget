@@ -6,6 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.Administrator
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
@@ -37,6 +38,7 @@ public class AppMediator extends Application {
 
     private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
 
+    private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
     //Variables de las activities
 
     private PetsItem animal;
@@ -129,7 +131,13 @@ public class AppMediator extends Application {
     public void setModifyEventState(ModifyEventState modifyEventState) {
         this.modifyEventState = modifyEventState;
     }
-
+    //AdministratorSearchUsers
+    public AdministratorSearchUsersState getadminSearchUsersState() {
+        return administratorSearchUserState;
+    }
+    public void setadminSearchUsersState(AdministratorSearchUsersState state) {
+        administratorSearchUserState = state;
+    }
     //AdministratorInbox
     public AdministratorInboxState getAdministratorInboxState() {
         return administratorInboxState;
@@ -138,6 +146,7 @@ public class AppMediator extends Application {
     public void setAdministratorInboxState(AdministratorInboxState administratorInboxState) {
         this.administratorInboxState = administratorInboxState;
     }
+
 
 
 }

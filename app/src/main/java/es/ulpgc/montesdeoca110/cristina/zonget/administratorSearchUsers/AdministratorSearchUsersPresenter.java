@@ -35,8 +35,8 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
         // Log.e(TAG, "fetchData()");
 
         // set passed state
-       /* AdministratorSearchUsersState state = router.getDataFromPreviousScreen();
-        if (state != null) {
+        AdministratorSearchUsersState state = router.getDataFromPreviousScreen();
+        /*if (state != null) {
             viewModel.data = state.data;
         }
 
@@ -46,15 +46,17 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
 
             // set initial state
             viewModel.data = data;
-        }
+        }*/
 
         // update the view
-        view.get().displayData(viewModel);*/
+        view.get().displayData(viewModel);
 
     }
 
     @Override
     public void searchButtonClicked() {
+        AdministratorSearchUsersState state= new AdministratorSearchUsersState(viewModel.dataSearched);
+        router.passDataToNextScreen(state);
         router.navigateToNextScreen();
     }
 

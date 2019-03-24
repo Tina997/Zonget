@@ -20,10 +20,11 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, UserPetsActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
-    /*@Override
+    @Override
     public void passDataToNextScreen(AdministratorSearchUsersState state) {
         mediator.setadminSearchUsersState(state);
     }
@@ -32,5 +33,5 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
     public AdministratorSearchUsersState getDataFromPreviousScreen() {
         AdministratorSearchUsersState state = mediator.getadminSearchUsersState();
         return state;
-    }*/
+    }
 }

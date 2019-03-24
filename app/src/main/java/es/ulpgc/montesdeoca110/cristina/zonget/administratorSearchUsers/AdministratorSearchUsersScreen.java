@@ -14,16 +14,16 @@ public class AdministratorSearchUsersScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        //AdministratorSearchUsersState state = mediator.getadminSearchUsersState();
+        AdministratorSearchUsersState state = mediator.getadminSearchUsersState();
 
         AdministratorSearchUsersContract.Router router = new AdministratorSearchUsersRouter(mediator);
-        //AdministratorSearchUsersContract.Presenter presenter = new AdministratorSearchUsersPresenter(state);
+        AdministratorSearchUsersContract.Presenter presenter = new AdministratorSearchUsersPresenter(state);
         AdministratorSearchUsersContract.Model model = new AdministratorSearchUsersModel();
-        /*presenter.injectModel(model);
+        presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);*/
+        view.injectPresenter(presenter);
 
     }
 }

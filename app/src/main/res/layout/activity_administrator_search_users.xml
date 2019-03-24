@@ -23,6 +23,8 @@
             app:titleTextColor="@color/colorPrimary"></android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -32,17 +34,18 @@
         android:textColor="@color/colorBlack"
         android:textSize="30dp"
         android:text="Buscar clientes" />
+
     <TextView
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="300dp"
         android:gravity="center_vertical"
         android:text="@string/insert_DNI_name_text_label"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:layout_marginLeft="10dp"/>
+        android:textSize="18sp" />
 
-    <EditText
+    <android.support.design.widget.TextInputEditText
         android:id="@+id/user_name_edit_text"
         android:layout_width="279dp"
         android:layout_height="61dp"
@@ -52,7 +55,7 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/insert_DNI_name_text_input"
+        android:hint="@string/insert_DNI_name_text_input"
         android:textColor="@color/colorPrimaryDark" />
 
     <Button
