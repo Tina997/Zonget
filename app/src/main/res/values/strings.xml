@@ -49,8 +49,10 @@
     <string name="raza_text_label">Raza:</string>
     <string name="numeroChip_text_label">Nº de chip:</string>
     <string name="fechaNac_text_label">Fecha de nacimiento:</string>
+    <!--AdminSearchUser View -->
+    <string name="insert_DNI_name_text_label">Nombre completo o DNI:</string>
+    <string name="insert_DNI_name_text_input">Inserte nombre o DNI</string>
+    <string name="search">Buscar</string>
 
-
-    <!--AnimalListClient View-->
 
 </resources>
