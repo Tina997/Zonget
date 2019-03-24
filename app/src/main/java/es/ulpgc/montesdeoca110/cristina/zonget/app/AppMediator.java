@@ -8,6 +8,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorI
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
@@ -26,6 +28,8 @@ public class AppMediator extends Application {
     private SignUpConfirmationState signUpConfirmationState;
 
     private AdministratorButtonsMenuListState administratorButtonsMenuListState;
+
+    private UserButtonsMenuListState userButtonsMenuListState;
 
     private UserPetsState clientPetsState = new UserPetsState();
 
@@ -57,6 +61,7 @@ public class AppMediator extends Application {
         signUpState = new SignUpState();
         signUpConfirmationState = new SignUpConfirmationState();
         administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
+        userButtonsMenuListState = new UserButtonsMenuListState();
     }
     //Lista animales maestro y detalle
 
@@ -108,6 +113,14 @@ public class AppMediator extends Application {
         this.administratorButtonsMenuListState = administratorButtonsMenuListState;
     }
 
+    //UserButtonsMenuList
+    public UserButtonsMenuListState getUserButtonsMenuListState() {
+        return userButtonsMenuListState;
+    }
+
+    public void setUserButtonsMenuListState(UserButtonsMenuListState userButtonsMenuListState) {
+        this.userButtonsMenuListState = userButtonsMenuListState;
+    }
 
     //AdministratorAgenda
     public AdministratorAgendaState getAdministratorAgendaState() {
