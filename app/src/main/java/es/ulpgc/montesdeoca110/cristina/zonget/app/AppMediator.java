@@ -7,6 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.Admi
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
@@ -39,9 +40,12 @@ public class AppMediator extends Application {
     private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
 
     private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
+    private AdministratorUsersListState administratorUsersListState;
+
     //Variables de las activities
 
     private PetsItem animal;
+
 
 
     @Override
@@ -136,8 +140,8 @@ public class AppMediator extends Application {
     public AdministratorSearchUsersState getadminSearchUsersState() {
         return administratorSearchUserState;
     }
-    public void setadminSearchUsersState(AdministratorSearchUsersState state) {
-        administratorSearchUserState = state;
+    public void setadminSearchUsersState(AdministratorSearchUsersState administratorSearchUsersState) {
+        administratorSearchUserState = administratorSearchUsersState;
     }
     //AdministratorInbox
     public AdministratorInboxState getAdministratorInboxState() {
@@ -148,6 +152,12 @@ public class AppMediator extends Application {
         this.administratorInboxState = administratorInboxState;
     }
 
+    //UsersList
+    public void setAdministratorUsersListState(AdministratorUsersListState administratorUsersListState) {
+        this.administratorUsersListState = administratorUsersListState;
+    }
 
-
+    public AdministratorUsersListState getAdministratorUsersListState() {
+    return administratorUsersListState;
+    }
 }
