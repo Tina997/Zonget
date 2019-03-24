@@ -17,7 +17,7 @@ interface AdministratorUsersListContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchAdminUsersData();
     }
 
     interface Model {
