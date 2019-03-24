@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+
 public class UserButtonsMenuListScreen {
 
     public static void configure(UserButtonsMenuListContract.View view) {
