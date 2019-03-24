@@ -31,6 +31,8 @@
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 
+        <activity android:name=".queriesMenu.QueriesMenuActivity"></activity>
+
         <activity android:name=".administratorAgenda.AdministratorAgendaActivity"></activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>

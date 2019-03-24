@@ -8,6 +8,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorI
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu.QueriesMenuActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu.QueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
@@ -31,6 +33,8 @@ public class AppMediator extends Application {
 
     private UserButtonsMenuListState userButtonsMenuListState;
 
+    private QueriesMenuState queriesMenuState;
+
     private UserPetsState clientPetsState = new UserPetsState();
 
     private AdministratorAgendaState administratorAgendaState = new AdministratorAgendaState();
@@ -44,12 +48,12 @@ public class AppMediator extends Application {
     private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
 
     private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
+
     private AdministratorUsersListState administratorUsersListState;
 
     //Variables de las activities
 
     private PetsItem animal;
-
 
 
     @Override
@@ -62,6 +66,7 @@ public class AppMediator extends Application {
         signUpConfirmationState = new SignUpConfirmationState();
         administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
         userButtonsMenuListState = new UserButtonsMenuListState();
+        queriesMenuState = new QueriesMenuState();
     }
     //Lista animales maestro y detalle
 
@@ -121,6 +126,9 @@ public class AppMediator extends Application {
     public void setUserButtonsMenuListState(UserButtonsMenuListState userButtonsMenuListState) {
         this.userButtonsMenuListState = userButtonsMenuListState;
     }
+
+    //QueriesMenu
+
 
     //AdministratorAgenda
     public AdministratorAgendaState getAdministratorAgendaState() {
