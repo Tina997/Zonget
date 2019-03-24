@@ -1,36 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".administratorInbox.AdministratorInboxActivity"
-    android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:padding="16dp"
+    tools:context=".administratorInbox.AdministratorInboxActivity">
 
-        <!--AppBar y Toolbar-->
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimaryDark">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="429dp"
-            android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/colorPrimary"></android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <FrameLayout
-        android:id="@+id/listView"
+    <TextView
+        android:id="@+id/data"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp">
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:text="Hello" />
 
-        <include layout="@layout/administrator_inbox_list"/>
-    </FrameLayout>
-
-
-</LinearLayout>
+</FrameLayout>
