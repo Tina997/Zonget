@@ -19,7 +19,7 @@ interface AdministratorSearchUsersContract {
 
         void fetchData();
 
-        void searchButtonClicked();
+        void searchButtonClicked(String nameOrDni);
     }
 
     interface Model {

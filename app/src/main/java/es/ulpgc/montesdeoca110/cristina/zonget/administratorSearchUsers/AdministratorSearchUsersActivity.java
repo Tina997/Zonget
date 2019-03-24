@@ -37,11 +37,12 @@ public class AdministratorSearchUsersActivity
             actionBar.setTitle("Clientes");
         }
         dataSearched = findViewById(R.id.user_name_edit_text);
+
         searchButton = (Button) findViewById(R.id.buttonUserSearch);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.searchButtonClicked();
+                presenter.searchButtonClicked(dataSearched.getText().toString());
             }
         });
         // do the setup
