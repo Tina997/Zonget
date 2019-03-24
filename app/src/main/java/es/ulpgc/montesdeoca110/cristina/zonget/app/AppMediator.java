@@ -128,7 +128,13 @@ public class AppMediator extends Application {
     }
 
     //QueriesMenu
+    public QueriesMenuState getQueriesMenuState() {
+        return queriesMenuState;
+    }
 
+    public void setQueriesMenuState(QueriesMenuState queriesMenuState) {
+        this.queriesMenuState = queriesMenuState;
+    }
 
     //AdministratorAgenda
     public AdministratorAgendaState getAdministratorAgendaState() {
