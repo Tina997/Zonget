@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
+
 public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract.Presenter {
 
     public static String TAG = UserButtonsMenuListPresenter.class.getSimpleName();
@@ -33,27 +35,20 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+    public void fetchUserButtonsMenuListData() {
 
-        // set passed state
-        UserButtonsMenuListState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
+        //Llamamos al modelo para que nos de la información
+        viewModel.user_buttons = model.fetchUserButtonsMenuListData();
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
+        // Actualizamos la vista
+        view.get().displayUserButtonsMenuListData(viewModel);
 
     }
 
+    @Override
+    public void selectUserButtonsMenuListData(UserButtonMenuItem item) {
+        //router.passDataToProductListScreen(item);
+        //router.navigateToProductListScreen();
+    }
 
 }

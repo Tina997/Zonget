@@ -33,7 +33,6 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
     @Override
     public void fetchAdministratorButtonsMenuListData() {
 
-        //TODO Error, se referencia a un objeto null
         //Llamamos al modelo para que nos de la información
         viewModel.administrator_buttons = model.fetchAdministratorButtonsMenuListData();
 

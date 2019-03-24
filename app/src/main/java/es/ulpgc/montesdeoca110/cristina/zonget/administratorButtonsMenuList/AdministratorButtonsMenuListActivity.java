@@ -33,8 +33,6 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         administrator_menu_toolbar = findViewById(R.id.administrator_menu_toolbar);
         setSupportActionBar(administrator_menu_toolbar);
 
-        //TODO añadir botón cerrar sesión
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
 

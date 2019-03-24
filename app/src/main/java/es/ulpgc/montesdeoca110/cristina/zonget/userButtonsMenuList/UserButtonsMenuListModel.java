@@ -2,22 +2,39 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
 import android.util.Log;
 
-import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 
 public class UserButtonsMenuListModel implements UserButtonsMenuListContract.Model {
 
     public static String TAG = UserButtonsMenuListModel.class.getSimpleName();
 
-    public UserButtonsMenuListModel() {
+    private final List<UserButtonMenuItem> user_buttons = new ArrayList<>();
+    private final int COUNT = 6;
 
+    public UserButtonsMenuListModel() {
+        //Añadir ejemplos
+        for (int index = 1; index <= COUNT; index++) {
+            addUserButtonMenuItem(createUserButtonMenuItem(index));
+        }
     }
 
     @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
+    public List<UserButtonMenuItem> fetchUserButtonsMenuListData() {
+        return user_buttons;
+    }
+
+    private void addUserButtonMenuItem(UserButtonMenuItem item){
+        user_buttons.add(item);
+    }
+
+    private UserButtonMenuItem createUserButtonMenuItem(int position){
+        String content = "Button" + position;
+        int image_id = R.drawable.logo_claro_completo;
+        return new UserButtonMenuItem(position,content,image_id);
     }
 }
