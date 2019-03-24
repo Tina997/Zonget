@@ -38,7 +38,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
 
         // set passed state
         AdministratorUsersListState state = router.getDataFromPreviousScreen();
-        if (state != null) {
+        /*if (state != null) {
             viewModel.data = state.data;
         }
 
@@ -49,7 +49,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
             // set initial state
             viewModel.data = data;
         }
-
+*/
         // update the view
         view.get().displayData(viewModel);
 
