@@ -34,7 +34,7 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
 
     @Override
     public void fetchUserPetsData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchInboxData()");
 
         // set passed state
         UserPetsState state = router.getDataFromPreviousScreen();

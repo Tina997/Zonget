@@ -46,7 +46,7 @@
     <string name="modifyEvent_button_text">Aceptar</string>
 
     <!--AdministratorInbox View -->
-    <string name="administrator_inbox_activity_name">Consultas</string>
+    <string name="administrator_inbox_activity_name">Buzón</string>
 
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>

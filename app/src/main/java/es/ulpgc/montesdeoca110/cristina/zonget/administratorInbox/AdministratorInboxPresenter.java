@@ -3,6 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 public class AdministratorInboxPresenter implements AdministratorInboxContract.Presenter {
 
@@ -33,8 +36,15 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
     }
 
     @Override
-    public void fetchData() {
+    public void fetchInboxData() {
 
+        if(viewModel.inboxList == null){
+
+            //llamar al modelo
+            List<QueryItem> data = model.fetchData();
+
+            viewModel.inboxList = data;
+        }
         // update the view
         view.get().displayData(viewModel);
 

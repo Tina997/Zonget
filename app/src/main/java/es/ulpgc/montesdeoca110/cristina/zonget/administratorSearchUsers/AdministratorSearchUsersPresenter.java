@@ -32,7 +32,7 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchInboxData()");
 
         // set passed state
         AdministratorSearchUsersState state = router.getDataFromPreviousScreen();
@@ -42,7 +42,7 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
 
         if (viewModel.data == null) {
             // call the model
-            String data = model.fetchData();
+            String data = model.fetchInboxData();
 
             // set initial state
             viewModel.data = data;

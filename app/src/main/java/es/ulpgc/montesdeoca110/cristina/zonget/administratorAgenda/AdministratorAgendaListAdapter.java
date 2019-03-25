@@ -54,7 +54,7 @@ public class AdministratorAgendaListAdapter extends ArrayAdapter<EventItem> {
         itemView.setOnClickListener(clickListener);
 
         final TextView contentView = itemView.findViewById(R.id.content);
-        contentView.setText(eventItemList.get(position).titulo);
+        contentView.setText(eventItemList.get(position).title);
 
         return itemView;
     }

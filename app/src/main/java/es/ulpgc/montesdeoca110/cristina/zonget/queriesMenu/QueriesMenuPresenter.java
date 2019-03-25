@@ -34,7 +34,7 @@ public class QueriesMenuPresenter implements QueriesMenuContract.Presenter {
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchInboxData()");
 
         // set passed state
         QueriesMenuState state = router.getDataFromPreviousScreen();

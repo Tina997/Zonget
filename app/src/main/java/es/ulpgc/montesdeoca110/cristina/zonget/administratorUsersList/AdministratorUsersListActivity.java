@@ -31,7 +31,7 @@ public class AdministratorUsersListActivity
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAdminUsers);
         setSupportActionBar(toolbar);
 
-        //Mostrar el botón atras y el titulo en la action bar
+        //Mostrar el botón atras y el title en la action bar
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
