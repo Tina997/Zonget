@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".userQueriesMenu.UserQueriesMenuActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -26,89 +25,99 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
-        android:id="@+id/user_new_query"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="horizontal">
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="152dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logo_claro" />
-
-        <TextView
-            android:layout_width="216dp"
+        <LinearLayout
+            android:id="@+id/user_new_query"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:text="@string/new_query_text_view"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="152dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logo_claro" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
+            <TextView
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="@string/new_query_text_view"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
 
-    <LinearLayout
-        android:id="@+id/user_pending_queries"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <ImageView
-            android:layout_width="152dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logo_claro" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
-        <TextView
-            android:layout_width="216dp"
+        <LinearLayout
+            android:id="@+id/user_pending_queries"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:text="@string/pending_queries_text_view"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="152dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logo_claro" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
+            <TextView
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="@string/pending_queries_text_view"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
 
-    <LinearLayout
-        android:id="@+id/user_finished_queries"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <ImageView
-            android:layout_width="152dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logo_claro" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
-        <TextView
-            android:layout_width="216dp"
+        <LinearLayout
+            android:id="@+id/user_finished_queries"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:text="@string/finished_queries_text_view"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp" />
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="152dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logo_claro" />
+
+            <TextView
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="@string/finished_queries_text_view"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
