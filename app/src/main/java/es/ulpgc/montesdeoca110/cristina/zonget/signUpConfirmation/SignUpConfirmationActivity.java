@@ -14,18 +14,16 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
     private SignUpConfirmationContract.Presenter presenter;
 
     //Elementos de la vista
-    private Toolbar sign_up_confirmation_toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_confirmation);
 
-
-
         //Configuracion de la toolBar/actionBar
-        sign_up_confirmation_toolbar = findViewById(R.id.sign_up_confirmation_toolbar);
-        setSupportActionBar(sign_up_confirmation_toolbar);
+        toolbar = findViewById(R.id.sign_up_confirmation_toolbar);
+        setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Registro");
