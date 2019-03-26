@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -17,6 +19,8 @@ public class UserNewQueryActivity
 
     //Elementos de la vista
     private Toolbar toolbar;
+    private EditText queryTitleEditText, queryDescriptionEditText;
+    private ImageButton attachImagesButton, sendQueryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,12 @@ public class UserNewQueryActivity
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Nueva consulta");
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //Búsqueda de los elementos de la vista
+        queryTitleEditText = findViewById(R.id.user_new_query_title_edit_text);
+        queryDescriptionEditText =  findViewById(R.id.user_new_query_desciption_edit_text);
+        attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
+        sendQueryButton = findViewById(R.id.user_new_query_send_button);
 
         // do the setup
         UserNewQueryScreen.configure(this);
