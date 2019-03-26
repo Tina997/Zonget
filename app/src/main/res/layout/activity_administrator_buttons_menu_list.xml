@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- AppBar y Toolbar -->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        app:elevation="4dp">
+        android:background="@color/colorPrimaryDark">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/administrator_menu_toolbar"

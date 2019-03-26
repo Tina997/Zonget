@@ -21,7 +21,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
     private AdministratorButtonsMenuListContract.Presenter presenter;
 
     //Elementos de la vista
-    private Toolbar administrator_menu_toolbar;
+    private Toolbar toolbar;
     private GridView administrator_buttons_grid_view;
 
     @Override
@@ -30,8 +30,8 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         setContentView(R.layout.activity_administrator_buttons_menu_list);
 
         //Configuracion de la toolBar/actionBar
-        administrator_menu_toolbar = findViewById(R.id.administrator_menu_toolbar);
-        setSupportActionBar(administrator_menu_toolbar);
+        toolbar = findViewById(R.id.administrator_menu_toolbar);
+        setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
