@@ -4,13 +4,10 @@ import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
-import es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu.QueriesMenuActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu.QueriesMenuState;
-import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery.UserNewQueryState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
@@ -34,7 +31,7 @@ public class AppMediator extends Application {
 
     private UserButtonsMenuListState userButtonsMenuListState;
 
-    private QueriesMenuState queriesMenuState;
+    private UserQueriesMenuState userQueriesMenuState;
 
     private UserNewQueryState userNewQueryState;
 
@@ -69,7 +66,7 @@ public class AppMediator extends Application {
         signUpConfirmationState = new SignUpConfirmationState();
         administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
         userButtonsMenuListState = new UserButtonsMenuListState();
-        queriesMenuState = new QueriesMenuState();
+        userQueriesMenuState = new UserQueriesMenuState();
         userNewQueryState = new UserNewQueryState();
     }
     //Lista animales maestro y detalle
@@ -132,12 +129,12 @@ public class AppMediator extends Application {
     }
 
     //QueriesMenu
-    public QueriesMenuState getQueriesMenuState() {
-        return queriesMenuState;
+    public UserQueriesMenuState getUserQueriesMenuState() {
+        return userQueriesMenuState;
     }
 
-    public void setQueriesMenuState(QueriesMenuState queriesMenuState) {
-        this.queriesMenuState = queriesMenuState;
+    public void setUserQueriesMenuState(UserQueriesMenuState userQueriesMenuState) {
+        this.userQueriesMenuState = userQueriesMenuState;
     }
 
     //UserNewQuery

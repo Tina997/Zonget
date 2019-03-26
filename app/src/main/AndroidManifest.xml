@@ -31,7 +31,7 @@
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 
-        <activity android:name=".queriesMenu.QueriesMenuActivity"></activity>
+        <activity android:name=".userQueriesMenu.UserQueriesMenuActivity"></activity>
 
         <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 
@@ -47,7 +47,9 @@
 
         <activity android:name=".userPetsDetail.UserPetsDetailActivity"></activity>
 
-        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity"><activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
+        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity"></activity>
+
+        <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
 
     </application>
 
