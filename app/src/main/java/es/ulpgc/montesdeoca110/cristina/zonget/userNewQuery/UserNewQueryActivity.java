@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
