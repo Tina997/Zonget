@@ -36,8 +36,8 @@ public class AdministratorInboxModel implements AdministratorInboxContract.Model
     }
 
     private QueryItem createQuery(int position){
-        String sender = "Usuario" + position;
-        String title = "Asunto" + position;
+        String sender = "Usuario " + position;
+        String title = "Asunto " + position;
         return new QueryItem(sender, title, position);
     }
 }

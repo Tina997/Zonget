@@ -5,6 +5,8 @@ import android.app.Application;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
@@ -47,6 +49,8 @@ public class AppMediator extends Application {
     private ModifyEventState modifyEventState = new ModifyEventState();
 
     private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
+
+    private AdministratorQueryDetailState administratorQueryDetailState = new AdministratorQueryDetailState();
 
     private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
 
@@ -176,6 +180,7 @@ public class AppMediator extends Application {
     public void setModifyEventState(ModifyEventState modifyEventState) {
         this.modifyEventState = modifyEventState;
     }
+
     //AdministratorSearchUsers
     public AdministratorSearchUsersState getadminSearchUsersState() {
         return administratorSearchUserState;
@@ -183,6 +188,7 @@ public class AppMediator extends Application {
     public void setadminSearchUsersState(AdministratorSearchUsersState administratorSearchUsersState) {
         administratorSearchUserState = administratorSearchUsersState;
     }
+
     //AdministratorInbox
     public AdministratorInboxState getAdministratorInboxState() {
         return administratorInboxState;
@@ -191,6 +197,16 @@ public class AppMediator extends Application {
     public void setAdministratorInboxState(AdministratorInboxState administratorInboxState) {
         this.administratorInboxState = administratorInboxState;
     }
+
+    //AdministratorQueryDetail
+    public AdministratorQueryDetailState getAdministratorQueryDetailState() {
+        return administratorQueryDetailState;
+    }
+
+    public void setAdministratorQueryDetailState(AdministratorQueryDetailState administratorQueryDetailState) {
+        this.administratorQueryDetailState = administratorQueryDetailState;
+    }
+
 
     //UsersList
     public void setAdministratorUsersListState(AdministratorUsersListState administratorUsersListState) {
