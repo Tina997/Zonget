@@ -7,6 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.Admi
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery.UserNewQueryState;
@@ -51,6 +52,7 @@ public class AppMediator extends Application {
 
     private AdministratorUsersListState administratorUsersListState = new AdministratorUsersListState();
 
+    private AdministratorUsersPetsListState administratorUsersPetsListState = new AdministratorUsersPetsListState();
     //Variables de las activities
 
     private PetsItem animal;
@@ -69,7 +71,7 @@ public class AppMediator extends Application {
         userQueriesMenuState = new UserQueriesMenuState();
         userNewQueryState = new UserNewQueryState();
     }
-    //Lista animales maestro y detalle
+    //PetsListUser
 
     public void setUserPetsState(PetsItem item) {
         animal = item;
@@ -196,5 +198,14 @@ public class AppMediator extends Application {
 
     public AdministratorUsersListState getAdministratorUsersListState() {
     return administratorUsersListState;
+    }
+
+    //UsersPetList Admin
+    public void setAdministratorUsersPetsListState(AdministratorUsersPetsListState state) {
+        this.administratorUsersPetsListState = state;
+    }
+
+    public AdministratorUsersPetsListState getAdministratorUsersPetsListState() {
+        return administratorUsersPetsListState;
     }
 }

@@ -1,0 +1,83 @@
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
+
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsAdapter;
+
+public class AdministratorUsersPetsListActivity
+        extends AppCompatActivity implements AdministratorUsersPetsListContract.View {
+
+    public static String TAG = AdministratorUsersPetsListActivity.class.getSimpleName();
+
+    private AdministratorUsersPetsListContract.Presenter presenter;
+
+    private ListView listView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_administrator_users_pets_list);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAnimalesCliente);
+        setSupportActionBar(toolbar);
+
+        //Mostrar el botón atras y el title en la action bar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Animales de Cliente");
+        }
+
+        listView = findViewById(R.id.animal_list);
+
+        // do the setup
+        AdministratorUsersPetsListScreen.configure(this);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // do some work
+        presenter.fetchUserPetsData();
+    }
+
+    @Override
+    public void injectPresenter(AdministratorUsersPetsListContract.Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
+    public void displayUserPetsData(AdministratorUsersPetsListViewModel viewModel) {
+        //Log.e(TAG, "displayData()");
+        listView.setAdapter(new UserPetsAdapter(this, viewModel.animales, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PetsItem item = (PetsItem) v.getTag();
+                presenter.selectUserPetsData(item);
+            }
+        }));
+        // deal with the data
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
