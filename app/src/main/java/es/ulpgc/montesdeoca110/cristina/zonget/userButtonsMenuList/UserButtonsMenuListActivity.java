@@ -5,7 +5,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,9 +22,9 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     private UserButtonsMenuListContract.Presenter presenter;
 
     //Elementos de la vista
-    private Toolbar user_menu_toolbar;
-    private GridView user_buttons_grid_view;
-    private Button user_ask_date_button;
+    private Toolbar toolbar;
+    private GridView userButtonsGridView;
+    private Button askDateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +32,18 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         setContentView(R.layout.activity_user_buttons_menu_list);
 
         //Configuracion de la toolBar/actionBar
-        user_menu_toolbar = findViewById(R.id.user_menu_toolbar);
-        setSupportActionBar(user_menu_toolbar);
+        toolbar = findViewById(R.id.user_menu_toolbar);
+        setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
 
-        user_buttons_grid_view = findViewById(R.id.user_buttons_menu_list);
-        user_ask_date_button = findViewById(R.id.user_ask_date_button_user_buttons_menu_list);
+        //Búsqueda de los elementos de la vista
+        userButtonsGridView = findViewById(R.id.user_buttons_menu_list);
+        askDateButton = findViewById(R.id.user_buttons_menu_list_ask_date_button);
 
-        //Botón
-        user_ask_date_button.setOnClickListener(new View.OnClickListener() {
+        //Listeners
+        askDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TODO Llamar al presenter
@@ -79,7 +79,7 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     public void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel) {
 
         // deal with the data
-        user_buttons_grid_view.setAdapter(new UserButtonsMenuListAdapter(
+        userButtonsGridView.setAdapter(new UserButtonsMenuListAdapter(
                 this,viewModel.user_buttons,
                 new View.OnClickListener() {
 
