@@ -144,10 +144,12 @@
             android:layout_height="50dp" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/sign_up_progress_bar"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorPrimaryDark"
+            android:visibility="invisible" />
 
         <Space
             android:layout_width="match_parent"

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -22,6 +23,7 @@ public class SignUpActivity
     private Toolbar toolbar;
     private EditText nameEditText, dniEditText, emailEditText, passwordEditText, secondPasswordEditText;
     private ImageView passwordCorrectionImageView;
+    private ProgressBar progressBar;
     private Button confirmedButton;
 
     @Override
@@ -30,7 +32,7 @@ public class SignUpActivity
         setContentView(R.layout.activity_sign_up);
 
         //Configuracion de la toolBar/actionBar
-        toolbar = findViewById(R.id.sign_up_confirmation_toolbar);
+        toolbar = findViewById(R.id.sign_up_toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -44,6 +46,7 @@ public class SignUpActivity
         passwordEditText = findViewById(R.id.user_sign_up_password_edit_text);
         secondPasswordEditText = findViewById(R.id.user_sign_up_correct_password_edit_text);
         passwordCorrectionImageView = findViewById(R.id.user_sign_up_password_correction_icon_view);
+        progressBar = findViewById(R.id.sign_up_progress_bar);
         confirmedButton = findViewById(R.id.sign_up_accept_button);
 
         //Listeners
