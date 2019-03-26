@@ -56,6 +56,7 @@ public class AppMediator extends Application {
     //Variables de las activities
 
     private PetsItem animal;
+    private UserItem userItem;
 
 
     @Override
@@ -196,6 +197,9 @@ public class AppMediator extends Application {
         this.administratorUsersListState = administratorUsersListState;
     }
 
+    public void setUserItem(UserItem item) {
+        this.userItem = item;
+    }
     public AdministratorUsersListState getAdministratorUsersListState() {
     return administratorUsersListState;
     }
@@ -208,4 +212,5 @@ public class AppMediator extends Application {
     public AdministratorUsersPetsListState getAdministratorUsersPetsListState() {
         return administratorUsersPetsListState;
     }
+
 }

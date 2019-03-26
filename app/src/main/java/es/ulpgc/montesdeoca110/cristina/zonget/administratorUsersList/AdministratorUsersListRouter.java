@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 
@@ -17,17 +18,6 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
         this.mediator = mediator;
     }
 
-    @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AdministratorUsersListActivity.class);
-        context.startActivity(intent);
-    }
-
-    @Override
-    public void passDataToNextScreen(AdministratorUsersListState state) {
-        mediator.setAdministratorUsersListState(state);
-    }
 
     @Override
     public AdministratorUsersListState getDataFromPreviousScreen() {
@@ -37,11 +27,14 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
 
     @Override
     public void passDataToUserDetailScreen(UserItem item) {
-
+        mediator.setUserItem(item);
     }
 
     @Override
     public void navigateToUserDetailScreen() {
-
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorUsersPetsListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

@@ -32,9 +32,6 @@ interface AdministratorUsersListContract {
     }
 
     interface Router {
-        void navigateToNextScreen();
-
-        void passDataToNextScreen(AdministratorUsersListState state);
 
         AdministratorUsersListState getDataFromPreviousScreen();
 

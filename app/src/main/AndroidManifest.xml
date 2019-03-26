@@ -54,9 +54,8 @@
         </intent-filter></activity>
         <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
 
-        <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
-
-        <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
+        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity">
+        </activity>
 
     </application>
 
