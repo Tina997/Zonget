@@ -17,7 +17,7 @@ public class QueriesMenuModel implements QueriesMenuContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchInboxData()");
         return "Hello";
     }
 }

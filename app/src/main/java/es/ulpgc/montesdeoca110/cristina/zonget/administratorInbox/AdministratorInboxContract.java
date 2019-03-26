@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 interface AdministratorInboxContract {
 
@@ -17,11 +20,11 @@ interface AdministratorInboxContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchInboxData();
     }
 
     interface Model {
-        String fetchData();
+        List<QueryItem> fetchData();
     }
 
     interface Router {

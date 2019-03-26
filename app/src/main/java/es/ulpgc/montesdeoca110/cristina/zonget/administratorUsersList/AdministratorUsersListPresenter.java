@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+
 public class AdministratorUsersListPresenter implements AdministratorUsersListContract.Presenter {
 
     public static String TAG = AdministratorUsersListPresenter.class.getSimpleName();
@@ -34,26 +37,18 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
 
     @Override
     public void fetchAdminUsersData() {
-        // Log.e(TAG, "fetchData()");
-
+        // Log.e(TAG, "fetchInboxData()");
         // set passed state
-        AdministratorUsersListState state = router.getDataFromPreviousScreen();
-        /*if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-*/
+        //AdministratorUsersListState state = router.getDataFromPreviousScreen();
+        viewModel.users=model.fetchUsersData();
         // update the view
         view.get().displayData(viewModel);
 
     }
-
+    @Override
+    public void selectAdminUserData(UserItem item) {
+        router.passDataToUserDetailScreen(item);
+        router.navigateToUserDetailScreen();
+    }
 
 }

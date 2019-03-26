@@ -4,8 +4,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -15,6 +15,7 @@ public class AdministratorInboxActivity
     public static String TAG = AdministratorInboxActivity.class.getSimpleName();
 
     private AdministratorInboxContract.Presenter presenter;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class AdministratorInboxActivity
             actionBar.setTitle(getString(R.string.administrator_inbox_activity_name));
         }
 
+        listView = findViewById(R.id.inbox_list);
+
         // do the setup
         AdministratorInboxScreen.configure(this);
     }
@@ -39,7 +42,7 @@ public class AdministratorInboxActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        presenter.fetchInboxData();
     }
 
     @Override
@@ -49,7 +52,12 @@ public class AdministratorInboxActivity
 
     @Override
     public void displayData(AdministratorInboxViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+        listView.setAdapter(new AdministratorInboxListAdapter(this, viewModel.inboxList, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO cambiar de pantalla y mostrar detalle
+            }
+        }));;
 
     }
 }

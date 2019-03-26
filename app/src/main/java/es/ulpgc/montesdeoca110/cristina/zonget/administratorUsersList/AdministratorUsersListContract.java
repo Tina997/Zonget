@@ -1,6 +1,10 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 
 interface AdministratorUsersListContract {
 
@@ -18,10 +22,13 @@ interface AdministratorUsersListContract {
         void injectRouter(Router router);
 
         void fetchAdminUsersData();
+
+        void selectAdminUserData(UserItem userItem);
+
     }
 
     interface Model {
-        String fetchData();
+        List<UserItem> fetchUsersData();
     }
 
     interface Router {
@@ -30,5 +37,9 @@ interface AdministratorUsersListContract {
         void passDataToNextScreen(AdministratorUsersListState state);
 
         AdministratorUsersListState getDataFromPreviousScreen();
+
+        void passDataToUserDetailScreen(UserItem item);
+
+        void navigateToUserDetailScreen();
     }
 }

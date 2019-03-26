@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 
 public class AdministratorUsersListRouter implements AdministratorUsersListContract.Router {
 
@@ -32,5 +33,15 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
     public AdministratorUsersListState getDataFromPreviousScreen() {
         AdministratorUsersListState state = mediator.getAdministratorUsersListState();
         return state;
+    }
+
+    @Override
+    public void passDataToUserDetailScreen(UserItem item) {
+
+    }
+
+    @Override
+    public void navigateToUserDetailScreen() {
+
     }
 }

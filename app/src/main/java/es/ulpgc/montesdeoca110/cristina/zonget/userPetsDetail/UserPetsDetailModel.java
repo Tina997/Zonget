@@ -10,7 +10,7 @@ public class UserPetsDetailModel implements UserPetsDetailContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchInboxData()");
         return "Hello";
     }
 }

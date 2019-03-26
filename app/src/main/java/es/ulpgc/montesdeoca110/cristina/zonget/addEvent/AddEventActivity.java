@@ -39,7 +39,7 @@ public class AddEventActivity
         super.onResume();
 
         // do some work
-        //presenter.fetchData();
+        //presenter.fetchInboxData();
     }
 
     @Override

@@ -7,10 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsAdapter;
 
 public class AdministratorUsersListActivity
         extends AppCompatActivity implements AdministratorUsersListContract.View {
@@ -27,7 +31,7 @@ public class AdministratorUsersListActivity
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAdminUsers);
         setSupportActionBar(toolbar);
 
-        //Mostrar el botón atras y el titulo en la action bar
+        //Mostrar el botón atras y el title en la action bar
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -56,7 +60,13 @@ public class AdministratorUsersListActivity
     @Override
     public void displayData(AdministratorUsersListViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-
+        listView.setAdapter(new AdministratorUsersListAdapter(this, viewModel.users, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserItem item = (UserItem) v.getTag();
+                presenter.selectAdminUserData(item);
+            }
+        }));
         // deal with the data
     }
     @Override

@@ -49,7 +49,7 @@ public class AppMediator extends Application {
 
     private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
 
-    private AdministratorUsersListState administratorUsersListState;
+    private AdministratorUsersListState administratorUsersListState = new AdministratorUsersListState();
 
     //Variables de las activities
 
