@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#467685</color> <!-- Color azul verdoso oscuro -->
     <color name="colorAccent">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+
+    <color name="colorPrimaryDarkTrans">#90467685</color> <!-- Color azul verdoso oscuro con transparencia -->
 </resources>
