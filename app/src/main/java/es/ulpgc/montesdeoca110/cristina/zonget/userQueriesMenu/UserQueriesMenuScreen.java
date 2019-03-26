@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu;
+package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
 import java.lang.ref.WeakReference;
 
@@ -6,19 +6,19 @@ import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
-public class QueriesMenuScreen {
+public class UserQueriesMenuScreen {
 
-    public static void configure(QueriesMenuContract.View view) {
+    public static void configure(UserQueriesMenuContract.View view) {
 
         WeakReference<FragmentActivity> context =
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        QueriesMenuState state = mediator.getQueriesMenuState();
+        UserQueriesMenuState state = mediator.getUserQueriesMenuState();
 
-        QueriesMenuContract.Router router = new QueriesMenuRouter(mediator);
-        QueriesMenuContract.Presenter presenter = new QueriesMenuPresenter(state);
-        QueriesMenuContract.Model model = new QueriesMenuModel();
+        UserQueriesMenuContract.Router router = new UserQueriesMenuRouter(mediator);
+        UserQueriesMenuContract.Presenter presenter = new UserQueriesMenuPresenter(state);
+        UserQueriesMenuContract.Model model = new UserQueriesMenuModel();
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));

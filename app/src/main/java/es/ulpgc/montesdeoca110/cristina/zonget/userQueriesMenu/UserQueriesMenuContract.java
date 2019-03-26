@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu;
+package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
 import java.lang.ref.WeakReference;
 
-interface QueriesMenuContract {
+interface UserQueriesMenuContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(QueriesMenuViewModel viewModel);
+        void displayData(UserQueriesMenuViewModel viewModel);
     }
 
     interface Presenter {
@@ -27,8 +27,8 @@ interface QueriesMenuContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(QueriesMenuState state);
+        void passDataToNextScreen(UserQueriesMenuState state);
 
-        QueriesMenuState getDataFromPreviousScreen();
+        UserQueriesMenuState getDataFromPreviousScreen();
     }
 }
