@@ -130,7 +130,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/password_correction_icon_view"
+                android:id="@+id/user_sign_up_password_correction_icon_view"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="bottom"
