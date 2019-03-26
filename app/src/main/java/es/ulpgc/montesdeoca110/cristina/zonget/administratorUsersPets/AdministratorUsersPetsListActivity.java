@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +30,7 @@ public class AdministratorUsersPetsListActivity
 
     private ListView listView;
 
+    private GridView administratorUsersPetsGridView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +44,7 @@ public class AdministratorUsersPetsListActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Animales de Cliente");
         }
-
+        administratorUsersPetsGridView = findViewById(R.id.action_add);
         listView = findViewById(R.id.animal_list);
 
         // do the setup
@@ -73,14 +77,25 @@ public class AdministratorUsersPetsListActivity
         }));
         // deal with the data
     }
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.administrator_appbar_buttons_users_pets_list, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            navigateUpTo(new Intent(this, AdministratorUsersListActivity.class));
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    NavUtils.navigateUpFromSameTask(this);
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }
