@@ -33,30 +33,21 @@
 
         <activity android:name=".queriesMenu.QueriesMenuActivity"></activity>
 
+        <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
+
         <activity android:name=".administratorAgenda.AdministratorAgendaActivity"></activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
         <activity android:name=".modifyEvent.ModifyEventActivity"></activity>
 
-        <activity android:name=".administratorInbox.AdministratorInboxActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".administratorInbox.AdministratorInboxActivity"></activity>
 
         <activity android:name=".userPets.UserPetsActivity"></activity>
 
         <activity android:name=".userPetsDetail.UserPetsDetailActivity"></activity>
 
-        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity">            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
+        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity"><activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
 
     </application>
 

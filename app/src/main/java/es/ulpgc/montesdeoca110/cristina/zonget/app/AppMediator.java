@@ -12,6 +12,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu.QueriesMenuActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.queriesMenu.QueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery.UserNewQueryState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpState;
@@ -34,6 +35,8 @@ public class AppMediator extends Application {
     private UserButtonsMenuListState userButtonsMenuListState;
 
     private QueriesMenuState queriesMenuState;
+
+    private UserNewQueryState userNewQueryState;
 
     private UserPetsState clientPetsState = new UserPetsState();
 
@@ -67,6 +70,7 @@ public class AppMediator extends Application {
         administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
         userButtonsMenuListState = new UserButtonsMenuListState();
         queriesMenuState = new QueriesMenuState();
+        userNewQueryState = new UserNewQueryState();
     }
     //Lista animales maestro y detalle
 
@@ -134,6 +138,15 @@ public class AppMediator extends Application {
 
     public void setQueriesMenuState(QueriesMenuState queriesMenuState) {
         this.queriesMenuState = queriesMenuState;
+    }
+
+    //UserNewQuery
+    public UserNewQueryState getUserNewQueryState() {
+        return userNewQueryState;
+    }
+
+    public void setUserNewQueryState(UserNewQueryState userNewQueryState) {
+        this.userNewQueryState = userNewQueryState;
     }
 
     //AdministratorAgenda
