@@ -13,10 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@color/colorPrimaryDark">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbarAnimalesCliente"
             android:layout_width="320dp"
@@ -25,7 +22,6 @@
 
         </android.support.v7.widget.Toolbar>
 
-    </LinearLayout>
 
     </android.support.design.widget.AppBarLayout>
 

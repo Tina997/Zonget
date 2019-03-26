@@ -47,14 +47,15 @@
 
         <activity android:name=".userPetsDetail.UserPetsDetailActivity"></activity>
 
-        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity">            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity"></activity>
         <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
 
         <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
     </application>
