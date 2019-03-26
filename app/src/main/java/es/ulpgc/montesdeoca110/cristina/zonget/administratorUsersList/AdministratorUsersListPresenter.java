@@ -37,7 +37,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
 
     @Override
     public void fetchAdminUsersData() {
-        // Log.e(TAG, "fetchInboxData()");
+        // Log.e(TAG, "fetchData()");
         // set passed state
         //AdministratorUsersListState state = router.getDataFromPreviousScreen();
         viewModel.users=model.fetchUsersData();
