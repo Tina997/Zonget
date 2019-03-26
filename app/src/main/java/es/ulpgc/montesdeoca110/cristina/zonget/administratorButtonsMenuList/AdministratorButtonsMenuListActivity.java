@@ -22,7 +22,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
 
     //Elementos de la vista
     private Toolbar toolbar;
-    private GridView administrator_buttons_grid_view;
+    private GridView administratorButtonsGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,8 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
 
-        administrator_buttons_grid_view = findViewById(R.id.administrator_buttons_menu_list);
+        //Búsqueda de los elementos de la vista
+        administratorButtonsGridView = findViewById(R.id.administrator_buttons_menu_list_grid_view);
 
         // do the setup
         AdministratorButtonsMenuListScreen.configure(this);
@@ -67,7 +68,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
     public void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel) {
 
         // deal with the data
-        administrator_buttons_grid_view.setAdapter(new AdministratorButtonsMenuListAdapter(
+        administratorButtonsGridView.setAdapter(new AdministratorButtonsMenuListAdapter(
                 this,viewModel.administrator_buttons,
                 new View.OnClickListener() {
 
