@@ -10,6 +10,7 @@
     tools:context=".queriesMenu.QueriesMenuActivity">
 
     <LinearLayout
+        android:id="@+id/user_new_query"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -39,6 +40,7 @@
         android:layout_height="20dp" />
 
     <LinearLayout
+        android:id="@+id/user_pending_queries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -53,30 +55,13 @@
             app:srcCompat="@drawable/logo_claro" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="216dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_vertical"
             android:text="@string/pending_queries_text_view"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
-
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/pending_queries_counter_text_view"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorBlack"
-            android:elevation="100dp"
-            android:padding="5dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
 
@@ -85,6 +70,7 @@
         android:layout_height="20dp" />
 
     <LinearLayout
+        android:id="@+id/user_finished_queries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -99,7 +85,7 @@
             app:srcCompat="@drawable/logo_claro" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="216dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_vertical"
@@ -107,22 +93,6 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/finished_queries_counter_text_view"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorBlack"
-            android:elevation="100dp"
-            android:padding="5dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
 
