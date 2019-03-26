@@ -31,17 +31,9 @@
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 
-        <activity android:name=".userQueriesMenu.UserQueriesMenuActivity"> </activity>
+        <activity android:name=".userQueriesMenu.UserQueriesMenuActivity"></activity>
 
-        <activity android:name=".userNewQuery.UserNewQueryActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 
         <activity android:name=".administratorAgenda.AdministratorAgendaActivity"></activity>
 
