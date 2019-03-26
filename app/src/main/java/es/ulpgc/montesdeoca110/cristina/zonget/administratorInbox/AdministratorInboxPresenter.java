@@ -50,5 +50,10 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
 
     }
 
+    @Override
+    public void goToAdministratorQueryDetailScreen(){
+        router.navigateToAdministratorQueryDetailScreen();
+    }
+
 
 }

@@ -56,6 +56,7 @@ public class AdministratorInboxActivity
             @Override
             public void onClick(View v) {
                 //TODO cambiar de pantalla y mostrar detalle
+                presenter.goToAdministratorQueryDetailScreen();
             }
         }));;
 

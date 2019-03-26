@@ -21,6 +21,8 @@ interface AdministratorInboxContract {
         void injectRouter(Router router);
 
         void fetchInboxData();
+
+        void goToAdministratorQueryDetailScreen();
     }
 
     interface Model {
@@ -33,5 +35,7 @@ interface AdministratorInboxContract {
         void passDataToNextScreen(AdministratorInboxState state);
 
         AdministratorInboxState getDataFromPreviousScreen();
+
+        void navigateToAdministratorQueryDetailScreen();
     }
 }

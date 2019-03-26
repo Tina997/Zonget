@@ -52,6 +52,12 @@
 
     <!--AdministratorInbox View -->
     <string name="administrator_inbox_activity_name">Buzón</string>
+    <string name="administrator_inbox_from_text">De:</string>
+    <string name="administrator_inbox_title_text">Asunto:</string>
+
+    <!--AdministratorQueryDetail View -->
+    <string name="administrator_query_detail_activity_name">Ver consulta</string>
+    <string name="administrator_query_detail_attached_files_text">Archivos adjuntos</string>
 
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
