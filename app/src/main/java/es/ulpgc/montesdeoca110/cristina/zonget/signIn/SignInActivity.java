@@ -25,6 +25,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        //Búsqueda de los elementos de la vista
         userEditText = findViewById(R.id.userEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         passwordForgetTextView = findViewById(R.id.passwordForgetTextLabel);
@@ -32,7 +33,14 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         signUpButton = findViewById(R.id.signUpButton);
         askDateButton = findViewById(R.id.askDateButton);
 
-        //Botones
+        //Listeners
+        passwordForgetTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO llamar al presentador
+            }
+        });
+
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
