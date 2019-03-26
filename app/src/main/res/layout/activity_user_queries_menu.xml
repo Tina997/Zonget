@@ -33,7 +33,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/user_new_query"
+            android:id="@+id/user_queries_menu_new_query_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -45,7 +45,7 @@
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logo_claro" />
+                app:srcCompat="@drawable/ic_new_query" />
 
             <TextView
                 android:layout_width="216dp"
@@ -63,7 +63,7 @@
             android:layout_height="20dp" />
 
         <LinearLayout
-            android:id="@+id/user_pending_queries"
+            android:id="@+id/user_queries_menu_pending_queries_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -75,7 +75,7 @@
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logo_claro" />
+                app:srcCompat="@drawable/ic_pending_queries" />
 
             <TextView
                 android:layout_width="216dp"
@@ -93,7 +93,7 @@
             android:layout_height="20dp" />
 
         <LinearLayout
-            android:id="@+id/user_finished_queries"
+            android:id="@+id/user_queries_menu_finished_queries_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logo_claro" />
+                app:srcCompat="@drawable/ic_finished_queries" />
 
             <TextView
                 android:layout_width="216dp"
