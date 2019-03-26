@@ -25,7 +25,7 @@ public class AdministratorUsersListModel implements AdministratorUsersListContra
 
     @Override
     public List<UserItem> fetchUsersData() {
-        // Log.e(TAG, "fetchInboxData()");
+        // Log.e(TAG, "fetchData()");
         return itemList;
     }
     private void addUser(UserItem userItem){
