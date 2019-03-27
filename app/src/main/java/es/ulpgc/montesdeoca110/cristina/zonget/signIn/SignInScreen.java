@@ -9,8 +9,7 @@ public class SignInScreen {
 
     public static void configure(SignInContract.View view) {
 
-        WeakReference<FragmentActivity> context =
-                new WeakReference<>((FragmentActivity) view);
+        WeakReference<FragmentActivity> context = new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         SignInState state = mediator.getSignInState();

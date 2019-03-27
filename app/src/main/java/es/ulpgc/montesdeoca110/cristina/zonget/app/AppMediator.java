@@ -57,10 +57,13 @@ public class AppMediator extends Application {
     private AdministratorUsersListState administratorUsersListState = new AdministratorUsersListState();
 
     private AdministratorUsersPetsListState administratorUsersPetsListState = new AdministratorUsersPetsListState();
-    //Variables de las activities
 
+    //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
+
+    //Estados entre activities
+    private SignInToMenuState signInToMenuState;
 
 
     @Override
@@ -229,4 +232,14 @@ public class AppMediator extends Application {
         return administratorUsersPetsListState;
     }
 
+    //-------------------------
+
+    //SignInToMenu
+    public SignInToMenuState getSignInToMenuState() {
+        return signInToMenuState;
+    }
+
+    public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
+        this.signInToMenuState = signInToMenuState;
+    }
 }

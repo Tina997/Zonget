@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
+import android.widget.EditText;
+
 public class SignInViewModel {
 
-    public String data;
+    public EditText accountName, accountPassword;
+
 }

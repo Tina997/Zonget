@@ -16,7 +16,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     private SignInContract.Presenter presenter;
 
     // Elementos de la vista
-    private EditText userEditText, passwordEditText;
+    private EditText accountNameEditText, accountPasswordEditText;
     private TextView passwordForgetTextView;
     private Button signInButton, signUpButton, askDateButton;
 
@@ -26,8 +26,8 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         setContentView(R.layout.activity_sign_in);
 
         //Búsqueda de los elementos de la vista
-        userEditText = findViewById(R.id.userEditText);
-        passwordEditText = findViewById(R.id.passwordEditText);
+        accountNameEditText = findViewById(R.id.accountNameEditText);
+        accountPasswordEditText = findViewById(R.id.accountPasswordEditText);
         passwordForgetTextView = findViewById(R.id.passwordForgetTextLabel);
         signInButton = findViewById(R.id.signInButton);
         signUpButton = findViewById(R.id.signUpButton);
@@ -37,14 +37,17 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         passwordForgetTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO llamar al presentador
+                presenter.forgetPasswordPressed();
             }
         });
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.signInButtonPressed();
+                //Todo Cambiar lo de las comillas 77, buscar otra forma de pasarlo a String
+                String accountName = "" + accountNameEditText.getText();
+                String accountPassword = "" + accountPasswordEditText.getText();
+                presenter.signInButtonPressed(accountName, accountPassword);
             }
         });
 
@@ -87,5 +90,10 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         //Log.e(TAG, "displayData()");
 
         // deal with the data
+    }
+
+    @Override
+    public void displayCheckAccountError() {
+
     }
 }
