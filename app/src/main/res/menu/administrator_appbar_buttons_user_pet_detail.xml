@@ -5,12 +5,12 @@
     <item
         android:id="@+id/action_edit"
         android:icon="@drawable/ic_edit"
-        android:title="Sign Out"
+        android:title="Edit"
         app:showAsAction="always" />
     <!--Delete button-->
     <item
         android:id="@+id/action_delete"
         android:icon="@drawable/ic_delete"
-        android:title="Sign Out"
+        android:title="Delete"
         app:showAsAction="always" />
 </menu>
