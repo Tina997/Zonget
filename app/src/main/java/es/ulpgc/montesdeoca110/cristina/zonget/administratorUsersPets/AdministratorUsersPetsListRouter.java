@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
@@ -35,5 +36,13 @@ public class AdministratorUsersPetsListRouter implements AdministratorUsersPetsL
     public AdministratorUsersPetsListState getDataFromPreviousScreen() {
         AdministratorUsersPetsListState state = mediator.getAdministratorUsersPetsListState();
         return state;
+    }
+
+    @Override
+    public void navigateToAddScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorUsersAddPetActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

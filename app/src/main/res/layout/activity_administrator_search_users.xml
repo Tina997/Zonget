@@ -9,20 +9,7 @@
     tools:context=".administratorSearchUsers.AdministratorSearchUsersActivity">
 
     <!--AppBar y Toolbar-->
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbarAdminSearchUsers"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimaryDark"
-        >
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarAdminSearchUsers"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/colorPrimary"></android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/toolbar"></include>
 
 
     <TextView

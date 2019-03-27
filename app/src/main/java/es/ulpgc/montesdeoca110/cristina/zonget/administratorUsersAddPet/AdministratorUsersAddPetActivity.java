@@ -28,7 +28,7 @@ public class AdministratorUsersAddPetActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+//        presenter.fetchData();
     }
 
     @Override

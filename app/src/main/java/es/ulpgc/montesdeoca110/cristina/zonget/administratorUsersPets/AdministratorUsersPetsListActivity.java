@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsAdapter;
@@ -35,7 +36,7 @@ public class AdministratorUsersPetsListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator_users_pets_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAnimalesCliente);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el title en la action bar
@@ -88,6 +89,7 @@ public class AdministratorUsersPetsListActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
+                presenter.onClickAddButton();
                 return true;
             default:
                 int id = item.getItemId();

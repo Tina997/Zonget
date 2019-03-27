@@ -53,6 +53,10 @@ public class AdministratorUsersPetsListPresenter implements AdministratorUsersPe
         router.navigateToPetsDetailScreen();
     }
 
+    @Override
+    public void onClickAddButton() {
+        router.navigateToAddScreen();
+    }
 
 
 }

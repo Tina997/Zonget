@@ -27,7 +27,7 @@ public class AdministratorSearchUsersActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator_search_users);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarAdminSearchUsers);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el title en la action bar

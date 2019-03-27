@@ -25,6 +25,8 @@ interface AdministratorUsersPetsListContract {
         void fetchUserPetsData();
 
         void selectUserPetsData(PetsItem item);
+
+        void onClickAddButton();
     }
 
     interface Model {
@@ -37,5 +39,7 @@ interface AdministratorUsersPetsListContract {
         void passDataToPetsDetailScreen(PetsItem item);
 
         AdministratorUsersPetsListState getDataFromPreviousScreen();
+
+        void navigateToAddScreen();
     }
 }
