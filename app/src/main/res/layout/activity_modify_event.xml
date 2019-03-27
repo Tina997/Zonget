@@ -7,7 +7,11 @@
     android:paddingBottom="16dp"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"></include>
+    </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
@@ -34,7 +38,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="28dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDarkTrans"
             android:ems="10"
             android:inputType="textShortMessage"
             android:padding="5px"
@@ -65,7 +69,7 @@
             android:layout_width="277dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:background="@color/colorPrimaryDark"></Spinner>
+            android:background="@color/colorPrimaryDarkTrans"></Spinner>
 
     </LinearLayout>
 
@@ -95,7 +99,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDarkTrans"
             android:ems="10"
             android:inputType="textShortMessage"
             android:padding="5px"
