@@ -4,15 +4,11 @@ public class SignInToMenuState {
 
     public String email;
 
-    public SignInToMenuState(String email) {
+    public String accountType;
+
+    public SignInToMenuState(String email, String accountType) {
         this.email = email;
+        this.accountType = accountType;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
