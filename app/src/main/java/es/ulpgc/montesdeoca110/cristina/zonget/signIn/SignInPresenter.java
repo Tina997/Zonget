@@ -2,6 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
+
 public class SignInPresenter implements SignInContract.Presenter {
 
     public static String TAG = SignInPresenter.class.getSimpleName();
@@ -35,7 +38,7 @@ public class SignInPresenter implements SignInContract.Presenter {
         // Log.e(TAG, "fetchDateListData()");
 
         // set passed state
-        SignInState state = router.getDataFromPreviousScreen();
+        /*SignInState state = router.getDataFromPreviousScreen();
         if (state != null) {
             viewModel.data = state.data;
         }
@@ -50,17 +53,29 @@ public class SignInPresenter implements SignInContract.Presenter {
 
         // update the view
         view.get().displayData(viewModel);
+        */
 
     }
 
     @Override
-    public void signInButtonPressed() {
+    public void forgetPasswordPressed() {
 
+    }
+
+    @Override
+    public void signInButtonPressed(String accountName, String accountPassword) {
+        if(model.checkAccount(accountName, accountPassword)){
+            SignInToMenuState state = new SignInToMenuState(model.getAccountInfo(accountName,accountPassword));
+            router.passDataToMenuScreen(state);
+            router.navigateToMenuScreen();
+        } else {
+            view.get().displayCheckAccountError();
+        }
     }
 
     @Override
     public void signUpButtonPressed() {
-
+        router.navigateToSignUpScreen();
     }
 
     @Override

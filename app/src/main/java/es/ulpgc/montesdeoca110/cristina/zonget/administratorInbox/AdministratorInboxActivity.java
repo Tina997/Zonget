@@ -3,7 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -15,7 +17,8 @@ public class AdministratorInboxActivity
     public static String TAG = AdministratorInboxActivity.class.getSimpleName();
 
     private AdministratorInboxContract.Presenter presenter;
-    private ListView listView;
+    private AdministratorInboxListAdapter listAdapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,19 @@ public class AdministratorInboxActivity
             actionBar.setTitle(getString(R.string.administrator_inbox_activity_name));
         }
 
-        listView = findViewById(R.id.inbox_list);
+        listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                presenter.goToAdministratorQueryDetailScreen();
+            }
+        });
+
+        recyclerView = findViewById(R.id.inbox_list);
+        recyclerView.setAdapter(listAdapter);
 
         // do the setup
-        AdministratorInboxScreen.configure(this);
+       AdministratorInboxScreen.configure(this);
+
     }
 
     @Override
@@ -52,13 +64,6 @@ public class AdministratorInboxActivity
 
     @Override
     public void displayData(AdministratorInboxViewModel viewModel) {
-        listView.setAdapter(new AdministratorInboxListAdapter(this, viewModel.inboxList, new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO cambiar de pantalla y mostrar detalle
-                presenter.goToAdministratorQueryDetailScreen();
-            }
-        }));;
-
+        listAdapter.setItems(viewModel.inboxList);
     }
 }

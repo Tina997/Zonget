@@ -61,9 +61,11 @@ public class AppMediator extends Application {
 
     private AdministratorUserPetsDetailState administratorUserPetsDetailState = new AdministratorUserPetsDetailState();
     //Variables de las activities
-
     private PetsItem animal;
     private UserItem userItem;
+
+    //Estados entre activities
+    private SignInToMenuState signInToMenuState;
 
 
     @Override
@@ -238,5 +240,15 @@ public class AppMediator extends Application {
 
     public void setAdministratorUserPetsDetailState(AdministratorUserPetsDetailState administratorUserPetsDetailState) {
         this.administratorUserPetsDetailState = administratorUserPetsDetailState;
+    }
+    //-------------------------
+
+    //SignInToMenu
+    public SignInToMenuState getSignInToMenuState() {
+        return signInToMenuState;
+    }
+
+    public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
+        this.signInToMenuState = signInToMenuState;
     }
 }
