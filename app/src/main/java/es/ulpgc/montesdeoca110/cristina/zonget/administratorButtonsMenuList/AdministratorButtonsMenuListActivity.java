@@ -86,6 +86,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_sign_out:
+                presenter.signOutButtonPressed();
                 return true;
             case R.id.action_settings:
                 return true;

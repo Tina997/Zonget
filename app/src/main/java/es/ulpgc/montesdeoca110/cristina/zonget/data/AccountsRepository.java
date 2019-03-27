@@ -29,8 +29,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     @Override
     public AccountItem getAccountInfo(String accountName, String accountPassword){
-        //return new AccountItem("administrator", "admin", "admin@gmail.com","admin");
-        return new AccountItem("user", "1234", "1234@gmail.com", "1234");
+        return new AccountItem("administrator", "admin", "admin@gmail.com","admin");
+        //return new AccountItem("user", "1234", "1234@gmail.com", "1234");
     }
 
 }

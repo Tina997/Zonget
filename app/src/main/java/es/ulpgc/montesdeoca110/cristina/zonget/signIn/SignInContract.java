@@ -55,6 +55,8 @@ interface SignInContract {
 
         void passDataToMenuScreen(SignInToMenuState state);
 
+        //------------- Obtener datos entre pantallas ----------
+
         SignInState getDataFromPreviousScreen();
 
     }
