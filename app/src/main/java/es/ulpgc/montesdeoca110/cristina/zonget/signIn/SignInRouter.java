@@ -25,19 +25,20 @@ public class SignInRouter implements SignInContract.Router {
     @Override
     public void navigateToMenuScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
+        Intent intent;
+        if(mediator.getSignInToMenuState().account.getType() == "administrator") {
+            intent = new Intent(context, AdministratorButtonsMenuListActivity.class);
+        }else{
+            intent = new Intent(context, UserButtonsMenuListActivity.class);
+        }
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     @Override
     public void navigateToSignUpScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent;
-        if(mediator.getSignInToMenuState().account.getType() == "administrator") {
-             intent = new Intent(context, AdministratorButtonsMenuListActivity.class);
-        }else{
-             intent = new Intent(context, UserButtonsMenuListActivity.class);
-        }
+        Intent intent = new Intent(context, SignUpActivity.class);
         context.startActivity(intent);
     }
 

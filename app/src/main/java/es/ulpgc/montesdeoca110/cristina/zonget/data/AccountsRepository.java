@@ -21,14 +21,17 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         this.context = context;
     }
 
+    //Todo Hacer implementación correcta
     @Override
     public boolean checkAccountExist(String accountName, String accountPassword) {
-        return false;
+        return true;
     }
 
     @Override
     public AccountItem getAccountInfo(String accountName, String accountPassword) {
-        return null;
+        //AccountItem accountItem = new AccountItem("administrator", "admin", "admin@gmail.com","admin");
+        AccountItem accountItem = new AccountItem("user", "admin", "admin@gmail.com","admin");
+        return accountItem;
     }
 
 }
