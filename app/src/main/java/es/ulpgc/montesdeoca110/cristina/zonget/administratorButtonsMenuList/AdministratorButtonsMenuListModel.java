@@ -5,13 +5,18 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorButtonsMenuListModel implements AdministratorButtonsMenuListContract.Model {
+
+    private RepositoryContract.Settings repository;
 
     private final List<AdministratorButtonMenuItem> administrator_buttons = new ArrayList<>();
     private final int COUNT = 6;
 
-    public AdministratorButtonsMenuListModel() {
+    public AdministratorButtonsMenuListModel(RepositoryContract.Settings repository) {
+        this.repository = repository;
+
         //Añadir ejemplos
         for (int index = 1; index <= COUNT; index++) {
             addAdministratorButtonMenuItem(createAdministratorButtonMenuItem(index));

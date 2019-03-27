@@ -10,28 +10,27 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private Context context;
 
-    public static AccountsRepository getInstance(Context context){
-        if(INSTANCE == null){
+    public static AccountsRepository getInstance(Context context) {
+        if (INSTANCE == null) {
             INSTANCE = new AccountsRepository(context);
         }
         return INSTANCE;
     }
 
-    private AccountsRepository(Context context){
+    private AccountsRepository(Context context) {
         this.context = context;
     }
 
     //Todo Hacer implementación correcta
     @Override
-    public boolean checkAccountExist(String accountName, String accountPassword) {
+    public boolean checkAccountExist(String accountName, String accountPassword){
         return true;
     }
 
     @Override
-    public AccountItem getAccountInfo(String accountName, String accountPassword) {
-        //AccountItem accountItem = new AccountItem("administrator", "admin", "admin@gmail.com","admin");
-        AccountItem accountItem = new AccountItem("user", "admin", "admin@gmail.com","admin");
-        return accountItem;
+    public AccountItem getAccountInfo(String accountName, String accountPassword){
+        //return new AccountItem("administrator", "admin", "admin@gmail.com","admin");
+        return new AccountItem("user", "admin", "admin@gmail.com", "admin");
     }
 
 }
