@@ -22,7 +22,7 @@ public class SignInModel implements SignInContract.Model {
     }
 
     @Override
-    public String getAccountEmail() {
+    public String[] getAccountInfo() {
         //Todo Acceder a la base de datos
         return null;
     }

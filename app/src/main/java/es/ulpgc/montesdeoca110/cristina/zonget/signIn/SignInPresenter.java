@@ -64,7 +64,8 @@ public class SignInPresenter implements SignInContract.Presenter {
     @Override
     public void signInButtonPressed(String accountName, String accountPassword) {
         if(model.checkAccount(accountName, accountPassword)){
-            SignInToMenuState state = new SignInToMenuState(model.getAccountEmail());
+            String[] accountInfo = model.getAccountInfo();
+            SignInToMenuState state = new SignInToMenuState(accountInfo[0], accountInfo[1]);
             router.passDataToMenuScreen(state);
             router.navigateToMenuScreen();
         } else {
