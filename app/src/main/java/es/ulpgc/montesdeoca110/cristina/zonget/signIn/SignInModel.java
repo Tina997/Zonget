@@ -13,4 +13,17 @@ public class SignInModel implements SignInContract.Model {
         // Log.e(TAG, "fetchDateListData()");
         return "Hello";
     }
+
+    @Override
+    public boolean checkAccount(String accountName, String accountPassword) {
+        //Todo Acceder a la base de datos
+
+        return false;
+    }
+
+    @Override
+    public String getAccountEmail() {
+        //Todo Acceder a la base de datos
+        return null;
+    }
 }

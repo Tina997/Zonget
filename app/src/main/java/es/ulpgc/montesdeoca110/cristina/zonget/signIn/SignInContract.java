@@ -2,12 +2,16 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
+
 interface SignInContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
         void displayData(SignInViewModel viewModel);
+
+        void displayCheckAccountError();
     }
 
     interface Presenter {
@@ -19,7 +23,9 @@ interface SignInContract {
 
         void fetchData();
 
-        void signInButtonPressed();
+        void forgetPasswordPressed();
+
+        void signInButtonPressed(String accountName, String accountPassword);
 
         void signUpButtonPressed();
 
@@ -28,12 +34,25 @@ interface SignInContract {
 
     interface Model {
         String fetchData();
+
+        boolean checkAccount(String accountName, String accountPassword);
+
+        String getAccountEmail();
     }
 
     interface Router {
-        void navigateToNextScreen();
 
-        void passDataToNextScreen(SignInState state);
+        //--------------- Navegación entre pantallas -----------
+
+        void navigateToMenuScreen();
+
+        void navigateToSignUpScreen();
+
+        void navigateToPickDateScreen();
+
+        //------------- Paso de datos entre pantallas ----------
+
+        void passDataToMenuScreen(SignInToMenuState state);
 
         SignInState getDataFromPreviousScreen();
 

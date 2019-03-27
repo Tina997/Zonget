@@ -17,10 +17,20 @@ public class SignInRouter implements SignInContract.Router {
     }
 
     @Override
-    public void navigateToNextScreen() {
+    public void navigateToMenuScreen() {
+
+    }
+
+    @Override
+    public void navigateToSignUpScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SignInActivity.class);
+        Intent intent = new Intent(context, SignUpActivity.class);
         context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToPickDateScreen() {
+
     }
 
     @Override
