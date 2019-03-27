@@ -26,12 +26,12 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         setContentView(R.layout.activity_sign_in);
 
         //Búsqueda de los elementos de la vista
-        accountNameEditText = findViewById(R.id.accountNameEditText);
-        accountPasswordEditText = findViewById(R.id.accountPasswordEditText);
-        passwordForgetTextView = findViewById(R.id.passwordForgetTextLabel);
-        signInButton = findViewById(R.id.signInButton);
-        signUpButton = findViewById(R.id.signUpButton);
-        askDateButton = findViewById(R.id.askDateButton);
+        accountNameEditText = findViewById(R.id.account_name_edit_text);
+        accountPasswordEditText = findViewById(R.id.account_password_edit_text);
+        passwordForgetTextView = findViewById(R.id.password_forget_text_label);
+        signInButton = findViewById(R.id.sign_in_button);
+        signUpButton = findViewById(R.id.sign_up_button);
+        askDateButton = findViewById(R.id.ask_date_button);
 
         //Listeners
         passwordForgetTextView.setOnClickListener(new View.OnClickListener() {

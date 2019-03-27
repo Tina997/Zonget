@@ -61,7 +61,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/accountNameEditText"
+                android:id="@+id/account_name_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="28dp"
@@ -86,7 +86,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/accountPasswordEditText"
+                android:id="@+id/account_password_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -102,7 +102,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/passwordForgetTextLabel"
+            android:id="@+id/password_forget_text_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/password_forget_text_label"
@@ -114,7 +114,7 @@
             android:layout_height="20dp" />
 
         <Button
-            android:id="@+id/signInButton"
+            android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal"
@@ -152,7 +152,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/signUpButton"
+                android:id="@+id/sign_up_button"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimary"
@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/askDateButton"
+                android:id="@+id/ask_date_button"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimary"
