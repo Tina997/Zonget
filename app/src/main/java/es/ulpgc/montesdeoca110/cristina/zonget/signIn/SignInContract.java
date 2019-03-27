@@ -38,7 +38,7 @@ interface SignInContract {
 
         boolean checkAccount(String accountName, String accountPassword);
 
-        AccountItem getAccountInfo();
+        AccountItem getAccountInfo(String accountName, String accountPassword);
     }
 
     interface Router {

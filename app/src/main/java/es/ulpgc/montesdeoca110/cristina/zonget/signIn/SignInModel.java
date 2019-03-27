@@ -24,7 +24,7 @@ public class SignInModel implements SignInContract.Model {
     }
 
     @Override
-    public AccountItem getAccountInfo() {
+    public AccountItem getAccountInfo(String accountName, String accountPassword) {
         //Todo Acceder a la base de datos
         return null;
     }
