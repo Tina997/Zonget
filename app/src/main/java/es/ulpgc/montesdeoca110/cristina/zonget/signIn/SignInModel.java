@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+
 public class SignInModel implements SignInContract.Model {
 
     public static String TAG = SignInModel.class.getSimpleName();
@@ -22,7 +24,7 @@ public class SignInModel implements SignInContract.Model {
     }
 
     @Override
-    public String[] getAccountInfo() {
+    public AccountItem getAccountInfo() {
         //Todo Acceder a la base de datos
         return null;
     }

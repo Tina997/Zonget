@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 
 public class SignInPresenter implements SignInContract.Presenter {
@@ -64,8 +65,7 @@ public class SignInPresenter implements SignInContract.Presenter {
     @Override
     public void signInButtonPressed(String accountName, String accountPassword) {
         if(model.checkAccount(accountName, accountPassword)){
-            String[] accountInfo = model.getAccountInfo();
-            SignInToMenuState state = new SignInToMenuState(accountInfo[0], accountInfo[1]);
+            SignInToMenuState state = new SignInToMenuState(model.getAccountInfo());
             router.passDataToMenuScreen(state);
             router.navigateToMenuScreen();
         } else {

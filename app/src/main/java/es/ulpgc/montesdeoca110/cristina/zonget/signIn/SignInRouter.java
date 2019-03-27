@@ -33,8 +33,7 @@ public class SignInRouter implements SignInContract.Router {
     public void navigateToSignUpScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent;
-
-        if(mediator.getSignInToMenuState().accountType == "administrator") {
+        if(mediator.getSignInToMenuState().account.getType() == "administrator") {
              intent = new Intent(context, AdministratorButtonsMenuListActivity.class);
         }else{
              intent = new Intent(context, UserButtonsMenuListActivity.class);

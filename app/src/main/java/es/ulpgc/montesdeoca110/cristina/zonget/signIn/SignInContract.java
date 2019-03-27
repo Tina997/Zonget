@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 
 interface SignInContract {
@@ -37,7 +38,7 @@ interface SignInContract {
 
         boolean checkAccount(String accountName, String accountPassword);
 
-        String[] getAccountInfo();
+        AccountItem getAccountInfo();
     }
 
     interface Router {
@@ -54,7 +55,7 @@ interface SignInContract {
 
         void passDataToMenuScreen(SignInToMenuState state);
 
-        SignInState getDataFromPreviousScreen();
+        //SignInState getDataFromPreviousScreen();
 
     }
 }

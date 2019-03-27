@@ -2,13 +2,13 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 public class SignInToMenuState {
 
-    public String email;
+    public AccountItem account;
 
-    public String accountType;
-
-    public SignInToMenuState(String email, String accountType) {
-        this.email = email;
-        this.accountType = accountType;
+    public SignInToMenuState(AccountItem account) {
+        this.account = account;
     }
 
+    public AccountItem getAccount() {
+        return account;
+    }
 }
