@@ -1,29 +1,33 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
 
-public class UserPetsDetailActivity
-        extends AppCompatActivity implements UserPetsDetailContract.View {
+public class AdministratorUserPetsDetailActivity
+        extends AppCompatActivity implements AdministratorUserPetsDetailContract.View {
 
-    public static String TAG = UserPetsDetailActivity.class.getSimpleName();
+    public static String TAG = AdministratorUserPetsDetailActivity.class.getSimpleName();
 
-    private UserPetsDetailContract.Presenter presenter;
+    private AdministratorUserPetsDetailContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_pets_detail);
-
+        setContentView(R.layout.activity_administrator_user_pets_detail);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -33,9 +37,8 @@ public class UserPetsDetailActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Detalles animal");
         }
-
         // do the setup
-        UserPetsDetailScreen.configure(this);
+        AdministratorUserPetsDetailScreen.configure(this);
     }
 
     @Override
@@ -43,16 +46,22 @@ public class UserPetsDetailActivity
         super.onResume();
 
         // do some work
-        presenter.fetchPetsData();
+        presenter.fetchData();
     }
 
     @Override
-    public void injectPresenter(UserPetsDetailContract.Presenter presenter) {
+    public void injectPresenter(AdministratorUserPetsDetailContract.Presenter presenter) {
         this.presenter = presenter;
     }
-
     @Override
-    public void displayData(UserPetsDetailViewModel viewModel) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.administrator_appbar_buttons_user_pet_detail, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public void displayData(AdministratorUserPetsDetailViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data
@@ -67,11 +76,18 @@ public class UserPetsDetailActivity
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            navigateUpTo(new Intent(this, UserPetsActivity.class));
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_delete:
+                return true;
+            case R.id.action_edit:
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    navigateUpTo(new Intent(this, AdministratorUsersPetsListActivity.class));
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }

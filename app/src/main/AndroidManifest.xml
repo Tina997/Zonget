@@ -66,8 +66,8 @@
 
         <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
 
-        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity">
-        </activity>
+        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity"></activity>
+        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
 
     </application>
 

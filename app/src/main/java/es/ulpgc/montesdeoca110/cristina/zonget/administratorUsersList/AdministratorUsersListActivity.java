@@ -60,15 +60,18 @@ public class AdministratorUsersListActivity
     @Override
     public void displayData(AdministratorUsersListViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-        listView.setAdapter(new AdministratorUsersListAdapter(this, viewModel.users, new View.OnClickListener() {
+        listView.setAdapter(new AdministratorUsersListAdapter(AdministratorUsersListActivity.this, viewModel.users, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 UserItem item = (UserItem) v.getTag();
                 presenter.selectAdminUserData(item);
+
             }
         }));
+
         // deal with the data
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -79,4 +82,6 @@ public class AdministratorUsersListActivity
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

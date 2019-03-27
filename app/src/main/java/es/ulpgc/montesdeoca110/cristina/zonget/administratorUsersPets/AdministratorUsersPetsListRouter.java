@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
@@ -20,7 +21,8 @@ public class AdministratorUsersPetsListRouter implements AdministratorUsersPetsL
     @Override
     public void navigateToPetsDetailScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AdministratorUsersPetsListActivity.class);
+        Intent intent = new Intent(context, AdministratorUserPetsDetailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
