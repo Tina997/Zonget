@@ -22,7 +22,11 @@ interface UserButtonsMenuListContract {
 
         void fetchUserButtonsMenuListData();
 
+        void signOutButtonPressed();
+
         void selectUserButtonsMenuListData(UserButtonMenuItem item);
+
+
     }
 
     interface Model {
@@ -30,10 +34,19 @@ interface UserButtonsMenuListContract {
     }
 
     interface Router {
-        void navigateToNextScreen();
+
+        //--------------- Navegación entre pantallas -----------
+
+        void navigateToSignInScreen();
+
+        //------------- Paso de datos entre pantallas ----------
 
         void passDataToNextScreen(UserButtonsMenuListState state);
 
+        //------------- Obtener datos entre pantallas ----------
+
         UserButtonsMenuListState getDataFromPreviousScreen();
+
+
     }
 }

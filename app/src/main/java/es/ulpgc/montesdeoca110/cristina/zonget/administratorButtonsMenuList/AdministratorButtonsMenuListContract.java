@@ -22,6 +22,8 @@ interface AdministratorButtonsMenuListContract {
 
         void fetchAdministratorButtonsMenuListData();
 
+        void signOutButtonPressed();
+
         void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
     }
 
@@ -30,10 +32,19 @@ interface AdministratorButtonsMenuListContract {
     }
 
     interface Router {
-        void navigateToNextScreen();
+
+        //--------------- Navegación entre pantallas -----------
+
+        void navigateToSignInScreen();
+
+        //------------- Paso de datos entre pantallas ----------
 
         void passDataToNextScreen(AdministratorButtonsMenuListState state);
 
+        //------------- Obtener datos entre pantallas ----------
+
         AdministratorButtonsMenuListState getDataFromPreviousScreen();
+
+
     }
 }

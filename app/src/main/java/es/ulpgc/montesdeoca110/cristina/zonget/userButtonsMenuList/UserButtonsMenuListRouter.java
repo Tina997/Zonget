@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Router {
 
@@ -17,9 +18,10 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
     }
 
     @Override
-    public void navigateToNextScreen() {
+    public void navigateToSignInScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
+        Intent intent = new Intent(context, SignInActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 

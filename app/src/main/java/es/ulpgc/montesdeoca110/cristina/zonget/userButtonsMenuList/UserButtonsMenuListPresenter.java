@@ -46,6 +46,11 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     }
 
     @Override
+    public void signOutButtonPressed() {
+        router.navigateToSignInScreen();
+    }
+
+    @Override
     public void selectUserButtonsMenuListData(UserButtonMenuItem item) {
         //router.passDataToProductListScreen(item);
         //router.navigateToProductListScreen();
