@@ -18,6 +18,8 @@ interface AdministratorUsersAddPetContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void insertNewPet();
     }
 
     interface Model {
