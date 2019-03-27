@@ -7,22 +7,8 @@
     tools:context=".administratorInbox.AdministratorInboxActivity"
     android:background="@color/colorPrimary">
 
-    <!--AppBar y Toolbar-->
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimaryDark">
+    <include layout="@layout/toolbar"></include>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/colorPrimary">
-
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
