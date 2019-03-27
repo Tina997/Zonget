@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.AdministratorUserEditPetActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
@@ -33,5 +34,13 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
     public PetsItem getDataFromPreviousScreen() {
         PetsItem pet = mediator.getAnimal();
         return pet;
+    }
+
+    @Override
+    public void navigateToEditScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorUserEditPetActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

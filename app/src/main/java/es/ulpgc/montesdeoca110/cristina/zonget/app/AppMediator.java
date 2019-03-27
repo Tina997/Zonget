@@ -9,6 +9,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.AdministratorUserEditPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
@@ -65,6 +66,7 @@ public class AppMediator extends Application {
 
     private AdministratorUserPetsDetailState administratorUserPetsDetailState = new AdministratorUserPetsDetailState();
     private AdministratorUsersAddPetState administratorUsersAddPetState = new AdministratorUsersAddPetState();
+    private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
@@ -272,5 +274,13 @@ public class AppMediator extends Application {
 
     public AdministratorUsersAddPetState getAdministratorUsersAddPetState() {
         return administratorUsersAddPetState;
+    }
+    //EditPet
+    public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
+        this.administratorUserPetsDetailState = administratorUserPetsDetailState;
+    }
+
+    public AdministratorUserEditPetState getAdministratorUserEditPetState() {
+        return administratorUserEditPetState;
     }
 }
