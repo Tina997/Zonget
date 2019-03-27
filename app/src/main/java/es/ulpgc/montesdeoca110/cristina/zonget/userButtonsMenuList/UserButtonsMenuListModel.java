@@ -8,15 +8,20 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserButtonsMenuListModel implements UserButtonsMenuListContract.Model {
 
     public static String TAG = UserButtonsMenuListModel.class.getSimpleName();
 
+    public RepositoryContract.Settings repository;
+
     private final List<UserButtonMenuItem> user_buttons = new ArrayList<>();
     private final int COUNT = 6;
 
-    public UserButtonsMenuListModel() {
+    public UserButtonsMenuListModel(RepositoryContract.Settings repository) {
+        this.repository = repository;
+
         //Añadir ejemplos
         for (int index = 1; index <= COUNT; index++) {
             addUserButtonMenuItem(createUserButtonMenuItem(index));
