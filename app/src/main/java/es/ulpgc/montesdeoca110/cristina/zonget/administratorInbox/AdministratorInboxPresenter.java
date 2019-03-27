@@ -16,6 +16,7 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
     private AdministratorInboxContract.Model model;
     private AdministratorInboxContract.Router router;
 
+
     public AdministratorInboxPresenter(AdministratorInboxState state) {
         viewModel = state;
     }
