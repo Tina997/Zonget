@@ -1,13 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-public class SignInModel implements SignInContract.Model {
+public class SignInModel implements SignInContract.Model{
 
     public static String TAG = SignInModel.class.getSimpleName();
 
-    public SignInModel() {
+    private RepositoryContract.Accounts repository;
 
+    public SignInModel(RepositoryContract.Accounts repository) {
+        this.repository = repository;
     }
 
     @Override
@@ -18,14 +21,11 @@ public class SignInModel implements SignInContract.Model {
 
     @Override
     public boolean checkAccount(String accountName, String accountPassword) {
-        //Todo Acceder a la base de datos
-
-        return false;
+        return repository.checkAccountExist(accountName,accountPassword);
     }
 
     @Override
     public AccountItem getAccountInfo(String accountName, String accountPassword) {
-        //Todo Acceder a la base de datos
-        return null;
+        return repository.getAccountInfo(accountName,accountPassword);
     }
 }
