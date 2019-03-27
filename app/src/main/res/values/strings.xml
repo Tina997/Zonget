@@ -64,14 +64,23 @@
 
     <!--AnimalDetail View -->
     <string name="item_details">Item Details</string>
-    <string name="nombre_text_label">Nombre</string>
-    <string name="especie_text_label">Especie:</string>
-    <string name="raza_text_label">Raza:</string>
-    <string name="numeroChip_text_label">Nº de chip:</string>
-    <string name="fechaNac_text_label">Fecha de nacimiento:</string>
+    <string name="name_text_label">Nombre</string>
+    <string name="species_text_label">Especie:</string>
+    <string name="breed_text_label">Raza:</string>
+    <string name="chipNum_text_label">Nº de chip:</string>
+    <string name="birthday_text_label">Fecha de nacimiento:</string>
     <!--AdminSearchUser View -->
     <string name="insert_DNI_name_text_label">Nombre completo o DNI:</string>
     <string name="insert_DNI_name_text_input">Inserte nombre o DNI</string>
     <string name="search">Buscar</string>
+    <!--AddPet View -->
+    <string name="insert_name_text_label">Nombre:</string>
+    <string name="insert_species_text_label">Especie:</string>
+    <string name="insert_breed_text_label">Raza:</string>
+    <string name="insert_ID_text_label">Número de identificación:</string>
+    <string name="insert_birthday_text_label">Fecha de nacimiento:</string>
+    <string name="pet_name">Nombre Mascota</string>
+    <string name="pet_species">Especie</string>
+    <string name="pet_breed">Raza</string>
 
 </resources>
