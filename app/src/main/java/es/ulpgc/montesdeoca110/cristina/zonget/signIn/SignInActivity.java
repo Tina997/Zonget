@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +36,23 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         askDateButton = findViewById(R.id.ask_date_button);
 
         //Listeners
+        accountNameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         passwordForgetTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +63,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Todo Cambiar lo de las comillas 77, buscar otra forma de pasarlo a String
                 String accountName = "" + accountNameEditText.getText();
                 String accountPassword = "" + accountPasswordEditText.getText();
                 presenter.signInButtonPressed(accountName, accountPassword);
@@ -66,6 +84,8 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         });
 
 
+
+
         // do the setup
         SignInScreen.configure(this);
     }
@@ -82,7 +102,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     public void injectPresenter(SignInContract.Presenter presenter) {
         this.presenter = presenter;
     }
-
 
 
     @Override

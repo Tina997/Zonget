@@ -27,7 +27,7 @@ public class UserNewQueryActivity
         setContentView(R.layout.activity_user_new_query);
 
         //Configuracion de la toolBar/actionBar
-        toolbar = findViewById(R.id.user_new_query_toolbar);;
+        toolbar = findViewById(R.id.user_new_query_toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();

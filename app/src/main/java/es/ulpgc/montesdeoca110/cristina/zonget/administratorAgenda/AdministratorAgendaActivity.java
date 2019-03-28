@@ -57,7 +57,7 @@ public class AdministratorAgendaActivity
             public void onClick(View v) {
                 presenter.createEventDetailsDialog();
             }
-        }));;
+        }));
     }
 
     public void goToAddEvent(View view) {

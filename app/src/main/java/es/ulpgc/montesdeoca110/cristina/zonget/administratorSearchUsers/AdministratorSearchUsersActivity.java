@@ -27,7 +27,7 @@ public class AdministratorSearchUsersActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrator_search_users);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //Mostrar el botón atras y el title en la action bar
@@ -38,7 +38,7 @@ public class AdministratorSearchUsersActivity
         }
         dataSearched = findViewById(R.id.user_name_edit_text);
 
-        searchButton = (Button) findViewById(R.id.buttonUserSearch);
+        searchButton = findViewById(R.id.buttonUserSearch);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
