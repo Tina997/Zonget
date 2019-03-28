@@ -9,22 +9,22 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 
-public class SettingsRepository implements RepositoryContract.Settings {
+public class SettingsMockRepository implements RepositoryContract.Settings {
 
-    private static SettingsRepository INSTANCE;
+    private static SettingsMockRepository INSTANCE;
     private Context context;
 
     private final List<AdministratorButtonMenuItem> administrator_buttons = new ArrayList<>();
     private final List<UserButtonMenuItem> user_buttons = new ArrayList<>();
 
-    public static SettingsRepository getInstance(Context context) {
+    public static SettingsMockRepository getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new SettingsRepository(context);
+            INSTANCE = new SettingsMockRepository(context);
         }
         return INSTANCE;
     }
 
-    private SettingsRepository(Context context) {
+    private SettingsMockRepository(Context context) {
         this.context = context;
     }
 

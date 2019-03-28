@@ -4,20 +4,20 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 
-public class AccountsRepository implements RepositoryContract.Accounts {
+public class AccountsMockRepository implements RepositoryContract.Accounts {
 
-    private static AccountsRepository INSTANCE;
+    private static AccountsMockRepository INSTANCE;
 
     private Context context;
 
-    public static AccountsRepository getInstance(Context context) {
+    public static AccountsMockRepository getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new AccountsRepository(context);
+            INSTANCE = new AccountsMockRepository(context);
         }
         return INSTANCE;
     }
 
-    private AccountsRepository(Context context) {
+    private AccountsMockRepository(Context context) {
         this.context = context;
     }
 

@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.SettingsRepository;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.SettingsMockRepository;
 
 public class UserButtonsMenuListScreen {
 
@@ -16,7 +16,7 @@ public class UserButtonsMenuListScreen {
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         UserButtonsMenuListState state = mediator.getUserButtonsMenuListState();
-        RepositoryContract.Settings repository = SettingsRepository.getInstance(context.get());
+        RepositoryContract.Settings repository = SettingsMockRepository.getInstance(context.get());
 
         UserButtonsMenuListContract.Router router = new UserButtonsMenuListRouter(mediator);
         UserButtonsMenuListContract.Presenter presenter = new UserButtonsMenuListPresenter(state);
