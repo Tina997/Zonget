@@ -16,6 +16,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        mock {
+            applicationId "es.ulpc.montesdeoca110.cristina.zonget.mock"
+        }
+
+        complete{
+            applicationId "es.ulpc.montesdeoca110.cristina.zonget.complete"
+        }
+    }
 }
 
 dependencies {
