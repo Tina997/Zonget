@@ -14,16 +14,16 @@ public class AdministratorUsersAddPetScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        //AdministratorUsersAddPetState state = mediator.getAdministratorUsersAddPetState();
+        AdministratorUsersAddPetState state = mediator.getAdministratorUsersAddPetState();
 
         AdministratorUsersAddPetContract.Router router = new AdministratorUsersAddPetRouter(mediator);
-        //AdministratorUsersAddPetContract.Presenter presenter = new AdministratorUsersAddPetPresenter(state);
+        AdministratorUsersAddPetContract.Presenter presenter = new AdministratorUsersAddPetPresenter(state);
         AdministratorUsersAddPetContract.Model model = new AdministratorUsersAddPetModel();
-       /* presenter.injectModel(model);
+        presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);*/
+        view.injectPresenter(presenter);
 
     }
 }

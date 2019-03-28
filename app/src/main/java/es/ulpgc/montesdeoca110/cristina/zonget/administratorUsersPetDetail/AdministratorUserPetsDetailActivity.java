@@ -80,6 +80,7 @@ public class AdministratorUserPetsDetailActivity
             case R.id.action_delete:
                 return true;
             case R.id.action_edit:
+                presenter.onEditButtonClicked();
                 return true;
             default:
                 int id = item.getItemId();

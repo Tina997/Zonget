@@ -24,7 +24,7 @@ android {
             applicationId "es.ulpc.montesdeoca110.cristina.zonget.mock"
         }
 
-        complete{
+        complete {
             applicationId "es.ulpc.montesdeoca110.cristina.zonget.complete"
         }
     }

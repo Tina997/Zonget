@@ -1,13 +1,13 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
 import java.lang.ref.WeakReference;
 
-interface AdministratorUsersAddPetContract {
+interface AdministratorUserEditPetContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(AdministratorUsersAddPetViewModel viewModel);
+        void displayData(AdministratorUserEditPetViewModel viewModel);
     }
 
     interface Presenter {
@@ -29,8 +29,8 @@ interface AdministratorUsersAddPetContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorUsersAddPetState state);
+        void passDataToNextScreen(AdministratorUserEditPetState state);
 
-        AdministratorUsersAddPetState getDataFromPreviousScreen();
+        AdministratorUserEditPetState getDataFromPreviousScreen();
     }
 }

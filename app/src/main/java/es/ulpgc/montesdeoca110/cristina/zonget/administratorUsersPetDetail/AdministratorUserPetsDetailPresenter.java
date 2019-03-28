@@ -49,5 +49,10 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
 
     }
 
+    @Override
+    public void onEditButtonClicked() {
+        router.navigateToEditScreen();
+    }
+
 
 }

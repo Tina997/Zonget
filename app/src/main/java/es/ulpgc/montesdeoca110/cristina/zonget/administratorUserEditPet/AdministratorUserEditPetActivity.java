@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -9,25 +9,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 
-public class AdministratorUsersAddPetActivity
-        extends AppCompatActivity implements AdministratorUsersAddPetContract.View {
+public class AdministratorUserEditPetActivity
+        extends AppCompatActivity implements AdministratorUserEditPetContract.View {
 
-    public static String TAG = AdministratorUsersAddPetActivity.class.getSimpleName();
+    public static String TAG = AdministratorUserEditPetActivity.class.getSimpleName();
 
-    private AdministratorUsersAddPetContract.Presenter presenter;
+    private AdministratorUserEditPetContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_administrator_users_add_pet);
+        setContentView(R.layout.activity_administrator_user_edit_pet);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -35,10 +32,10 @@ public class AdministratorUsersAddPetActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Nuevo animal");
+            actionBar.setTitle("Editar animal");
         }
         // do the setup
-        AdministratorUsersAddPetScreen.configure(this);
+        AdministratorUserEditPetScreen.configure(this);
     }
 
     @Override
@@ -46,12 +43,7 @@ public class AdministratorUsersAddPetActivity
         super.onResume();
 
         // do some work
-//        presenter.fetchData();
-    }
-
-    @Override
-    public void injectPresenter(AdministratorUsersAddPetContract.Presenter presenter) {
-        this.presenter = presenter;
+        presenter.fetchData();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,7 +53,12 @@ public class AdministratorUsersAddPetActivity
         return super.onCreateOptionsMenu(menu);
     }
     @Override
-    public void displayData(AdministratorUsersAddPetViewModel viewModel) {
+    public void injectPresenter(AdministratorUserEditPetContract.Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
+    public void displayData(AdministratorUserEditPetViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data

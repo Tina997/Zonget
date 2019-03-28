@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
+package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
 import android.util.Log;
 import android.content.Intent;
@@ -7,13 +7,13 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
-public class AdministratorUsersAddPetRouter implements AdministratorUsersAddPetContract.Router {
+public class AdministratorUserEditPetRouter implements AdministratorUserEditPetContract.Router {
 
-    public static String TAG = AdministratorUsersAddPetRouter.class.getSimpleName();
+    public static String TAG = AdministratorUserEditPetRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
-    public AdministratorUsersAddPetRouter(AppMediator mediator) {
+    public AdministratorUserEditPetRouter(AppMediator mediator) {
         this.mediator = mediator;
     }
 
@@ -24,15 +24,14 @@ public class AdministratorUsersAddPetRouter implements AdministratorUsersAddPetC
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
-
     @Override
-    public void passDataToNextScreen(AdministratorUsersAddPetState state) {
-        mediator.setAdministratorUsersAddPetState(state);
+    public void passDataToNextScreen(AdministratorUserEditPetState state) {
+        mediator.setAdministratorUserEditPetState(state);
     }
 
     @Override
-    public AdministratorUsersAddPetState getDataFromPreviousScreen() {
-        AdministratorUsersAddPetState state = mediator.getAdministratorUsersAddPetState();
+    public AdministratorUserEditPetState getDataFromPreviousScreen() {
+        AdministratorUserEditPetState state = mediator.getAdministratorUserEditPetState();
         return state;
     }
 }

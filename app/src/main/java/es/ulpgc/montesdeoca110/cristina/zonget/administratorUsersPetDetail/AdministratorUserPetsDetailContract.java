@@ -20,6 +20,8 @@ interface AdministratorUserPetsDetailContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void onEditButtonClicked();
     }
 
     interface Model {
@@ -32,5 +34,7 @@ interface AdministratorUserPetsDetailContract {
         void passDataToNextScreen(AdministratorUserPetsDetailState state);
 
         PetsItem getDataFromPreviousScreen();
+
+        void navigateToEditScreen();
     }
 }
