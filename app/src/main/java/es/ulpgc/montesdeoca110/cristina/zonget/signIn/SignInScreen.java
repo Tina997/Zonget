@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.AccountsMockRepository;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.AccountsRepository;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignInScreen {
@@ -15,7 +15,7 @@ public class SignInScreen {
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         SignInState state = mediator.getSignInState();
-        RepositoryContract.Accounts repository = AccountsMockRepository.getInstance(context.get());
+        RepositoryContract.Accounts repository = AccountsRepository.getInstance(context.get());
 
         SignInContract.Router router = new SignInRouter(mediator);
         SignInContract.Presenter presenter = new SignInPresenter(state);
