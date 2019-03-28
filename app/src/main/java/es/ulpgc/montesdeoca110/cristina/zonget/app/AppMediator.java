@@ -5,6 +5,7 @@ import android.app.Application;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer.AdministratorQueryAnswerState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
@@ -52,6 +53,8 @@ public class AppMediator extends Application {
     private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
 
     private AdministratorQueryDetailState administratorQueryDetailState = new AdministratorQueryDetailState();
+
+    private AdministratorQueryAnswerState administratorQueryAnswerState = new AdministratorQueryAnswerState();
 
     private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
 
@@ -212,6 +215,14 @@ public class AppMediator extends Application {
         this.administratorQueryDetailState = administratorQueryDetailState;
     }
 
+    //AdministratorQueryAnswer
+    public AdministratorQueryAnswerState getAdministratorQueryAnswerState() {
+        return administratorQueryAnswerState;
+    }
+
+    public void setAdministratorQueryAnswerState(AdministratorQueryAnswerState administratorQueryAnswerState) {
+        this.administratorQueryAnswerState = administratorQueryAnswerState;
+    }
 
     //UsersList
     public void setAdministratorUsersListState(AdministratorUsersListState administratorUsersListState) {
