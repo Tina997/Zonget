@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".administratorQueryAnswer.AdministratorQueryAnswerActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="525dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/user_new_query_desciption_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="397dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:inputType="textShortMessage|textLongMessage"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorAccent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/user_new_query_send_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:src="@drawable/ic_send" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

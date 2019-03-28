@@ -7,4 +7,123 @@
     tools:context=".administratorUsersAddPet.AdministratorUsersAddPetActivity"
     android:background="@color/colorPrimary">
         <include layout="@layout/toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="@string/insert_name_text_label"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="217dp"
+            android:layout_height="34dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:hint="@string/pet_name"
+            android:paddingLeft="20dp"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="220dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="@string/species_text_label"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp" />
+        <EditText
+            android:layout_width="217dp"
+            android:layout_height="34dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorAccent"
+            android:hint="@string/pet_species"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="290dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="@string/breed_text_label"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp" />
+        <EditText
+            android:layout_width="217dp"
+            android:layout_height="34dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorAccent"
+            android:hint="@string/pet_breed"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_ID_text_label"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="34dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:layout_marginLeft="20dp"
+            android:textColorHint="@color/colorAccent"
+            android:hint="XXX-XXX-XXX"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_birthday_text_label"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="34dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:layout_marginLeft="20dp"
+            android:textColorHint="@color/colorAccent"
+            android:hint="dd/mm/aaaa"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
