@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
 import android.app.AlertDialog;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -61,7 +62,7 @@ public class AdministratorUserPetsDetailPresenter extends FragmentActivity imple
     public void onEditButtonClicked() {
         router.navigateToEditScreen();
     }
-    
+
 
 
 
