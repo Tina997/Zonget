@@ -1,9 +1,14 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.AdministratorUserEditPetActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
@@ -43,4 +48,5 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
+
 }

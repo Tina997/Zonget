@@ -1,5 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
+import android.content.Context;
+import android.app.AlertDialog;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
@@ -22,6 +25,7 @@ interface AdministratorUserPetsDetailContract {
         void fetchData();
 
         void onEditButtonClicked();
+
     }
 
     interface Model {
@@ -36,5 +40,6 @@ interface AdministratorUserPetsDetailContract {
         PetsItem getDataFromPreviousScreen();
 
         void navigateToEditScreen();
+
     }
 }

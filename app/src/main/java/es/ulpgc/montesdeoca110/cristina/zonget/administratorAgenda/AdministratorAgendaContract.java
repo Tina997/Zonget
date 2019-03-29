@@ -44,5 +44,6 @@ interface AdministratorAgendaContract {
 
         //Navegar entre pantallas
         void navigateToAddEventScreen();
+
     }
 }

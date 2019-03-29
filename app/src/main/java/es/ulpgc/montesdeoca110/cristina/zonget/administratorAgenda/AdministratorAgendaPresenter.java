@@ -3,10 +3,12 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 public class AdministratorAgendaPresenter extends FragmentActivity implements AdministratorAgendaContract.Presenter {
@@ -21,7 +23,6 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
     public AdministratorAgendaPresenter(AdministratorAgendaState state) {
         viewModel = state;
     }
-
     @Override
     public void injectView(WeakReference<AdministratorAgendaContract.View> view) {
         this.view = view;
@@ -78,7 +79,10 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
                 //TODO mostrar diálogo de confirmación
             }
         });
-         builder.show();
+        //Cristina piensa que puede ser eso
+        /*AlertDialog alertDialog = builder.create();
+        alertDialog.show();*/
+        builder.show();
     }
 
     //Navegar a las diferentes pantallas

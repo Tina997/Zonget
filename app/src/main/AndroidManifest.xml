@@ -21,7 +21,9 @@
 -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity"></activity>
+        <activity android:name=".signIn.SignInActivity">
+
+</activity>
 
         <activity android:name=".signUp.SignUpActivity"></activity>
 
@@ -35,7 +37,8 @@
 
         <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 
-        <activity android:name=".administratorAgenda.AdministratorAgendaActivity"></activity>
+        <activity android:name=".administratorAgenda.AdministratorAgendaActivity">
+</activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
@@ -54,17 +57,18 @@
         <activity android:name=".userPetsDetail.UserPetsDetailActivity"></activity>
 
         <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
         <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity"></activity>
         <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
         <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
+        <activity android:name=".userPickDate.UserPickDateActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
     </application>
 
 </manifest>

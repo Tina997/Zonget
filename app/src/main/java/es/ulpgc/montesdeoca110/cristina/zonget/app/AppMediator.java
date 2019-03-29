@@ -14,6 +14,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery.UserNewQueryState;
@@ -67,6 +68,7 @@ public class AppMediator extends Application {
     private AdministratorUserPetsDetailState administratorUserPetsDetailState = new AdministratorUserPetsDetailState();
     private AdministratorUsersAddPetState administratorUsersAddPetState = new AdministratorUsersAddPetState();
     private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
+    private UserPickDateState userPickDateState = new UserPickDateState();
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
@@ -282,5 +284,9 @@ public class AppMediator extends Application {
 
     public AdministratorUserEditPetState getAdministratorUserEditPetState() {
         return administratorUserEditPetState;
+    }
+
+    public UserPickDateState getUserPickDateState() {
+        return userPickDateState;
     }
 }
