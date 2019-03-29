@@ -82,5 +82,10 @@
     <string name="pet_name">Nombre Mascota</string>
     <string name="pet_species">Especie</string>
     <string name="pet_breed">Raza</string>
+    <!--Dialogs-->
+    <string name="sureToEliminatePet">¿Está seguro de eliminar esta mascota de la lista?</string>
+    <string name="accept_button">Aceptar</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="sureToEliminateDate">¿Está seguro de eliminar esta cita de la lista?</string>
 
 </resources>
