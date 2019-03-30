@@ -15,14 +15,12 @@ public class SignInModel implements SignInContract.Model{
 
 
     @Override
-    public void checkAccount(String accountName, String accountPassword, final RepositoryContract.Accounts.CheckAccountExistCallback callback) {
-        AsyncTask.execute(new Runnable() {
+    public void checkAccount(final String accountName, final String accountPassword, final RepositoryContract.Accounts.GetCheckAccountExistCallback callback) {
+        repository.loadZonget(new RepositoryContract.Accounts.FecthZongetDataCallback() {
             @Override
-            public void run() {
-                //Todo Implementar búsqueda
-
-                if (callback != null){
-
+            public void onZongetDataFetched(boolean error) {
+                if (!error){
+                    repository.getCheckAccount(accountName, accountPassword, callback);
                 }
             }
         });

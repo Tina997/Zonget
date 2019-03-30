@@ -2,6 +2,7 @@ package es.ulpgc.motesdeoca110.cristina.zonget.data;
 
 import android.content.Context;
 
+import android.os.AsyncTask;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -39,6 +40,9 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private AccountsRepository(Context context) {
         this.context = context;
+
+        //Cargamos los datos del json la primera vez que inicializamos el repositorio
+        loadZongetFromJSON(loadJSONFromAsset());
     }
 
     private String loadJSONFromAsset(){
@@ -59,6 +63,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
     }
 
     private boolean loadZongetFromJSON(String json) {
+
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
 
@@ -82,20 +87,53 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                         pets.accountId = account.getId();
                     }
                 }
-
                 return true;
-
             }
 
         } catch (JSONException error) { }
 
         return false;
-
     }
 
     private void insertAccount(AccountItem account) {
         accounts.add(account);
     }
 
+    @Override
+    public void loadZonget(final FecthZongetDataCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                boolean error = !loadZongetFromJSON(loadJSONFromAsset());
+                callback.onZongetDataFetched(error);
+            }
+        });
+    }
+
+    @Override
+    public void getCheckAccount(final String accountName, final String accountPassword, final GetCheckAccountExistCallback callback) {
+        AsyncTask.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                if(callback != null) {
+                    boolean exist = checkAccount();
+                    AccountItem account = getAccountchecked();
+                    callback.setCheckAccountExist(exist,account);
+                }
+            }
+        });
+
+    }
+
+    private boolean checkAccount(){
+        //Todo falta por implementar
+        return false;
+    }
+
+    private AccountItem getAccountchecked(){
+        //Todo falta por implementar
+        return null;
+    }
 
 }

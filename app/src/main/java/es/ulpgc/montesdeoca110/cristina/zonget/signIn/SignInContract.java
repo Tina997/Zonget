@@ -37,7 +37,7 @@ interface SignInContract {
 
     interface Model {
 
-        void checkAccount(String accountName, String accountPassword, RepositoryContract.Accounts.CheckAccountExistCallback callback);
+        void checkAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
 
     }
 

@@ -65,9 +65,9 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     @Override
     public void signInButtonPressed(final String accountName, final String accountPassword) {
-        model.checkAccount(accountName, accountPassword, new RepositoryContract.Accounts.CheckAccountExistCallback() {
+        model.checkAccount(accountName, accountPassword, new RepositoryContract.Accounts.GetCheckAccountExistCallback() {
             @Override
-            public void onCheckAccountExist(boolean exist, AccountItem account) {
+            public void setCheckAccountExist(boolean exist, AccountItem account) {
                 if(exist){
                     SignInToMenuState state = new SignInToMenuState(account);
                     router.passDataToMenuScreen(state);
@@ -87,7 +87,7 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     @Override
     public void pickForADateButtonPressed() {
-        //Todo decidir nombre final
+
     }
 
 }

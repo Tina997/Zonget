@@ -16,9 +16,19 @@ public interface RepositoryContract {
 
     interface Accounts {
 
-        interface CheckAccountExistCallback {
-            void onCheckAccountExist(boolean exist, AccountItem account);
+        interface FecthZongetDataCallback {
+            void onZongetDataFetched(boolean error);
         }
+
+        void loadZonget(AccountsRepository.FecthZongetDataCallback callback);
+
+        interface GetCheckAccountExistCallback {
+            void setCheckAccountExist(boolean exist, AccountItem account);
+        }
+
+        void getCheckAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
+
+
 
     }
 
