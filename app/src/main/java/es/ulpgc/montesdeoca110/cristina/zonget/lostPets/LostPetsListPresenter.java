@@ -35,18 +35,6 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
         // Log.e(TAG, "fetchData()");
 
         // set passed state
-        LostPetsListState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
 
         // update the view
         view.get().displayData(viewModel);
