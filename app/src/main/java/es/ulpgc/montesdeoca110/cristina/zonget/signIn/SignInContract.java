@@ -32,7 +32,7 @@ interface SignInContract {
 
         void signUpButtonPressed();
 
-        void askDateButtonPressed();
+        void pickForADateButtonPressed();
     }
 
     interface Model {

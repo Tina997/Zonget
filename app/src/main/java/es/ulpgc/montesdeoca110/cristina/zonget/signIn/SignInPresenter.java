@@ -86,7 +86,7 @@ public class SignInPresenter implements SignInContract.Presenter {
     }
 
     @Override
-    public void askDateButtonPressed() {
+    public void pickForADateButtonPressed() {
         //Todo decidir nombre final
     }
 

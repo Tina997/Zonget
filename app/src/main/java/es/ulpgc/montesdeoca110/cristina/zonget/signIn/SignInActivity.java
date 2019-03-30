@@ -79,7 +79,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         askDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.askDateButtonPressed();
+                presenter.pickForADateButtonPressed();
             }
         });
 
