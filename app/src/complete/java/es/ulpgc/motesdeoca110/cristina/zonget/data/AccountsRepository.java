@@ -2,12 +2,13 @@ package es.ulpgc.motesdeoca110.cristina.zonget.data;
 
 import android.content.Context;
 
-import android.renderscript.ScriptGroup;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

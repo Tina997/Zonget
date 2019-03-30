@@ -27,7 +27,7 @@ public class AdministratorUsersPetsListModel implements AdministratorUsersPetsLi
 
     private PetsItem createPet(int posicion) {
         String content = "Mascota " + posicion;
-        return new PetsItem(posicion, accountId, content, fetchSpecies(posicion), fetchBreed(posicion), fetchChipNumber(posicion), fetchAnimalNac(posicion));
+        return new PetsItem(posicion, content, fetchSpecies(posicion), fetchBreed(posicion), fetchChipNumber(posicion), fetchAnimalNac(posicion));
     }
 
     private String fetchAnimalNac(int posicion) {
