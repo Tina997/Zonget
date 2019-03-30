@@ -55,5 +55,10 @@ public class AdministratorQueryDetailPresenter implements AdministratorQueryDeta
 
     }
 
+    @Override
+    public void navigateToAdministratorQueryAnswerScreen(){
+        router.navigateToAdministratorQueryAnswerScreen();
+    }
+
 
 }

@@ -1,13 +1,18 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 
 public class AdministratorQueryDetailActivity
         extends AppCompatActivity implements AdministratorQueryDetailContract.View {
@@ -49,7 +54,36 @@ public class AdministratorQueryDetailActivity
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.administrator_query_detail_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_reply:
+                presenter.navigateToAdministratorQueryAnswerScreen();
+                return true;
+            case R.id.action_edit:
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    navigateUpTo(new Intent(this, AdministratorInboxActivity.class));
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void displayData(AdministratorQueryDetailViewModel viewModel) {
 
     }
+
+
+
 }
