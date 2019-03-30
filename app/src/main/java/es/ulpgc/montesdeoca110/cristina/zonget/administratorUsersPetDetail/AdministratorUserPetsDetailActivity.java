@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -80,6 +81,9 @@ public class AdministratorUserPetsDetailActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_delete:
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogDelete dialogo = new DialogDelete();
+                dialogo.show(fragmentManager, "tagAlerta");
                 return true;
             case R.id.action_edit:
                 presenter.onEditButtonClicked();
