@@ -17,14 +17,14 @@ public class DialogDelete extends DialogFragment {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity(), R.style.DialogTheme);
 
-        builder.setMessage("¿Esta seguro de eliminar esta mascota de la lista?")
+        builder.setMessage(R.string.sureToEliminatePet)
                 //.setTitle("Información")
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.accept_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }
                 })
-                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel_button, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
