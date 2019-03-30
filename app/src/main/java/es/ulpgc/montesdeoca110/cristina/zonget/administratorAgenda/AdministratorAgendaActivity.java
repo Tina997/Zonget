@@ -58,7 +58,7 @@ public class AdministratorAgendaActivity
             public void onClick(View v) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 DialogEventDetail dialogo = new DialogEventDetail();
-                dialogo.show(fragmentManager, "tagAlerta");
+                dialogo.show(fragmentManager, "tagAlert");
             }
         }));
     }
