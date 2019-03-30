@@ -1,8 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 public class PetsItem {
+
     public final int id;
     public final String name, species, breed, chipNum, birthday;
+
+    public int accountId;
 
     public PetsItem(int id, String name, String species, String breed, String chipNum, String birthday) {
         this.id = id;
@@ -12,4 +15,6 @@ public class PetsItem {
         this.chipNum = chipNum;
         this.birthday = birthday;
     }
+
+
 }

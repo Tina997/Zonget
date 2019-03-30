@@ -1,6 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+import android.os.AsyncTask;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignInModel implements SignInContract.Model{
@@ -13,19 +13,18 @@ public class SignInModel implements SignInContract.Model{
         this.repository = repository;
     }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
-        return "Hello";
-    }
 
     @Override
-    public boolean checkAccount(String accountName, String accountPassword) {
-        return repository.checkAccountExist(accountName,accountPassword);
-    }
+    public void checkAccount(String accountName, String accountPassword, final RepositoryContract.Accounts.CheckAccountExistCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                //Todo Implementar búsqueda
 
-    @Override
-    public AccountItem getAccountInfo(String accountName, String accountPassword) {
-        return repository.getAccountInfo(accountName,accountPassword);
+                if (callback != null){
+
+                }
+            }
+        });
     }
 }

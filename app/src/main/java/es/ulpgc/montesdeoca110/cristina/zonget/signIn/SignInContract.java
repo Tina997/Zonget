@@ -2,8 +2,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
+import android.accounts.Account;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface SignInContract {
 
@@ -34,11 +36,9 @@ interface SignInContract {
     }
 
     interface Model {
-        String fetchData();
 
-        boolean checkAccount(String accountName, String accountPassword);
+        void checkAccount(String accountName, String accountPassword, RepositoryContract.Accounts.CheckAccountExistCallback callback);
 
-        AccountItem getAccountInfo(String accountName, String accountPassword);
     }
 
     interface Router {

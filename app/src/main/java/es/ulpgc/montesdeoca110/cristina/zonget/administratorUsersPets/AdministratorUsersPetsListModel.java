@@ -1,13 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
@@ -33,7 +27,7 @@ public class AdministratorUsersPetsListModel implements AdministratorUsersPetsLi
 
     private PetsItem createPet(int posicion) {
         String content = "Mascota " + posicion;
-        return new PetsItem(posicion, content, fetchSpecies(posicion), fetchBreed(posicion), fetchChipNumber(posicion), fetchAnimalNac(posicion));
+        return new PetsItem(posicion, accountId, content, fetchSpecies(posicion), fetchBreed(posicion), fetchChipNumber(posicion), fetchAnimalNac(posicion));
     }
 
     private String fetchAnimalNac(int posicion) {

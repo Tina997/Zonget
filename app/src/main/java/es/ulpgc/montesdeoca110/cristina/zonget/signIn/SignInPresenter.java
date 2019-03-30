@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignInPresenter implements SignInContract.Presenter {
 
@@ -63,15 +64,21 @@ public class SignInPresenter implements SignInContract.Presenter {
     }
 
     @Override
-    public void signInButtonPressed(String accountName, String accountPassword) {
-        if(model.checkAccount(accountName, accountPassword)){
-            SignInToMenuState state = new SignInToMenuState(model.getAccountInfo(accountName,accountPassword));
-            router.passDataToMenuScreen(state);
-            router.navigateToMenuScreen();
-        } else {
-            view.get().displayCheckAccountError();
-        }
+    public void signInButtonPressed(final String accountName, final String accountPassword) {
+        model.checkAccount(accountName, accountPassword, new RepositoryContract.Accounts.CheckAccountExistCallback() {
+            @Override
+            public void onCheckAccountExist(boolean exist, AccountItem account) {
+                if(exist){
+                    SignInToMenuState state = new SignInToMenuState(account);
+                    router.passDataToMenuScreen(state);
+                    router.navigateToMenuScreen();
+                } else{
+                    view.get().displayCheckAccountError();
+                }
+            }
+        });
     }
+
 
     @Override
     public void signUpButtonPressed() {
