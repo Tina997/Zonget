@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context="es.ulpgc.montesdeoca110.cristina.zonget.userAgenda.UserAgendaActivity">
 
-    <TextView
-        android:id="@+id/data"
+    <include layout="@layout/toolbar"></include>
+
+
+    <WebView
+        android:id="@+id/calendarWebView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"/>
 
 </FrameLayout>
 

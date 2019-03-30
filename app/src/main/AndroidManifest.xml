@@ -38,7 +38,12 @@
         <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 
         <activity android:name=".administratorAgenda.AdministratorAgendaActivity">
-</activity>
+                <intent-filter>
+                        <action android:name="android.intent.action.MAIN" />
+
+                        <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        </activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 

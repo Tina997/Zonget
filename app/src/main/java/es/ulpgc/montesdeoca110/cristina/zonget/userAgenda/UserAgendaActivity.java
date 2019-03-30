@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userAgenda;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebView;
 
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -12,11 +13,15 @@ public class UserAgendaActivity
     public static String TAG = UserAgendaActivity.class.getSimpleName();
 
     private UserAgendaContract.Presenter presenter;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_agenda);
+
+        webView = findViewById(R.id.calendarWebView);
+
 
         // do the setup
         UserAgendaScreen.configure(this);

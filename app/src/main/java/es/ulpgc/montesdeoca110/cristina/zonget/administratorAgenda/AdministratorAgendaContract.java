@@ -25,10 +25,6 @@ interface AdministratorAgendaContract {
         void fetchDateListData();
 
         void gotToAddEvent();
-
-        void showEventDetails();
-
-        void createEventDetailsDialog();
     }
 
     interface Model {

@@ -86,6 +86,12 @@
     <string name="sureToEliminatePet">¿Está seguro de eliminar esta mascota de la lista?</string>
     <string name="accept_button">Aceptar</string>
     <string name="cancel_button">Cancelar</string>
+    <string name="modify_button">Modificar</string>
+    <string name="eliminate_button">Eliminar</string>
     <string name="sureToEliminateDate">¿Está seguro de eliminar esta cita de la lista?</string>
+    <string name="title_text">Título: </string>
+    <string name="description_text">Descripción: </string>
+    <string name="additional_description_text">Descripción adicional: </string>
+    <string name="date_text">Fecha y hora: </string>
 
 </resources>
