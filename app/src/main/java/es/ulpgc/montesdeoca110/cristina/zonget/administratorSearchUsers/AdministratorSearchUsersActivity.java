@@ -34,7 +34,7 @@ public class AdministratorSearchUsersActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Clientes");
+            actionBar.setTitle(R.string.clients_tittle);
         }
         dataSearched = findViewById(R.id.user_name_edit_text);
 

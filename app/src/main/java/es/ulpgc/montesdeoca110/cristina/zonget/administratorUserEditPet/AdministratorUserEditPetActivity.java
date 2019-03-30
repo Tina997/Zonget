@@ -32,7 +32,7 @@ public class AdministratorUserEditPetActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Editar animal");
+            actionBar.setTitle(R.string.edit_pet_tittle);
         }
         // do the setup
         AdministratorUserEditPetScreen.configure(this);

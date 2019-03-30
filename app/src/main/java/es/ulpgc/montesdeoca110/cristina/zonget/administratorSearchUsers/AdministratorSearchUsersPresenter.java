@@ -57,9 +57,9 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
     public void searchButtonClicked(String nameOrDni) {
         AdministratorSearchUsersState state;
         if(nameOrDni!=null){
-            state = new AdministratorSearchUsersState(nameOrDni);
+            state = new AdministratorSearchUsersState();
         }else {
-            state = new AdministratorSearchUsersState(viewModel.dataSearched);
+            state = new AdministratorSearchUsersState();
         }
         router.passDataToNextScreen(state);
         router.navigateToNextScreen();

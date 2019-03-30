@@ -35,7 +35,7 @@ public class AdministratorUsersListActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Clientes");
+            actionBar.setTitle(R.string.clients_tittle);
         }
 
         listView = findViewById(R.id.user_list);

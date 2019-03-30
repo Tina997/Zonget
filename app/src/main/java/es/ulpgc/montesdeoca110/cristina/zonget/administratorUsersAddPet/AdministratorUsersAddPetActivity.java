@@ -35,7 +35,7 @@ public class AdministratorUsersAddPetActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Nuevo animal");
+            actionBar.setTitle(R.string.add_pet_tittle);
         }
         // do the setup
         AdministratorUsersAddPetScreen.configure(this);

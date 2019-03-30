@@ -1,13 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v4.app.FragmentActivity;
-import android.app.AlertDialog;
-import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import java.lang.ref.WeakReference;
 
@@ -15,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
-public class AdministratorUserPetsDetailPresenter extends FragmentActivity implements AdministratorUserPetsDetailContract.Presenter {
+public class AdministratorUserPetsDetailPresenter implements AdministratorUserPetsDetailContract.Presenter {
 
     public static String TAG = AdministratorUserPetsDetailPresenter.class.getSimpleName();
 
@@ -63,7 +56,10 @@ public class AdministratorUserPetsDetailPresenter extends FragmentActivity imple
         router.navigateToEditScreen();
     }
 
-
+    @Override
+    public void onDeleteButtonClicked() {
+        router.navigateToPetListScreen();
+    }
 
 
 }

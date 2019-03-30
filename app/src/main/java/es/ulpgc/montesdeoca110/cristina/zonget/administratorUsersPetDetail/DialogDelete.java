@@ -10,18 +10,18 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
 public class DialogDelete extends DialogFragment {
-
+    private AdministratorUserPetsDetailContract.View view;
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    public Dialog onCreateDialog(Bundle savedInstanceState){
 
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity(), R.style.DialogTheme);
 
         builder.setMessage(R.string.sureToEliminatePet)
-                //.setTitle("Información")
                 .setPositiveButton(R.string.accept_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        //dialog.cancel();
+                        view.onDeleteButtonClicked();
                     }
                 })
                 .setNegativeButton(R.string.cancel_button, new DialogInterface.OnClickListener() {

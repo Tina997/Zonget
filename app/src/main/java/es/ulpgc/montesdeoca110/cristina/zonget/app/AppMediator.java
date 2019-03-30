@@ -61,7 +61,7 @@ public class AppMediator extends Application {
 
     private AdministratorQueryAnswerState administratorQueryAnswerState = new AdministratorQueryAnswerState();
 
-    private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState("");
+    private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState();
 
     private AdministratorUsersListState administratorUsersListState = new AdministratorUsersListState();
 

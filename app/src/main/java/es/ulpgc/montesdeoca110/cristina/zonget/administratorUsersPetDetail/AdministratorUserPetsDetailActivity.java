@@ -38,7 +38,7 @@ public class AdministratorUserPetsDetailActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Detalles animal");
+            actionBar.setTitle(R.string.animal_detail_tittle);
         }
         // do the setup
         AdministratorUserPetsDetailScreen.configure(this);
@@ -77,6 +77,12 @@ public class AdministratorUserPetsDetailActivity
             ((TextView)findViewById(R.id.numberAnimalClient)).setText(petClientItem.chipNum);
         }
     }
+
+    @Override
+    public void onDeleteButtonClicked() {
+        presenter.onDeleteButtonClicked();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
