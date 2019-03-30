@@ -6,7 +6,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.Administrator
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer.AdministratorQueryAnswerState;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.AdministratorUserEditPetState;
@@ -14,6 +13,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userAgenda.UserAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
@@ -44,6 +44,8 @@ public class AppMediator extends Application {
     private UserNewQueryState userNewQueryState;
 
     private UserPetsState clientPetsState = new UserPetsState();
+
+    private UserAgendaState userAgendaState = new UserAgendaState();
 
     private AdministratorAgendaState administratorAgendaState = new AdministratorAgendaState();
 
@@ -288,5 +290,14 @@ public class AppMediator extends Application {
 
     public UserPickDateState getUserPickDateState() {
         return userPickDateState;
+    }
+
+    //UserAgenda
+    public UserAgendaState getUserAgendaState() {
+        return userAgendaState;
+    }
+
+    public void setUserAgendaState(UserAgendaState userAgendaState) {
+        this.userAgendaState = userAgendaState;
     }
 }

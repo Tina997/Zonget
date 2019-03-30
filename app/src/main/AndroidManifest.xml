@@ -52,6 +52,8 @@
 
         <activity android:name=".administratorQueryAnswer.AdministratorQueryAnswerActivity"></activity>
 
+        <activity android:name=".userAgenda.UserAgendaActivity"></activity>
+
         <activity android:name=".userPets.UserPetsActivity"></activity>
 
         <activity android:name=".userPetsDetail.UserPetsDetailActivity"></activity>
