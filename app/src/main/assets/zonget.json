@@ -1,0 +1,71 @@
+{
+  "accounts": [
+    {
+      "id": 0,
+      "type": "administrator",
+      "name": "admin",
+      "email": "admin@zonget.com",
+      "password": "admin",
+      "pets": []
+    },
+    {
+      "id": 1,
+      "type": "user",
+      "name": "Yguanira",
+      "email": "yguanira@zonget.com",
+      "password": "yguanira",
+      "pets": [
+        {
+          "id": 0,
+          "name": "Nyu",
+          "specie": "Felino",
+          "breed": "Gato",
+          "chipNum": "981020009173356",
+          "birthday": "31/05/2016"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "user",
+      "name": "Caterina",
+      "email": "caterina@zonget.com",
+      "password": "caterina",
+      "pets": [
+        {
+          "id": 0,
+          "name": "Nuba",
+          "specie": "Cánido",
+          "breed": "Perro",
+          "chipNum": "xxxxxxxxxxxxx",
+          "birthday": "dd/mm/aaaa"
+        },
+        {
+          "id": 1,
+          "name": "Kira",
+          "specie": "Cánido",
+          "breed": "Perro",
+          "chipNum": "xxxxxxxxxxxxx",
+          "birthday": "dd/mm/aaaa"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "user",
+      "name": "Cristina",
+      "email": "cristina@zonget.com",
+      "password": "cristina",
+      "pets": [
+        {
+          "id": 0,
+          "name": "Negrito",
+          "specie": "Felino",
+          "breed": "Gato",
+          "chipNum": "xxxxxxxxxxxxx",
+          "birthday": "dd/mm/aaaa"
+        }
+      ]
+    }
+  ]
+}
