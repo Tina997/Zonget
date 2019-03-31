@@ -40,9 +40,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private AccountsRepository(Context context) {
         this.context = context;
-
-        //Cargamos los datos del json la primera vez que inicializamos el repositorio
-        loadZongetFromJSON(loadJSONFromAsset());
     }
 
     private String loadJSONFromAsset(){
@@ -117,8 +114,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(callback != null) {
-                    boolean exist = checkAccount();
-                    AccountItem account = getAccountchecked();
+                    boolean exist = checkAccount(accountName, accountPassword);
+                    AccountItem account = getAccountchecked(accountName, accountPassword);
                     callback.setCheckAccountExist(exist,account);
                 }
             }
@@ -126,13 +123,21 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     }
 
-    private boolean checkAccount(){
-        //Todo falta por implementar
+    private boolean checkAccount(String accountName, String accountPassword){
+        for(AccountItem account: accounts){
+            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)){
+                return true;
+            }
+        }
         return false;
     }
 
-    private AccountItem getAccountchecked(){
-        //Todo falta por implementar
+    private AccountItem getAccountchecked(String accountName, String accountPassword){
+        for(AccountItem account: accounts){
+            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)){
+                return account;
+            }
+        }
         return null;
     }
 
