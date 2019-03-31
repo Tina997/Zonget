@@ -16,7 +16,7 @@ public interface RepositoryContract {
             void onZongetDataFetched(boolean error);
         }
 
-        void loadZonget(AccountsRepository.FecthZongetDataCallback callback);
+        void loadZonget(SettingsRepository.FecthZongetDataCallback callback);
 
         // ---------------- Administrator ------------------
         interface GetAdministratorMenuButtonsListCallback {

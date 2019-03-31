@@ -35,7 +35,6 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
     @Override
     public void fetchAdministratorButtonsMenuListData() {
 
-        //Llamamos al modelo para que nos de la información
        model.fetchAdministratorButtonsMenuListData(new RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback() {
            @Override
            public void setAdministratorMenuButtonsList(List<AdministratorButtonMenuItem> administratorButtons) {

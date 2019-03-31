@@ -14,8 +14,14 @@ public class AdministratorButtonsMenuListModel implements AdministratorButtonsMe
     }
 
     @Override
-    public List<AdministratorButtonMenuItem> fetchAdministratorButtonsMenuListData() {
-        return repository.getAdministratorMenuButtons();
+    public void fetchAdministratorButtonsMenuListData(final RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback) {
+        repository.loadZonget(new RepositoryContract.Settings.FecthZongetDataCallback() {
+            @Override
+            public void onZongetDataFetched(boolean error) {
+                if (!error){
+                    repository.getAdministratorMenuButtonsList(callback);
+                }
+            }
+        });
     }
-
 }
