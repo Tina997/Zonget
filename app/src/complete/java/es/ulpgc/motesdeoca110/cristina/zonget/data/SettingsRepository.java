@@ -16,11 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SettingsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -30,10 +26,11 @@ public class SettingsRepository implements RepositoryContract.Settings {
     private Context context;
 
     public static final String JSON_FILE = "zonget.json";
-    public static final String JSON_ROOT = "settings";
+    public static final String JSON_ADMINISTRATOR = "administratorButtonsMenu";
+    public static final String JSON_USER = "userButtonsMenu";
 
-    private List<AdministratorButtonMenuItem> administratorButtonsMenu;
-    private List<UserButtonMenuItem> userButtonsMenu;
+    private List<AdministratorButtonMenuItem> administratorButtonsMenuList;
+    private List<UserButtonMenuItem> userButtonsMenuList;
 
     public static SettingsRepository getInstance(Context context) {
         if (INSTANCE == null) {
@@ -71,15 +68,26 @@ public class SettingsRepository implements RepositoryContract.Settings {
         try {
 
             JSONObject jsonObject = new JSONObject(json);
-            JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT);
+            JSONArray jsonArrayAdministrator = jsonObject.getJSONArray(JSON_ADMINISTRATOR);
+            JSONArray jsonArrayUser = jsonObject.getJSONArray(JSON_USER);
 
-            if (jsonArray.length() > 0) {
+            administratorButtonsMenuList = new ArrayList<>();
+            userButtonsMenuList = new ArrayList<>();
 
-                final List<SettingsItem> settings = Arrays.asList(gson.fromJson(jsonArray.toString(), SettingsItem[].class));
+            if (jsonArrayAdministrator.length() > 0  && jsonArrayUser.length() > 0) {
 
-                for (SettingsItem setting: settings) {
-                    insertAdministratorButtons(setting.administratorMenuButtons);
-                    insertUserButtons(setting.userrMenuButtons);
+                // ---------- Administrator -------------
+                final List<AdministratorButtonMenuItem> administratorButtonMenuList = Arrays.asList(gson.fromJson(jsonArrayAdministrator.toString(), AdministratorButtonMenuItem[].class));
+
+                for (AdministratorButtonMenuItem button: administratorButtonMenuList) {
+                    insertAdministratorButton(button);
+                }
+
+                // -------------- User ------------------
+                final List<UserButtonMenuItem> userButtonMenuList = Arrays.asList(gson.fromJson(jsonArrayUser.toString(), UserButtonMenuItem[].class));
+
+                for (UserButtonMenuItem button: userButtonMenuList) {
+                    insertUserButton(button);
                 }
 
                 return true;
@@ -90,12 +98,12 @@ public class SettingsRepository implements RepositoryContract.Settings {
         return false;
     }
 
-    private void insertAdministratorButtons(List<AdministratorButtonMenuItem> buttonsList) {
-        this.administratorButtonsMenu = buttonsList;
+    private void insertAdministratorButton(AdministratorButtonMenuItem button) {
+        administratorButtonsMenuList.add(button);
     }
 
-    private void insertUserButtons(List<UserButtonMenuItem> buttonsList) {
-        this.userButtonsMenu = buttonsList;
+    private void insertUserButton(UserButtonMenuItem button) {
+        userButtonsMenuList.add(button);
     }
 
     @Override
@@ -115,8 +123,15 @@ public class SettingsRepository implements RepositoryContract.Settings {
     }
     // ------------------------- Administrator ---------------------------
     @Override
-    public void getAdministratorMenuButtonsList(GetAdministratorMenuButtonsListCallback callback) {
-
+    public void getAdministratorMenuButtonsList(final GetAdministratorMenuButtonsListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null){
+                    callback.setAdministratorMenuButtonsList(administratorButtonsMenuList);
+                }
+            }
+        });
     }
 
     // ------------------------------ User --------------------------------

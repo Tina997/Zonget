@@ -18,7 +18,7 @@ public class UserButtonsMenuListModel implements UserButtonsMenuListContract.Mod
 
     @Override
     public List<UserButtonMenuItem> fetchUserButtonsMenuListData() {
-        return repository.getUserAdministratorMenuButtons();
+        return null;
     }
 
 }

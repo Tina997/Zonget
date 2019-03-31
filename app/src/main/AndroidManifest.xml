@@ -21,7 +21,13 @@
             -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity">
+        <activity android:name=".signIn.SignInActivity"></activity>
+
+        <activity android:name=".signUp.SignUpActivity"></activity>
+
+        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
+
+        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,12 +36,6 @@
             </intent-filter>
 
         </activity>
-
-        <activity android:name=".signUp.SignUpActivity"></activity>
-
-        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
-
-        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"></activity>
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 

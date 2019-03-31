@@ -69,28 +69,45 @@
     }
   ],
 
-  "settings":[
+  "administratorButtonsMenu":[
     {
-      "administratorButtonsMenu":[
-        {
-          "id": 0,
-          "text": "Agenda",
-          "image": "",
-          "activity": "AdministratorAgendaActivity"
-        },
-        {
-          "id": 2,
-          "text": "Buzón",
-          "image": "",
-          "activity":"AdministratorInbox"
-        },
-        {
-          "id": 3,
-          "text": "Búsqueda",
-          "image": "",
-          "activity":"AdministratorSeqarchUsers"
-        }
-      ]
+      "id": 0,
+      "text": "Agenda",
+      "image": "",
+      "activity": "AdministratorAgendaActivity"
+    },
+    {
+      "id": 2,
+      "text": "Buzón",
+      "image": "",
+      "activity":"AdministratorInbox"
+    },
+    {
+      "id": 3,
+      "text": "Búsqueda",
+      "image": "",
+      "activity":"AdministratorSeqarchUsers"
+    }
+  ],
+
+  "userrButtonsMenu":[
+    {
+      "id": 0,
+      "text": "Agenda",
+      "image": "",
+      "activity": "AdministratorAgendaActivity"
+    },
+    {
+      "id": 2,
+      "text": "Buzón",
+      "image": "",
+      "activity":"AdministratorInbox"
+    },
+    {
+      "id": 3,
+      "text": "Búsqueda",
+      "image": "",
+      "activity":"AdministratorSeqarchUsers"
     }
   ]
 }
