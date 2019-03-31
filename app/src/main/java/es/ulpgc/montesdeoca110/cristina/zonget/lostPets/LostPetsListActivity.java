@@ -1,7 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.lostPets;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -13,11 +17,31 @@ public class LostPetsListActivity
 
     private LostPetsListContract.Presenter presenter;
 
+    private ActionBar actionBar;
+
+    private LostPetsListAdapter listAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost_pets_list);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(R.string.lost_pets_tittle);
+        }
+        listAdapter = new LostPetsListAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        RecyclerView recyclerView = findViewById(R.id.category_list);
+        recyclerView.setAdapter(listAdapter);
         // do the setup
         LostPetsListScreen.configure(this);
     }
@@ -27,7 +51,7 @@ public class LostPetsListActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        presenter.fetchLostPetsListData();
     }
 
     @Override
@@ -36,10 +60,16 @@ public class LostPetsListActivity
     }
 
     @Override
-    public void displayData(LostPetsListViewModel viewModel) {
+    public void displayLostPetsListData(final LostPetsListViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                listAdapter.setItems(viewModel.lostPetsItems);
+            }
+        });
         // deal with the data
 
     }
+
 }

@@ -1,0 +1,13 @@
+{
+  "lostPets": [
+    {
+      "id": 1,
+      "picture": "https://www.freejpg.com.ar/image-900/65/65ab/F100011060-gato.jpg",
+      "date": "10/03/2018",
+      "breed": "Europeo común",
+      "chipNum": "xxxxxxxxxxx",
+      "details": "Gato europeo, blanco con manchas amarillas en el lomo y las patas",
+      "phoneNum": "XXX-XXX-XXX"
+    }
+  ]
+}

@@ -33,4 +33,13 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         //return new AccountItem("user", "1234", "1234@gmail.com", "1234");
     }
 
+    @Override
+    public void loadZonget(FecthZongetDataCallback callback) {
+
+    }
+
+    @Override
+    public void getCheckAccount(String accountName, String accountPassword, GetCheckAccountExistCallback callback) {
+
+    }
 }

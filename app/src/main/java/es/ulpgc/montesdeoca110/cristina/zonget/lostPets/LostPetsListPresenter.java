@@ -1,6 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.lostPets;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class LostPetsListPresenter implements LostPetsListContract.Presenter {
 
@@ -31,13 +37,20 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
+    public void fetchLostPetsListData() {
         // Log.e(TAG, "fetchData()");
-
+        // call the model
+         model.fetchLostPetsListData(new RepositoryContract.LostPets.GetLostPetsListCallback() {
+            @Override
+            public void setLostPetsList(List<LostPetItem> lostPets) {
+                Log.e(TAG,lostPets.get(0).chipNum);
+                viewModel.lostPetsItems = lostPets;
+                view.get().displayLostPetsListData(viewModel);
+            }
+        });
         // set passed state
 
         // update the view
-        view.get().displayData(viewModel);
 
     }
 

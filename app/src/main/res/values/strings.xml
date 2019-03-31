@@ -106,6 +106,7 @@
     <string name="additional_description_text">Descripción adicional: </string>
     <string name="date_text">Fecha y hora: </string>
 
-
+    <!--LostPets View-->
+    <string name="lost_pets_tittle">Animales Perdidos</string>
 
 </resources>

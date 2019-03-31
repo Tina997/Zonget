@@ -72,7 +72,7 @@ public class AppMediator extends Application {
     private AdministratorUsersAddPetState administratorUsersAddPetState = new AdministratorUsersAddPetState();
     private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
     private UserPickDateState userPickDateState = new UserPickDateState();
-    private LostPetsListState lostPetsListState;
+    private LostPetsListState lostPetsListState = new LostPetsListState();
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;

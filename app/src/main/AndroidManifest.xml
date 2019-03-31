@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.ulpgc.montesdeoca110.cristina.zonget">
-
+    <!--Para que se puedan cargar las imagenes URL
+    <uses-permission android:name="android.permission.INTERNET" />-->
     <application
         android:name=".app.AppMediator"
         android:allowBackup="true"
@@ -29,11 +30,6 @@
 
         <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 
@@ -75,7 +71,13 @@
 
         <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
-        <activity android:name=".lostPets.LostPetsListActivity"></activity>
+        <activity android:name=".lostPets.LostPetsListActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
     </application>
 
