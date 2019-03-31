@@ -3,27 +3,25 @@
     package="es.ulpgc.montesdeoca110.cristina.zonget">
 
     <application
+        android:name=".app.AppMediator"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".app.AppMediator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity android:name=".SplashActivity">
-<!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
--->
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+            -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity">
-
-</activity>
+        <activity android:name=".signIn.SignInActivity"></activity>
 
         <activity android:name=".signUp.SignUpActivity"></activity>
 
@@ -37,13 +35,7 @@
 
         <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 
-        <activity android:name=".administratorAgenda.AdministratorAgendaActivity">
-                <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-
-                        <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-        </activity>
+        <activity android:name=".administratorAgenda.AdministratorAgendaActivity"></activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
@@ -75,13 +67,8 @@
 
         <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
-        <activity android:name=".lostPets.LostPetsListActivity">
-                <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".lostPets.LostPetsListActivity"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-        </activity>
     </application>
 
 

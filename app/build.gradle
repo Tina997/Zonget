@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "es.ulpgc.montesdeoca110.cristina.zonget"
         minSdkVersion 23
@@ -16,23 +18,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     flavorDimensions "default"
-
     productFlavors {
         mock {
             applicationId "es.ulpc.montesdeoca110.cristina.zonget.mock"
+            minSdkVersion 23
+            targetSdkVersion 28
         }
-
         complete {
             applicationId "es.ulpc.montesdeoca110.cristina.zonget.complete"
+            minSdkVersion 23
+            targetSdkVersion 28
         }
     }
 }
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
