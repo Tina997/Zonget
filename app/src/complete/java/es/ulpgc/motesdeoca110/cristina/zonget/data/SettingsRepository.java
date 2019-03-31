@@ -1,6 +1,7 @@
 package es.ulpgc.motesdeoca110.cristina.zonget.data;
 
 import android.content.Context;
+import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -98,8 +99,19 @@ public class SettingsRepository implements RepositoryContract.Settings {
     }
 
     @Override
-    public void loadZonget(FecthZongetDataCallback callback) {
+    public void loadZonget(final FecthZongetDataCallback callback) {
+        AsyncTask.execute(new Runnable() {
 
+            @Override
+            public void run() {
+
+                boolean error = !loadZongetFromJSON(loadJSONFromAsset());
+
+                if(callback != null) {
+                    callback.onZongetDataFetched(error);
+                }
+            }
+        });
     }
     // ------------------------- Administrator ---------------------------
     @Override
