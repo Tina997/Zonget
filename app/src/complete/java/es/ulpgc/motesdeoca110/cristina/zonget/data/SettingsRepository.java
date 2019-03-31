@@ -60,6 +60,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
         return json;
     }
 
+    //TODO Arreglar problema: java.lang.UnsupportedOperationException: Attempted to deserialize a java.lang.Class. Forgot to register a type adapter?
     private boolean loadZongetFromJSON(String json) {
 
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -67,11 +68,14 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
         try {
 
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray jsonArrayAdministrator = jsonObject.getJSONArray(JSON_ADMINISTRATOR);
-            JSONArray jsonArrayUser = jsonObject.getJSONArray(JSON_USER);
+            JSONObject jsonObjectAdministrator = new JSONObject(json);
+            JSONArray jsonArrayAdministrator = jsonObjectAdministrator.getJSONArray(JSON_ADMINISTRATOR);
 
             administratorButtonsMenuList = new ArrayList<>();
+
+            JSONObject jsonObjectUser = new JSONObject(json);
+            JSONArray jsonArrayUser = jsonObjectUser.getJSONArray(JSON_USER);
+
             userButtonsMenuList = new ArrayList<>();
 
             if (jsonArrayAdministrator.length() > 0  && jsonArrayUser.length() > 0) {
