@@ -8,7 +8,4 @@ public class SignInToMenuState {
         this.account = account;
     }
 
-    public AccountItem getAccount() {
-        return account;
-    }
 }

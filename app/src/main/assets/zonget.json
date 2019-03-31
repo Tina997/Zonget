@@ -67,5 +67,30 @@
         }
       ]
     }
+  ],
+
+  "settings":[
+    {
+      "administratorButtonsMenu":[
+        {
+          "id": 0,
+          "text": "Agenda",
+          "image": "",
+          "activity": "AdministratorAgendaActivity"
+        },
+        {
+          "id": 2,
+          "text": "Buzón",
+          "image": "",
+          "activity":"AdministratorInbox"
+        },
+        {
+          "id": 3,
+          "text": "Búsqueda",
+          "image": "",
+          "activity":"AdministratorSeqarchUsers"
+        }
+      ]
+    }
   ]
 }
