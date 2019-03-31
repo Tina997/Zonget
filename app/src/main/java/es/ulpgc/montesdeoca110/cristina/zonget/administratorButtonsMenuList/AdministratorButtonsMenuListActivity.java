@@ -69,7 +69,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
 
         // deal with the data
         administratorButtonsGridView.setAdapter(new AdministratorButtonsMenuListAdapter(
-                this,viewModel.administrator_buttons,
+                this,viewModel.administratorButtons,
                 new View.OnClickListener() {
 
                     @Override

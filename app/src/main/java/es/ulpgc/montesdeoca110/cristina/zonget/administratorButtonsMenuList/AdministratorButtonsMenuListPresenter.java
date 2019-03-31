@@ -1,8 +1,10 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorButtonsMenuListPresenter implements AdministratorButtonsMenuListContract.Presenter {
 
@@ -34,10 +36,15 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
     public void fetchAdministratorButtonsMenuListData() {
 
         //Llamamos al modelo para que nos de la información
-        viewModel.administrator_buttons = model.fetchAdministratorButtonsMenuListData();
+       model.fetchAdministratorButtonsMenuListData(new RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback() {
+           @Override
+           public void setAdministratorMenuButtonsList(List<AdministratorButtonMenuItem> administratorButtons) {
+               viewModel.administratorButtons = administratorButtons;
 
-        // Actualizamos la vista
-        view.get().displayAdministratorButtonsMenuListData(viewModel);
+               view.get().displayAdministratorButtonsMenuListData(viewModel);
+           }
+       });
+
 
     }
 

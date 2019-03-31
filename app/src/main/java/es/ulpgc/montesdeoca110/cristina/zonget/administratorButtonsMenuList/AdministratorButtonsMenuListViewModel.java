@@ -6,5 +6,5 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 
 public class AdministratorButtonsMenuListViewModel {
 
-    public List<AdministratorButtonMenuItem> administrator_buttons;
+    public List<AdministratorButtonMenuItem> administratorButtons;
 }
