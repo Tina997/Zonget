@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface AdministratorButtonsMenuListContract {
 
@@ -28,7 +29,7 @@ interface AdministratorButtonsMenuListContract {
     }
 
     interface Model {
-        List<AdministratorButtonMenuItem> fetchAdministratorButtonsMenuListData();
+        void fetchAdministratorButtonsMenuListData(RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
     }
 
     interface Router {
