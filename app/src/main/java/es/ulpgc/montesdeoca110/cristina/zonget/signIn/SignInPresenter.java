@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;

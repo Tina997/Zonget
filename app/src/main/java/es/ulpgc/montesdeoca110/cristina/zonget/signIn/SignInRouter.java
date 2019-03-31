@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import android.content.Intent;
 import android.content.Context;
+import android.util.Log;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
@@ -26,10 +27,9 @@ public class SignInRouter implements SignInContract.Router {
     public void navigateToMenuScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent;
-        if(mediator.getSignInToMenuState().account.getType() == "administrator") {
+        intent = new Intent(context, UserButtonsMenuListActivity.class);
+        if (mediator.getSignInToMenuState().account.getType().equals("administrator")){
             intent = new Intent(context, AdministratorButtonsMenuListActivity.class);
-        }else{
-            intent = new Intent(context, UserButtonsMenuListActivity.class);
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
