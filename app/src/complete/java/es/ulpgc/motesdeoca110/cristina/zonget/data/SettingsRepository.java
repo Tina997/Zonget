@@ -121,7 +121,9 @@ public class SettingsRepository implements RepositoryContract.Settings {
             }
         });
     }
+
     // ------------------------- Administrator ---------------------------
+
     @Override
     public void getAdministratorMenuButtonsList(final GetAdministratorMenuButtonsListCallback callback) {
         AsyncTask.execute(new Runnable() {

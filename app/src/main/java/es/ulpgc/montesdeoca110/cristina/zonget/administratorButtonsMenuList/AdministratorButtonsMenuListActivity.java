@@ -4,6 +4,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,13 +17,11 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AdministratorButtonsMenuListActivity extends AppCompatActivity implements AdministratorButtonsMenuListContract.View {
 
-    public static String TAG = AdministratorButtonsMenuListActivity.class.getSimpleName();
-
     private AdministratorButtonsMenuListContract.Presenter presenter;
+    private AdministratorButtonsMenuListAdapter listAdapter;
 
     //Elementos de la vista
     private Toolbar toolbar;
-    private GridView administratorButtonsGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +35,16 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
 
-        //Búsqueda de los elementos de la vista
-        administratorButtonsGridView = findViewById(R.id.administrator_buttons_menu_list_grid_view);
+        listAdapter = new AdministratorButtonsMenuListAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AdministratorButtonMenuItem item = (AdministratorButtonMenuItem) view.getTag();
+                presenter.selectAdministratorButtonsMenuListData(item);
+            }
+        });
+
+        RecyclerView recyclerView = findViewById(R.id.administratot_buttons_menu_list);
+        recyclerView.setAdapter(listAdapter);
 
         // do the setup
         AdministratorButtonsMenuListScreen.configure(this);
@@ -65,39 +72,17 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
     }
 
     @Override
-    public void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel) {
+    public void displayAdministratorButtonsMenuListData(final AdministratorButtonsMenuListViewModel viewModel) {
 
-        // deal with the data
-        administratorButtonsGridView.setAdapter(new AdministratorButtonsMenuListAdapter(
-                this,viewModel.administratorButtons,
-                new View.OnClickListener() {
+        runOnUiThread(new Runnable() {
 
-                    @Override
-                    public void onClick(View view) {
-                        AdministratorButtonMenuItem item = (AdministratorButtonMenuItem) view.getTag();
-                        presenter.selectAdministratorButtonsMenuListData(item);
-                    }
-                })
-        );
+            @Override
+            public void run() {
+
+                // deal with the data
+                listAdapter.setItems(viewModel.administratorButtons);
+            }
+        });
+
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.action_sign_out:
-                presenter.signOutButtonPressed();
-                return true;
-            case R.id.action_settings:
-                return true;
-            default:
-                int id = item.getItemId();
-                if (id == android.R.id.home) {
-                    NavUtils.navigateUpFromSameTask(this);
-                    return true;
-                }
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
 }
