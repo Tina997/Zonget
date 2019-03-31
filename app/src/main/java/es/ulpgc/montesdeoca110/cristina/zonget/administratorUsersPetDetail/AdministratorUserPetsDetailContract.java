@@ -13,6 +13,8 @@ interface AdministratorUserPetsDetailContract {
         void injectPresenter(Presenter presenter);
 
         void displayData(AdministratorUserPetsDetailViewModel viewModel);
+
+        void onDeleteButtonClicked();
     }
 
     interface Presenter {
@@ -26,6 +28,7 @@ interface AdministratorUserPetsDetailContract {
 
         void onEditButtonClicked();
 
+        void onDeleteButtonClicked();
     }
 
     interface Model {
@@ -41,5 +44,6 @@ interface AdministratorUserPetsDetailContract {
 
         void navigateToEditScreen();
 
+        void navigateToPetListScreen();
     }
 }

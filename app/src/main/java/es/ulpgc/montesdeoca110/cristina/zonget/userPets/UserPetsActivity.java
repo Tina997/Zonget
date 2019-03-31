@@ -31,7 +31,7 @@ public class UserPetsActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Animales de Cliente");
+            actionBar.setTitle(R.string.animal_client_tittle);
         }
 
         listView = findViewById(R.id.animal_list);

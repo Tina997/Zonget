@@ -38,7 +38,12 @@
         <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 
         <activity android:name=".administratorAgenda.AdministratorAgendaActivity">
-</activity>
+                <intent-filter>
+                        <action android:name="android.intent.action.MAIN" />
+
+                        <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        </activity>
 
         <activity android:name=".addEvent.AddEventActivity"></activity>
 
@@ -52,23 +57,32 @@
 
         <activity android:name=".administratorQueryAnswer.AdministratorQueryAnswerActivity"></activity>
 
+        <activity android:name=".userAgenda.UserAgendaActivity"></activity>
+
         <activity android:name=".userPets.UserPetsActivity"></activity>
 
         <activity android:name=".userPetsDetail.UserPetsDetailActivity"></activity>
 
-        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity">
+        <activity android:name=".administratorSearchUsers.AdministratorSearchUsersActivity"></activity>
 
-        </activity>
         <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
-        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity"></activity>
-        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
-        <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
-        <activity android:name=".userPickDate.UserPickDateActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity"></activity>
+
+        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
+
+        <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
+
+        <activity android:name=".userPickDate.UserPickDateActivity"></activity>
+
+        <activity android:name=".lostPets.LostPetsListActivity">
+                <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        </activity>
     </application>
+
 
 </manifest>

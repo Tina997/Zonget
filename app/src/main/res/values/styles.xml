@@ -10,7 +10,10 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
-
+    <!--Dialog Theme-->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+    </style>
     <!--NoAppBar theme-->
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

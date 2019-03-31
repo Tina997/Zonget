@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -37,7 +38,7 @@ public class AdministratorUserPetsDetailActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Detalles animal");
+            actionBar.setTitle(R.string.animal_detail_tittle);
         }
         // do the setup
         AdministratorUserPetsDetailScreen.configure(this);
@@ -76,10 +77,19 @@ public class AdministratorUserPetsDetailActivity
             ((TextView)findViewById(R.id.numberAnimalClient)).setText(petClientItem.chipNum);
         }
     }
+
+    @Override
+    public void onDeleteButtonClicked() {
+        presenter.onDeleteButtonClicked();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_delete:
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogDelete dialogo = new DialogDelete();
+                dialogo.show(fragmentManager, "tagAlerta");
                 return true;
             case R.id.action_edit:
                 presenter.onEditButtonClicked();

@@ -10,6 +10,7 @@ import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.AdministratorUserEditPetActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
@@ -45,6 +46,14 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
     public void navigateToEditScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorUserEditPetActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToPetListScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorUsersPetsListActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

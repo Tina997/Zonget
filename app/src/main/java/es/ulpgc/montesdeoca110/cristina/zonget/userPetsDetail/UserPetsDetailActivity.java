@@ -31,7 +31,7 @@ public class UserPetsDetailActivity
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Detalles animal");
+            actionBar.setTitle(R.string.animal_detail_tittle);
         }
 
         // do the setup

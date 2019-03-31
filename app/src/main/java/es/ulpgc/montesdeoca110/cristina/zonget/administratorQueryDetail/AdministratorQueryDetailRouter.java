@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer.AdministratorQueryAnswerActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
 public class AdministratorQueryDetailRouter implements AdministratorQueryDetailContract.Router {
@@ -32,5 +33,12 @@ public class AdministratorQueryDetailRouter implements AdministratorQueryDetailC
     public AdministratorQueryDetailState getDataFromPreviousScreen() {
         AdministratorQueryDetailState state = mediator.getAdministratorQueryDetailState();
         return state;
+    }
+
+    @Override
+    public void navigateToAdministratorQueryAnswerScreen(){
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorQueryAnswerActivity.class);
+        context.startActivity(intent);
     }
 }

@@ -18,6 +18,8 @@ interface AdministratorQueryDetailContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void navigateToAdministratorQueryAnswerScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface AdministratorQueryDetailContract {
         void passDataToNextScreen(AdministratorQueryDetailState state);
 
         AdministratorQueryDetailState getDataFromPreviousScreen();
+
+        void navigateToAdministratorQueryAnswerScreen();
     }
 }

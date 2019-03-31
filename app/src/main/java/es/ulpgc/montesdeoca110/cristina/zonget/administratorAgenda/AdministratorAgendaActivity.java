@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,7 +56,9 @@ public class AdministratorAgendaActivity
         listView.setAdapter(new AdministratorAgendaListAdapter(this, viewModel.eventList, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.createEventDetailsDialog();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogEventDetail dialogo = new DialogEventDetail();
+                dialogo.show(fragmentManager, "tagAlert");
             }
         }));
     }
