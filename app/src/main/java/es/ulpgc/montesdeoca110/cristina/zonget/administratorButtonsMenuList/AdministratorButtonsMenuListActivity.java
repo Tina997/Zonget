@@ -4,6 +4,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -45,6 +46,9 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
 
         RecyclerView recyclerView = findViewById(R.id.administratot_buttons_menu_list);
         recyclerView.setAdapter(listAdapter);
+
+        GridLayoutManager  layoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(layoutManager);
 
         // do the setup
         AdministratorButtonsMenuListScreen.configure(this);
