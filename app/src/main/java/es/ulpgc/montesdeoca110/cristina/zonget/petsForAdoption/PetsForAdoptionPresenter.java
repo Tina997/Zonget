@@ -3,6 +3,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Presenter {
 
@@ -34,13 +38,14 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
 
     @Override
     public void fetchPetsForAdoptionListData() {
-        // Log.e(TAG, "fetchPetsForAdoptionListData()");
+        model.fetchPetsForAdoptionListData(new RepositoryContract.PetsForAdoption.GetPetsForAdoptionListCallback() {
+            @Override
+            public void setPetsForAdoptionList(List<PetForAdoptionItem> items) {
+                viewModel.petForAdoptionItems = items;
+                view.get().displayData(viewModel);
+            }
+        });
 
-        // set passed state
-        PetsForAdoptionState state = router.getDataFromPreviousScreen();
-
-        // update the view
-        view.get().displayData(viewModel);
 
     }
 

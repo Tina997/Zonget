@@ -70,7 +70,7 @@ public interface RepositoryContract {
             void onPetsForAdoptionDataFetched(boolean error);
         }
         interface GetPetsForAdoptionListCallback{
-            void setPetsForAdoptionList(List<PetForAdoptionItem> lostPets);
+            void setPetsForAdoptionList(List<PetForAdoptionItem> items);
         }
         interface GetPetsForAdoptionCallback{
             void setPetsForAdoption(PetForAdoptionItem petForAdoption);

@@ -1,23 +1,26 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption;
 
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
-
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class PetsForAdoptionModel implements PetsForAdoptionContract.Model {
 
     public static String TAG = PetsForAdoptionModel.class.getSimpleName();
 
-    public PetsForAdoptionModel() {
+    private RepositoryContract.PetsForAdoption repository;
 
+    public PetsForAdoptionModel(RepositoryContract.PetsForAdoption repository) {
+        this.repository = repository;
     }
 
     @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchPetsForAdoptionListData()");
-        return "Hello";
+    public void fetchPetsForAdoptionListData(final RepositoryContract.PetsForAdoption.GetPetsForAdoptionListCallback callback) {
+        repository.loadCatalog(new RepositoryContract.PetsForAdoption.FetchPetsForAdoptionDataCallBack() {
+            @Override
+            public void onPetsForAdoptionDataFetched(boolean error) {
+                if(!error){
+                    repository.getPetsForAdoptionList(callback);
+                }
+            }
+        });
     }
 }

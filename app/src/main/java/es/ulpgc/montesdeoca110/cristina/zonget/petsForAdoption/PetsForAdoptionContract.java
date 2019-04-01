@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 interface PetsForAdoptionContract {
 
     interface View {
@@ -21,7 +23,7 @@ interface PetsForAdoptionContract {
     }
 
     interface Model {
-        String fetchData();
+        void fetchPetsForAdoptionListData(RepositoryContract.PetsForAdoption.GetPetsForAdoptionListCallback callback);
     }
 
     interface Router {
