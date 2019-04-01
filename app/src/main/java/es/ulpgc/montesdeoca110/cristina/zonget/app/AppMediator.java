@@ -14,6 +14,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.Administra
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userAgenda.UserAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuState;
@@ -73,6 +74,8 @@ public class AppMediator extends Application {
     private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
     private UserPickDateState userPickDateState = new UserPickDateState();
     private LostPetsListState lostPetsListState = new LostPetsListState();
+
+    private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
@@ -310,4 +313,14 @@ public class AppMediator extends Application {
     public LostPetsListState getlostPetsListState() {
         return lostPetsListState;
     }
+
+    //PetsForAdoption
+    public PetsForAdoptionState getPetsForAdoptionState() {
+        return petsForAdoptionState;
+    }
+
+    public void setPetsForAdoptionState(PetsForAdoptionState petsForAdoptionState) {
+        this.petsForAdoptionState = petsForAdoptionState;
+    }
+
 }
