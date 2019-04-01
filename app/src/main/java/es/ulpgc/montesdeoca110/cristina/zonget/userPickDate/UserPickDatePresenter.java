@@ -38,7 +38,7 @@ public class UserPickDatePresenter implements UserPickDateContract.Presenter {
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         if(viewModel.hourItemList == null){
 

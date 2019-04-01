@@ -10,7 +10,7 @@ public class UserNewQueryModel implements UserNewQueryContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
         return "Hello";
     }
 }

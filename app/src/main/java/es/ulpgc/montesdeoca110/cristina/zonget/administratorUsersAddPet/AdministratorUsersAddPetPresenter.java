@@ -34,7 +34,7 @@ public class AdministratorUsersAddPetPresenter implements AdministratorUsersAddP
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
 

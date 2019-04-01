@@ -70,7 +70,7 @@ public class UserQueriesMenuActivity
         super.onResume();
 
         // do some work
-        //presenter.fetchData();
+        //presenter.fetchPetsForAdoptionListData();
     }
 
     @Override

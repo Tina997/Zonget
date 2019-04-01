@@ -46,7 +46,7 @@ public class AdministratorUsersAddPetActivity
         super.onResume();
 
         // do some work
-//        presenter.fetchData();
+//        presenter.fetchPetsForAdoptionListData();
     }
 
     @Override

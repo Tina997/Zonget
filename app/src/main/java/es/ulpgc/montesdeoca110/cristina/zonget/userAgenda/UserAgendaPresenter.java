@@ -32,7 +32,7 @@ public class UserAgendaPresenter implements UserAgendaContract.Presenter {
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
         UserAgendaState state = router.getDataFromPreviousScreen();

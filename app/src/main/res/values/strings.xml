@@ -109,4 +109,7 @@
     <!--LostPets View-->
     <string name="lost_pets_tittle">Animales Perdidos</string>
 
+    <!--PetsForAdoption View-->
+    <string name="pets_for_adoption_activity_name">Animales en adopción</string>
+
 </resources>

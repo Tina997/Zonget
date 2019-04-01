@@ -17,7 +17,7 @@ interface PetsForAdoptionContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchPetsForAdoptionListData();
     }
 
     interface Model {

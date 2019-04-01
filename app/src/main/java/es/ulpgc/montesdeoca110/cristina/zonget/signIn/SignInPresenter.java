@@ -48,7 +48,7 @@ public class SignInPresenter implements SignInContract.Presenter {
 
         if (viewModel.data == null) {
             // call the model
-            String data = model.fetchData();
+            String data = model.fetchPetsForAdoptionListData();
 
             // set initial state
             viewModel.data = data;

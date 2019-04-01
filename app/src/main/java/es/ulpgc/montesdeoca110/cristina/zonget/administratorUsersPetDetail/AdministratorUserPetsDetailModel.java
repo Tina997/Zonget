@@ -17,7 +17,7 @@ public class AdministratorUserPetsDetailModel implements AdministratorUserPetsDe
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
         return "Hello";
     }
 }

@@ -34,7 +34,7 @@ public class AdministratorUserEditPetPresenter implements AdministratorUserEditP
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
         AdministratorUserEditPetState state = router.getDataFromPreviousScreen();

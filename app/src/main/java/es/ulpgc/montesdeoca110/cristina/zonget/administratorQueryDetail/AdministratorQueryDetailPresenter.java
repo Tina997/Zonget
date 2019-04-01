@@ -34,7 +34,7 @@ public class AdministratorQueryDetailPresenter implements AdministratorQueryDeta
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
         AdministratorQueryDetailState state = router.getDataFromPreviousScreen();

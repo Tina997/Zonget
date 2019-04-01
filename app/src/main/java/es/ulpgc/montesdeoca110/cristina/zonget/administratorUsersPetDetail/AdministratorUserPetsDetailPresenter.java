@@ -38,7 +38,7 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
         PetsItem animal = router.getDataFromPreviousScreen();

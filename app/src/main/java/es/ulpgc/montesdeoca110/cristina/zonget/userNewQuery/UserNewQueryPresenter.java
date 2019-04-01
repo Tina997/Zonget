@@ -32,7 +32,7 @@ public class UserNewQueryPresenter implements UserNewQueryContract.Presenter {
 
     @Override
     public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
         UserNewQueryState state = router.getDataFromPreviousScreen();

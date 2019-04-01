@@ -17,7 +17,7 @@ public class AdministratorQueryDetailModel implements AdministratorQueryDetailCo
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
         return "Hello";
     }
 }

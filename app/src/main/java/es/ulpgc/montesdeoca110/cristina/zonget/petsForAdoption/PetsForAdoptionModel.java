@@ -17,7 +17,7 @@ public class PetsForAdoptionModel implements PetsForAdoptionContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
         return "Hello";
     }
 }

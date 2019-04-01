@@ -38,7 +38,7 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
 
     @Override
     public void fetchLostPetsListData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetsForAdoptionListData()");
         // call the model
          model.fetchLostPetsListData(new RepositoryContract.LostPets.GetLostPetsListCallback() {
             @Override
