@@ -6,6 +6,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetsRepository;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsForAdoptionRepository;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
@@ -60,6 +62,23 @@ public interface RepositoryContract {
         void getLostPetsList(LostPetsRepository.GetLostPetsListCallback callback);
 
         void getLostPets(int id, LostPetsRepository.GetLostPetsCallback callback);
+    }
+
+    interface PetsForAdoption{
+
+        interface FetchPetsForAdoptionDataCallBack{
+            void onPetsForAdoptionDataFetched(boolean error);
+        }
+        interface GetPetsForAdoptionListCallback{
+            void setPetsForAdoptionList(List<PetForAdoptionItem> lostPets);
+        }
+        interface GetPetsForAdoptionCallback{
+            void setPetsForAdoption(PetForAdoptionItem petForAdoption);
+        }
+        void loadCatalog(PetsForAdoptionRepository.FetchPetsForAdoptionDataCallBack callback);
+        void getPetsForAdoptionList(PetsForAdoptionRepository.GetPetsForAdoptionListCallback callback);
+
+        void getPetsForAdoption(int id, PetsForAdoptionRepository.GetPetsForAdoptionCallback callback);
     }
 
 }
