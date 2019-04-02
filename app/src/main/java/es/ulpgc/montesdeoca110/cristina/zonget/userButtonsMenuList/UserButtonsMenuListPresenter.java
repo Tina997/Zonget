@@ -1,14 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract.Presenter {
-
-    public static String TAG = UserButtonsMenuListPresenter.class.getSimpleName();
 
     private WeakReference<UserButtonsMenuListContract.View> view;
     private UserButtonsMenuListViewModel viewModel;
@@ -37,11 +35,13 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     @Override
     public void fetchUserButtonsMenuListData() {
 
-        //Llamamos al modelo para que nos de la información
-        viewModel.user_buttons = model.fetchUserButtonsMenuListData();
-
-        // Actualizamos la vista
-        view.get().displayUserButtonsMenuListData(viewModel);
+        model.fetchUserButtonsMenuListData(new RepositoryContract.Settings.GetUserMenuButtonsListCallback() {
+            @Override
+            public void setUserMenuButtonsList(List<UserButtonMenuItem> userButtons) {
+                viewModel.userButtons = userButtons;
+                view.get().displayUserButtonsMenuListData(viewModel);
+            }
+        });
 
     }
 
@@ -52,7 +52,6 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
 
     @Override
     public void selectUserButtonsMenuListData(UserButtonMenuItem item) {
-        //router.passDataToProductListScreen(item);
         //router.navigateToProductListScreen();
     }
 

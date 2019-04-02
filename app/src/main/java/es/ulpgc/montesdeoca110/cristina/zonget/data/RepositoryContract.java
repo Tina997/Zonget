@@ -28,6 +28,15 @@ public interface RepositoryContract {
         }
 
         void getAdministratorMenuButtonsList(SettingsRepository.GetAdministratorMenuButtonsListCallback callback);
+
+        // -------------------- User -----------------------
+        interface GetUserMenuButtonsListCallback {
+            void setUserMenuButtonsList(List<UserButtonMenuItem> userButtons);
+        }
+
+        void getUserMenuButtonsList(SettingsRepository.GetUserMenuButtonsListCallback callback);
+
+
     }
 
     interface Accounts {

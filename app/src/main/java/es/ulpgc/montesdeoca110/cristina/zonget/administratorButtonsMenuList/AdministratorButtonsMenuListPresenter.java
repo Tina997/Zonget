@@ -39,11 +39,9 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
            @Override
            public void setAdministratorMenuButtonsList(List<AdministratorButtonMenuItem> administratorButtons) {
                viewModel.administratorButtons = administratorButtons;
-
                view.get().displayAdministratorButtonsMenuListData(viewModel);
            }
        });
-
 
     }
 

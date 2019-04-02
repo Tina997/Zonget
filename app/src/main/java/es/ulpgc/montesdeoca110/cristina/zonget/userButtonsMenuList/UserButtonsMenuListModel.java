@@ -17,8 +17,14 @@ public class UserButtonsMenuListModel implements UserButtonsMenuListContract.Mod
     }
 
     @Override
-    public List<UserButtonMenuItem> fetchUserButtonsMenuListData() {
-        return null;
+    public void fetchUserButtonsMenuListData(final RepositoryContract.Settings.GetUserMenuButtonsListCallback callback) {
+        repository.loadZonget(new RepositoryContract.Settings.FecthZongetDataCallback() {
+            @Override
+            public void onZongetDataFetched(boolean error) {
+                if(!error){
+                    repository.getUserMenuButtonsList(callback);
+                }
+            }
+        });
     }
-
 }

@@ -23,7 +23,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
-        android:id="@+id/user_buttons_menu_list"
         android:layout_width="match_parent"
         android:layout_height="462dp"
         android:layout_marginLeft="20dp"
@@ -63,6 +62,7 @@
             android:text="@string/user_ask_date_user_buttons_menu_list_label"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
+
     </LinearLayout>
 
 </LinearLayout>

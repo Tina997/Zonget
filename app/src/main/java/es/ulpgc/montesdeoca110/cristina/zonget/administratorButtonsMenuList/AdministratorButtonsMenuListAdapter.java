@@ -1,19 +1,14 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,33 +18,32 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AdministratorButtonsMenuListAdapter extends RecyclerView.Adapter<AdministratorButtonsMenuListAdapter.ViewHolder> {
 
-    private List<AdministratorButtonMenuItem> itemlist;
+    private List<AdministratorButtonMenuItem> itemList;
     private final View.OnClickListener clickListener;
 
     public AdministratorButtonsMenuListAdapter(View.OnClickListener listener){
-        itemlist = new ArrayList<>();
+        this.itemList = new ArrayList<>();
         this.clickListener = listener;
     }
 
     public void addItem(AdministratorButtonMenuItem item){
-        itemlist.add(item);
+        this.itemList.add(item);
         notifyDataSetChanged();
     }
 
     public void addItems(List<AdministratorButtonMenuItem> items){
-        itemlist.addAll(items);
+        this.itemList.addAll(items);
         notifyDataSetChanged();
     }
 
     public void setItems(List<AdministratorButtonMenuItem> items){
-        itemlist = items;
+        this.itemList = items;
         notifyDataSetChanged();
     }
 
-
     @Override
     public int getItemCount() {
-        return itemlist.size();
+        return this.itemList.size();
     }
 
     @Override
@@ -61,11 +55,11 @@ public class AdministratorButtonsMenuListAdapter extends RecyclerView.Adapter<Ad
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.itemView.setTag(itemlist.get(position));
+        holder.itemView.setTag(itemList.get(position));
         holder.itemView.setOnClickListener(clickListener);
 
-        holder.text.setText(itemlist.get(position).text);
-        holder.image.setImageBitmap(decodeToImage(itemlist.get(position).image));
+        holder.text.setText(itemList.get(position).text);
+        holder.image.setImageBitmap(decodeToImage(itemList.get(position).image));
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

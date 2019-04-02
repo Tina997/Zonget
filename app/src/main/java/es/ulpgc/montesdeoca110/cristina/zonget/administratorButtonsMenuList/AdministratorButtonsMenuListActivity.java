@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
@@ -16,10 +17,11 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 public class AdministratorButtonsMenuListActivity extends AppCompatActivity implements AdministratorButtonsMenuListContract.View {
 
     private AdministratorButtonsMenuListContract.Presenter presenter;
-    private AdministratorButtonsMenuListAdapter listAdapter;
 
     //Elementos de la vista
     private Toolbar toolbar;
+
+    private AdministratorButtonsMenuListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
 
+        //Listeners
         listAdapter = new AdministratorButtonsMenuListAdapter(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +44,8 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.administratot_buttons_menu_list);
+        //RecycleView
+        RecyclerView recyclerView = findViewById(R.id.administrator_buttons_menu_list);
         recyclerView.setAdapter(listAdapter);
 
         GridLayoutManager  layoutManager = new GridLayoutManager(this,2);
@@ -84,6 +88,19 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
                 listAdapter.setItems(viewModel.administratorButtons);
             }
         });
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_sign_out:
+                presenter.signOutButtonPressed();
+                return true;
+            case R.id.action_settings:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

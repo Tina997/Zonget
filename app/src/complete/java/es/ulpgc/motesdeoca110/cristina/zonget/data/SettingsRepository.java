@@ -141,5 +141,16 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
     // ------------------------------ User --------------------------------
 
+    @Override
+    public void getUserMenuButtonsList(final GetUserMenuButtonsListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null){
+                    callback.setUserMenuButtonsList(userButtonsMenuList);
+                }
+            }
+        });
+    }
 
 }

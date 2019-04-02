@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
@@ -21,6 +20,18 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
     public void navigateToSignInScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, SignInActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToNextActivityScreen(String activityClassName) {
+        Context context = mediator.getApplicationContext();
+        Class activity = null;
+        try {
+            activity = Class.forName(activityClassName);
+        } catch (ClassNotFoundException e) {}
+        Intent intent = new Intent(context, activity);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

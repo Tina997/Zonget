@@ -6,5 +6,5 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 
 public class UserButtonsMenuListViewModel {
 
-    public List<UserButtonMenuItem> user_buttons;
+    public List<UserButtonMenuItem> userButtons;
 }

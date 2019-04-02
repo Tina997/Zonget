@@ -1,30 +1,29 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 
 public class UserButtonsMenuListActivity extends AppCompatActivity implements UserButtonsMenuListContract.View {
 
-    public static String TAG = UserButtonsMenuListActivity.class.getSimpleName();
-
     private UserButtonsMenuListContract.Presenter presenter;
 
     //Elementos de la vista
     private Toolbar toolbar;
-    private GridView userButtonsGridView;
     private Button askDateButton;
+
+    private UserButtonsMenuListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +38,30 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         actionBar.setTitle("Menú");
 
         //Búsqueda de los elementos de la vista
-        userButtonsGridView = findViewById(R.id.user_buttons_menu_list);
         askDateButton = findViewById(R.id.user_buttons_menu_list_ask_date_button);
 
         //Listeners
+        listAdapter = new UserButtonsMenuListAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 UserButtonMenuItem item = (UserButtonMenuItem) view.getTag();
+                 presenter.selectUserButtonsMenuListData(item);
+            }
+        });
+
         askDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TODO Llamar al presenter
             }
         });
+
+        //RecycleView
+        RecyclerView recyclerView =  findViewById(R.id.user_buttons_menu_list);
+        recyclerView.setAdapter(listAdapter);
+
+        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(layoutManager);
 
         // do the setup
         UserButtonsMenuListScreen.configure(this);
@@ -76,20 +89,15 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     }
 
     @Override
-    public void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel) {
+    public void displayUserButtonsMenuListData(final UserButtonsMenuListViewModel viewModel) {
 
-        // deal with the data
-        userButtonsGridView.setAdapter(new UserButtonsMenuListAdapter(
-                this,viewModel.user_buttons,
-                new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                        UserButtonMenuItem item = (UserButtonMenuItem) view.getTag();
-                        presenter.selectUserButtonsMenuListData(item);
-                    }
-                })
-        );
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //deal with the data
+                listAdapter.setItems(viewModel.userButtons);
+            }
+        });
     }
 
     @Override
@@ -102,11 +110,6 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
             case R.id.action_settings:
                 return true;
             default:
-                int id = item.getItemId();
-                if (id == android.R.id.home) {
-                    NavUtils.navigateUpFromSameTask(this);
-                    return true;
-                }
                 return super.onOptionsItemSelected(item);
         }
     }

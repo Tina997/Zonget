@@ -1,65 +1,86 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 
-public class UserButtonsMenuListAdapter extends ArrayAdapter<UserButtonMenuItem> {
+public class UserButtonsMenuListAdapter extends RecyclerView.Adapter<UserButtonsMenuListAdapter.ViewHolder> {
 
-    private final List<UserButtonMenuItem> user_buttons_list;
-
+    private List<UserButtonMenuItem> itemList;
     private final View.OnClickListener clickListener;
 
-    public UserButtonsMenuListAdapter(Context context, List<UserButtonMenuItem> items, View.OnClickListener listener) {
+    public UserButtonsMenuListAdapter(View.OnClickListener listener) {
+        this.itemList = new ArrayList<>();
+        this.clickListener = listener;
+    }
 
-        super(context, 0, items);
+    public void addItem(UserButtonMenuItem item) {
+        this.itemList.add(item);
+        notifyDataSetChanged();
+    }
 
-        user_buttons_list = items;
-        clickListener = listener;
+    public void addItems(List<UserButtonMenuItem> items) {
+        this.itemList.addAll(items);
+        notifyDataSetChanged();
+    }
+
+    public void setItems(List<UserButtonMenuItem> items) {
+        this.itemList = items;
+        notifyDataSetChanged();
     }
 
     @Override
-    public int getCount() {
-        return user_buttons_list.size();
+    public int getItemCount() {
+        return this.itemList.size();
     }
 
     @Override
-    public UserButtonMenuItem getItem(int position) {
-        return user_buttons_list.get(position);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.user_buttons_list_content, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public long getItemId(int position) {
-        return getItem(position).id;
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        holder.itemView.setTag(itemList.get(position));
+        holder.itemView.setOnClickListener(clickListener);
+
+        holder.text.setText(itemList.get(position).text);
+        holder.image.setImageBitmap(decodeToImage(itemList.get(position).image));
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View itemView = convertView;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final ImageView image;
+        final TextView text;
 
-        if (itemView == null) {
-            itemView = LayoutInflater
-                    .from(parent.getContext())
-                    .inflate(R.layout.administrator_buttons_list_content, parent, false);
+        ViewHolder(View view) {
+            super(view);
+            image = view.findViewById(R.id.user_button_image_view);
+            text = view.findViewById(R.id.user_button_text_label);
         }
-
-        itemView.setTag(user_buttons_list.get(position));
-        itemView.setOnClickListener(clickListener);
-
-        final TextView contentView = itemView.findViewById(R.id.administrator_button_text_label);
-        final ImageView imageView = itemView.findViewById(R.id.administrator_button_image_view);
-
-        contentView.setText(user_buttons_list.get(position).text);
-
-        return itemView;
     }
+
+    private static Bitmap decodeToImage(String imageString) {
+        String base64String = imageString;
+        String base64Image = base64String.split(",")[1];
+
+        byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+        return decodedByte;
+    }
+
 }
