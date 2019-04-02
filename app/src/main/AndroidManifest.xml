@@ -28,25 +28,9 @@
 
         <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
 
-        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
+        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"></activity>
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 
         <activity android:name=".userQueriesMenu.UserQueriesMenuActivity"></activity>
 
