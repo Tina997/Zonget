@@ -30,7 +30,12 @@
 
         <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
         </activity>
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
@@ -71,21 +76,9 @@
 
         <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
-        <activity android:name=".petsForAdoption.PetsForAdoptionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".petsForAdoption.PetsForAdoptionActivity"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".lostPets.LostPetsListActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".lostPets.LostPetsListActivity"></activity>
 
     </application>
 

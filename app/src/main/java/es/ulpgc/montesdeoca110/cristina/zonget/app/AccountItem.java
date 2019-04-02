@@ -1,17 +1,20 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AccountItem {
 
-    private int id;
 
+    private int id;
     private String type;
     private String name;
     private String email;
     private String password;
 
+    @SerializedName("pets")
     private List<PetsItem> pets;
 
     public AccountItem(int id, String type, String name, String email, String password) {

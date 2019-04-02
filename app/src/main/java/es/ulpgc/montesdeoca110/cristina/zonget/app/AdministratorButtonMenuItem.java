@@ -4,13 +4,13 @@ public class AdministratorButtonMenuItem {
 
     public final int id;
     public final String text;
-    public final String imagen;
+    public final String image;
+    public final String activity;
 
-    public Class activity;
-
-    public AdministratorButtonMenuItem(int id, String text, String imagen) {
+    public AdministratorButtonMenuItem(int id, String text, String image) {
         this.id = id;
         this.text = text;
-        this.imagen = imagen;
+        this.image = image;
+        this.activity = null;
     }
 }

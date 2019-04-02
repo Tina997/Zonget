@@ -58,8 +58,7 @@ public class UserButtonsMenuListAdapter extends ArrayAdapter<UserButtonMenuItem>
         final TextView contentView = itemView.findViewById(R.id.administrator_button_text_label);
         final ImageView imageView = itemView.findViewById(R.id.administrator_button_image_view);
 
-        contentView.setText(user_buttons_list.get(position).button_text_label);
-        imageView.setImageResource(user_buttons_list.get(position).button_image_id);
+        contentView.setText(user_buttons_list.get(position).text);
 
         return itemView;
     }

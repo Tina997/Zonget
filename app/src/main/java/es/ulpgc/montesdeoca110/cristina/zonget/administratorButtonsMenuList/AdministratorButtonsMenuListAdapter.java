@@ -65,7 +65,7 @@ public class AdministratorButtonsMenuListAdapter extends RecyclerView.Adapter<Ad
         holder.itemView.setOnClickListener(clickListener);
 
         holder.text.setText(itemlist.get(position).text);
-        holder.image.setImageBitmap(decodeToImage(itemlist.get(position).imagen));
+        holder.image.setImageBitmap(decodeToImage(itemlist.get(position).image));
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
