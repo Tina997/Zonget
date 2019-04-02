@@ -22,21 +22,21 @@
             -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity"></activity>
-
-        <activity android:name=".signUp.SignUpActivity"></activity>
-
-        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
-
-        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
+        <activity android:name=".signIn.SignInActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
+
         </activity>
+
+        <activity android:name=".signUp.SignUpActivity"></activity>
+
+        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
+
+        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"></activity>
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 
@@ -81,6 +81,5 @@
         <activity android:name=".lostPets.LostPetsListActivity"></activity>
 
     </application>
-
 
 </manifest>
