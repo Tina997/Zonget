@@ -38,6 +38,8 @@ interface AdministratorButtonsMenuListContract {
 
         void navigateToSignInScreen();
 
+        void navigateToNextActivityScreen(String activityClassName);
+
         //------------- Paso de datos entre pantallas ----------
 
         void passDataToNextScreen(AdministratorButtonsMenuListState state);

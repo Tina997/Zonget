@@ -54,8 +54,7 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
 
     @Override
     public void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item) {
-        //router.passDataToProductListScreen(item);
-        //router.navigateToProductListScreen();
+        router.navigateToNextActivityScreen(item.activity);
     }
 
 
