@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuActivity;
 
 public class UserPetsActivity
         extends AppCompatActivity implements UserPetsContract.View {
@@ -70,7 +73,7 @@ public class UserPetsActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
+            navigateUpTo(new Intent(this, UserQueriesMenuActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

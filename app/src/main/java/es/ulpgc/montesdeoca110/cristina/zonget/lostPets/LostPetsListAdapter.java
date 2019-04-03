@@ -61,6 +61,7 @@ public class LostPetsListAdapter extends RecyclerView.Adapter<LostPetsListAdapte
 
         holder.contentView.setText(itemList.get(position).date);
         holder.contentViewB.setText(itemList.get(position).breed);
+        holder.contentViewP.setText(itemList.get(position).picture);
     }
 
     @Override
@@ -71,14 +72,14 @@ public class LostPetsListAdapter extends RecyclerView.Adapter<LostPetsListAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
         final TextView contentView;
         final TextView contentViewB;
-        final ImageView imageView;
+        final TextView contentViewP;
 
         ViewHolder(View view) {
             super(view);
             contentView = view.findViewById(R.id.lostDate);
             contentViewB = view.findViewById(R.id.lostPetBreed);
-            imageView = view.findViewById(R.id.lostPetImage);
-            loadImageFromURL((ImageView) view.findViewById(R.id.lostPetImage),"https://www.freejpg.com.ar/image-900/65/65ab/F100011060-gato.jpg");
+            contentViewP = view.findViewById(R.id.TextView);
+            loadImageFromURL((ImageView) view.findViewById(R.id.lostPetImage),contentViewP.toString());
         }
     }
     private void loadImageFromURL(ImageView imageView, String imageUrl){
