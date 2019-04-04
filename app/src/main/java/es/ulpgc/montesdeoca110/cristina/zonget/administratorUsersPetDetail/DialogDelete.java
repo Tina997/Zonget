@@ -1,16 +1,24 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
+@SuppressLint("ValidFragment")
 public class DialogDelete extends DialogFragment {
     private AdministratorUserPetsDetailContract.View view;
+
+    public DialogDelete(AdministratorUserPetsDetailContract.View view) {
+        this.view = view;
+    }
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
 

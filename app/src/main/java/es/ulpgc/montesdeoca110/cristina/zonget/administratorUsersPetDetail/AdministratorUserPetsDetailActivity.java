@@ -1,15 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
 import android.content.Intent;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,7 +14,6 @@ import android.widget.TextView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
 
 public class AdministratorUserPetsDetailActivity
         extends AppCompatActivity implements AdministratorUserPetsDetailContract.View {
@@ -88,7 +83,7 @@ public class AdministratorUserPetsDetailActivity
         switch (item.getItemId()) {
             case R.id.action_delete:
                 FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogDelete dialogo = new DialogDelete();
+                DialogDelete dialogo = new DialogDelete(this);
                 dialogo.show(fragmentManager, "tagAlerta");
                 return true;
             case R.id.action_edit:

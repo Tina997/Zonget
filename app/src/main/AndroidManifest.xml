@@ -62,7 +62,14 @@
 
         <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity"></activity>
 
-        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
+        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
 

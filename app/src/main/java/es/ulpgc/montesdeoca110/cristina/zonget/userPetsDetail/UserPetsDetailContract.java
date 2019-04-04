@@ -10,6 +10,7 @@ interface UserPetsDetailContract {
         void injectPresenter(Presenter presenter);
 
         void displayData(UserPetsDetailViewModel viewModel);
+
     }
 
     interface Presenter {
