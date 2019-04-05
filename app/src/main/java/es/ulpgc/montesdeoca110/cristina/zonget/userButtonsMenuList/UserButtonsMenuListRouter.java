@@ -18,7 +18,6 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
         this.mediator = mediator;
     }
 
-
     @Override
     public UserButtonsMenuListState getDataFromSignInScreen() {
         UserButtonsMenuListState state = mediator.getUserButtonsMenuListState();
@@ -60,7 +59,6 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
     }
 
     //To UserPickDate
-
 
     @Override
     public void passDataToUserPickDateScreen(UserMenuToUserPickDateState state) {
