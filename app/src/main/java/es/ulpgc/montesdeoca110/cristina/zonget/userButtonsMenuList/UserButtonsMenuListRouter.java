@@ -4,16 +4,32 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserMenuToUserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateActivity;
 
 public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Router {
-
-    public static String TAG = UserButtonsMenuListRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
     public UserButtonsMenuListRouter(AppMediator mediator) {
         this.mediator = mediator;
+    }
+
+
+    @Override
+    public UserButtonsMenuListState getDataFromSignInScreen() {
+        UserButtonsMenuListState state = mediator.getUserButtonsMenuListState();
+        return state;
+    }
+
+    //To SingInActivity
+
+    @Override
+    public void passDataToSignInScreen(MenuToSignInState state) {
+        mediator.setMenuToSignInState(state);
     }
 
     @Override
@@ -24,8 +40,15 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
         context.startActivity(intent);
     }
 
+    //To SelectedActivity
+
     @Override
-    public void navigateToNextActivityScreen(String activityClassName) {
+    public void passDataToSelectedScreen(MenuToSelectedActivityState state) {
+        mediator.setMenuToSelectedActivityState(state);
+    }
+
+    @Override
+    public void navigateToSelectedActivityScreen(String activityClassName) {
         Context context = mediator.getApplicationContext();
         Class activity = null;
         try {
@@ -36,14 +59,20 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
         context.startActivity(intent);
     }
 
+    //To UserPickDate
+
+
     @Override
-    public void passDataToNextScreen(UserButtonsMenuListState state) {
-        mediator.setUserButtonsMenuListState(state);
+    public void passDataToUserPickDateScreen(UserMenuToUserPickDateState state) {
+        mediator.setUserMenuToUserPickDateState(state);
     }
 
     @Override
-    public UserButtonsMenuListState getDataFromPreviousScreen() {
-        UserButtonsMenuListState state = mediator.getUserButtonsMenuListState();
-        return state;
+    public void navigateToUserPickDateScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, UserPickDateActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
+
 }

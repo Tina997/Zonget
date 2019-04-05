@@ -84,7 +84,7 @@ public class AppMediator extends Application {
     private SignInToMenuState signInToMenuState;
     private MenuToSignInState menuToSignInState;
     private MenuToSelectedActivityState menuToSelectedActivityState;
-
+    private UserMenuToUserPickDateState userMenuToUserPickDateState;
 
 
     @Override
@@ -296,6 +296,15 @@ public class AppMediator extends Application {
 
     public void setMenuToSelectedActivityState(MenuToSelectedActivityState menuToSelectedActivityState) {
         this.menuToSelectedActivityState = menuToSelectedActivityState;
+    }
+
+    //UserMenuToUserPickDate
+    public UserMenuToUserPickDateState getUserMenuToUserPickDateState() {
+        return userMenuToUserPickDateState;
+    }
+
+    public void setUserMenuToUserPickDateState(UserMenuToUserPickDateState userMenuToUserPickDateState) {
+        this.userMenuToUserPickDateState = userMenuToUserPickDateState;
     }
 
     //AddPet

@@ -2,12 +2,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
 import android.content.Intent;
 import android.content.Context;
-import android.util.Log;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 public class AdministratorButtonsMenuListRouter implements AdministratorButtonsMenuListContract.Router {

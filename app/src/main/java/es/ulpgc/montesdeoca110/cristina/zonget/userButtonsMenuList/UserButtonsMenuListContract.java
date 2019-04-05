@@ -2,6 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserMenuToUserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -43,15 +46,21 @@ interface UserButtonsMenuListContract {
 
         void navigateToSignInScreen();
 
-        void navigateToNextActivityScreen(String activityClassName);
+        void navigateToSelectedActivityScreen(String activityClassName);
+
+        void navigateToUserPickDateScreen();
 
         //------------- Paso de datos entre pantallas ----------
 
-        void passDataToNextScreen(UserButtonsMenuListState state);
+        void passDataToSignInScreen(MenuToSignInState state);
+
+        void passDataToSelectedScreen(MenuToSelectedActivityState state);
+
+        void passDataToUserPickDateScreen(UserMenuToUserPickDateState state);
 
         //------------- Obtener datos entre pantallas ----------
 
-        UserButtonsMenuListState getDataFromPreviousScreen();
+        UserButtonsMenuListState getDataFromSignInScreen();
 
     }
 }
