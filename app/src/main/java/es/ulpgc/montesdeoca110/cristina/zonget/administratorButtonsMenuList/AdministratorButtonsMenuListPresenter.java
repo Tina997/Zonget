@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorButtonsMenuListPresenter implements AdministratorButtonsMenuListContract.Presenter {
@@ -47,12 +49,16 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
 
     @Override
     public void signOutButtonPressed() {
+        MenuToSignInState state = new MenuToSignInState();
+        router.passDataToSignInScreen(state);
         router.navigateToSignInScreen();
     }
 
     @Override
-    public void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item) {
-        router.navigateToNextActivityScreen(item.activity);
+    public void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem button) {
+        MenuToSelectedActivityState state = new MenuToSelectedActivityState();
+        router.passDataToSelectedActivityScreen(state);
+        router.navigateToSelectedActivityScreen(button.activity);
     }
 
 

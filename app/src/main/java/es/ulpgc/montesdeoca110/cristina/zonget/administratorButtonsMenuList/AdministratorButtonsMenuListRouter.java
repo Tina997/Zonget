@@ -5,6 +5,9 @@ import android.content.Context;
 import android.util.Log;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 public class AdministratorButtonsMenuListRouter implements AdministratorButtonsMenuListContract.Router {
@@ -16,6 +19,19 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
     }
 
     @Override
+    public AdministratorButtonsMenuListState getDataFromSignInScreen() {
+        AdministratorButtonsMenuListState state = new AdministratorButtonsMenuListState();
+        return state;
+
+    }
+
+    // To SignInActivity
+    @Override
+    public void passDataToSignInScreen(MenuToSignInState state) {
+        mediator.setMenuToSignInState(state);
+    }
+
+    @Override
     public void navigateToSignInScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, SignInActivity.class);
@@ -23,8 +39,14 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
         context.startActivity(intent);
     }
 
+    // To SelectedActivity
     @Override
-    public void navigateToNextActivityScreen(String activityClassName) {
+    public void passDataToSelectedActivityScreen(MenuToSelectedActivityState state) {
+        mediator.setMenuToSelectedActivityState(state);
+    }
+
+    @Override
+    public void navigateToSelectedActivityScreen(String activityClassName) {
         Context context = mediator.getApplicationContext();
         Class activity = null;
         try {
@@ -35,14 +57,4 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
         context.startActivity(intent);
     }
 
-    @Override
-    public void passDataToNextScreen(AdministratorButtonsMenuListState state) {
-        mediator.setAdministratorMenuListState(state);
-    }
-
-    @Override
-    public AdministratorButtonsMenuListState getDataFromPreviousScreen() {
-        AdministratorButtonsMenuListState state = mediator.getAdministratorMenuListState();
-        return state;
-    }
 }

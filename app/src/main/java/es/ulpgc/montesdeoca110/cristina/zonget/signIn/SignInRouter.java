@@ -21,7 +21,7 @@ public class SignInRouter implements SignInContract.Router {
     }
 
     @Override
-    public SignInState getDataFromSplashActivityScreen() {
+    public SignInState getDataFromSplashScreen() {
         SignInState state = mediator.getSignInState();
         return state;
     }

@@ -3,6 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface AdministratorButtonsMenuListContract {
@@ -39,16 +42,17 @@ interface AdministratorButtonsMenuListContract {
 
         void navigateToSignInScreen();
 
-        void navigateToNextActivityScreen(String activityClassName);
+        void navigateToSelectedActivityScreen(String activityClassName);
 
         //------------- Paso de datos entre pantallas ----------
 
-        void passDataToNextScreen(AdministratorButtonsMenuListState state);
+        void passDataToSignInScreen(MenuToSignInState state);
+
+        void passDataToSelectedActivityScreen(MenuToSelectedActivityState state);
 
         //------------- Obtener datos entre pantallas ----------
 
-        AdministratorButtonsMenuListState getDataFromPreviousScreen();
-
+        AdministratorButtonsMenuListState getDataFromSignInScreen();
 
     }
 }

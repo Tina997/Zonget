@@ -82,6 +82,8 @@ public class AppMediator extends Application {
 
     //Estados entre activities
     private SignInToMenuState signInToMenuState;
+    private MenuToSignInState menuToSignInState;
+    private MenuToSelectedActivityState menuToSelectedActivityState;
 
 
 
@@ -266,7 +268,8 @@ public class AppMediator extends Application {
     public void setAdministratorUserPetsDetailState(AdministratorUserPetsDetailState administratorUserPetsDetailState) {
         this.administratorUserPetsDetailState = administratorUserPetsDetailState;
     }
-    //-------------------------
+
+    //------------------------------------- States between activities ------------------------------------------
 
     //SignInToMenu
     public SignInToMenuState getSignInToMenuState() {
@@ -276,6 +279,25 @@ public class AppMediator extends Application {
     public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
         this.signInToMenuState = signInToMenuState;
     }
+
+    //MenuToSingIn
+    public MenuToSignInState getMenuToSignInState() {
+        return menuToSignInState;
+    }
+
+    public void setMenuToSignInState(MenuToSignInState menuToSignInState) {
+        this.menuToSignInState = menuToSignInState;
+    }
+
+    //MenuToSelectedActivity
+    public MenuToSelectedActivityState getMenuToSelectedActivityState() {
+        return menuToSelectedActivityState;
+    }
+
+    public void setMenuToSelectedActivityState(MenuToSelectedActivityState menuToSelectedActivityState) {
+        this.menuToSelectedActivityState = menuToSelectedActivityState;
+    }
+
     //AddPet
     public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
         this.administratorUserPetsDetailState = administratorUserPetsDetailState;

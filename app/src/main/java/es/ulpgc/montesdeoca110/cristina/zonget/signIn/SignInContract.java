@@ -57,7 +57,7 @@ interface SignInContract {
 
         //------------- Obtener datos entre pantallas ----------
 
-        SignInState getDataFromSplashActivityScreen();
+        SignInState getDataFromSplashScreen();
 
     }
 }
