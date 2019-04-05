@@ -49,7 +49,7 @@ interface SignInContract {
 
         void navigateToSignUpScreen();
 
-        void navigateToPickDateScreen();
+        void navigateToUserPickDateScreen();
 
         //------------- Paso de datos entre pantallas ----------
 
@@ -57,7 +57,7 @@ interface SignInContract {
 
         //------------- Obtener datos entre pantallas ----------
 
-        SignInState getDataFromPreviousScreen();
+        SignInState getDataFromSplashActivityScreen();
 
     }
 }

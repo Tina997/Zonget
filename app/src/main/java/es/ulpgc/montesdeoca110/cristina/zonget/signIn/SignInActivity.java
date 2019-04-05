@@ -13,8 +13,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class SignInActivity extends AppCompatActivity implements SignInContract.View {
 
-    public static String TAG = SignInActivity.class.getSimpleName();
-
     private SignInContract.Presenter presenter;
 
     // Elementos de la vista
@@ -106,9 +104,8 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
     @Override
     public void displayData(SignInViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
-
         // deal with the data
+
     }
 
     @Override

@@ -10,10 +10,9 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateActivity;
 
 public class SignInRouter implements SignInContract.Router {
-
-    public static String TAG = SignInRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
@@ -21,7 +20,18 @@ public class SignInRouter implements SignInContract.Router {
         this.mediator = mediator;
     }
 
+    @Override
+    public SignInState getDataFromSplashActivityScreen() {
+        SignInState state = mediator.getSignInState();
+        return state;
+    }
 
+    // To MenuActivity
+
+    @Override
+    public void passDataToMenuScreen(SignInToMenuState state) {
+        mediator.setSignInToMenuState(state);
+    }
 
     @Override
     public void navigateToMenuScreen() {
@@ -35,27 +45,24 @@ public class SignInRouter implements SignInContract.Router {
         context.startActivity(intent);
     }
 
+    //To SignUpActivity
+
     @Override
     public void navigateToSignUpScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, SignUpActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
-    @Override
-    public void navigateToPickDateScreen() {
-
-    }
+    //To UserPickDateActivity
 
     @Override
-    public void passDataToMenuScreen(SignInToMenuState state) {
-        mediator.setSignInToMenuState(state);
-    }
-
-    @Override
-    public SignInState getDataFromPreviousScreen() {
-        SignInState state = mediator.getSignInState();
-        return state;
+    public void navigateToUserPickDateScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, UserPickDateActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
 }
