@@ -51,8 +51,8 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     }
 
     @Override
-    public void selectUserButtonsMenuListData(UserButtonMenuItem item) {
-        router.navigateToNextActivityScreen(item.activity);
+    public void selectUserButtonsMenuListData(UserButtonMenuItem button) {
+        router.navigateToSelectedActivityScreen(button.activity);
     }
 
 }
