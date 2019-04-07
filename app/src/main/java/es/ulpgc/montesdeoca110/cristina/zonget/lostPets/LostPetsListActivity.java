@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 
 public class LostPetsListActivity
         extends AppCompatActivity implements LostPetsListContract.View {
@@ -37,6 +38,8 @@ public class LostPetsListActivity
         listAdapter = new LostPetsListAdapter(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LostPetItem petItem = (LostPetItem) v.getTag();
+                presenter.selectPet(petItem);
 
             }
         });

@@ -54,5 +54,11 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
 
     }
 
+    @Override
+    public void selectPet(LostPetItem petItem) {
+        router.passDataToDetailScreen(petItem);
+        router.navigateToNextScreen();
+    }
+
 
 }
