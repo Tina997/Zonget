@@ -3,6 +3,7 @@ package es.ulpgc.motesdeoca110.cristina.zonget.data;
 import android.content.Context;
 
 import android.os.AsyncTask;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -42,7 +43,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         this.context = context;
     }
 
-    private String loadJSONFromAsset(){
+    private String loadJSONFromAsset() {
         String json = null;
 
         try {
@@ -54,7 +55,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             is.close();
             json = new String(buffer, "UTF-8");
 
-        }catch (IOException error){}
+        } catch (IOException error) {
+        }
 
         return json;
     }
@@ -75,19 +77,20 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
                 final List<AccountItem> accounts = Arrays.asList(gson.fromJson(jsonArray.toString(), AccountItem[].class));
 
-                for (AccountItem account: accounts) {
+                for (AccountItem account : accounts) {
                     insertAccount(account);
                 }
-                for (AccountItem account: accounts) {
+                for (AccountItem account : accounts) {
 
-                    for (PetsItem pets: account.getPets()) {
+                    for (PetsItem pets : account.getPets()) {
                         pets.accountId = account.getId();
                     }
                 }
                 return true;
             }
 
-        } catch (JSONException error) { }
+        } catch (JSONException error) {
+        }
 
         return false;
     }
@@ -113,10 +116,10 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
             @Override
             public void run() {
-                if(callback != null) {
+                if (callback != null) {
                     boolean exist = checkAccount(accountName, accountPassword);
                     AccountItem account = getAccountchecked(accountName, accountPassword);
-                    callback.setCheckAccountExist(exist,account);
+                    callback.setCheckAccountExist(exist, account);
                 }
             }
         });
@@ -124,31 +127,56 @@ public class AccountsRepository implements RepositoryContract.Accounts {
     }
 
     @Override
-    public void checkNewAccountDataExist(String dni, String email, CheckNewAccountDataExistCallback callback) {
-
+    public void checkNewAccountDataExist(final String accountDni, final String accountEmail, final CheckNewAccountDataExistCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null) {
+                    boolean exist = checkNewAccount(accountDni, accountEmail);
+                    int idForNewAccount = accounts.size() + 1;
+                    callback.setNewAccountExistCallBack(exist, idForNewAccount);
+                }
+            }
+        });
     }
 
     @Override
-    public void insertNewAccount(AccountItem account, InsertNewAccountCallback callback) {
-
+    public void insertNewAccount(final AccountItem account, final InsertNewAccountCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null) {
+                    accounts.add(account);
+                    callback.onNewAccountInserted();
+                }
+            }
+        });
     }
 
-    private boolean checkAccount(String accountName, String accountPassword){
-        for(AccountItem account: accounts){
-            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)){
+    private boolean checkAccount(String accountName, String accountPassword) {
+        for (AccountItem account : accounts) {
+            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)) {
                 return true;
             }
         }
         return false;
     }
 
-    private AccountItem getAccountchecked(String accountName, String accountPassword){
-        for(AccountItem account: accounts){
-            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)){
+    private AccountItem getAccountchecked(String accountName, String accountPassword) {
+        for (AccountItem account : accounts) {
+            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)) {
                 return account;
             }
         }
         return null;
     }
 
+    private boolean checkNewAccount(String accountDni, String accountEmail) {
+        for (AccountItem account : accounts) {
+            if (account.getDni().equals(accountDni) && account.getEmail().equals(accountEmail)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

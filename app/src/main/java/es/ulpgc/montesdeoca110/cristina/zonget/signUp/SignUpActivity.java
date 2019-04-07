@@ -154,16 +154,22 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         passwordEditText.setText(viewModel.accountPassword);
 
         //TODO Preguntar a Luis porqué se crea un bucle con esta línea
-        secondPasswordEditText.setText(viewModel.accountSecondPassword);
+        //secondPasswordEditText.setText(viewModel.accountSecondPassword);
 
         passwordCorrectionImageView.setImageResource(viewModel.correctPasswordsImageView);
         passwordCorrectionImageView.setVisibility(viewModel.correctPasswordsImageViewVisibility);
+
     }
 
     @Override
-    public void displayInsertNewAccountMesaje(String mesaje) {
-        progressBar.setVisibility(View.INVISIBLE);
-        Toast.makeText(this,mesaje, Toast.LENGTH_LONG).show();
+    public void displayInsertNewAccountMesaje(final String mesaje) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(getBaseContext(),mesaje, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 }

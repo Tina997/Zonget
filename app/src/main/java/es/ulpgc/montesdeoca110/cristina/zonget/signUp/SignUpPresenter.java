@@ -62,9 +62,9 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
     @Override
     public void checkPasswords() {
-        if(viewModel.accountPassword.equals(viewModel.accountSecondPassword)){
+        if (viewModel.accountPassword.equals(viewModel.accountSecondPassword)) {
             viewModel.correctPasswordsImageView = R.drawable.ic_correct;
-        }else{
+        } else {
             viewModel.correctPasswordsImageView = R.drawable.ic_incorrect;
         }
         viewModel.correctPasswordsImageViewVisibility = View.VISIBLE;
@@ -73,25 +73,26 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
-    public void fetchSignUpData() {}
+    public void fetchSignUpData() {
+    }
 
     @Override
     public void confirmedButtonPressed() {
         model.checkNewAccount(viewModel.accountDni, viewModel.accountEmail, new RepositoryContract.Accounts.CheckNewAccountDataExistCallback() {
             @Override
             public void setNewAccountExistCallBack(boolean exist, int id) {
-                if (!exist){
-                    AccountItem account = new AccountItem(id,"user", viewModel.accountName, viewModel.accountDni, viewModel.accountEmail,viewModel.accountPassword);
+                if (!exist) {
+                    AccountItem account = new AccountItem(id, "user", viewModel.accountName, viewModel.accountDni, viewModel.accountEmail, viewModel.accountPassword);
                     model.insertNewAccount(account, new RepositoryContract.Accounts.InsertNewAccountCallback() {
                         @Override
-                        public void onNewAccountInserted(boolean error) {
-                            if(!error){
-                                view.get().displayInsertNewAccountMesaje("La cuenta ha sido registrada correctamente");
+                        public void onNewAccountInserted() {
 
-                                SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
-                                router.passDataSignUpConfirmationScreen(state);
-                                router.navigateSignUpConfirmationScreen();
-                            }
+                            view.get().displayInsertNewAccountMesaje("La cuenta ha sido registrada correctamente");
+
+                            SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
+                            router.passDataSignUpConfirmationScreen(state);
+                            router.navigateSignUpConfirmationScreen();
+
                         }
                     });
                 } else {

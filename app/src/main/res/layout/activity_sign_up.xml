@@ -24,8 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_vertical"
-        android:layout_margin="20dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="80dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -131,9 +130,10 @@
 
             <ImageView
                 android:id="@+id/user_sign_up_password_correction_icon_view"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
                 android:elevation="24dp"
                 android:scaleType="fitCenter" />
 
@@ -141,7 +141,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="70dp" />
 
         <ProgressBar
             android:id="@+id/sign_up_progress_bar"
@@ -153,7 +153,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="70dp" />
 
         <Button
             android:id="@+id/sign_up_accept_button"

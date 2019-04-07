@@ -60,7 +60,7 @@ public interface RepositoryContract {
         void checkNewAccountDataExist(String dni, String email, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
 
         interface InsertNewAccountCallback{
-            void onNewAccountInserted(boolean error);
+            void onNewAccountInserted();
         }
 
         void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
