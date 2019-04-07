@@ -12,12 +12,19 @@ public class SignUpModel implements SignUpContract.Model {
     }
 
     @Override
-    public void checkNewAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback) {
-        repository.checkNewAccountDataExist(accountDni,accountEmail,callback);
+    public void checkNewAccount(final String accountDni,final String accountEmail, final RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback) {
+        repository.loadZonget(new RepositoryContract.Accounts.FecthZongetDataCallback() {
+            @Override
+            public void onZongetDataFetched(boolean error) {
+                if(!error){
+                    repository.checkNewAccountDataExist(accountDni,accountEmail,callback);
+                }
+            }
+        });
     }
 
     @Override
-    public void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback) {
+    public void insertNewAccount(final AccountItem account, final RepositoryContract.Accounts.InsertNewAccountCallback callback) {
         repository.insertNewAccount(account,callback);
     }
 
