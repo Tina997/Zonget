@@ -51,15 +51,6 @@ public class SignInPresenter implements SignInContract.Presenter {
     }
 
     @Override
-    public void saveSignInState() {
-        SignInState state = new SignInState();
-        state.accountName =  viewModel.accountName;
-        state.accountPassword = viewModel.accountPassword;
-
-        router.setSignInState(state);
-    }
-
-    @Override
     public void forgetPasswordPressed() {
         //TODO Implementar esta opción junto con su activity correspondiente
     }

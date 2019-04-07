@@ -31,8 +31,6 @@ interface SignInContract {
 
         void fetchSignInData();
 
-        void saveSignInState();
-
         void forgetPasswordPressed();
 
         void signInButtonPressed(String accountName, String accountPassword);

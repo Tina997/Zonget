@@ -70,26 +70,7 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
-    public void fetchSignUpData() {
-
-        // Inital state
-        viewModel.accountName = "";
-        viewModel.accountDni = "";
-        viewModel.accountEmail = "";
-        viewModel.accountPassword = "";
-        viewModel.accountSecondPassword = "";
-
-        viewModel.correctPasswordsImageView = R.drawable.ic_incorrect;
-        viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
-
-        view.get().displaySignUpData(viewModel);
-
-    }
-
-    @Override
-    public void saveSignUpState() {
-        router.setSignUpState();
-    }
+    public void fetchSignUpData() {}
 
     @Override
     public void confirmedButtonPressed() {

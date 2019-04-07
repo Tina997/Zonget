@@ -36,8 +36,6 @@ interface SignUpContract {
 
         void fetchSignUpData();
 
-        void saveSignUpState();
-
         void confirmedButtonPressed();
 
     }
@@ -51,8 +49,6 @@ interface SignUpContract {
     interface Router {
 
         void setSignUpState(SignUpState state);
-
-        SignUpState getSignUpState();
 
         //--------------- Navegación entre pantallas -----------
 
