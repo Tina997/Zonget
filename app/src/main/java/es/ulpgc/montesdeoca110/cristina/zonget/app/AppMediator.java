@@ -81,8 +81,10 @@ public class AppMediator extends Application {
     private UserItem userItem;
 
     //Estados entre activities
+    private SplashToSignInState splashToSignInState;
     private SignInToMenuState signInToMenuState;
     private MenuToSignInState menuToSignInState;
+    private SignUpToSignUpConfirmationState signUpToSignUpConfirmationState;
     private MenuToSelectedActivityState menuToSelectedActivityState;
     private UserMenuToUserPickDateState userMenuToUserPickDateState;
 
@@ -271,6 +273,15 @@ public class AppMediator extends Application {
 
     //------------------------------------- States between activities ------------------------------------------
 
+    //SplashToSignIn
+    public SplashToSignInState getSplashToSignInState() {
+        return splashToSignInState;
+    }
+
+    public void setSplashToSignInState(SplashToSignInState splashToSignInState) {
+        this.splashToSignInState = splashToSignInState;
+    }
+
     //SignInToMenu
     public SignInToMenuState getSignInToMenuState() {
         return signInToMenuState;
@@ -278,6 +289,15 @@ public class AppMediator extends Application {
 
     public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
         this.signInToMenuState = signInToMenuState;
+    }
+
+    //SignUpToSignUpConfirmation
+    public SignUpToSignUpConfirmationState getSignUpToSignUpConfirmationState() {
+        return signUpToSignUpConfirmationState;
+    }
+
+    public void setSignUpToSignUpConfirmationState(SignUpToSignUpConfirmationState signUpToSignUpConfirmationState) {
+        this.signUpToSignUpConfirmationState = signUpToSignUpConfirmationState;
     }
 
     //MenuToSingIn

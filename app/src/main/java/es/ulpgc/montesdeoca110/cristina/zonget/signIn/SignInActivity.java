@@ -105,13 +105,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-
-        presenter.saveSignInState();
-    }
-
-    @Override
     public void injectPresenter(SignInContract.Presenter presenter) {
         this.presenter = presenter;
     }

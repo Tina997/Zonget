@@ -4,6 +4,7 @@
       "id": 0,
       "type": "administrator",
       "name": "admin",
+      "dni": "XXXXXXXXX",
       "email": "admin@zonget.com",
       "password": "admin",
       "pets": []
@@ -12,6 +13,7 @@
       "id": 1,
       "type": "user",
       "name": "Yguanira",
+      "dni": "45365093P",
       "email": "yguanira@zonget.com",
       "password": "yguanira",
       "pets": [
@@ -29,6 +31,7 @@
       "id": 2,
       "type": "user",
       "name": "Caterina",
+      "dni": "XXXXXXXXX",
       "email": "caterina@zonget.com",
       "password": "caterina",
       "pets": [
@@ -54,6 +57,7 @@
       "id": 3,
       "type": "user",
       "name": "Cristina",
+      "dni": "XXXXXXXXX",
       "email": "cristina@zonget.com",
       "password": "cristina",
       "pets": [

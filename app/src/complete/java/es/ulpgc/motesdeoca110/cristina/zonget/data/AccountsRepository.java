@@ -123,6 +123,16 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     }
 
+    @Override
+    public void checkNewAccountDataExist(String dni, String email, CheckNewAccountDataExistCallback callback) {
+
+    }
+
+    @Override
+    public void insertNewAccount(AccountItem account, InsertNewAccountCallback callback) {
+
+    }
+
     private boolean checkAccount(String accountName, String accountPassword){
         for(AccountItem account: accounts){
             if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)){

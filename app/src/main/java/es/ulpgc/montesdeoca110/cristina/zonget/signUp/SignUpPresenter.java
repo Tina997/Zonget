@@ -6,7 +6,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmedState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignUpPresenter implements SignUpContract.Presenter {
@@ -88,7 +88,7 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                             if(!error){
                                 view.get().displayInsertNewAccountMesaje("La cuenta ha sido registrada correctamente");
 
-                                SignUpToSignUpConfirmedState state = new SignUpToSignUpConfirmedState();
+                                SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
                                 router.passDataSignUpConfirmationScreen(state);
                                 router.navigateSignUpConfirmationScreen();
                             }
