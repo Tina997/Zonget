@@ -2,7 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmed;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmedState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface SignUpContract {
@@ -12,6 +13,8 @@ interface SignUpContract {
         void injectPresenter(Presenter presenter);
 
         void displaySignUpData(SignUpViewModel viewModel);
+
+        void displayInsertNewAccountMesaje(String mesaje);
     }
 
     interface Presenter {
@@ -42,7 +45,9 @@ interface SignUpContract {
 
     interface Model {
 
-        void checkAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
+        void checkNewAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
+
+        void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
     }
 
@@ -56,7 +61,7 @@ interface SignUpContract {
 
         //------------- Paso de datos entre pantallas ----------
 
-        void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmed state);
+        void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmedState state);
 
         //------------- Obtener datos entre pantallas ----------
 

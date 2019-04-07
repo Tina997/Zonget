@@ -53,7 +53,17 @@ public interface RepositoryContract {
 
         void getCheckAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
 
+        interface CheckNewAccountDataExistCallback {
+            void setNewAccountExistCallBack(boolean exist, int lastId);
+        }
 
+        void checkNewAccountDataExist(String dni, String email, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
+
+        interface InsertNewAccountCallback{
+            void onNewAccountInserted(boolean error);
+        }
+
+        void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
     }
     interface LostPets{

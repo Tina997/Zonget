@@ -5,6 +5,9 @@ import android.view.View;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmedState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignUpPresenter implements SignUpContract.Presenter {
 
@@ -74,7 +77,28 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
     @Override
     public void confirmedButtonPressed() {
+        model.checkNewAccount(viewModel.accountDni, viewModel.accountEmail, new RepositoryContract.Accounts.CheckNewAccountDataExistCallback() {
+            @Override
+            public void setNewAccountExistCallBack(boolean exist, int id) {
+                if (!exist){
+                    AccountItem account = new AccountItem(id,"user", viewModel.accountName, viewModel.accountDni, viewModel.accountEmail,viewModel.accountPassword);
+                    model.insertNewAccount(account, new RepositoryContract.Accounts.InsertNewAccountCallback() {
+                        @Override
+                        public void onNewAccountInserted(boolean error) {
+                            if(!error){
+                                view.get().displayInsertNewAccountMesaje("La cuenta ha sido registrada correctamente");
 
+                                SignUpToSignUpConfirmedState state = new SignUpToSignUpConfirmedState();
+                                router.passDataSignUpConfirmationScreen(state);
+                                router.navigateSignUpConfirmationScreen();
+                            }
+                        }
+                    });
+                } else {
+                    view.get().displayInsertNewAccountMesaje("El email y DNI introducidos ya están asociados a una cuenta");
+                }
+            }
+        });
     }
 
 }

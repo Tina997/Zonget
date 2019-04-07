@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -124,6 +125,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         confirmedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 presenter.confirmedButtonPressed();
             }
         });
@@ -157,4 +159,11 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         passwordCorrectionImageView.setImageResource(viewModel.correctPasswordsImageView);
         passwordCorrectionImageView.setVisibility(viewModel.correctPasswordsImageViewVisibility);
     }
+
+    @Override
+    public void displayInsertNewAccountMesaje(String mesaje) {
+        progressBar.setVisibility(View.INVISIBLE);
+        Toast.makeText(this,mesaje, Toast.LENGTH_LONG).show();
+    }
+
 }

@@ -11,16 +11,18 @@ public class AccountItem {
     private int id;
     private String type;
     private String name;
+    private String dni;
     private String email;
     private String password;
 
     @SerializedName("pets")
     private List<PetsItem> pets;
 
-    public AccountItem(int id, String type, String name, String email, String password) {
+    public AccountItem(int id, String type, String name, String dni, String email, String password) {
         this.id = id;
         this.type = type;
         this.name = name;
+        this.dni = dni;
         this.email = email;
         this.password = password;
         this.pets = new ArrayList<PetsItem>();
@@ -40,6 +42,14 @@ public class AccountItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getEmail() {

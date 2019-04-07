@@ -1,6 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
-public class SignUpToSignUpConfirmed {
+public class SignUpToSignUpConfirmedState {
 
     public String accountEmail;
 

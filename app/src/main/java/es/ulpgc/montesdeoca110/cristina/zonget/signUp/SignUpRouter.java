@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmed;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmedState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationActivity;
 
 
@@ -21,10 +21,6 @@ public class SignUpRouter implements SignUpContract.Router {
 
     }
 
-    @Override
-    public SignUpState getSignUpState() {
-        return null;
-    }
 
     @Override
     public void navigateSignUpConfirmationScreen() {
@@ -34,7 +30,7 @@ public class SignUpRouter implements SignUpContract.Router {
     }
 
     @Override
-    public void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmed state) {
+    public void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmedState state) {
 
     }
 }
