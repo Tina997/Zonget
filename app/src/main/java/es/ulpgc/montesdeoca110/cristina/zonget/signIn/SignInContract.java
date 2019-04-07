@@ -2,11 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
-import android.accounts.Account;
-import android.text.Editable;
-
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SplashToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface SignInContract {
@@ -55,8 +52,6 @@ interface SignInContract {
 
         void setSignInState(SignInState state);
 
-        SignInState getSignInState();
-
         //--------------- Navegación entre pantallas -----------
 
         void navigateToMenuScreen();
@@ -71,7 +66,7 @@ interface SignInContract {
 
         //------------- Obtener datos entre pantallas ----------
 
-        SignInState getDataFromSplashScreen();
+        SplashToSignInState getDataFromSplashScreen();
 
     }
 }

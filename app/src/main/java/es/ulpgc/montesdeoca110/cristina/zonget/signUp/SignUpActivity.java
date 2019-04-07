@@ -152,7 +152,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         passwordEditText.setText(viewModel.accountPassword);
 
         //TODO Preguntar a Luis porqué se crea un bucle con esta línea
-        //secondPasswordEditText.setText(viewModel.accountSecondPassword);
+        secondPasswordEditText.setText(viewModel.accountSecondPassword);
 
         passwordCorrectionImageView.setImageResource(viewModel.correctPasswordsImageView);
         passwordCorrectionImageView.setVisibility(viewModel.correctPasswordsImageViewVisibility);

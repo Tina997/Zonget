@@ -72,34 +72,23 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     @Override
     public void fetchSignUpData() {
 
-        SignUpState state = router.getSignUpState();
-        if (state != null) {
-            viewModel.accountName = state.accountName;
-            viewModel.accountDni = state.accountDni;
-            viewModel.accountEmail = state.accountEmail;
-            viewModel.accountPassword = state.accountPassword;
-            viewModel.accountSecondPassword = state.accountSecondPassword;
+        // Inital state
+        viewModel.accountName = "";
+        viewModel.accountDni = "";
+        viewModel.accountEmail = "";
+        viewModel.accountPassword = "";
+        viewModel.accountSecondPassword = "";
 
-            viewModel.correctPasswordsImageView = state.correctPasswordsImageView;
-            viewModel.correctPasswordsImageViewVisibility = state.correctPasswordsImageViewVisibility;
-        } else {
-            // Inital state
-            viewModel.accountName = "";
-            viewModel.accountDni = "";
-            viewModel.accountEmail = "";
-            viewModel.accountPassword = "";
-            viewModel.accountSecondPassword = "";
+        viewModel.correctPasswordsImageView = R.drawable.ic_incorrect;
+        viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
 
-            viewModel.correctPasswordsImageView = R.drawable.ic_incorrect;
-            viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
-
-        }
         view.get().displaySignUpData(viewModel);
+
     }
 
     @Override
     public void saveSignUpState() {
-
+        router.setSignUpState();
     }
 
     @Override

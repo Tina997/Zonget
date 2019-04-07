@@ -1,16 +1,13 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
-import android.text.Editable;
-
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SplashToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignInPresenter implements SignInContract.Presenter {
-
-    public static String TAG = SignInPresenter.class.getSimpleName();
 
     private WeakReference<SignInContract.View> view;
     private SignInViewModel viewModel;
@@ -49,16 +46,8 @@ public class SignInPresenter implements SignInContract.Presenter {
     @Override
     public void fetchSignInData() {
 
-        SignInState state = router.getSignInState();
-        if (state != null) {
-            if (state.accountName != null && state.accountPassword != null){
-                viewModel.accountName = state.accountName;
-                viewModel.accountPassword = state.accountPassword;
-
-                view.get().displaySignInData(viewModel);
-            }
-        }
-
+        SplashToSignInState state = router.getDataFromSplashScreen();
+        if (state != null) {}
     }
 
     @Override
