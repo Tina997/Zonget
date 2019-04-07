@@ -14,6 +14,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.Administra
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userAgenda.UserAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateState;
@@ -74,11 +75,12 @@ public class AppMediator extends Application {
     private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
     private UserPickDateState userPickDateState = new UserPickDateState();
     private LostPetsListState lostPetsListState = new LostPetsListState();
-
+    private LostPetsDetailState lostPetsDetailState = new LostPetsDetailState();
     private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
+    private LostPetItem lostPetItem;
 
     //Estados entre activities
     private SignInToMenuState signInToMenuState;
@@ -337,8 +339,9 @@ public class AppMediator extends Application {
         this.userAgendaState = userAgendaState;
     }
 
-    public void setlostPetsListState(LostPetsListState lostPetsListState) {
-        this.lostPetsListState = lostPetsListState;
+    //LostPets
+    public void setlostPetsListState(LostPetItem lostPetsItem) {
+        lostPetsItem = lostPetItem;
     }
 
     public LostPetsListState getlostPetsListState() {
@@ -353,5 +356,8 @@ public class AppMediator extends Application {
     public void setPetsForAdoptionState(PetsForAdoptionState petsForAdoptionState) {
         this.petsForAdoptionState = petsForAdoptionState;
     }
-
+    //LostPetsDetail
+    public LostPetsDetailState getLostPetsDetailState() {
+        return lostPetsDetailState;
+    }
 }

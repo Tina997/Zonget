@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailActivity;
 
 public class LostPetsListRouter implements LostPetsListContract.Router {
 
@@ -18,13 +20,14 @@ public class LostPetsListRouter implements LostPetsListContract.Router {
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, LostPetsListActivity.class);
+        Intent intent = new Intent(context, LostPetsDetailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(LostPetsListState state) {
-        mediator.setlostPetsListState(state);
+    public void passDataToDetailScreen(LostPetItem item) {
+        mediator.setlostPetsListState(item);
     }
 
     @Override
