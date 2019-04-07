@@ -20,7 +20,7 @@ public class SignUpScreen {
 
         SignUpContract.Router router = new SignUpRouter(mediator);
         SignUpContract.Presenter presenter = new SignUpPresenter(state);
-        SignUpContract.Model model = new SignUpModel();
+        SignUpContract.Model model = new SignUpModel(repository);
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
