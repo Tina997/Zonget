@@ -11,14 +11,14 @@ public class SignUpModel implements SignUpContract.Model {
         this.repository = repository;
     }
 
-
     @Override
     public void checkNewAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback) {
-
+        repository.checkNewAccountDataExist(accountDni,accountEmail,callback);
     }
 
     @Override
     public void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback) {
-
+        repository.insertNewAccount(account,callback);
     }
+
 }
