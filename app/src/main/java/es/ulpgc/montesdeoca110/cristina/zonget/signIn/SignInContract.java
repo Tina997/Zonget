@@ -3,6 +3,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 import java.lang.ref.WeakReference;
 
 import android.accounts.Account;
+import android.text.Editable;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
@@ -12,7 +14,7 @@ interface SignInContract {
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(SignInViewModel viewModel);
+        void displaySignInData(SignInViewModel viewModel);
 
         void displayCheckAccountError();
     }
@@ -24,7 +26,13 @@ interface SignInContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void updateAccountNameEditText(String accountName);
+
+        void updateAccountPasswordEditText(String accountPassword);
+
+        void fetchSignInData();
+
+        void saveSignInState();
 
         void forgetPasswordPressed();
 
@@ -42,6 +50,10 @@ interface SignInContract {
     }
 
     interface Router {
+
+        void setSignInState(SignInState state);
+
+        SignInState getSignInState();
 
         //--------------- Navegación entre pantallas -----------
 

@@ -2,12 +2,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import android.content.Intent;
 import android.content.Context;
-import android.util.Log;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateActivity;
@@ -19,6 +17,18 @@ public class SignInRouter implements SignInContract.Router {
     public SignInRouter(AppMediator mediator) {
         this.mediator = mediator;
     }
+
+
+    @Override
+    public void setSignInState(SignInState state) {
+        mediator.setSignInState(state);
+    }
+
+    @Override
+    public SignInState getSignInState() {
+        return mediator.getSignInState();
+    }
+
 
     @Override
     public SignInState getDataFromSplashScreen() {

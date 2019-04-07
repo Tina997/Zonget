@@ -1,6 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
-import android.util.Log;
+import android.text.Editable;
 
 import java.lang.ref.WeakReference;
 
@@ -37,32 +37,42 @@ public class SignInPresenter implements SignInContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
+    public void updateAccountNameEditText(String accountName) {
+        viewModel.accountName = accountName;
+    }
 
-        // set passed state
-        /*SignInState state = router.getDataFromPreviousScreen();
+    @Override
+    public void updateAccountPasswordEditText(String accountPassword) {
+        viewModel.accountPassword = accountPassword;
+    }
+
+    @Override
+    public void fetchSignInData() {
+
+        SignInState state = router.getSignInState();
         if (state != null) {
-            viewModel.data = state.data;
+            if (state.accountName != null && state.accountPassword != null){
+                viewModel.accountName = state.accountName;
+                viewModel.accountPassword = state.accountPassword;
+
+                view.get().displaySignInData(viewModel);
+            }
         }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchPetsForAdoptionListData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
-        */
 
     }
 
     @Override
-    public void forgetPasswordPressed() {
+    public void saveSignInState() {
+        SignInState state = new SignInState();
+        state.accountName =  viewModel.accountName;
+        state.accountPassword = viewModel.accountPassword;
 
+        router.setSignInState(state);
+    }
+
+    @Override
+    public void forgetPasswordPressed() {
+        //TODO Implementar esta opción junto con su activity correspondiente
     }
 
     @Override

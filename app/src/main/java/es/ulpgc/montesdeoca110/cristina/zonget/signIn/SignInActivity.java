@@ -36,18 +36,27 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         //Listeners
         accountNameEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void afterTextChanged(Editable accountName) {
+                presenter.updateAccountNameEditText("" + accountName);
+            }
+        });
 
+        accountPasswordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable accountPassword) {
+                presenter.updateAccountPasswordEditText("" + accountPassword);
             }
         });
 
@@ -92,8 +101,14 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     protected void onResume() {
         super.onResume();
 
-        // do some work
-        presenter.fetchData();
+        presenter.fetchSignInData();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        presenter.saveSignInState();
     }
 
     @Override
@@ -103,9 +118,9 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
 
     @Override
-    public void displayData(SignInViewModel viewModel) {
-        // deal with the data
-
+    public void displaySignInData(SignInViewModel viewModel) {
+        accountNameEditText.setText(viewModel.accountName);
+        accountNameEditText.setText(viewModel.accountPassword);
     }
 
     @Override
