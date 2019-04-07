@@ -13,6 +13,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionState;
@@ -80,7 +81,7 @@ public class AppMediator extends Application {
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
-    private LostPetItem lostPetItem;
+    private LostPetItem lostPet;
 
     //Estados entre activities
     private SignInToMenuState signInToMenuState;
@@ -341,9 +342,12 @@ public class AppMediator extends Application {
 
     //LostPets
     public void setlostPetsListState(LostPetItem lostPetsItem) {
-        lostPetsItem = lostPetItem;
+        lostPetsItem = lostPet;
     }
+    public void setlostPet(LostPetItem lostPetItem) {
+        lostPet = lostPetItem;
 
+    }
     public LostPetsListState getlostPetsListState() {
         return lostPetsListState;
     }
@@ -360,4 +364,11 @@ public class AppMediator extends Application {
     public LostPetsDetailState getLostPetsDetailState() {
         return lostPetsDetailState;
     }
+
+    public LostPetItem getLostPetsDetailItem() {
+        LostPetItem lostPetItem = lostPet;
+        return lostPetItem;
+    }
+
+
 }

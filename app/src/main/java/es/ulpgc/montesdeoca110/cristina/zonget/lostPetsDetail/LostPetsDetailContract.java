@@ -2,12 +2,14 @@ package es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
+
 interface LostPetsDetailContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(LostPetsDetailViewModel viewModel);
+        void displayLostPetDetailData(LostPetsDetailViewModel viewModel);
     }
 
     interface Presenter {
@@ -17,11 +19,10 @@ interface LostPetsDetailContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchLostPetDetailData();
     }
 
     interface Model {
-        String fetchData();
     }
 
     interface Router {
@@ -29,6 +30,6 @@ interface LostPetsDetailContract {
 
         void passDataToNextScreen(LostPetsDetailState state);
 
-        LostPetsDetailState getDataFromPreviousScreen();
+        LostPetItem getDataFromLostPetsListScreen();
     }
 }
