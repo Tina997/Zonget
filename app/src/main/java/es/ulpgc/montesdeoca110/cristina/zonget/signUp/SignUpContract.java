@@ -2,7 +2,6 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmed;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -33,11 +32,13 @@ interface SignUpContract {
 
         void updateAccountSecondPasswordEditText(String accountSecondPassword);
 
+        void checkPasswords();
+
         void fetchSignUpData();
 
         void saveSignUpState();
 
-        void confirmedButtonPressed(AccountItem newAccount);
+        void confirmedButtonPressed();
 
     }
 
@@ -55,11 +56,11 @@ interface SignUpContract {
 
         //--------------- Navegación entre pantallas -----------
 
-        void navigateSignUpScreen();
+        void navigateSignUpConfirmationScreen();
 
         //------------- Paso de datos entre pantallas ----------
 
-        void passDataSignUpConfirmedScreen(SignUpToSignUpConfirmed state);
+        void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmed state);
 
         //------------- Obtener datos entre pantallas ----------
 

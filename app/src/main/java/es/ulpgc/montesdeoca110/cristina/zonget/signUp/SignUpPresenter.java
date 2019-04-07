@@ -1,10 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
+import android.view.View;
+
 import java.lang.ref.WeakReference;
 
-public class SignUpPresenter implements SignUpContract.Presenter {
+import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-    public static String TAG = SignUpPresenter.class.getSimpleName();
+public class SignUpPresenter implements SignUpContract.Presenter {
 
     private WeakReference<SignUpContract.View> view;
     private SignUpViewModel viewModel;
@@ -31,27 +33,78 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
+    public void updateAccountNameEditText(String accountName) {
+        viewModel.accountName = accountName;
+    }
 
-        // set passed state
-        SignUpState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
+    @Override
+    public void updateAccountDniEditText(String accountDni) {
+        viewModel.accountDni = accountDni;
+    }
+
+    @Override
+    public void updateAccountEmailEditText(String accountEmail) {
+        viewModel.accountEmail = accountEmail;
+    }
+
+    @Override
+    public void updateAccountPasswordEditText(String accountPassword) {
+        viewModel.accountPassword = accountPassword;
+    }
+
+    @Override
+    public void updateAccountSecondPasswordEditText(String accountSecondPassword) {
+        viewModel.accountSecondPassword = accountSecondPassword;
+    }
+
+    @Override
+    public void checkPasswords() {
+        if(viewModel.accountPassword.equals(viewModel.accountSecondPassword)){
+            viewModel.correctPasswordsImageView = R.drawable.ic_correct;
+        }else{
+            viewModel.correctPasswordsImageView = R.drawable.ic_incorrect;
         }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
+        viewModel.correctPasswordsImageViewVisibility = View.VISIBLE;
+        view.get().displaySignUpData(viewModel);
 
     }
 
+    @Override
+    public void fetchSignUpData() {
+
+        SignUpState state = router.getSignUpState();
+        if (state != null) {
+            viewModel.accountName = state.accountName;
+            viewModel.accountDni = state.accountDni;
+            viewModel.accountEmail = state.accountEmail;
+            viewModel.accountPassword = state.accountPassword;
+            viewModel.accountSecondPassword = state.accountSecondPassword;
+
+            viewModel.correctPasswordsImageView = state.correctPasswordsImageView;
+            viewModel.correctPasswordsImageViewVisibility = state.correctPasswordsImageViewVisibility;
+        } else {
+            // Inital state
+            viewModel.accountName = "";
+            viewModel.accountDni = "";
+            viewModel.accountEmail = "";
+            viewModel.accountPassword = "";
+            viewModel.accountSecondPassword = "";
+
+            viewModel.correctPasswordsImageView = R.drawable.ic_incorrect;
+            viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
+
+        }
+        view.get().displaySignUpData(viewModel);
+    }
+
+    @Override
+    public void saveSignUpState() {
+
+    }
+
+    @Override
+    public void confirmedButtonPressed() {
+
+    }
 
 }

@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,10 +14,7 @@ import android.widget.ProgressBar;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class SignUpActivity
-        extends AppCompatActivity implements SignUpContract.View {
-
-    public static String TAG = SignUpActivity.class.getSimpleName();
+public class SignUpActivity extends AppCompatActivity implements SignUpContract.View {
 
     private SignUpContract.Presenter presenter;
 
@@ -50,10 +49,82 @@ public class SignUpActivity
         confirmedButton = findViewById(R.id.sign_up_accept_button);
 
         //Listeners
+        nameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable name) {
+                presenter.updateAccountNameEditText("" + name);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+        });
+
+        dniEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable dni) {
+                presenter.updateAccountDniEditText("" + dni);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+        });
+
+        emailEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable email) {
+                presenter.updateAccountEmailEditText("" + email);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+        });
+
+        passwordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable password) {
+                presenter.updateAccountPasswordEditText("" + password);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+        });
+
+        secondPasswordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable secondPassword) {
+                presenter.updateAccountSecondPasswordEditText("" + secondPassword);
+                presenter.checkPasswords();
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+        });
+
+
         confirmedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Llamar al presentador
+                presenter.confirmedButtonPressed();
             }
         });
 
@@ -65,8 +136,7 @@ public class SignUpActivity
     protected void onResume() {
         super.onResume();
 
-        // do some work
-        //presenter.fetchDateListData();
+        presenter.fetchSignUpData();
     }
 
     @Override
@@ -75,10 +145,16 @@ public class SignUpActivity
     }
 
     @Override
-    public void displayData(SignUpViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+    public void displaySignUpData(SignUpViewModel viewModel) {
+        nameEditText.setText(viewModel.accountName);
+        dniEditText.setText(viewModel.accountDni);
+        emailEditText.setText(viewModel.accountEmail);
+        passwordEditText.setText(viewModel.accountPassword);
 
-        // deal with the data
+        //TODO Preguntar a Luis porqué se crea un bucle con esta línea
+        //secondPasswordEditText.setText(viewModel.accountSecondPassword);
 
+        passwordCorrectionImageView.setImageResource(viewModel.correctPasswordsImageView);
+        passwordCorrectionImageView.setVisibility(viewModel.correctPasswordsImageViewVisibility);
     }
 }

@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmed;
+import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirmationActivity;
 
 
 public class SignUpRouter implements SignUpContract.Router {
-
-    public static String TAG = SignUpRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
@@ -17,20 +17,24 @@ public class SignUpRouter implements SignUpContract.Router {
     }
 
     @Override
-    public void navigateToNextScreen() {
+    public void setSignUpState(SignUpState state) {
+
+    }
+
+    @Override
+    public SignUpState getSignUpState() {
+        return null;
+    }
+
+    @Override
+    public void navigateSignUpConfirmationScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SignUpActivity.class);
+        Intent intent = new Intent(context, SignUpConfirmationActivity.class);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(SignUpState state) {
-        mediator.setSignUpState(state);
-    }
+    public void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmed state) {
 
-    @Override
-    public SignUpState getDataFromPreviousScreen() {
-        SignUpState state = mediator.getSignUpState();
-        return state;
     }
 }

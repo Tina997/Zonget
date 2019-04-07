@@ -1,16 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
-public class SignUpModel implements SignUpContract.Model {
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-    public static String TAG = SignUpModel.class.getSimpleName();
+public class SignUpModel implements SignUpContract.Model {
 
     public SignUpModel() {
 
     }
 
+
     @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
-        return "Hello";
+    public void checkAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.GetCheckAccountExistCallback callback) {
+
     }
 }

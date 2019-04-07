@@ -135,7 +135,7 @@
                 android:layout_height="35dp"
                 android:layout_gravity="bottom"
                 android:elevation="24dp"
-                android:visibility="visible" />
+                android:scaleType="fitCenter" />
 
         </LinearLayout>
 
