@@ -12,6 +12,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 interface SignInContract {
 
     interface View {
+
         void injectPresenter(Presenter presenter);
 
         void displaySignInData(SignInViewModel viewModel);
@@ -20,6 +21,7 @@ interface SignInContract {
     }
 
     interface Presenter {
+
         void injectView(WeakReference<View> view);
 
         void injectModel(Model model);
