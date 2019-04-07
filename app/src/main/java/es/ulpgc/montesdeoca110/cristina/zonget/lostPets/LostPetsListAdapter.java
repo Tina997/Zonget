@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.lostPets;
 
+import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +62,8 @@ public class LostPetsListAdapter extends RecyclerView.Adapter<LostPetsListAdapte
 
         holder.contentView.setText(itemList.get(position).date);
         holder.contentViewB.setText(itemList.get(position).breed);
-        holder.contentViewP.setText(itemList.get(position).picture);
+        loadImageFromURL(holder.imageView,itemList.get(position).picture);
+
     }
 
     @Override
@@ -72,15 +74,15 @@ public class LostPetsListAdapter extends RecyclerView.Adapter<LostPetsListAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
         final TextView contentView;
         final TextView contentViewB;
-        final TextView contentViewP;
+        final ImageView imageView;
 
         ViewHolder(View view) {
             super(view);
             contentView = view.findViewById(R.id.lostDate);
             contentViewB = view.findViewById(R.id.lostPetBreed);
-            contentViewP = view.findViewById(R.id.TextView);
-            loadImageFromURL((ImageView) view.findViewById(R.id.lostPetImage),contentViewP.toString());
+            imageView = view.findViewById(R.id.lostPetImage);
         }
+
     }
     private void loadImageFromURL(ImageView imageView, String imageUrl){
         RequestManager reqManager = Glide.with(imageView.getContext());
@@ -90,4 +92,5 @@ public class LostPetsListAdapter extends RecyclerView.Adapter<LostPetsListAdapte
         reqBuilder.apply(reqOptions);
         reqBuilder.into(imageView);
     }
+
 }
