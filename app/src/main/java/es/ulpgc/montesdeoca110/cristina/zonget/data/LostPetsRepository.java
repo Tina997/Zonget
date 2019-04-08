@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.app;
+package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 
 public class LostPetsRepository implements RepositoryContract.LostPets {
 
