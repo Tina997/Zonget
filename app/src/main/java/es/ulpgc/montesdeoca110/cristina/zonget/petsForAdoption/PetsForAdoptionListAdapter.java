@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 
 public class PetsForAdoptionListAdapter extends RecyclerView.Adapter<PetsForAdoptionListAdapter.ViewHolder> {
@@ -62,6 +61,7 @@ public class PetsForAdoptionListAdapter extends RecyclerView.Adapter<PetsForAdop
 
         holder.contentView.setText(itemList.get(position).date);
         holder.contentViewB.setText(itemList.get(position).breed);
+        loadImageFromURL(holder.imageView,itemList.get(position).picture);
     }
 
     @Override
@@ -72,14 +72,14 @@ public class PetsForAdoptionListAdapter extends RecyclerView.Adapter<PetsForAdop
     class ViewHolder extends RecyclerView.ViewHolder {
         final TextView contentView;
         final TextView contentViewB;
-       // final ImageView imageView;
+        final ImageView imageView;
 
         ViewHolder(View view) {
             super(view);
             contentView = view.findViewById(R.id.birthDate);
             contentViewB = view.findViewById(R.id.petForAdoptionBreed);
-            //imageView = view.findViewById(R.id.lostPetImage);
-           // loadImageFromURL((ImageView) view.findViewById(R.id.lostPetImage),"https://www.freejpg.com.ar/image-900/65/65ab/F100011060-gato.jpg");
+            imageView = view.findViewById(R.id.petForAdoptionImage);
+
         }
     }
     private void loadImageFromURL(ImageView imageView, String imageUrl){
