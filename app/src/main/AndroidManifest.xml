@@ -69,12 +69,14 @@
         <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
         <activity android:name=".petsForAdoption.PetsForAdoptionActivity">
-                <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                        <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+        <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity"></activity>
 
         <activity android:name=".lostPets.LostPetsListActivity"></activity>
 
