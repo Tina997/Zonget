@@ -2,6 +2,6 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 public class SignUpToSignUpConfirmationState {
 
-    public String accountEmail;
+    public String accountName,accountDni, accountEmail;
 
 }

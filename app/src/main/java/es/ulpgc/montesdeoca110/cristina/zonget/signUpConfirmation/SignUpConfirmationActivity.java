@@ -4,12 +4,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class SignUpConfirmationActivity extends AppCompatActivity implements SignUpConfirmationContract.View {
-
-    public static String TAG = SignUpConfirmationActivity.class.getSimpleName();
 
     private SignUpConfirmationContract.Presenter presenter;
 
@@ -22,7 +21,7 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
         setContentView(R.layout.activity_sign_up_confirmation);
 
         //Configuracion de la toolBar/actionBar
-        toolbar = findViewById(R.id.sign_up_confirmation_toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -38,7 +37,7 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
         super.onResume();
 
         // do some work
-        //presenter.fetchDateListData();
+        presenter.fetchSignUpConfirmationData();
     }
 
     @Override
@@ -47,10 +46,18 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
     }
 
     @Override
-    public void displayData(SignUpConfirmationViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+    public void displaySignUpConfirmationData(SignUpConfirmationViewModel viewModel) {}
 
-        // deal with the data
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                presenter.backButtonPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
+
 }

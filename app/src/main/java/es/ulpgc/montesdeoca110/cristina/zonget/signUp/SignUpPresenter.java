@@ -78,8 +78,7 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
-    public void fetchSignUpData() {
-    }
+    public void fetchSignUpData() {}
 
     @Override
     public void confirmedButtonPressed() {
@@ -91,8 +90,6 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                     model.insertNewAccount(account, new RepositoryContract.Accounts.InsertNewAccountCallback() {
                         @Override
                         public void onNewAccountInserted() {
-
-                            view.get().displayInsertNewAccountMesaje("La cuenta ha sido registrada correctamente");
 
                             SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
                             router.passDataSignUpConfirmationScreen(state);

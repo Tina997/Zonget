@@ -2,9 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation;
 
 import java.lang.ref.WeakReference;
 
-public class SignUpConfirmationPresenter implements SignUpConfirmationContract.Presenter {
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
 
-    public static String TAG = SignUpConfirmationPresenter.class.getSimpleName();
+public class SignUpConfirmationPresenter implements SignUpConfirmationContract.Presenter {
 
     private WeakReference<SignUpConfirmationContract.View> view;
     private SignUpConfirmationViewModel viewModel;
@@ -31,25 +31,18 @@ public class SignUpConfirmationPresenter implements SignUpConfirmationContract.P
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
+    public void backButtonPressed() {
+        router.navigateToSignInScreen();
+    }
 
-        // set passed state
-        SignUpConfirmationState state = router.getDataFromPreviousScreen();
+    @Override
+    public void fetchSignUpConfirmationData() {
+
+        // Obtenermos el estado de la anterior pantalla
+        SignUpToSignUpConfirmationState state = router.getDataSignUpScreen();
         if (state != null) {
-            viewModel.data = state.data;
+
         }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
 
     }
 

@@ -41,6 +41,6 @@ public class SignUpRouter implements SignUpContract.Router {
 
     @Override
     public void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmationState state) {
-
+        mediator.setSignUpToSignUpConfirmationState(state);
     }
 }

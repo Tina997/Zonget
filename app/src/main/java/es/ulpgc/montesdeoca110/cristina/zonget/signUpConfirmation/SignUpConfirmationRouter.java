@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
+import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 
 public class SignUpConfirmationRouter implements SignUpConfirmationContract.Router {
-
-    public static String TAG = SignUpConfirmationRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
@@ -17,21 +17,25 @@ public class SignUpConfirmationRouter implements SignUpConfirmationContract.Rout
     }
 
     @Override
-    public void navigateToNextScreen() {
+    public void setSignUpConfirmationState(SignUpConfirmationState state) {
+
+    }
+
+    @Override
+    public void navigateToSignInScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SignUpConfirmationActivity.class);
+        Intent intent = new Intent(context, SignInActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     @Override
-    public void passDataToNextScreen(SignUpConfirmationState state) {
-        //mediator.setSignUpConfirmationState(state);
+    public void passDataSignInScreen(SignUpConfirmationState state) {
+
     }
 
     @Override
-    public SignUpConfirmationState getDataFromPreviousScreen() {
-        //SignUpConfirmationState state = mediator.getSignUpConfirmationState();
-        //return state;
-        return null;
+    public SignUpToSignUpConfirmationState getDataSignUpScreen() {
+        return mediator.getSignUpToSignUpConfirmationState();
     }
 }
