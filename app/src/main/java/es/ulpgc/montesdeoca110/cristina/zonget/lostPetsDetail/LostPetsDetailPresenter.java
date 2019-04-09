@@ -48,5 +48,17 @@ public class LostPetsDetailPresenter implements LostPetsDetailContract.Presenter
 
     }
 
+    @Override
+    public void onEditButtonClicked() {
+        router.navigateToEditScreen();
+    }
+
+    @Override
+    public void deletePet() {
+        //TODO eliminar animal de la lista
+        router.navigateToLostPetListScreen();
+
+    }
+
 
 }

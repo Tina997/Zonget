@@ -13,13 +13,13 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".SplashActivity">
-
+<!--
                         <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
 
                             <category android:name="android.intent.category.LAUNCHER" />
                         </intent-filter>
-
+-->
         </activity>
 
         <activity android:name=".signIn.SignInActivity"></activity>
@@ -94,6 +94,7 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
+        <activity android:name=".editLostPet.EditLostPetActivity"></activity>
 
     </application>
 

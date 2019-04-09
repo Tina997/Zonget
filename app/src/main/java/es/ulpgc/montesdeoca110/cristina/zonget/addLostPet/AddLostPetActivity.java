@@ -75,6 +75,7 @@ public class AddLostPetActivity
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
+                    //TODO matar la activity
                     navigateUpTo(new Intent(this, LostPetsListActivity.class));
                     return true;
                 }

@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.DialogDelete;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
 
@@ -59,6 +62,7 @@ public class LostPetsDetailActivity
     public void injectPresenter(LostPetsDetailContract.Presenter presenter) {
         this.presenter = presenter;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -66,20 +70,27 @@ public class LostPetsDetailActivity
         inflater.inflate(R.menu.administrator_appbar_buttons_user_pet_detail, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public void displayLostPetDetailData(LostPetsDetailViewModel viewModel) {
         //Log.e(TAG, "displayData()");
         LostPetItem lostPetItem = viewModel.lostPetItem;
         // deal with the data
-        loadImageFromURL((ImageView) findViewById(R.id.lost_pet_image),lostPetItem.picture);
-        ((TextView)findViewById(R.id.lost_pet_date)).setText(lostPetItem.date);
-        ((TextView)findViewById(R.id.lost_pet_breed)).setText(lostPetItem.breed);
-        ((TextView)findViewById(R.id.lost_pet_chipNum)).setText(lostPetItem.chipNum);
-        ((TextView)findViewById(R.id.lost_pet_details)).setText(lostPetItem.details);
-        ((TextView)findViewById(R.id.lost_pet_phone)).setText(lostPetItem.phoneNum);
+        loadImageFromURL((ImageView) findViewById(R.id.lost_pet_image), lostPetItem.picture);
+        ((TextView) findViewById(R.id.lost_pet_date)).setText(lostPetItem.date);
+        ((TextView) findViewById(R.id.lost_pet_breed)).setText(lostPetItem.breed);
+        ((TextView) findViewById(R.id.lost_pet_chipNum)).setText(lostPetItem.chipNum);
+        ((TextView) findViewById(R.id.lost_pet_details)).setText(lostPetItem.details);
+        ((TextView) findViewById(R.id.lost_pet_phone)).setText(lostPetItem.phoneNum);
 
     }
-    private void loadImageFromURL(ImageView imageView, String imageUrl){
+
+    @Override
+    public void onDeleteButtonClicked() {
+        presenter.deletePet();
+    }
+
+    private void loadImageFromURL(ImageView imageView, String imageUrl) {
         RequestManager reqManager = Glide.with(imageView.getContext());
         RequestBuilder reqBuilder = reqManager.load(imageUrl);
         RequestOptions reqOptions = new RequestOptions();
@@ -87,13 +98,25 @@ public class LostPetsDetailActivity
         reqBuilder.apply(reqOptions);
         reqBuilder.into(imageView);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            navigateUpTo(new Intent(this, LostPetsListActivity.class));
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_delete:
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogDelete dialogo = new DialogDelete(this);
+                dialogo.show(fragmentManager, "tagAlerta");
+                return true;
+            case R.id.action_edit:
+                presenter.onEditButtonClicked();
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    navigateUpTo(new Intent(this, AdministratorUsersPetsListActivity.class));
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }

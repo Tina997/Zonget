@@ -4,6 +4,10 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailActivity;
+
 public class EditLostPetRouter implements EditLostPetContract.Router {
 
     public static String TAG = EditLostPetRouter.class.getSimpleName();
@@ -23,12 +27,21 @@ public class EditLostPetRouter implements EditLostPetContract.Router {
 
     @Override
     public void passDataToNextScreen(EditLostPetState state) {
-        mediator.setEditLostPetState(state);
+        //mediator.setEditLostPetState(state);
     }
 
     @Override
     public EditLostPetState getDataFromPreviousScreen() {
-        EditLostPetState state = mediator.getEditLostPetState();
-        return state;
+        /*EditLostPetState state = mediator.getEditLostPetState();
+        return state;*/
+        return null;
+    }
+
+    @Override
+    public void navigateToLostPetDetailScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, LostPetsDetailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

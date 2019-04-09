@@ -55,5 +55,11 @@ public class EditLostPetPresenter implements EditLostPetContract.Presenter {
 
     }
 
+    @Override
+    public void insertNewPet() {
+        //TODO ingresar nueva mascota en la lista
+        router.navigateToLostPetDetailScreen();
+    }
+
 
 }

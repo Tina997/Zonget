@@ -10,6 +10,8 @@ interface LostPetsDetailContract {
         void injectPresenter(Presenter presenter);
 
         void displayLostPetDetailData(LostPetsDetailViewModel viewModel);
+
+        void onDeleteButtonClicked();
     }
 
     interface Presenter {
@@ -20,6 +22,10 @@ interface LostPetsDetailContract {
         void injectRouter(Router router);
 
         void fetchLostPetDetailData();
+
+        void onEditButtonClicked();
+
+        void deletePet();
     }
 
     interface Model {
@@ -31,5 +37,9 @@ interface LostPetsDetailContract {
         void passDataToNextScreen(LostPetsDetailState state);
 
         LostPetItem getDataFromLostPetsListScreen();
+
+        void navigateToEditScreen();
+
+        void navigateToLostPetListScreen();
     }
 }

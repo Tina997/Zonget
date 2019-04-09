@@ -18,6 +18,8 @@ interface EditLostPetContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void insertNewPet();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface EditLostPetContract {
         void passDataToNextScreen(EditLostPetState state);
 
         EditLostPetState getDataFromPreviousScreen();
+
+        void navigateToLostPetDetailScreen();
     }
 }
