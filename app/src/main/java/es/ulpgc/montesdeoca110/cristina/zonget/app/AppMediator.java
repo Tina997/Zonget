@@ -86,6 +86,7 @@ public class AppMediator extends Application {
     private PetsItem animal;
     private UserItem userItem;
     private LostPetItem lostPet;
+    private PetForAdoptionItem petForAdoptionItem;
 
     //Estados entre activities
     private SplashToSignInState splashToSignInState;
@@ -385,6 +386,14 @@ public class AppMediator extends Application {
         this.petsForAdoptionState = petsForAdoptionState;
     }
 
+    public PetForAdoptionItem getPetForAdoptionItem() {
+        return petForAdoptionItem;
+    }
+
+    public void setPetForAdoptionItem(PetForAdoptionItem petForAdoptionItem) {
+        this.petForAdoptionItem = petForAdoptionItem;
+    }
+
     //PetsForAdoptionDetail
     public PetsForAdoptionDetailState getPetsForAdoptionDetailState() {
         return petsForAdoptionDetailState;
@@ -403,6 +412,7 @@ public class AppMediator extends Application {
         LostPetItem lostPetItem = lostPet;
         return lostPetItem;
     }
+
 
 
 }

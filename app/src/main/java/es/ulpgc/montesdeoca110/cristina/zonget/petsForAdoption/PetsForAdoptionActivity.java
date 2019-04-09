@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 
 public class PetsForAdoptionActivity
         extends AppCompatActivity implements PetsForAdoptionContract.View {
@@ -37,7 +38,8 @@ public class PetsForAdoptionActivity
         listAdapter = new PetsForAdoptionListAdapter(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                PetForAdoptionItem petForAdoptionItem = (PetForAdoptionItem) v.getTag();
+                presenter.selectPet(petForAdoptionItem);
             }
         });
 
