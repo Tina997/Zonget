@@ -66,7 +66,13 @@
 
         <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
 
-        <activity android:name=".userPickDate.UserPickDateActivity"></activity>
+        <activity android:name=".userPickDate.UserPickDateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".petsForAdoption.PetsForAdoptionActivity">
             <intent-filter>
@@ -78,13 +84,7 @@
 
         <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity"></activity>
 
-        <activity android:name=".lostPets.LostPetsListActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".lostPets.LostPetsListActivity"></activity>
 
         <activity android:name=".addLostPet.AddLostPetActivity"></activity>
 
