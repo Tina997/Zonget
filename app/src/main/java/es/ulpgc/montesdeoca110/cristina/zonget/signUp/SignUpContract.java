@@ -25,6 +25,8 @@ interface SignUpContract {
 
         void injectRouter(Router router);
 
+        void backButtonPressed();
+
         void updateAccountNameEditText(String accountName);
 
         void updateAccountDniEditText(String accountDni);
@@ -57,7 +59,9 @@ interface SignUpContract {
 
         //--------------- Navegación entre pantallas -----------
 
-        void navigateSignUpConfirmationScreen();
+        void navigateToSinInScreen();
+
+        void navigateToSignUpConfirmationScreen();
 
         //------------- Paso de datos entre pantallas ----------
 

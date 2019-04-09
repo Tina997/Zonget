@@ -36,6 +36,11 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
+    public void backButtonPressed() {
+        router.navigateToSinInScreen();
+    }
+
+    @Override
     public void updateAccountNameEditText(String accountName) {
         viewModel.accountName = accountName;
     }
@@ -91,7 +96,7 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
                             SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
                             router.passDataSignUpConfirmationScreen(state);
-                            router.navigateSignUpConfirmationScreen();
+                            router.navigateToSignUpConfirmationScreen();
 
                         }
                     });
