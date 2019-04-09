@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
 
 public class AdministratorSearchUsersActivity
         extends AppCompatActivity implements AdministratorSearchUsersContract.View {
@@ -68,11 +72,12 @@ public class AdministratorSearchUsersActivity
 
         // deal with the data
     }
+    //Funcionalidad de los botones de la tabBar.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
+            navigateUpTo(new Intent(this, AdministratorButtonsMenuListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

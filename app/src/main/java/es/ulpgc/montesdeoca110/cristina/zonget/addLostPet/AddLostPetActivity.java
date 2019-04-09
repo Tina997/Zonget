@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
 
 public class AddLostPetActivity
         extends AppCompatActivity implements AddLostPetContract.View {
@@ -28,7 +30,7 @@ public class AddLostPetActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Show the title in the action bar
+        // Configuracion actionBar y AppBar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -73,10 +75,14 @@ public class AddLostPetActivity
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
-                    navigateUpTo(new Intent(this, AdministratorUserPetsDetailActivity.class));
+                    navigateUpTo(new Intent(this, LostPetsListActivity.class));
                     return true;
                 }
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void takePicture(View view) {
+        //TODO acceder a la camara o galeria para coger la imagen
     }
 }

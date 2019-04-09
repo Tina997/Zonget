@@ -45,6 +45,7 @@ public class AdministratorUserEditPetActivity
         // do some work
         presenter.fetchData();
     }
+    //Añadir botones a la tabBar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -56,13 +57,14 @@ public class AdministratorUserEditPetActivity
     public void injectPresenter(AdministratorUserEditPetContract.Presenter presenter) {
         this.presenter = presenter;
     }
-
+    //TODO metodo a limpiar
     @Override
     public void displayData(AdministratorUserEditPetViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data
     }
+    //Funcionalidad botones barra tareas
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

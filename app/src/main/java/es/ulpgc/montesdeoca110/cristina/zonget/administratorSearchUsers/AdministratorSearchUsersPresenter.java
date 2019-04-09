@@ -36,17 +36,6 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
 
         // set passed state
         AdministratorSearchUsersState state = router.getDataFromPreviousScreen();
-        /*if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchInboxData();
-
-            // set initial state
-            viewModel.data = data;
-        }*/
 
         // update the view
         view.get().displayData(viewModel);

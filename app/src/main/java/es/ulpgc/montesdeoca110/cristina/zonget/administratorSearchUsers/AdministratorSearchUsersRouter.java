@@ -17,6 +17,7 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
         this.mediator = mediator;
     }
 
+    //Cambio de vista
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
@@ -24,12 +25,12 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
-
+    //Envio de informacion a la siguiente vista
     @Override
     public void passDataToNextScreen(AdministratorSearchUsersState state) {
         mediator.setadminSearchUsersState(state);
     }
-
+    //TODO metodo a limpiar
     @Override
     public AdministratorSearchUsersState getDataFromPreviousScreen() {
         AdministratorSearchUsersState state = mediator.getadminSearchUsersState();
