@@ -35,7 +35,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:gravity="left"
-            android:text="Esto es una prueba"/>
+            android:text="Prueba"/>
     </LinearLayout>
 
     <!--Lista de citas-->
