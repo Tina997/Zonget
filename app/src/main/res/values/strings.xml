@@ -91,7 +91,7 @@
     <string name="pet_breed">Raza</string>
     <string name="edit_pet_tittle">Editar animal</string>
     <string name="add_pet_tittle">Nuevo Animal</string>
-    <string name="ID_Number">XXX-XXX-XXX</string>
+    <string name="ID_Number">XXXXXXXXX</string>
     <string name="date_model">dd/mm/aaaa</string>
 
     <!--Dialogs-->
@@ -112,7 +112,11 @@
     <string name="lost_pet_phone">Nº de Contacto:</string>
     <!--PetsForAdoption View-->
     <string name="pets_for_adoption_activity_name">Animales en adopción</string>
-
+    <!--NewLostPet View-->
+    <string name="lost_date_text">Fecha de desaparición:</string>
+    <string name="insert_lost_pet_breed">Introduzca raza</string>
+    <string name="details_mock">Color, manchas, lunares, cicatrices, etc.</string>
+    <string name="phone_mock">XXX-XXX-XXX</string>
 
 
 </resources>

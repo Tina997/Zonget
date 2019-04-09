@@ -74,5 +74,8 @@ public class LostPetsListActivity
         // deal with the data
 
     }
+    public void goToAddLostPet(View view) {
+        presenter.gotToAddLostPet();
+    }
 
 }
