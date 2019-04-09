@@ -6,21 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- AppBar y Toolbar -->
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/administrator_menu_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/colorPrimary">
-
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/toolbar"></include>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -37,13 +23,21 @@
 
     </FrameLayout>
 
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/logo_oscuro_completo" />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo_oscuro_completo" />
+
+    </LinearLayout>
 
 </LinearLayout>

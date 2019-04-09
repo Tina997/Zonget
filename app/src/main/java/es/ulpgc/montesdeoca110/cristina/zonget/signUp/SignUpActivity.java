@@ -32,7 +32,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         setContentView(R.layout.activity_sign_up);
 
         //Configuracion de la toolBar/actionBar
-        toolbar = findViewById(R.id.sign_up_toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();

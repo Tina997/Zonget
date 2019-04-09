@@ -31,7 +31,7 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         setContentView(R.layout.activity_user_buttons_menu_list);
 
         //Configuracion de la toolBar/actionBar
-        toolbar = findViewById(R.id.user_menu_toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
