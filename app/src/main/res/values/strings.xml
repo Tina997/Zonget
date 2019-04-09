@@ -91,7 +91,7 @@
     <string name="pet_breed">Raza</string>
     <string name="edit_pet_tittle">Editar animal</string>
     <string name="add_pet_tittle">Nuevo Animal</string>
-    <string name="ID_Number">XXX-XXX-XXX</string>
+    <string name="ID_Number">XXXXXXXXX</string>
     <string name="date_model">dd/mm/aaaa</string>
 
     <!--Dialogs-->
