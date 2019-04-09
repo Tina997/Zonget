@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 
 public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContract.Router {
 
@@ -29,8 +30,8 @@ public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContrac
     }
 
     @Override
-    public PetsForAdoptionDetailState getDataFromPreviousScreen() {
-        PetsForAdoptionDetailState state = mediator.getPetsForAdoptionDetailState();
-        return state;
+    public PetForAdoptionItem getDataFromPreviousScreen() {
+        PetForAdoptionItem petForAdoptionItem = mediator.getPetForAdoptionItem();
+        return petForAdoptionItem;
     }
 }
