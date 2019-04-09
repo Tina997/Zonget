@@ -14,16 +14,16 @@ public class AddLostPetScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        //AddLostPetState state = mediator.getAddLostPetState();
+        AddLostPetState state = mediator.getAddLostPetState();
 
         AddLostPetContract.Router router = new AddLostPetRouter(mediator);
-       /* AddLostPetContract.Presenter presenter = new AddLostPetPresenter(state);
+        AddLostPetContract.Presenter presenter = new AddLostPetPresenter(state);
         AddLostPetContract.Model model = new AddLostPetModel();
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);*/
+        view.injectPresenter(presenter);
 
     }
 }

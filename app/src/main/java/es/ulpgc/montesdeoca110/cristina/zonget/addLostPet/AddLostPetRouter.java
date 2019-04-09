@@ -30,8 +30,8 @@ public class AddLostPetRouter implements AddLostPetContract.Router {
 
     @Override
     public AddLostPetState getDataFromPreviousScreen() {
-        /*AddLostPetState state = mediator.getAddLostPetState();
-        return state;*/
-        return null;
+        AddLostPetState state = mediator.getAddLostPetState();
+        return state;
+
     }
 }

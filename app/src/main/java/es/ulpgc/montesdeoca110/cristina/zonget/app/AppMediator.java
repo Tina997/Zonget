@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.app.Application;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.addLostPet.AddLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
@@ -14,6 +15,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.Administra
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.montesdeoca110.cristina.zonget.editLostPet.EditLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionState;
@@ -81,7 +83,8 @@ public class AppMediator extends Application {
     private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
 
     private PetsForAdoptionDetailState petsForAdoptionDetailState = new PetsForAdoptionDetailState();
-
+    private AddLostPetState addLostPetState = new AddLostPetState();
+    private EditLostPetState editLostPetState = new EditLostPetState();
     //Variables de las activities
     private PetsItem animal;
     private UserItem userItem;
@@ -95,6 +98,7 @@ public class AppMediator extends Application {
     private SignUpToSignUpConfirmationState signUpToSignUpConfirmationState;
     private MenuToSelectedActivityState menuToSelectedActivityState;
     private UserMenuToUserPickDateState userMenuToUserPickDateState;
+
 
 
     @Override
@@ -413,6 +417,12 @@ public class AppMediator extends Application {
         return lostPetItem;
     }
 
-
-
+    //AddLostPets
+    public AddLostPetState getAddLostPetState() {
+        return addLostPetState;
+    }
+    //EditLostPets
+    public EditLostPetState getEditLostPetState() {
+        return editLostPetState;
+    }
 }

@@ -32,9 +32,9 @@ public class EditLostPetRouter implements EditLostPetContract.Router {
 
     @Override
     public EditLostPetState getDataFromPreviousScreen() {
-        /*EditLostPetState state = mediator.getEditLostPetState();
-        return state;*/
-        return null;
+        EditLostPetState state = mediator.getEditLostPetState();
+        return state;
+
     }
 
     @Override
