@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_vertical"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -48,6 +48,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
                     android:text="@string/user_sign_up_dni_text_label"
                     android:textColor="@color/colorPrimaryDark"
@@ -56,6 +57,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
                     android:text="@string/user_sign_up_email_text_label"
                     android:textColor="@color/colorPrimaryDark"
@@ -64,6 +66,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
                     android:text="@string/user_sign_up_password_text_label"
                     android:textColor="@color/colorPrimaryDark"
@@ -81,50 +84,54 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorAccent" />
 
                 <EditText
                     android:id="@+id/user_sign_up_dni_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorAccent" />
 
                 <EditText
                     android:id="@+id/user_sign_up_email_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorAccent" />
 
                 <EditText
                     android:id="@+id/user_sign_up_password_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorAccent" />
 
                 <EditText
                     android:id="@+id/user_sign_up_correct_password_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorAccent" />
 
             </LinearLayout>
 
@@ -141,19 +148,19 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="70dp" />
+            android:layout_height="50dp" />
 
         <ProgressBar
             android:id="@+id/sign_up_progress_bar"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="84dp"
             android:indeterminateTint="@color/colorPrimaryDark"
             android:visibility="invisible" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="70dp" />
+            android:layout_height="50dp" />
 
         <Button
             android:id="@+id/sign_up_accept_button"
