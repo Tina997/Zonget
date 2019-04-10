@@ -1,8 +1,17 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailActivity;
 
 public class EditPetForAdoptionActivity
         extends AppCompatActivity implements EditPetForAdoptionContract.View {
@@ -11,10 +20,21 @@ public class EditPetForAdoptionActivity
 
     private EditPetForAdoptionContract.Presenter presenter;
 
+    private ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_pet_for_adoption);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(R.string.edit_pet_tittle);
+        }
 
         // do the setup
         EditPetForAdoptionScreen.configure(this);
@@ -36,4 +56,34 @@ public class EditPetForAdoptionActivity
     @Override
     public void displayData(EditPetForAdoptionViewModel viewModel) {
     }
+
+    public void takePicture(View view) {
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.edit_pet_for_adoption_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_accept:
+                presenter.onAcceptButtonClicked();
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    //TODO destruir activity
+                    navigateUpTo(new Intent(this, PetsForAdoptionDetailActivity.class));
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }

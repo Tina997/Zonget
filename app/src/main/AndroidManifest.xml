@@ -76,15 +76,17 @@
 
         <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
-        <activity android:name=".petsForAdoption.PetsForAdoptionActivity"></activity>
-
-        <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity">
+        <activity android:name=".petsForAdoption.PetsForAdoptionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity"></activity>
+
+        <activity android:name=".editPetForAdoption.EditPetForAdoptionActivity"></activity>
 
         <activity android:name=".lostPets.LostPetsListActivity">
             <intent-filter>

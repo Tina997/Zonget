@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.bumptech.glide.request.RequestOptions;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionActivity;
 
 public class PetsForAdoptionDetailActivity
         extends AppCompatActivity implements PetsForAdoptionDetailContract.View {
@@ -92,15 +94,29 @@ public class PetsForAdoptionDetailActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_edit) {
-
-            return true;
-        }else if(id == R.id.action_delete){
-
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_edit:
+                presenter.onEditButtonClicked();
+                return true;
+            case R.id.action_delete:
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogDelete dialogo = new DialogDelete(this);
+                dialogo.show(fragmentManager, "tagAlerta");
+                return true;
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    //TODO destruir activity
+                    navigateUpTo(new Intent(this, PetsForAdoptionActivity.class));
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDeleteButtonClicked() {
+
     }
 
 

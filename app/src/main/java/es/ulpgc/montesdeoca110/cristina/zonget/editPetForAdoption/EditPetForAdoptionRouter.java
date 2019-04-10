@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailActivity;
 
 public class EditPetForAdoptionRouter implements EditPetForAdoptionContract.Router {
 
@@ -32,5 +33,12 @@ public class EditPetForAdoptionRouter implements EditPetForAdoptionContract.Rout
     public EditPetForAdoptionState getDataFromPreviousScreen() {
         EditPetForAdoptionState state = mediator.getEditPetForAdoptionState();
         return state;
+    }
+
+    @Override
+    public void navigateToPetForAdoptionDetailScreen(){
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, PetsForAdoptionDetailActivity.class);
+        context.startActivity(intent);
     }
 }
