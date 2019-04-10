@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"></include>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:id="@+id/titleContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/modifyEvent_title_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/titleEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="28dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:ems="10"
+            android:inputType="textShortMessage"
+            android:padding="5px"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/descriptionContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/modifyEvent_description_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:layout_width="277dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/colorPrimaryDarkTrans"></Spinner>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/additionalDescriptionContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/modifyEvent_additional_description_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/descriptionEditText"
+            android:layout_width="372dp"
+            android:layout_height="71dp"
+            android:gravity="top|left"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:padding="5px"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/dateContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/modifyEvent_date_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <DatePicker
+            android:layout_width="250dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"></DatePicker>
+
+        <TimePicker
+            android:layout_width="250dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDarkTrans"
+            android:timePickerMode="spinner"></TimePicker>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
