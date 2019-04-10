@@ -6,6 +6,7 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.addEvent.AddEventActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent.ModifyEventActivity;
 
 public class AdministratorAgendaRouter implements AdministratorAgendaContract.Router {
 
@@ -41,6 +42,13 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
     public void navigateToAddEventScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AddEventActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToModifyEventScreen(){
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, ModifyEventActivity.class);
         context.startActivity(intent);
     }
 
