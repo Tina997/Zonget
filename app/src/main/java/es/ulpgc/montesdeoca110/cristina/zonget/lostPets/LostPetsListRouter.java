@@ -28,7 +28,7 @@ public class LostPetsListRouter implements LostPetsListContract.Router {
 
     @Override
     public void passDataToDetailScreen(LostPetItem item) {
-        mediator.setlostPet(item);
+        mediator.setLostPet(item);
     }
 
     @Override

@@ -123,8 +123,7 @@ public class AppMediator extends Application {
         return userPetDetailState;
     }
     public PetsItem getAnimal(){
-        PetsItem item = animal;
-        return item;
+        return animal;
     }
     public UserPetsState getUserPetsState() {
         return clientPetsState;
@@ -341,7 +340,7 @@ public class AppMediator extends Application {
 
     //AddPet
     public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
-        this.administratorUserPetsDetailState = administratorUserPetsDetailState;
+        this.administratorUsersAddPetState = administratorUsersAddPetState;
     }
 
     public AdministratorUsersAddPetState getAdministratorUsersAddPetState() {
@@ -349,7 +348,7 @@ public class AppMediator extends Application {
     }
     //EditPet
     public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
-        this.administratorUserPetsDetailState = administratorUserPetsDetailState;
+        this.administratorUserEditPetState = administratorUserEditPetState;
     }
 
     public AdministratorUserEditPetState getAdministratorUserEditPetState() {
@@ -373,7 +372,7 @@ public class AppMediator extends Application {
     public void setlostPetsListState(LostPetItem lostPetsItem) {
         lostPetsItem = lostPet;
     }
-    public void setlostPet(LostPetItem lostPetItem) {
+    public void setLostPet(LostPetItem lostPetItem) {
         lostPet = lostPetItem;
 
     }
@@ -413,8 +412,7 @@ public class AppMediator extends Application {
     }
 
     public LostPetItem getLostPetsDetailItem() {
-        LostPetItem lostPetItem = lostPet;
-        return lostPetItem;
+        return lostPet;
     }
 
     //AddLostPets
