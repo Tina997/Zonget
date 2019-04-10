@@ -10,6 +10,8 @@ interface PetsForAdoptionDetailContract {
         void injectPresenter(Presenter presenter);
 
         void displayData(PetsForAdoptionDetailViewModel viewModel);
+
+        void onDeleteButtonClicked();
     }
 
     interface Presenter {
@@ -20,6 +22,8 @@ interface PetsForAdoptionDetailContract {
         void injectRouter(Router router);
 
         void fetchPetForAdoptionDetailData();
+
+        void onEditButtonClicked();
     }
 
     interface Model {
@@ -32,5 +36,7 @@ interface PetsForAdoptionDetailContract {
         void passDataToNextScreen(PetsForAdoptionDetailState state);
 
         PetForAdoptionItem getDataFromPreviousScreen();
+
+        void navigateToEditPetForAdoptionScreen();
     }
 }

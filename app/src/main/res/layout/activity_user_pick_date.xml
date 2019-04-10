@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contextClickable="true"
+        android:theme="@style/AppTheme.Calendar"
         android:weekDayTextAppearance="@color/colorBlack" />
 
 
@@ -37,8 +38,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:gravity="left"
-            android:text="Esto es una prueba"/>
+            android:gravity="left" />
     </LinearLayout>
 
     <!--Lista de citas-->

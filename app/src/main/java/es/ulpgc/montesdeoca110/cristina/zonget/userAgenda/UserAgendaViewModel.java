@@ -1,6 +1,10 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userAgenda;
 
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
+
 public class UserAgendaViewModel {
 
-    public String data;
+    public List<EventItem> eventList;
 }

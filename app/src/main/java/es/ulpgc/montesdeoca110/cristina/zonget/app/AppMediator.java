@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.addLostPet.AddLostPetState;
+import es.ulpgc.montesdeoca110.cristina.zonget.addPetForAdoption.AddPetForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
@@ -16,6 +17,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.Admin
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.editLostPet.EditLostPetState;
+import es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption.EditPetForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionState;
@@ -80,9 +82,12 @@ public class AppMediator extends Application {
     private UserPickDateState userPickDateState = new UserPickDateState();
     private LostPetsListState lostPetsListState = new LostPetsListState();
     private LostPetsDetailState lostPetsDetailState = new LostPetsDetailState();
-    private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
 
+    private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
     private PetsForAdoptionDetailState petsForAdoptionDetailState = new PetsForAdoptionDetailState();
+    private EditPetForAdoptionState editPetForAdoptionState = new EditPetForAdoptionState();
+    private AddPetForAdoptionState addPetForAdoptionState = new AddPetForAdoptionState();
+
     private AddLostPetState addLostPetState = new AddLostPetState();
     private EditLostPetState editLostPetState = new EditLostPetState();
     //Variables de las activities
@@ -404,6 +409,24 @@ public class AppMediator extends Application {
 
     public void setPetsForAdoptionDetailState(PetsForAdoptionDetailState petsForAdoptionDetailState) {
         this.petsForAdoptionDetailState = petsForAdoptionDetailState;
+    }
+
+    //EditPetForAdoption
+    public EditPetForAdoptionState getEditPetForAdoptionState() {
+        return editPetForAdoptionState;
+    }
+
+    public void setEditPetForAdoptionState(EditPetForAdoptionState editPetForAdoptionState) {
+        this.editPetForAdoptionState = editPetForAdoptionState;
+    }
+
+    //AddPetForAdoption
+    public AddPetForAdoptionState getAddPetForAdoptionState() {
+        return addPetForAdoptionState;
+    }
+
+    public void setAddPetForAdoptionState(AddPetForAdoptionState addPetForAdoptionState) {
+        this.addPetForAdoptionState = addPetForAdoptionState;
     }
 
     //LostPetsDetail

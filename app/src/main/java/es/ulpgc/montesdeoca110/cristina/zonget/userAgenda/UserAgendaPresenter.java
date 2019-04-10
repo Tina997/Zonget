@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userAgenda;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 public class UserAgendaPresenter implements UserAgendaContract.Presenter {
 
@@ -31,25 +34,18 @@ public class UserAgendaPresenter implements UserAgendaContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchPetsForAdoptionListData()");
+    public void fetchEventListData() {
+        if(viewModel.eventList == null){
 
-        // set passed state
-        UserAgendaState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
+            //llamar al modelo
+            List<EventItem> data = model.fetchData();
+
+            viewModel.eventList = data;
         }
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
 
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
+        //mostrar datos
+        view.get().displayData(viewModel);;
 
     }
 

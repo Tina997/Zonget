@@ -1,14 +1,17 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 
 public class PetsForAdoptionActivity
         extends AppCompatActivity implements PetsForAdoptionContract.View {
@@ -71,5 +74,19 @@ public class PetsForAdoptionActivity
                 listAdapter.setItems(viewModel.petForAdoptionItems);
             }
         });
+    }
+
+    public void goToAddLostPet(View view) {
+        presenter.gotToAddLostPet();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            navigateUpTo(new Intent(this, UserButtonsMenuListActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

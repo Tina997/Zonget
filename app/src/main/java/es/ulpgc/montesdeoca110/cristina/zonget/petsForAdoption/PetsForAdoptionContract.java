@@ -23,6 +23,8 @@ interface PetsForAdoptionContract {
         void fetchPetsForAdoptionListData();
 
         void selectPet(PetForAdoptionItem petForAdoptionItem);
+
+        void gotToAddLostPet();
     }
 
     interface Model {
@@ -35,5 +37,7 @@ interface PetsForAdoptionContract {
         void passDataToDetailScreen(PetForAdoptionItem petsForAdoptionItem);
 
         PetsForAdoptionState getDataFromPreviousScreen();
+
+        void navigateToAddLostPetScreen();
     }
 }

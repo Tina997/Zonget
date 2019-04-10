@@ -12,41 +12,43 @@
     <!--Calendario-->
     <CalendarView
         android:id="@+id/calendar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="311dp"
         android:layout_marginTop="55dp"
-        android:layout_height="wrap_content"
         android:contextClickable="true"
         android:theme="@style/AppTheme.Calendar"
-        android:weekDayTextAppearance="@color/colorPrimaryDark"/>
+        android:weekDayTextAppearance="@color/colorPrimaryDark" />
 
 
     <!--Día seleccionado-->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="354dp"
         android:layout_height="50dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:background="@color/colorPrimaryDark"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="15dp">
 
         <TextView
             android:id="@+id/selectedDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            android:gravity="left"/>
+            android:textSize="18sp" />
     </LinearLayout>
 
     <!--Lista de citas-->
     <FrameLayout
         android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="318dp"
-        android:layout_marginTop="450dp">
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="350dp">
 
-        <include layout="@layout/user_event_list"/>
+        <include
+            layout="@layout/user_event_list"/>
 
     </FrameLayout>
 

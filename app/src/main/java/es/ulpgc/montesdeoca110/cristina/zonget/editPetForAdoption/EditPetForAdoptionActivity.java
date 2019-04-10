@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
+package es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -11,32 +11,33 @@ import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailActivity;
 
-public class AddEventActivity
-        extends AppCompatActivity implements AddEventContract.View {
+public class EditPetForAdoptionActivity
+        extends AppCompatActivity implements EditPetForAdoptionContract.View {
 
-    public static String TAG = AddEventActivity.class.getSimpleName();
+    public static String TAG = EditPetForAdoptionActivity.class.getSimpleName();
 
-    private AddEventContract.Presenter presenter;
+    private EditPetForAdoptionContract.Presenter presenter;
+
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_event);
+        setContentView(R.layout.activity_edit_pet_for_adoption);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Show the title in the action bar
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        actionBar = getSupportActionBar();
+        if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(getString(R.string.addEvent_activity_name));
+            actionBar.setTitle(R.string.edit_pet_tittle);
         }
 
         // do the setup
-        AddEventScreen.configure(this);
+        EditPetForAdoptionScreen.configure(this);
     }
 
     @Override
@@ -44,32 +45,26 @@ public class AddEventActivity
         super.onResume();
 
         // do some work
-        //presenter.fetchInboxData();
+        presenter.fetchData();
     }
 
     @Override
-    public void injectPresenter(AddEventContract.Presenter presenter) {
+    public void injectPresenter(EditPetForAdoptionContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayData(AddEventViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
-
-        // deal with the data
-        //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+    public void displayData(EditPetForAdoptionViewModel viewModel) {
     }
 
-    public void addEvent(View view) {
-        presenter.addEvent();
+    public void takePicture(View view) {
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
-        //TODO refactorizar nombre
-        inflater.inflate(R.menu.administrator_agenda_menu, menu);
+        inflater.inflate(R.menu.edit_pet_for_adoption_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -77,15 +72,18 @@ public class AddEventActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_accept:
-                presenter.navigateToAdministratorAgendaScreen();
+                presenter.onAcceptButtonClicked();
+                return true;
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO destruir activity
-                    navigateUpTo(new Intent(this, AdministratorAgendaActivity.class));
+                    navigateUpTo(new Intent(this, PetsForAdoptionDetailActivity.class));
                     return true;
                 }
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 }
