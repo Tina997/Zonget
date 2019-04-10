@@ -52,6 +52,10 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -101,6 +105,17 @@
                     android:textColor="@color/colorAccent" />
 
                 <EditText
+                    android:id="@+id/user_sign_up_correct_email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDarkTrans"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
                     android:id="@+id/user_sign_up_password_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -124,14 +139,34 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/user_sign_up_password_correction_icon_view"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="10dp"
-                android:elevation="24dp"
-                android:scaleType="fitCenter" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp" />
+
+                <ImageView
+                    android:id="@+id/user_sign_up_email_correction_icon_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:elevation="24dp"
+                    android:scaleType="fitCenter" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp" />
+
+                <ImageView
+                    android:id="@+id/user_sign_up_password_correction_icon_view"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:elevation="24dp"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
 
         </LinearLayout>
 
