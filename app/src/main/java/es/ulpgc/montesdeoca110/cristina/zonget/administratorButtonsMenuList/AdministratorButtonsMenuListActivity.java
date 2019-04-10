@@ -51,25 +51,12 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         RecyclerView recyclerView = findViewById(R.id.administrator_buttons_menu_list);
         recyclerView.setAdapter(listAdapter);
 
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        int columns = getResources().getInteger(R.integer.administrator_grid_colums);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, columns);
         recyclerView.setLayoutManager(layoutManager);
-
-        //Todo cambiar para landscape
 
         // do the setup
         AdministratorButtonsMenuListScreen.configure(this);
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        // Checks the orientation of the screen
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
-        }
-
     }
 
     @Override
