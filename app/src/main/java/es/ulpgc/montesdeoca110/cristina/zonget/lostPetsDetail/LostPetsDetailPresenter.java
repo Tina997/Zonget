@@ -36,7 +36,7 @@ public class LostPetsDetailPresenter implements LostPetsDetailContract.Presenter
 
     @Override
     public void fetchLostPetDetailData() {
-        // Log.e(TAG, "fetchData()");
+        // Log.e(TAG, "fetchPetForAdoptionDetailData()");
 
         // set passed state
         LostPetItem lostPetItem = router.getDataFromLostPetsListScreen();

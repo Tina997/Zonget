@@ -36,7 +36,7 @@ public class UserPickDateModel implements UserPickDateContract.Model {
     }
 
     private HourItem createDate(int position) {
-        String content = "Hora" + position;
+        String content = "Hora " + position;
         return new HourItem(content, position);
     }
 }

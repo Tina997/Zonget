@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
+
 public class PetsForAdoptionDetailPresenter implements PetsForAdoptionDetailContract.Presenter {
 
     public static String TAG = PetsForAdoptionDetailPresenter.class.getSimpleName();
@@ -33,23 +35,12 @@ public class PetsForAdoptionDetailPresenter implements PetsForAdoptionDetailCont
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+    public void fetchPetForAdoptionDetailData() {
 
-        // set passed state
-        PetsForAdoptionDetailState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
+        PetForAdoptionItem petForAdoptionItem = router.getDataFromPreviousScreen();
+        if(petForAdoptionItem != null){
+            viewModel.petForAdoptionItem = petForAdoptionItem;
         }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
         // update the view
         view.get().displayData(viewModel);
 

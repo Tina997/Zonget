@@ -1,14 +1,17 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPickDate;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.DialogEventDetail;
 
 public class UserPickDateActivity
         extends AppCompatActivity implements UserPickDateContract.View {
@@ -51,7 +54,14 @@ public class UserPickDateActivity
     @Override
     public void displayData(UserPickDateViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-
+        listView.setAdapter(new UserPickDateAdapter(this, viewModel.hourItemList, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogEventAcceptDate dialogo = new DialogEventAcceptDate();
+                dialogo.show(fragmentManager, "tagAlert");
+            }
+        }));
         // deal with the data
     }
 }

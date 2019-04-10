@@ -105,6 +105,7 @@
     <string name="description_text">Descripción: </string>
     <string name="additional_description_text">Descripción adicional: </string>
     <string name="date_text">Fecha y hora: </string>
+    <string name="pickDateDialog">¿Desea concertar cita el día dd/mm/aaaa a las hh:mm?</string>
 
     <!--LostPets View-->
     <string name="lost_pets_tittle">Animales Perdidos</string>
@@ -117,6 +118,7 @@
     <string name="insert_lost_pet_breed">Introduzca raza</string>
     <string name="details_mock">Color, manchas, lunares, cicatrices, etc.</string>
     <string name="phone_mock">XXX-XXX-XXX</string>
+
 
 
 </resources>

@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -45,8 +43,12 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
                 view.get().displayData(viewModel);
             }
         });
+    }
 
-
+    @Override
+    public void selectPet(PetForAdoptionItem petForAdoptionItem){
+        router.passDataToDetailScreen(petForAdoptionItem);
+        router.navigateToNextScreen();
     }
 
 
