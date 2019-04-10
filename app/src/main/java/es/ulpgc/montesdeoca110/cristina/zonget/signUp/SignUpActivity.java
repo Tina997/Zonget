@@ -22,8 +22,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
 
     //Elementos de la vista
     private Toolbar toolbar;
-    private EditText nameEditText, dniEditText, emailEditText, passwordEditText, secondPasswordEditText;
-    private ImageView passwordCorrectionImageView;
+    private EditText nameEditText, dniEditText, emailEditText, secondEmailEditText, passwordEditText, secondPasswordEditText;
+    private ImageView passwordCorrectionImageView, emailCorrectionImageView;
     private ProgressBar progressBar;
     private Button confirmedButton;
 
@@ -44,6 +44,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         nameEditText = findViewById(R.id.user_sing_up_name_edit_text);
         dniEditText = findViewById(R.id.user_sign_up_dni_edit_text);
         emailEditText = findViewById(R.id.user_sign_up_email_edit_text);
+        secondEmailEditText = findViewById(R.id.user_sign_up_correct_email_edit_text);
+        emailCorrectionImageView = findViewById(R.id.user_sign_up_email_correction_icon_view);
         passwordEditText = findViewById(R.id.user_sign_up_password_edit_text);
         secondPasswordEditText = findViewById(R.id.user_sign_up_correct_password_edit_text);
         passwordCorrectionImageView = findViewById(R.id.user_sign_up_password_correction_icon_view);
@@ -83,6 +85,21 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
             @Override
             public void afterTextChanged(Editable email) {
                 presenter.updateAccountEmailEditText("" + email);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+        });
+
+        secondEmailEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable secondEmail) {
+                presenter.updateAccountSecondEmailEditText("" + secondEmail);
+                presenter.checkEmails();
             }
 
             @Override
@@ -154,9 +171,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         emailEditText.setText(viewModel.accountEmail);
         passwordEditText.setText(viewModel.accountPassword);
 
-        //TODO Preguntar a Luis porqué se crea un bucle con esta línea
-        //secondPasswordEditText.setText(viewModel.accountSecondPassword);
-
+        emailCorrectionImageView.setImageResource(viewModel.correctEmailsImageView);
+        emailCorrectionImageView.setVisibility(viewModel.correctEmailsImageViewVisibility);
         passwordCorrectionImageView.setImageResource(viewModel.correctPasswordsImageView);
         passwordCorrectionImageView.setVisibility(viewModel.correctPasswordsImageViewVisibility);
 

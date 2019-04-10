@@ -56,6 +56,24 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
+    public void updateAccountSecondEmailEditText(String accountSecondEmail) {
+        viewModel.accountSecondEmail = accountSecondEmail;
+    }
+
+    @Override
+    public void checkEmails() {
+        if (viewModel.accountEmail.equals(viewModel.accountSecondEmail)) {
+            viewModel.correctEmailsImageView = R.drawable.ic_correct;
+        } else {
+            viewModel.correctEmailsImageView = R.drawable.ic_incorrect;
+        }
+        viewModel.correctEmailsImageViewVisibility = View.VISIBLE;
+        view.get().displaySignUpData(viewModel);
+
+    }
+
+
+    @Override
     public void updateAccountPasswordEditText(String accountPassword) {
         viewModel.accountPassword = accountPassword;
     }
@@ -92,6 +110,10 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                         public void onNewAccountInserted() {
 
                             SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
+                            state.accountName = viewModel.accountName;
+                            state.accountDni = viewModel.accountDni;
+                            state.accountEmail = viewModel.accountEmail;
+
                             router.passDataSignUpConfirmationScreen(state);
                             router.navigateToSignUpConfirmationScreen();
 

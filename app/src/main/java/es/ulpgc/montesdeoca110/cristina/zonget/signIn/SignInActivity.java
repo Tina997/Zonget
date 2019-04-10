@@ -25,6 +25,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+
         //Búsqueda de los elementos de la vista
         accountNameEditText = findViewById(R.id.account_name_edit_text);
         accountPasswordEditText = findViewById(R.id.account_password_edit_text);
@@ -86,12 +87,10 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         askDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 presenter.pickForADateButtonPressed();
             }
         });
-
-
-
 
         // do the setup
         SignInScreen.configure(this);
