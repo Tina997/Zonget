@@ -69,7 +69,7 @@ public class ModifyEventActivity
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         //TODO refactorizar nombre
-        inflater.inflate(R.menu.administrator_agenda_accept_button, menu);
+        inflater.inflate(R.menu.administrator_agenda_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

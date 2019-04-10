@@ -5,16 +5,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionActivity;
 
 public class AddLostPetActivity
         extends AppCompatActivity implements AddLostPetContract.View {
@@ -76,7 +73,7 @@ public class AddLostPetActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO matar la activity
-                    navigateUpTo(new Intent(this, LostPetsListActivity.class));
+                    navigateUpTo(new Intent(this, PetsForAdoptionActivity.class));
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

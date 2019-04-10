@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.addPetForAdoption.AddPetForAdoptionActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailActivity;
@@ -34,5 +35,12 @@ public class PetsForAdoptionRouter implements PetsForAdoptionContract.Router {
     public PetsForAdoptionState getDataFromPreviousScreen() {
         PetsForAdoptionState state = mediator.getPetsForAdoptionState();
         return state;
+    }
+
+    @Override
+    public void navigateToAddLostPetScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AddPetForAdoptionActivity.class);
+        context.startActivity(intent);
     }
 }

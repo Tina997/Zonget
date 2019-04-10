@@ -51,5 +51,10 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
         router.navigateToNextScreen();
     }
 
+    @Override
+    public void gotToAddLostPet() {
+        router.navigateToAddLostPetScreen();
+    }
+
 
 }

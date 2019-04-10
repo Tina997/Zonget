@@ -18,6 +18,8 @@ interface AddPetForAdoptionContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void onAcceptButtonClicked();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface AddPetForAdoptionContract {
         void passDataToNextScreen(AddPetForAdoptionState state);
 
         AddPetForAdoptionState getDataFromPreviousScreen();
+
+        void navigateToPetForAdoptionDetailScreen();
     }
 }
