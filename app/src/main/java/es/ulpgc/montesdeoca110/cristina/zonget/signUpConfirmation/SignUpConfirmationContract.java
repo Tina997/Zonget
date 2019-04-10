@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation;
 
+import android.content.Context;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
@@ -24,13 +26,15 @@ interface SignUpConfirmationContract {
 
         void backButtonPressed();
 
-        void fetchSignUpConfirmationData();
+        void fetchSignUpConfirmationData(Context context);
 
     }
 
     interface Model {
 
-        String fetchSignUpConfirmationData();
+        void fetchSignUpConfirmationData();
+
+        String getMessage(String accountName, String accountDni);
     }
 
     interface Router {

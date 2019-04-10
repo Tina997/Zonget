@@ -2,15 +2,14 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation;
 
 public class SignUpConfirmationModel implements SignUpConfirmationContract.Model {
 
-    public static String TAG = SignUpConfirmationModel.class.getSimpleName();
-
-    public SignUpConfirmationModel() {
-
-    }
+    @Override
+    public void fetchSignUpConfirmationData() {}
 
     @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
-        return "Hello";
+    public String getMessage(String accountName, String accountDni) {
+
+        return "Bienvido a Zonget " + accountName + "con DNI " + accountDni;
     }
+
 }
+
