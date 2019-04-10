@@ -72,7 +72,6 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
     }
 
-
     @Override
     public void updateAccountPasswordEditText(String accountPassword) {
         viewModel.accountPassword = accountPassword;
