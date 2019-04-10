@@ -121,5 +121,14 @@
     <string name="phone_mock">XXX-XXX-XXX</string>
 
 
+    <!-- Array-->
+    <string-array name="description_array">
+        <item>Revisión</item>
+        <item>Vacuna</item>
+        <item>Cirugía</item>
+        <item>Esterilización</item>
+    </string-array>
+
+
 
 </resources>

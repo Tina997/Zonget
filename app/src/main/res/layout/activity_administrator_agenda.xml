@@ -24,16 +24,31 @@
         android:tint="@color/colorPrimary"
         android:onClick="goToAddEvent"/>
 
-    <!--Calendario-->
+    <!--Calendario
     <CalendarView
         android:id="@+id/calendar"
         android:layout_width="match_parent"
+        android:layout_height="345dp"
         android:layout_marginTop="55dp"
-        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contextClickable="true"
-        android:weekDayTextAppearance="@color/colorBlack" />
+        android:theme="@style/AppTheme.Calendar"
+        android:weekDayTextAppearance="@color/colorPrimaryDark" />
+    -->
 
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/compactcalendar_view"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:compactCalendarBackgroundColor="#ffe95451"
+        app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
+        app:compactCalendarMultiEventIndicatorColor="#fff"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextColor="#fff"
+        app:compactCalendarTextSize="12sp" />
 
     <!--Día seleccionado-->
     <LinearLayout
@@ -51,8 +66,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:gravity="left"
-            android:text="Esto es una prueba"/>
+            android:gravity="left"/>
     </LinearLayout>
 
     <!--Lista de citas-->
