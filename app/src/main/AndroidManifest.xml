@@ -58,13 +58,7 @@
 
         <activity android:name=".administratorQueryAnswer.AdministratorQueryAnswerActivity"></activity>
 
-        <activity android:name=".userAgenda.UserAgendaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".userAgenda.UserAgendaActivity"></activity>
 
         <activity android:name=".userPets.UserPetsActivity"></activity>
 
@@ -84,7 +78,13 @@
 
         <activity android:name=".petsForAdoption.PetsForAdoptionActivity"></activity>
 
-        <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity"></activity>
+        <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".lostPets.LostPetsListActivity">
             <intent-filter>
