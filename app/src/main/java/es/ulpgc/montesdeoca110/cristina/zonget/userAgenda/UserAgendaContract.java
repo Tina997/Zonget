@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userAgenda;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 interface UserAgendaContract {
 
@@ -17,11 +20,11 @@ interface UserAgendaContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchEventListData();
     }
 
     interface Model {
-        String fetchData();
+        List<EventItem> fetchData();
     }
 
     interface Router {

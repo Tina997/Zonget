@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     tools:context="es.ulpgc.montesdeoca110.cristina.zonget.userAgenda.UserAgendaActivity">
 
-    <include layout="@layout/toolbar"></include>
+        <include layout="@layout/toolbar"></include>
+
+
 
     <!--Calendario-->
     <CalendarView
@@ -13,9 +15,9 @@
         android:layout_width="match_parent"
         android:layout_marginTop="55dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:contextClickable="true"
-        android:weekDayTextAppearance="@color/colorBlack" />
+        android:theme="@style/AppTheme.Calendar"
+        android:weekDayTextAppearance="@color/colorPrimaryDark"/>
 
 
     <!--Día seleccionado-->
@@ -34,8 +36,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:gravity="left"
-            android:text="Prueba"/>
+            android:gravity="left"/>
     </LinearLayout>
 
     <!--Lista de citas-->
@@ -44,6 +45,9 @@
         android:layout_width="match_parent"
         android:layout_height="318dp"
         android:layout_marginTop="450dp">
+
+        <include layout="@layout/user_event_list"/>
+
     </FrameLayout>
 
 
