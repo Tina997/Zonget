@@ -96,7 +96,15 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
-    public void fetchSignUpData() {}
+    public void fetchSignUpData() {
+        //Todo mejorar, hay un error cuando ya se han introducido datos
+
+        //Inicial state
+        viewModel.correctEmailsImageViewVisibility = View.INVISIBLE;
+        viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
+
+        view.get().displaySignUpData(viewModel);
+    }
 
     @Override
     public void confirmedButtonPressed() {
@@ -124,6 +132,24 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                 }
             }
         });
+    }
+
+    @Override
+    public void saveSignUpState() {
+        SignUpState state = new SignUpState();
+        state.accountName = viewModel.accountName;
+        state.accountDni = viewModel.accountDni;
+        state.accountEmail = viewModel.accountEmail;
+        state.accountSecondEmail = viewModel.accountSecondEmail;
+        state.accountSecondPassword = viewModel.accountSecondPassword;
+        state.accountSecondPassword = viewModel.accountSecondPassword;
+
+        state.correctEmailsImageView = viewModel.correctEmailsImageView;
+        state.correctEmailsImageViewVisibility = viewModel.correctEmailsImageViewVisibility;
+        state.correctPasswordsImageView = viewModel.correctPasswordsImageView;
+        state.correctPasswordsImageViewVisibility = viewModel.correctPasswordsImageViewVisibility;
+
+        router.setSignUpState(state);
     }
 
 }

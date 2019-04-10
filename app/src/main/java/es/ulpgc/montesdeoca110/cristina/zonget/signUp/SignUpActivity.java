@@ -160,6 +160,12 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        presenter.saveSignUpState();
+    }
+
+    @Override
     public void injectPresenter(SignUpContract.Presenter presenter) {
         this.presenter = presenter;
     }

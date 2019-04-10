@@ -47,6 +47,7 @@ interface SignUpContract {
 
         void confirmedButtonPressed();
 
+        void saveSignUpState();
     }
 
     interface Model {
