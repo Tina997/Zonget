@@ -27,4 +27,11 @@
     <!-- Toolbar theme. -->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="SentEmailDialogProgress" parent="android:Theme.DeviceDefault.Light.Dialog.Alert">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Espere por favor</item>
+        <item name="DialogSpotColor">@color/colorPrimaryDark</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
+
 </resources>

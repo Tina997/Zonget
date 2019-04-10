@@ -46,6 +46,7 @@ public class SignUpConfirmationPresenter implements SignUpConfirmationContract.P
         SignUpToSignUpConfirmationState state = router.getDataSignUpScreen();
         if (state != null) {
             sendEmail(context, state.accountEmail, state.accountName, state.accountDni);
+            view.get().displaySignUpConfirmationData(viewModel);
         }
 
     }

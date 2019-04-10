@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -27,6 +30,7 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Registro");
         actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         // do the setup
         SignUpConfirmationScreen.configure(this);
