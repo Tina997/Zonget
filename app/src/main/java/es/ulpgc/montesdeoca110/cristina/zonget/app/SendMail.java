@@ -1,10 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.view.View;
 
 import java.util.Properties;
 

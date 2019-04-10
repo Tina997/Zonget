@@ -22,9 +22,7 @@
 -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity"></activity>
-
-        <activity android:name=".signUp.SignUpActivity">
+        <activity android:name=".signIn.SignInActivity">
 
 
             <intent-filter>
@@ -35,6 +33,8 @@
 
 
         </activity>
+
+        <activity android:name=".signUp.SignUpActivity"></activity>
 
         <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
 
