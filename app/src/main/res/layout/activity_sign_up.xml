@@ -79,7 +79,9 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
+                    android:gravity="left|center_vertical"
                     android:inputType="textPersonName"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <EditText
@@ -90,7 +92,9 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
+                    android:gravity="left|center_vertical"
                     android:inputType="textPersonName"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <EditText
@@ -101,7 +105,9 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
+                    android:gravity="left|center_vertical"
                     android:inputType="textPersonName"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <EditText
@@ -112,7 +118,9 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
+                    android:gravity="left|center_vertical"
                     android:inputType="textPersonName"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <EditText
@@ -123,7 +131,9 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
+                    android:gravity="left|center_vertical"
                     android:inputType="textPassword"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
                 <EditText
@@ -134,7 +144,9 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDarkTrans"
                     android:ems="10"
+                    android:gravity="left|center_vertical"
                     android:inputType="textPassword"
+                    android:padding="5dp"
                     android:textColor="@color/colorAccent" />
 
             </LinearLayout>
@@ -172,7 +184,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <ProgressBar
             android:id="@+id/sign_up_progress_bar"
@@ -184,7 +196,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/sign_up_accept_button"
