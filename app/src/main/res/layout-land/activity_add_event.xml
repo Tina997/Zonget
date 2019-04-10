@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:isScrollContainer="true"
     android:paddingBottom="16dp">
 
     <LinearLayout
@@ -17,6 +18,7 @@
 
             <include layout="@layout/toolbar"></include>
         </LinearLayout>
+
 
         <Space
             android:layout_width="match_parent"
@@ -33,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/modifyEvent_title_text"
+                android:text="@string/addEvent_title_text"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
@@ -66,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/modifyEvent_description_text"
+                android:text="@string/addEvent_description_text"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
@@ -74,7 +76,8 @@
                 android:layout_width="277dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
-                android:background="@color/colorPrimaryDarkTrans"></Spinner>
+                android:background="@color/colorPrimaryDarkTrans"
+                android:entries="@array/description_array"></Spinner>
 
         </LinearLayout>
 
@@ -93,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/modifyEvent_additional_description_text"
+                android:text="@string/addEvent_additional_description_text"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
@@ -127,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/modifyEvent_date_text"
+                android:text="@string/addEvent_date_text"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
@@ -152,6 +155,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </ScrollView>
