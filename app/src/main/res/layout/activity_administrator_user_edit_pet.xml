@@ -98,7 +98,7 @@
             android:layout_marginLeft="20dp"
             android:textColorHint="@color/colorAccent"
             android:hint="@string/ID_Number"
-            android:paddingLeft="20dp"/>
+            android:paddingLeft="20dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -122,6 +122,7 @@
             android:layout_marginLeft="20dp"
             android:textColorHint="@color/colorAccent"
             android:hint="@string/date_model"
-            android:paddingLeft="20dp"/>
+            android:paddingLeft="20dp"
+            android:inputType="date"/>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

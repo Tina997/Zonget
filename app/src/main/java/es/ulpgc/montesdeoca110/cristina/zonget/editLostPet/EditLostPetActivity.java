@@ -5,15 +5,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailActivity;
 
 public class EditLostPetActivity
@@ -22,6 +20,9 @@ public class EditLostPetActivity
     public static String TAG = EditLostPetActivity.class.getSimpleName();
 
     private EditLostPetContract.Presenter presenter;
+
+    private EditText dateText, breedText, detailsText,
+        chipNumText, phoneNumText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,12 @@ public class EditLostPetActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(getString(R.string.edit_pet_tittle));
         }
+
+        dateText = findViewById(R.id.lostDateEdit);
+        breedText = findViewById(R.id.lostBreedEdit);
+        detailsText = findViewById(R.id.LostDetailsEdit);
+        chipNumText = findViewById(R.id.lostChipNumEdit);
+        phoneNumText = findViewById(R.id.lostPhoneEdit);
 
         // do the setup
         EditLostPetScreen.configure(this);

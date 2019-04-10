@@ -33,6 +33,7 @@
                     android:textSize="18dp" />
 
                 <EditText
+                    android:id="@+id/lostDateEdit"
                     android:layout_width="140dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="20dp"
@@ -42,7 +43,8 @@
                     android:paddingLeft="10dp"
                     android:textColor="@color/colorAccent"
                     android:textColorHint="@color/colorAccent"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:inputType="date"/>
 
             </LinearLayout>
 
@@ -77,6 +79,7 @@
                 android:textSize="18dp" />
 
             <EditText
+                android:id="@+id/lostBreedEdit"
                 android:layout_width="217dp"
                 android:layout_height="34dp"
                 android:background="@color/colorPrimaryDarkTrans"
@@ -101,6 +104,7 @@
                 android:textSize="18dp" />
 
             <EditText
+                android:id="@+id/LostDetailsEdit"
                 android:layout_width="280dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -126,6 +130,7 @@
                 android:textSize="18dp" />
 
             <EditText
+                android:id="@+id/lostChipNumEdit"
                 android:layout_width="280dp"
                 android:layout_height="34dp"
                 android:layout_marginLeft="20dp"
@@ -150,6 +155,7 @@
                 android:textSize="18dp" />
 
             <EditText
+                android:id="@+id/lostPhoneEdit"
                 android:layout_width="280dp"
                 android:layout_height="34dp"
                 android:layout_marginLeft="20dp"
@@ -158,7 +164,8 @@
                 android:hint="@string/phone_mock"
                 android:paddingLeft="20dp"
                 android:textColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent" />
+                android:textColorHint="@color/colorAccent"
+                android:inputType="phone"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
