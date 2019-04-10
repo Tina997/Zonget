@@ -17,6 +17,8 @@ interface UserQueriesMenuContract {
 
         void injectRouter(Router router);
 
+        void backButtonPressed();
+
         void fetchData();
     }
 
@@ -26,6 +28,8 @@ interface UserQueriesMenuContract {
 
     interface Router {
         void navigateToNextScreen();
+
+        void navigateToUserMenu();
 
         void passDataToNextScreen(UserQueriesMenuState state);
 

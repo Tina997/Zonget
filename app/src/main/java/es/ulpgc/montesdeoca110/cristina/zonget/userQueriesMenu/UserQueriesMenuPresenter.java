@@ -31,6 +31,11 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
     }
 
     @Override
+    public void backButtonPressed() {
+        router.navigateToUserMenu();
+    }
+
+    @Override
     public void fetchData() {
         // Log.e(TAG, "fetchInboxData()");
 

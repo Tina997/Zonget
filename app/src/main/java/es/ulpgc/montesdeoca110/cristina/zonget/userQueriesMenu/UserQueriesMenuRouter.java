@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 
 public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
@@ -19,6 +20,14 @@ public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, UserQueriesMenuActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToUserMenu() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
