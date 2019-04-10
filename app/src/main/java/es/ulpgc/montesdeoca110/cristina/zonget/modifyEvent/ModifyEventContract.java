@@ -20,6 +20,8 @@ interface ModifyEventContract {
         void fetchData();
 
         void modifyEvent();
+
+        void navigateToAdministratorAgendaScreen();
     }
 
     interface Model {

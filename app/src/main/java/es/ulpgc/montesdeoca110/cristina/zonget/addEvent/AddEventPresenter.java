@@ -55,8 +55,11 @@ public class AddEventPresenter implements AddEventContract.Presenter {
 
     @Override
     public void addEvent(){
-        router.navigateToAgendaAdminScreen();
+        router.navigateToAdministratorAgendaScreen();
     }
+
+    @Override
+    public void navigateToAdministratorAgendaScreen(){ router.navigateToAdministratorAgendaScreen();}
 
 
 }

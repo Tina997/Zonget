@@ -58,5 +58,8 @@ public class ModifyEventPresenter implements ModifyEventContract.Presenter {
         router.navigateToAdministratorAgendaScreen();
     }
 
+    @Override
+    public void navigateToAdministratorAgendaScreen(){ router.navigateToAdministratorAgendaScreen();}
+
 
 }
