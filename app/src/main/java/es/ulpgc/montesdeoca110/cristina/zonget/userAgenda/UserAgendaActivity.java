@@ -13,14 +13,12 @@ public class UserAgendaActivity
     public static String TAG = UserAgendaActivity.class.getSimpleName();
 
     private UserAgendaContract.Presenter presenter;
-    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_agenda);
 
-        webView = findViewById(R.id.calendarWebView);
 
 
         // do the setup
