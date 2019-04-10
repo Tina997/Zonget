@@ -33,6 +33,10 @@ interface SignUpContract {
 
         void updateAccountEmailEditText(String accountEmail);
 
+        void updateAccountSecondEmailEditText(String accountSecondEmail);
+
+        void checkEmails();
+
         void updateAccountPasswordEditText(String accountPassword);
 
         void updateAccountSecondPasswordEditText(String accountSecondPassword);

@@ -96,12 +96,12 @@
             android:id="@+id/descriptionEditText"
             android:layout_width="372dp"
             android:layout_height="71dp"
-            android:layout_gravity="center"
+            android:gravity="top|left"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:background="@color/colorPrimaryDarkTrans"
             android:ems="10"
-            android:inputType="textShortMessage"
+            android:inputType="textMultiLine"
             android:padding="5px"
             android:textColor="@color/colorAccent" />
 
@@ -127,40 +127,25 @@
             android:textSize="18sp" />
 
         <DatePicker
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="85dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@color/colorAccent"
-            android:calendarTextColor="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDarkTrans"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"></DatePicker>
 
         <TimePicker
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="85dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@color/colorAccent"
-            android:numbersTextColor="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDarkTrans"
             android:timePickerMode="spinner"></TimePicker>
 
 
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
-    <Button
-        android:id="@+id/acceptButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="160dp"
-        android:background="@color/colorPrimaryDark"
-        android:onClick="modifyEvent"
-        android:text="@string/modifyEvent_button_text"
-        android:textColor="@color/colorPrimary" />
 
 
 </LinearLayout>

@@ -67,8 +67,6 @@ public class AdministratorQueryDetailActivity
             case R.id.action_reply:
                 presenter.navigateToAdministratorQueryAnswerScreen();
                 return true;
-            case R.id.action_edit:
-                return true;
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {

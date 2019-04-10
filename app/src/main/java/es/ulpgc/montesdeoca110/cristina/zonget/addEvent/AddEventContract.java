@@ -20,6 +20,8 @@ interface AddEventContract {
         void fetchData();
 
         void addEvent();
+
+        void navigateToAdministratorAgendaScreen();
     }
 
     interface Model {
@@ -33,6 +35,6 @@ interface AddEventContract {
 
         AddEventState getDataFromPreviousScreen();
 
-        void navigateToAgendaAdminScreen();
+        void navigateToAdministratorAgendaScreen();
     }
 }

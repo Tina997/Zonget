@@ -1,15 +1,19 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 
 public class AdministratorInboxActivity
         extends AppCompatActivity implements AdministratorInboxContract.View {
@@ -32,6 +36,7 @@ public class AdministratorInboxActivity
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle(getString(R.string.administrator_inbox_activity_name));
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
         listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener(){
@@ -65,5 +70,19 @@ public class AdministratorInboxActivity
     @Override
     public void displayData(AdministratorInboxViewModel viewModel) {
         listAdapter.setItems(viewModel.inboxList);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            default:
+                int id = item.getItemId();
+                if (id == android.R.id.home) {
+                    //TODO destruir activity
+                    navigateUpTo(new Intent(this, AdministratorButtonsMenuListActivity.class));
+                    return true;
+                }
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

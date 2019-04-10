@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,11 +11,18 @@ import android.view.LayoutInflater;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-
+@SuppressLint("ValidFragment")
 public class DialogEventDetail extends DialogFragment {
+
+    private AdministratorAgendaContract.View view;
+
+    public DialogEventDetail(AdministratorAgendaContract.View view){
+        this.view = view;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
 
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity(), R.style.DialogTheme);
@@ -25,6 +33,7 @@ public class DialogEventDetail extends DialogFragment {
         builder.setNeutralButton(R.string.modify_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                       //TODO navegación entre pantallas
+                        view.onModifyButtonClicked();
                     }
                 })
                 .setNegativeButton(R.string.eliminate_button, new DialogInterface.OnClickListener() {

@@ -113,11 +113,21 @@
     <string name="lost_pet_phone">Nº de Contacto:</string>
     <!--PetsForAdoption View-->
     <string name="pets_for_adoption_activity_name">Animales en adopción</string>
+    <string name="details_pet_for_adoption">Detalles:</string>
     <!--NewLostPet View-->
     <string name="lost_date_text">Fecha de desaparición:</string>
     <string name="insert_lost_pet_breed">Introduzca raza</string>
     <string name="details_mock">Color, manchas, lunares, cicatrices, etc.</string>
     <string name="phone_mock">XXX-XXX-XXX</string>
+
+
+    <!-- Array-->
+    <string-array name="description_array">
+        <item>Revisión</item>
+        <item>Vacuna</item>
+        <item>Cirugía</item>
+        <item>Esterilización</item>
+    </string-array>
 
 
 

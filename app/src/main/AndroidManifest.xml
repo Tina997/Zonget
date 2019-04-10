@@ -22,13 +22,29 @@
 -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity"></activity>
+        <activity android:name=".signIn.SignInActivity">
 
-        <activity android:name=".signUp.SignUpActivity"> </activity>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+        <activity android:name=".signUp.SignUpActivity"></activity>
 
         <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
 
-        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"></activity>
+        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
 
@@ -66,17 +82,9 @@
 
         <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
 
-        <activity android:name=".userPickDate.UserPickDateActivity">
+        <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
-        </activity>
-
-        <activity android:name=".petsForAdoption.PetsForAdoptionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".petsForAdoption.PetsForAdoptionActivity"></activity>
 
         <activity android:name=".petsForAdoptionDetail.PetsForAdoptionDetailActivity"></activity>
 

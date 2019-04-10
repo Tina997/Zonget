@@ -65,5 +65,8 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
         router.navigateToAddEventScreen();
     }
 
+    @Override
+    public void navigateToModifyEventScreen(){router.navigateToModifyEventScreen();}
+
 
 }

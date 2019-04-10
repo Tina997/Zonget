@@ -24,14 +24,17 @@
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/user_new_query_desciption_edit_text"
+            android:id="@+id/user_answer_query_edit_text"
             android:layout_width="match_parent"
             android:layout_height="397dp"
             android:layout_weight="1"
             android:background="@color/colorPrimaryDarkTrans"
-            android:inputType="textShortMessage|textLongMessage"
-            android:textAlignment="viewStart"
-            android:textColor="@color/colorAccent" />
+            android:inputType="textMultiLine"
+            android:textColor="@color/colorAccent"
+            android:gravity="top|left"
+            android:scrollbarStyle="insideOverlay"
+            android:padding="10dp"
+            />
 
         <Space
             android:layout_width="match_parent"
@@ -39,13 +42,14 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:id="@+id/user_new_query_send_button"
+            android:id="@+id/user_send_query_answer_button"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_weight="1"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:src="@drawable/ic_send" />
+            android:src="@drawable/ic_send"
+            android:onClick="onSendButtonClicked"/>
 
     </LinearLayout>
 

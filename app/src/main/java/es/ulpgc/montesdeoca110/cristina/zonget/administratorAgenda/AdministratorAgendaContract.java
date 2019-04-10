@@ -13,6 +13,8 @@ interface AdministratorAgendaContract {
         void injectPresenter(Presenter presenter);
 
         void displayData(AdministratorAgendaViewModel viewModel);
+
+        void onModifyButtonClicked();
     }
 
     interface Presenter {
@@ -25,6 +27,8 @@ interface AdministratorAgendaContract {
         void fetchDateListData();
 
         void gotToAddEvent();
+
+        void navigateToModifyEventScreen();
     }
 
     interface Model {
@@ -41,5 +45,6 @@ interface AdministratorAgendaContract {
         //Navegar entre pantallas
         void navigateToAddEventScreen();
 
+        void navigateToModifyEventScreen();
     }
 }

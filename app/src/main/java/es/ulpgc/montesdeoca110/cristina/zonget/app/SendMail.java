@@ -1,9 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
-import android.app.ProgressDialog;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import java.util.Properties;
 
@@ -14,6 +13,9 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import dmax.dialog.SpotsDialog;
+import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 //Class is extending AsyncTask because this class is going to perform a networking operation
 public class SendMail extends AsyncTask<Void, Void, Void> {
@@ -27,8 +29,8 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
     private String subject;
     private String message;
 
-    //Progressdialog to show while sending email
-    private ProgressDialog progressDialog;
+    //Alertdialog to show while sending email
+    private AlertDialog dialog;
 
     //Class Constructor
     public SendMail(Context context, String email, String subject, String message) {
@@ -42,17 +44,14 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        //Showing progress dialog while sending email
-        progressDialog = ProgressDialog.show(context, "Sending message", "Please wait...", false, false);
+        dialog = new SpotsDialog(context, R.style.SentEmailDialogProgress);
+        dialog.show();
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        //Dismissing the progress dialog
-        progressDialog.dismiss();
-        //Showing a success message
-        Toast.makeText(context, "Message Sent", Toast.LENGTH_LONG).show();
+        dialog.dismiss();
     }
 
     @Override
