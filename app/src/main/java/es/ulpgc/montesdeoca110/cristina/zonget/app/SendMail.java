@@ -44,7 +44,7 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = new SpotsDialog(context, R.style.SentEmailDialogProgress);
+        dialog = new SpotsDialog(context, R.style.SentEmailDialogProgressTheme);
         dialog.show();
     }
 

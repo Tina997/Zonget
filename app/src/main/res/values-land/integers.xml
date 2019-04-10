@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- AdministratorButtonsMenuActivity -->
+    <integer name="administrator_grid_colums">3</integer>
+
+    <!-- AdministratorButtonsMenuActivity -->
+    <integer name="user_grid_colums">5</integer>
+
+</resources>

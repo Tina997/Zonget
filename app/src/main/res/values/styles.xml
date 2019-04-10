@@ -8,23 +8,13 @@
         <item name="colorControlNormal">@color/colorPrimary</item>
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+
     <!--Dialog Theme-->
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorPrimary">@color/colorPrimaryDark</item>
     </style>
-    <!--NoAppBar theme-->
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <!-- AppBar theme. -->
-    <style name="AppTheme.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-    </style>
-
-    <!-- Toolbar theme. -->
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Calendar theme. -->
     <style name="AppTheme.Calendar">
@@ -34,5 +24,12 @@
         <item name="colorAccent">@color/colorPrimaryDark</item>
     </style>
 
+    <!-- SpotsDialogProgress Theme -->
+    <style name="SentEmailDialogProgressTheme" parent="android:Theme.DeviceDefault.Light.Dialog.Alert">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Espere por favor</item>
+        <item name="DialogSpotColor">@color/colorPrimaryDark</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
 
 </resources>
