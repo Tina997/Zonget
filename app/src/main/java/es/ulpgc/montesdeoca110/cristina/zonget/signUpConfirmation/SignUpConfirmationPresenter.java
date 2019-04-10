@@ -55,7 +55,7 @@ public class SignUpConfirmationPresenter implements SignUpConfirmationContract.P
         String message = model.getMessage(accountName, accountDni);
 
         //Creating SendMail object
-        SendMail sm = new SendMail(context,"yguanira.vega101@alu.ulpgc.es", "Nueva cuenta", message);
+        SendMail sm = new SendMail(context,accountEmail, "Nueva cuenta", message);
 
         //Executing sendmail to send email
         sm.execute();

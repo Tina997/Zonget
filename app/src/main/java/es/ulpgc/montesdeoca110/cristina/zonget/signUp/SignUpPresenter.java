@@ -92,6 +92,10 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                         public void onNewAccountInserted() {
 
                             SignUpToSignUpConfirmationState state = new SignUpToSignUpConfirmationState();
+                            state.accountName = viewModel.accountName;
+                            state.accountDni = viewModel.accountDni;
+                            state.accountEmail = viewModel.accountEmail;
+
                             router.passDataSignUpConfirmationScreen(state);
                             router.navigateToSignUpConfirmationScreen();
 
