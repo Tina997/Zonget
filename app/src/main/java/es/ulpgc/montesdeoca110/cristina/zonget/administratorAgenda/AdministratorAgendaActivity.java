@@ -27,7 +27,7 @@ public class AdministratorAgendaActivity
     private AdministratorAgendaContract.Presenter presenter;
     private ListView listView;
     private TextView selectedDate;
-    //private CalendarView calendarView;
+    private CalendarView calendarView;
     private String date;
 
     @Override
@@ -47,22 +47,22 @@ public class AdministratorAgendaActivity
 
        listView = findViewById(R.id.event_list);
 
-        //calendarView = findViewById(R.id.calendar);
+        calendarView = findViewById(R.id.calendar);
         selectedDate = findViewById(R.id.selectedDay);
 
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        //date = sdf.format(new Date(calendarView.getDate()));
+       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+       date = sdf.format(new Date(calendarView.getDate()));
 
-        /*calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 date = dayOfMonth + "/" + (month+1) + "/" + year;
                 //TODO parece falso Rick
                 selectedDate.setText(date);
             }
-        });*/
+        });
 
-        //selectedDate.setText(date);
+        selectedDate.setText(date);
 
         // do the setup
         AdministratorAgendaScreen.configure(this);
