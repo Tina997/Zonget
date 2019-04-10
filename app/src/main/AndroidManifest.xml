@@ -88,6 +88,8 @@
 
         <activity android:name=".editPetForAdoption.EditPetForAdoptionActivity"></activity>
 
+        <activity android:name=".addPetForAdoption.AddPetForAdoptionActivity"></activity>
+
         <activity android:name=".lostPets.LostPetsListActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />

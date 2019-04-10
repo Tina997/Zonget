@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 import android.app.Application;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.addLostPet.AddLostPetState;
+import es.ulpgc.montesdeoca110.cristina.zonget.addPetForAdoption.AddPetForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxState;
@@ -85,6 +86,7 @@ public class AppMediator extends Application {
     private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
     private PetsForAdoptionDetailState petsForAdoptionDetailState = new PetsForAdoptionDetailState();
     private EditPetForAdoptionState editPetForAdoptionState = new EditPetForAdoptionState();
+    private AddPetForAdoptionState addPetForAdoptionState = new AddPetForAdoptionState();
 
     private AddLostPetState addLostPetState = new AddLostPetState();
     private EditLostPetState editLostPetState = new EditLostPetState();
@@ -416,6 +418,15 @@ public class AppMediator extends Application {
 
     public void setEditPetForAdoptionState(EditPetForAdoptionState editPetForAdoptionState) {
         this.editPetForAdoptionState = editPetForAdoptionState;
+    }
+
+    //AddPetForAdoption
+    public AddPetForAdoptionState getAddPetForAdoptionState() {
+        return addPetForAdoptionState;
+    }
+
+    public void setAddPetForAdoptionState(AddPetForAdoptionState addPetForAdoptionState) {
+        this.addPetForAdoptionState = addPetForAdoptionState;
     }
 
     //LostPetsDetail
