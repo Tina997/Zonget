@@ -45,7 +45,8 @@
             android:layout_gravity="right"
             android:layout_weight="1"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:src="@drawable/ic_send" />
+            android:src="@drawable/ic_send"
+            android:onClick="onSendButtonClicked"/>
 
     </LinearLayout>
 

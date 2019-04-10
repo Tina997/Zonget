@@ -55,5 +55,10 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
 
     }
 
+    @Override
+    public void navigateToAdministratorInboxScreen(){
+        router.navigateToAdministratorInboxScreen();
+    }
+
 
 }
