@@ -71,7 +71,6 @@ public class SignInPresenter implements SignInContract.Presenter {
         });
     }
 
-
     @Override
     public void signUpButtonPressed() {
         router.navigateToSignUpScreen();

@@ -143,8 +143,12 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
         confirmedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                presenter.confirmedButtonPressed();
+                if(presenter.checkAllDataIntroduced()){
+                    progressBar.setVisibility(View.VISIBLE);
+                    presenter.confirmedButtonPressed();
+                }else {
+                    displayAlertMesaje("Faltan datos por introducir.");
+                }
             }
         });
 
@@ -193,6 +197,11 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
                 Toast.makeText(getBaseContext(),mesaje, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public void displayAlertMesaje(String mesaje) {
+        Toast.makeText(getBaseContext(),mesaje, Toast.LENGTH_LONG).show();
     }
 
     @Override

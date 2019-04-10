@@ -62,6 +62,11 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
     @Override
     public void checkEmails() {
+
+        if(viewModel.accountEmail == "" && viewModel.accountSecondEmail == "" ){
+            viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
+        }
+
         if (viewModel.accountEmail.equals(viewModel.accountSecondEmail)) {
             viewModel.correctEmailsImageView = R.drawable.ic_correct;
         } else {
@@ -84,6 +89,11 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
     @Override
     public void checkPasswords() {
+
+        if(viewModel.accountPassword == "" && viewModel.accountSecondPassword == "" ){
+            viewModel.correctPasswordsImageViewVisibility = View.INVISIBLE;
+        }
+
         if (viewModel.accountPassword.equals(viewModel.accountSecondPassword)) {
             viewModel.correctPasswordsImageView = R.drawable.ic_correct;
         } else {
@@ -107,6 +117,7 @@ public class SignUpPresenter implements SignUpContract.Presenter {
 
     @Override
     public void confirmedButtonPressed() {
+
         model.checkNewAccount(viewModel.accountDni, viewModel.accountEmail, new RepositoryContract.Accounts.CheckNewAccountDataExistCallback() {
             @Override
             public void setNewAccountExistCallBack(boolean exist, int id) {
@@ -127,10 +138,12 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                         }
                     });
                 } else {
+                    //Todo no se ve
                     view.get().displayInsertNewAccountMesaje("El email y DNI introducidos ya están asociados a una cuenta");
                 }
             }
         });
+
     }
 
     @Override
@@ -149,6 +162,14 @@ public class SignUpPresenter implements SignUpContract.Presenter {
         state.correctPasswordsImageViewVisibility = viewModel.correctPasswordsImageViewVisibility;
 
         router.setSignUpState(state);
+    }
+
+    @Override
+    public boolean checkAllDataIntroduced() {
+        if (viewModel.accountName == "" || viewModel.accountDni == "" ||viewModel.accountEmail == "" || viewModel.accountSecondEmail == "" || viewModel.accountPassword == "" || viewModel.accountSecondPassword == "" ) {
+            return false;
+        }
+        return true;
     }
 
 }

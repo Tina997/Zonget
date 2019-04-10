@@ -14,6 +14,8 @@ interface SignUpContract {
 
         void displaySignUpData(SignUpViewModel viewModel);
 
+        void displayAlertMesaje(String mesaje);
+
         void displayInsertNewAccountMesaje(String mesaje);
     }
 
@@ -44,6 +46,8 @@ interface SignUpContract {
         void checkPasswords();
 
         void fetchSignUpData();
+
+        boolean checkAllDataIntroduced();
 
         void confirmedButtonPressed();
 
