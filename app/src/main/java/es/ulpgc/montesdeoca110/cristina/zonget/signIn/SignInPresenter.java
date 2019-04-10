@@ -78,7 +78,7 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     @Override
     public void pickForADateButtonPressed() {
-
+        router.navigateToUserPickDateScreen();
     }
 
 }
