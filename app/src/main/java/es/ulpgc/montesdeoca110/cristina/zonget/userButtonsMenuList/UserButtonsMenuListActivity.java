@@ -60,7 +60,8 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         RecyclerView recyclerView =  findViewById(R.id.user_buttons_menu_list);
         recyclerView.setAdapter(listAdapter);
 
-        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        int columns = getResources().getInteger(R.integer.user_grid_colums);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, columns);
         recyclerView.setLayoutManager(layoutManager);
 
         // do the setup
