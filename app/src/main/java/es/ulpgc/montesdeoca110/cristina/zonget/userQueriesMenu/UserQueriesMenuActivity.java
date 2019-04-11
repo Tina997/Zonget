@@ -10,10 +10,7 @@ import android.widget.LinearLayout;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
-public class UserQueriesMenuActivity
-        extends AppCompatActivity implements UserQueriesMenuContract.View {
-
-    public static String TAG = UserQueriesMenuActivity.class.getSimpleName();
+public class UserQueriesMenuActivity extends AppCompatActivity implements UserQueriesMenuContract.View {
 
     private UserQueriesMenuContract.Presenter presenter;
 
@@ -43,21 +40,21 @@ public class UserQueriesMenuActivity
         newQueryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO llamar al presentador
+                presenter.newQueryButtonPressed();
             }
         });
 
         pendingQueriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO llamar al presentador
+                presenter.pendingQueriesButtonPressed();
             }
         });
 
         finishedQueriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO llamar al presentador
+                presenter.finishedQueriesButtonPressed();
             }
         });
 
@@ -70,8 +67,7 @@ public class UserQueriesMenuActivity
     protected void onResume() {
         super.onResume();
 
-        // do some work
-        //presenter.fetchPetsForAdoptionListData();
+        presenter.fetchUserQueriesMenuData();
     }
 
     @Override
@@ -80,10 +76,7 @@ public class UserQueriesMenuActivity
     }
 
     @Override
-    public void displayData(UserQueriesMenuViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
-
-        // deal with the data
+    public void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel) {
 
     }
 

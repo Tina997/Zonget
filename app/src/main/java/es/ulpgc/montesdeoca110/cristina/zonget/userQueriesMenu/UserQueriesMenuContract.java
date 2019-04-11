@@ -5,12 +5,15 @@ import java.lang.ref.WeakReference;
 interface UserQueriesMenuContract {
 
     interface View {
+
         void injectPresenter(Presenter presenter);
 
-        void displayData(UserQueriesMenuViewModel viewModel);
+        void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel);
+
     }
 
     interface Presenter {
+
         void injectView(WeakReference<View> view);
 
         void injectModel(Model model);
@@ -19,20 +22,45 @@ interface UserQueriesMenuContract {
 
         void backButtonPressed();
 
-        void fetchData();
+        void fetchUserQueriesMenuData();
+
+        void newQueryButtonPressed();
+
+        void pendingQueriesButtonPressed();
+
+        void finishedQueriesButtonPressed();
+
     }
 
     interface Model {
-        String fetchData();
+
+        String fetchUserQueriesMenuData();
+
     }
 
     interface Router {
-        void navigateToNextScreen();
 
-        void navigateToUserMenu();
+        //--------------- Navegación entre pantallas -----------
 
-        void passDataToNextScreen(UserQueriesMenuState state);
+        void navigateToUserMenuScreen();
+
+        void navigateToUserNewQueryScreen();
+
+        void navigateToUserPendingQueriesScreen();
+
+        void navigateToUserFinishedQueriesScreen();
+
+        //------------- Paso de datos entre pantallas ----------
+
+        void passDataToUserNewQueryScreen();
+
+        void passDataToUserPendingQueriesListScreen();
+
+        void passDataToUserFinishedQueriesListScreen();
+
+        //------------- Obtener datos entre pantallas ----------
 
         UserQueriesMenuState getDataFromPreviousScreen();
+
     }
 }

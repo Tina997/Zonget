@@ -4,8 +4,6 @@ import java.lang.ref.WeakReference;
 
 public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Presenter {
 
-    public static String TAG = UserQueriesMenuPresenter.class.getSimpleName();
-
     private WeakReference<UserQueriesMenuContract.View> view;
     private UserQueriesMenuViewModel viewModel;
     private UserQueriesMenuContract.Model model;
@@ -32,29 +30,29 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
 
     @Override
     public void backButtonPressed() {
-        router.navigateToUserMenu();
+        router.navigateToUserMenuScreen();
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchInboxData()");
+    public void newQueryButtonPressed() {
+        router.passDataToUserNewQueryScreen();
+        router.navigateToUserNewQueryScreen();
+    }
 
-        // set passed state
-        UserQueriesMenuState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
+    @Override
+    public void pendingQueriesButtonPressed() {
+        router.passDataToUserPendingQueriesListScreen();
+        router.passDataToUserPendingQueriesListScreen();
+    }
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
+    @Override
+    public void finishedQueriesButtonPressed() {
+        router.passDataToUserFinishedQueriesListScreen();
+        router.passDataToUserFinishedQueriesListScreen();
+    }
 
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
+    @Override
+    public void fetchUserQueriesMenuData() {
 
     }
 
