@@ -5,7 +5,9 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList.UserFinishedQueriesListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery.UserNewQueryActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList.UserPendingQueriesActivity;
 
 public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
@@ -49,7 +51,10 @@ public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
     @Override
     public void navigateToUserPendingQueriesScreen() {
-
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, UserPendingQueriesActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     // UserFinishedQueriesList
@@ -61,7 +66,10 @@ public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
     @Override
     public void navigateToUserFinishedQueriesScreen() {
-
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, UserFinishedQueriesListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     @Override
