@@ -116,26 +116,32 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
-        <LinearLayout
-            android:id="@+id/dateContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+    <LinearLayout
+        android:id="@+id/dateContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/modifyEvent_date_text"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/addEvent_date_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
 
             <DatePicker
                 android:layout_width="250dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorPrimaryDarkTrans"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner"></DatePicker>
@@ -144,12 +150,18 @@
                 android:layout_width="250dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
                 android:background="@color/colorPrimaryDarkTrans"
                 android:timePickerMode="spinner"></TimePicker>
 
 
+
         </LinearLayout>
+
+
+
+     </LinearLayout>
 
     </LinearLayout>
 

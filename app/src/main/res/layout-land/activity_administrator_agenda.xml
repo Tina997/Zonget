@@ -18,8 +18,8 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:layout_marginTop="320dp"
-        android:layout_marginLeft="600dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="500dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:tint="@color/colorPrimary"
         android:onClick="goToAddEvent"/>
@@ -39,7 +39,7 @@
     <LinearLayout
         android:layout_width="354dp"
         android:layout_height="50dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="290dp"
         android:background="@color/colorPrimaryDark"
         android:gravity="center"
         android:orientation="vertical"

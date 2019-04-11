@@ -13,16 +13,13 @@
         <include layout="@layout/toolbar"></include>
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
     <LinearLayout
         android:id="@+id/titleContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="20dp">
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,16 +43,12 @@
 
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
     <LinearLayout
         android:id="@+id/descriptionContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,23 +59,20 @@
             android:textSize="18sp" />
 
         <Spinner
-            android:layout_width="277dp"
+            android:layout_width="298dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:background="@color/colorPrimaryDarkTrans"></Spinner>
+            android:background="@color/colorPrimaryDarkTrans"
+            android:entries="@array/description_array"></Spinner>
 
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
 
     <LinearLayout
         android:id="@+id/additionalDescriptionContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +84,7 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/descriptionEditText"
-            android:layout_width="372dp"
+            android:layout_width="426dp"
             android:layout_height="71dp"
             android:gravity="top|left"
             android:layout_marginTop="10dp"
@@ -102,14 +92,10 @@
             android:background="@color/colorPrimaryDarkTrans"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:padding="5px"
+            android:padding="5dp"
             android:textColor="@color/colorAccent" />
 
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
 
     <LinearLayout
         android:id="@+id/dateContent"
@@ -128,7 +114,7 @@
 
         <DatePicker
             android:layout_width="250dp"
-            android:layout_height="85dp"
+            android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimaryDarkTrans"
@@ -137,7 +123,7 @@
 
         <TimePicker
             android:layout_width="250dp"
-            android:layout_height="85dp"
+            android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimaryDarkTrans"
