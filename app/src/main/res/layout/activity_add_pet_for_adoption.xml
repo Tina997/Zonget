@@ -56,7 +56,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@color/colorAccent"
-                    tools:srcCompat="@tools:sample/avatars"
+                    tools:srcCompat="@mipmap/ic_pet_add_image"
                     android:clickable="true"
                     android:onClick="takePicture"/>
             </LinearLayout>
