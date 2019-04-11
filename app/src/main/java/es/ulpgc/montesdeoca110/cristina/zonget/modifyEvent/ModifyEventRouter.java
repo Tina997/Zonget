@@ -38,6 +38,7 @@ public class ModifyEventRouter implements ModifyEventContract.Router {
     public void navigateToAdministratorAgendaScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorAgendaActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 }

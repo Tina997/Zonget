@@ -40,6 +40,7 @@ public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContrac
     public void navigateToEditPetForAdoptionScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, EditPetForAdoptionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 }

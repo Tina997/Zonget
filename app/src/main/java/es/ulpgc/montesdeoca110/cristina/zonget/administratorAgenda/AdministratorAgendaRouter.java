@@ -42,6 +42,7 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
     public void navigateToAddEventScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AddEventActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
@@ -49,6 +50,7 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
     public void navigateToModifyEventScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, ModifyEventActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 

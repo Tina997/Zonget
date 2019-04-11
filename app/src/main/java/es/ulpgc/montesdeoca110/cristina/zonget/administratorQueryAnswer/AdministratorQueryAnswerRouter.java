@@ -39,6 +39,7 @@ public class AdministratorQueryAnswerRouter implements AdministratorQueryAnswerC
     public void navigateToAdministratorInboxScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorInboxActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 }
