@@ -94,7 +94,13 @@
 
         <activity android:name=".lostPetsDetail.LostPetsDetailActivity"></activity>
 
-        <activity android:name=".addLostPet.AddLostPetActivity"></activity>
+        <activity android:name=".addLostPet.AddLostPetActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".editLostPet.EditLostPetActivity"></activity>
 

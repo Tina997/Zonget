@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".editLostPet.EditLostPetActivity">
+
+    <include layout="@layout/toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp">
+
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lost_date_text"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/lostDateEdit"
+                    android:layout_width="200dp"
+                    android:layout_height="34dp"
+                    android:background="@color/colorPrimaryDarkTrans"
+                    android:hint="@string/date_model"
+                    android:inputType="datetime"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/breed_text_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/lostBreedEdit"
+                    android:layout_width="200dp"
+                    android:layout_height="34dp"
+                    android:background="@color/colorPrimaryDarkTrans"
+                    android:hint="@string/insert_lost_pet_breed"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_lost_pets"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/lostDetailsEdit"
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:background="@color/colorPrimaryDarkTrans"
+                    android:hint="@string/details_mock"
+                    android:gravity="top|left"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/insert_ID_text_label"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/lostChipNumEdit"
+                    android:layout_width="200dp"
+                    android:layout_height="34dp"
+                    android:background="@color/colorPrimaryDarkTrans"
+                    android:hint="@string/ID_Number"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lost_pet_phone"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/lostPhoneEdit"
+                    android:layout_width="200dp"
+                    android:layout_height="34dp"
+                    android:background="@color/colorPrimaryDarkTrans"
+                    android:hint="@string/phone_mock"
+                    android:inputType="phone"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="90dp">
+
+            <ImageView
+                android:id="@+id/imageNewLostPet"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:onClick="takePicture"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
