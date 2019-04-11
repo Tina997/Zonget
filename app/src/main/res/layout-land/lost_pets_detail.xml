@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/lost_pet_image"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_margin="20dp"
             android:adjustViewBounds="true"
             tools:src="@tools:sample/avatars" />
