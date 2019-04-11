@@ -7,7 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList.UserFinishedQueriesListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery.UserNewQueryActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList.UserPendingQueriesActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList.UserPendingQueriesListActivity;
 
 public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
@@ -52,7 +52,7 @@ public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
     @Override
     public void navigateToUserPendingQueriesScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserPendingQueriesActivity.class);
+        Intent intent = new Intent(context, UserPendingQueriesListActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
@@ -72,9 +72,4 @@ public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
         context.startActivity(intent);
     }
 
-    @Override
-    public UserQueriesMenuState getDataFromPreviousScreen() {
-        UserQueriesMenuState state = mediator.getUserQueriesMenuState();
-        return state;
-    }
 }

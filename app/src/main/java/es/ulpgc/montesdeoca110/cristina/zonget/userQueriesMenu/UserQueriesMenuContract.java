@@ -60,7 +60,7 @@ interface UserQueriesMenuContract {
 
         //------------- Obtener datos entre pantallas ----------
 
-        UserQueriesMenuState getDataFromPreviousScreen();
+        //UserQueriesMenuState getDataFromPreviousScreen();
 
     }
 }

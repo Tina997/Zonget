@@ -5,30 +5,46 @@ import java.lang.ref.WeakReference;
 interface UserNewQueryContract {
 
     interface View {
+
         void injectPresenter(Presenter presenter);
 
-        void displayData(UserNewQueryViewModel viewModel);
+        void displayUserNewQueryData(UserNewQueryViewModel viewModel);
+
     }
 
     interface Presenter {
+
         void injectView(WeakReference<View> view);
 
         void injectModel(Model model);
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void backButtonPressed();
+
+        void fetchUserNewQueryData();
+
     }
 
     interface Model {
-        String fetchData();
+
+        void fetchUserNewQueryData();
+
     }
 
     interface Router {
-        void navigateToNextScreen();
 
-        void passDataToNextScreen(UserNewQueryState state);
+        //--------------- Navegación entre pantallas -----------
 
-        UserNewQueryState getDataFromPreviousScreen();
+        void navigateToUserQueriesMenuScreen();
+
+        //------------- Paso de datos entre pantallas ----------
+
+        void passDataToUserQueriesMenuScreen();
+
+        //------------- Obtener datos entre pantallas ----------
+
+        //UserNewQueryState getDataFromPreviousScreen();
+
     }
 }

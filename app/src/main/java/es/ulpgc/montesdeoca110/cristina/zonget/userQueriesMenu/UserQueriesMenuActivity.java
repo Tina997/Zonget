@@ -24,7 +24,7 @@ public class UserQueriesMenuActivity extends AppCompatActivity implements UserQu
         setContentView(R.layout.activity_user_queries_menu);
 
         //Configuracion de la toolBar/actionBar
-        toolbar = findViewById(R.id.user_queries_menu_toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();

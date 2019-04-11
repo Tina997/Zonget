@@ -1,14 +1,14 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
 import java.lang.ref.WeakReference;
 
-public interface UserFinishedQueriesListContract {
+public interface UserPendingQueriesListContract {
 
     interface View {
 
         void injectPresenter(Presenter presenter);
 
-        void displayUserFinishedQueriesListData(UserFinishedQueriesListViewModel viewModel);
+        void displayUserPendingQueriesListData(UserPendingQueriesListViewModel viewModel);
 
     }
 
@@ -22,13 +22,13 @@ public interface UserFinishedQueriesListContract {
 
         void backButtonPressed();
 
-        void fetchUserFinishedQueriesListData();
+        void fetchUserPendingQueriesListData();
 
     }
 
     interface Model {
 
-        void fetchUserFinishedQueriesListData();
+        void fetchUserPendingQueriesListData();
 
     }
 
@@ -44,7 +44,7 @@ public interface UserFinishedQueriesListContract {
 
         //------------- Obtener datos entre pantallas ----------
 
-        //UserFinishedQueriesListState getDataFromPreviousScreen();
+        //UserPendingQueriesListState getDataFromPreviousScreen();
 
     }
 }

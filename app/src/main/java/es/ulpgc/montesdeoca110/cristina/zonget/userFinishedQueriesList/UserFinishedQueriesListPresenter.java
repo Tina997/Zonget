@@ -1,12 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
 
-import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
 public class UserFinishedQueriesListPresenter implements UserFinishedQueriesListContract.Presenter {
-
-    public static String TAG = UserFinishedQueriesListPresenter.class.getSimpleName();
 
     private WeakReference<UserFinishedQueriesListContract.View> view;
     private UserFinishedQueriesListViewModel viewModel;
@@ -18,30 +15,7 @@ public class UserFinishedQueriesListPresenter implements UserFinishedQueriesList
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
-
-        // use passed state if is necessary
-        UserFinishedQueriesListState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-
-            // update view and model state
-            viewModel.data = state.data;
-
-            // update the view
-            view.get().displayData(viewModel);
-
-            return;
-        }
-
-        // call the model  
-        String data = model.fetchData();
-
-        // set view state
-        viewModel.data = data;
-
-        // update the view
-        view.get().displayData(viewModel);
+    public void fetchUserFinishedQueriesListData() {
 
     }
 
@@ -58,5 +32,10 @@ public class UserFinishedQueriesListPresenter implements UserFinishedQueriesList
     @Override
     public void injectRouter(UserFinishedQueriesListContract.Router router) {
         this.router = router;
+    }
+
+    @Override
+    public void backButtonPressed() {
+        router.navigateToUserQueriesMenuScreen();
     }
 }

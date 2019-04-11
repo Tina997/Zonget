@@ -10,8 +10,7 @@ public class UserQueriesMenuScreen {
 
     public static void configure(UserQueriesMenuContract.View view) {
 
-        WeakReference<FragmentActivity> context =
-                new WeakReference<>((FragmentActivity) view);
+        WeakReference<FragmentActivity> context = new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         UserQueriesMenuState state = mediator.getUserQueriesMenuState();

@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuActivity;
 
 public class UserNewQueryRouter implements UserNewQueryContract.Router {
-
-    public static String TAG = UserNewQueryRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
@@ -15,21 +14,19 @@ public class UserNewQueryRouter implements UserNewQueryContract.Router {
         this.mediator = mediator;
     }
 
+    // UserQueriesMenu
+
     @Override
-    public void navigateToNextScreen() {
+    public void passDataToUserQueriesMenuScreen() {
+
+    }
+
+    @Override
+    public void navigateToUserQueriesMenuScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserNewQueryActivity.class);
+        Intent intent = new Intent(context, UserQueriesMenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
-    @Override
-    public void passDataToNextScreen(UserNewQueryState state) {
-        mediator.setUserNewQueryState(state);
-    }
-
-    @Override
-    public UserNewQueryState getDataFromPreviousScreen() {
-        UserNewQueryState state = mediator.getUserNewQueryState();
-        return state;
-    }
 }

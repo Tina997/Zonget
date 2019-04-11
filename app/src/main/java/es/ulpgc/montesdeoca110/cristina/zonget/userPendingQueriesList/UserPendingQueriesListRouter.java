@@ -1,4 +1,4 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
 import android.content.Intent;
 import android.content.Context;
@@ -6,11 +6,11 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuActivity;
 
-public class UserFinishedQueriesListRouter implements UserFinishedQueriesListContract.Router {
+public class UserPendingQueriesListRouter implements UserPendingQueriesListContract.Router {
 
     private AppMediator mediator;
 
-    public UserFinishedQueriesListRouter(AppMediator mediator) {
+    public UserPendingQueriesListRouter(AppMediator mediator) {
         this.mediator = mediator;
     }
 

@@ -10,8 +10,7 @@ public class UserNewQueryScreen {
 
     public static void configure(UserNewQueryContract.View view) {
 
-        WeakReference<FragmentActivity> context =
-                new WeakReference<>((FragmentActivity) view);
+        WeakReference<FragmentActivity> context = new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         UserNewQueryState state = mediator.getUserNewQueryState();

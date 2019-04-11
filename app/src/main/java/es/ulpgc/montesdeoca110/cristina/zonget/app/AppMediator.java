@@ -15,7 +15,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.editLostPet.EditLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption.EditPetForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
@@ -23,6 +22,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailStat
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userAgenda.UserAgendaState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList.UserFinishedQueriesListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList.UserPendingQueriesListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListState;
@@ -38,19 +39,18 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailStat
 public class AppMediator extends Application {
 
     //Estados de las distintas activities de la aplicación
+
     private SignInState signInState;
-
     private SignUpState signUpState;
-
     private SignUpConfirmationState signUpConfirmationState;
 
     private AdministratorButtonsMenuListState administratorButtonsMenuListState;
-
     private UserButtonsMenuListState userButtonsMenuListState;
 
     private UserQueriesMenuState userQueriesMenuState;
-
     private UserNewQueryState userNewQueryState;
+    private UserPendingQueriesListState userPendingQueriesListState;
+    private UserFinishedQueriesListState userFinishedQueriesListState;
 
     private UserPetsState clientPetsState = new UserPetsState();
 
@@ -90,13 +90,16 @@ public class AppMediator extends Application {
 
     private AddLostPetState addLostPetState = new AddLostPetState();
     private EditLostPetState editLostPetState = new EditLostPetState();
+
     //Variables de las activities
+
     private PetsItem animal;
     private UserItem userItem;
     private LostPetItem lostPet;
     private PetForAdoptionItem petForAdoptionItem;
 
     //Estados entre activities
+
     private SplashToSignInState splashToSignInState;
     private SignInToMenuState signInToMenuState;
     private MenuToSignInState menuToSignInState;
@@ -104,21 +107,25 @@ public class AppMediator extends Application {
     private MenuToSelectedActivityState menuToSelectedActivityState;
     private UserMenuToUserPickDateState userMenuToUserPickDateState;
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();
 
         //Inicialización de los estados
+
         signInState = new SignInState();
         signUpState = new SignUpState();
         signUpConfirmationState = new SignUpConfirmationState();
+
         administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
         userButtonsMenuListState = new UserButtonsMenuListState();
+
         userQueriesMenuState = new UserQueriesMenuState();
         userNewQueryState = new UserNewQueryState();
+        userPendingQueriesListState = new UserPendingQueriesListState();
+        userFinishedQueriesListState = new UserFinishedQueriesListState();
     }
+
     //PetsListUser
 
     public void setUserPetsState(PetsItem item) {
@@ -177,7 +184,7 @@ public class AppMediator extends Application {
         this.userButtonsMenuListState = userButtonsMenuListState;
     }
 
-    //QueriesMenu
+    //UserQueriesMenu
     public UserQueriesMenuState getUserQueriesMenuState() {
         return userQueriesMenuState;
     }
@@ -195,6 +202,24 @@ public class AppMediator extends Application {
         this.userNewQueryState = userNewQueryState;
     }
 
+    //UserPendingQueriesList
+    public UserPendingQueriesListState getUserPendingQueriesListState() {
+        return userPendingQueriesListState;
+    }
+
+    public void setUserPendingQueriesListState(UserPendingQueriesListState userPendingQueriesListState) {
+        this.userPendingQueriesListState = userPendingQueriesListState;
+    }
+
+    //UserFinishedQueriesList
+    public UserFinishedQueriesListState getUserFinishedQueriesListState() {
+        return userFinishedQueriesListState;
+    }
+
+    public void setUserFinishedQueriesListState(UserFinishedQueriesListState userFinishedQueriesListState) {
+        this.userFinishedQueriesListState = userFinishedQueriesListState;
+    }
+
     //AdministratorAgenda
     public AdministratorAgendaState getAdministratorAgendaState() {
         return administratorAgendaState;
@@ -203,7 +228,6 @@ public class AppMediator extends Application {
     public void setAdministratorAgendaState(AdministratorAgendaState administratorAgendaState) {
         this.administratorAgendaState = administratorAgendaState;
     }
-
 
     //AddEvent
     public AddEventState getAddEventState() {
@@ -287,7 +311,7 @@ public class AppMediator extends Application {
         this.administratorUserPetsDetailState = administratorUserPetsDetailState;
     }
 
-    //------------------------------------- States between activities ------------------------------------------
+    //------------------------------------- Estados entre actividades ------------------------------------------
 
     //SplashToSignIn
     public SplashToSignInState getSplashToSignInState() {

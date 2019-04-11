@@ -42,13 +42,13 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
     @Override
     public void pendingQueriesButtonPressed() {
         router.passDataToUserPendingQueriesListScreen();
-        router.passDataToUserPendingQueriesListScreen();
+        router.navigateToUserPendingQueriesScreen();
     }
 
     @Override
     public void finishedQueriesButtonPressed() {
         router.passDataToUserFinishedQueriesListScreen();
-        router.passDataToUserFinishedQueriesListScreen();
+        router.navigateToUserFinishedQueriesScreen();
     }
 
     @Override

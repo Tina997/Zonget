@@ -1,18 +1,17 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
+package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
-public class UserFinishedQueriesListActivity extends AppCompatActivity implements UserFinishedQueriesListContract.View {
+public class UserPendingQueriesListActivity extends AppCompatActivity implements UserPendingQueriesListContract.View {
 
-    private UserFinishedQueriesListContract.Presenter presenter;
+    private UserPendingQueriesListContract.Presenter presenter;
 
     //Elementos de la vista
     private Toolbar toolbar;
@@ -20,21 +19,20 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_finished_queries_list);
+        setContentView(R.layout.activity_user_pending_queries_list);
 
         //Configuracion de la toolBar/actionBar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Consultas finalizadas");
+        actionBar.setTitle("Consultas pendientes");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         //Búsqueda de los elementos de la vista
 
-
         // do the setup
-        UserFinishedQueriesListScreen.configure(this);
+        UserPendingQueriesListScreen.configure(this);
     }
 
     @Override
@@ -42,16 +40,16 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
         super.onResume();
 
         // load the data
-        presenter.fetchUserFinishedQueriesListData();
+        presenter.fetchUserPendingQueriesListData();
     }
 
     @Override
-    public void injectPresenter(UserFinishedQueriesListContract.Presenter presenter) {
+    public void injectPresenter(UserPendingQueriesListContract.Presenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
-    public void displayUserFinishedQueriesListData(UserFinishedQueriesListViewModel viewModel) {
+    public void displayUserPendingQueriesListData(UserPendingQueriesListViewModel viewModel) {
 
     }
 
