@@ -50,13 +50,7 @@
 
         <activity android:name=".modifyEvent.ModifyEventActivity"></activity>
 
-        <activity android:name=".administratorUserEditPet.AdministratorUserEditPetActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".administratorUserEditPet.AdministratorUserEditPetActivity"></activity>
 
         <activity android:name=".administratorInbox.AdministratorInboxActivity"></activity>
 
@@ -80,7 +74,13 @@
 
         <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
 
-        <activity android:name=".userPickDate.UserPickDateActivity"></activity>
+        <activity android:name=".userPickDate.UserPickDateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".petsForAdoption.PetsForAdoptionActivity"></activity>
 
