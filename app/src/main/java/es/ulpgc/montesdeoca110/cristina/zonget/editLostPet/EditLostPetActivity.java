@@ -40,7 +40,7 @@ public class EditLostPetActivity
 
         dateText = findViewById(R.id.lostDateEdit);
         breedText = findViewById(R.id.lostBreedEdit);
-        detailsText = findViewById(R.id.LostDetailsEdit);
+        detailsText = findViewById(R.id.lostDetailsEdit);
         chipNumText = findViewById(R.id.lostChipNumEdit);
         phoneNumText = findViewById(R.id.lostPhoneEdit);
 
