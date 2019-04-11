@@ -58,13 +58,7 @@
 
         <activity android:name=".administratorQueryAnswer.AdministratorQueryAnswerActivity"></activity>
 
-        <activity android:name=".userAgenda.UserAgendaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".userAgenda.UserAgendaActivity"></activity>
 
         <activity android:name=".userPets.UserPetsActivity"></activity>
 
