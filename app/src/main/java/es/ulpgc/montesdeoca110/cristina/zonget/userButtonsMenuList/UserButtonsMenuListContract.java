@@ -30,6 +30,8 @@ interface UserButtonsMenuListContract {
 
         void signOutButtonPressed();
 
+        void pickForADateButtonPressed();
+
         void selectUserButtonsMenuListData(UserButtonMenuItem item);
 
     }
@@ -56,7 +58,7 @@ interface UserButtonsMenuListContract {
 
         void passDataToSelectedScreen(MenuToSelectedActivityState state);
 
-        void passDataToUserPickDateScreen(UserMenuToUserPickDateState state);
+        void passDataToUserPickDateScreen();
 
         //------------- Obtener datos entre pantallas ----------
 

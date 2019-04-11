@@ -51,6 +51,12 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     }
 
     @Override
+    public void pickForADateButtonPressed() {
+        router.passDataToUserPickDateScreen();
+        router.navigateToUserPickDateScreen();
+    }
+
+    @Override
     public void selectUserButtonsMenuListData(UserButtonMenuItem button) {
         router.navigateToSelectedActivityScreen(button.activity);
     }

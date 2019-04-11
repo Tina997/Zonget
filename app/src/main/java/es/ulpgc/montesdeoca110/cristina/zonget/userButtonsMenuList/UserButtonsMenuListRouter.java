@@ -61,8 +61,8 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
     //To UserPickDate
 
     @Override
-    public void passDataToUserPickDateScreen(UserMenuToUserPickDateState state) {
-        mediator.setUserMenuToUserPickDateState(state);
+    public void passDataToUserPickDateScreen() {
+
     }
 
     @Override

@@ -39,7 +39,7 @@
             app:srcCompat="@drawable/logo_oscuro_completo" />
 
         <Button
-            android:id="@+id/user_buttons_menu_list_ask_date_button"
+            android:id="@+id/user_buttons_menu_list_pick_for_a_date_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

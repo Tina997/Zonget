@@ -21,7 +21,7 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
 
     //Elementos de la vista
     private Toolbar toolbar;
-    private Button askDateButton;
+    private Button pickForADateButton;
 
     private UserButtonsMenuListAdapter listAdapter;
 
@@ -38,7 +38,7 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         actionBar.setTitle("Menú");
 
         //Búsqueda de los elementos de la vista
-        askDateButton = findViewById(R.id.user_buttons_menu_list_ask_date_button);
+        pickForADateButton = findViewById(R.id.user_buttons_menu_list_pick_for_a_date_button);
 
         //Listeners
         listAdapter = new UserButtonsMenuListAdapter(new View.OnClickListener() {
@@ -49,10 +49,10 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
             }
         });
 
-        askDateButton.setOnClickListener(new View.OnClickListener() {
+        pickForADateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Llamar al presenter
+                presenter.pickForADateButtonPressed();
             }
         });
 
