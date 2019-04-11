@@ -68,19 +68,19 @@
 
         <activity android:name=".administratorUsersList.AdministratorUsersListActivity"></activity>
 
-        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity">
+        <activity android:name=".administratorUsersPets.AdministratorUsersPetsListActivity"></activity>
+
+        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
+
+        <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
+
+        <activity android:name=".userPickDate.UserPickDateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".administratorUsersPetDetail.AdministratorUserPetsDetailActivity"></activity>
-
-        <activity android:name=".administratorUsersAddPet.AdministratorUsersAddPetActivity"></activity>
-
-        <activity android:name=".userPickDate.UserPickDateActivity"></activity>
 
         <activity android:name=".petsForAdoption.PetsForAdoptionActivity"></activity>
 
