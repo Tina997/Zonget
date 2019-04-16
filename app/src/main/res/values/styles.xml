@@ -1,15 +1,130 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
 
-        <!-- Customize your theme here. -->
+    <!-- ============================ Application Themes ================================ -->
+
+    <style name="AppTheme.AquaMarineLightBlue" parent="Theme.AppCompat.Light.NoActionBar">
+
         <item name="android:statusBarColor">@color/colorBlack</item>
-        <item name="colorControlNormal">@color/colorPrimary</item>
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <item name="colorControlNormal">@color/lightBlue</item>
+        <item name="android:windowBackground">@color/lightBlue</item>
+        <item name="colorPrimary">@color/lightBlue</item>
+        <item name="colorPrimaryDark">@color/aquamarine</item>
+
     </style>
+
+    <style name="AppTheme.AquaMarineLightBlue.Inverse" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/aquamarine</item>
+        <item name="android:windowBackground">@color/aquamarine</item>
+        <item name="colorPrimary">@color/aquamarine</item>
+        <item name="colorPrimaryDark">@color/lightBlue</item>
+
+    </style>
+
+    <style name="AppTheme.PinkLightGreen" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/lightGreen</item>
+        <item name="android:windowBackground">@color/lightGreen</item>
+        <item name="colorPrimary">@color/lightGreen</item>
+        <item name="colorPrimaryDark">@color/pink</item>
+
+    </style>
+
+    <style name="AppTheme.PinkLightGreen.Inverse" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/pink</item>
+        <item name="android:windowBackground">@color/pink</item>
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/lightGreen</item>
+
+    </style>
+
+    <style name="AppTheme.GrayOrange" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="android:windowBackground">@color/orange</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryDark">@color/gray</item>
+
+    </style>
+
+    <style name="AppTheme.GrayOrange.Inverse" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="android:windowBackground">@color/gray</item>
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryDark">@color/orange</item>
+
+    </style>
+
+    <style name="AppTheme.YellowPurple" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/purple</item>
+        <item name="android:windowBackground">@color/purple</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryDark">@color/yellow</item>
+
+    </style>
+
+    <style name="AppTheme.YellowPurple.Inverse" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/yellow</item>
+        <item name="android:windowBackground">@color/yellow</item>
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryDark">@color/purple</item>
+
+    </style>
+
+    <style name="AppTheme.BrownDarkGreen" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/darkGreen</item>
+        <item name="android:windowBackground">@color/darkGreen</item>
+        <item name="colorPrimary">@color/darkGreen</item>
+        <item name="colorPrimaryDark">@color/brown</item>
+
+    </style>
+
+    <style name="AppTheme.BrownDarkGreen.Inverse" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/brown</item>
+        <item name="android:windowBackground">@color/brown</item>
+        <item name="colorPrimary">@color/brown</item>
+        <item name="colorPrimaryDark">@color/darkGreen</item>
+
+    </style>
+
+    <!-- ================================================================================= -->
 
     <!--Dialog Theme-->
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">

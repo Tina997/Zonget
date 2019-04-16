@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.AquaMarineLightBlue">
+        android:theme="@style/AppTheme.PinkLightGreen">
 
         <activity android:name=".SplashActivity">
 <!--
@@ -22,9 +22,7 @@
 -->
         </activity>
 
-        <activity android:name=".signIn.SignInActivity"></activity>
-
-        <activity android:name=".changeTheme.ChangeThemeActivity">
+        <activity android:name=".signIn.SignInActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +31,8 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".changeTheme.ChangeThemeActivity"></activity>
 
         <activity android:name=".signUp.SignUpActivity"></activity>
 

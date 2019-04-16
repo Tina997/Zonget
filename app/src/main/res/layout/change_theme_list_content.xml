@@ -17,6 +17,6 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/prueba9" />
+        app:srcCompat="@drawable/logo_completo" />
 
 </android.support.v7.widget.CardView>

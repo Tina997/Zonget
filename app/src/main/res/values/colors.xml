@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#E2F0F5</color>  <!-- Color azul verdoso claro -->
-    <color name="colorPrimaryDark">#467685</color> <!-- Color azul verdoso oscuro -->
+
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FFFFFF</color>
+
     <color name="colorBlack">#000000</color>
 
-    <color name="colorPrimaryDarkTrans">#90467685</color> <!-- Color azul verdoso oscuro con transparencia -->
+    <color name="colorPrimaryDarkTrans">#FFFFFF</color>
+
+    <color name="aquamarine">#467685</color>
+    <color name="lightBlue">#E2F0F5</color>
+
+    <color name="aquamarine20Transparent">#90467685</color>
+    <color name="lightBlue20Transparent">#90E2F0F5</color>
+
+    <color name="pink">#DD93C1</color>
+    <color name="lightGreen">#E4F4E5</color>
+
+    <color name="pink20Transparent">#90DD93C1</color>
+    <color name="lightGreen20Transparent">#90E4F4E5</color>
+
+    <color name="gray">#D9D9D9</color>
+    <color name="orange">#C55A11</color>
+
+    <color name="gray20Transparent">#90D9D9D9</color>
+    <color name="orange20Transparent">#90C55A11</color>
+
+    <color name="yellow">#FFF2CC</color>
+    <color name="purple">#693F8E</color>
+
+    <color name="yellow20Transparent">#90FFF2CC</color>
+    <color name="purple20Transparent">#90693F8E</color>
+
+    <color name="brown">#C8B4A0</color>
+    <color name="darkGreen">#53624D</color>
+
+    <color name="brown20Transparent">#90C8B4A0</color>
+    <color name="darkGreen20Transparent">#9053624D</color>
+
 </resources>

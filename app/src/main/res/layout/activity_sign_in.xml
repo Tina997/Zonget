@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal|center_vertical"
-    android:background="@color/colorPrimaryDark"
+    android:background="?attr/colorPrimaryDark"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".signIn.SignInActivity">
@@ -20,7 +20,8 @@
             android:layout_width="104dp"
             android:layout_height="136dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logo_claro" />
+            app:srcCompat="@drawable/logo"
+            android:tint="?attr/colorPrimary"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,8 +29,7 @@
             android:layout_gravity="bottom"
             android:paddingBottom="10dp"
             android:text="@string/activity_label"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="30sp"
             android:textStyle="bold"
              />
@@ -51,13 +51,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!--suppress AndroidDomInspection -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/sign_in_user_text_label"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="18sp" />
 
             <EditText
@@ -68,7 +67,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:textColor="@color/colorAccent" />
+                android:textColor="?attr/colorAccent" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,13 +75,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!--suppress AndroidDomInspection -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/sign_in_password_text_label"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="18sp" />
 
             <EditText
@@ -93,7 +91,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:textColor="@color/colorAccent" />
+                android:textColor="?attr/colorAccent" />
 
         </LinearLayout>
 
@@ -107,7 +105,7 @@
             android:layout_height="wrap_content"
             android:text="@string/password_forget_text_label"
             android:textAlignment="viewEnd"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="?attr/colorPrimary" />
 
         <Space
             android:layout_width="match_parent"
@@ -118,9 +116,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="?attr/colorPrimary"
             android:text="@string/sign_in_button_text_label"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="?attr/colorPrimaryDark" />
     </LinearLayout>
 
     <LinearLayout
@@ -137,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/not_sign_up_text_view"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
 
         <Space
@@ -155,9 +153,9 @@
                 android:id="@+id/sign_up_button"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="@string/sign_up_button_text_label"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="?attr/colorPrimaryDark" />
 
             <Space
                 android:layout_width="15dp"
@@ -167,9 +165,9 @@
                 android:id="@+id/ask_date_button"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="@string/ask_date_button_text_label"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="?attr/colorPrimaryDark" />
         </LinearLayout>
 
     </LinearLayout>
