@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 public class UserItem {
+
     public final int id;
     public final String name, DNI;
 

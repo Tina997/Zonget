@@ -82,13 +82,11 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
 
     @Override
     public void displayAdministratorButtonsMenuListData(final AdministratorButtonsMenuListViewModel viewModel) {
-
         runOnUiThread(new Runnable() {
 
             @Override
             public void run() {
 
-                // deal with the data
                 listAdapter.setItems(viewModel.administratorButtons);
             }
         });

@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -26,9 +27,11 @@ public class SettingsRepository implements RepositoryContract.Settings {
     private Context context;
 
     public static final String JSON_FILE = "zonget.json";
+    public static final String JSON_THEME = "theme";
     public static final String JSON_ADMINISTRATOR = "administratorButtonsMenu";
     public static final String JSON_USER = "userButtonsMenu";
 
+    private List<ChangeThemeItem> themeList;
     private List<AdministratorButtonMenuItem> administratorButtonsMenuList;
     private List<UserButtonMenuItem> userButtonsMenuList;
 
@@ -67,6 +70,11 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
         try {
 
+            JSONObject jsonObjectTheme = new JSONObject(json);
+            JSONArray jsonArrayTheme = jsonObjectTheme.getJSONArray(JSON_THEME);
+
+            themeList = new ArrayList<>();
+
             JSONObject jsonObjectAdministrator = new JSONObject(json);
             JSONArray jsonArrayAdministrator = jsonObjectAdministrator.getJSONArray(JSON_ADMINISTRATOR);
 
@@ -77,7 +85,12 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
             userButtonsMenuList = new ArrayList<>();
 
-            if (jsonArrayAdministrator.length() > 0  /*&& jsonArrayUser.length() > 0*/) {
+            if (jsonArrayAdministrator.length() > 0  && jsonArrayUser.length() > 0  && jsonArrayTheme.length() > 0) {
+                final List<ChangeThemeItem> themeList = Arrays.asList(gson.fromJson(jsonArrayTheme.toString(), ChangeThemeItem[].class));
+
+                for (ChangeThemeItem theme: themeList) {
+                    insertTheme(theme);
+                }
 
                 // ---------- Administrator -------------
                 final List<AdministratorButtonMenuItem> administratorButtonMenuList = Arrays.asList(gson.fromJson(jsonArrayAdministrator.toString(), AdministratorButtonMenuItem[].class));
@@ -101,6 +114,10 @@ public class SettingsRepository implements RepositoryContract.Settings {
         return false;
     }
 
+    private void insertTheme(ChangeThemeItem theme) {
+        themeList.add(theme);
+    }
+
     private void insertAdministratorButton(AdministratorButtonMenuItem button) {
         administratorButtonsMenuList.add(button);
     }
@@ -120,6 +137,18 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
                 if(callback != null) {
                     callback.onZongetDataFetched(error);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void getChangeThemeList(final GetChangeThemeListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null){
+                    callback.setChangeThemeList(themeList);
                 }
             }
         });

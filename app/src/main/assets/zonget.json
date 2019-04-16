@@ -73,6 +73,69 @@
     }
   ],
 
+  "theme":[
+    {
+      "id": 0,
+      "firstColor": "#467685",
+      "secondColor": "#E2F0F5",
+      "themeName": "AppTheme.AquaMarineLightBlue"
+    },
+    {
+      "id": 1,
+      "firstColor": "#E2F0F5",
+      "secondColor": "#467685",
+      "themeName": "AppTheme.AquaMarineLightBlue.Inverse"
+    },
+    {
+      "id": 2,
+      "firstColor": "#DD93C1",
+      "secondColor": "#E4F4E5",
+      "themeName": "AppTheme.PinkLightGreen"
+    },
+    {
+      "id": 3,
+      "firstColor": "#E4F4E5",
+      "secondColor": "#DD93C1",
+      "themeName": "AppTheme.PinkLightGreen.Inverse"
+    },
+    {
+      "id": 4,
+      "firstColor": "#D9D9D9",
+      "secondColor": "#C55A11",
+      "themeName": "AppTheme.GrayOrange"
+    },
+    {
+      "id": 5,
+      "firstColor": "#C55A11",
+      "secondColor": "#D9D9D9",
+      "themeName": "AppTheme.GrayOrange.Inverse"
+    },
+    {
+      "id": 6,
+      "firstColor": "#FFF2CC",
+      "secondColor": "#693F8E",
+      "themeName": "AppTheme.YellowPurple"
+    },
+    {
+      "id": 7,
+      "firstColor": "#693F8E",
+      "secondColor": "#FFF2CC",
+      "themeName": "AppTheme.YellowPurple.Inverse"
+    },
+    {
+      "id": 8,
+      "firstColor": "#C8B4A0",
+      "secondColor": "#53624D",
+      "themeName": "AppTheme.BrownDarkGreen"
+    },
+    {
+      "id": 9,
+      "firstColor": "#53624D",
+      "secondColor": "#C8B4A0",
+      "themeName": "AppTheme.BrownDarkGreen.Inverse"
+    }
+  ],
+
   "administratorButtonsMenu":[
     {
       "id": 0,

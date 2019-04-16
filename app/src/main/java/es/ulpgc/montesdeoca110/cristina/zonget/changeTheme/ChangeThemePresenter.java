@@ -1,6 +1,10 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
 
@@ -13,33 +17,6 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
         viewModel = state;
     }
 
-    @Override
-    public void fetchChangeThemeData() {
-        // Log.e(TAG, "fetchData()");
-
-        // use passed state if is necessary
-        ChangeThemeState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-
-            // update view and model state
-            viewModel.data = state.data;
-
-            // update the view
-            view.get().displayChangeThemeData(viewModel);
-
-            return;
-        }
-
-        // call the model  
-        String data = model.fetchChangeThemeData();
-
-        // set view state
-        viewModel.data = data;
-
-        // update the view
-        view.get().displayChangeThemeData(viewModel);
-
-    }
 
     @Override
     public void injectView(WeakReference<ChangeThemeContract.View> view) {
@@ -54,5 +31,20 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
     @Override
     public void injectRouter(ChangeThemeContract.Router router) {
         this.router = router;
+    }
+
+    @Override
+    public void fetchChangeThemeListData() {
+        model.fetchChangeThemeListData(new RepositoryContract.Settings.GetChangeThemeListCallback() {
+            @Override
+            public void setChangeThemeList(List<ChangeThemeItem> themeList) {
+                viewModel.themeList = themeList;
+                view.get().displayChangeThemeListData(viewModel);
+            }
+        });}
+
+    @Override
+    public void selectChangeThemeListData(ChangeThemeItem item) {
+
     }
 }

@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:orientation="vertical"
     tools:context="es.ulpgc.montesdeoca110.cristina.zonget.changeTheme.ChangeThemeActivity">
 
-    <TextView
-        android:id="@+id/data"
+    <include layout="@layout/toolbar"></include>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:text="Hello" />
+        android:layout_margin="20dp">
 
-</FrameLayout>
+        <include
+            layout="@layout/change_theme_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+</LinearLayout>
 

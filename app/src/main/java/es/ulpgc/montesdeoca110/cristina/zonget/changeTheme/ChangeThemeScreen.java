@@ -5,6 +5,8 @@ import java.lang.ref.WeakReference;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
 
 public class ChangeThemeScreen {
 
@@ -14,10 +16,11 @@ public class ChangeThemeScreen {
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         ChangeThemeState state = mediator.getChangeThemeState();
+        RepositoryContract.Settings repository = SettingsRepository.getInstance(context.get());
 
         ChangeThemeContract.Router router = new ChangeThemeRouter(mediator);
         ChangeThemeContract.Presenter presenter = new ChangeThemePresenter(state);
-        ChangeThemeContract.Model model = new ChangeThemeModel();
+        ChangeThemeContract.Model model = new ChangeThemeModel(repository);
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));

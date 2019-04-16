@@ -32,7 +32,9 @@ interface AdministratorButtonsMenuListContract {
     }
 
     interface Model {
+
         void fetchAdministratorButtonsMenuListData(RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
+
     }
 
     interface Router {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
@@ -19,6 +20,13 @@ public interface RepositoryContract {
         }
 
         void loadZonget(SettingsRepository.FecthZongetDataCallback callback);
+
+        interface GetChangeThemeListCallback {
+            void setChangeThemeList(List<ChangeThemeItem> themeList);
+        }
+
+        void getChangeThemeList(SettingsRepository.GetChangeThemeListCallback callback);
+
 
         // ---------------- Administrator ------------------
         interface GetAdministratorMenuButtonsListCallback {

@@ -2,13 +2,16 @@ package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 public interface ChangeThemeContract {
 
     interface View {
 
         void injectPresenter(Presenter presenter);
 
-        void displayChangeThemeData(ChangeThemeViewModel viewModel);
+        void displayChangeThemeListData(ChangeThemeViewModel viewModel);
 
     }
 
@@ -20,13 +23,15 @@ public interface ChangeThemeContract {
 
         void injectRouter(Router router);
 
-        void fetchChangeThemeData();
+        void fetchChangeThemeListData();
+
+        void selectChangeThemeListData(ChangeThemeItem item);
 
     }
 
     interface Model {
 
-        String fetchChangeThemeData();
+        void fetchChangeThemeListData(RepositoryContract.Settings.GetChangeThemeListCallback callback);
 
     }
 
