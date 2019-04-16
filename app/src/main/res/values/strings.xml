@@ -30,6 +30,9 @@
     <string name="pending_queries_text_view">Pendientes</string>
     <string name="finished_queries_text_view">Finalizadas</string>
 
+    <!-- NewQuery view -->
+    <string name="new_query_tittle_text_view">Título</string>
+
     <!--AdministratorAgenda View -->
     <string name="agenda_activity_name">Agenda</string>
     <string name="event_content">Content</string>

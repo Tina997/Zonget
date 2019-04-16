@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="@string/modifyEvent_title_text"
+            android:text="@string/new_query_tittle_text_view"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
@@ -34,7 +34,9 @@
             android:layout_weight="1"
             android:background="@color/colorPrimaryDarkTrans"
             android:ems="10"
+            android:gravity="left|center_vertical"
             android:inputType="textShortMessage"
+            android:padding="5dp"
             android:textColor="@color/colorAccent" />
 
         <ImageButton
@@ -62,8 +64,9 @@
             android:layout_height="397dp"
             android:layout_weight="1"
             android:background="@color/colorPrimaryDarkTrans"
-            android:inputType="textShortMessage|textLongMessage"
-            android:textAlignment="viewStart"
+            android:gravity="left|center_vertical"
+            android:inputType="textLongMessage"
+            android:padding="5dp"
             android:textColor="@color/colorAccent" />
 
         <Space
