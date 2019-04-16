@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -15,6 +17,7 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
 
     //Elementos de la vista
     private Toolbar toolbar;
+    private ExpandableListView pendingQueriesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,11 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         //Búsqueda de los elementos de la vista
+        pendingQueriesList = findViewById(R.id.user_pending_queries_list);
+
+        UserPendingQueriesListAdapter adapter = new UserPendingQueriesListAdapter();
+        pendingQueriesList.setAdapter((ExpandableListAdapter) adapter);
+
 
         // do the setup
         UserPendingQueriesListScreen.configure(this);
