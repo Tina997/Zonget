@@ -5,30 +5,38 @@ import java.lang.ref.WeakReference;
 public interface ChangeThemeContract {
 
     interface View {
+
         void injectPresenter(Presenter presenter);
 
-        void displayData(ChangeThemeViewModel viewModel);
+        void displayChangeThemeData(ChangeThemeViewModel viewModel);
+
     }
 
     interface Presenter {
+
         void injectView(WeakReference<View> view);
 
         void injectModel(Model model);
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchChangeThemeData();
+
     }
 
     interface Model {
-        String fetchData();
+
+        String fetchChangeThemeData();
+
     }
 
     interface Router {
+
         void navigateToNextScreen();
 
         void passDataToNextScreen(ChangeThemeState state);
 
         ChangeThemeState getDataFromPreviousScreen();
+
     }
 }

@@ -24,15 +24,7 @@
 
         <activity android:name=".signIn.SignInActivity"></activity>
 
-        <activity android:name=".signUp.SignUpActivity"></activity>
-
-        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
-
-        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"></activity>
-
-        <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
-
-        <activity android:name=".userQueriesMenu.UserQueriesMenuActivity">
+        <activity android:name=".changeTheme.ChangeThemeActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,6 +33,16 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".signUp.SignUpActivity"></activity>
+
+        <activity android:name=".signUpConfirmation.SignUpConfirmationActivity"></activity>
+
+        <activity android:name=".administratorButtonsMenuList.AdministratorButtonsMenuListActivity"></activity>
+
+        <activity android:name=".userButtonsMenuList.UserButtonsMenuListActivity"></activity>
+
+        <activity android:name=".userQueriesMenu.UserQueriesMenuActivity"></activity>
 
         <activity android:name=".userNewQuery.UserNewQueryActivity"></activity>
 

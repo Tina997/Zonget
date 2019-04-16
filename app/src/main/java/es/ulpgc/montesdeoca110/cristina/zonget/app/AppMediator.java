@@ -15,6 +15,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.changeTheme.ChangeThemeState;
 import es.ulpgc.montesdeoca110.cristina.zonget.editLostPet.EditLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption.EditPetForAdoptionState;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListState;
@@ -46,6 +47,7 @@ public class AppMediator extends Application {
 
     private AdministratorButtonsMenuListState administratorButtonsMenuListState;
     private UserButtonsMenuListState userButtonsMenuListState;
+    private ChangeThemeState changeThemeActivityState;
 
     private UserQueriesMenuState userQueriesMenuState;
     private UserNewQueryState userNewQueryState;
@@ -119,6 +121,7 @@ public class AppMediator extends Application {
 
         administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
         userButtonsMenuListState = new UserButtonsMenuListState();
+        changeThemeActivityState = new ChangeThemeState();
 
         userQueriesMenuState = new UserQueriesMenuState();
         userNewQueryState = new UserNewQueryState();
@@ -182,6 +185,15 @@ public class AppMediator extends Application {
 
     public void setUserButtonsMenuListState(UserButtonsMenuListState userButtonsMenuListState) {
         this.userButtonsMenuListState = userButtonsMenuListState;
+    }
+
+    //ChangeTheme
+    public ChangeThemeState getChangeThemeState() {
+        return changeThemeActivityState;
+    }
+
+    public void setChangeThemeState(ChangeThemeState changeThemeActivityState) {
+        this.changeThemeActivityState = changeThemeActivityState;
     }
 
     //UserQueriesMenu

@@ -1,12 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
 public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
-
-    public static String TAG = ChangeThemePresenter.class.getSimpleName();
 
     private WeakReference<ChangeThemeContract.View> view;
     private ChangeThemeViewModel viewModel;
@@ -18,7 +14,7 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
+    public void fetchChangeThemeData() {
         // Log.e(TAG, "fetchData()");
 
         // use passed state if is necessary
@@ -29,19 +25,19 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
             viewModel.data = state.data;
 
             // update the view
-            view.get().displayData(viewModel);
+            view.get().displayChangeThemeData(viewModel);
 
             return;
         }
 
         // call the model  
-        String data = model.fetchData();
+        String data = model.fetchChangeThemeData();
 
         // set view state
         viewModel.data = data;
 
         // update the view
-        view.get().displayData(viewModel);
+        view.get().displayChangeThemeData(viewModel);
 
     }
 

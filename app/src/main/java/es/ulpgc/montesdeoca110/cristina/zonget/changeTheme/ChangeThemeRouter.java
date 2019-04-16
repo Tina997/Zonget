@@ -1,12 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
-public class ChangeThemeRouter implements ChangeThemeContract.Router {
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
-    public static String TAG = ChangeThemeRouter.class.getSimpleName();
+public class ChangeThemeRouter implements ChangeThemeContract.Router {
 
     private AppMediator mediator;
 
