@@ -61,5 +61,10 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
         router.navigateToSelectedActivityScreen(button.activity);
     }
 
+    @Override
+    public void changeThemeButtonPressed() {
+        router.navigateToChangeThemeScreen();
+    }
+
 
 }

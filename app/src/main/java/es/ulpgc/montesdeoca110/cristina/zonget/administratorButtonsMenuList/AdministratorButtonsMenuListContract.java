@@ -29,6 +29,8 @@ interface AdministratorButtonsMenuListContract {
         void signOutButtonPressed();
 
         void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
+
+        void changeThemeButtonPressed();
     }
 
     interface Model {
@@ -44,6 +46,8 @@ interface AdministratorButtonsMenuListContract {
         void navigateToSignInScreen();
 
         void navigateToSelectedActivityScreen(String activityClassName);
+
+        void navigateToChangeThemeScreen();
 
         //------------- Paso de datos entre pantallas ----------
 

@@ -6,6 +6,7 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.changeTheme.ChangeThemeActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 public class AdministratorButtonsMenuListRouter implements AdministratorButtonsMenuListContract.Router {
@@ -51,6 +52,14 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
             activity = Class.forName(activityClassName);
         } catch (ClassNotFoundException e) {}
         Intent intent = new Intent(context, activity);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToChangeThemeScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, ChangeThemeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

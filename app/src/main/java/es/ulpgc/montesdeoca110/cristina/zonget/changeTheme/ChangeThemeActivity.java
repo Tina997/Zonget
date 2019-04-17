@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
+import android.icu.text.RelativeDateTimeFormatter;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,18 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //TODO buscar el problema
+        //Theme
+        /*
+        String themeName = presenter.getActualThemeName();
+
+        if (themeName != ""){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+        */
+
         setContentView(R.layout.activity_change_theme);
 
         //Configuracion de la toolBar/actionBar
@@ -60,6 +73,11 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
     }
 
     @Override
+    public void injectPresenter(ChangeThemeContract.Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
     public void displayChangeThemeListData(final ChangeThemeViewModel viewModel) {
         runOnUiThread(new Runnable() {
 
@@ -71,8 +89,5 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
         });
     }
 
-    @Override
-    public void injectPresenter(ChangeThemeContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+
 }

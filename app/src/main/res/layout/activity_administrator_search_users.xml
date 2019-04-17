@@ -55,7 +55,8 @@
         android:layout_height="116dp"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="320dp"
-        app:srcCompat="@drawable/logo_oscuro" />
+        app:srcCompat="@drawable/logo"
+        android:tint="?attr/colorPrimaryDark"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -39,6 +39,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailStat
 
 public class AppMediator extends Application {
 
+    private ThemeState themeState;
+
     //Estados de las distintas activities de la aplicación
 
     private SignInState signInState;
@@ -115,6 +117,8 @@ public class AppMediator extends Application {
 
         //Inicialización de los estados
 
+        themeState = new ThemeState();
+
         signInState = new SignInState();
         signUpState = new SignUpState();
         signUpConfirmationState = new SignUpConfirmationState();
@@ -128,6 +132,16 @@ public class AppMediator extends Application {
         userPendingQueriesListState = new UserPendingQueriesListState();
         userFinishedQueriesListState = new UserFinishedQueriesListState();
     }
+
+    //Theme
+    public ThemeState getThemeState() {
+        return themeState;
+    }
+
+    public void setThemeState(ThemeState themeState) {
+        this.themeState = themeState;
+    }
+
 
     //PetsListUser
 

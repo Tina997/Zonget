@@ -46,7 +46,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
     private AdministratorButtonMenuItem createAdministratorButtonMenuItem(int position){
         String content = "Button" + position;
-        int image_id = R.drawable.logo_claro_completo;
+        int image_id = R.drawable.logo_completo;
         return new AdministratorButtonMenuItem(position,content,image_id);
     }
 
@@ -68,7 +68,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
     private UserButtonMenuItem createUserButtonMenuItem(int position){
         String content = "Button" + position;
-        int image_id = R.drawable.logo_claro_completo;
+        int image_id = R.drawable.logo_completo;
         return new UserButtonMenuItem(position,content,image_id);
     }
 

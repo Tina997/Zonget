@@ -13,6 +13,7 @@
         <item name="android:windowBackground">@color/lightBlue</item>
         <item name="colorPrimary">@color/lightBlue</item>
         <item name="colorPrimaryDark">@color/aquamarine</item>
+        <item name="colorPrimaryDarkTrans">@color/aquamarine20Transparent</item>
 
     </style>
 
@@ -25,6 +26,7 @@
         <item name="android:windowBackground">@color/aquamarine</item>
         <item name="colorPrimary">@color/aquamarine</item>
         <item name="colorPrimaryDark">@color/lightBlue</item>
+        <item name="colorPrimaryDarkTrans">@color/lightBlue20Transparent</item>
 
     </style>
 
@@ -37,6 +39,7 @@
         <item name="android:windowBackground">@color/lightGreen</item>
         <item name="colorPrimary">@color/lightGreen</item>
         <item name="colorPrimaryDark">@color/pink</item>
+        <item name="colorPrimaryDarkTrans">@color/pink20Transparent</item>
 
     </style>
 
@@ -49,6 +52,7 @@
         <item name="android:windowBackground">@color/pink</item>
         <item name="colorPrimary">@color/pink</item>
         <item name="colorPrimaryDark">@color/lightGreen</item>
+        <item name="colorPrimaryDarkTrans">@color/lightGreen20Transparent</item>
 
     </style>
 
@@ -61,6 +65,7 @@
         <item name="android:windowBackground">@color/orange</item>
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/gray</item>
+        <item name="colorPrimaryDarkTrans">@color/gray20Transparent</item>
 
     </style>
 
@@ -73,6 +78,7 @@
         <item name="android:windowBackground">@color/gray</item>
         <item name="colorPrimary">@color/gray</item>
         <item name="colorPrimaryDark">@color/orange</item>
+        <item name="colorPrimaryDarkTrans">@color/orange20Transparent</item>
 
     </style>
 
@@ -85,6 +91,7 @@
         <item name="android:windowBackground">@color/purple</item>
         <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryDark">@color/yellow</item>
+        <item name="colorPrimaryDarkTrans">@color/yellow20Transparent</item>
 
     </style>
 
@@ -97,6 +104,7 @@
         <item name="android:windowBackground">@color/yellow</item>
         <item name="colorPrimary">@color/yellow</item>
         <item name="colorPrimaryDark">@color/purple</item>
+        <item name="colorPrimaryDarkTrans">@color/purple20Transparent</item>
 
     </style>
 
@@ -109,6 +117,7 @@
         <item name="android:windowBackground">@color/darkGreen</item>
         <item name="colorPrimary">@color/darkGreen</item>
         <item name="colorPrimaryDark">@color/brown</item>
+        <item name="colorPrimaryDarkTrans">@color/brown20Transparent</item>
 
     </style>
 
@@ -121,6 +130,7 @@
         <item name="android:windowBackground">@color/brown</item>
         <item name="colorPrimary">@color/brown</item>
         <item name="colorPrimaryDark">@color/darkGreen</item>
+        <item name="colorPrimaryDarkTrans">@color/darkGreen20Transparent</item>
 
     </style>
 

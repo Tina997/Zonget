@@ -26,7 +26,8 @@
                 android:layout_width="104dp"
                 android:layout_height="136dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logo_claro" />
+                app:srcCompat="@drawable/logo"
+                android:tint="?attr/colorPrimary"/>
 
             <TextView
                 android:layout_width="wrap_content"

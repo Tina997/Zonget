@@ -3,11 +3,10 @@
 
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryDarkTrans">#90000000</color>
     <color name="colorAccent">#FFFFFF</color>
 
     <color name="colorBlack">#000000</color>
-
-    <color name="colorPrimaryDarkTrans">#FFFFFF</color>
 
     <color name="aquamarine">#467685</color>
     <color name="lightBlue">#E2F0F5</color>

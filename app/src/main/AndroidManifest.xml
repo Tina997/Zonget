@@ -32,7 +32,7 @@
 
         </activity>
 
-        <activity android:name=".changeTheme.ChangeThemeActivity"></activity>
+        <activity android:name=".changeTheme.ChangeThemeActivity"> </activity>
 
         <activity android:name=".signUp.SignUpActivity"></activity>
 

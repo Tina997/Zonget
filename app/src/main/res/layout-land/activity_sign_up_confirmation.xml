@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sing_up_confirmation_welcome_text_label"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -32,7 +32,7 @@
             android:layout_height="56dp"
             android:gravity="center"
             android:text="@string/sign_up_confirmation_confirmed_email_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="16sp" />
 
         <ImageView
@@ -40,7 +40,8 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/logo_oscuro" />
+            app:srcCompat="@drawable/logo"
+            android:tint="?attr/colorPrimaryDark"/>
 
     </LinearLayout>
 

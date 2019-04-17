@@ -27,7 +27,7 @@
             android:paddingBottom="10dp"
             android:text="@string/sing_up_confirmation_welcome_text_label"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="33sp"
             android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/sign_up_confirmation_confirmed_email_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <Space
@@ -52,7 +52,8 @@
             android:layout_height="252dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logo_oscuro" />
+            app:srcCompat="@drawable/logo"
+            android:tint="?attr/colorPrimaryDark"/>
 
     </LinearLayout>
 

@@ -101,6 +101,9 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
                 return true;
             case R.id.action_settings:
                 return true;
+            case R.id.action_change_theme:
+                presenter.changeThemeButtonPressed();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
