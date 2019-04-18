@@ -19,10 +19,9 @@ public class SignInRouter implements SignInContract.Router {
         this.mediator = mediator;
     }
 
-
     @Override
-    public void setSignInState(SignInState state) {
-        mediator.setSignInState(state);
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
     }
 
     @Override

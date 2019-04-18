@@ -13,6 +13,7 @@ public class SignInPresenter implements SignInContract.Presenter {
     private SignInViewModel viewModel;
     private SignInContract.Model model;
     private SignInContract.Router router;
+    private SignInContract.View vi;
 
     public SignInPresenter(SignInState state) {
         viewModel = state;
@@ -34,13 +35,8 @@ public class SignInPresenter implements SignInContract.Presenter {
     }
 
     @Override
-    public void updateAccountNameEditText(String accountName) {
-        viewModel.accountName = accountName;
-    }
-
-    @Override
-    public void updateAccountPasswordEditText(String accountPassword) {
-        viewModel.accountPassword = accountPassword;
+    public String getActualThemeName() {
+        return router.getActualThemeName();
     }
 
     @Override
@@ -73,11 +69,13 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     @Override
     public void signUpButtonPressed() {
+        view.get().finish();
         router.navigateToSignUpScreen();
     }
 
     @Override
     public void pickForADateButtonPressed() {
+        view.get().finish();
         router.navigateToUserPickDateScreen();
     }
 

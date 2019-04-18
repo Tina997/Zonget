@@ -23,8 +23,17 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
 
+        SignInScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
+        setContentView(R.layout.activity_sign_in);
 
         //Búsqueda de los elementos de la vista
         accountNameEditText = findViewById(R.id.account_name_edit_text);
@@ -35,32 +44,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         askDateButton = findViewById(R.id.ask_date_button);
 
         //Listeners
-        accountNameEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-            @Override
-            public void afterTextChanged(Editable accountName) {
-                presenter.updateAccountNameEditText("" + accountName);
-            }
-        });
-
-        accountPasswordEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-            @Override
-            public void afterTextChanged(Editable accountPassword) {
-                presenter.updateAccountPasswordEditText("" + accountPassword);
-            }
-        });
-
         passwordForgetTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +74,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
             }
         });
 
-        // do the setup
         SignInScreen.configure(this);
     }
 
@@ -103,6 +85,11 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     }
 
     @Override
+    public void finish() {
+        super.finish();
+    }
+
+    @Override
     public void injectPresenter(SignInContract.Presenter presenter) {
         this.presenter = presenter;
     }
@@ -110,8 +97,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
     @Override
     public void displaySignInData(SignInViewModel viewModel) {
-        accountNameEditText.setText(viewModel.accountName);
-        accountNameEditText.setText(viewModel.accountPassword);
     }
 
     @Override

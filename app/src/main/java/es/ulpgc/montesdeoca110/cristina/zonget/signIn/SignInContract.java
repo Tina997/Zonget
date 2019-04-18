@@ -15,6 +15,9 @@ interface SignInContract {
         void displaySignInData(SignInViewModel viewModel);
 
         void displayCheckAccountError();
+
+        void finish();
+
     }
 
     interface Presenter {
@@ -25,9 +28,7 @@ interface SignInContract {
 
         void injectRouter(Router router);
 
-        void updateAccountNameEditText(String accountName);
-
-        void updateAccountPasswordEditText(String accountPassword);
+        String getActualThemeName();
 
         void fetchSignInData();
 
@@ -48,7 +49,9 @@ interface SignInContract {
 
     interface Router {
 
-        void setSignInState(SignInState state);
+        //------------------------- Tema ---------------------
+
+        String getActualThemeName();
 
         //--------------- Navegación entre pantallas -----------
 
