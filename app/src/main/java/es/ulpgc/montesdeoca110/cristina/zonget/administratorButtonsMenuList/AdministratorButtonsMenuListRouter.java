@@ -18,10 +18,8 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
     }
 
     @Override
-    public AdministratorButtonsMenuListState getDataFromSignInScreen() {
-        AdministratorButtonsMenuListState state = new AdministratorButtonsMenuListState();
-        return state;
-
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
     }
 
     // To SignInActivity

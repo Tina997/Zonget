@@ -43,7 +43,7 @@ public interface ChangeThemeContract {
 
     interface Router {
 
-        //------------------------- Theme ---------------------
+        //------------------------- Tema ---------------------
 
         String getActualThemeName();
 

@@ -35,6 +35,11 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void fetchAdministratorButtonsMenuListData() {
 
        model.fetchAdministratorButtonsMenuListData(new RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback() {
@@ -56,6 +61,7 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
 
     @Override
     public void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem button) {
+        view.get().finish();
         MenuToSelectedActivityState state = new MenuToSelectedActivityState();
         router.passDataToSelectedActivityScreen(state);
         router.navigateToSelectedActivityScreen(button.activity);

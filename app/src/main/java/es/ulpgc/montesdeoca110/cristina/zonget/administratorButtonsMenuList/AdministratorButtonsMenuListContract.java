@@ -15,14 +15,19 @@ interface AdministratorButtonsMenuListContract {
 
         void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
 
+        void finish();
+
     }
 
     interface Presenter {
+
         void injectView(WeakReference<View> view);
 
         void injectModel(Model model);
 
         void injectRouter(Router router);
+
+        String getActualThemeName();
 
         void fetchAdministratorButtonsMenuListData();
 
@@ -41,6 +46,10 @@ interface AdministratorButtonsMenuListContract {
 
     interface Router {
 
+        //------------------------- Tema ---------------------
+
+        String getActualThemeName();
+
         //--------------- Navegación entre pantallas -----------
 
         void navigateToSignInScreen();
@@ -55,9 +64,11 @@ interface AdministratorButtonsMenuListContract {
 
         void passDataToSelectedActivityScreen(MenuToSelectedActivityState state);
 
+        //void passDataToChangeThemeScreen();
+
         //------------- Obtener datos entre pantallas ----------
 
-        AdministratorButtonsMenuListState getDataFromSignInScreen();
+        //AdministratorButtonsMenuListState getDataFromSignInScreen();
 
     }
 }

@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -29,6 +26,16 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AdministratorButtonsMenuListScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_administrator_buttons_menu_list);
 
         //Configuracion de la toolBar/actionBar
@@ -37,6 +44,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú");
+
 
         //Listeners
         listAdapter = new AdministratorButtonsMenuListAdapter(new View.OnClickListener() {
@@ -55,16 +63,18 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         GridLayoutManager layoutManager = new GridLayoutManager(this, columns);
         recyclerView.setLayoutManager(layoutManager);
 
-        // do the setup
-        AdministratorButtonsMenuListScreen.configure(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        // do some work
         presenter.fetchAdministratorButtonsMenuListData();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 
     @Override
@@ -94,7 +104,7 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
+
         switch (item.getItemId()) {
             case R.id.action_sign_out:
                 presenter.signOutButtonPressed();
