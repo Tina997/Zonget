@@ -1,7 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation;
 
 import android.content.Context;
-import android.os.AsyncTask;
 
 import java.lang.ref.WeakReference;
 
@@ -35,7 +34,13 @@ public class SignUpConfirmationPresenter implements SignUpConfirmationContract.P
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void backButtonPressed() {
+        view.get().finish();
         router.navigateToSignInScreen();
     }
 

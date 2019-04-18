@@ -172,6 +172,11 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
     }
 
     @Override
+    public void finish() {
+        super.finish();
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         presenter.saveSignUpState();
@@ -214,7 +219,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
+
         switch (item.getItemId()) {
             case android.R.id.home:
                 presenter.backButtonPressed();

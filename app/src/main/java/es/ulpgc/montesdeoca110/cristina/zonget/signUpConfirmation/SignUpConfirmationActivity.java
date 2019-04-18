@@ -21,6 +21,16 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SignUpConfirmationScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_sign_up_confirmation);
 
         //Configuracion de la toolBar/actionBar
@@ -30,18 +40,18 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Registro");
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-
-        // do the setup
-        SignUpConfirmationScreen.configure(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        // do some work
         presenter.fetchSignUpConfirmationData(this);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 
     @Override
@@ -54,7 +64,7 @@ public class SignUpConfirmationActivity extends AppCompatActivity implements Sig
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
+
         switch (item.getItemId()) {
             case android.R.id.home:
                 presenter.backButtonPressed();

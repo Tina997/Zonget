@@ -22,6 +22,11 @@ public class SignUpConfirmationRouter implements SignUpConfirmationContract.Rout
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToSignInScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, SignInActivity.class);

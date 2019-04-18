@@ -14,6 +14,8 @@ interface SignUpConfirmationContract {
 
         void displaySignUpConfirmationData(SignUpConfirmationViewModel viewModel);
 
+        void finish();
+
     }
 
     interface Presenter {
@@ -23,6 +25,8 @@ interface SignUpConfirmationContract {
         void injectModel(Model model);
 
         void injectRouter(Router router);
+
+        String getActualThemeName();
 
         void backButtonPressed();
 
@@ -40,6 +44,10 @@ interface SignUpConfirmationContract {
     interface Router {
 
         void setSignUpConfirmationState(SignUpConfirmationState state);
+
+        //------------------------- Tema ---------------------
+
+        String getActualThemeName();
 
         //--------------- Navegación entre pantallas -----------
 
