@@ -28,6 +28,16 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        UserButtonsMenuListScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_user_buttons_menu_list);
 
         //Configuracion de la toolBar/actionBar
@@ -64,16 +74,18 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         GridLayoutManager layoutManager = new GridLayoutManager(this, columns);
         recyclerView.setLayoutManager(layoutManager);
 
-        // do the setup
-        UserButtonsMenuListScreen.configure(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        // do some work
         presenter.fetchUserButtonsMenuListData();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 
     @Override
@@ -83,7 +95,6 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.user_appbar_buttons_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -95,7 +106,6 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //deal with the data
                 listAdapter.setItems(viewModel.userButtons);
             }
         });
@@ -103,12 +113,14 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_sign_out:
                 presenter.signOutButtonPressed();
                 return true;
             case R.id.action_settings:
+                return true;
+            case R.id.action_change_theme:
+                presenter.changeThemeButtonPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

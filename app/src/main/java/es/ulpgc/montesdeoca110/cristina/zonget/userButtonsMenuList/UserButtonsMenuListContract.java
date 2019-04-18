@@ -4,7 +4,6 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserMenuToUserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -16,6 +15,8 @@ interface UserButtonsMenuListContract {
 
         void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel);
 
+        void finish();
+
     }
 
     interface Presenter {
@@ -26,6 +27,8 @@ interface UserButtonsMenuListContract {
 
         void injectRouter(Router router);
 
+        String getActualThemeName();
+
         void fetchUserButtonsMenuListData();
 
         void signOutButtonPressed();
@@ -33,6 +36,8 @@ interface UserButtonsMenuListContract {
         void pickForADateButtonPressed();
 
         void selectUserButtonsMenuListData(UserButtonMenuItem item);
+
+        void changeThemeButtonPressed();
 
     }
 
@@ -44,6 +49,10 @@ interface UserButtonsMenuListContract {
 
     interface Router {
 
+        //------------------------- Tema ---------------------
+
+        String getActualThemeName();
+
         //--------------- Navegación entre pantallas -----------
 
         void navigateToSignInScreen();
@@ -51,6 +60,8 @@ interface UserButtonsMenuListContract {
         void navigateToSelectedActivityScreen(String activityClassName);
 
         void navigateToUserPickDateScreen();
+
+        void navigateToChangeThemeScreen();
 
         //------------- Paso de datos entre pantallas ----------
 
@@ -62,7 +73,7 @@ interface UserButtonsMenuListContract {
 
         //------------- Obtener datos entre pantallas ----------
 
-        UserButtonsMenuListState getDataFromSignInScreen();
+        //UserButtonsMenuListState getDataFromSignInScreen();
 
     }
 }

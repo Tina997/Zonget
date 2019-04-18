@@ -14,9 +14,9 @@
     <!-- Settings, should always be in the overflow -->
     <item android:id="@+id/action_settings"
         android:title="Ajustes"
-
         app:showAsAction="never" />
 
+    <!-- Change Theme -->
     <item android:id="@+id/action_change_theme"
         android:title="Cambiar tema"
         app:showAsAction="never" />

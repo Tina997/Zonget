@@ -2,7 +2,6 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.PorterDuff;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.LayoutInflater;

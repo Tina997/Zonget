@@ -33,6 +33,11 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void fetchUserButtonsMenuListData() {
 
         model.fetchUserButtonsMenuListData(new RepositoryContract.Settings.GetUserMenuButtonsListCallback() {
@@ -47,6 +52,7 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
 
     @Override
     public void signOutButtonPressed() {
+        view.get().finish();
         router.navigateToSignInScreen();
     }
 
@@ -59,6 +65,11 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     @Override
     public void selectUserButtonsMenuListData(UserButtonMenuItem button) {
         router.navigateToSelectedActivityScreen(button.activity);
+    }
+
+    @Override
+    public void changeThemeButtonPressed() {
+        router.navigateToChangeThemeScreen();
     }
 
 }

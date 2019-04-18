@@ -54,6 +54,8 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
         context.startActivity(intent);
     }
 
+    // To ChangeTheme
+
     @Override
     public void navigateToChangeThemeScreen() {
         Context context = mediator.getApplicationContext();
