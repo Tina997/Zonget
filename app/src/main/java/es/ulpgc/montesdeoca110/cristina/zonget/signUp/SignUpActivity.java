@@ -30,6 +30,16 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SignUpScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_sign_up);
 
         //Configuracion de la toolBar/actionBar
@@ -152,8 +162,6 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
             }
         });
 
-        // do the setup
-        SignUpScreen.configure(this);
     }
 
     @Override

@@ -13,7 +13,6 @@ public class SignInPresenter implements SignInContract.Presenter {
     private SignInViewModel viewModel;
     private SignInContract.Model model;
     private SignInContract.Router router;
-    private SignInContract.View vi;
 
     public SignInPresenter(SignInState state) {
         viewModel = state;
@@ -58,6 +57,7 @@ public class SignInPresenter implements SignInContract.Presenter {
             public void setCheckAccountExist(boolean exist, AccountItem account) {
                 if(exist){
                     SignInToMenuState state = new SignInToMenuState(account);
+                    view.get().finish();
                     router.passDataToMenuScreen(state);
                     router.navigateToMenuScreen();
                 } else{

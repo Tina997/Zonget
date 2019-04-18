@@ -36,7 +36,13 @@ public class SignUpPresenter implements SignUpContract.Presenter {
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void backButtonPressed() {
+        view.get().finish();
         router.navigateToSinInScreen();
     }
 
@@ -132,6 +138,7 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                             state.accountDni = viewModel.accountDni;
                             state.accountEmail = viewModel.accountEmail;
 
+                            view.get().finish();
                             router.passDataSignUpConfirmationScreen(state);
                             router.navigateToSignUpConfirmationScreen();
 

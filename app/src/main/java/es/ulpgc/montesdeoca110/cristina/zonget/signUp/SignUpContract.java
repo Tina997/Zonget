@@ -17,6 +17,9 @@ interface SignUpContract {
         void displayAlertMesaje(String mesaje);
 
         void displayInsertNewAccountMesaje(String mesaje);
+
+        void finish();
+
     }
 
     interface Presenter {
@@ -26,6 +29,8 @@ interface SignUpContract {
         void injectModel(Model model);
 
         void injectRouter(Router router);
+
+        String getActualThemeName();
 
         void backButtonPressed();
 
@@ -65,6 +70,10 @@ interface SignUpContract {
     interface Router {
 
         void setSignUpState(SignUpState state);
+
+        //------------------------- Tema ---------------------
+
+        String getActualThemeName();
 
         //--------------- Navegación entre pantallas -----------
 

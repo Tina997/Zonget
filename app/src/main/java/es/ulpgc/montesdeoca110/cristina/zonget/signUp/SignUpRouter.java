@@ -23,6 +23,11 @@ public class SignUpRouter implements SignUpContract.Router {
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToSinInScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, SignInActivity.class);
