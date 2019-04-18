@@ -3,7 +3,6 @@ package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.ThemeState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public interface ChangeThemeContract {
@@ -14,11 +13,12 @@ public interface ChangeThemeContract {
 
         void displayChangeThemeListData(ChangeThemeViewModel viewModel);
 
+        void reboot();
+
+        void finish();
     }
 
     interface Presenter {
-
-        String getActualThemeName();
 
         void injectView(WeakReference<View> view);
 
@@ -26,10 +26,13 @@ public interface ChangeThemeContract {
 
         void injectRouter(Router router);
 
+        String getActualThemeName();
+
         void fetchChangeThemeListData();
 
         void selectChangeThemeListData(ChangeThemeItem item);
 
+        void backButtonPressed();
     }
 
     interface Model {
@@ -40,15 +43,15 @@ public interface ChangeThemeContract {
 
     interface Router {
 
-        // ----------------------- Tema ------------------------
+        //------------------------- Theme ---------------------
 
-        ThemeState getActualThemestate();
+        String getActualThemeName();
 
-        void setNewThemeName(ThemeState state);
+        void changeActualTheme(String themeName);
 
         //--------------- Navegación entre pantallas -----------
 
-        void navigateToNextScreen();
+        void navigateToMenuScreen();
 
         //------------- Paso de datos entre pantallas ----------
 

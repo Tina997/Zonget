@@ -10,7 +10,6 @@ public class ChangeThemeModel implements ChangeThemeContract.Model {
         this.repository = repository;
     }
 
-
     @Override
     public void fetchChangeThemeListData(final RepositoryContract.Settings.GetChangeThemeListCallback callback) {
         repository.loadZonget(new RepositoryContract.Settings.FecthZongetDataCallback() {
@@ -22,4 +21,5 @@ public class ChangeThemeModel implements ChangeThemeContract.Model {
             }
         });
     }
+
 }

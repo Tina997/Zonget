@@ -2,6 +2,7 @@ package es.ulpgc.motesdeoca110.cristina.zonget.data;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,6 +32,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
     public static final String JSON_ADMINISTRATOR = "administratorButtonsMenu";
     public static final String JSON_USER = "userButtonsMenu";
 
+    private String actualThemeName;
     private List<ChangeThemeItem> themeList;
     private List<AdministratorButtonMenuItem> administratorButtonsMenuList;
     private List<UserButtonMenuItem> userButtonsMenuList;

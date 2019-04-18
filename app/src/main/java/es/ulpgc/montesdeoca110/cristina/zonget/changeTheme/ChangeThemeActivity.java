@@ -1,17 +1,16 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
-import android.icu.text.RelativeDateTimeFormatter;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
-
 
 public class ChangeThemeActivity extends AppCompatActivity implements ChangeThemeContract.View {
 
@@ -26,16 +25,14 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //TODO buscar el problema
-        //Theme
-        /*
-        String themeName = presenter.getActualThemeName();
+        ChangeThemeScreen.configure(this);
 
-        if (themeName != ""){
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
             int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
             setTheme(themeID);
         }
-        */
 
         setContentView(R.layout.activity_change_theme);
 
@@ -45,6 +42,7 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Temas");
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //Listeners
         listAdapter = new ChangeThemeAdapter(new View.OnClickListener() {
@@ -62,7 +60,6 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
 
-        ChangeThemeScreen.configure(this);
     }
 
     @Override
@@ -87,6 +84,29 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
                 listAdapter.setItems(viewModel.themeList);
             }
         });
+    }
+
+    @Override
+    public void reboot() {
+        finish();
+        startActivity(getIntent());
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                presenter.backButtonPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

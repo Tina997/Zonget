@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.app.Application;
+import android.util.Log;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.addLostPet.AddLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.addPetForAdoption.AddPetForAdoptionState;
@@ -39,7 +40,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailStat
 
 public class AppMediator extends Application {
 
-    private ThemeState themeState;
+    private String actualThemeName;
 
     //Estados de las distintas activities de la aplicación
 
@@ -117,8 +118,6 @@ public class AppMediator extends Application {
 
         //Inicialización de los estados
 
-        themeState = new ThemeState();
-
         signInState = new SignInState();
         signUpState = new SignUpState();
         signUpConfirmationState = new SignUpConfirmationState();
@@ -134,14 +133,13 @@ public class AppMediator extends Application {
     }
 
     //Theme
-    public ThemeState getThemeState() {
-        return themeState;
+    public String getactualThemeName() {
+        return actualThemeName;
     }
 
-    public void setThemeState(ThemeState themeState) {
-        this.themeState = themeState;
+    public void setActualThemeName(String themeState) {
+        this.actualThemeName = themeState;
     }
-
 
     //PetsListUser
 

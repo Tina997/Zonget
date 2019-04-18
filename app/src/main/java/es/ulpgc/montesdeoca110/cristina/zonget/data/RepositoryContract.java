@@ -25,8 +25,8 @@ public interface RepositoryContract {
             void setChangeThemeList(List<ChangeThemeItem> themeList);
         }
 
-        void getChangeThemeList(SettingsRepository.GetChangeThemeListCallback callback);
 
+        void getChangeThemeList(SettingsRepository.GetChangeThemeListCallback callback);
 
         // ---------------- Administrator ------------------
         interface GetAdministratorMenuButtonsListCallback {
@@ -41,7 +41,6 @@ public interface RepositoryContract {
         }
 
         void getUserMenuButtonsList(SettingsRepository.GetUserMenuButtonsListCallback callback);
-
 
     }
 
