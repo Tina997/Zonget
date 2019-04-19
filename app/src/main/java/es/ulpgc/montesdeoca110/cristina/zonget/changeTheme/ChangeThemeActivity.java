@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -89,12 +90,20 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
     @Override
     public void reboot() {
         finish();
-        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+        Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 
     @Override
     public void finish() {
         super.finish();
+    }
+
+    @Override
+    public void onBackButtonPressed() {
+        onBackPressed();
     }
 
     @Override

@@ -1,9 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
@@ -39,7 +42,10 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
 
     @Override
     public void backButtonPressed() {
+        ChangeThemeToMenuState state = new ChangeThemeToMenuState();
+        state.themeChanged = viewModel.themeChanged;
         view.get().finish();
+        router.passDataToMenuScreen(state);
         router.navigateToMenuScreen();
     }
 
@@ -56,6 +62,7 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
     @Override
     public void selectChangeThemeListData(ChangeThemeItem item) {
         router.changeActualTheme(item.themeName);
+        viewModel.themeChanged = item.themeName;
         view.get().reboot();
     }
 }

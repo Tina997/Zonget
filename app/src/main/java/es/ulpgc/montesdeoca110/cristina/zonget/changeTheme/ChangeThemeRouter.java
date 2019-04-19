@@ -5,6 +5,7 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 
 public class ChangeThemeRouter implements ChangeThemeContract.Router {
@@ -48,8 +49,8 @@ public class ChangeThemeRouter implements ChangeThemeContract.Router {
     }
 
     @Override
-    public void passDataToNextScreen(ChangeThemeState state) {
-        mediator.setChangeThemeState(state);
+    public void passDataToMenuScreen(ChangeThemeToMenuState state) {
+        mediator.setChangeThemeToMenuState(state);
     }
 
     @Override

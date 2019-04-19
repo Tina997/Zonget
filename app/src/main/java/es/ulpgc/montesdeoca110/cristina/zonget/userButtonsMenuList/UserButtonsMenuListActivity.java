@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import java.lang.reflect.Method;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
@@ -79,13 +83,21 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     @Override
     protected void onResume() {
         super.onResume();
-
+        presenter.checkThemeChanged();
         presenter.fetchUserButtonsMenuListData();
     }
 
     @Override
     public void finish() {
         super.finish();
+    }
+
+    @Override
+    public void reboot() {
+        finish();
+        Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 
     @Override
@@ -109,6 +121,24 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
                 listAdapter.setItems(viewModel.userButtons);
             }
         });
+    }
+
+    @Override
+    public String getActualThemeName() {
+        String currentThemeName = getResources().getResourceName(getThemeId());
+        return currentThemeName;
+    }
+
+    private int getThemeId() {
+        try {
+            Class<?> wrapper = Context.class;
+            Method method = wrapper.getMethod("getThemeResId");
+            method.setAccessible(true);
+            return (Integer) method.invoke(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     @Override

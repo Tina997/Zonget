@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -64,12 +65,25 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
 
     @Override
     public void selectUserButtonsMenuListData(UserButtonMenuItem button) {
+        view.get().finish();
         router.navigateToSelectedActivityScreen(button.activity);
     }
 
     @Override
     public void changeThemeButtonPressed() {
         router.navigateToChangeThemeScreen();
+    }
+
+    @Override
+    public void checkThemeChanged() {
+        ChangeThemeToMenuState state = router.getDataFromChangeThemeScreen();
+        if (state != null){
+            //Todo Apaño temporal
+            String completeThemename = "es.ulpc.montesdeoca110.cristina.zonget.complete:style/" + state.themeChanged;
+            if (!view.get().getActualThemeName().equals(completeThemename)){
+                view.get().reboot();
+            }
+        }
     }
 
 }

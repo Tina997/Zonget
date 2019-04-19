@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
@@ -14,6 +15,10 @@ interface UserButtonsMenuListContract {
         void injectPresenter(Presenter presenter);
 
         void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel);
+
+        String getActualThemeName();
+
+        void reboot();
 
         void finish();
 
@@ -38,6 +43,8 @@ interface UserButtonsMenuListContract {
         void selectUserButtonsMenuListData(UserButtonMenuItem item);
 
         void changeThemeButtonPressed();
+
+        void checkThemeChanged();
 
     }
 
@@ -74,6 +81,8 @@ interface UserButtonsMenuListContract {
         //------------- Obtener datos entre pantallas ----------
 
         //UserButtonsMenuListState getDataFromSignInScreen();
+
+        ChangeThemeToMenuState getDataFromChangeThemeScreen();
 
     }
 }

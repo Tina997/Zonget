@@ -107,6 +107,7 @@ public class AppMediator extends Application {
 
     private SplashToSignInState splashToSignInState;
     private SignInToMenuState signInToMenuState;
+    private ChangeThemeToMenuState changeThemeToMenuState;
     private MenuToSignInState menuToSignInState;
     private SignUpToSignUpConfirmationState signUpToSignUpConfirmationState;
     private MenuToSelectedActivityState menuToSelectedActivityState;
@@ -353,6 +354,15 @@ public class AppMediator extends Application {
 
     public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
         this.signInToMenuState = signInToMenuState;
+    }
+
+    //ChangeThemeToMenu
+    public ChangeThemeToMenuState getChangeThemeToMenuState() {
+        return changeThemeToMenuState;
+    }
+
+    public void setChangeThemeToMenuState(ChangeThemeToMenuState changeThemeToMenuState) {
+        this.changeThemeToMenuState = changeThemeToMenuState;
     }
 
     //SignUpToSignUpConfirmation

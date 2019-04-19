@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
@@ -14,6 +15,10 @@ interface AdministratorButtonsMenuListContract {
         void injectPresenter(Presenter presenter);
 
         void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
+
+        String getActualThemeName();
+
+        void reboot();
 
         void finish();
 
@@ -36,10 +41,13 @@ interface AdministratorButtonsMenuListContract {
         void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
 
         void changeThemeButtonPressed();
+
+        void checkThemeChanged();
     }
 
     interface Model {
 
+        
         void fetchAdministratorButtonsMenuListData(RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
 
     }
@@ -69,6 +77,8 @@ interface AdministratorButtonsMenuListContract {
         //------------- Obtener datos entre pantallas ----------
 
         //AdministratorButtonsMenuListState getDataFromSignInScreen();
+
+        ChangeThemeToMenuState getDataFromChangeThemeScreen();
 
     }
 }

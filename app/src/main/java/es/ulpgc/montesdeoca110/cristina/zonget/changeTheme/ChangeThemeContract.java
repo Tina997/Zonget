@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public interface ChangeThemeContract {
@@ -16,6 +17,8 @@ public interface ChangeThemeContract {
         void reboot();
 
         void finish();
+
+        void onBackButtonPressed();
     }
 
     interface Presenter {
@@ -55,7 +58,7 @@ public interface ChangeThemeContract {
 
         //------------- Paso de datos entre pantallas ----------
 
-        void passDataToNextScreen(ChangeThemeState state);
+        void passDataToMenuScreen(ChangeThemeToMenuState state);
 
         //------------- Obtener datos entre pantallas ----------
 
