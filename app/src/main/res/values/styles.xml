@@ -138,22 +138,22 @@
 
     <!--Dialog Theme-->
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">?attr/colorPrimaryDark</item>
     </style>
 
     <!-- Calendar theme. -->
     <style name="AppTheme.Calendar">
         <item name="android:statusBarColor">@color/colorBlack</item>
-        <item name="colorControlNormal">@color/colorPrimary</item>
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">?attr/colorPrimary</item>
+        <item name="colorPrimary">?attr/colorPrimaryDark</item>
+        <item name="colorAccent">?attr/colorPrimaryDark</item>
     </style>
 
     <!-- SpotsDialogProgress Theme -->
     <style name="SentEmailDialogProgressTheme" parent="android:Theme.DeviceDefault.Light.Dialog.Alert">
         <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
         <item name="DialogTitleText">Espere por favor</item>
-        <item name="DialogSpotColor">@color/colorPrimaryDark</item>
+        <item name="DialogSpotColor">?attr/colorPrimaryDark</item>
         <item name="DialogSpotCount">5</item>
     </style>
 
