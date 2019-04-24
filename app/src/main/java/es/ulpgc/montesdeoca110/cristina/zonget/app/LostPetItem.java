@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class LostPetItem {
 
     public int id;
+    public String name;
     public String picture;
     public String date;
     public String breed;

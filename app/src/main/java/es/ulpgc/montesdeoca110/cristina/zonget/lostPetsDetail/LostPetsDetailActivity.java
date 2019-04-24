@@ -77,6 +77,7 @@ public class LostPetsDetailActivity
         LostPetItem lostPetItem = viewModel.lostPetItem;
         // deal with the data
         loadImageFromURL((ImageView) findViewById(R.id.lost_pet_image), lostPetItem.picture);
+        ((TextView)findViewById(R.id.lost_pet_name)).setText(lostPetItem.name);
         ((TextView) findViewById(R.id.lost_pet_date)).setText(lostPetItem.date);
         ((TextView) findViewById(R.id.lost_pet_breed)).setText(lostPetItem.breed);
         ((TextView) findViewById(R.id.lost_pet_chipNum)).setText(lostPetItem.chipNum);

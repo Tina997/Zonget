@@ -65,7 +65,29 @@
                     android:onClick="takePicture"/>
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/insert_lost_pet_name_label"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <EditText
+                android:layout_width="217dp"
+                android:layout_height="34dp"
+                android:background="@color/colorPrimaryDarkTrans"
+                android:hint="@string/insert_lost_pet_name"
+                android:paddingLeft="20dp"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="20dp" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,6 +111,7 @@
                 android:textColorHint="@color/colorAccent"
                 android:textSize="20dp" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

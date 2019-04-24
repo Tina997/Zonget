@@ -122,6 +122,8 @@
     <string name="insert_lost_pet_breed">Introduzca raza</string>
     <string name="details_mock">Color, manchas, lunares, cicatrices, etc.</string>
     <string name="phone_mock">XXX-XXX-XXX</string>
+    <string name="insert_lost_pet_name">Introduzca nombre</string>
+    <string name="insert_lost_pet_name_label">Nombre:</string>
 
 
     <!-- Array-->

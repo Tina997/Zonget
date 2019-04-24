@@ -2,6 +2,7 @@
   "lostPets": [
     {
       "id": 1,
+      "name": "Momo",
       "picture": "https://www.freejpg.com.ar/image-900/65/65ab/F100011060-gato.jpg",
       "date": "10/03/2018",
       "breed": "Común europeo",
@@ -11,6 +12,7 @@
     },
     {
       "id": 2,
+      "name":"Chiqui",
       "picture": "https://www.freejpg.com.ar/image-900/89/8958/F100011606-gato_relajandose_en_el_sillon.jpg",
       "date": "20/03/2018",
       "breed": "Común europeo",
