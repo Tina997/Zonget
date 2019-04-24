@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
+    android:layout_width="450dp"
     android:layout_height="300dp"
     android:orientation="horizontal"
     android:padding="10dp"
@@ -8,7 +8,7 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
@@ -21,13 +21,6 @@
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Aquí va el título"
-            android:textColor="@color/colorPrimaryDark"/>
-
-        <TextView
             android:id="@+id/descriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,25 +29,12 @@
             android:layout_marginTop="14dp"/>
 
         <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Aquí va la descripción"
-            android:textColor="@color/colorPrimaryDark"/>
-
-        <TextView
             android:id="@+id/additionalDescriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/additional_description_text"
             android:textColor="@color/colorPrimaryDark"
             android:layout_marginTop="14dp"/>
-        <TextView
-            android:id="@+id/additionalDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Aquí va la descripción"
-            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:id="@+id/dateText"
@@ -64,14 +44,45 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_marginTop="14dp"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aquí va el título"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aquí va la descripción"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="14dp"/>
+
+        <TextView
+            android:id="@+id/additionalDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aquí va la descripción"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="14dp"/>
+
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Aquí va la hora"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="14dp"/>
 
     </LinearLayout>
-
 
 </LinearLayout>
