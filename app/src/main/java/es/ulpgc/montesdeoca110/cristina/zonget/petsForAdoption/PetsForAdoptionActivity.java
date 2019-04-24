@@ -46,7 +46,7 @@ public class PetsForAdoptionActivity
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.category_list);
+        RecyclerView recyclerView = findViewById(R.id.lost_pet_list);
         recyclerView.setAdapter(listAdapter);
 
         // do the setup

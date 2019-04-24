@@ -7,4 +7,6 @@
     <!-- AdministratorButtonsMenuActivity -->
     <integer name="user_grid_colums">3</integer>
 
+    <!-- LostPetListctivity -->
+    <integer name="lost_pet_grid_colums">4</integer>
 </resources>

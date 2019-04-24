@@ -4,15 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 
 public class LostPetsListActivity
@@ -47,8 +46,11 @@ public class LostPetsListActivity
 
             }
         });
-        RecyclerView recyclerView = findViewById(R.id.category_list);
+        RecyclerView recyclerView = findViewById(R.id.lost_pet_list);
         recyclerView.setAdapter(listAdapter);
+        int columns = getResources().getInteger(R.integer.lost_pet_grid_colums);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, columns);
+        recyclerView.setLayoutManager(layoutManager);
         // do the setup
         LostPetsListScreen.configure(this);
     }
