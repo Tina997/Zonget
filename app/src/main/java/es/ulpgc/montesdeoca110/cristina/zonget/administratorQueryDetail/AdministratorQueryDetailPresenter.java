@@ -56,6 +56,11 @@ public class AdministratorQueryDetailPresenter implements AdministratorQueryDeta
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void navigateToAdministratorQueryAnswerScreen(){
         router.navigateToAdministratorQueryAnswerScreen();
     }

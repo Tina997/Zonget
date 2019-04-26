@@ -24,6 +24,17 @@ public class AddPetForAdoptionActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AddPetForAdoptionScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
+
         setContentView(R.layout.activity_add_pet_for_adoption);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -35,8 +46,6 @@ public class AddPetForAdoptionActivity
             actionBar.setTitle(R.string.add_pet_tittle);
         }
 
-        // do the setup
-        AddPetForAdoptionScreen.configure(this);
     }
 
     @Override

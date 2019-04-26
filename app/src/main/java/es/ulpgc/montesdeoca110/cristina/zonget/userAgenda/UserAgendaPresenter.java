@@ -49,5 +49,10 @@ public class UserAgendaPresenter implements UserAgendaContract.Presenter {
 
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

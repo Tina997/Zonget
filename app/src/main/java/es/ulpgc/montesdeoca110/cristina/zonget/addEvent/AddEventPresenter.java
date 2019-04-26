@@ -54,6 +54,11 @@ public class AddEventPresenter implements AddEventContract.Presenter {
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void addEvent(){
         router.navigateToAdministratorAgendaScreen();
     }

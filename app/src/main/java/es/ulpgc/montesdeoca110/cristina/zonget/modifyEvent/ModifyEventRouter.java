@@ -35,6 +35,11 @@ public class ModifyEventRouter implements ModifyEventContract.Router {
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToAdministratorAgendaScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorAgendaActivity.class);

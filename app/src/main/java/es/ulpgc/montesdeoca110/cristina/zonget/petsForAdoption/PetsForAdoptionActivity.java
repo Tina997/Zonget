@@ -27,6 +27,16 @@ public class PetsForAdoptionActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        PetsForAdoptionScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_pets_for_adoption);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,11 +56,9 @@ public class PetsForAdoptionActivity
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.lost_pet_list);
+        RecyclerView recyclerView = findViewById(R.id.pets_for_adoption_list);
         recyclerView.setAdapter(listAdapter);
 
-        // do the setup
-        PetsForAdoptionScreen.configure(this);
     }
 
     @Override

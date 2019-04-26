@@ -23,6 +23,16 @@ public class AdministratorQueryAnswerActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AdministratorQueryAnswerScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_administrator_query_answer);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -35,8 +45,6 @@ public class AdministratorQueryAnswerActivity
             actionBar.setTitle(getString(R.string.administrator_query_answer_activity_name));
         }
 
-        // do the setup
-        AdministratorQueryAnswerScreen.configure(this);
     }
 
     @Override

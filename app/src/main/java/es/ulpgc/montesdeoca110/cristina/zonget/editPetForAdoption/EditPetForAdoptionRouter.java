@@ -36,6 +36,11 @@ public class EditPetForAdoptionRouter implements EditPetForAdoptionContract.Rout
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToPetForAdoptionDetailScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, PetsForAdoptionDetailActivity.class);

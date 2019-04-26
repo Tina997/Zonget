@@ -32,4 +32,9 @@ public class UserAgendaRouter implements UserAgendaContract.Router {
         UserAgendaState state = mediator.getUserAgendaState();
         return state;
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

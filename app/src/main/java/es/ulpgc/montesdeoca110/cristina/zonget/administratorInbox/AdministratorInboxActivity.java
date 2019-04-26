@@ -27,6 +27,17 @@ public class AdministratorInboxActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AdministratorInboxScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
+
         setContentView(R.layout.activity_administrator_inbox);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -49,8 +60,6 @@ public class AdministratorInboxActivity
         recyclerView = findViewById(R.id.inbox_list);
         recyclerView.setAdapter(listAdapter);
 
-        // do the setup
-       AdministratorInboxScreen.configure(this);
 
     }
 

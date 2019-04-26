@@ -25,6 +25,8 @@ interface PetsForAdoptionContract {
         void selectPet(PetForAdoptionItem petForAdoptionItem);
 
         void gotToAddLostPet();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -39,5 +41,7 @@ interface PetsForAdoptionContract {
         PetsForAdoptionState getDataFromPreviousScreen();
 
         void navigateToAddLostPetScreen();
+
+        String getActualThemeName();
     }
 }

@@ -33,6 +33,16 @@ public class AdministratorAgendaActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AdministratorAgendaScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_administrator_agenda);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -64,8 +74,6 @@ public class AdministratorAgendaActivity
 
         selectedDate.setText(date);
 
-        // do the setup
-        AdministratorAgendaScreen.configure(this);
     }
 
     @Override

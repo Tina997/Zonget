@@ -34,6 +34,16 @@ public class UserAgendaActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        UserAgendaScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_user_agenda);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -65,9 +75,6 @@ public class UserAgendaActivity
 
         selectedDate.setText(date);
 
-
-        // do the setup
-        UserAgendaScreen.configure(this);
     }
 
     @Override

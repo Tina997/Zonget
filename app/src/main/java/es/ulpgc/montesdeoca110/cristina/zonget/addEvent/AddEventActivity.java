@@ -23,6 +23,17 @@ public class AddEventActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AddEventScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
+
         setContentView(R.layout.activity_add_event);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -35,8 +46,6 @@ public class AddEventActivity
             actionBar.setTitle(getString(R.string.addEvent_activity_name));
         }
 
-        // do the setup
-        AddEventScreen.configure(this);
     }
 
     @Override

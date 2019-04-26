@@ -54,6 +54,11 @@ public class ModifyEventPresenter implements ModifyEventContract.Presenter {
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void modifyEvent(){
         router.navigateToAdministratorAgendaScreen();
     }

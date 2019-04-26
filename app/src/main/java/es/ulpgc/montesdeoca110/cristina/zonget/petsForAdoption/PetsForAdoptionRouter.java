@@ -39,6 +39,11 @@ public class PetsForAdoptionRouter implements PetsForAdoptionContract.Router {
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToAddLostPetScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AddPetForAdoptionActivity.class);

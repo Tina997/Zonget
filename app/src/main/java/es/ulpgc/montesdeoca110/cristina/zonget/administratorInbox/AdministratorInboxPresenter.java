@@ -52,6 +52,11 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void goToAdministratorQueryDetailScreen(){
         router.navigateToAdministratorQueryDetailScreen();
     }

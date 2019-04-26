@@ -36,6 +36,11 @@ public class AdministratorQueryAnswerRouter implements AdministratorQueryAnswerC
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToAdministratorInboxScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorInboxActivity.class);

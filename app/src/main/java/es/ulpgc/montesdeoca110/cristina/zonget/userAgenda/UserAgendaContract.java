@@ -21,6 +21,8 @@ interface UserAgendaContract {
         void injectRouter(Router router);
 
         void fetchEventListData();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -33,5 +35,7 @@ interface UserAgendaContract {
         void passDataToNextScreen(UserAgendaState state);
 
         UserAgendaState getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

@@ -37,6 +37,11 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
         return null;
     }
 
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
     //Navegar entre pantallas
     @Override
     public void navigateToAddEventScreen(){

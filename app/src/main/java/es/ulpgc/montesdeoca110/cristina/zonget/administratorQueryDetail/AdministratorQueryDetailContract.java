@@ -20,6 +20,8 @@ interface AdministratorQueryDetailContract {
         void fetchData();
 
         void navigateToAdministratorQueryAnswerScreen();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -34,5 +36,7 @@ interface AdministratorQueryDetailContract {
         AdministratorQueryDetailState getDataFromPreviousScreen();
 
         void navigateToAdministratorQueryAnswerScreen();
+
+        String getActualThemeName();
     }
 }

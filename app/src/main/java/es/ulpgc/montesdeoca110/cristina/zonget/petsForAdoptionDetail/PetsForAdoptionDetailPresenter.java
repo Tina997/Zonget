@@ -47,6 +47,11 @@ public class PetsForAdoptionDetailPresenter implements PetsForAdoptionDetailCont
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void onEditButtonClicked(){
         router.navigateToEditPetForAdoptionScreen();
     }

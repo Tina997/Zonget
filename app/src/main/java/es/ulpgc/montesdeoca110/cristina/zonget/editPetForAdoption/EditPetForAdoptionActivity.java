@@ -25,6 +25,15 @@ public class EditPetForAdoptionActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        EditPetForAdoptionScreen.configure(this);
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_edit_pet_for_adoption);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -36,8 +45,7 @@ public class EditPetForAdoptionActivity
             actionBar.setTitle(R.string.edit_pet_tittle);
         }
 
-        // do the setup
-        EditPetForAdoptionScreen.configure(this);
+
     }
 
     @Override

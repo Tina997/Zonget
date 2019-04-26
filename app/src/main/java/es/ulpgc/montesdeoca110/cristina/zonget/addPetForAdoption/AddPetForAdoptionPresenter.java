@@ -56,6 +56,11 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public  void onAcceptButtonClicked(){
         router.navigateToPetForAdoptionDetailScreen();
     }

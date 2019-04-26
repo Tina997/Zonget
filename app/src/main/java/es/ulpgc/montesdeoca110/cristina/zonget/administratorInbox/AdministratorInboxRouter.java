@@ -36,6 +36,11 @@ public class AdministratorInboxRouter implements AdministratorInboxContract.Rout
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToAdministratorQueryDetailScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorQueryDetailActivity.class);

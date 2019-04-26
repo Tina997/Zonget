@@ -29,6 +29,8 @@ interface AdministratorAgendaContract {
         void gotToAddEvent();
 
         void navigateToModifyEventScreen();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -46,5 +48,7 @@ interface AdministratorAgendaContract {
         void navigateToAddEventScreen();
 
         void navigateToModifyEventScreen();
+
+        String getActualThemeName();
     }
 }

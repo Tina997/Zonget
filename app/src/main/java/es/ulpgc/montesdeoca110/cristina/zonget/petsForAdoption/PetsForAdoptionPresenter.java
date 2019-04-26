@@ -46,6 +46,11 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
     }
 
     @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
+    @Override
     public void selectPet(PetForAdoptionItem petForAdoptionItem){
         router.passDataToDetailScreen(petForAdoptionItem);
         router.navigateToNextScreen();

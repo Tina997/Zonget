@@ -22,6 +22,8 @@ interface ModifyEventContract {
         void modifyEvent();
 
         void navigateToAdministratorAgendaScreen();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -36,5 +38,7 @@ interface ModifyEventContract {
         ModifyEventState getDataFromPreviousScreen();
 
         void navigateToAdministratorAgendaScreen();
+
+        String getActualThemeName();
     }
 }

@@ -22,6 +22,8 @@ interface AddEventContract {
         void addEvent();
 
         void navigateToAdministratorAgendaScreen();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -36,5 +38,7 @@ interface AddEventContract {
         AddEventState getDataFromPreviousScreen();
 
         void navigateToAdministratorAgendaScreen();
+
+        String getActualThemeName();
     }
 }

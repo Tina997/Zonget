@@ -36,6 +36,11 @@ public class AdministratorQueryDetailRouter implements AdministratorQueryDetailC
     }
 
     @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
+    @Override
     public void navigateToAdministratorQueryAnswerScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AdministratorQueryAnswerActivity.class);
