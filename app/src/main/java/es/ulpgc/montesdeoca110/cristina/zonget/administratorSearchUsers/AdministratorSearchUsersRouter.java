@@ -36,4 +36,9 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
         AdministratorSearchUsersState state = mediator.getadminSearchUsersState();
         return state;
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

@@ -52,5 +52,10 @@ public class UserPickDatePresenter implements UserPickDateContract.Presenter {
 
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

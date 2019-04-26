@@ -18,6 +18,8 @@ interface AddLostPetContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface AddLostPetContract {
         void passDataToNextScreen(AddLostPetState state);
 
         AddLostPetState getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

@@ -58,5 +58,10 @@ public class AdministratorUsersPetsListPresenter implements AdministratorUsersPe
         router.navigateToAddScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

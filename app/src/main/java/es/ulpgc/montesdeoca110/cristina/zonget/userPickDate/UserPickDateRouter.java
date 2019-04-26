@@ -34,4 +34,9 @@ public class UserPickDateRouter implements UserPickDateContract.Router {
         return state;
 
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

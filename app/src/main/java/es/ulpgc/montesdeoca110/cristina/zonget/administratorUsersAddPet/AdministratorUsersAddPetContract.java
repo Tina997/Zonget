@@ -20,6 +20,8 @@ interface AdministratorUsersAddPetContract {
         void fetchData();
 
         void insertNewPet();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -32,5 +34,7 @@ interface AdministratorUsersAddPetContract {
         void passDataToNextScreen(AdministratorUsersAddPetState state);
 
         AdministratorUsersAddPetState getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

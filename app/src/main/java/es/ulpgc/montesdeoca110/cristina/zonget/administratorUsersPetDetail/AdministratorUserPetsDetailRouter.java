@@ -58,4 +58,9 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
         context.startActivity(intent);
     }
 
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
+
 }

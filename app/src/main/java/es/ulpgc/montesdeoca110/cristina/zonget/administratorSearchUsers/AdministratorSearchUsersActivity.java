@@ -30,6 +30,15 @@ public class AdministratorSearchUsersActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AdministratorSearchUsersScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+
         setContentView(R.layout.activity_administrator_search_users);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

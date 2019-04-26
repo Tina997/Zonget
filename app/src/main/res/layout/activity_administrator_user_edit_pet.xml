@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".administratorUserEditPet.AdministratorUserEditPetActivity"
-    android:background="@color/colorPrimary">
+    android:background="?attr/colorPrimary">
     <include layout="@layout/toolbar"></include>
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,17 +17,17 @@
             android:layout_height="wrap_content"
             android:paddingLeft="40dp"
             android:text="@string/insert_name_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
 
         <EditText
             android:layout_width="217dp"
             android:layout_height="34dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:hint="@string/pet_name"
             android:paddingLeft="20dp"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
+            android:textColor="?attr/colorAccent"
+            android:textColorHint="?attr/colorAccent"
             android:textSize="20dp" />
     </LinearLayout>
     <LinearLayout
@@ -41,14 +41,14 @@
             android:layout_height="wrap_content"
             android:paddingLeft="40dp"
             android:text="@string/species_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
         <EditText
             android:layout_width="217dp"
             android:layout_height="34dp"
-            android:background="@color/colorPrimaryDarkTrans"
-            android:textColorHint="@color/colorAccent"
-            android:textColor="@color/colorAccent"
+            android:background="?attr/colorPrimaryDarkTrans"
+            android:textColorHint="?attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/pet_species"
             android:textSize="20dp"
             android:paddingLeft="20dp"/>
@@ -64,14 +64,14 @@
             android:layout_height="wrap_content"
             android:paddingLeft="40dp"
             android:text="@string/breed_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
         <EditText
             android:layout_width="217dp"
             android:layout_height="34dp"
-            android:background="@color/colorPrimaryDarkTrans"
-            android:textColorHint="@color/colorAccent"
-            android:textColor="@color/colorAccent"
+            android:background="?attr/colorPrimaryDarkTrans"
+            android:textColorHint="?attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/pet_breed"
             android:textSize="20dp"
             android:paddingLeft="20dp"/>
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/insert_ID_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp"/>
         <Space
             android:layout_width="match_parent"
@@ -94,9 +94,9 @@
         <EditText
             android:layout_width="280dp"
             android:layout_height="34dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:layout_marginLeft="20dp"
-            android:textColorHint="@color/colorAccent"
+            android:textColorHint="?attr/colorAccent"
             android:hint="@string/ID_Number"
             android:paddingLeft="20dp" />
     </LinearLayout>
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/insert_birthday_text_label"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp"/>
         <Space
             android:layout_width="match_parent"
@@ -118,9 +118,9 @@
         <EditText
             android:layout_width="280dp"
             android:layout_height="34dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:layout_marginLeft="20dp"
-            android:textColorHint="@color/colorAccent"
+            android:textColorHint="?attr/colorAccent"
             android:hint="@string/date_model"
             android:paddingLeft="20dp"
             android:inputType="date"/>

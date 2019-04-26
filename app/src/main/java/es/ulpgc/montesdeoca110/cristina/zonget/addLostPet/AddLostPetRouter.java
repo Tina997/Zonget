@@ -34,4 +34,9 @@ public class AddLostPetRouter implements AddLostPetContract.Router {
         return state;
 
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

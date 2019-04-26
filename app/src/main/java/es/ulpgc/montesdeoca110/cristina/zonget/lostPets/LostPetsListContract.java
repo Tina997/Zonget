@@ -25,6 +25,8 @@ interface LostPetsListContract {
         void selectPet(LostPetItem petItem);
 
         void gotToAddLostPet();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -39,5 +41,7 @@ interface LostPetsListContract {
         LostPetsListState getDataFromPreviousScreen();
 
         void navigateToAddLostPetScreen();
+
+        String getActualThemeName();
     }
 }

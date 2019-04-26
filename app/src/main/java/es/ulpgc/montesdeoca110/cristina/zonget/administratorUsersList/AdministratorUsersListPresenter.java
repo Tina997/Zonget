@@ -51,4 +51,9 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         router.navigateToUserDetailScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 }

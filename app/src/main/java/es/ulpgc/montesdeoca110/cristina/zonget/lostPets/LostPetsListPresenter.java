@@ -65,5 +65,10 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
         router.navigateToAddLostPetScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

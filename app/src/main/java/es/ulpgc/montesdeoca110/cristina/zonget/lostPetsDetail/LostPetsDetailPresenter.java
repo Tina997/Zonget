@@ -60,5 +60,10 @@ public class LostPetsDetailPresenter implements LostPetsDetailContract.Presenter
 
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

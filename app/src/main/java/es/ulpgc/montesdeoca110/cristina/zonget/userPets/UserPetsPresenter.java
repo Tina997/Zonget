@@ -49,5 +49,10 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
         router.navigateToPetsDetailScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

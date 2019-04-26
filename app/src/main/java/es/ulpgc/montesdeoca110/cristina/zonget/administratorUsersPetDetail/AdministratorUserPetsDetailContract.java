@@ -29,6 +29,8 @@ interface AdministratorUserPetsDetailContract {
         void onEditButtonClicked();
 
         void onDeleteButtonClicked();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -45,5 +47,7 @@ interface AdministratorUserPetsDetailContract {
         void navigateToEditScreen();
 
         void navigateToPetListScreen();
+
+        String getActualThemeName();
     }
 }

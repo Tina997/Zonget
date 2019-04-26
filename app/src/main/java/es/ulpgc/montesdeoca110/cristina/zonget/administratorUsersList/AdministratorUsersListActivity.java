@@ -1,7 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList;
 
 import android.content.Intent;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +10,7 @@ import android.view.View;
 import android.widget.ListView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsAdapter;
 
 public class AdministratorUsersListActivity
         extends AppCompatActivity implements AdministratorUsersListContract.View {
@@ -27,6 +23,14 @@ public class AdministratorUsersListActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AdministratorUsersListScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
         setContentView(R.layout.activity_administrator_users_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

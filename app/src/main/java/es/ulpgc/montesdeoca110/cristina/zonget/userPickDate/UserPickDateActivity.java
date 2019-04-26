@@ -32,6 +32,14 @@ public class UserPickDateActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        UserPickDateScreen.configure(this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
         setContentView(R.layout.activity_user_pick_date);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

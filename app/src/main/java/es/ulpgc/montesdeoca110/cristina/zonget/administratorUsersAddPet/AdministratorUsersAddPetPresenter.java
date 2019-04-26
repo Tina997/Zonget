@@ -48,5 +48,10 @@ public class AdministratorUsersAddPetPresenter implements AdministratorUsersAddP
         router.navigateToNextScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

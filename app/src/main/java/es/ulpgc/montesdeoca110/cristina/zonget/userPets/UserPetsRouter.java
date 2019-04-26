@@ -35,4 +35,9 @@ public class UserPetsRouter implements UserPetsContract.Router {
         UserPetsState state = mediator.getUserPetsState();
         return state;
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

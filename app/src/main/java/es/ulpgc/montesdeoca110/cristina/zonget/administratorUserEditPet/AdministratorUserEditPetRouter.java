@@ -34,4 +34,9 @@ public class AdministratorUserEditPetRouter implements AdministratorUserEditPetC
         AdministratorUserEditPetState state = mediator.getAdministratorUserEditPetState();
         return state;
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

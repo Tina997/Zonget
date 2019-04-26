@@ -21,6 +21,8 @@ interface UserPickDateContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -33,5 +35,7 @@ interface UserPickDateContract {
         void passDataToNextScreen(UserPickDateState state);
 
         UserPickDateState getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

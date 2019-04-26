@@ -61,5 +61,10 @@ public class EditLostPetPresenter implements EditLostPetContract.Presenter {
         router.navigateToLostPetDetailScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

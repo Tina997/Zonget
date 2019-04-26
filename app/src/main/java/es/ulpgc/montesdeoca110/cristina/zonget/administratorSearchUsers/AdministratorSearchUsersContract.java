@@ -20,6 +20,8 @@ interface AdministratorSearchUsersContract {
         void fetchData();
 
         void searchButtonClicked(String nameOrDni);
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -32,5 +34,7 @@ interface AdministratorSearchUsersContract {
         void passDataToNextScreen(AdministratorSearchUsersState state);
 
         AdministratorSearchUsersState getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

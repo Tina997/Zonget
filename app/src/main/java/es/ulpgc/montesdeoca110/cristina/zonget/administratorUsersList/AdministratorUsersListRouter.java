@@ -37,4 +37,9 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

@@ -35,4 +35,9 @@ public class AdministratorUsersAddPetRouter implements AdministratorUsersAddPetC
         AdministratorUsersAddPetState state = mediator.getAdministratorUsersAddPetState();
         return state;
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

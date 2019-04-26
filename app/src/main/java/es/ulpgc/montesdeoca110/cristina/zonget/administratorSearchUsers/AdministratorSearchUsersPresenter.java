@@ -54,5 +54,10 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
         router.navigateToNextScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

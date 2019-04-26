@@ -21,6 +21,8 @@ interface UserPetsDetailContract {
         void injectRouter(Router router);
 
         void fetchPetsData();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -33,5 +35,7 @@ interface UserPetsDetailContract {
         void passDataToNextScreen(UserPetsDetailState state);
 
         PetsItem getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

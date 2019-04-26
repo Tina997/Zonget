@@ -20,6 +20,8 @@ interface AdministratorUserEditPetContract {
         void fetchData();
 
         void insertNewPet();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -32,5 +34,7 @@ interface AdministratorUserEditPetContract {
         void passDataToNextScreen(AdministratorUserEditPetState state);
 
         AdministratorUserEditPetState getDataFromPreviousScreen();
+
+        String getActualThemeName();
     }
 }

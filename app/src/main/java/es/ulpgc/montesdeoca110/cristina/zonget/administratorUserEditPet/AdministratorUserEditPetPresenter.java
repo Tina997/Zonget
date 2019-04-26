@@ -60,5 +60,10 @@ public class AdministratorUserEditPetPresenter implements AdministratorUserEditP
         router.navigateToNextScreen();
     }
 
+    @Override
+    public String getActualThemeName() {
+        return router.getActualThemeName();
+    }
+
 
 }

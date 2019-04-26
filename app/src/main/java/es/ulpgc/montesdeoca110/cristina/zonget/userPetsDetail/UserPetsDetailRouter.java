@@ -33,4 +33,9 @@ public class UserPetsDetailRouter implements UserPetsDetailContract.Router {
         PetsItem pet = mediator.getAnimal();
         return pet;
     }
+
+    @Override
+    public String getActualThemeName() {
+        return mediator.getactualThemeName();
+    }
 }

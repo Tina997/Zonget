@@ -27,6 +27,8 @@ interface AdministratorUsersPetsListContract {
         void selectUserPetsData(PetsItem item);
 
         void onClickAddButton();
+
+        String getActualThemeName();
     }
 
     interface Model {
@@ -41,5 +43,7 @@ interface AdministratorUsersPetsListContract {
         AdministratorUsersPetsListState getDataFromPreviousScreen();
 
         void navigateToAddScreen();
+
+        String getActualThemeName();
     }
 }
