@@ -78,9 +78,8 @@ public class UserButtonsMenuListPresenter implements UserButtonsMenuListContract
     public void checkThemeChanged() {
         ChangeThemeToMenuState state = router.getDataFromChangeThemeScreen();
         if (state != null){
-            //Todo Apaño temporal
-            String completeThemename = "es.ulpc.montesdeoca110.cristina.zonget.complete:style/" + state.themeChanged;
-            if (!view.get().getActualThemeName().equals(completeThemename)){
+            if (state.themeChanged == true){
+                router.setChangeThemeToMenuState(false);
                 view.get().reboot();
             }
         }

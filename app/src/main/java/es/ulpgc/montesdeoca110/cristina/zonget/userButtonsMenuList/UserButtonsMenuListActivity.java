@@ -124,24 +124,6 @@ public class UserButtonsMenuListActivity extends AppCompatActivity implements Us
     }
 
     @Override
-    public String getActualThemeName() {
-        String currentThemeName = getResources().getResourceName(getThemeId());
-        return currentThemeName;
-    }
-
-    private int getThemeId() {
-        try {
-            Class<?> wrapper = Context.class;
-            Method method = wrapper.getMethod("getThemeResId");
-            method.setAccessible(true);
-            return (Integer) method.invoke(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_sign_out:

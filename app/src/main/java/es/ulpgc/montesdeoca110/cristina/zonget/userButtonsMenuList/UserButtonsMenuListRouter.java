@@ -30,6 +30,13 @@ public class UserButtonsMenuListRouter implements UserButtonsMenuListContract.Ro
         return mediator.getChangeThemeToMenuState();
     }
 
+    @Override
+    public void setChangeThemeToMenuState(boolean isChanged) {
+        ChangeThemeToMenuState state = new ChangeThemeToMenuState();
+        state.themeChanged = isChanged;
+        mediator.setChangeThemeToMenuState(state);
+    }
+
     //To SingInActivity
 
     @Override

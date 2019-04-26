@@ -115,12 +115,6 @@ public class AdministratorButtonsMenuListActivity extends AppCompatActivity impl
         });
     }
 
-    @Override
-    public String getActualThemeName() {
-        String currentThemeName = getResources().getResourceName(getThemeId());
-        return currentThemeName;
-    }
-
     private int getThemeId() {
         try {
             Class<?> wrapper = Context.class;

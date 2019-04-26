@@ -28,6 +28,13 @@ public class AdministratorButtonsMenuListRouter implements AdministratorButtonsM
         return mediator.getChangeThemeToMenuState();
     }
 
+    @Override
+    public void setChangeThemeToMenuState(boolean isChanged) {
+         ChangeThemeToMenuState state = new ChangeThemeToMenuState();
+         state.themeChanged = isChanged;
+         mediator.setChangeThemeToMenuState(state);
+    }
+
     // To SignInActivity
     @Override
     public void passDataToSignInScreen(MenuToSignInState state) {

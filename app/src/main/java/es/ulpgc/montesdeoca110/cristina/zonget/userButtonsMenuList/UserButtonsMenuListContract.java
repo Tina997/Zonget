@@ -16,8 +16,6 @@ interface UserButtonsMenuListContract {
 
         void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel);
 
-        String getActualThemeName();
-
         void reboot();
 
         void finish();
@@ -59,6 +57,8 @@ interface UserButtonsMenuListContract {
         //------------------------- Tema ---------------------
 
         String getActualThemeName();
+
+        void setChangeThemeToMenuState(boolean isChanged);
 
         //--------------- Navegación entre pantallas -----------
 

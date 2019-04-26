@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -43,7 +41,7 @@ public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
     @Override
     public void backButtonPressed() {
         ChangeThemeToMenuState state = new ChangeThemeToMenuState();
-        state.themeChanged = viewModel.themeChanged;
+        state.themeChanged = true;
         view.get().finish();
         router.passDataToMenuScreen(state);
         router.navigateToMenuScreen();

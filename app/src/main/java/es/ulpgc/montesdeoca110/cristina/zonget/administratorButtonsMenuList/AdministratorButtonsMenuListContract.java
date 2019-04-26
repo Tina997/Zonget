@@ -16,8 +16,6 @@ interface AdministratorButtonsMenuListContract {
 
         void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
 
-        String getActualThemeName();
-
         void reboot();
 
         void finish();
@@ -57,6 +55,8 @@ interface AdministratorButtonsMenuListContract {
         //------------------------- Tema ---------------------
 
         String getActualThemeName();
+
+        void setChangeThemeToMenuState(boolean isChanged);
 
         //--------------- Navegación entre pantallas -----------
 
