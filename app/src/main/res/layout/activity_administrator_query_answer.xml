@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".administratorQueryAnswer.AdministratorQueryAnswerActivity"
     android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:background="?attr/colorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,9 +27,9 @@
             android:id="@+id/user_answer_query_edit_text"
             android:layout_width="match_parent"
             android:layout_height="380dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:inputType="textMultiLine"
-            android:textColor="@color/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:gravity="top|left"
             android:scrollbarStyle="insideOverlay"
             android:padding="10dp"
@@ -42,7 +42,7 @@
             android:layout_height="60dp"
             android:layout_gravity="top|right"
             android:layout_marginTop="25dp"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="?attr/colorPrimaryDark"
             android:src="@drawable/ic_send"
             android:onClick="onSendButtonClicked"/>
 

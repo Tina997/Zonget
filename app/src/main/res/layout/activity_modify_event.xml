@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="?attr/colorPrimary"
     android:paddingBottom="16dp"
     android:orientation="vertical">
 
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/modifyEvent_title_text"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -35,11 +35,11 @@
             android:layout_height="40dp"
             android:layout_marginLeft="28dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:ems="10"
             android:inputType="textShortMessage"
             android:padding="5px"
-            android:textColor="@color/colorAccent" />
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
@@ -55,14 +55,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/modifyEvent_description_text"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <Spinner
             android:layout_width="298dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:entries="@array/description_array"></Spinner>
 
     </LinearLayout>
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/modifyEvent_additional_description_text"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <android.support.design.widget.TextInputEditText
@@ -89,11 +89,11 @@
             android:gravity="top|left"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:ems="10"
             android:inputType="textMultiLine"
             android:padding="5dp"
-            android:textColor="@color/colorAccent" />
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/modifyEvent_date_text"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <DatePicker
@@ -117,7 +117,7 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"></DatePicker>
 
@@ -126,7 +126,7 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:timePickerMode="spinner"></TimePicker>
 
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="?attr/colorPrimary"
     tools:context=".editPetForAdoption.EditPetForAdoptionActivity">
 
     <include layout="@layout/toolbar"></include>
@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/birthday_text_label"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="18dp" />
 
                 <EditText
@@ -36,11 +36,11 @@
                     android:layout_height="34dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/colorPrimaryDarkTrans"
+                    android:background="?attr/colorPrimaryDarkTrans"
                     android:hint="@string/date_model"
                     android:paddingLeft="10dp"
-                    android:textColor="@color/colorAccent"
-                    android:textColorHint="@color/colorAccent"
+                    android:textColor="?attr/colorAccent"
+                    android:textColorHint="?attr/colorAccent"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -55,7 +55,7 @@
                     android:id="@+id/imageNewPetForAdoption"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@color/colorAccent"
+                    android:background="?attr/colorAccent"
                     tools:srcCompat="@tools:sample/avatars"
                     android:clickable="true"
                     android:onClick="takePicture"/>
@@ -72,17 +72,17 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/breed_text_label"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <EditText
                 android:layout_width="217dp"
                 android:layout_height="34dp"
-                android:background="@color/colorPrimaryDarkTrans"
+                android:background="?attr/colorPrimaryDarkTrans"
                 android:hint="@string/insert_lost_pet_breed"
                 android:paddingLeft="20dp"
-                android:textColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
+                android:textColor="?attr/colorAccent"
+                android:textColorHint="?attr/colorAccent"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/details_pet_for_adoption"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <EditText
@@ -104,11 +104,11 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorPrimaryDarkTrans"
+                android:background="?attr/colorPrimaryDarkTrans"
                 android:hint="@string/details_mock"
                 android:padding="10dp"
-                android:textColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
+                android:textColor="?attr/colorAccent"
+                android:textColorHint="?attr/colorAccent"
                 android:gravity="top|left"/>
         </LinearLayout>
 
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lost_pet_phone"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <EditText
@@ -130,11 +130,11 @@
                 android:layout_height="34dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorPrimaryDarkTrans"
+                android:background="?attr/colorPrimaryDarkTrans"
                 android:hint="@string/phone_mock"
                 android:paddingLeft="20dp"
-                android:textColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent" />
+                android:textColor="?attr/colorAccent"
+                android:textColorHint="?attr/colorAccent" />
         </LinearLayout>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

@@ -11,7 +11,7 @@
         android:layout_margin="16dp"
         android:textSize="40dp"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="?attr/colorPrimaryDark"
 
         android:text="@string/name_text_label" />
 
@@ -32,7 +32,7 @@
             android:layout_marginTop="0dp"
             android:text="@string/species_text_label"
             android:textAlignment="viewStart"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="30dp" />
 
         <TextView
@@ -62,7 +62,7 @@
             android:layout_marginTop="0dp"
             android:text="@string/breed_text_label"
             android:textAlignment="viewStart"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="30dp" />
 
         <TextView
@@ -91,7 +91,7 @@
             android:layout_marginTop="0dp"
             android:textSize="30dp"
             android:textAlignment="viewStart"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:layout_marginLeft="20dp"
             android:text="@string/chipNum_text_label" />
 
@@ -122,7 +122,7 @@
             android:layout_marginTop="0dp"
             android:text="@string/birthday_text_label"
             android:textAlignment="viewStart"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="30dp" />
         <Space
             android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimary"
+    android:background="?attr/colorPrimary"
     tools:context="es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionActivity">
 
     <include
@@ -30,11 +30,11 @@
         android:layout_gravity="center"
         android:layout_marginLeft="277dp"
         android:layout_marginTop="507dp"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="?attr/colorPrimaryDark"
         android:clickable="true"
         android:onClick="goToAddLostPet"
         android:textAlignment="center"
-        android:tint="@color/colorPrimary"
+        android:tint="?attr/colorPrimary"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </android.support.design.widget.CoordinatorLayout>

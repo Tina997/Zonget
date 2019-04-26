@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="?attr/colorPrimary"
     android:paddingBottom="16dp">
 
     <LinearLayout
@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/addEvent_title_text"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="18sp" />
 
                 <EditText
@@ -50,11 +50,11 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="28dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDarkTrans"
+                    android:background="?attr/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:inputType="textShortMessage"
                     android:padding="5px"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="?attr/colorAccent" />
 
             </LinearLayout>
 
@@ -74,14 +74,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/addEvent_description_text"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="18sp" />
 
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginStart="10dp"
-                    android:background="@color/colorPrimaryDarkTrans"
+                    android:background="?attr/colorPrimaryDarkTrans"
                     android:entries="@array/description_array"></Spinner>
 
             </LinearLayout>
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/addEvent_additional_description_text"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="18sp" />
 
                 <android.support.design.widget.TextInputEditText
@@ -111,12 +111,12 @@
                     android:layout_height="71dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDarkTrans"
+                    android:background="?attr/colorPrimaryDarkTrans"
                     android:ems="10"
                     android:gravity="top|left"
                     android:inputType="textMultiLine"
                     android:padding="5px"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="?attr/colorAccent" />
 
             </LinearLayout>
 
@@ -136,14 +136,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/addEvent_date_text"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="18sp" />
 
                 <DatePicker
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/colorPrimaryDarkTrans"
+                    android:background="?attr/colorPrimaryDarkTrans"
                     android:calendarViewShown="false"
                     android:datePickerMode="spinner"></DatePicker>
 
@@ -151,7 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/colorPrimaryDarkTrans"
+                    android:background="?attr/colorPrimaryDarkTrans"
                     android:timePickerMode="spinner"></TimePicker>
 
 

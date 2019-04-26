@@ -95,7 +95,7 @@
             android:gravity="top|left"
             android:inputType="textMultiLine"
             android:padding="5dp"
-            android:textColor="@color/colorAccent" />
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/addEvent_date_text"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <DatePicker
@@ -119,7 +119,7 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"></DatePicker>
 
@@ -128,7 +128,7 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:timePickerMode="spinner"></TimePicker>
 
 

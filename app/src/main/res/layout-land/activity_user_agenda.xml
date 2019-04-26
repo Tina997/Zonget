@@ -17,7 +17,7 @@
         android:layout_marginTop="55dp"
         android:contextClickable="true"
         android:theme="@style/AppTheme.Calendar"
-        android:weekDayTextAppearance="@color/colorPrimaryDark" />
+        android:weekDayTextAppearance="?attr/colorPrimaryDark" />
 
 
     <!--Día seleccionado-->
@@ -25,7 +25,7 @@
         android:layout_width="354dp"
         android:layout_height="50dp"
         android:layout_marginTop="290dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="?attr/colorPrimaryDark"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="15dp">
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
 
