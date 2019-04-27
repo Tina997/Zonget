@@ -8,22 +8,23 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
-public interface UserDao {
+
+public interface QueriesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertUser(UserItem item);
+    void insertQuery(QueryItem item);
 
     @Update
-    void updateUser(UserItem item);
+    void updateQuery(QueryItem item);
 
     @Delete
-    void deleteUser(UserItem item);
+    void deleteQuery(QueryItem item);
 
-    @Query("SELECT * FROM users")
-    List<UserItem> loadUsers();
+    @Query("SELECT * FROM queries")
+    List<QueryItem> loadQueries();
 
-    @Query("SELECT * FROM users WHERE id =:id LIMIT 1")
-    UserItem loadUser(int id);
+    @Query("SELECT * FROM queries WHERE id =:id LIMIT 1")
+    QueryItem loadQuery(int id);
 }

@@ -8,22 +8,23 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 
-public interface UserDao {
+
+public interface LostPetsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertUser(UserItem item);
+    void insertLostPet(LostPetItem item);
 
     @Update
-    void updateUser(UserItem item);
+    void updateLostPet(LostPetItem item);
 
     @Delete
-    void deleteUser(UserItem item);
+    void deleteLostPet(LostPetItem item);
 
-    @Query("SELECT * FROM users")
-    List<UserItem> loadUsers();
+    @Query("SELECT * FROM lostPets")
+    List<LostPetItem> loadLostPets();
 
-    @Query("SELECT * FROM users WHERE id =:id LIMIT 1")
-    UserItem loadUser(int id);
+    @Query("SELECT * FROM lostPets WHERE id =:id LIMIT 1")
+    LostPetItem loadLostPet(int id);
 }

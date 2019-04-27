@@ -1,7 +1,13 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "queryAnswers")
 public class QueryAnswerItem {
 
+    @PrimaryKey
     private int id;
     private String answer;
 

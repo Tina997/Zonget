@@ -1,10 +1,15 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcelable;
 
+@Entity(tableName = "queries")
 public class QueryItem {
 
+    @PrimaryKey
     public final int id;
+
     public final String sender;
     public final String title;
 

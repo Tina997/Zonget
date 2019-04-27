@@ -15,17 +15,17 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 public interface PetsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertCategory(PetsItem accountItem);
+    void insertPet(PetsItem item);
 
     @Update
-    void updateCategory(PetsItem accountItem);
+    void updatePet(PetsItem item);
 
     @Delete
-    void deleteCategory(PetsItem accountItem);
+    void deletePet(PetsItem item);
 
     @Query("SELECT * FROM pets")
-    List<PetsItem> loadUsers();
+    List<PetsItem> loadPets();
 
     @Query("SELECT * FROM pets WHERE id =:id LIMIT 1")
-    PetsItem loadAccount(int id);
+    PetsItem loadPet(int id);
 }

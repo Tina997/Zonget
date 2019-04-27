@@ -13,13 +13,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 public interface AccountDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertCategory(AccountItem accountItem);
+    void insertCategory(AccountItem item);
 
     @Update
-    void updateCategory(AccountItem accountItem);
+    void updateCategory(AccountItem item);
 
     @Delete
-    void deleteCategory(AccountItem accountItem);
+    void deleteCategory(AccountItem item);
 
     @Query("SELECT * FROM accounts")
     List<AccountItem> loadAccounts();

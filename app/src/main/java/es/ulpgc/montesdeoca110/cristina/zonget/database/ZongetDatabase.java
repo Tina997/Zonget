@@ -24,6 +24,12 @@ public abstract class ZongetDatabase extends RoomDatabase {
     public abstract AccountDao accountDao();
     public abstract UserDao userDao();
     public abstract PetsDao petsDao();
+    public abstract UsersPetDao usersPetDao();
+    public abstract LostPetsDao lostPetsDao();
+    public abstract PetsForAdoptionDao petsForAdoptionDao();
+    public abstract QueriesDao queriesDao();
+    public abstract QueryAnswersDao queryAnswersDao();
+    public abstract QueryStatusDao queryStatusDao();
 
 
 }
