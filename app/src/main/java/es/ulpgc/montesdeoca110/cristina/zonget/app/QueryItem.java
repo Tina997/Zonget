@@ -1,10 +1,17 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcelable;
 
-@Entity(tableName = "queries")
+@Entity(tableName = "queries",
+        foreignKeys = @ForeignKey(
+                entity = UserItem.class,
+                parentColumns = "id",
+                childColumns = "user_id"
+        ))
 public class QueryItem {
 
     @PrimaryKey
@@ -12,6 +19,9 @@ public class QueryItem {
 
     public final String sender;
     public final String title;
+
+    @ColumnInfo(name = "user_id")
+    public int userId;
 
 
 

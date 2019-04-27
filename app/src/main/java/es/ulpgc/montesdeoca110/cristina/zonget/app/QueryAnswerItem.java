@@ -1,15 +1,25 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "queryAnswers")
+@Entity(tableName = "queryAnswers",
+        foreignKeys = @ForeignKey(
+                entity = QueryItem.class,
+                parentColumns = "id",
+                childColumns = "query_id"
+        ))
 public class QueryAnswerItem {
 
     @PrimaryKey
-    private int id;
-    private String answer;
+    public int id;
+    public String answer;
+
+    @ColumnInfo(name = "query_id")
+    public int queryId;
 
 
     public QueryAnswerItem(int id, String answer) {
