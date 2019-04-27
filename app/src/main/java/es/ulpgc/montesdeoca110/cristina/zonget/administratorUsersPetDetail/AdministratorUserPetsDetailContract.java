@@ -31,6 +31,8 @@ interface AdministratorUserPetsDetailContract {
         void onDeleteButtonClicked();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -49,5 +51,7 @@ interface AdministratorUserPetsDetailContract {
         void navigateToPetListScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

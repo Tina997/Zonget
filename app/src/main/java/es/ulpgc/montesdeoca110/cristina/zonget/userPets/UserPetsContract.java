@@ -25,6 +25,8 @@ interface UserPetsContract {
         void selectUserPetsData(PetsItem item);
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -39,5 +41,7 @@ interface UserPetsContract {
         UserPetsState getDataFromPreviousScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

@@ -63,4 +63,12 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
         return mediator.getactualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorUsersPetsListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
 }

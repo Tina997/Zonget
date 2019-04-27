@@ -57,6 +57,11 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
     }
 
     @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
+    @Override
     public void goToAdministratorQueryDetailScreen(){
         router.navigateToAdministratorQueryDetailScreen();
     }

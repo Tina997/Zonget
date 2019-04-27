@@ -28,6 +28,8 @@ interface LostPetsDetailContract {
         void deletePet();
 
         String getActualThemeName();
+
+        void onBackButtonClicked();
     }
 
     interface Model {
@@ -45,5 +47,7 @@ interface LostPetsDetailContract {
         void navigateToLostPetListScreen();
 
         String getActualThemeName();
+
+        void onBackButtonClicked();
     }
 }

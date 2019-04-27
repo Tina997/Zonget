@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.editLostPet.EditLostPetActivity;
@@ -57,5 +58,13 @@ public class LostPetsDetailRouter implements LostPetsDetailContract.Router {
     @Override
     public String getActualThemeName() {
         return mediator.getactualThemeName();
+    }
+
+    @Override
+    public void onBackButtonClicked() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, LostPetsListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

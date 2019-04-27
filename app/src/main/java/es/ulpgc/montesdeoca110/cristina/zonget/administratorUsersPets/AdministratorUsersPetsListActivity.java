@@ -103,7 +103,7 @@ public class AdministratorUsersPetsListActivity
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
-                    navigateUpTo(new Intent(this, AdministratorUsersPetsListActivity.class));
+                    presenter.onBackButtonPressed();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

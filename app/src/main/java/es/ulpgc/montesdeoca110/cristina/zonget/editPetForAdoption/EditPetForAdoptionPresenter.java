@@ -61,6 +61,11 @@ public class EditPetForAdoptionPresenter implements EditPetForAdoptionContract.P
     }
 
     @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
+    @Override
     public void onAcceptButtonClicked(){
         router.navigateToPetForAdoptionDetailScreen();
     }

@@ -66,5 +66,10 @@ public class EditLostPetPresenter implements EditLostPetContract.Presenter {
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
 
 }

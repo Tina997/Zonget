@@ -86,8 +86,7 @@ public class AdministratorSearchUsersActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            navigateUpTo(new Intent(this, AdministratorButtonsMenuListActivity.class));
-            return true;
+            presenter.onBackButtonPressed();
         }
         return super.onOptionsItemSelected(item);
     }

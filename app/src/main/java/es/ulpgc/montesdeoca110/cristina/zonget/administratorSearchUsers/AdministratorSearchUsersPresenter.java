@@ -59,5 +59,10 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
 
 }

@@ -23,6 +23,8 @@ interface UserPetsDetailContract {
         void fetchPetsData();
 
         String getActualThemeName();
+
+        void onBackButtonClicked();
     }
 
     interface Model {
@@ -37,5 +39,7 @@ interface UserPetsDetailContract {
         PetsItem getDataFromPreviousScreen();
 
         String getActualThemeName();
+
+        void onBackButtonClicked();
     }
 }

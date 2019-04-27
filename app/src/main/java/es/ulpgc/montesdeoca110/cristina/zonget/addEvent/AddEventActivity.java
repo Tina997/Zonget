@@ -91,7 +91,7 @@ public class AddEventActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO destruir activity
-                    navigateUpTo(new Intent(this, AdministratorAgendaActivity.class));
+                    presenter.onBackButtonPressed();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

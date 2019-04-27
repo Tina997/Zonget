@@ -115,7 +115,7 @@ public class PetsForAdoptionDetailActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO destruir activity
-                    navigateUpTo(new Intent(this, PetsForAdoptionActivity.class));
+                    presenter.onBackButtonClicked();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

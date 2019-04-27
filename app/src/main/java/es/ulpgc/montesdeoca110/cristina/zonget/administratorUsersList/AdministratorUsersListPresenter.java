@@ -56,4 +56,9 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
 }

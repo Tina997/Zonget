@@ -24,6 +24,8 @@ interface AddEventContract {
         void navigateToAdministratorAgendaScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -40,5 +42,7 @@ interface AddEventContract {
         void navigateToAdministratorAgendaScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

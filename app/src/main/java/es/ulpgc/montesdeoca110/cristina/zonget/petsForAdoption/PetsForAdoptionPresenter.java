@@ -51,6 +51,11 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
     }
 
     @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
+    @Override
     public void selectPet(PetForAdoptionItem petForAdoptionItem){
         router.passDataToDetailScreen(petForAdoptionItem);
         router.navigateToNextScreen();

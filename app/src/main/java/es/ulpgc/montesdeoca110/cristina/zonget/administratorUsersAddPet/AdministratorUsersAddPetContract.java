@@ -22,6 +22,8 @@ interface AdministratorUsersAddPetContract {
         void insertNewPet();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -36,5 +38,7 @@ interface AdministratorUsersAddPetContract {
         AdministratorUsersAddPetState getDataFromPreviousScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

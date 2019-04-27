@@ -60,5 +60,10 @@ public class AddLostPetPresenter implements AddLostPetContract.Presenter {
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
 
 }

@@ -22,6 +22,8 @@ interface AdministratorSearchUsersContract {
         void searchButtonClicked(String nameOrDni);
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -36,5 +38,7 @@ interface AdministratorSearchUsersContract {
         AdministratorSearchUsersState getDataFromPreviousScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

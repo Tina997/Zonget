@@ -63,6 +63,10 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
 
 
     //Navegar a las diferentes pantallas

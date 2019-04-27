@@ -4,6 +4,7 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
@@ -39,5 +40,13 @@ public class AdministratorUsersAddPetRouter implements AdministratorUsersAddPetC
     @Override
     public String getActualThemeName() {
         return mediator.getactualThemeName();
+    }
+
+    @Override
+    public void onBackButtonPressed() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdministratorUserPetsDetailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

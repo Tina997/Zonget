@@ -109,7 +109,8 @@ public class UserAgendaActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO destruir activity
-                    navigateUpTo(new Intent(this, UserButtonsMenuListActivity.class));
+                    Intent intent = new Intent(this, UserButtonsMenuListActivity.class);
+                    this.startActivity(intent);
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

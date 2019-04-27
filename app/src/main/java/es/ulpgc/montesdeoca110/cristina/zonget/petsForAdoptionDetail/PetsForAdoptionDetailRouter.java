@@ -7,6 +7,7 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption.EditPetForAdoptionActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionActivity;
 
 public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContract.Router {
 
@@ -39,6 +40,14 @@ public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContrac
     @Override
     public String getActualThemeName() {
         return mediator.getactualThemeName();
+    }
+
+    @Override
+    public void onBackButtonClicked() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, PetsForAdoptionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     @Override

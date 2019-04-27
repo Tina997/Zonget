@@ -31,6 +31,8 @@ interface AdministratorAgendaContract {
         void navigateToModifyEventScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -50,5 +52,7 @@ interface AdministratorAgendaContract {
         void navigateToModifyEventScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

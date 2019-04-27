@@ -88,7 +88,7 @@ public class AdministratorInboxActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO destruir activity
-                    navigateUpTo(new Intent(this, AdministratorButtonsMenuListActivity.class));
+                    presenter.onBackButtonPressed();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

@@ -59,6 +59,11 @@ public class AddEventPresenter implements AddEventContract.Presenter {
     }
 
     @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
+    @Override
     public void addEvent(){
         router.navigateToAdministratorAgendaScreen();
     }

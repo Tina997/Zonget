@@ -25,6 +25,8 @@ interface AdministratorInboxContract {
         void goToAdministratorQueryDetailScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -41,5 +43,7 @@ interface AdministratorInboxContract {
         void navigateToAdministratorQueryDetailScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

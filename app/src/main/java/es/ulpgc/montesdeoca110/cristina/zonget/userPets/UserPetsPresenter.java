@@ -54,5 +54,10 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
 
 }

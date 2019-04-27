@@ -27,6 +27,8 @@ interface PetsForAdoptionContract {
         void gotToAddLostPet();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -43,5 +45,7 @@ interface PetsForAdoptionContract {
         void navigateToAddLostPetScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

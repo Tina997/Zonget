@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.ListView;
@@ -47,6 +48,7 @@ public class UserPickDateActivity
         // Show the title in the action bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Cita Previa");
         }
         listView = findViewById(R.id.hours_list);
@@ -100,5 +102,15 @@ public class UserPickDateActivity
             }
         }));
         // deal with the data
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            super.onBackPressed();
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

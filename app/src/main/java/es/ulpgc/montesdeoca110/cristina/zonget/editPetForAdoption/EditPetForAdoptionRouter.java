@@ -41,6 +41,14 @@ public class EditPetForAdoptionRouter implements EditPetForAdoptionContract.Rout
     }
 
     @Override
+    public void onBackButtonPressed() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, PetsForAdoptionDetailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    @Override
     public void navigateToPetForAdoptionDetailScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, PetsForAdoptionDetailActivity.class);

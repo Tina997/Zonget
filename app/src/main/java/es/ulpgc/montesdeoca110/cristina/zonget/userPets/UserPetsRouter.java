@@ -5,6 +5,7 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailActivity;
 
 public class UserPetsRouter implements UserPetsContract.Router {
@@ -39,5 +40,13 @@ public class UserPetsRouter implements UserPetsContract.Router {
     @Override
     public String getActualThemeName() {
         return mediator.getactualThemeName();
+    }
+
+    @Override
+    public void onBackButtonPressed() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

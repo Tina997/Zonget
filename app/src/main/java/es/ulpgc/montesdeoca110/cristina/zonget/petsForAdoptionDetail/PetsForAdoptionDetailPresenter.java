@@ -52,6 +52,11 @@ public class PetsForAdoptionDetailPresenter implements PetsForAdoptionDetailCont
     }
 
     @Override
+    public void onBackButtonClicked() {
+        router.onBackButtonClicked();
+    }
+
+    @Override
     public void onEditButtonClicked(){
         router.navigateToEditPetForAdoptionScreen();
     }

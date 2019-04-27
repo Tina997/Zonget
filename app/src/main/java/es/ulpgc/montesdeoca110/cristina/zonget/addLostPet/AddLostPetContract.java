@@ -20,6 +20,8 @@ interface AddLostPetContract {
         void fetchData();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -34,5 +36,7 @@ interface AddLostPetContract {
         AddLostPetState getDataFromPreviousScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

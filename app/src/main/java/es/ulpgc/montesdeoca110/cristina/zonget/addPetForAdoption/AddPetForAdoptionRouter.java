@@ -42,6 +42,14 @@ public class AddPetForAdoptionRouter implements AddPetForAdoptionContract.Router
     }
 
     @Override
+    public void onBackButtonPressed() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, PetsForAdoptionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    @Override
     public void navigateToPetForAdoptionDetailScreen(){
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, PetsForAdoptionActivity.class);

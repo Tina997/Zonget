@@ -61,6 +61,11 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
     }
 
     @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
+    @Override
     public  void onAcceptButtonClicked(){
         router.navigateToPetForAdoptionDetailScreen();
     }

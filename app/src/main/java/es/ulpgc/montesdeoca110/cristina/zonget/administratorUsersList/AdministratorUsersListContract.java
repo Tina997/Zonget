@@ -26,6 +26,8 @@ interface AdministratorUsersListContract {
         void selectAdminUserData(UserItem userItem);
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -41,5 +43,7 @@ interface AdministratorUsersListContract {
         void navigateToUserDetailScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

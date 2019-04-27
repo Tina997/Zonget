@@ -122,7 +122,7 @@ public class LostPetsDetailActivity
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
-                    navigateUpTo(new Intent(this, AdministratorUsersPetsListActivity.class));
+                    presenter.onBackButtonClicked();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

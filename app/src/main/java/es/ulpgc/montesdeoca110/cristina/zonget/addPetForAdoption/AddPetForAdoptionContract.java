@@ -22,6 +22,8 @@ interface AddPetForAdoptionContract {
         void onAcceptButtonClicked();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 
     interface Model {
@@ -38,5 +40,7 @@ interface AddPetForAdoptionContract {
         void navigateToPetForAdoptionDetailScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

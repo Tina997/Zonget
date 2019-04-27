@@ -92,7 +92,7 @@ public class EditLostPetActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     //TODO matar la activity
-                    navigateUpTo(new Intent(this, LostPetsDetailActivity.class));
+                    presenter.onBackButtonPressed();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

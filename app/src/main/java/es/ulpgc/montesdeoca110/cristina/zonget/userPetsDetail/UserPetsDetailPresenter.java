@@ -52,5 +52,10 @@ public class UserPetsDetailPresenter implements UserPetsDetailContract.Presenter
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonClicked() {
+        router.onBackButtonClicked();
+    }
+
 
 }

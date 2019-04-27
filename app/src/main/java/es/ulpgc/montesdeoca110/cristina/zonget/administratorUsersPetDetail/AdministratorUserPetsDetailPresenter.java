@@ -66,5 +66,10 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
         return router.getActualThemeName();
     }
 
+    @Override
+    public void onBackButtonPressed() {
+        router.onBackButtonPressed();
+    }
+
 
 }
