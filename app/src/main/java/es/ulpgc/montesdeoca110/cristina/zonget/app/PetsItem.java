@@ -6,9 +6,6 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-import static android.arch.persistence.room.ForeignKey.CASCADE;
-import static android.arch.persistence.room.ForeignKey.NO_ACTION;
-
 @Entity(tableName = "pets",
     foreignKeys = @ForeignKey(
             entity = UserItem.class,
