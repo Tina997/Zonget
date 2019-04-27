@@ -1,20 +1,27 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(tableName = "accounts")
 public class AccountItem {
 
 
+    @PrimaryKey
     private int id;
+
     private String type;
     private String name;
     private String dni;
     private String email;
     private String password;
 
+    //REVISAR
     @SerializedName("pets")
     private List<PetsItem> pets;
 
