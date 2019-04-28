@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.database;
 
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -10,6 +11,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 
+@Dao
 public interface AccountDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
