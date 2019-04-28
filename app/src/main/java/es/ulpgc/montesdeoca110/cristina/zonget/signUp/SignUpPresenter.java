@@ -145,7 +145,6 @@ public class SignUpPresenter implements SignUpContract.Presenter {
                         }
                     });
                 } else {
-                    //Todo no se ve
                     view.get().displayInsertNewAccountMesaje("El email y DNI introducidos ya están asociados a una cuenta");
                 }
             }
