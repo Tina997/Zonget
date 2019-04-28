@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.database;
 
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 
-
+@Dao
 public interface LostPetsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

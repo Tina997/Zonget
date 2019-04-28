@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +23,7 @@ public class AccountItem {
     private String password;
 
     //REVISAR
+    @Ignore
     @SerializedName("pets")
     private List<PetsItem> pets;
 

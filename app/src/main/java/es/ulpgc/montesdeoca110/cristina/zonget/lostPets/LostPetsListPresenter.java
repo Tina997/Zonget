@@ -43,7 +43,6 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
          model.fetchLostPetsListData(new RepositoryContract.LostPets.GetLostPetsListCallback() {
             @Override
             public void setLostPetsList(List<LostPetItem> lostPets) {
-                Log.e(TAG,lostPets.get(0).chipNum);
                 viewModel.lostPetsItems = lostPets;
                 view.get().displayLostPetsListData(viewModel);
             }
