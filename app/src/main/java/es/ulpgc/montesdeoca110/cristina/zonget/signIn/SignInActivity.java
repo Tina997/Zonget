@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 public class SignInActivity extends AppCompatActivity implements SignInContract.View {
 
@@ -101,6 +104,11 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
     @Override
     public void displayCheckAccountError() {
-        //todo hacer
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext()," · El usuario y/o contraseña son incorrectos.\n" + " · El usuario no existe.", LENGTH_LONG).show();
+            }
+        });
     }
 }

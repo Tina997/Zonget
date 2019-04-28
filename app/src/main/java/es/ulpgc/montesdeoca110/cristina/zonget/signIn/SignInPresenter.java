@@ -41,8 +41,6 @@ public class SignInPresenter implements SignInContract.Presenter {
     @Override
     public void fetchSignInData() {
 
-        SplashToSignInState state = router.getDataFromSplashScreen();
-        if (state != null) {}
     }
 
     @Override
