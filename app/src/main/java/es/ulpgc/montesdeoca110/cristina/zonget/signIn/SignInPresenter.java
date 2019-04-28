@@ -69,13 +69,11 @@ public class SignInPresenter implements SignInContract.Presenter {
 
     @Override
     public void signUpButtonPressed() {
-        view.get().finish();
         router.navigateToSignUpScreen();
     }
 
     @Override
     public void pickForADateButtonPressed() {
-        view.get().finish();
         router.navigateToUserPickDateScreen();
     }
 
