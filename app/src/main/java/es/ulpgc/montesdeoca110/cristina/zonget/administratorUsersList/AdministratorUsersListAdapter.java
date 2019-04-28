@@ -55,7 +55,7 @@ public class AdministratorUsersListAdapter extends ArrayAdapter<UserItem> {
         contentView.setText(itemList.get(position).name);
         contentView.setTextSize(25);
         final TextView contentView2 = itemView.findViewById(R.id.content2);
-        contentView2.setText(itemList.get(position).DNI);
+        contentView2.setText(itemList.get(position).dni);
         contentView2.setTextSize(20);
 
 

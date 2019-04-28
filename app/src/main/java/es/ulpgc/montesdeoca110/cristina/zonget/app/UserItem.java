@@ -20,7 +20,7 @@ public class UserItem {
     @PrimaryKey
     public final int id;
 
-    public final String name, DNI;
+    public final String name, dni;
 
     @ColumnInfo (name = "account_id")
     public int accountId;
@@ -29,6 +29,6 @@ public class UserItem {
 
         this.id = id;
         this.name = name;
-        DNI = dni;
+        this.dni = dni;
     }
 }

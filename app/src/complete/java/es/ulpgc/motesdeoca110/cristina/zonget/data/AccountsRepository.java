@@ -83,7 +83,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 for (AccountItem account : accounts) {
 
                     for (PetsItem pets : account.getPets()) {
-                        pets.accountId = account.getId();
+                        pets.userId = account.getId();
                     }
                 }
                 return true;
