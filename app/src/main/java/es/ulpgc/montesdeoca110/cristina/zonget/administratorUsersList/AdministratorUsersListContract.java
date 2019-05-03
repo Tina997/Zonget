@@ -5,6 +5,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface AdministratorUsersListContract {
 
@@ -31,7 +32,7 @@ interface AdministratorUsersListContract {
     }
 
     interface Model {
-        List<UserItem> fetchUsersData();
+        void fetchUsersData(RepositoryContract.Users.GetUsersListCallback callback);
     }
 
     interface Router {

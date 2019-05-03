@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 interface AdministratorSearchUsersContract {
 
     interface View {

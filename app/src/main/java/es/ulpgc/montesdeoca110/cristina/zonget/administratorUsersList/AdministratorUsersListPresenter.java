@@ -3,9 +3,11 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorUsersListPresenter implements AdministratorUsersListContract.Presenter {
 
@@ -40,7 +42,13 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         // Log.e(TAG, "fetchPetsForAdoptionListData()");
         // set passed state
         //AdministratorUsersListState state = router.getDataFromPreviousScreen();
-        viewModel.users=model.fetchUsersData();
+        model.fetchUsersData(new RepositoryContract.Users.GetUsersListCallback() {
+            @Override
+            public void setUsersList(List<UserItem> users) {
+                viewModel.users = users;
+                view.get().displayData(viewModel);
+            }
+        });
         // update the view
         view.get().displayData(viewModel);
 

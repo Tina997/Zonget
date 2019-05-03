@@ -5,6 +5,8 @@ import java.lang.ref.WeakReference;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.UsersRepository;
 
 public class AdministratorUsersListScreen {
 
@@ -15,10 +17,11 @@ public class AdministratorUsersListScreen {
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
         AdministratorUsersListState state = mediator.getAdministratorUsersListState();
+        RepositoryContract.Users repository = UsersRepository.getInstance(context.get());
 
         AdministratorUsersListContract.Router router = new AdministratorUsersListRouter(mediator);
         AdministratorUsersListContract.Presenter presenter = new AdministratorUsersListPresenter(state);
-        AdministratorUsersListContract.Model model = new AdministratorUsersListModel();
+        AdministratorUsersListContract.Model model = new AdministratorUsersListModel(repository);
         presenter.injectModel(model);
         presenter.injectRouter(router);
         presenter.injectView(new WeakReference<>(view));

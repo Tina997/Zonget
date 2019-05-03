@@ -8,6 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
 
@@ -104,5 +105,23 @@ public interface RepositoryContract {
 
         void getPetsForAdoption(int id, PetsForAdoptionRepository.GetPetsForAdoptionCallback callback);
     }
+    interface Users {
 
-}
+        interface FetchUsersDataCallBack {
+            void onUsersDataFetched(boolean error);
+        }
+
+        interface GetUsersListCallback {
+            void setUsersList(List<UserItem> users);
+        }
+
+        interface GetUsersCallback {
+            void setUsers(UserItem user);
+        }
+
+        void loadUsers(boolean clearFirst, UsersRepository.FetchUsersDataCallBack callback);
+
+        void getUsersList(UsersRepository.GetUsersListCallback callback);
+    }
+
+    }
