@@ -82,7 +82,7 @@ public interface RepositoryContract {
         interface GetLostPetsCallback{
             void setLostPets(LostPetItem lostPet);
         }
-        void loadCatalog(LostPetsRepository.FetchLostPetsDataCallBack callback);
+        void loadLostPets(boolean clearFirst, LostPetsRepository.FetchLostPetsDataCallBack callback);
         void getLostPetsList(LostPetsRepository.GetLostPetsListCallback callback);
 
         void getLostPets(int id, LostPetsRepository.GetLostPetsCallback callback);
