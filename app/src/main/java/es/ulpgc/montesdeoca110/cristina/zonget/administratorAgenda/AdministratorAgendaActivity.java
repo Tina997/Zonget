@@ -60,9 +60,6 @@ public class AdministratorAgendaActivity
 
         calendarDate = calendarView.getDate();
 
-       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-       date = sdf.format(new Date(calendarView.getDate()));
-
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -100,7 +97,6 @@ public class AdministratorAgendaActivity
         selectedDate.setText(viewModel.date);
     }
 
-    //Prueba
     @Override
     public void onPause(){
         presenter.saveState(date, calendarDate);

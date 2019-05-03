@@ -23,10 +23,18 @@ interface UserAgendaContract {
         void fetchEventListData();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
+
+        void saveState(String date, long calendarDate);
+
+        void onDateChanged(String date);
     }
 
     interface Model {
         List<EventItem> fetchData();
+
+        long fetchDateData();
     }
 
     interface Router {
@@ -37,5 +45,7 @@ interface UserAgendaContract {
         UserAgendaState getDataFromPreviousScreen();
 
         String getActualThemeName();
+
+        void onBackButtonPressed();
     }
 }

@@ -33,4 +33,10 @@ public class UserAgendaModel implements UserAgendaContract.Model {
         String content = "Cita" + position;
         return new EventItem(content, position);
     }
+
+    @Override
+    public long fetchDateData(){
+        long time = System.currentTimeMillis();
+        return time;
+    }
 }
