@@ -315,6 +315,7 @@ public class AppMediator extends Application {
     public void setUserItem(UserItem item) {
         this.userItem = item;
     }
+
     public AdministratorUsersListState getAdministratorUsersListState() {
     return administratorUsersListState;
     }
