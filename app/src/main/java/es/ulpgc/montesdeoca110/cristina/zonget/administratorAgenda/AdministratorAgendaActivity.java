@@ -115,7 +115,6 @@ public class AdministratorAgendaActivity
                 if (id == android.R.id.home) {
                     //TODO destruir activity
                     presenter.onBackButtonPressed();
-                    return true;
                 }
                 return super.onOptionsItemSelected(item);
         }

@@ -79,7 +79,6 @@ public class AddPetForAdoptionActivity
         switch (item.getItemId()) {
             case R.id.action_accept:
                 presenter.onAcceptButtonClicked();
-                return true;
             default:
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
