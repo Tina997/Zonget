@@ -62,8 +62,8 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
     }
 
     @Override
-    public void gotToAddLostPet() {
-        router.navigateToAddLostPetScreen();
+    public void gotToAddPetForAdoption() {
+        router.navigateToAddPetForAdoptionScreen();
     }
 
 

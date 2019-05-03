@@ -24,7 +24,7 @@
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addLostPetButton"
+        android:id="@+id/addPetForAdoptionButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -32,7 +32,7 @@
         android:layout_marginTop="507dp"
         android:backgroundTint="?attr/colorPrimaryDark"
         android:clickable="true"
-        android:onClick="goToAddLostPet"
+        android:onClick="goToAddPetForAdoption"
         android:textAlignment="center"
         android:tint="?attr/colorPrimary"
         app:srcCompat="@android:drawable/ic_input_add" />

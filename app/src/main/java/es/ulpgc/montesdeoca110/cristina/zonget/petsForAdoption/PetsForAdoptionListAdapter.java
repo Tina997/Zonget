@@ -59,8 +59,7 @@ public class PetsForAdoptionListAdapter extends RecyclerView.Adapter<PetsForAdop
         holder.itemView.setTag(itemList.get(position));
         holder.itemView.setOnClickListener(clickListener);
 
-        holder.contentView.setText(itemList.get(position).date);
-        holder.contentViewB.setText(itemList.get(position).breed);
+        holder.contentView.setText(itemList.get(position).breed);
         loadImageFromURL(holder.imageView,itemList.get(position).picture);
     }
 
@@ -71,13 +70,11 @@ public class PetsForAdoptionListAdapter extends RecyclerView.Adapter<PetsForAdop
 
     class ViewHolder extends RecyclerView.ViewHolder {
         final TextView contentView;
-        final TextView contentViewB;
         final ImageView imageView;
 
         ViewHolder(View view) {
             super(view);
-            contentView = view.findViewById(R.id.birthDate);
-            contentViewB = view.findViewById(R.id.petForAdoptionBreed);
+            contentView = view.findViewById(R.id.petForAdoptionBreed);
             imageView = view.findViewById(R.id.petForAdoptionImage);
 
         }

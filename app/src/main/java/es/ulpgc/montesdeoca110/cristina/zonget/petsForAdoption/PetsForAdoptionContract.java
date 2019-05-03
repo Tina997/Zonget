@@ -24,7 +24,7 @@ interface PetsForAdoptionContract {
 
         void selectPet(PetForAdoptionItem petForAdoptionItem);
 
-        void gotToAddLostPet();
+        void gotToAddPetForAdoption();
 
         String getActualThemeName();
 
@@ -42,7 +42,7 @@ interface PetsForAdoptionContract {
 
         PetsForAdoptionState getDataFromPreviousScreen();
 
-        void navigateToAddLostPetScreen();
+        void navigateToAddPetForAdoptionScreen();
 
         String getActualThemeName();
 

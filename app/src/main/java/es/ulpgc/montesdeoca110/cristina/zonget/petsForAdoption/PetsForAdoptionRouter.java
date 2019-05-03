@@ -53,7 +53,7 @@ public class PetsForAdoptionRouter implements PetsForAdoptionContract.Router {
     }
 
     @Override
-    public void navigateToAddLostPetScreen() {
+    public void navigateToAddPetForAdoptionScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AddPetForAdoptionActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
