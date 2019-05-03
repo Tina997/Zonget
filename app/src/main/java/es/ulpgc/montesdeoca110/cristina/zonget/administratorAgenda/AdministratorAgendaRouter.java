@@ -28,14 +28,14 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
 
     @Override
     public void passDataToNextScreen(AdministratorAgendaState state) {
-       // mediator.setAdministratorAgendaState(state);
+       mediator.setAdministratorAgendaState(state);
     }
+
 
     @Override
     public AdministratorAgendaState getDataFromPreviousScreen() {
-       // AdministratorAgendaState state = mediator.getAdministratorAgendaState();
-      //  return state;
-        return null;
+       AdministratorAgendaState state = mediator.getAdministratorAgendaState();
+      return state;
     }
 
     @Override

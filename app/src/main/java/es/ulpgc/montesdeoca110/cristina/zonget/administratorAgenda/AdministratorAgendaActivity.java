@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
-import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,11 +12,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 
 public class AdministratorAgendaActivity
         extends AppCompatActivity implements AdministratorAgendaContract.View {
@@ -29,6 +26,7 @@ public class AdministratorAgendaActivity
     private TextView selectedDate;
     private CalendarView calendarView;
     private String date;
+    private long calendarDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +58,8 @@ public class AdministratorAgendaActivity
         calendarView = findViewById(R.id.calendar);
         selectedDate = findViewById(R.id.selectedDay);
 
+        calendarDate = calendarView.getDate();
+
        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
        date = sdf.format(new Date(calendarView.getDate()));
 
@@ -67,12 +67,9 @@ public class AdministratorAgendaActivity
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 date = dayOfMonth + "/" + (month+1) + "/" + year;
-                //TODO parece falso Rick
-                selectedDate.setText(date);
+                presenter.onDateChanged(date);
             }
         });
-
-        selectedDate.setText(date);
 
     }
 
@@ -99,6 +96,15 @@ public class AdministratorAgendaActivity
                 dialogo.show(fragmentManager, "tagAlert");
             }
         }));
+        //calendarView.setDate(viewModel.calendarDate, true, true);
+        selectedDate.setText(viewModel.date);
+    }
+
+    //Prueba
+    @Override
+    public void onPause(){
+        presenter.saveState(date, calendarDate);
+        super.onPause();
     }
 
     public void goToAddEvent(View view) {

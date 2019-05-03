@@ -33,4 +33,10 @@ public class AdministratorAgendaModel implements AdministratorAgendaContract.Mod
         String content = "Cita" + position;
         return new EventItem(content, position);
     }
+
+    @Override
+    public long fetchDateData(){
+        long time = System.currentTimeMillis();
+        return time;
+    }
 }

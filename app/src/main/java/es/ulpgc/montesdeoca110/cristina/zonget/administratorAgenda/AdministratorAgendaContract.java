@@ -33,10 +33,16 @@ interface AdministratorAgendaContract {
         String getActualThemeName();
 
         void onBackButtonPressed();
+
+        void saveState(String selectedDate, long calendarDate);
+
+        void onDateChanged(String date);
     }
 
     interface Model {
         List<EventItem> fetchData();
+
+        long fetchDateData();
     }
 
     interface Router {

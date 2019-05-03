@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import java.lang.ref.WeakReference;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
@@ -43,19 +46,46 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
     @Override
     public void fetchDateListData() {
         // Log.e(TAG, "fetchDateListData()");
+        AdministratorAgendaState state;
+        state = router.getDataFromPreviousScreen();
+
+
+        if(state != null){
+            viewModel.date = state.selectedDate;
+            viewModel.calendarDate = state.calendarDate;
+        }
 
         if(viewModel.eventList == null){
-
             //llamar al modelo
             List<EventItem> data = model.fetchData();
-
             viewModel.eventList = data;
         }
 
+        if(viewModel.calendarDate == 0 || viewModel.date == null){
+            //Llamar al modelo
+            long time = model.fetchDateData();
+            viewModel.calendarDate = time;
+            String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
+            viewModel.date = currentDate;
+        }
 
         //mostrar datos
         view.get().displayData(viewModel);
 
+    }
+
+    @Override
+    public void onDateChanged(String date){
+        viewModel.date = date;
+        view.get().displayData(viewModel);
+    }
+
+    @Override
+    public void saveState(String selectedDate, long calendarDate){
+        AdministratorAgendaState state = new AdministratorAgendaState();
+        state.setSelectedDate(selectedDate);
+        state.setCalendarDate(calendarDate);
+        router.passDataToNextScreen(state);
     }
 
     @Override
