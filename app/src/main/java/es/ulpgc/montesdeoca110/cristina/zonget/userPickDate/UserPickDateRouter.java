@@ -25,7 +25,7 @@ public class UserPickDateRouter implements UserPickDateContract.Router {
 
     @Override
     public void passDataToNextScreen(UserPickDateState state) {
-       // mediator.setUserPickDateState(state);
+       mediator.setUserPickDateState(state);
     }
 
     @Override

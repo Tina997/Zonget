@@ -39,4 +39,10 @@ public class UserPickDateModel implements UserPickDateContract.Model {
         String content = "Hora " + position;
         return new HourItem(content, position);
     }
+
+    @Override
+    public long fetchDateData(){
+        long time = System.currentTimeMillis();
+        return time;
+    }
 }

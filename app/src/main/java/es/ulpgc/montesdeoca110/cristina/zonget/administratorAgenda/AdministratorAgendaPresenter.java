@@ -45,10 +45,9 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
 
     @Override
     public void fetchDateListData() {
-        // Log.e(TAG, "fetchDateListData()");
+
         AdministratorAgendaState state;
         state = router.getDataFromPreviousScreen();
-
 
         if(state != null){
             viewModel.date = state.selectedDate;
@@ -69,7 +68,6 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
             viewModel.date = currentDate;
         }
 
-        //mostrar datos
         view.get().displayData(viewModel);
 
     }

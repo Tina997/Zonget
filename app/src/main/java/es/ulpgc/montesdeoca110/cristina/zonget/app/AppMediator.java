@@ -337,6 +337,118 @@ public class AppMediator extends Application {
         this.administratorUserPetsDetailState = administratorUserPetsDetailState;
     }
 
+    //UserPickDate
+    public void setUserPickDateState(UserPickDateState userPickDateState) {
+        this.userPickDateState = userPickDateState;
+    }
+
+    public UserPickDateState getUserPickDateState() {
+        return userPickDateState;
+    }
+
+    //PetsForAdoptionDetail
+    public PetsForAdoptionDetailState getPetsForAdoptionDetailState() {
+        return petsForAdoptionDetailState;
+    }
+
+    public void setPetsForAdoptionDetailState(PetsForAdoptionDetailState petsForAdoptionDetailState) {
+        this.petsForAdoptionDetailState = petsForAdoptionDetailState;
+    }
+
+    //EditPetForAdoption
+    public EditPetForAdoptionState getEditPetForAdoptionState() {
+        return editPetForAdoptionState;
+    }
+
+    public void setEditPetForAdoptionState(EditPetForAdoptionState editPetForAdoptionState) {
+        this.editPetForAdoptionState = editPetForAdoptionState;
+    }
+
+    //AddPetForAdoption
+    public AddPetForAdoptionState getAddPetForAdoptionState() {
+        return addPetForAdoptionState;
+    }
+
+    public void setAddPetForAdoptionState(AddPetForAdoptionState addPetForAdoptionState) {
+        this.addPetForAdoptionState = addPetForAdoptionState;
+    }
+
+    //PetsForAdoption
+    public PetsForAdoptionState getPetsForAdoptionState() {
+        return petsForAdoptionState;
+    }
+
+    public void setPetsForAdoptionState(PetsForAdoptionState petsForAdoptionState) {
+        this.petsForAdoptionState = petsForAdoptionState;
+    }
+
+    public PetForAdoptionItem getPetForAdoptionItem() {
+        return petForAdoptionItem;
+    }
+
+    public void setPetForAdoptionItem(PetForAdoptionItem petForAdoptionItem) {
+        this.petForAdoptionItem = petForAdoptionItem;
+    }
+
+    //AddPet
+    public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
+        this.administratorUsersAddPetState = administratorUsersAddPetState;
+    }
+
+    public AdministratorUsersAddPetState getAdministratorUsersAddPetState() {
+        return administratorUsersAddPetState;
+    }
+    //EditPet
+    public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
+        this.administratorUserEditPetState = administratorUserEditPetState;
+    }
+
+    public AdministratorUserEditPetState getAdministratorUserEditPetState() {
+        return administratorUserEditPetState;
+    }
+
+    //UserAgenda
+    public UserAgendaState getUserAgendaState() {
+        return userAgendaState;
+    }
+
+    public void setUserAgendaState(UserAgendaState userAgendaState) {
+        this.userAgendaState = userAgendaState;
+    }
+
+    //LostPetsDetail
+    public LostPetsDetailState getLostPetsDetailState() {
+        return lostPetsDetailState;
+    }
+
+    public LostPetItem getLostPetsDetailItem() {
+        return lostPet;
+    }
+
+    //AddLostPets
+    public AddLostPetState getAddLostPetState() {
+        return addLostPetState;
+    }
+
+    //EditLostPets
+    public EditLostPetState getEditLostPetState() {
+        return editLostPetState;
+    }
+
+    //LostPets
+    public void setlostPetsListState(LostPetItem lostPetsItem) {
+        lostPetsItem = lostPet;
+    }
+
+    public void setLostPet(LostPetItem lostPetItem) {
+        lostPet = lostPetItem;
+
+    }
+
+    public LostPetsListState getlostPetsListState() {
+        return lostPetsListState;
+    }
+
     //------------------------------------- Estados entre actividades ------------------------------------------
 
     //SplashToSignIn
@@ -402,107 +514,4 @@ public class AppMediator extends Application {
         this.userMenuToUserPickDateState = userMenuToUserPickDateState;
     }
 
-    //AddPet
-    public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
-        this.administratorUsersAddPetState = administratorUsersAddPetState;
-    }
-
-    public AdministratorUsersAddPetState getAdministratorUsersAddPetState() {
-        return administratorUsersAddPetState;
-    }
-    //EditPet
-    public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
-        this.administratorUserEditPetState = administratorUserEditPetState;
-    }
-
-    public AdministratorUserEditPetState getAdministratorUserEditPetState() {
-        return administratorUserEditPetState;
-    }
-
-    public UserPickDateState getUserPickDateState() {
-        return userPickDateState;
-    }
-
-    //UserAgenda
-    public UserAgendaState getUserAgendaState() {
-        return userAgendaState;
-    }
-
-    public void setUserAgendaState(UserAgendaState userAgendaState) {
-        this.userAgendaState = userAgendaState;
-    }
-
-    //LostPets
-    public void setlostPetsListState(LostPetItem lostPetsItem) {
-        lostPetsItem = lostPet;
-    }
-    public void setLostPet(LostPetItem lostPetItem) {
-        lostPet = lostPetItem;
-
-    }
-    public LostPetsListState getlostPetsListState() {
-        return lostPetsListState;
-    }
-
-    //PetsForAdoption
-    public PetsForAdoptionState getPetsForAdoptionState() {
-        return petsForAdoptionState;
-    }
-
-    public void setPetsForAdoptionState(PetsForAdoptionState petsForAdoptionState) {
-        this.petsForAdoptionState = petsForAdoptionState;
-    }
-
-    public PetForAdoptionItem getPetForAdoptionItem() {
-        return petForAdoptionItem;
-    }
-
-    public void setPetForAdoptionItem(PetForAdoptionItem petForAdoptionItem) {
-        this.petForAdoptionItem = petForAdoptionItem;
-    }
-
-    //PetsForAdoptionDetail
-    public PetsForAdoptionDetailState getPetsForAdoptionDetailState() {
-        return petsForAdoptionDetailState;
-    }
-
-    public void setPetsForAdoptionDetailState(PetsForAdoptionDetailState petsForAdoptionDetailState) {
-        this.petsForAdoptionDetailState = petsForAdoptionDetailState;
-    }
-
-    //EditPetForAdoption
-    public EditPetForAdoptionState getEditPetForAdoptionState() {
-        return editPetForAdoptionState;
-    }
-
-    public void setEditPetForAdoptionState(EditPetForAdoptionState editPetForAdoptionState) {
-        this.editPetForAdoptionState = editPetForAdoptionState;
-    }
-
-    //AddPetForAdoption
-    public AddPetForAdoptionState getAddPetForAdoptionState() {
-        return addPetForAdoptionState;
-    }
-
-    public void setAddPetForAdoptionState(AddPetForAdoptionState addPetForAdoptionState) {
-        this.addPetForAdoptionState = addPetForAdoptionState;
-    }
-
-    //LostPetsDetail
-    public LostPetsDetailState getLostPetsDetailState() {
-        return lostPetsDetailState;
-    }
-
-    public LostPetItem getLostPetsDetailItem() {
-        return lostPet;
-    }
-
-    //AddLostPets
-    public AddLostPetState getAddLostPetState() {
-        return addLostPetState;
-    }
-    //EditLostPets
-    public EditLostPetState getEditLostPetState() {
-        return editLostPetState;
-    }
 }

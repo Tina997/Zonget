@@ -29,6 +29,7 @@ public class UserPickDateActivity
     private TextView selectedDate;
     private CalendarView calendarView;
     private String date;
+    private long calendarDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,27 +52,21 @@ public class UserPickDateActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Cita Previa");
         }
+
         listView = findViewById(R.id.hours_list);
         calendarView = findViewById(R.id.calendar);
         selectedDate = findViewById(R.id.selectedDay);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        date = sdf.format(new Date(calendarView.getDate()));
+        calendarDate = calendarView.getDate();
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 date = dayOfMonth + "/" + (month+1) + "/" + year;
-                //TODO parece falso Rick
-                selectedDate.setText(date);
+                presenter.onDateChanged(date);
             }
         });
 
-        selectedDate.setText(date);
-
-
-        // do the setup
-        UserPickDateScreen.configure(this);
     }
 
     @Override
@@ -101,8 +96,16 @@ public class UserPickDateActivity
                 dialogo.show(fragmentManager, "tagAlert");
             }
         }));
-        // deal with the data
+        //calendarView.setDate(viewModel.calendarDate, true, true);
+        selectedDate.setText(viewModel.date);
     }
+
+    @Override
+    public void onPause(){
+        presenter.saveState(date, calendarDate);
+        super.onPause();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

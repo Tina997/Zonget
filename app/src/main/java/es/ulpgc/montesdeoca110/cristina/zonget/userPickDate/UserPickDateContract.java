@@ -23,10 +23,16 @@ interface UserPickDateContract {
         void fetchData();
 
         String getActualThemeName();
+
+        void saveState(String date, long calendarDate);
+
+        void onDateChanged(String date);
     }
 
     interface Model {
         List<HourItem> fetchData();
+
+        long fetchDateData();
     }
 
     interface Router {
