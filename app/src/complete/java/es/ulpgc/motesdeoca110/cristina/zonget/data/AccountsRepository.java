@@ -1,8 +1,10 @@
 package es.ulpgc.motesdeoca110.cristina.zonget.data;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -10,6 +12,9 @@ import com.google.gson.GsonBuilder;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.montesdeoca110.cristina.zonget.database.AccountDao;
+import es.ulpgc.montesdeoca110.cristina.zonget.database.PetsDao;
+import es.ulpgc.montesdeoca110.cristina.zonget.database.ZongetDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,20 +22,19 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class AccountsRepository implements RepositoryContract.Accounts {
 
+    public static final String DB_FILE = "zonget.db";
     public static final String JSON_FILE = "zonget.json";
     public static final String JSON_ROOT = "accounts";
 
     private static AccountsRepository INSTANCE;
 
+    private ZongetDatabase database;
     private Context context;
-
-    private List<AccountItem> accounts;
 
     public static AccountsRepository getInstance(Context context) {
         if (INSTANCE == null) {
@@ -41,6 +45,99 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private AccountsRepository(Context context) {
         this.context = context;
+
+        database = Room.databaseBuilder(context,ZongetDatabase.class, DB_FILE).build();
+    }
+
+    //--------------------------------------------------------------------------------
+
+    @Override
+    public void loadZonget(final boolean clearFirst, final FecthZongetDataCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(clearFirst){
+                    database.clearAllTables();
+                }
+
+                boolean error = false;
+                if(getAccountDao().loadAccounts().size() == 0){
+                    error = !loadZongetFromJSON(loadJSONFromAsset());
+                }
+
+                if(callback != null){
+                    callback.onZongetDataFetched(error);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void getCheckAccount(final String accountName, final String accountPassword, final GetCheckAccountExistCallback callback) {
+        AsyncTask.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                if (callback != null) {
+                    boolean exist = checkAccount(accountName, accountPassword);
+                    AccountItem account = null;
+                    if(exist){
+                        account = getAccountchecked(accountName, accountPassword);
+                    }
+                    callback.setCheckAccountExist(exist, account);
+                }
+            }
+        });
+
+    }
+
+    //--------- Revisado hasta aquí
+
+
+    @Override
+    public void checkNewAccountDataExist(final String accountDni, final String accountEmail, final CheckNewAccountDataExistCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null) {
+                    /*boolean exist = checkNewAccount(accountDni, accountEmail);
+                    int idForNewAccount = accounts.size() + 1;
+                    callback.setNewAccountExistCallBack(exist, idForNewAccount);*/
+                }
+            }
+        });
+    }
+
+    @Override
+    public void insertNewAccount(final AccountItem account, final InsertNewAccountCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null) {
+                    //accounts.add(account);
+                    callback.onNewAccountInserted();
+                }
+            }
+        });
+    }
+
+    private boolean checkNewAccount(String accountDni, String accountEmail) {
+        /*for (AccountItem account : accounts) {
+            if (account.getDni().equals(accountDni) && account.getEmail().equals(accountEmail)) {
+                return true;
+            }
+        }*/
+        return false;
+    }
+
+    //---------------------------------- Métodos privados ---------------------------
+
+    private AccountDao getAccountDao(){
+        return database.accountDao();
+    }
+
+    private PetsDao getPetsDao(){
+        return database.petsDao();
     }
 
     private String loadJSONFromAsset() {
@@ -56,6 +153,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             json = new String(buffer, "UTF-8");
 
         } catch (IOException error) {
+            Log.e("AccountsRepository","error: " + error);
         }
 
         return json;
@@ -71,112 +169,43 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT);
 
-            accounts = new ArrayList();
-
             if (jsonArray.length() > 0) {
 
                 final List<AccountItem> accounts = Arrays.asList(gson.fromJson(jsonArray.toString(), AccountItem[].class));
 
                 for (AccountItem account : accounts) {
-                    insertAccount(account);
+                    getAccountDao().insertAccount(account);
                 }
                 for (AccountItem account : accounts) {
 
                     for (PetsItem pets : account.getPets()) {
                         pets.userId = account.getId();
+
                     }
                 }
                 return true;
             }
 
         } catch (JSONException error) {
+            Log.e("AccountsRepository","error: " + error);
         }
 
         return false;
     }
 
-    private void insertAccount(AccountItem account) {
-        accounts.add(account);
-    }
-
-    @Override
-    public void loadZonget(final FecthZongetDataCallback callback) {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                boolean error = !loadZongetFromJSON(loadJSONFromAsset());
-                callback.onZongetDataFetched(error);
-            }
-        });
-    }
-
-    @Override
-    public void getCheckAccount(final String accountName, final String accountPassword, final GetCheckAccountExistCallback callback) {
-        AsyncTask.execute(new Runnable() {
-
-            @Override
-            public void run() {
-                if (callback != null) {
-                    boolean exist = checkAccount(accountName, accountPassword);
-                    AccountItem account = getAccountchecked(accountName, accountPassword);
-                    callback.setCheckAccountExist(exist, account);
-                }
-            }
-        });
-
-    }
-
-    @Override
-    public void checkNewAccountDataExist(final String accountDni, final String accountEmail, final CheckNewAccountDataExistCallback callback) {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                if (callback != null) {
-                    boolean exist = checkNewAccount(accountDni, accountEmail);
-                    int idForNewAccount = accounts.size() + 1;
-                    callback.setNewAccountExistCallBack(exist, idForNewAccount);
-                }
-            }
-        });
-    }
-
-    @Override
-    public void insertNewAccount(final AccountItem account, final InsertNewAccountCallback callback) {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                if (callback != null) {
-                    accounts.add(account);
-                    callback.onNewAccountInserted();
-                }
-            }
-        });
-    }
-
     private boolean checkAccount(String accountName, String accountPassword) {
-        for (AccountItem account : accounts) {
-            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)) {
-                return true;
-            }
+
+        AccountItem account = getAccountDao().findAccount(accountName,accountPassword);
+
+        if(account != null){
+            return true;
         }
+
         return false;
     }
 
     private AccountItem getAccountchecked(String accountName, String accountPassword) {
-        for (AccountItem account : accounts) {
-            if (account.getName().equals(accountName) && account.getPassword().equals(accountPassword)) {
-                return account;
-            }
-        }
-        return null;
+        return getAccountDao().findAccount(accountName,accountPassword);
     }
 
-    private boolean checkNewAccount(String accountDni, String accountEmail) {
-        for (AccountItem account : accounts) {
-            if (account.getDni().equals(accountDni) && account.getEmail().equals(accountEmail)) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

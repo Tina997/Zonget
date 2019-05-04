@@ -51,7 +51,7 @@ public interface RepositoryContract {
             void onZongetDataFetched(boolean error);
         }
 
-        void loadZonget(AccountsRepository.FecthZongetDataCallback callback);
+        void loadZonget(boolean clearFirst, AccountsRepository.FecthZongetDataCallback callback);
 
         interface GetCheckAccountExistCallback {
             void setCheckAccountExist(boolean exist, AccountItem account);

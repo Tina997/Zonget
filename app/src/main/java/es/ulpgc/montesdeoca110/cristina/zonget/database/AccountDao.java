@@ -15,13 +15,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 public interface AccountDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertCategory(AccountItem item);
+    void insertAccount(AccountItem item);
 
     @Update
-    void updateCategory(AccountItem item);
+    void updateAccount(AccountItem item);
 
     @Delete
-    void deleteCategory(AccountItem item);
+    void deleteAccount(AccountItem item);
 
     @Query("SELECT * FROM accounts")
     List<AccountItem> loadAccounts();
@@ -29,5 +29,6 @@ public interface AccountDao {
     @Query("SELECT * FROM accounts WHERE id =:id LIMIT 1")
     AccountItem loadAccount(int id);
 
-
+    @Query("SELECT * FROM accounts WHERE name=:name AND password=:password")
+    AccountItem findAccount(String name, String password);
 }
