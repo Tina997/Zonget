@@ -91,18 +91,18 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     }
 
-    //--------- Revisado hasta aquí
-
-
     @Override
     public void checkNewAccountDataExist(final String accountDni, final String accountEmail, final CheckNewAccountDataExistCallback callback) {
-        AsyncTask.execute(new Runnable() {
+        AsyncTask.execute( new Runnable() {
             @Override
             public void run() {
                 if (callback != null) {
-                    /*boolean exist = checkNewAccount(accountDni, accountEmail);
-                    int idForNewAccount = accounts.size() + 1;
-                    callback.setNewAccountExistCallBack(exist, idForNewAccount);*/
+                    boolean exist = checkNewAccountData(accountDni, accountEmail);
+                    int lastId = 0;
+                    if(!exist){
+                        lastId = getAccountDao().loadAccounts().size() + 1;
+                    }
+                    callback.setNewAccountExistCallBack(exist, lastId);
                 }
             }
         });
@@ -114,23 +114,14 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if (callback != null) {
-                    //accounts.add(account);
+                    getAccountDao().insertAccount(account);
                     callback.onNewAccountInserted();
                 }
             }
         });
     }
 
-    private boolean checkNewAccount(String accountDni, String accountEmail) {
-        /*for (AccountItem account : accounts) {
-            if (account.getDni().equals(accountDni) && account.getEmail().equals(accountEmail)) {
-                return true;
-            }
-        }*/
-        return false;
-    }
-
-    //---------------------------------- Métodos privados ---------------------------
+    //---------------------------- Métodos privados ----------------------------------
 
     private AccountDao getAccountDao(){
         return database.accountDao();
@@ -208,4 +199,14 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         return getAccountDao().findAccount(accountName,accountPassword);
     }
 
+    private boolean checkNewAccountData(String accountDni, String accountEmail) {
+
+        AccountItem account = getAccountDao().checkAccountExist(accountDni,accountEmail);
+
+        if(account == null) {
+            return false;
+        }
+
+        return true;
+    }
 }

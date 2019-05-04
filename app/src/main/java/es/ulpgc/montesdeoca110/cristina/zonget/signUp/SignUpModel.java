@@ -13,7 +13,7 @@ public class SignUpModel implements SignUpContract.Model {
 
     @Override
     public void checkNewAccount(final String accountDni,final String accountEmail, final RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback) {
-        repository.loadZonget(true,new RepositoryContract.Accounts.FecthZongetDataCallback() {
+        repository.loadZonget(false,new RepositoryContract.Accounts.FecthZongetDataCallback() {
             @Override
             public void onZongetDataFetched(boolean error) {
                 if(!error){

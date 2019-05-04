@@ -31,4 +31,7 @@ public interface AccountDao {
 
     @Query("SELECT * FROM accounts WHERE name=:name AND password=:password")
     AccountItem findAccount(String name, String password);
+
+    @Query("SELECT * FROM accounts WHERE dni=:dni AND email=:email")
+    AccountItem checkAccountExist(String dni, String email);
 }
