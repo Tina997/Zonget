@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
 import java.lang.ref.WeakReference;
+import java.util.Calendar;
 
 public class AddEventPresenter implements AddEventContract.Presenter {
 
@@ -31,26 +32,33 @@ public class AddEventPresenter implements AddEventContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
-
+    public void fetchEventData() {
         // set passed state
         AddEventState state = router.getDataFromPreviousScreen();
         if (state != null) {
-            viewModel.data = state.data;
+            viewModel.spinnerSelection = state.spinnerSelection;
+            viewModel.calendar = state.calendar;
         }
 
-        if (viewModel.data == null) {
+        if (viewModel.calendar == null) {
             // call the model
-            String data = model.fetchData();
+            Calendar calendar = model.fetchCalendar();
 
             // set initial state
-            viewModel.data = data;
+            viewModel.calendar = calendar;
         }
 
         // update the view
         view.get().displayData(viewModel);
 
+    }
+
+    @Override
+    public void saveState(int spinnerSelection, Calendar calendar){
+        AddEventState state = new AddEventState();
+        state.setSpinnerSelection(spinnerSelection);
+        state.calendar = calendar;
+        router.passDataToNextScreen(state);
     }
 
     @Override

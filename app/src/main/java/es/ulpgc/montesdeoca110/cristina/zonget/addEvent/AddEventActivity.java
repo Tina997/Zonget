@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,9 +8,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.Spinner;
+import android.widget.TimePicker;
+
+
+import java.util.Calendar;
+
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaActivity;
 
 public class AddEventActivity
         extends AppCompatActivity implements AddEventContract.View {
@@ -19,6 +24,9 @@ public class AddEventActivity
     public static String TAG = AddEventActivity.class.getSimpleName();
 
     private AddEventContract.Presenter presenter;
+    Spinner spinner;
+    DatePicker datePicker;
+    TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +54,19 @@ public class AddEventActivity
             actionBar.setTitle(getString(R.string.addEvent_activity_name));
         }
 
+        spinner = findViewById(R.id.spinner);
+        datePicker = findViewById(R.id.datePicker);
+        timePicker = findViewById(R.id.timePicker);
+
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
 
         // do some work
-        //presenter.fetchInboxData();
+        presenter.fetchEventData();
     }
 
     @Override
@@ -63,10 +76,25 @@ public class AddEventActivity
 
     @Override
     public void displayData(AddEventViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+        spinner.setSelection(viewModel.spinnerSelection);
+        Calendar calendar = viewModel.calendar;
+        datePicker.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        timePicker.setHour(calendar.get(Calendar.HOUR));
+        timePicker.setMinute(calendar.get(Calendar.MINUTE));
+    }
 
-        // deal with the data
-        //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+    @Override
+    public void onPause(){
+        //save DatePicker state
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(datePicker.getYear(),datePicker.getMonth(),datePicker.getDayOfMonth());
+        //save TimePicker state
+        calendar.set(Calendar.HOUR, timePicker.getHour());
+        calendar.set(Calendar.MINUTE, timePicker.getMinute());
+        //save Spinner state
+        int spinnerSelection = spinner.getSelectedItemPosition();
+        presenter.saveState(spinnerSelection, calendar);
+        super.onPause();
     }
 
     public void addEvent(View view) {
@@ -77,8 +105,7 @@ public class AddEventActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
-        //TODO refactorizar nombre
-        inflater.inflate(R.menu.administrator_agenda_menu, menu);
+        inflater.inflate(R.menu.administrator_add_event_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -9,4 +9,7 @@ public class AdministratorAgendaViewModel {
     public List<EventItem> eventList;
     public String date;
     public long calendarDate;
+
+    //Prueba
+    public List<String> spinnerList;
 }

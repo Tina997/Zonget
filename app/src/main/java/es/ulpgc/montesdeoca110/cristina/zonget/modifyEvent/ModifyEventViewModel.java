@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.modifyEvent;
 
+import java.util.Calendar;
+
 public class ModifyEventViewModel {
 
-    public String data;
+    public int spinnerSelection;
+    public Calendar calendar;
 }

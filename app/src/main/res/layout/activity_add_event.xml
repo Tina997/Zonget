@@ -61,11 +61,13 @@
             android:textSize="18sp" />
 
         <Spinner
+            android:id="@+id/spinner"
             android:layout_width="298dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:background="?attr/colorPrimaryDarkTrans"
-            android:entries="@array/description_array"></Spinner>
+            android:entries="@array/description_array"
+            ></Spinner>
 
     </LinearLayout>
 
@@ -115,6 +117,7 @@
             android:textSize="18sp" />
 
         <DatePicker
+            android:id="@+id/datePicker"
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
@@ -124,6 +127,7 @@
             android:datePickerMode="spinner"></DatePicker>
 
         <TimePicker
+            android:id="@+id/timePicker"
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"

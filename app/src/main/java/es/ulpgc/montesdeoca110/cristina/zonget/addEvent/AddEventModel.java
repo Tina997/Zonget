@@ -1,5 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
+import android.os.SystemClock;
+
+import java.util.Calendar;
+
 public class AddEventModel implements AddEventContract.Model {
 
     public static String TAG = AddEventModel.class.getSimpleName();
@@ -10,7 +14,13 @@ public class AddEventModel implements AddEventContract.Model {
 
     @Override
     public String fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
-        return "Hello";
+        return null;
     }
+
+    @Override
+    public Calendar fetchCalendar(){
+        Calendar calendar = Calendar.getInstance();
+        return calendar;
+    }
+
 }

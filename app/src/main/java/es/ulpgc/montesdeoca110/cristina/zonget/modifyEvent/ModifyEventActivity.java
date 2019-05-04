@@ -9,6 +9,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.Spinner;
+import android.widget.TimePicker;
+
+import java.util.Calendar;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda.AdministratorAgendaActivity;
@@ -19,6 +24,9 @@ public class ModifyEventActivity
     public static String TAG = ModifyEventActivity.class.getSimpleName();
 
     private ModifyEventContract.Presenter presenter;
+    Spinner spinner;
+    DatePicker datePicker;
+    TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,10 @@ public class ModifyEventActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
+        spinner = findViewById(R.id.spinner);
+        datePicker = findViewById(R.id.datePicker);
+        timePicker = findViewById(R.id.timePicker);
+
     }
 
     @Override
@@ -62,10 +74,25 @@ public class ModifyEventActivity
 
     @Override
     public void displayData(ModifyEventViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+        spinner.setSelection(viewModel.spinnerSelection);
+        Calendar calendar = viewModel.calendar;
+        datePicker.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        timePicker.setHour(calendar.get(Calendar.HOUR));
+        timePicker.setMinute(calendar.get(Calendar.MINUTE));
+    }
 
-        // deal with the data
-       //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+    @Override
+    public void onPause(){
+        //save DatePicker state
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(datePicker.getYear(),datePicker.getMonth(),datePicker.getDayOfMonth());
+        //save TimePicker state
+        calendar.set(Calendar.HOUR, timePicker.getHour());
+        calendar.set(Calendar.MINUTE, timePicker.getMinute());
+        //save Spinner state
+        int spinnerSelection = spinner.getSelectedItemPosition();
+        presenter.saveState(spinnerSelection, calendar);
+        super.onPause();
     }
 
     public void modifyEvent(View view) {
@@ -77,7 +104,7 @@ public class ModifyEventActivity
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         //TODO refactorizar nombre
-        inflater.inflate(R.menu.administrator_agenda_menu, menu);
+        inflater.inflate(R.menu.administrator_add_event_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
