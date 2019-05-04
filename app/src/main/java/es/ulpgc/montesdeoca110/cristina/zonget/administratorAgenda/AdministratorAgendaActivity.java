@@ -64,7 +64,7 @@ public class AdministratorAgendaActivity
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 date = dayOfMonth + "/" + (month+1) + "/" + year;
-                presenter.onDateChanged(date);
+                presenter.onDateChanged(date, calendarDate);
             }
         });
 

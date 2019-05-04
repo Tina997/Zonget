@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
 import java.lang.ref.WeakReference;
+import java.util.Calendar;
 
 interface AddEventContract {
 
@@ -17,8 +18,6 @@ interface AddEventContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
-
         void addEvent();
 
         void navigateToAdministratorAgendaScreen();
@@ -26,10 +25,17 @@ interface AddEventContract {
         String getActualThemeName();
 
         void onBackButtonPressed();
+
+        void saveState(int spinnerSelection, Calendar calendar);
+
+        void fetchEventData();
     }
 
     interface Model {
         String fetchData();
+
+        Calendar fetchCalendar();
+
     }
 
     interface Router {

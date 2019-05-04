@@ -26,7 +26,7 @@ interface UserPickDateContract {
 
         void saveState(String date, long calendarDate);
 
-        void onDateChanged(String date);
+        void onDateChanged(String date, long calendarDate);
     }
 
     interface Model {

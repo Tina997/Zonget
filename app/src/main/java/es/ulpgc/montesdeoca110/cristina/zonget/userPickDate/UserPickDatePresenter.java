@@ -70,8 +70,9 @@ public class UserPickDatePresenter implements UserPickDateContract.Presenter {
     }
 
     @Override
-    public void onDateChanged(String date){
+    public void onDateChanged(String date, long calendarDate){
         viewModel.date = date;
+        viewModel.calendarDate = calendarDate;
         view.get().displayData(viewModel);
     }
 
