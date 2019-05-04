@@ -6,7 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SplashToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-interface SignInContract {
+public interface SignInContract {
 
     interface View {
 
