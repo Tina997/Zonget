@@ -1,53 +1,52 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
+import java.lang.ref.WeakReference;
 
 interface LostPetsDetailContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayLostPetDetailData(LostPetsDetailViewModel viewModel);
+    void displayLostPetDetailData(LostPetsDetailViewModel viewModel);
 
-        void onDeleteButtonClicked();
-    }
+    void onDeleteButtonClicked();
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchLostPetDetailData();
+    void fetchLostPetDetailData();
 
-        void onEditButtonClicked();
+    void onEditButtonClicked();
 
-        void deletePet();
+    void deletePet();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonClicked();
-    }
+    void onBackButtonClicked();
+  }
 
-    interface Model {
-    }
+  interface Model {
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(LostPetsDetailState state);
+    void passDataToNextScreen(LostPetsDetailState state);
 
-        LostPetItem getDataFromLostPetsListScreen();
+    LostPetItem getDataFromLostPetsListScreen();
 
-        void navigateToEditScreen();
+    void navigateToEditScreen();
 
-        void navigateToLostPetListScreen();
+    void navigateToLostPetListScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonClicked();
-    }
+    void onBackButtonClicked();
+  }
 }
