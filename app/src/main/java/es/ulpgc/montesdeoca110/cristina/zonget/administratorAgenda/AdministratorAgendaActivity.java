@@ -11,9 +11,6 @@ import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AdministratorAgendaActivity
@@ -75,7 +72,7 @@ public class AdministratorAgendaActivity
         super.onResume();
 
         // do some work
-        presenter.fetchDateListData();
+        presenter.fetchAdministratorAgendaData();
     }
 
     @Override

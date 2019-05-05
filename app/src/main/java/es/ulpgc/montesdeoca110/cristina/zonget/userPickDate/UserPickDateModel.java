@@ -27,7 +27,7 @@ public class UserPickDateModel implements UserPickDateContract.Model {
 
     @Override
     public List<HourItem> fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
+        // Log.e(TAG, "fetchAdministratorAgendaData()");
         return hourItems;
     }
 

@@ -21,7 +21,7 @@ public class UserAgendaModel implements UserAgendaContract.Model {
 
     @Override
     public List<EventItem> fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
+        // Log.e(TAG, "fetchAdministratorAgendaData()");
         return eventItems;
     }
 

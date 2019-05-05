@@ -27,7 +27,7 @@ public class AdministratorInboxModel implements AdministratorInboxContract.Model
 
     @Override
     public List<QueryItem> fetchData() {
-        // Log.e(TAG, "fetchDateListData()");
+        // Log.e(TAG, "fetchAdministratorAgendaData()");
         return queryItems;
     }
 

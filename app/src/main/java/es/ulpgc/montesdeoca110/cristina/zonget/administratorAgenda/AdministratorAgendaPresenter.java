@@ -44,7 +44,7 @@ public class AdministratorAgendaPresenter extends FragmentActivity implements Ad
     }
 
     @Override
-    public void fetchDateListData() {
+    public void fetchAdministratorAgendaData() {
 
         AdministratorAgendaState state;
         state = router.getDataFromPreviousScreen();

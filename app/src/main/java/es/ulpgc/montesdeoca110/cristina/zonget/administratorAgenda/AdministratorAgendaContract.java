@@ -7,7 +7,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
-interface AdministratorAgendaContract {
+public interface AdministratorAgendaContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
@@ -24,7 +24,7 @@ interface AdministratorAgendaContract {
 
         void injectRouter(Router router);
 
-        void fetchDateListData();
+        void fetchAdministratorAgendaData();
 
         void gotToAddEvent();
 
