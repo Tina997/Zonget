@@ -4,43 +4,43 @@ import java.lang.ref.WeakReference;
 
 interface AddPetForAdoptionContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(AddPetForAdoptionViewModel viewModel);
-    }
+    void displayData(AddPetForAdoptionViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void onAcceptButtonClicked();
+    void onAcceptButtonClicked();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(AddPetForAdoptionState state);
+    void passDataToNextScreen(AddPetForAdoptionState state);
 
-        AddPetForAdoptionState getDataFromPreviousScreen();
+    AddPetForAdoptionState getDataFromPreviousScreen();
 
-        void navigateToPetForAdoptionDetailScreen();
+    void navigateToPetForAdoptionDetailScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }
