@@ -5,8 +5,8 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SplashToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SplashToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signUp.SignUpActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateActivity;

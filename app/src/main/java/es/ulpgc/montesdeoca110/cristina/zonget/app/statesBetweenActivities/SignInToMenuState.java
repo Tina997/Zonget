@@ -1,4 +1,6 @@
-package es.ulpgc.montesdeoca110.cristina.zonget.app;
+package es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 
 public class SignInToMenuState {
 

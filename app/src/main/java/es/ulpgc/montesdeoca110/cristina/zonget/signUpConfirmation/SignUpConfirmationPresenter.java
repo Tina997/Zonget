@@ -5,7 +5,7 @@ import android.content.Context;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SendMail;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
 
 public class SignUpConfirmationPresenter implements SignUpConfirmationContract.Presenter {
 

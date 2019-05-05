@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 

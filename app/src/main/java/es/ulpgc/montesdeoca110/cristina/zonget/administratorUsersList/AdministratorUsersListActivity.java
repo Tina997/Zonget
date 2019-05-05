@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ListView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 
 public class AdministratorUsersListActivity
@@ -67,7 +68,7 @@ public class AdministratorUsersListActivity
         listView.setAdapter(new AdministratorUsersListAdapter(AdministratorUsersListActivity.this, viewModel.users, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserItem item = (UserItem) v.getTag();
+                AccountItem item = (AccountItem) v.getTag();
                 presenter.selectAdminUserData(item);
 
             }

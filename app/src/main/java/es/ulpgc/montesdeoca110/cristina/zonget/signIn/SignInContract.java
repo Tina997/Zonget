@@ -2,8 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SplashToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SplashToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public interface SignInContract {

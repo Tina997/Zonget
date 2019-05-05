@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.changeTheme.ChangeThemeActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 

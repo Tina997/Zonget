@@ -127,7 +127,7 @@ public interface RepositoryContract {
         }
 
         interface GetUsersListCallback {
-            void setUsersList(List<UserItem> users);
+            void setUsersList(List<AccountItem> users);
         }
 
         interface GetUsersCallback {

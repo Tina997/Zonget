@@ -1,11 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -44,7 +42,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         //AdministratorUsersListState state = router.getDataFromPreviousScreen();
         model.fetchUsersData(new RepositoryContract.Users.GetUsersListCallback() {
             @Override
-            public void setUsersList(List<UserItem> users) {
+            public void setUsersList(List<AccountItem> users) {
                 viewModel.users = users;
                 view.get().displayData(viewModel);
             }
@@ -54,7 +52,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
 
     }
     @Override
-    public void selectAdminUserData(UserItem item) {
+    public void selectAdminUserData(AccountItem item) {
         router.passDataToUserDetailScreen(item);
         router.navigateToUserDetailScreen();
     }

@@ -9,11 +9,14 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountBDItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.AccountDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.PetsDao;
+import es.ulpgc.montesdeoca110.cristina.zonget.database.UserDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.ZongetDatabase;
 
 import org.json.JSONArray;
@@ -49,8 +52,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         database = Room.databaseBuilder(context,ZongetDatabase.class, DB_FILE).build();
     }
 
-    //--------------------------------------------------------------------------------
-
     @Override
     public void loadZonget(final boolean clearFirst, final FecthZongetDataCallback callback) {
         AsyncTask.execute(new Runnable() {
@@ -71,6 +72,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             }
         });
     }
+
+    //---------------------------- Métodos de usuarios ----------------------------------
 
     @Override
     public void getCheckAccount(final String accountName, final String accountPassword, final GetCheckAccountExistCallback callback) {
@@ -114,15 +117,17 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if (callback != null) {
-                    getAccountDao().insertAccount(account);
+                    AccountBDItem accountBDItem =  new AccountBDItem(account.getId(),account.getName(),account.getDni(),account.getEmail(),account.getPassword());
+                    getAccountDao().insertAccount(accountBDItem);
+
+                    UserItem userItem =  new UserItem(getUserDao().loadUsers().size() + 1,account.getType(),account.getId());
+                    getUserDao().insertUser(userItem);
+
                     callback.onNewAccountInserted();
                 }
             }
         });
     }
-
-
-
 
     //----------------------------Métodos de mascotas---------------------------------
     @Override
@@ -143,10 +148,15 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
 
     }
+
     //---------------------------- Métodos privados ----------------------------------
 
     private AccountDao getAccountDao(){
         return database.accountDao();
+    }
+
+    private UserDao getUserDao(){
+        return database.userDao();
     }
 
     private PetsDao getPetsDao(){
@@ -187,15 +197,23 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 final List<AccountItem> accounts = Arrays.asList(gson.fromJson(jsonArray.toString(), AccountItem[].class));
 
                 for (AccountItem account : accounts) {
-                    getAccountDao().insertAccount(account);
-                }
-                for (AccountItem account : accounts) {
 
-                    for (PetsItem pets : account.getPets()) {
-                        pets.userId = account.getId();
+                    AccountBDItem accountBD = new AccountBDItem(account.getId(),account.getName(),account.getDni(),account.getEmail(),account.getPassword());
+                    getAccountDao().insertAccount(accountBD);
+
+                    UserItem userItem = new UserItem(getUserDao().loadUsers().size() + 1,account.getType(),account.getId());
+                    getUserDao().insertUser(userItem);
+
+                }
+
+                for (AccountItem account : accounts) {
+                    for (PetsItem pet : account.getPets()) {
+                        pet.userId = account.getId();
+                        getPetsDao().insertPet(pet);
 
                     }
                 }
+
                 return true;
             }
 
@@ -208,7 +226,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private boolean checkAccount(String accountName, String accountPassword) {
 
-        AccountItem account = getAccountDao().findAccount(accountName,accountPassword);
+        AccountBDItem account = getAccountDao().findAccount(accountName,accountPassword);
 
         if(account != null){
             return true;
@@ -218,12 +236,18 @@ public class AccountsRepository implements RepositoryContract.Accounts {
     }
 
     private AccountItem getAccountchecked(String accountName, String accountPassword) {
-        return getAccountDao().findAccount(accountName,accountPassword);
+
+        AccountBDItem accountBDItem =  getAccountDao().findAccount(accountName,accountPassword);
+        UserItem userItem = getUserDao().loadUser(accountBDItem.getId());
+
+        AccountItem account =  new AccountItem(accountBDItem.getId(),userItem.getRol(), accountBDItem.getName(),accountBDItem.getDni(),accountBDItem.getEmail(),accountBDItem.getPassword());
+
+        return account;
     }
 
     private boolean checkNewAccountData(String accountDni, String accountEmail) {
 
-        AccountItem account = getAccountDao().checkAccountExist(accountDni,accountEmail);
+        AccountBDItem account = getAccountDao().checkAccountExist(accountDni,accountEmail);
 
         if(account == null) {
             return false;

@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class ChangeThemePresenter implements ChangeThemeContract.Presenter {

@@ -12,14 +12,14 @@ import android.widget.TextView;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 
-public class AdministratorUsersListAdapter extends ArrayAdapter<UserItem> {
-    private final List<UserItem> itemList;
+public class AdministratorUsersListAdapter extends ArrayAdapter<AccountItem> {
+    private final List<AccountItem> itemList;
     private final View.OnClickListener clickListener;
 
 
-    public AdministratorUsersListAdapter(Context context, List<UserItem> itemList, View.OnClickListener clickListener) {
+    public AdministratorUsersListAdapter(Context context, List<AccountItem> itemList, View.OnClickListener clickListener) {
         super(context,0,itemList);
         this.itemList = itemList;
         this.clickListener = clickListener;
@@ -31,13 +31,13 @@ public class AdministratorUsersListAdapter extends ArrayAdapter<UserItem> {
     }
 
     @Override
-    public UserItem getItem(int position) {
+    public AccountItem getItem(int position) {
         return itemList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return getItem(position).id;
+        return getItem(position).getId();
     }
 
     @Override
@@ -54,10 +54,10 @@ public class AdministratorUsersListAdapter extends ArrayAdapter<UserItem> {
         itemView.setOnClickListener(clickListener);
 
         final TextView contentView = itemView.findViewById(R.id.content);
-        contentView.setText(itemList.get(position).name);
+        contentView.setText(itemList.get(position).getName());
         contentView.setTextSize(25);
         final TextView contentView2 = itemView.findViewById(R.id.content2);
-        contentView2.setText(itemList.get(position).dni);
+        contentView2.setText(itemList.get(position).getDni());
         contentView2.setTextSize(20);
 
 

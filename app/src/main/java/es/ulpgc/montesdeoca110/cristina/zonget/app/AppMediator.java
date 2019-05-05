@@ -1,7 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 import android.app.Application;
-import android.util.Log;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.addLostPet.AddLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.addPetForAdoption.AddPetForAdoptionState;
@@ -16,6 +15,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSelectedActivityState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SplashToSignInState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.UserMenuToUserPickDateState;
 import es.ulpgc.montesdeoca110.cristina.zonget.changeTheme.ChangeThemeState;
 import es.ulpgc.montesdeoca110.cristina.zonget.editLostPet.EditLostPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption.EditPetForAdoptionState;

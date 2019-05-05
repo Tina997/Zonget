@@ -77,7 +77,7 @@ public class UsersRepository implements RepositoryContract.Users {
             @Override
             public void run() {
                 if (callback != null) {
-                    callback.setUsersList(getUsersDao().loadUsers());
+                    //TODO
                 }
             }
         });

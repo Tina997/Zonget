@@ -10,7 +10,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "users",
         foreignKeys = @ForeignKey(
-                entity = AccountItem.class,
+                entity = AccountBDItem.class,
                 parentColumns = "id",
                 childColumns = "account_id",
                 onDelete = CASCADE
@@ -18,17 +18,33 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 public class UserItem {
 
     @PrimaryKey
-    public final int id;
+    private final int id;
 
-    public final String name, dni;
+    private final String rol;
 
     @ColumnInfo (name = "account_id")
-    public int accountId;
+    private int accountId;
 
-    public UserItem(int id, String name, String dni) {
+    public UserItem(int id, String rol, int accountId) {
 
         this.id = id;
-        this.name = name;
-        this.dni = dni;
+        this.rol = rol;
+        this.accountId =  accountId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 }

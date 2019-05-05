@@ -6,6 +6,7 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 
@@ -27,8 +28,8 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
     }
 
     @Override
-    public void passDataToUserDetailScreen(UserItem item) {
-        mediator.setUserItem(item);
+    public void passDataToUserDetailScreen(AccountItem item) {
+        // TODO
     }
 
     @Override

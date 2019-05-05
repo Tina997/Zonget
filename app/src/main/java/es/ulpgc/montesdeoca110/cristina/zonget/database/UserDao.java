@@ -26,6 +26,6 @@ public interface UserDao {
     @Query("SELECT * FROM users")
     List<UserItem> loadUsers();
 
-    @Query("SELECT * FROM users WHERE id =:id LIMIT 1")
-    UserItem loadUser(int id);
+    @Query("SELECT * FROM users WHERE account_id =:accountId LIMIT 1")
+    UserItem loadUser(int accountId);
 }

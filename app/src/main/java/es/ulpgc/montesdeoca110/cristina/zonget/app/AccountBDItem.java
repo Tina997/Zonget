@@ -1,39 +1,29 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
-import com.google.gson.annotations.SerializedName;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-import java.util.ArrayList;
-import java.util.List;
+@Entity(tableName = "accounts")
+public class AccountBDItem {
 
-public class AccountItem {
-
+    @PrimaryKey
     private int id;
 
-    private String type;
     private String name;
     private String dni;
     private String email;
     private String password;
 
-    @SerializedName("pets")
-    private List<PetsItem> pets;
-
-    public AccountItem(int id, String type, String name, String dni, String email, String password) {
+    public AccountBDItem(int id, String name, String dni, String email, String password) {
         this.id = id;
-        this.type = type;
         this.name = name;
         this.dni = dni;
         this.email = email;
         this.password = password;
-        this.pets = new ArrayList<PetsItem>();
     }
 
     public int getId() {
         return id;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public String getName() {
@@ -68,11 +58,4 @@ public class AccountItem {
         this.password = password;
     }
 
-    public List<PetsItem> getPets() {
-        return pets;
-    }
-
-    public void setPets(List<PetsItem> pets) {
-        this.pets = pets;
-    }
 }

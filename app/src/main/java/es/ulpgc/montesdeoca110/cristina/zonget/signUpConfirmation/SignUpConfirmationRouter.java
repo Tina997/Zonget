@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 

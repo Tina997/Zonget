@@ -4,7 +4,7 @@ import android.content.Context;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
 
 interface SignUpConfirmationContract {
 
