@@ -1,91 +1,93 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
+import java.lang.ref.WeakReference;
+
 interface SignUpContract {
 
-    interface View {
+  interface View {
 
-        void injectPresenter(Presenter presenter);
+    void injectPresenter(Presenter presenter);
 
-        void displaySignUpData(SignUpViewModel viewModel);
+    void displaySignUpData(SignUpViewModel viewModel);
 
-        void displayAlertMesaje(String mesaje);
+    void displayAlertMesaje(String mesaje);
 
-        void displayInsertNewAccountMesaje(String mesaje);
+    void displayInsertNewAccountMesaje(String mesaje);
 
-        void finish();
+    void finish();
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        void injectView(WeakReference<View> view);
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void backButtonPressed();
+    void backButtonPressed();
 
-        void updateAccountNameEditText(String accountName);
+    void updateAccountNameEditText(String accountName);
 
-        void updateAccountDniEditText(String accountDni);
+    void updateAccountDniEditText(String accountDni);
 
-        void updateAccountEmailEditText(String accountEmail);
+    void updateAccountEmailEditText(String accountEmail);
 
-        void updateAccountSecondEmailEditText(String accountSecondEmail);
+    void updateAccountSecondEmailEditText(String accountSecondEmail);
 
-        void checkEmails();
+    void checkEmails();
 
-        void updateAccountPasswordEditText(String accountPassword);
+    void updateAccountPasswordEditText(String accountPassword);
 
-        void updateAccountSecondPasswordEditText(String accountSecondPassword);
+    void updateAccountSecondPasswordEditText(String accountSecondPassword);
 
-        void checkPasswords();
+    void checkPasswords();
 
-        void fetchSignUpData();
+    void fetchSignUpData();
 
-        boolean checkAllDataIntroduced();
+    boolean checkAllDataIntroduced();
 
-        void confirmedButtonPressed();
+    void confirmedButtonPressed();
 
-        void saveSignUpState();
-    }
+    void saveSignUpState();
+  }
 
-    interface Model {
+  interface Model {
 
-        void checkNewAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
+    void checkNewAccount(String accountDni, String accountEmail,
+                         RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
 
-        void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
+    void insertNewAccount(AccountItem account,
+                          RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        void setSignUpState(SignUpState state);
+    void setSignUpState(SignUpState state);
 
-        //------------------------- Tema ---------------------
+    //------------------------- Tema ---------------------
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToSinInScreen();
+    void navigateToSinInScreen();
 
-        void navigateToSignUpConfirmationScreen();
+    void navigateToSignUpConfirmationScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmationState state);
+    void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmationState state);
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-    }
+  }
 }
