@@ -5,7 +5,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
-interface AdministratorInboxContract {
+public interface AdministratorInboxContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
