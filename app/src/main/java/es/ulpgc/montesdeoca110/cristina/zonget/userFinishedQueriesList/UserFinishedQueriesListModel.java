@@ -2,12 +2,12 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
 
 public class UserFinishedQueriesListModel implements UserFinishedQueriesListContract.Model {
 
-    public UserFinishedQueriesListModel() {
+  public UserFinishedQueriesListModel() {
 
-    }
+  }
 
-    @Override
-    public void fetchUserFinishedQueriesListData() {
+  @Override
+  public void fetchUserFinishedQueriesListData() {
 
-    }
+  }
 }
