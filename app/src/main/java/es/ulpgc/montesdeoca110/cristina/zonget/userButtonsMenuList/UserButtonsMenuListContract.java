@@ -1,88 +1,88 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import java.lang.ref.WeakReference;
 
 interface UserButtonsMenuListContract {
 
-    interface View {
+  interface View {
 
-        void injectPresenter(Presenter presenter);
+    void injectPresenter(Presenter presenter);
 
-        void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel);
+    void displayUserButtonsMenuListData(UserButtonsMenuListViewModel viewModel);
 
-        void reboot();
+    void reboot();
 
-        void finish();
+    void finish();
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        void injectView(WeakReference<View> view);
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void fetchUserButtonsMenuListData();
+    void fetchUserButtonsMenuListData();
 
-        void signOutButtonPressed();
+    void signOutButtonPressed();
 
-        void pickForADateButtonPressed();
+    void pickForADateButtonPressed();
 
-        void selectUserButtonsMenuListData(UserButtonMenuItem item);
+    void selectUserButtonsMenuListData(UserButtonMenuItem item);
 
-        void changeThemeButtonPressed();
+    void changeThemeButtonPressed();
 
-        void checkThemeChanged();
+    void checkThemeChanged();
 
-    }
+  }
 
-    interface Model {
+  interface Model {
 
-        void fetchUserButtonsMenuListData(RepositoryContract.Settings.GetUserMenuButtonsListCallback callback);
+    void fetchUserButtonsMenuListData(RepositoryContract.Settings
+                                              .GetUserMenuButtonsListCallback callback);
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        //------------------------- Tema ---------------------
+    //------------------------- Tema ---------------------
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void setChangeThemeToMenuState(boolean isChanged);
+    void setChangeThemeToMenuState(boolean isChanged);
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToSignInScreen();
+    void navigateToSignInScreen();
 
-        void navigateToSelectedActivityScreen(String activityClassName);
+    void navigateToSelectedActivityScreen(String activityClassName);
 
-        void navigateToUserPickDateScreen();
+    void navigateToUserPickDateScreen();
 
-        void navigateToChangeThemeScreen();
+    void navigateToChangeThemeScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataToSignInScreen(MenuToSignInState state);
+    void passDataToSignInScreen(MenuToSignInState state);
 
-        void passDataToSelectedScreen(MenuToSelectedActivityState state);
+    void passDataToSelectedScreen(MenuToSelectedActivityState state);
 
-        void passDataToUserPickDateScreen();
+    void passDataToUserPickDateScreen();
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-        //UserButtonsMenuListState getDataFromSignInScreen();
+    //UserButtonsMenuListState getDataFromSignInScreen();
 
-        ChangeThemeToMenuState getDataFromChangeThemeScreen();
+    ChangeThemeToMenuState getDataFromChangeThemeScreen();
 
-    }
+  }
 }
