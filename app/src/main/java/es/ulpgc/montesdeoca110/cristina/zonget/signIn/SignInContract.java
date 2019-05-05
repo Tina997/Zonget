@@ -1,73 +1,73 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.SplashToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import java.lang.ref.WeakReference;
 
 public interface SignInContract {
 
-    interface View {
+  interface View {
 
-        void injectPresenter(Presenter presenter);
+    void injectPresenter(Presenter presenter);
 
-        void displaySignInData(SignInViewModel viewModel);
+    void displaySignInData(SignInViewModel viewModel);
 
-        void displayCheckAccountError();
+    void displayCheckAccountError();
 
-        void finish();
+    void finish();
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        void injectView(WeakReference<View> view);
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void fetchSignInData();
+    void fetchSignInData();
 
-        void forgetPasswordPressed();
+    void forgetPasswordPressed();
 
-        void signInButtonPressed(String accountName, String accountPassword);
+    void signInButtonPressed(String accountName, String accountPassword);
 
-        void signUpButtonPressed();
+    void signUpButtonPressed();
 
-        void pickForADateButtonPressed();
-    }
+    void pickForADateButtonPressed();
+  }
 
-    interface Model {
+  interface Model {
 
-        void checkAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
+    void checkAccount(String accountName, String accountPassword,
+                      RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        //------------------------- Tema ---------------------
+    //------------------------- Tema ---------------------
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToMenuScreen();
+    void navigateToMenuScreen();
 
-        void navigateToSignUpScreen();
+    void navigateToSignUpScreen();
 
-        void navigateToUserPickDateScreen();
+    void navigateToUserPickDateScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataToMenuScreen(SignInToMenuState state);
+    void passDataToMenuScreen(SignInToMenuState state);
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-        SplashToSignInState getDataFromSplashScreen();
+    SplashToSignInState getDataFromSplashScreen();
 
-    }
+  }
 }
