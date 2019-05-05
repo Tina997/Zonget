@@ -2,12 +2,12 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery;
 
 public class UserNewQueryModel implements UserNewQueryContract.Model {
 
-    public UserNewQueryModel() {
+  public UserNewQueryModel() {
 
-    }
+  }
 
-    @Override
-    public void fetchUserNewQueryData() {
+  @Override
+  public void fetchUserNewQueryData() {
 
-    }
+  }
 }
