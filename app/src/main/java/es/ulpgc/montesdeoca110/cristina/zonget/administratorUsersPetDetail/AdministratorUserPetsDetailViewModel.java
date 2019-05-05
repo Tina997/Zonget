@@ -4,5 +4,5 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
 public class AdministratorUserPetsDetailViewModel {
 
-    public PetsItem pet;
+  public PetsItem pet;
 }
