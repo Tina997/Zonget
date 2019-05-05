@@ -1,74 +1,73 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
-public class AdministratorUserEditPetPresenter implements AdministratorUserEditPetContract.Presenter {
+public class AdministratorUserEditPetPresenter
+        implements AdministratorUserEditPetContract.Presenter {
 
-    public static String TAG = AdministratorUserEditPetPresenter.class.getSimpleName();
+  public static String TAG = AdministratorUserEditPetPresenter.class.getSimpleName();
 
-    private WeakReference<AdministratorUserEditPetContract.View> view;
-    private AdministratorUserEditPetViewModel viewModel;
-    private AdministratorUserEditPetContract.Model model;
-    private AdministratorUserEditPetContract.Router router;
+  private WeakReference<AdministratorUserEditPetContract.View> view;
+  private AdministratorUserEditPetViewModel viewModel;
+  private AdministratorUserEditPetContract.Model model;
+  private AdministratorUserEditPetContract.Router router;
 
-    public AdministratorUserEditPetPresenter(AdministratorUserEditPetState state) {
-        viewModel = state;
+  public AdministratorUserEditPetPresenter(AdministratorUserEditPetState state) {
+    viewModel = state;
+  }
+
+  @Override
+  public void injectView(WeakReference<AdministratorUserEditPetContract.View> view) {
+    this.view = view;
+  }
+
+  @Override
+  public void injectModel(AdministratorUserEditPetContract.Model model) {
+    this.model = model;
+  }
+
+  @Override
+  public void injectRouter(AdministratorUserEditPetContract.Router router) {
+    this.router = router;
+  }
+
+  @Override
+  public void fetchData() {
+    // Log.e(TAG, "fetchPetsForAdoptionListData()");
+
+    // set passed state
+    AdministratorUserEditPetState state = router.getDataFromPreviousScreen();
+    if (state != null) {
+      viewModel.data = state.data;
     }
 
-    @Override
-    public void injectView(WeakReference<AdministratorUserEditPetContract.View> view) {
-        this.view = view;
+    if (viewModel.data == null) {
+      // call the model
+      String data = model.fetchData();
+
+      // set initial state
+      viewModel.data = data;
     }
 
-    @Override
-    public void injectModel(AdministratorUserEditPetContract.Model model) {
-        this.model = model;
-    }
+    // update the view
+    view.get().displayData(viewModel);
 
-    @Override
-    public void injectRouter(AdministratorUserEditPetContract.Router router) {
-        this.router = router;
-    }
+  }
 
-    @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchPetsForAdoptionListData()");
+  @Override
+  public void insertNewPet() {
+    router.navigateToNextScreen();
+  }
 
-        // set passed state
-        AdministratorUserEditPetState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
+  @Override
+  public String getActualThemeName() {
+    return router.getActualThemeName();
+  }
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
-
-    }
-
-    @Override
-    public void insertNewPet() {
-        router.navigateToNextScreen();
-    }
-
-    @Override
-    public String getActualThemeName() {
-        return router.getActualThemeName();
-    }
-
-    @Override
-    public void onBackButtonPressed() {
-        router.onBackButtonPressed();
-    }
+  @Override
+  public void onBackButtonPressed() {
+    router.onBackButtonPressed();
+  }
 
 
 }
