@@ -6,26 +6,24 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
-
-import java.util.List;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryAnswerItem;
+import java.util.List;
 
 @Dao
 public interface QueryAnswersDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertQueryAnswer(QueryAnswerItem item);
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
+  void insertQueryAnswer(QueryAnswerItem item);
 
-    @Update
-    void updateQueryAnswer(QueryAnswerItem item);
+  @Update
+  void updateQueryAnswer(QueryAnswerItem item);
 
-    @Delete
-    void deleteQueryAnswer(QueryAnswerItem item);
+  @Delete
+  void deleteQueryAnswer(QueryAnswerItem item);
 
-    @Query("SELECT * FROM queryAnswers")
-    List<QueryAnswerItem> loadQueryAnswers();
+  @Query("SELECT * FROM queryAnswers")
+  List<QueryAnswerItem> loadQueryAnswers();
 
-    @Query("SELECT * FROM queryAnswers WHERE id =:id LIMIT 1")
-    QueryAnswerItem loadQueryAnswer(int id);
+  @Query("SELECT * FROM queryAnswers WHERE id =:id LIMIT 1")
+  QueryAnswerItem loadQueryAnswer(int id);
 }

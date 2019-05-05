@@ -14,22 +14,31 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 @Database(
-        entities= {AccountItem.class, UserItem.class, PetsItem.class, UserPetItem.class, LostPetItem.class, PetForAdoptionItem.class,
+        entities = {AccountItem.class, UserItem.class, PetsItem.class,
+                UserPetItem.class, LostPetItem.class, PetForAdoptionItem.class,
                 QueryItem.class, QueryAnswerItem.class, QueryStatusItem.class},
         version = 1
 )
 
 public abstract class ZongetDatabase extends RoomDatabase {
 
-    public abstract AccountDao accountDao();
-    public abstract UserDao userDao();
-    public abstract PetsDao petsDao();
-    public abstract UsersPetDao usersPetDao();
-    public abstract LostPetsDao lostPetsDao();
-    public abstract PetsForAdoptionDao petsForAdoptionDao();
-    public abstract QueriesDao queriesDao();
-    public abstract QueryAnswersDao queryAnswersDao();
-    public abstract QueryStatusDao queryStatusDao();
+  public abstract AccountDao accountDao();
+
+  public abstract UserDao userDao();
+
+  public abstract PetsDao petsDao();
+
+  public abstract UsersPetDao usersPetDao();
+
+  public abstract LostPetsDao lostPetsDao();
+
+  public abstract PetsForAdoptionDao petsForAdoptionDao();
+
+  public abstract QueriesDao queriesDao();
+
+  public abstract QueryAnswersDao queryAnswersDao();
+
+  public abstract QueryStatusDao queryStatusDao();
 
 
 }
