@@ -9,10 +9,10 @@ public class AdministratorAgendaModel implements AdministratorAgendaContract.Mod
   public static String TAG = AdministratorAgendaModel.class.getSimpleName();
 
   private final List<EventItem> eventItems = new ArrayList<>();
-  private final int ID = 10;
+  private final int Count = 10;
 
   public AdministratorAgendaModel() {
-    for (int index = 1; index <= ID; index++) {
+    for (int index = 1; index <= Count; index++) {
       addDate(createDate(index));
     }
 

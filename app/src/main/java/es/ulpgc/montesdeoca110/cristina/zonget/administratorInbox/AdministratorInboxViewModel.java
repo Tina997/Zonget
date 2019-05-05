@@ -1,12 +1,10 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
-import android.widget.ListView;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
-
 public class AdministratorInboxViewModel {
 
-    public List<QueryItem> inboxList;
+  public List<QueryItem> inboxList;
 }
