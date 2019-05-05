@@ -1,50 +1,52 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+
+
 interface AdministratorUsersPetsListContract {
 
-  interface View {
-    void injectPresenter(Presenter presenter);
+    interface View {
+        void injectPresenter(Presenter presenter);
 
-    void displayUserPetsData(AdministratorUsersPetsListViewModel viewModel);
-  }
+        void displayUserPetsData(AdministratorUsersPetsListViewModel viewModel);
+    }
 
-  interface Presenter {
-    void injectView(WeakReference<AdministratorUsersPetsListContract.View> view);
+    interface Presenter {
+        void injectView(WeakReference<AdministratorUsersPetsListContract.View> view);
 
-    void injectModel(AdministratorUsersPetsListContract.Model model);
+        void injectModel(AdministratorUsersPetsListContract.Model model);
 
-    void injectRouter(AdministratorUsersPetsListContract.Router router);
+        void injectRouter(AdministratorUsersPetsListContract.Router router);
 
-    void fetchUserPetsData();
+        void fetchUserPetsData();
 
-    void selectUserPetsData(PetsItem item);
+        void selectUserPetsData(UserPetItem item);
 
-    void onClickAddButton();
+        void onClickAddButton();
 
-    String getActualThemeName();
+        String getActualThemeName();
 
-    void onBackButtonPressed();
-  }
+        void onBackButtonPressed();
+    }
 
-  interface Model {
-    List<PetsItem> fetchPetsData();
-  }
+    interface Model {
+        List<UserPetItem> fetchPetsData();
+    }
 
-  interface Router {
-    void navigateToPetsDetailScreen();
+    interface Router {
+        void navigateToPetsDetailScreen();
 
-    void passDataToPetsDetailScreen(PetsItem item);
+        void passDataToPetsDetailScreen(UserPetItem item);
 
-    AdministratorUsersPetsListState getDataFromPreviousScreen();
+        AdministratorUsersPetsListState getDataFromPreviousScreen();
 
-    void navigateToAddScreen();
+        void navigateToAddScreen();
 
-    String getActualThemeName();
+        String getActualThemeName();
 
-    void onBackButtonPressed();
-  }
+        void onBackButtonPressed();
+    }
 }

@@ -1,54 +1,52 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
-
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface UserPetsContract {
 
-  interface View {
-    void injectPresenter(Presenter presenter);
+    interface View {
+        void injectPresenter(Presenter presenter);
 
-    void displayUserPetsData(UserPetsViewModel viewModel);
-  }
+        void displayUserPetsData(UserPetsViewModel viewModel);
+    }
 
-  interface Presenter {
-    void injectView(WeakReference<View> view);
+    interface Presenter {
+        void injectView(WeakReference<View> view);
 
-    void injectModel(Model model);
+        void injectModel(Model model);
 
-    void injectRouter(Router router);
+        void injectRouter(Router router);
 
-    void fetchUserPetsData();
+        void fetchUserPetsData();
 
-    void selectUserPetsData(PetsItem item);
+        void selectUserPetsData(UserPetItem item);
 
-    String getActualThemeName();
+        String getActualThemeName();
 
-    void onBackButtonPressed();
-  }
+        void onBackButtonPressed();
+    }
 
-  interface Model {
-    void fetchPetsData(AccountItem item, RepositoryContract.Accounts
-            .GetUserPetsListCallback callback);
+    interface Model {
+        void fetchPetsData(AccountItem item, RepositoryContract.Accounts.GetUserPetsListCallback callback);
 
-    // List<PetsItem> fetchPetsData();
-  }
+       // List<PetsItem> fetchPetsData();
+    }
 
-  interface Router {
-    void navigateToPetsDetailScreen();
+    interface Router {
+        void navigateToPetsDetailScreen();
 
-    void passDataToPetsDetailScreen(PetsItem item);
+        void passDataToPetsDetailScreen(UserPetItem item);
 
-    UserPetsState getDataFromPreviousScreen();
+        UserPetsState getDataFromPreviousScreen();
 
-    String getActualThemeName();
+        String getActualThemeName();
 
-    void onBackButtonPressed();
+        void onBackButtonPressed();
 
-    AccountItem getDataFromSignIn();
-  }
+        AccountItem getDataFromSignIn();
+    }
 }

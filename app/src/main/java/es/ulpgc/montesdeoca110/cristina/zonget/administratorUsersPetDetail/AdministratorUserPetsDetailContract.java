@@ -1,53 +1,58 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import android.content.Context;
+import android.app.AlertDialog;
+
 import java.lang.ref.WeakReference;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 interface AdministratorUserPetsDetailContract {
 
-  interface View {
-    void injectPresenter(Presenter presenter);
+    interface View {
+        void injectPresenter(Presenter presenter);
 
-    void displayData(AdministratorUserPetsDetailViewModel viewModel);
+        void displayData(AdministratorUserPetsDetailViewModel viewModel);
 
-    void onDeleteButtonClicked();
-  }
+        void onDeleteButtonClicked();
+    }
 
-  interface Presenter {
-    void injectView(WeakReference<View> view);
+    interface Presenter {
+        void injectView(WeakReference<View> view);
 
-    void injectModel(Model model);
+        void injectModel(Model model);
 
-    void injectRouter(Router router);
+        void injectRouter(Router router);
 
-    void fetchData();
+        void fetchData();
 
-    void onEditButtonClicked();
+        void onEditButtonClicked();
 
-    void onDeleteButtonClicked();
+        void onDeleteButtonClicked();
 
-    String getActualThemeName();
+        String getActualThemeName();
 
-    void onBackButtonPressed();
-  }
+        void onBackButtonPressed();
+    }
 
-  interface Model {
-    String fetchData();
-  }
+    interface Model {
+        String fetchData();
+    }
 
-  interface Router {
-    void navigateToNextScreen();
+    interface Router {
+        void navigateToNextScreen();
 
-    void passDataToNextScreen(AdministratorUserPetsDetailState state);
+        void passDataToNextScreen(AdministratorUserPetsDetailState state);
 
-    PetsItem getDataFromPreviousScreen();
+        UserPetItem getDataFromPreviousScreen();
 
-    void navigateToEditScreen();
+        void navigateToEditScreen();
 
-    void navigateToPetListScreen();
+        void navigateToPetListScreen();
 
-    String getActualThemeName();
+        String getActualThemeName();
 
-    void onBackButtonPressed();
-  }
+        void onBackButtonPressed();
+    }
 }

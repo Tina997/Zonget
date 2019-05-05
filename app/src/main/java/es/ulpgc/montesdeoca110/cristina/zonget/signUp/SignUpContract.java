@@ -1,7 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.SignUpToSignUpConfirmationState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 import java.lang.ref.WeakReference;

@@ -1,40 +1,47 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
+
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "pets",
-        foreignKeys = @ForeignKey(
-                entity = UserItem.class,
-                parentColumns = "id",
-                childColumns = "user_id"
-        ))
+    foreignKeys = @ForeignKey(
+            entity = UserItem.class,
+            parentColumns = "id",
+            childColumns = "user_id"
+    ))
 
 public class PetsItem {
 
-  @PrimaryKey
-  public final int id;
+    @PrimaryKey
+    private final int id;
 
-  public final String name;
-  public final String species;
-  public final String breed;
-  public final String chipNum;
-  public final String birthday;
+    private final String breed;
 
-  @ColumnInfo(name = "user_id")
-  public int userId;
+    @ColumnInfo(name = "user_id")
+    private int userId;
 
-  public PetsItem(int id, String name, String species, String breed,
-                  String chipNum, String birthday) {
-    this.id = id;
-    this.name = name;
-    this.species = species;
-    this.breed = breed;
-    this.chipNum = chipNum;
-    this.birthday = birthday;
-  }
+    public PetsItem(int id, String breed, int userId) {
+        this.id = id;
+        this.breed = breed;
+        this.userId = userId;
+    }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getBreed() {
+        return breed;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

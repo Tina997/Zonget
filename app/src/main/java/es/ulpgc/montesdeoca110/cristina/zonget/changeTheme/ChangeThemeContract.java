@@ -1,7 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import java.lang.ref.WeakReference;
 

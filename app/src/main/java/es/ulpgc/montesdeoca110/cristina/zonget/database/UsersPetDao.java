@@ -6,25 +6,30 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+
 import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetBDItem;
 
 @Dao
 public interface UsersPetDao {
 
-  @Insert(onConflict = OnConflictStrategy.REPLACE)
-  void insertUserPet(UserPetItem item);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertUserPet(UserPetBDItem item);
 
-  @Update
-  void updateCategory(UserPetItem item);
+    @Update
+    void updateCategory(UserPetBDItem item);
 
-  @Delete
-  void deleteCategory(UserPetItem item);
+    @Delete
+    void deleteCategory(UserPetBDItem item);
 
-  @Query("SELECT * FROM userPets")
-  List<UserPetItem> loadUserPets();
+    @Query("SELECT * FROM userPets")
+    List<UserPetBDItem> loadUserPets();
 
-  @Query("SELECT * FROM userPets WHERE id =:id LIMIT 1")
-  UserPetItem loadUserPet(int id);
+    @Query("SELECT * FROM userPets WHERE id =:id LIMIT 1")
+    UserPetBDItem loadPet(int id);
+
+    @Query("SELECT * FROM userPets WHERE pet_id =:petId")
+    UserPetBDItem loadUserPet(int petId);
 }
 
