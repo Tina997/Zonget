@@ -121,6 +121,28 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
     }
 
+
+
+
+    //----------------------------Métodos de mascotas---------------------------------
+    @Override
+    public void getUserPetsList(final AccountItem accountItem, final GetUserPetsListCallback callback) {
+        Log.e("", accountItem.getName());
+        getUserPetsList(accountItem.getId(),callback);
+    }
+
+    @Override
+    public void getUserPetsList(final int userId, final GetUserPetsListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    callback.setUserPetsList(getPetsDao().loadPets(userId));
+                }
+            }
+        });
+
+    }
     //---------------------------- Métodos privados ----------------------------------
 
     private AccountDao getAccountDao(){

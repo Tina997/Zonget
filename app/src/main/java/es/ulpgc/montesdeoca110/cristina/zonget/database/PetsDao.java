@@ -29,4 +29,7 @@ public interface PetsDao {
 
     @Query("SELECT * FROM pets WHERE id =:id LIMIT 1")
     PetsItem loadPet(int id);
+
+    @Query("SELECT * FROM pets WHERE user_id =:userId")
+    List<PetsItem> loadPets(final int userId);
 }
