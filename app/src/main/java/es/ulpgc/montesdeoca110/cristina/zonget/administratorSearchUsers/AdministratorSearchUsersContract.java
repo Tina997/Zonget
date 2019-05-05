@@ -2,45 +2,43 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
-
 interface AdministratorSearchUsersContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(AdministratorSearchUsersViewModel viewModel);
-    }
+    void displayData(AdministratorSearchUsersViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void searchButtonClicked(String nameOrDni);
+    void searchButtonClicked(String nameOrDni);
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorSearchUsersState state);
+    void passDataToNextScreen(AdministratorSearchUsersState state);
 
-        AdministratorSearchUsersState getDataFromPreviousScreen();
+    AdministratorSearchUsersState getDataFromPreviousScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }
