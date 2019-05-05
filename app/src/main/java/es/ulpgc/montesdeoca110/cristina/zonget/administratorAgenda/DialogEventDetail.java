@@ -14,38 +14,38 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 @SuppressLint("ValidFragment")
 public class DialogEventDetail extends DialogFragment {
 
-    private AdministratorAgendaContract.View view;
+  private AdministratorAgendaContract.View view;
 
-    public DialogEventDetail(AdministratorAgendaContract.View view){
-        this.view = view;
-    }
+  public DialogEventDetail(AdministratorAgendaContract.View view) {
+    this.view = view;
+  }
 
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+  @Override
+  public Dialog onCreateDialog(Bundle savedInstanceState) {
 
 
-        AlertDialog.Builder builder =
-                new AlertDialog.Builder(getActivity(), R.style.DialogTheme);
-        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+    AlertDialog.Builder builder =
+            new AlertDialog.Builder(getActivity(), R.style.DialogTheme);
+    LayoutInflater layoutInflater = getActivity().getLayoutInflater();
 
-        builder.setView(layoutInflater.inflate(R.layout.administrator_agenda_event_details_dialog, null));
+    builder.setView(layoutInflater
+            .inflate(R.layout.administrator_agenda_event_details_dialog, null));
 
-        builder.setNeutralButton(R.string.modify_button, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                      //TODO navegación entre pantallas
-                        view.onModifyButtonClicked();
-                    }
-                })
-                .setNegativeButton(R.string.eliminate_button, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        FragmentManager fragmentManager = getFragmentManager();
-                        DialogEventDelete dialogo = new DialogEventDelete();
-                        dialogo.show(fragmentManager, "Alerta");
-                    }
-                });
+    builder.setNeutralButton(R.string.modify_button, new DialogInterface.OnClickListener() {
+      public void onClick(DialogInterface dialog, int id) {
+        view.onModifyButtonClicked();
+      }
+    })
+            .setNegativeButton(R.string.eliminate_button, new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                FragmentManager fragmentManager = getFragmentManager();
+                DialogEventDelete dialogo = new DialogEventDelete();
+                dialogo.show(fragmentManager, "Alerta");
+              }
+            });
 
-        return builder.create();
-    }
+    return builder.create();
+  }
 }
 
