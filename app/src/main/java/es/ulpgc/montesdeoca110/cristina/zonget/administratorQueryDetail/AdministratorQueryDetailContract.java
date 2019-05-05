@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
 import java.lang.ref.WeakReference;
 
-interface AdministratorQueryDetailContract {
+public interface AdministratorQueryDetailContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
