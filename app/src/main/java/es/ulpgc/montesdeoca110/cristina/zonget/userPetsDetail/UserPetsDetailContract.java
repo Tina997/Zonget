@@ -1,45 +1,44 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import java.lang.ref.WeakReference;
 
 interface UserPetsDetailContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(UserPetsDetailViewModel viewModel);
+    void displayData(UserPetsDetailViewModel viewModel);
 
-    }
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchPetsData();
+    void fetchPetsData();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonClicked();
-    }
+    void onBackButtonClicked();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(UserPetsDetailState state);
+    void passDataToNextScreen(UserPetsDetailState state);
 
-        PetsItem getDataFromPreviousScreen();
+    PetsItem getDataFromPreviousScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonClicked();
-    }
+    void onBackButtonClicked();
+  }
 }
