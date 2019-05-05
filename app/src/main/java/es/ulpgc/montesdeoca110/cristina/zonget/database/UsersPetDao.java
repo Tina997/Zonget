@@ -15,7 +15,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 public interface UsersPetDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertCategory(UserPetItem item);
+    void insertUserPet(UserPetItem item);
 
     @Update
     void updateCategory(UserPetItem item);
@@ -29,3 +29,4 @@ public interface UsersPetDao {
     @Query("SELECT * FROM userPets WHERE id =:id LIMIT 1")
     UserPetItem loadUserPet(int id);
 }
+

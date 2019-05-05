@@ -13,7 +13,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 
 public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
-    private final List<PetsItem> itemList;
+    private List<PetsItem> itemList;
     private final View.OnClickListener clickListener;
 
     public UserPetsAdapter(Context context, List<PetsItem> itemList, View.OnClickListener clickListener) {
@@ -61,6 +61,9 @@ public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
 
         return itemView;
     }
-
+    public void setItems(List<PetsItem> items){
+        itemList = items;
+        notifyDataSetChanged();
+    }
 
 }

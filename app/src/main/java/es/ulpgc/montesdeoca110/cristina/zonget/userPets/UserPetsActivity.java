@@ -13,6 +13,7 @@ import android.widget.ListView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuActivity;
 
@@ -23,6 +24,7 @@ public class UserPetsActivity
 
     private UserPetsContract.Presenter presenter;
     private ListView listView;
+    private UserPetsAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,6 @@ public class UserPetsActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(R.string.animal_client_tittle);
         }
-
         listView = findViewById(R.id.animal_list);
 
         // do the setup
@@ -67,15 +68,29 @@ public class UserPetsActivity
     }
 
     @Override
-    public void displayUserPetsData(UserPetsViewModel viewModel) {
+    public void displayUserPetsData(final UserPetsViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-        listView.setAdapter(new UserPetsAdapter(this, viewModel.animales, new View.OnClickListener() {
+        /*listView.setAdapter(new UserPetsAdapter(this, viewModel.pets, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PetsItem item = (PetsItem) v.getTag();
                 presenter.selectUserPetsData(item);
             }
-        }));
+        }));*/
+        listAdapter = new UserPetsAdapter(this,viewModel.pets, new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                PetsItem item = (PetsItem) view.getTag();
+                presenter.selectUserPetsData(item);
+            }
+        });
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                listAdapter.setItems(viewModel.pets);
+            }
+        });
         // deal with the data
     }
     @Override

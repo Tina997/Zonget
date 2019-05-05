@@ -105,7 +105,7 @@ public class AddEventActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.administrator_add_event_menu, menu);
+        inflater.inflate(R.menu.administrator_agenda_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

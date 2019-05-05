@@ -3,7 +3,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface UserPetsContract {
 
@@ -30,7 +33,9 @@ interface UserPetsContract {
     }
 
     interface Model {
-        List<PetsItem> fetchPetsData();
+        void fetchPetsData(AccountItem item, RepositoryContract.Accounts.GetUserPetsListCallback callback);
+
+       // List<PetsItem> fetchPetsData();
     }
 
     interface Router {
@@ -43,5 +48,7 @@ interface UserPetsContract {
         String getActualThemeName();
 
         void onBackButtonPressed();
+
+        AccountItem getDataFromSignIn();
     }
 }

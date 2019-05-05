@@ -3,8 +3,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailActivity;
 
@@ -48,5 +50,11 @@ public class UserPetsRouter implements UserPetsContract.Router {
         Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    @Override
+    public AccountItem getDataFromSignIn() {
+        AccountItem item = mediator.getSignInToMenuState().account;
+        return item;
     }
 }

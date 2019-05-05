@@ -1,8 +1,14 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
-import java.lang.ref.WeakReference;
+import android.util.Log;
 
+import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserPetsPresenter implements UserPetsContract.Presenter {
 
@@ -34,12 +40,21 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
 
     @Override
     public void fetchUserPetsData() {
-        // Log.e(TAG, "fetchInboxData()");
-
+        //Log.e(TAG, "fetchInboxData()");
+        AccountItem item = router.getDataFromSignIn();
+        Log.e("","Holi");
+        model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
+            @Override
+            public void setUserPetsList(List<PetsItem> userPets) {
+                //Log.e(TAG, userPets.get(0).name);
+                viewModel.pets = userPets;
+                view.get().displayUserPetsData(viewModel);
+            }
+        });
         // set passed state
-        UserPetsState state = router.getDataFromPreviousScreen();
+        /*UserPetsState state = router.getDataFromPreviousScreen();
         viewModel.animales = model.fetchPetsData();
-        view.get().displayUserPetsData(viewModel);
+        view.get().displayUserPetsData(viewModel);*/
 
     }
 
