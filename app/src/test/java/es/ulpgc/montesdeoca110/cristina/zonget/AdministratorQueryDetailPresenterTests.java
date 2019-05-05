@@ -35,7 +35,7 @@ public class AdministratorQueryDetailPresenterTests {
         MockitoAnnotations.initMocks(this);
     }
 
-    private void configureAdministratorInboxScreen(AdministratorQueryDetailState state){
+    private void configureAdministratorQueryDetailScreen(AdministratorQueryDetailState state){
 
         presenter = new AdministratorQueryDetailPresenter(state);
 
@@ -48,7 +48,7 @@ public class AdministratorQueryDetailPresenterTests {
     public void onReplyButtonPressed(){
         //Given an initialized AdministratorQueryDetailPresenter
         //and a null state
-        configureAdministratorInboxScreen(new AdministratorQueryDetailState());
+        configureAdministratorQueryDetailScreen(new AdministratorQueryDetailState());
 
         //When reply menu button is pressed
         presenter.navigateToAdministratorQueryAnswerScreen();

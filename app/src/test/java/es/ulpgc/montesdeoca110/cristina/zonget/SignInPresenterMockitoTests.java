@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget;
 
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 
 import org.junit.Before;
@@ -56,11 +57,11 @@ public class SignInPresenterMockitoTests {
         // java.lang.ClassCastException: es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInContract$View$MockitoMock$1242759836 cannot be cast to android.support.v4.app.FragmentActivity
 
 
-        WeakReference<FragmentActivity> context = new WeakReference<FragmentActivity>((FragmentActivity) viewMock);
+        WeakReference<FragmentActivity> context = new WeakReference<FragmentActivity>(new FragmentActivity());
         RepositoryContract.Accounts repository = AccountsRepository.getInstance(context.get());
         modelMock = new SignInModel(repository);
 
-        presenter.injectView((WeakReference<SignInContract.View>) viewMock);
+        presenter.injectView(new WeakReference<>(viewMock) );
         presenter.injectModel(modelMock);
         presenter.injectRouter(routerMock);
     }
@@ -96,7 +97,7 @@ public class SignInPresenterMockitoTests {
         configureSignInScreen(new SignInState());
 
         // When PickForADate button is pressed
-        presenter.signUpButtonPressed();
+        presenter.pickForADateButtonPressed();
 
         // Router navigate to PickForADate
         verify(routerMock,times(1)).navigateToUserPickDateScreen();

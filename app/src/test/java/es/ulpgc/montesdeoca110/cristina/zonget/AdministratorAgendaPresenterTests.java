@@ -80,6 +80,26 @@ public class AdministratorAgendaPresenterTests {
     }**/
 
     @Test
+    public void fetchCalendarDataWithNullStateCallsTheModel(){
+        //Given an initialized AdministratorAgendaPresenter
+        //and a null AdministratorAgendaState
+        //and a new empty state in generated
+        configureAdministratorAgendaScreen(new AdministratorAgendaState());
+        when(routerMock.getDataFromPreviousScreen()).thenReturn(null);
+
+        AdministratorAgendaState viewModel = new AdministratorAgendaState();
+
+
+        //When loading data is requested
+        presenter.fetchAdministratorAgendaData();
+
+        //Then model is called
+        verify(modelMock, times(1)).fetchData();
+        verify(modelMock, times(1)).fetchDateData();
+
+    }
+
+    @Test
     public void onAddEventButtonPressed(){
         //Given an initialized AdministratorAgendaPresenter
         //and a null AdministratorAgendaState
