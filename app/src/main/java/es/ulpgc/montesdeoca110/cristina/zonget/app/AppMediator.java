@@ -40,478 +40,485 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailStat
 
 public class AppMediator extends Application {
 
-    private String actualThemeName;
+  private String actualThemeName;
 
-    //Estados de las distintas activities de la aplicación
+  //Estados de las distintas activities de la aplicación
 
-    private SignInState signInState;
-    private SignUpState signUpState;
-    private SignUpConfirmationState signUpConfirmationState;
+  private SignInState signInState;
+  private SignUpState signUpState;
+  private SignUpConfirmationState signUpConfirmationState;
 
-    private AdministratorButtonsMenuListState administratorButtonsMenuListState;
-    private UserButtonsMenuListState userButtonsMenuListState;
-    private ChangeThemeState changeThemeActivityState;
+  private AdministratorButtonsMenuListState administratorButtonsMenuListState;
+  private UserButtonsMenuListState userButtonsMenuListState;
+  private ChangeThemeState changeThemeActivityState;
 
-    private UserQueriesMenuState userQueriesMenuState;
-    private UserNewQueryState userNewQueryState;
-    private UserPendingQueriesListState userPendingQueriesListState;
-    private UserFinishedQueriesListState userFinishedQueriesListState;
+  private UserQueriesMenuState userQueriesMenuState;
+  private UserNewQueryState userNewQueryState;
+  private UserPendingQueriesListState userPendingQueriesListState;
+  private UserFinishedQueriesListState userFinishedQueriesListState;
 
-    private UserPetsState clientPetsState = new UserPetsState();
+  private UserPetsState clientPetsState = new UserPetsState();
 
-    private UserAgendaState userAgendaState = new UserAgendaState();
+  private UserAgendaState userAgendaState = new UserAgendaState();
 
-    private AdministratorAgendaState administratorAgendaState = new AdministratorAgendaState();
+  private AdministratorAgendaState administratorAgendaState = new AdministratorAgendaState();
 
-    private UserPetsDetailState userPetDetailState = new UserPetsDetailState();
+  private UserPetsDetailState userPetDetailState = new UserPetsDetailState();
 
-    private AddEventState addEventState = new AddEventState();
+  private AddEventState addEventState = new AddEventState();
 
-    private ModifyEventState modifyEventState = new ModifyEventState();
+  private ModifyEventState modifyEventState = new ModifyEventState();
 
-    private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
+  private AdministratorInboxState administratorInboxState = new AdministratorInboxState();
 
-    private AdministratorQueryDetailState administratorQueryDetailState = new AdministratorQueryDetailState();
+  private AdministratorQueryDetailState administratorQueryDetailState = new AdministratorQueryDetailState();
 
-    private AdministratorQueryAnswerState administratorQueryAnswerState = new AdministratorQueryAnswerState();
+  private AdministratorQueryAnswerState administratorQueryAnswerState = new AdministratorQueryAnswerState();
 
-    private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState();
+  private AdministratorSearchUsersState administratorSearchUserState = new AdministratorSearchUsersState();
 
-    private AdministratorUsersListState administratorUsersListState = new AdministratorUsersListState();
+  private AdministratorUsersListState administratorUsersListState = new AdministratorUsersListState();
 
-    private AdministratorUsersPetsListState administratorUsersPetsListState = new AdministratorUsersPetsListState();
+  private AdministratorUsersPetsListState administratorUsersPetsListState = new AdministratorUsersPetsListState();
 
-    private AdministratorUserPetsDetailState administratorUserPetsDetailState = new AdministratorUserPetsDetailState();
-    private AdministratorUsersAddPetState administratorUsersAddPetState = new AdministratorUsersAddPetState();
-    private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
-    private UserPickDateState userPickDateState = new UserPickDateState();
-    private LostPetsListState lostPetsListState = new LostPetsListState();
-    private LostPetsDetailState lostPetsDetailState = new LostPetsDetailState();
+  private AdministratorUserPetsDetailState administratorUserPetsDetailState = new AdministratorUserPetsDetailState();
+  private AdministratorUsersAddPetState administratorUsersAddPetState = new AdministratorUsersAddPetState();
+  private AdministratorUserEditPetState administratorUserEditPetState = new AdministratorUserEditPetState();
+  private UserPickDateState userPickDateState = new UserPickDateState();
+  private LostPetsListState lostPetsListState = new LostPetsListState();
+  private LostPetsDetailState lostPetsDetailState = new LostPetsDetailState();
 
-    private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
-    private PetsForAdoptionDetailState petsForAdoptionDetailState = new PetsForAdoptionDetailState();
-    private EditPetForAdoptionState editPetForAdoptionState = new EditPetForAdoptionState();
-    private AddPetForAdoptionState addPetForAdoptionState = new AddPetForAdoptionState();
+  private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
+  private PetsForAdoptionDetailState petsForAdoptionDetailState = new PetsForAdoptionDetailState();
+  private EditPetForAdoptionState editPetForAdoptionState = new EditPetForAdoptionState();
+  private AddPetForAdoptionState addPetForAdoptionState = new AddPetForAdoptionState();
 
-    private AddLostPetState addLostPetState = new AddLostPetState();
-    private EditLostPetState editLostPetState = new EditLostPetState();
+  private AddLostPetState addLostPetState = new AddLostPetState();
+  private EditLostPetState editLostPetState = new EditLostPetState();
 
-    //Variables de las activities
+  //Variables de las activities
 
-    private PetsItem animal;
-    private UserItem userItem;
-    private LostPetItem lostPet;
-    private PetForAdoptionItem petForAdoptionItem;
+  private PetsItem animal;
+  private UserItem userItem;
+  private LostPetItem lostPet;
+  private PetForAdoptionItem petForAdoptionItem;
 
-    //Estados entre activities
+  //Estados entre activities
 
-    private SplashToSignInState splashToSignInState;
-    private SignInToMenuState signInToMenuState;
-    private ChangeThemeToMenuState changeThemeToMenuState;
-    private MenuToSignInState menuToSignInState;
-    private SignUpToSignUpConfirmationState signUpToSignUpConfirmationState;
-    private MenuToSelectedActivityState menuToSelectedActivityState;
-    private UserMenuToUserPickDateState userMenuToUserPickDateState;
+  private SplashToSignInState splashToSignInState;
+  private SignInToMenuState signInToMenuState;
+  private ChangeThemeToMenuState changeThemeToMenuState;
+  private MenuToSignInState menuToSignInState;
+  private SignUpToSignUpConfirmationState signUpToSignUpConfirmationState;
+  private MenuToSelectedActivityState menuToSelectedActivityState;
+  private UserMenuToUserPickDateState userMenuToUserPickDateState;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
+  @Override
+  public void onCreate() {
+    super.onCreate();
 
-        //Inicialización de los estados
+    //Inicialización de los estados
 
-        signInState = new SignInState();
-        signUpState = new SignUpState();
-        signUpConfirmationState = new SignUpConfirmationState();
+    signInState = new SignInState();
+    signUpState = new SignUpState();
+    signUpConfirmationState = new SignUpConfirmationState();
 
-        administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
-        userButtonsMenuListState = new UserButtonsMenuListState();
-        changeThemeActivityState = new ChangeThemeState();
+    administratorButtonsMenuListState = new AdministratorButtonsMenuListState();
+    userButtonsMenuListState = new UserButtonsMenuListState();
+    changeThemeActivityState = new ChangeThemeState();
 
-        userQueriesMenuState = new UserQueriesMenuState();
-        userNewQueryState = new UserNewQueryState();
-        userPendingQueriesListState = new UserPendingQueriesListState();
-        userFinishedQueriesListState = new UserFinishedQueriesListState();
-    }
+    userQueriesMenuState = new UserQueriesMenuState();
+    userNewQueryState = new UserNewQueryState();
+    userPendingQueriesListState = new UserPendingQueriesListState();
+    userFinishedQueriesListState = new UserFinishedQueriesListState();
+  }
 
-    //Theme
-    public String getactualThemeName() {
-        return actualThemeName;
-    }
+  //Theme
+  public String getactualThemeName() {
+    return actualThemeName;
+  }
 
-    public void setActualThemeName(String themeState) {
-        this.actualThemeName = themeState;
-    }
-
-    //PetsListUser
-
-    public void setUserPetsState(PetsItem item) {
-        animal = item;
-    }
-    public UserPetsDetailState getUserPetsDetailState() {
-        return userPetDetailState;
-    }
-    public PetsItem getAnimal(){
-        return animal;
-    }
-    public UserPetsState getUserPetsState() {
-        return clientPetsState;
-    }
-    //SignIn
-    public SignInState getSignInState() {
-        return signInState;
-    }
-
-    public void setSignInState(SignInState signInState) {
-        this.signInState = signInState;
-    }
-
-    //SignUp
-    public SignUpState getSignUpState() {
-        return signUpState;
-    }
-
-    public void setSignUpState(SignUpState signUpState) {
-        this.signUpState = signUpState;
-    }
-
-    public SignUpConfirmationState getSignUpConfirmationState() {
-        return signUpConfirmationState;
-    }
-
-    public void setSignUpConfirmationState(SignUpConfirmationState signUpConfirmationState) {
-        this.signUpConfirmationState = signUpConfirmationState;
-    }
-
-    //AdministratorMenuList
-    public AdministratorButtonsMenuListState getAdministratorMenuListState() {
-        return administratorButtonsMenuListState;
-    }
-
-    public void setAdministratorMenuListState(AdministratorButtonsMenuListState administratorButtonsMenuListState) {
-        this.administratorButtonsMenuListState = administratorButtonsMenuListState;
-    }
-
-    //UserButtonsMenuList
-    public UserButtonsMenuListState getUserButtonsMenuListState() {
-        return userButtonsMenuListState;
-    }
-
-    public void setUserButtonsMenuListState(UserButtonsMenuListState userButtonsMenuListState) {
-        this.userButtonsMenuListState = userButtonsMenuListState;
-    }
-
-    //ChangeTheme
-    public ChangeThemeState getChangeThemeState() {
-        return changeThemeActivityState;
-    }
-
-    public void setChangeThemeState(ChangeThemeState changeThemeActivityState) {
-        this.changeThemeActivityState = changeThemeActivityState;
-    }
-
-    //UserQueriesMenu
-    public UserQueriesMenuState getUserQueriesMenuState() {
-        return userQueriesMenuState;
-    }
-
-    public void setUserQueriesMenuState(UserQueriesMenuState userQueriesMenuState) {
-        this.userQueriesMenuState = userQueriesMenuState;
-    }
-
-    //UserNewQuery
-    public UserNewQueryState getUserNewQueryState() {
-        return userNewQueryState;
-    }
-
-    public void setUserNewQueryState(UserNewQueryState userNewQueryState) {
-        this.userNewQueryState = userNewQueryState;
-    }
-
-    //UserPendingQueriesList
-    public UserPendingQueriesListState getUserPendingQueriesListState() {
-        return userPendingQueriesListState;
-    }
-
-    public void setUserPendingQueriesListState(UserPendingQueriesListState userPendingQueriesListState) {
-        this.userPendingQueriesListState = userPendingQueriesListState;
-    }
-
-    //UserFinishedQueriesList
-    public UserFinishedQueriesListState getUserFinishedQueriesListState() {
-        return userFinishedQueriesListState;
-    }
-
-    public void setUserFinishedQueriesListState(UserFinishedQueriesListState userFinishedQueriesListState) {
-        this.userFinishedQueriesListState = userFinishedQueriesListState;
-    }
-
-    //AdministratorAgenda
-    public AdministratorAgendaState getAdministratorAgendaState() {
-        return administratorAgendaState;
-    }
-
-    public void setAdministratorAgendaState(AdministratorAgendaState administratorAgendaState) {
-        this.administratorAgendaState = administratorAgendaState;
-    }
-
-    //AddEvent
-    public AddEventState getAddEventState() {
-        return addEventState;
-    }
-
-    public void setAddEventState(AddEventState addEventState) {
-        this.addEventState = addEventState;
-    }
-
-    //ModifyEvent
-    public ModifyEventState getModifyEventState() {
-        return modifyEventState;
-    }
-
-    public void setModifyEventState(ModifyEventState modifyEventState) {
-        this.modifyEventState = modifyEventState;
-    }
-
-    //AdministratorSearchUsers
-    public AdministratorSearchUsersState getadminSearchUsersState() {
-        return administratorSearchUserState;
-    }
-    public void setadminSearchUsersState(AdministratorSearchUsersState administratorSearchUsersState) {
-        administratorSearchUserState = administratorSearchUsersState;
-    }
-
-    //AdministratorInbox
-    public AdministratorInboxState getAdministratorInboxState() {
-        return administratorInboxState;
-    }
-
-    public void setAdministratorInboxState(AdministratorInboxState administratorInboxState) {
-        this.administratorInboxState = administratorInboxState;
-    }
-
-    //AdministratorQueryDetail
-    public AdministratorQueryDetailState getAdministratorQueryDetailState() {
-        return administratorQueryDetailState;
-    }
-
-    public void setAdministratorQueryDetailState(AdministratorQueryDetailState administratorQueryDetailState) {
-        this.administratorQueryDetailState = administratorQueryDetailState;
-    }
-
-    //AdministratorQueryAnswer
-    public AdministratorQueryAnswerState getAdministratorQueryAnswerState() {
-        return administratorQueryAnswerState;
-    }
-
-    public void setAdministratorQueryAnswerState(AdministratorQueryAnswerState administratorQueryAnswerState) {
-        this.administratorQueryAnswerState = administratorQueryAnswerState;
-    }
-
-    //UsersList
-    public void setAdministratorUsersListState(AdministratorUsersListState administratorUsersListState) {
-        this.administratorUsersListState = administratorUsersListState;
-    }
-
-    public void setUserItem(UserItem item) {
-        this.userItem = item;
-    }
-
-    public AdministratorUsersListState getAdministratorUsersListState() {
+  public void setActualThemeName(String themeState) {
+    this.actualThemeName = themeState;
+  }
+
+  //PetsListUser
+
+  public void setUserPetsState(PetsItem item) {
+    animal = item;
+  }
+
+  public UserPetsDetailState getUserPetsDetailState() {
+    return userPetDetailState;
+  }
+
+  public PetsItem getAnimal() {
+    return animal;
+  }
+
+  public UserPetsState getUserPetsState() {
+    return clientPetsState;
+  }
+
+  //SignIn
+  public SignInState getSignInState() {
+    return signInState;
+  }
+
+  public void setSignInState(SignInState signInState) {
+    this.signInState = signInState;
+  }
+
+  //SignUp
+  public SignUpState getSignUpState() {
+    return signUpState;
+  }
+
+  public void setSignUpState(SignUpState signUpState) {
+    this.signUpState = signUpState;
+  }
+
+  public SignUpConfirmationState getSignUpConfirmationState() {
+    return signUpConfirmationState;
+  }
+
+  public void setSignUpConfirmationState(SignUpConfirmationState signUpConfirmationState) {
+    this.signUpConfirmationState = signUpConfirmationState;
+  }
+
+  //AdministratorMenuList
+  public AdministratorButtonsMenuListState getAdministratorMenuListState() {
+    return administratorButtonsMenuListState;
+  }
+
+  public void setAdministratorMenuListState(AdministratorButtonsMenuListState administratorButtonsMenuListState) {
+    this.administratorButtonsMenuListState = administratorButtonsMenuListState;
+  }
+
+  //UserButtonsMenuList
+  public UserButtonsMenuListState getUserButtonsMenuListState() {
+    return userButtonsMenuListState;
+  }
+
+  public void setUserButtonsMenuListState(UserButtonsMenuListState userButtonsMenuListState) {
+    this.userButtonsMenuListState = userButtonsMenuListState;
+  }
+
+  //ChangeTheme
+  public ChangeThemeState getChangeThemeState() {
+    return changeThemeActivityState;
+  }
+
+  public void setChangeThemeState(ChangeThemeState changeThemeActivityState) {
+    this.changeThemeActivityState = changeThemeActivityState;
+  }
+
+  //UserQueriesMenu
+  public UserQueriesMenuState getUserQueriesMenuState() {
+    return userQueriesMenuState;
+  }
+
+  public void setUserQueriesMenuState(UserQueriesMenuState userQueriesMenuState) {
+    this.userQueriesMenuState = userQueriesMenuState;
+  }
+
+  //UserNewQuery
+  public UserNewQueryState getUserNewQueryState() {
+    return userNewQueryState;
+  }
+
+  public void setUserNewQueryState(UserNewQueryState userNewQueryState) {
+    this.userNewQueryState = userNewQueryState;
+  }
+
+  //UserPendingQueriesList
+  public UserPendingQueriesListState getUserPendingQueriesListState() {
+    return userPendingQueriesListState;
+  }
+
+  public void setUserPendingQueriesListState(UserPendingQueriesListState userPendingQueriesListState) {
+    this.userPendingQueriesListState = userPendingQueriesListState;
+  }
+
+  //UserFinishedQueriesList
+  public UserFinishedQueriesListState getUserFinishedQueriesListState() {
+    return userFinishedQueriesListState;
+  }
+
+  public void setUserFinishedQueriesListState(UserFinishedQueriesListState userFinishedQueriesListState) {
+    this.userFinishedQueriesListState = userFinishedQueriesListState;
+  }
+
+  //AdministratorAgenda
+  public AdministratorAgendaState getAdministratorAgendaState() {
+    return administratorAgendaState;
+  }
+
+  public void setAdministratorAgendaState(AdministratorAgendaState administratorAgendaState) {
+    this.administratorAgendaState = administratorAgendaState;
+  }
+
+  //AddEvent
+  public AddEventState getAddEventState() {
+    return addEventState;
+  }
+
+  public void setAddEventState(AddEventState addEventState) {
+    this.addEventState = addEventState;
+  }
+
+  //ModifyEvent
+  public ModifyEventState getModifyEventState() {
+    return modifyEventState;
+  }
+
+  public void setModifyEventState(ModifyEventState modifyEventState) {
+    this.modifyEventState = modifyEventState;
+  }
+
+  //AdministratorSearchUsers
+  public AdministratorSearchUsersState getadminSearchUsersState() {
+    return administratorSearchUserState;
+  }
+
+  public void setadminSearchUsersState(AdministratorSearchUsersState administratorSearchUsersState) {
+    administratorSearchUserState = administratorSearchUsersState;
+  }
+
+  //AdministratorInbox
+  public AdministratorInboxState getAdministratorInboxState() {
+    return administratorInboxState;
+  }
+
+  public void setAdministratorInboxState(AdministratorInboxState administratorInboxState) {
+    this.administratorInboxState = administratorInboxState;
+  }
+
+  //AdministratorQueryDetail
+  public AdministratorQueryDetailState getAdministratorQueryDetailState() {
+    return administratorQueryDetailState;
+  }
+
+  public void setAdministratorQueryDetailState(AdministratorQueryDetailState administratorQueryDetailState) {
+    this.administratorQueryDetailState = administratorQueryDetailState;
+  }
+
+  //AdministratorQueryAnswer
+  public AdministratorQueryAnswerState getAdministratorQueryAnswerState() {
+    return administratorQueryAnswerState;
+  }
+
+  public void setAdministratorQueryAnswerState(AdministratorQueryAnswerState administratorQueryAnswerState) {
+    this.administratorQueryAnswerState = administratorQueryAnswerState;
+  }
+
+  //UsersList
+  public void setAdministratorUsersListState(AdministratorUsersListState administratorUsersListState) {
+    this.administratorUsersListState = administratorUsersListState;
+  }
+
+  public void setUserItem(UserItem item) {
+    this.userItem = item;
+  }
+
+  public AdministratorUsersListState getAdministratorUsersListState() {
     return administratorUsersListState;
-    }
+  }
 
-    //UsersPetList Admin
-    public void setAdministratorUsersPetsListState(AdministratorUsersPetsListState state) {
-        this.administratorUsersPetsListState = state;
-    }
+  //UsersPetList Admin
+  public void setAdministratorUsersPetsListState(AdministratorUsersPetsListState state) {
+    this.administratorUsersPetsListState = state;
+  }
 
-    public AdministratorUsersPetsListState getAdministratorUsersPetsListState() {
-        return administratorUsersPetsListState;
-    }
-    //AdminUserPet Detail
-    public AdministratorUserPetsDetailState getAdministratorUserPetsDetailState() {
-        return administratorUserPetsDetailState;
-    }
+  public AdministratorUsersPetsListState getAdministratorUsersPetsListState() {
+    return administratorUsersPetsListState;
+  }
 
-    public void setAdministratorUserPetsDetailState(AdministratorUserPetsDetailState administratorUserPetsDetailState) {
-        this.administratorUserPetsDetailState = administratorUserPetsDetailState;
-    }
+  //AdminUserPet Detail
+  public AdministratorUserPetsDetailState getAdministratorUserPetsDetailState() {
+    return administratorUserPetsDetailState;
+  }
 
-    //UserPickDate
-    public void setUserPickDateState(UserPickDateState userPickDateState) {
-        this.userPickDateState = userPickDateState;
-    }
+  public void setAdministratorUserPetsDetailState(AdministratorUserPetsDetailState administratorUserPetsDetailState) {
+    this.administratorUserPetsDetailState = administratorUserPetsDetailState;
+  }
 
-    public UserPickDateState getUserPickDateState() {
-        return userPickDateState;
-    }
+  //UserPickDate
+  public void setUserPickDateState(UserPickDateState userPickDateState) {
+    this.userPickDateState = userPickDateState;
+  }
 
-    //PetsForAdoptionDetail
-    public PetsForAdoptionDetailState getPetsForAdoptionDetailState() {
-        return petsForAdoptionDetailState;
-    }
+  public UserPickDateState getUserPickDateState() {
+    return userPickDateState;
+  }
 
-    public void setPetsForAdoptionDetailState(PetsForAdoptionDetailState petsForAdoptionDetailState) {
-        this.petsForAdoptionDetailState = petsForAdoptionDetailState;
-    }
+  //PetsForAdoptionDetail
+  public PetsForAdoptionDetailState getPetsForAdoptionDetailState() {
+    return petsForAdoptionDetailState;
+  }
 
-    //EditPetForAdoption
-    public EditPetForAdoptionState getEditPetForAdoptionState() {
-        return editPetForAdoptionState;
-    }
+  public void setPetsForAdoptionDetailState(PetsForAdoptionDetailState petsForAdoptionDetailState) {
+    this.petsForAdoptionDetailState = petsForAdoptionDetailState;
+  }
 
-    public void setEditPetForAdoptionState(EditPetForAdoptionState editPetForAdoptionState) {
-        this.editPetForAdoptionState = editPetForAdoptionState;
-    }
+  //EditPetForAdoption
+  public EditPetForAdoptionState getEditPetForAdoptionState() {
+    return editPetForAdoptionState;
+  }
 
-    //AddPetForAdoption
-    public AddPetForAdoptionState getAddPetForAdoptionState() {
-        return addPetForAdoptionState;
-    }
+  public void setEditPetForAdoptionState(EditPetForAdoptionState editPetForAdoptionState) {
+    this.editPetForAdoptionState = editPetForAdoptionState;
+  }
 
-    public void setAddPetForAdoptionState(AddPetForAdoptionState addPetForAdoptionState) {
-        this.addPetForAdoptionState = addPetForAdoptionState;
-    }
+  //AddPetForAdoption
+  public AddPetForAdoptionState getAddPetForAdoptionState() {
+    return addPetForAdoptionState;
+  }
 
-    //PetsForAdoption
-    public PetsForAdoptionState getPetsForAdoptionState() {
-        return petsForAdoptionState;
-    }
+  public void setAddPetForAdoptionState(AddPetForAdoptionState addPetForAdoptionState) {
+    this.addPetForAdoptionState = addPetForAdoptionState;
+  }
 
-    public void setPetsForAdoptionState(PetsForAdoptionState petsForAdoptionState) {
-        this.petsForAdoptionState = petsForAdoptionState;
-    }
+  //PetsForAdoption
+  public PetsForAdoptionState getPetsForAdoptionState() {
+    return petsForAdoptionState;
+  }
 
-    public PetForAdoptionItem getPetForAdoptionItem() {
-        return petForAdoptionItem;
-    }
+  public void setPetsForAdoptionState(PetsForAdoptionState petsForAdoptionState) {
+    this.petsForAdoptionState = petsForAdoptionState;
+  }
 
-    public void setPetForAdoptionItem(PetForAdoptionItem petForAdoptionItem) {
-        this.petForAdoptionItem = petForAdoptionItem;
-    }
+  public PetForAdoptionItem getPetForAdoptionItem() {
+    return petForAdoptionItem;
+  }
 
-    //AddPet
-    public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
-        this.administratorUsersAddPetState = administratorUsersAddPetState;
-    }
+  public void setPetForAdoptionItem(PetForAdoptionItem petForAdoptionItem) {
+    this.petForAdoptionItem = petForAdoptionItem;
+  }
 
-    public AdministratorUsersAddPetState getAdministratorUsersAddPetState() {
-        return administratorUsersAddPetState;
-    }
-    //EditPet
-    public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
-        this.administratorUserEditPetState = administratorUserEditPetState;
-    }
+  //AddPet
+  public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
+    this.administratorUsersAddPetState = administratorUsersAddPetState;
+  }
 
-    public AdministratorUserEditPetState getAdministratorUserEditPetState() {
-        return administratorUserEditPetState;
-    }
+  public AdministratorUsersAddPetState getAdministratorUsersAddPetState() {
+    return administratorUsersAddPetState;
+  }
 
-    //UserAgenda
-    public UserAgendaState getUserAgendaState() {
-        return userAgendaState;
-    }
+  //EditPet
+  public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
+    this.administratorUserEditPetState = administratorUserEditPetState;
+  }
 
-    public void setUserAgendaState(UserAgendaState userAgendaState) {
-        this.userAgendaState = userAgendaState;
-    }
+  public AdministratorUserEditPetState getAdministratorUserEditPetState() {
+    return administratorUserEditPetState;
+  }
 
-    //LostPetsDetail
-    public LostPetsDetailState getLostPetsDetailState() {
-        return lostPetsDetailState;
-    }
+  //UserAgenda
+  public UserAgendaState getUserAgendaState() {
+    return userAgendaState;
+  }
 
-    public LostPetItem getLostPetsDetailItem() {
-        return lostPet;
-    }
+  public void setUserAgendaState(UserAgendaState userAgendaState) {
+    this.userAgendaState = userAgendaState;
+  }
 
-    //AddLostPets
-    public AddLostPetState getAddLostPetState() {
-        return addLostPetState;
-    }
+  //LostPetsDetail
+  public LostPetsDetailState getLostPetsDetailState() {
+    return lostPetsDetailState;
+  }
 
-    //EditLostPets
-    public EditLostPetState getEditLostPetState() {
-        return editLostPetState;
-    }
+  public LostPetItem getLostPetsDetailItem() {
+    return lostPet;
+  }
 
-    //LostPets
-    public void setlostPetsListState(LostPetItem lostPetsItem) {
-        lostPetsItem = lostPet;
-    }
+  //AddLostPets
+  public AddLostPetState getAddLostPetState() {
+    return addLostPetState;
+  }
 
-    public void setLostPet(LostPetItem lostPetItem) {
-        lostPet = lostPetItem;
+  //EditLostPets
+  public EditLostPetState getEditLostPetState() {
+    return editLostPetState;
+  }
 
-    }
+  //LostPets
+  public void setlostPetsListState(LostPetItem lostPetsItem) {
+    lostPetsItem = lostPet;
+  }
 
-    public LostPetsListState getlostPetsListState() {
-        return lostPetsListState;
-    }
+  public void setLostPet(LostPetItem lostPetItem) {
+    lostPet = lostPetItem;
 
-    //------------------------------------- Estados entre actividades ------------------------------------------
+  }
 
-    //SplashToSignIn
-    public SplashToSignInState getSplashToSignInState() {
-        return splashToSignInState;
-    }
+  public LostPetsListState getlostPetsListState() {
+    return lostPetsListState;
+  }
 
-    public void setSplashToSignInState(SplashToSignInState splashToSignInState) {
-        this.splashToSignInState = splashToSignInState;
-    }
+  //------------------------------------- Estados entre actividades ------------------------------------------
 
-    //SignInToMenu
-    public SignInToMenuState getSignInToMenuState() {
-        return signInToMenuState;
-    }
+  //SplashToSignIn
+  public SplashToSignInState getSplashToSignInState() {
+    return splashToSignInState;
+  }
 
-    public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
-        this.signInToMenuState = signInToMenuState;
-    }
+  public void setSplashToSignInState(SplashToSignInState splashToSignInState) {
+    this.splashToSignInState = splashToSignInState;
+  }
 
-    //ChangeThemeToMenu
-    public ChangeThemeToMenuState getChangeThemeToMenuState() {
-        return changeThemeToMenuState;
-    }
+  //SignInToMenu
+  public SignInToMenuState getSignInToMenuState() {
+    return signInToMenuState;
+  }
 
-    public void setChangeThemeToMenuState(ChangeThemeToMenuState changeThemeToMenuState) {
-        this.changeThemeToMenuState = changeThemeToMenuState;
-    }
+  public void setSignInToMenuState(SignInToMenuState signInToMenuState) {
+    this.signInToMenuState = signInToMenuState;
+  }
 
-    //SignUpToSignUpConfirmation
-    public SignUpToSignUpConfirmationState getSignUpToSignUpConfirmationState() {
-        return signUpToSignUpConfirmationState;
-    }
+  //ChangeThemeToMenu
+  public ChangeThemeToMenuState getChangeThemeToMenuState() {
+    return changeThemeToMenuState;
+  }
 
-    public void setSignUpToSignUpConfirmationState(SignUpToSignUpConfirmationState signUpToSignUpConfirmationState) {
-        this.signUpToSignUpConfirmationState = signUpToSignUpConfirmationState;
-    }
+  public void setChangeThemeToMenuState(ChangeThemeToMenuState changeThemeToMenuState) {
+    this.changeThemeToMenuState = changeThemeToMenuState;
+  }
 
-    //MenuToSingIn
-    public MenuToSignInState getMenuToSignInState() {
-        return menuToSignInState;
-    }
+  //SignUpToSignUpConfirmation
+  public SignUpToSignUpConfirmationState getSignUpToSignUpConfirmationState() {
+    return signUpToSignUpConfirmationState;
+  }
 
-    public void setMenuToSignInState(MenuToSignInState menuToSignInState) {
-        this.menuToSignInState = menuToSignInState;
-    }
+  public void setSignUpToSignUpConfirmationState(SignUpToSignUpConfirmationState signUpToSignUpConfirmationState) {
+    this.signUpToSignUpConfirmationState = signUpToSignUpConfirmationState;
+  }
 
-    //MenuToSelectedActivity
-    public MenuToSelectedActivityState getMenuToSelectedActivityState() {
-        return menuToSelectedActivityState;
-    }
+  //MenuToSingIn
+  public MenuToSignInState getMenuToSignInState() {
+    return menuToSignInState;
+  }
 
-    public void setMenuToSelectedActivityState(MenuToSelectedActivityState menuToSelectedActivityState) {
-        this.menuToSelectedActivityState = menuToSelectedActivityState;
-    }
+  public void setMenuToSignInState(MenuToSignInState menuToSignInState) {
+    this.menuToSignInState = menuToSignInState;
+  }
 
-    //UserMenuToUserPickDate
-    public UserMenuToUserPickDateState getUserMenuToUserPickDateState() {
-        return userMenuToUserPickDateState;
-    }
+  //MenuToSelectedActivity
+  public MenuToSelectedActivityState getMenuToSelectedActivityState() {
+    return menuToSelectedActivityState;
+  }
 
-    public void setUserMenuToUserPickDateState(UserMenuToUserPickDateState userMenuToUserPickDateState) {
-        this.userMenuToUserPickDateState = userMenuToUserPickDateState;
-    }
+  public void setMenuToSelectedActivityState(MenuToSelectedActivityState menuToSelectedActivityState) {
+    this.menuToSelectedActivityState = menuToSelectedActivityState;
+  }
+
+  //UserMenuToUserPickDate
+  public UserMenuToUserPickDateState getUserMenuToUserPickDateState() {
+    return userMenuToUserPickDateState;
+  }
+
+  public void setUserMenuToUserPickDateState(UserMenuToUserPickDateState userMenuToUserPickDateState) {
+    this.userMenuToUserPickDateState = userMenuToUserPickDateState;
+  }
 
 }

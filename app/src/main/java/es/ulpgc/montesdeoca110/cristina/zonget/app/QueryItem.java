@@ -14,22 +14,21 @@ import android.os.Parcelable;
         ))
 public class QueryItem {
 
-    @PrimaryKey
-    public final int id;
+  @PrimaryKey
+  public final int id;
 
-    public final String sender;
-    public final String title;
+  public final String sender;
+  public final String title;
 
-    @ColumnInfo(name = "user_id")
-    public int userId;
+  @ColumnInfo(name = "user_id")
+  public int userId;
 
 
+  //TODO añadir resto de propiedades: descripción. archivos?? cómo diablos metemos los archivos?
 
-    //TODO añadir resto de propiedades: descripción. archivos?? cómo diablos metemos los archivos?
-
-    public QueryItem(String sender, String title, int id) {
-        this.sender = sender;
-        this.title = title;
-        this.id = id;
-    }
+  public QueryItem(String sender, String title, int id) {
+    this.sender = sender;
+    this.title = title;
+    this.id = id;
+  }
 }

@@ -13,9 +13,9 @@ import android.arch.persistence.room.PrimaryKey;
         ))
 public class UserPetItem {
 
-    @PrimaryKey
-    public int id;
+  @PrimaryKey
+  public int id;
 
-    @ColumnInfo(name = "pet_id")
-    public int petId;
+  @ColumnInfo(name = "pet_id")
+  public int petId;
 }
