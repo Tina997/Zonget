@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signIn;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -54,6 +56,7 @@ public class SignInPresenter implements SignInContract.Presenter {
             public void setCheckAccountExist(boolean exist, AccountItem account) {
                 if(exist){
                     SignInToMenuState state = new SignInToMenuState(account);
+                    Log.e("Cuenta: "+account.getName(), "Animales" + account.getPets());
                     view.get().finish();
                     router.passDataToMenuScreen(state);
                     router.navigateToMenuScreen();

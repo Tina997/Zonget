@@ -13,10 +13,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountBDItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetBDItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.AccountDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.PetsDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.UserDao;
+import es.ulpgc.montesdeoca110.cristina.zonget.database.UsersPetDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.ZongetDatabase;
 
 import org.json.JSONArray;
@@ -25,6 +28,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -130,11 +134,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
     }
 
     //----------------------------Métodos de mascotas---------------------------------
-    @Override
-    public void getUserPetsList(final AccountItem accountItem, final GetUserPetsListCallback callback) {
-        Log.e("", accountItem.getName());
-        getUserPetsList(accountItem.getId(),callback);
-    }
 
     @Override
     public void getUserPetsList(final int userId, final GetUserPetsListCallback callback) {
@@ -142,7 +141,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(callback != null){
-                    callback.setUserPetsList(getPetsDao().loadPets(userId));
+                    //callback.setUserPetsList();
                 }
             }
         });
@@ -161,6 +160,10 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private PetsDao getPetsDao(){
         return database.petsDao();
+    }
+
+    private UsersPetDao getUserPetDao(){
+        return database.usersPetDao();
     }
 
     private String loadJSONFromAsset() {
@@ -207,9 +210,15 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 }
 
                 for (AccountItem account : accounts) {
-                    for (PetsItem pet : account.getPets()) {
-                        pet.userId = account.getId();
-                        getPetsDao().insertPet(pet);
+                    for (UserPetItem pet : account.getPets()) {
+
+                        PetsItem petsItem = new PetsItem(pet.getId(),pet.getBreed(),account.getId());
+                        getPetsDao().insertPet(petsItem);
+
+                        //TODO no se estan insertando
+                        int userPetId = getUserPetDao().loadUserPets().size() + 1;
+                        UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId,pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getId());
+                        getUserPetDao().insertUserPet(userPetBDItem);
 
                     }
                 }
@@ -241,8 +250,41 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         UserItem userItem = getUserDao().loadUser(accountBDItem.getId());
 
         AccountItem account =  new AccountItem(accountBDItem.getId(),userItem.getRol(), accountBDItem.getName(),accountBDItem.getDni(),accountBDItem.getEmail(),accountBDItem.getPassword());
+        account.setPets(accountGetPets(account.getId()));
 
         return account;
+    }
+
+    private List<UserPetItem> accountGetPets(int userId){
+
+
+        Log.e("Cuenta: "+ userId,"(Yguanira = 1)");
+
+        List<UserPetItem> pets =  new ArrayList<>();
+
+        List<PetsItem>  petsBD = getPetsDao().loadPets(userId);
+
+        Log.e("Cuenta: "+ userId,"PetsBD " + petsBD);
+
+        for (int i = 0; i <= petsBD.size(); i++){
+
+            Log.e("Cuenta: "+ userId,"PetsBD size " + petsBD.size());
+
+            PetsItem userPet = petsBD.get(i);
+
+            Log.e("Cuenta: "+ userId,"PetsBD: " + petsBD.get(i).getId() +" "+petsBD.get(i).getBreed() +" "+petsBD.get(i).getUserId());
+
+            UserPetBDItem infoUserPet = getUserPetDao().loadUserPet(userPet.getId());
+
+            Log.e("Cuenta: "+ userId,"infoPet: " + infoUserPet);
+
+            Log.e("Cuenta: "+ userId,"infoPet: " + getUserPetDao().loadUserPets());
+
+            UserPetItem userPetItem = new UserPetItem(infoUserPet.getId(),infoUserPet.getName(),infoUserPet.getSpecies(),userPet.getBreed(),infoUserPet.getChipNum(),infoUserPet.getBirthday());
+            pets.add(userPetItem);
+        }
+
+        return pets;
     }
 
     private boolean checkNewAccountData(String accountDni, String accountEmail) {

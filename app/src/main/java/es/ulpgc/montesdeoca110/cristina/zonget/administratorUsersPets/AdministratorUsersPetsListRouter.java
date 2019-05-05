@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
@@ -8,7 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUsersPetsListRouter implements AdministratorUsersPetsListContract.Router {
 
@@ -29,7 +28,7 @@ public class AdministratorUsersPetsListRouter implements AdministratorUsersPetsL
     }
 
     @Override
-    public void passDataToPetsDetailScreen(PetsItem item) {
+    public void passDataToPetsDetailScreen(UserPetItem item) {
         mediator.setUserPetsState(item);
     }
 

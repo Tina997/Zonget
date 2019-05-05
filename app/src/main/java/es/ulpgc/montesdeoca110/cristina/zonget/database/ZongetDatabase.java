@@ -11,10 +11,10 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryAnswerItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryStatusItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetBDItem;
 
 @Database(
-        entities= {AccountBDItem.class, UserItem.class, PetsItem.class, UserPetItem.class, LostPetItem.class, PetForAdoptionItem.class,
+        entities= {AccountBDItem.class, UserItem.class, PetsItem.class, UserPetBDItem.class, LostPetItem.class, PetForAdoptionItem.class,
                 QueryItem.class, QueryAnswerItem.class, QueryStatusItem.class},
         version = 1
 )

@@ -1,10 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -25,7 +23,7 @@ interface UserPetsContract {
 
         void fetchUserPetsData();
 
-        void selectUserPetsData(PetsItem item);
+        void selectUserPetsData(UserPetItem item);
 
         String getActualThemeName();
 
@@ -41,7 +39,7 @@ interface UserPetsContract {
     interface Router {
         void navigateToPetsDetailScreen();
 
-        void passDataToPetsDetailScreen(PetsItem item);
+        void passDataToPetsDetailScreen(UserPetItem item);
 
         UserPetsState getDataFromPreviousScreen();
 

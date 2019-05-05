@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 interface UserPetsDetailContract {
 
@@ -36,7 +36,7 @@ interface UserPetsDetailContract {
 
         void passDataToNextScreen(UserPetsDetailState state);
 
-        PetsItem getDataFromPreviousScreen();
+        UserPetItem getDataFromPreviousScreen();
 
         String getActualThemeName();
 

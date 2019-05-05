@@ -16,7 +16,7 @@ public class AccountItem {
     private String password;
 
     @SerializedName("pets")
-    private List<PetsItem> pets;
+    private List<UserPetItem> pets;
 
     public AccountItem(int id, String type, String name, String dni, String email, String password) {
         this.id = id;
@@ -25,7 +25,7 @@ public class AccountItem {
         this.dni = dni;
         this.email = email;
         this.password = password;
-        this.pets = new ArrayList<PetsItem>();
+        this.pets = new ArrayList<UserPetItem>();
     }
 
     public int getId() {
@@ -68,11 +68,11 @@ public class AccountItem {
         this.password = password;
     }
 
-    public List<PetsItem> getPets() {
+    public List<UserPetItem> getPets() {
         return pets;
     }
 
-    public void setPets(List<PetsItem> pets) {
+    public void setPets(List<UserPetItem> pets) {
         this.pets = pets;
     }
 }

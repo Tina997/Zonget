@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class UserPetsDetailPresenter implements UserPetsDetailContract.Presenter {
 
@@ -37,7 +38,7 @@ public class UserPetsDetailPresenter implements UserPetsDetailContract.Presenter
         // Log.e(TAG, "fetchInboxData()");
 
         // set passed state
-        PetsItem animal = router.getDataFromPreviousScreen();
+        UserPetItem animal = router.getDataFromPreviousScreen();
         if(animal != null){
             viewModel.pet = animal;
         }

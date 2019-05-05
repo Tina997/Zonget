@@ -5,7 +5,6 @@ import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailActivity;
@@ -29,7 +28,7 @@ public class UserPetsRouter implements UserPetsContract.Router {
     }
 
     @Override
-    public void passDataToPetsDetailScreen(PetsItem item) {
+    public void passDataToPetsDetailScreen(UserPetItem item) {
         mediator.setUserPetsState(item);
     }
 

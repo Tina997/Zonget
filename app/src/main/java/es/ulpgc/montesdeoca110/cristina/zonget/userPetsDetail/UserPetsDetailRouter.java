@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
 
 public class UserPetsDetailRouter implements UserPetsDetailContract.Router {
@@ -30,8 +30,8 @@ public class UserPetsDetailRouter implements UserPetsDetailContract.Router {
     }
 
     @Override
-    public PetsItem getDataFromPreviousScreen() {
-        PetsItem pet = mediator.getAnimal();
+    public UserPetItem getDataFromPreviousScreen() {
+        UserPetItem pet = mediator.getAnimal();
         return pet;
     }
 

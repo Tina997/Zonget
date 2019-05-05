@@ -32,7 +32,7 @@ public class UserPetsModel implements UserPetsContract.Model {
 
     @Override
     public void fetchPetsData(final AccountItem item, final RepositoryContract.Accounts.GetUserPetsListCallback callback){
-        repository.getUserPetsList(item,callback);
+        //repository.getUserPetsList(item,callback);
     }
 /*
     private void addPet(PetsItem userPetItem) {

@@ -15,6 +15,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetScreen;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUserPetsDetailActivity
         extends AppCompatActivity implements AdministratorUserPetsDetailContract.View {
@@ -72,13 +73,13 @@ public class AdministratorUserPetsDetailActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        PetsItem petClientItem = viewModel.pet;
+        UserPetItem petClientItem = viewModel.pet;
         if(petClientItem != null){
-            ((TextView)findViewById(R.id.birthdayAnimalClient)).setText(petClientItem.birthday);
-            ((TextView)findViewById(R.id.nameAnimalClient)).setText(petClientItem.name);
-            ((TextView)findViewById(R.id.speciesAnimalClient)).setText(petClientItem.species);
-            ((TextView)findViewById(R.id.breedAnimalClient)).setText(petClientItem.breed);
-            ((TextView)findViewById(R.id.numberAnimalClient)).setText(petClientItem.chipNum);
+            ((TextView)findViewById(R.id.birthdayAnimalClient)).setText(petClientItem.getBirthday());
+            ((TextView)findViewById(R.id.nameAnimalClient)).setText(petClientItem.getName());
+            ((TextView)findViewById(R.id.speciesAnimalClient)).setText(petClientItem.getSpecies());
+            ((TextView)findViewById(R.id.breedAnimalClient)).setText(petClientItem.getBreed());
+            ((TextView)findViewById(R.id.numberAnimalClient)).setText(petClientItem.getChipNum());
         }
     }
 

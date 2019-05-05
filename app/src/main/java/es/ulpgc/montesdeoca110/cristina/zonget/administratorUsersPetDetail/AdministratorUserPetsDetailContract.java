@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 interface AdministratorUserPetsDetailContract {
 
@@ -44,7 +45,7 @@ interface AdministratorUserPetsDetailContract {
 
         void passDataToNextScreen(AdministratorUserPetsDetailState state);
 
-        PetsItem getDataFromPreviousScreen();
+        UserPetItem getDataFromPreviousScreen();
 
         void navigateToEditScreen();
 

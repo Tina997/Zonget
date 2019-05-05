@@ -7,6 +7,7 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUserPetsDetailPresenter implements AdministratorUserPetsDetailContract.Presenter {
 
@@ -41,7 +42,7 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
         // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
         // set passed state
-        PetsItem animal = router.getDataFromPreviousScreen();
+        UserPetItem animal = router.getDataFromPreviousScreen();
         if(animal != null){
             viewModel.pet = animal;
         }

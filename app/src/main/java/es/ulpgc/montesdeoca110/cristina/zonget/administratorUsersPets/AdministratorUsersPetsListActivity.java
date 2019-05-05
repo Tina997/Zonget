@@ -21,6 +21,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetScreen;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsAdapter;
 
 public class AdministratorUsersPetsListActivity
@@ -81,7 +82,7 @@ public class AdministratorUsersPetsListActivity
         listView.setAdapter(new UserPetsAdapter(this, viewModel.animales, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PetsItem item = (PetsItem) v.getTag();
+                UserPetItem item = (UserPetItem) v.getTag();
                 presenter.selectUserPetsData(item);
             }
         }));

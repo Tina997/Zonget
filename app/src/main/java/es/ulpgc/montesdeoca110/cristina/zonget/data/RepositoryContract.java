@@ -75,15 +75,13 @@ public interface RepositoryContract {
 
 
         interface GetUserPetsListCallback {
-            void setUserPetsList(List<PetsItem> userPets);
+            void setUserPetsList(List<UserPetItem> userPets);
         }
 
         interface GetUserPetsCallback {
-            void setUserPets(PetsItem user);
+            void setUserPets(UserPetItem user);
         }
 
-        //void loadUserPets(boolean clearFirst, AccountsRepository.FetchUserPetsDataCallBack callback);
-        void getUserPetsList(AccountItem accountItem, AccountsRepository.GetUserPetsListCallback callback);
         void getUserPetsList(int userId, AccountsRepository.GetUserPetsListCallback callback);
 
     }

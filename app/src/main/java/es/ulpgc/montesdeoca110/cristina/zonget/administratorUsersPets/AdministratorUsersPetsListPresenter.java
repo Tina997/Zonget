@@ -1,12 +1,8 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUsersPetsListPresenter implements AdministratorUsersPetsListContract.Presenter {
 
@@ -48,7 +44,7 @@ public class AdministratorUsersPetsListPresenter implements AdministratorUsersPe
     }
 
     @Override
-    public void selectUserPetsData(PetsItem item) {
+    public void selectUserPetsData(UserPetItem item) {
         router.passDataToPetsDetailScreen(item);
         router.navigateToPetsDetailScreen();
     }

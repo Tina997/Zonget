@@ -43,14 +43,14 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
         //Log.e(TAG, "fetchInboxData()");
         AccountItem item = router.getDataFromSignIn();
         Log.e("","Holi");
-        model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
+        /*model.fetchPetsData(item.getId(), new RepositoryContract.Accounts.GetUserPetsListCallback() {
             @Override
-            public void setUserPetsList(List<PetsItem> userPets) {
+            public void setUserPetsList(List<UserPetItem> userPets) {
                 //Log.e(TAG, userPets.get(0).name);
                 viewModel.pets = userPets;
                 view.get().displayUserPetsData(viewModel);
             }
-        });
+        });*/
         // set passed state
         /*UserPetsState state = router.getDataFromPreviousScreen();
         viewModel.animales = model.fetchPetsData();
@@ -59,7 +59,7 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
     }
 
     @Override
-    public void selectUserPetsData(PetsItem item) {
+    public void selectUserPetsData(UserPetItem item) {
         router.passDataToPetsDetailScreen(item);
         router.navigateToPetsDetailScreen();
     }

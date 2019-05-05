@@ -13,6 +13,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.Administ
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsDetailContract.Router {
 
@@ -37,8 +38,8 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
     }
 
     @Override
-    public PetsItem getDataFromPreviousScreen() {
-        PetsItem pet = mediator.getAnimal();
+    public UserPetItem getDataFromPreviousScreen() {
+        UserPetItem pet = mediator.getAnimal();
         return pet;
     }
 

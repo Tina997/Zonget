@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 
-import android.content.Intent;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +9,8 @@ import android.view.View;
 import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuActivity;
 
 public class UserPetsActivity
         extends AppCompatActivity implements UserPetsContract.View {
@@ -81,7 +76,7 @@ public class UserPetsActivity
 
             @Override
             public void onClick(View view) {
-                PetsItem item = (PetsItem) view.getTag();
+                UserPetItem item = (UserPetItem) view.getTag();
                 presenter.selectUserPetsData(item);
             }
         });

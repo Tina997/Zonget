@@ -3,8 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 
 interface AdministratorUsersPetsListContract {
@@ -24,7 +23,7 @@ interface AdministratorUsersPetsListContract {
 
         void fetchUserPetsData();
 
-        void selectUserPetsData(PetsItem item);
+        void selectUserPetsData(UserPetItem item);
 
         void onClickAddButton();
 
@@ -34,13 +33,13 @@ interface AdministratorUsersPetsListContract {
     }
 
     interface Model {
-        List<PetsItem> fetchPetsData();
+        List<UserPetItem> fetchPetsData();
     }
 
     interface Router {
         void navigateToPetsDetailScreen();
 
-        void passDataToPetsDetailScreen(PetsItem item);
+        void passDataToPetsDetailScreen(UserPetItem item);
 
         AdministratorUsersPetsListState getDataFromPreviousScreen();
 

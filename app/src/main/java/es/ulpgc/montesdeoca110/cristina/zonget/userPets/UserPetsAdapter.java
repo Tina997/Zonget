@@ -11,12 +11,13 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
-public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
-    private List<PetsItem> itemList;
+public class UserPetsAdapter extends ArrayAdapter<UserPetItem> {
+    private List<UserPetItem> itemList;
     private final View.OnClickListener clickListener;
 
-    public UserPetsAdapter(Context context, List<PetsItem> itemList, View.OnClickListener clickListener) {
+    public UserPetsAdapter(Context context, List<UserPetItem> itemList, View.OnClickListener clickListener) {
 
         super(context,0,itemList);
 
@@ -29,13 +30,13 @@ public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
     }
 
     @Override
-    public PetsItem getItem(int position) {
+    public UserPetItem getItem(int position) {
         return itemList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return getItem(position).id;
+        return getItem(position).getId();
     }
 
     @Override
@@ -52,16 +53,16 @@ public class UserPetsAdapter extends ArrayAdapter<PetsItem> {
         itemView.setOnClickListener(clickListener);
 
         final TextView contentView = itemView.findViewById(R.id.content);
-        contentView.setText(itemList.get(position).name);
+        contentView.setText(itemList.get(position).getName());
         contentView.setTextSize(25);
         final TextView contentView2 = itemView.findViewById(R.id.content2);
-        contentView2.setText(itemList.get(position).species);
+        contentView2.setText(itemList.get(position).getSpecies());
         contentView2.setTextSize(20);
 
 
         return itemView;
     }
-    public void setItems(List<PetsItem> items){
+    public void setItems(List<UserPetItem> items){
         itemList = items;
         notifyDataSetChanged();
     }

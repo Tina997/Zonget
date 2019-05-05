@@ -16,21 +16,32 @@ import android.arch.persistence.room.PrimaryKey;
 public class PetsItem {
 
     @PrimaryKey
-    public final int id;
+    private final int id;
 
-    public final String name, species, breed, chipNum, birthday;
+    private final String breed;
 
     @ColumnInfo(name = "user_id")
-    public int userId;
+    private int userId;
 
-    public PetsItem(int id, String name, String species, String breed, String chipNum, String birthday) {
+    public PetsItem(int id, String breed, int userId) {
         this.id = id;
-        this.name = name;
-        this.species = species;
         this.breed = breed;
-        this.chipNum = chipNum;
-        this.birthday = birthday;
+        this.userId = userId;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getBreed() {
+        return breed;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

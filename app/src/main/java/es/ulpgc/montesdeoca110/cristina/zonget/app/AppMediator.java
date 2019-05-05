@@ -104,7 +104,7 @@ public class AppMediator extends Application {
 
     //Variables de las activities
 
-    private PetsItem animal;
+    private UserPetItem animal;
     private UserItem userItem;
     private LostPetItem lostPet;
     private PetForAdoptionItem petForAdoptionItem;
@@ -150,13 +150,13 @@ public class AppMediator extends Application {
 
     //PetsListUser
 
-    public void setUserPetsState(PetsItem item) {
+    public void setUserPetsState(UserPetItem item) {
         animal = item;
     }
     public UserPetsDetailState getUserPetsDetailState() {
         return userPetDetailState;
     }
-    public PetsItem getAnimal(){
+    public UserPetItem getAnimal(){
         return animal;
     }
     public UserPetsState getUserPetsState() {
