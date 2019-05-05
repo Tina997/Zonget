@@ -4,47 +4,47 @@ import java.lang.ref.WeakReference;
 
 public interface UserPendingQueriesListContract {
 
-    interface View {
+  interface View {
 
-        void injectPresenter(Presenter presenter);
+    void injectPresenter(Presenter presenter);
 
-        void displayUserPendingQueriesListData(UserPendingQueriesListViewModel viewModel);
+    void displayUserPendingQueriesListData(UserPendingQueriesListViewModel viewModel);
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        void injectView(WeakReference<View> view);
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void backButtonPressed();
+    void backButtonPressed();
 
-        void fetchUserPendingQueriesListData();
+    void fetchUserPendingQueriesListData();
 
-    }
+  }
 
-    interface Model {
+  interface Model {
 
-        void fetchUserPendingQueriesListData();
+    void fetchUserPendingQueriesListData();
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToUserQueriesMenuScreen();
+    void navigateToUserQueriesMenuScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataToUserQueriesMenuScreen();
+    void passDataToUserQueriesMenuScreen();
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-        //UserPendingQueriesListState getDataFromPreviousScreen();
+    //UserPendingQueriesListState getDataFromPreviousScreen();
 
-    }
+  }
 }
