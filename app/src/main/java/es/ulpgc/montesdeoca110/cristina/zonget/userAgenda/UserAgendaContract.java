@@ -1,51 +1,50 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userAgenda;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
-
 interface UserAgendaContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(UserAgendaViewModel viewModel);
-    }
+    void displayData(UserAgendaViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchEventListData();
+    void fetchEventListData();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
+    void onBackButtonPressed();
 
-        void saveState(String date, long calendarDate);
+    void saveState(String date, long calendarDate);
 
-        void onDateChanged(String date, long calendarDate);
-    }
+    void onDateChanged(String date, long calendarDate);
+  }
 
-    interface Model {
-        List<EventItem> fetchData();
+  interface Model {
+    List<EventItem> fetchData();
 
-        long fetchDateData();
-    }
+    long fetchDateData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(UserAgendaState state);
+    void passDataToNextScreen(UserAgendaState state);
 
-        UserAgendaState getDataFromPreviousScreen();
+    UserAgendaState getDataFromPreviousScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }
