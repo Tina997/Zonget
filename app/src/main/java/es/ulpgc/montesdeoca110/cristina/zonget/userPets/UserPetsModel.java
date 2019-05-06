@@ -70,4 +70,5 @@ public class UserPetsModel implements UserPetsContract.Model {
             return "Gato";
         }
     }*/
+
 }

@@ -42,13 +42,13 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
     public void fetchUserPetsData() {
         //Log.e(TAG, "fetchInboxData()");
         AccountItem item = router.getDataFromSignIn();
-        Log.e("","Holi");
+       // Log.e("","Holi");
         model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
             @Override
             public void setUserPetsList(List<UserPetItem> userPets) {
-                Log.e(TAG, userPets.get(0).getName());
+               // Log.e(TAG, userPets.get(0).getName());
                 viewModel.pets = userPets;
-                Log.e(TAG,viewModel.pets.get(0).getName());
+                //Log.e(TAG,viewModel.pets.get(0).getName());
                 view.get().displayUserPetsData(viewModel);
             }
         });

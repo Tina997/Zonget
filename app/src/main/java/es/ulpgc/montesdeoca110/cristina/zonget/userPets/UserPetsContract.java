@@ -6,7 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-interface UserPetsContract {
+public interface UserPetsContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
@@ -28,6 +28,7 @@ interface UserPetsContract {
         String getActualThemeName();
 
         void onBackButtonPressed();
+
     }
 
     interface Model {
