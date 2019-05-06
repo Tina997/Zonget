@@ -8,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuT
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-interface AdministratorButtonsMenuListContract {
+public interface AdministratorButtonsMenuListContract {
 
     interface View {
 

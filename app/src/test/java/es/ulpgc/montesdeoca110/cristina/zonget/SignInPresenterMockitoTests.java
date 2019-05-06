@@ -25,7 +25,6 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class SignInPresenterMockitoTests {
 
-
     @Captor
     private ArgumentCaptor<RepositoryContract.Accounts.GetCheckAccountExistCallback> callbackCaptor;
 
@@ -103,7 +102,7 @@ public class SignInPresenterMockitoTests {
         verify(viewMock,times(1)).finish();
         verify(routerMock,times(1)).navigateToMenuScreen();
 
-        //Then view show a toast
+        //Then view no show a toast
         verify(viewMock,never()).displayCheckAccountError();
 
     }
