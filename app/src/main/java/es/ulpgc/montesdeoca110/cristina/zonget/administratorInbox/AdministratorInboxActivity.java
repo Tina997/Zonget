@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
@@ -20,6 +21,7 @@ public class AdministratorInboxActivity
   private AdministratorInboxContract.Presenter presenter;
   private AdministratorInboxListAdapter listAdapter;
   private RecyclerView recyclerView;
+  private static Bundle bundle;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class AdministratorInboxActivity
     listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+
         presenter.goToAdministratorQueryDetailScreen();
       }
     });
@@ -63,6 +66,11 @@ public class AdministratorInboxActivity
   @Override
   protected void onResume() {
     super.onResume();
+    //restore RecyclerView state
+    if(bundle != null){
+      Parcelable listState = bundle.getParcelable("state");
+      recyclerView.getLayoutManager().onRestoreInstanceState(listState);
+    }
 
     // do some work
     presenter.fetchInboxData();
@@ -76,6 +84,16 @@ public class AdministratorInboxActivity
   @Override
   public void displayData(AdministratorInboxViewModel viewModel) {
     listAdapter.setItems(viewModel.inboxList);
+  }
+
+  @Override
+  public void onPause(){
+    super.onPause();
+    //Save RecyclerView state
+    bundle = new Bundle();
+    Parcelable listState =
+            recyclerView.getLayoutManager().onSaveInstanceState();
+    bundle.putParcelable("state", listState);
   }
 
   @Override
