@@ -10,6 +10,7 @@ import android.arch.persistence.room.Update;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetBDItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 @Dao
 public interface UsersPetDao {

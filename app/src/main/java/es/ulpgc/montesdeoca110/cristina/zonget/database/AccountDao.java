@@ -10,6 +10,7 @@ import android.arch.persistence.room.Update;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountBDItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 
 @Dao
 public interface AccountDao {

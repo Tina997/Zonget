@@ -141,7 +141,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(callback != null){
-                    //callback.setUserPetsList();
+                    callback.setUserPetsList(accountGetPets(userId));
                 }
             }
         });
@@ -266,7 +266,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
         Log.e("Cuenta: "+ userId,"PetsBD " + petsBD);
 
-        for (int i = 0; i <= petsBD.size(); i++){
+        for (int i = 0; i < petsBD.size(); i++){
 
             Log.e("Cuenta: "+ userId,"PetsBD size " + petsBD.size());
 
@@ -283,7 +283,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             UserPetItem userPetItem = new UserPetItem(infoUserPet.getId(),infoUserPet.getName(),infoUserPet.getSpecies(),userPet.getBreed(),infoUserPet.getChipNum(),infoUserPet.getBirthday());
             pets.add(userPetItem);
         }
-
         return pets;
     }
 

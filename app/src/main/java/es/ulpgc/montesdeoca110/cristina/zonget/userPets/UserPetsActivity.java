@@ -65,28 +65,14 @@ public class UserPetsActivity
     @Override
     public void displayUserPetsData(final UserPetsViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-        /*listView.setAdapter(new UserPetsAdapter(this, viewModel.pets, new View.OnClickListener() {
+        listView.setAdapter(new UserPetsAdapter(this, viewModel.pets, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PetsItem item = (PetsItem) v.getTag();
+                UserPetItem item = (UserPetItem) v.getTag();
                 presenter.selectUserPetsData(item);
             }
-        }));*/
-        listAdapter = new UserPetsAdapter(this,viewModel.pets, new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                UserPetItem item = (UserPetItem) view.getTag();
-                presenter.selectUserPetsData(item);
-            }
-        });
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                listAdapter.setItems(viewModel.pets);
-            }
-        });
-        // deal with the data
+        }));
+       // deal with the data
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
