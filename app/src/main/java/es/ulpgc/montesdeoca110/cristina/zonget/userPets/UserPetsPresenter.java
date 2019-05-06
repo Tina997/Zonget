@@ -43,14 +43,15 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
         //Log.e(TAG, "fetchInboxData()");
         AccountItem item = router.getDataFromSignIn();
         Log.e("","Holi");
-        /*model.fetchPetsData(item.getId(), new RepositoryContract.Accounts.GetUserPetsListCallback() {
+        model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
             @Override
             public void setUserPetsList(List<UserPetItem> userPets) {
-                //Log.e(TAG, userPets.get(0).name);
+                Log.e(TAG, userPets.get(0).getName());
                 viewModel.pets = userPets;
+                Log.e(TAG,viewModel.pets.get(0).getName());
                 view.get().displayUserPetsData(viewModel);
             }
-        });*/
+        });
         // set passed state
         /*UserPetsState state = router.getDataFromPreviousScreen();
         viewModel.animales = model.fetchPetsData();

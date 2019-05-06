@@ -7,6 +7,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserPetsModel implements UserPetsContract.Model {
@@ -32,7 +33,7 @@ public class UserPetsModel implements UserPetsContract.Model {
 
     @Override
     public void fetchPetsData(final AccountItem item, final RepositoryContract.Accounts.GetUserPetsListCallback callback){
-        //repository.getUserPetsList(item,callback);
+        repository.getUserPetsList(item.getId(),callback);
     }
 /*
     private void addPet(PetsItem userPetItem) {
