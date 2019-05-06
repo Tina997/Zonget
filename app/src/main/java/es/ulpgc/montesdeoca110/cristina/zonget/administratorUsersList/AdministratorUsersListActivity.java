@@ -21,7 +21,7 @@ public class AdministratorUsersListActivity
 
     private AdministratorUsersListContract.Presenter presenter;
     private ListView listView;
-    private Bundle bundle;
+    private static Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +89,7 @@ public class AdministratorUsersListActivity
         super.onPause();
 
         //Save ListView state
+      bundle = new Bundle();
         Parcelable listState = listView.onSaveInstanceState();
         bundle.putParcelable("state", listState);
     }
