@@ -52,4 +52,5 @@ public class UserPetItem {
     public void setPetId(int petId) {
         this.petId = petId;
     }
+
 }

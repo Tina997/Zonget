@@ -295,11 +295,12 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             UserPetItem userPetItem = new UserPetItem(infoUserPet.getId(),infoUserPet.getName(),infoUserPet.getSpecies(),userPet.getBreed(),infoUserPet.getChipNum(),infoUserPet.getBirthday());
             pets.add(userPetItem);
         }
+        Log.e("Cantidad", pets.size()+"");
         return pets;
     }
     private List<AccountItem> getUsers(String nameOrDni){
         List<AccountItem> accountItems = new ArrayList<>();
-        List<AccountBDItem> accountBDItems = getAccountDao().loadAccounts();
+        List<AccountBDItem> accountBDItems = new ArrayList<>();
         if(getAccountDao().loadAccountFromNameOrDni(nameOrDni)!=null) {
             accountBDItems = getAccountDao().loadAccountFromNameOrDni(nameOrDni);
         }
