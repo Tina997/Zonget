@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
+import android.accounts.Account;
+
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -87,7 +89,7 @@ public interface RepositoryContract {
         void getUserList(String nameOrDni, AccountsRepository.GetUserListCallback callback);
 
         interface GetUserListCallback{
-            void setUsers(List<UserItem> users);
+            void setUsers(List<AccountItem> users);
         }
 
     }

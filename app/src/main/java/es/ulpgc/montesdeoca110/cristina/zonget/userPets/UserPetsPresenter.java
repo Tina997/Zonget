@@ -42,7 +42,6 @@ public class UserPetsPresenter implements UserPetsContract.Presenter {
     public void fetchUserPetsData() {
         //Log.e(TAG, "fetchInboxData()");
         AccountItem item = router.getDataFromSignIn();
-        Log.e("","Holi");
         model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
             @Override
             public void setUserPetsList(List<UserPetItem> userPets) {

@@ -56,6 +56,7 @@ public class AdministratorSearchUsersActivity
             @Override
             public void onClick(View v) {
                 presenter.searchButtonClicked(dataSearched.getText().toString());
+                finish();
             }
         });
         // do the setup

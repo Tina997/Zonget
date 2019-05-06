@@ -28,4 +28,5 @@ public interface UserDao {
 
     @Query("SELECT * FROM users WHERE account_id =:accountId LIMIT 1")
     UserItem loadUser(int accountId);
+
 }

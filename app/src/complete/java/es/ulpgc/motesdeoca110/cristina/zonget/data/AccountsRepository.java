@@ -138,7 +138,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(callback != null){
-                    callback.setUsers(getUsers(String nameOrDni));
+                    callback.setUsers(getUsers(nameOrDni));
                 }
             }
         });
@@ -228,8 +228,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
                         PetsItem petsItem = new PetsItem(pet.getId(),pet.getBreed(),account.getId());
                         getPetsDao().insertPet(petsItem);
-
-                        //TODO no se estan insertando
                         int userPetId = getUserPetDao().loadUserPets().size() + 1;
                         UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId,pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getId());
                         getUserPetDao().insertUserPet(userPetBDItem);
@@ -299,7 +297,20 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         }
         return pets;
     }
-
+    private List<AccountItem> getUsers(String nameOrDni){
+        List<AccountItem> accountItems = new ArrayList<>();
+        List<AccountBDItem> accountBDItems = getAccountDao().loadAccounts();
+        if(getAccountDao().loadAccountFromNameOrDni(nameOrDni)!=null) {
+            accountBDItems = getAccountDao().loadAccountFromNameOrDni(nameOrDni);
+        }
+        for(int i = 0;i<accountBDItems.size();i++) {
+            AccountBDItem infoAccount = accountBDItems.get(i);
+            UserItem user = getUserDao().loadUser(infoAccount.getId());
+            AccountItem accountItem = new AccountItem(infoAccount.getId(), user.getRol(), infoAccount.getName(), infoAccount.getDni(), infoAccount.getEmail(), infoAccount.getPassword());
+            accountItems.add(accountItem);
+        }
+        return accountItems;
+    }
     private boolean checkNewAccountData(String accountDni, String accountEmail) {
 
         AccountBDItem account = getAccountDao().checkAccountExist(accountDni,accountEmail);
