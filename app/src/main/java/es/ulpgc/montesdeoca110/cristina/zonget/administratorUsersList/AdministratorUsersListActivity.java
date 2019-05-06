@@ -87,7 +87,6 @@ public class AdministratorUsersListActivity
     @Override
     public void onPause(){
         super.onPause();
-
         //Save ListView state
       bundle = new Bundle();
         Parcelable listState = listView.onSaveInstanceState();

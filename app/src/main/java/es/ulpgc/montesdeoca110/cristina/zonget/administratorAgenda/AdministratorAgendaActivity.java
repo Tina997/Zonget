@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class AdministratorAgendaActivity
   private CalendarView calendarView;
   private String date;
   private long calendarDate;
+  private static Bundle bundle;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,11 @@ public class AdministratorAgendaActivity
   @Override
   protected void onResume() {
     super.onResume();
+    //restore ListView state
+    if(bundle != null){
+      Parcelable listState = bundle.getParcelable("state");
+      listView.onRestoreInstanceState(listState);
+    }
 
     // do some work
     presenter.fetchAdministratorAgendaData();
@@ -97,6 +104,11 @@ public class AdministratorAgendaActivity
 
   @Override
   public void onPause() {
+    //Save ListView state
+    bundle = new Bundle();
+    Parcelable listState = listView.onSaveInstanceState();
+    bundle.putParcelable("state", listState);
+    //save calendar state
     presenter.saveState(date, calendarDate);
     super.onPause();
   }
