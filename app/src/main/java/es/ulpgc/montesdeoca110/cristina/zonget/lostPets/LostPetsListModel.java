@@ -17,7 +17,7 @@ public class LostPetsListModel implements LostPetsListContract.Model {
     @Override
     public void fetchLostPetsListData(final RepositoryContract.LostPets.GetLostPetsListCallback callback) {
         Log.e(TAG, "fetchPetsForAdoptionListData()");
-        repository.loadLostPets(true, new RepositoryContract.LostPets.FetchLostPetsDataCallBack() {
+        repository.loadLostPets(new RepositoryContract.LostPets.FetchLostPetsDataCallBack() {
             @Override
             public void onLostPetsDataFetched(boolean error) {
                 if (!error) {

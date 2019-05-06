@@ -26,15 +26,13 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
 
     public static String TAG = LostPetsRepository.class.getSimpleName();
 
-    public static final String DB_FILE = "lostPets.db";
     public static final String JSON_FILE = "lostPets.json";
     public static final String JSON_ROOT = "lostPets";
 
     private static LostPetsRepository INSTANCE;
 
-    private ZongetDatabase database;
     private Context context;
-    //private List<LostPetItem> lostPets;
+    private List<LostPetItem> lostPets;
 
     public static RepositoryContract.LostPets getInstance(Context context) {
         if(INSTANCE == null){
@@ -45,28 +43,20 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
     }
     private LostPetsRepository(Context context){
         this.context = context;
-        database = Room.databaseBuilder(context, ZongetDatabase.class, DB_FILE).build();
     }
 
 
     @Override
-    public void loadLostPets(final boolean clearFirst, final FetchLostPetsDataCallBack callback) {
+    public void loadLostPets(final FetchLostPetsDataCallBack callback) {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                if(clearFirst){
-                    database.clearAllTables();
-                }
-                boolean error = false;
-                if(getLostPetsDao().loadLostPets().size()==0){
-                    error = !loadLostPetFromJSON(loadJSONFromAsset());
-                }
+                boolean error = !loadLostPetFromJSON(loadJSONFromAsset());
+
                 if(callback != null){
                     callback.onLostPetsDataFetched(error);
                 }
             }
-
-
         });
     }
 
@@ -80,7 +70,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
             @Override
             public void run() {
                 if(callback != null) {
-                    callback.setLostPetsList(getLostPetsDao().loadLostPets());
+                    callback.setLostPetsList(loadLostPets());
                 }
             }
         });
@@ -95,7 +85,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
             @Override
             public void run() {
                 if(callback != null) {
-                    callback.setLostPets(getLostPetsDao().loadLostPet(id));
+                    callback.setLostPets(loadLostPet(id));
                 }
             }
         });
@@ -112,6 +102,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT);
 
+            lostPets = new ArrayList();
 
             if (jsonArray.length() > 0) {
 
@@ -121,7 +112,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
 
 
                 for (LostPetItem lostPetItem : lostPets) {
-                    getLostPetsDao().insertLostPet(lostPetItem);
+                    insertLostPet(lostPetItem);
                 }
 
                 return true;
@@ -152,7 +143,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
 
         return json;
     }
-   /* private List<LostPetItem> loadLostPets() {
+    private List<LostPetItem> loadLostPets() {
         return lostPets;
     }
     private void insertLostPet(LostPetItem lostPetItem) {
@@ -165,8 +156,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
             }
         }
         return null;
-    }*/
-    private LostPetsDao getLostPetsDao() {
-        return database.lostPetsDao();
     }
+
 }
+

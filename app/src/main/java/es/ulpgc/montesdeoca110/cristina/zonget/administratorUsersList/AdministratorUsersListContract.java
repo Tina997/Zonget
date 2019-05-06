@@ -31,7 +31,7 @@ interface AdministratorUsersListContract {
     }
 
     interface Model {
-        void fetchUsersData(RepositoryContract.Users.GetUsersListCallback callback);
+        void fetchUsersData(RepositoryContract.Accounts callback);
     }
 
     interface Router {

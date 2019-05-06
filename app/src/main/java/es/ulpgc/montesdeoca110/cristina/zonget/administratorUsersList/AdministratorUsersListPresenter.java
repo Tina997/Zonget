@@ -40,13 +40,13 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         // Log.e(TAG, "fetchPetsForAdoptionListData()");
         // set passed state
         //AdministratorUsersListState state = router.getDataFromPreviousScreen();
-        model.fetchUsersData(new RepositoryContract.Users.GetUsersListCallback() {
+        /*model.fetchUsersData(new RepositoryContract.Accounts().GetUsersListCallback() {
             @Override
             public void setUsersList(List<AccountItem> users) {
                 viewModel.users = users;
                 view.get().displayData(viewModel);
             }
-        });
+        });*/
         // update the view
         view.get().displayData(viewModel);
 

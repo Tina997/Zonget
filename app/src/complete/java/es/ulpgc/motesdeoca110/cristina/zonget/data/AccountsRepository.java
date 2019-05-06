@@ -132,6 +132,18 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             }
         });
     }
+    @Override
+    public void getUserList(final String nameOrDni, final GetUserListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    callback.setUsers(getUsers(String nameOrDni));
+                }
+            }
+        });
+
+    }
 
     //----------------------------Métodos de mascotas---------------------------------
 
@@ -147,6 +159,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
 
     }
+
+
 
     //---------------------------- Métodos privados ----------------------------------
 
@@ -296,4 +310,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
         return true;
     }
+
+
 }

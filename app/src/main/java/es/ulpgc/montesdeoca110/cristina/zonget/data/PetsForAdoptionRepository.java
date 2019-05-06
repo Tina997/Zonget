@@ -23,8 +23,8 @@ public class PetsForAdoptionRepository implements RepositoryContract.PetsForAdop
 
     public static String TAG = PetsForAdoptionRepository.class.getSimpleName();
 
-   public static final String JSON_FILE = "petsForAdoption.json";
-   public static final String JSON_ROOT = "petsForAdoption";
+    public static final String JSON_FILE = "petsForAdoption.json";
+    public static final String JSON_ROOT = "petsForAdoption";
 
     private static PetsForAdoptionRepository INSTANCE;
 
@@ -48,11 +48,11 @@ public class PetsForAdoptionRepository implements RepositoryContract.PetsForAdop
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-               boolean error = !loadPetForAdoptionFromJSON(loadJSONFromAsset());
+                boolean error = !loadPetForAdoptionFromJSON(loadJSONFromAsset());
 
-               if(callback != null){
-                   callback.onPetsForAdoptionDataFetched(error);
-               }
+                if(callback != null){
+                    callback.onPetsForAdoptionDataFetched(error);
+                }
             }
         });
     }
@@ -123,7 +123,7 @@ public class PetsForAdoptionRepository implements RepositoryContract.PetsForAdop
 
 
 
-   private String loadJSONFromAsset() {
+    private String loadJSONFromAsset() {
         String json = null;
 
         try {

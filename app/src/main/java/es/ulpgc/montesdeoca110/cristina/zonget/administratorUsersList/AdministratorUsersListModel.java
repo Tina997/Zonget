@@ -16,22 +16,22 @@ public class AdministratorUsersListModel implements AdministratorUsersListContra
 
     public static String TAG = AdministratorUsersListModel.class.getSimpleName();
 
-    RepositoryContract.Users repository;
+    //RepositoryContract.Accounts repository;
 
-    public AdministratorUsersListModel(RepositoryContract.Users repository) {
-        this.repository = repository;
+    public AdministratorUsersListModel(RepositoryContract.Accounts repository) {
+       // this.repository = repository;
     }
 
     @Override
-    public void fetchUsersData(final RepositoryContract.Users.GetUsersListCallback callback) {
+    public void fetchUsersData(final RepositoryContract.Accounts callback) {
         // Log.e(TAG, "fetchInboxData()");
-        repository.loadUsers(true, new RepositoryContract.Users.FetchUsersDataCallBack() {
+       /* repository.loadUsers(true, new RepositoryContract.Accounts().FetchUsersDataCallBack() {
             @Override
             public void onUsersDataFetched(boolean error) {
                 if (!error) {
                     repository.getUsersList(callback);
                 }
             }
-        });
+        });*/
     }
 }
