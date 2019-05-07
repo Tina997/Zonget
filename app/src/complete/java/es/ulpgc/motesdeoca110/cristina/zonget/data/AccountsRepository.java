@@ -121,6 +121,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if (callback != null) {
+
                     AccountBDItem accountBDItem =  new AccountBDItem(account.getId(),account.getName(),account.getDni(),account.getEmail(),account.getPassword());
                     getAccountDao().insertAccount(accountBDItem);
 
@@ -131,6 +132,18 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 }
             }
         });
+    }
+    @Override
+    public void getUserList(final String nameOrDni, final GetUserListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    callback.setUsers(getUsers(nameOrDni));
+                }
+            }
+        });
+
     }
 
     //----------------------------Métodos de mascotas---------------------------------
@@ -147,6 +160,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
 
     }
+
+
 
     //---------------------------- Métodos privados ----------------------------------
 
@@ -215,7 +230,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                         PetsItem petsItem = new PetsItem(pet.getId(),pet.getBreed(),account.getId());
                         getPetsDao().insertPet(petsItem);
 
-                        //TODO no se estan insertando
                         int userPetId = getUserPetDao().loadUserPets().size() + 1;
                         UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId,pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getId());
                         getUserPetDao().insertUserPet(userPetBDItem);
@@ -257,35 +271,35 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private List<UserPetItem> accountGetPets(int userId){
 
-
-        Log.e("Cuenta: "+ userId,"(Yguanira = 1)");
-
         List<UserPetItem> pets =  new ArrayList<>();
 
         List<PetsItem>  petsBD = getPetsDao().loadPets(userId);
 
-        Log.e("Cuenta: "+ userId,"PetsBD " + petsBD);
-
         for (int i = 0; i < petsBD.size(); i++){
 
-            Log.e("Cuenta: "+ userId,"PetsBD size " + petsBD.size());
-
             PetsItem userPet = petsBD.get(i);
-
-            Log.e("Cuenta: "+ userId,"PetsBD: " + petsBD.get(i).getId() +" "+petsBD.get(i).getBreed() +" "+petsBD.get(i).getUserId());
-
             UserPetBDItem infoUserPet = getUserPetDao().loadUserPet(userPet.getId());
-
-            Log.e("Cuenta: "+ userId,"infoPet: " + infoUserPet);
-
-            Log.e("Cuenta: "+ userId,"infoPet: " + getUserPetDao().loadUserPets());
 
             UserPetItem userPetItem = new UserPetItem(infoUserPet.getId(),infoUserPet.getName(),infoUserPet.getSpecies(),userPet.getBreed(),infoUserPet.getChipNum(),infoUserPet.getBirthday());
             pets.add(userPetItem);
+
         }
         return pets;
     }
-
+    private List<AccountItem> getUsers(String nameOrDni){
+        List<AccountItem> accountItems = new ArrayList<>();
+        List<AccountBDItem> accountBDItems = getAccountDao().loadAccounts();
+        if(getAccountDao().loadAccountFromNameOrDni(nameOrDni)!=null) {
+            accountBDItems = getAccountDao().loadAccountFromNameOrDni(nameOrDni);
+        }
+        for(int i = 0;i<accountBDItems.size();i++) {
+            AccountBDItem infoAccount = accountBDItems.get(i);
+            UserItem user = getUserDao().loadUser(infoAccount.getId());
+            AccountItem accountItem = new AccountItem(infoAccount.getId(), user.getRol(), infoAccount.getName(), infoAccount.getDni(), infoAccount.getEmail(), infoAccount.getPassword());
+            accountItems.add(accountItem);
+        }
+        return accountItems;
+    }
     private boolean checkNewAccountData(String accountDni, String accountEmail) {
 
         AccountBDItem account = getAccountDao().checkAccountExist(accountDni,accountEmail);
@@ -296,4 +310,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
         return true;
     }
+
+
 }

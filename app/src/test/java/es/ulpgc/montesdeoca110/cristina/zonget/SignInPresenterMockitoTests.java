@@ -1,8 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget;
 
-import android.content.Context;
-import android.support.v4.app.FragmentActivity;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,22 +11,19 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInModel;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInPresenter;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
 
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class SignInPresenterMockitoTests {
-
 
     @Captor
     private ArgumentCaptor<RepositoryContract.Accounts.GetCheckAccountExistCallback> callbackCaptor;
@@ -43,6 +37,9 @@ public class SignInPresenterMockitoTests {
     @Mock
     private SignInContract.Router routerMock;
 
+    @Mock
+    private RepositoryContract.Accounts repositoryMock;
+
     private SignInContract.Presenter presenter;
 
     @Before
@@ -53,27 +50,60 @@ public class SignInPresenterMockitoTests {
     private void configureSignInScreen(SignInState state){
         presenter =  new SignInPresenter(state);
 
-        // TODO Problema debido a que no puedo asignar e repositorio al modelo
-        // java.lang.ClassCastException: es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInContract$View$MockitoMock$1242759836 cannot be cast to android.support.v4.app.FragmentActivity
+        modelMock = new SignInModel(repositoryMock);
 
-
-        WeakReference<FragmentActivity> context = new WeakReference<FragmentActivity>(new FragmentActivity());
-        RepositoryContract.Accounts repository = AccountsRepository.getInstance(context.get());
-        modelMock = new SignInModel(repository);
-
-        presenter.injectView(new WeakReference<>(viewMock) );
+        presenter.injectView(new WeakReference<>(viewMock));
         presenter.injectModel(modelMock);
         presenter.injectRouter(routerMock);
     }
 
     @Test
-    public void signInPressedWithoutData(){
+    public void signUpWithoutData(){
         // Given an initialized SignInPresenter
         // and a null state
         configureSignInScreen(new SignInState());
 
-        // When SignIn button is pressed
-        presenter.signInButtonPressed("","");
+        //Data is null
+        String accountName = "";
+        String accountPassword = "";
+
+        // When SignUp button is pressed
+        presenter.signInButtonPressed(accountName,accountPassword);
+
+        // Callback is captured and invoked with false and null
+        verify(modelMock).checkAccount(accountName,accountPassword,callbackCaptor.capture());
+        callbackCaptor.getValue().setCheckAccountExist(false,null);
+        verify(viewMock,never()).finish();
+        verify(routerMock,never()).navigateToMenuScreen();
+
+        //Then view show a toast
+        verify(viewMock,times(1)).displayCheckAccountError();
+
+    }
+
+    @Test
+    public void signUpWithData(){
+        // Given an initialized SignInPresenter
+        // and a null state
+        configureSignInScreen(new SignInState());
+
+        //Data is administrator data
+        String accountName = "admin";
+        String accountPassword = "admin";
+
+        AccountItem adminAccount = new AccountItem(0,"administrator","admin","XXXXXXXXX","admin@zonget.com","admin");
+
+        // When SignUp button is pressed
+        presenter.signInButtonPressed(accountName,accountPassword);
+
+        // Callback is captured and invoked with correct data
+        verify(modelMock).checkAccount(accountName,accountPassword,callbackCaptor.capture());
+        callbackCaptor.getValue().setCheckAccountExist(true,adminAccount);
+        verify(viewMock,times(1)).finish();
+        verify(routerMock,times(1)).navigateToMenuScreen();
+
+        //Then view no show a toast
+        verify(viewMock,never()).displayCheckAccountError();
 
     }
 
@@ -97,7 +127,7 @@ public class SignInPresenterMockitoTests {
         configureSignInScreen(new SignInState());
 
         // When PickForADate button is pressed
-        presenter.pickForADateButtonPressed();
+        presenter.signUpButtonPressed();
 
         // Router navigate to PickForADate
         verify(routerMock,times(1)).navigateToUserPickDateScreen();

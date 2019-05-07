@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
 
 public interface AdministratorSearchUsersContract {
 
@@ -35,7 +35,7 @@ public interface AdministratorSearchUsersContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorSearchUsersState state);
+        void passDataToNextScreen(SearchToListUserState state);
 
         AdministratorSearchUsersState getDataFromPreviousScreen();
 

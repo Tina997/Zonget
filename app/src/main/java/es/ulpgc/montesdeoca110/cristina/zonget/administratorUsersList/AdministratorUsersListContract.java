@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface AdministratorUsersListContract {
@@ -31,7 +32,7 @@ interface AdministratorUsersListContract {
     }
 
     interface Model {
-        void fetchUsersData(RepositoryContract.Users.GetUsersListCallback callback);
+        void fetchUsersData(String nameOrDni, RepositoryContract.Accounts.GetUserListCallback callback);
     }
 
     interface Router {
@@ -45,5 +46,7 @@ interface AdministratorUsersListContract {
         String getActualThemeName();
 
         void onBackButtonPressed();
+
+        SearchToListUserState getSearchToListUserState();
     }
 }

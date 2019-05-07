@@ -1,61 +1,64 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorAgenda;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
+import android.app.AlertDialog;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public interface AdministratorAgendaContract {
+import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
-  interface View {
-    void injectPresenter(Presenter presenter);
+interface AdministratorAgendaContract {
 
-    void displayData(AdministratorAgendaViewModel viewModel);
+    interface View {
+        void injectPresenter(Presenter presenter);
 
-    void onModifyButtonClicked();
-  }
+        void displayData(AdministratorAgendaViewModel viewModel);
 
-  interface Presenter {
-    void injectView(WeakReference<View> view);
+        void onModifyButtonClicked();
+    }
 
-    void injectModel(Model model);
+    interface Presenter {
+        void injectView(WeakReference<View> view);
 
-    void injectRouter(Router router);
+        void injectModel(Model model);
 
-    void fetchAdministratorAgendaData();
+        void injectRouter(Router router);
 
-    void gotToAddEvent();
+        void fetchDateListData();
 
-    void navigateToModifyEventScreen();
+        void gotToAddEvent();
 
-    String getActualThemeName();
+        void navigateToModifyEventScreen();
 
-    void onBackButtonPressed();
+        String getActualThemeName();
 
-    void saveState(String selectedDate, long calendarDate);
+        void onBackButtonPressed();
 
-    void onDateChanged(String date, long calendarDate);
-  }
+        void saveState(String selectedDate, long calendarDate);
 
-  interface Model {
-    List<EventItem> fetchData();
+        void onDateChanged(String date, long calendarDate);
+    }
 
-    long fetchDateData();
-  }
+    interface Model {
+        List<EventItem> fetchData();
 
-  interface Router {
-    void navigateToNextScreen();
+        long fetchDateData();
+    }
 
-    void passDataToNextScreen(AdministratorAgendaState state);
+    interface Router {
+        void navigateToNextScreen();
 
-    AdministratorAgendaState getDataFromPreviousScreen();
+        void passDataToNextScreen(AdministratorAgendaState state);
 
-    //Navegar entre pantallas
-    void navigateToAddEventScreen();
+        AdministratorAgendaState getDataFromPreviousScreen();
 
-    void navigateToModifyEventScreen();
+        //Navegar entre pantallas
+        void navigateToAddEventScreen();
 
-    String getActualThemeName();
+        void navigateToModifyEventScreen();
 
-    void onBackButtonPressed();
-  }
+        String getActualThemeName();
+
+        void onBackButtonPressed();
+    }
 }

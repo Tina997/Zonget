@@ -1,85 +1,84 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 
+import java.lang.ref.WeakReference;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-import java.lang.ref.WeakReference;
+public interface AdministratorButtonsMenuListContract {
 
-interface AdministratorButtonsMenuListContract {
+    interface View {
 
-  interface View {
+        void injectPresenter(Presenter presenter);
 
-    void injectPresenter(Presenter presenter);
+        void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
 
-    void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
+        void reboot();
 
-    void reboot();
+        void finish();
 
-    void finish();
+    }
 
-  }
+    interface Presenter {
 
-  interface Presenter {
+        void injectView(WeakReference<View> view);
 
-    void injectView(WeakReference<View> view);
+        void injectModel(Model model);
 
-    void injectModel(Model model);
+        void injectRouter(Router router);
 
-    void injectRouter(Router router);
+        String getActualThemeName();
 
-    String getActualThemeName();
+        void fetchAdministratorButtonsMenuListData();
 
-    void fetchAdministratorButtonsMenuListData();
+        void signOutButtonPressed();
 
-    void signOutButtonPressed();
+        void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
 
-    void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
+        void changeThemeButtonPressed();
 
-    void changeThemeButtonPressed();
+        void checkThemeChanged();
+    }
 
-    void checkThemeChanged();
-  }
+    interface Model {
 
-  interface Model {
+        
+        void fetchAdministratorButtonsMenuListData(RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
 
+    }
 
-    void fetchAdministratorButtonsMenuListData(
-            RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
+    interface Router {
 
-  }
+        //------------------------- Tema ---------------------
 
-  interface Router {
+        String getActualThemeName();
 
-    //------------------------- Tema ---------------------
+        void setChangeThemeToMenuState(boolean isChanged);
 
-    String getActualThemeName();
+        //--------------- Navegación entre pantallas -----------
 
-    void setChangeThemeToMenuState(boolean isChanged);
+        void navigateToSignInScreen();
 
-    //--------------- Navegación entre pantallas -----------
+        void navigateToSelectedActivityScreen(String activityClassName);
 
-    void navigateToSignInScreen();
+        void navigateToChangeThemeScreen();
 
-    void navigateToSelectedActivityScreen(String activityClassName);
+        //------------- Paso de datos entre pantallas ----------
 
-    void navigateToChangeThemeScreen();
+        void passDataToSignInScreen(MenuToSignInState state);
 
-    //------------- Paso de datos entre pantallas ----------
+        void passDataToSelectedActivityScreen(MenuToSelectedActivityState state);
 
-    void passDataToSignInScreen(MenuToSignInState state);
+        //void passDataToChangeThemeScreen();
 
-    void passDataToSelectedActivityScreen(MenuToSelectedActivityState state);
+        //------------- Obtener datos entre pantallas ----------
 
-    //void passDataToChangeThemeScreen();
+        //AdministratorButtonsMenuListState getDataFromSignInScreen();
 
-    //------------- Obtener datos entre pantallas ----------
+        ChangeThemeToMenuState getDataFromChangeThemeScreen();
 
-    //AdministratorButtonsMenuListState getDataFromSignInScreen();
-
-    ChangeThemeToMenuState getDataFromChangeThemeScreen();
-
-  }
+    }
 }
