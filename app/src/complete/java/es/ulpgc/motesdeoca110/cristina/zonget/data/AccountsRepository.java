@@ -88,7 +88,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 if (callback != null) {
                     boolean exist = checkAccount(accountName, accountPassword);
                     AccountItem account = null;
-                    if (exist) {
+                    if(exist){
                         account = getAccountchecked(accountName, accountPassword);
                     }
                     callback.setCheckAccountExist(exist, account);
@@ -100,13 +100,13 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     @Override
     public void checkNewAccountDataExist(final String accountDni, final String accountEmail, final CheckNewAccountDataExistCallback callback) {
-        AsyncTask.execute(new Runnable() {
+        AsyncTask.execute( new Runnable() {
             @Override
             public void run() {
                 if (callback != null) {
                     boolean exist = checkNewAccountData(accountDni, accountEmail);
                     int lastId = 0;
-                    if (!exist) {
+                    if(!exist){
                         lastId = getAccountDao().loadAccounts().size() + 1;
                     }
                     callback.setNewAccountExistCallBack(exist, lastId);
@@ -121,11 +121,10 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if (callback != null) {
-
-                    AccountBDItem accountBDItem = new AccountBDItem(account.getId(), account.getName(), account.getDni(), account.getEmail(), account.getPassword());
+                    AccountBDItem accountBDItem =  new AccountBDItem(account.getId(),account.getName(),account.getDni(),account.getEmail(),account.getPassword());
                     getAccountDao().insertAccount(accountBDItem);
 
-                    UserItem userItem = new UserItem(getUserDao().loadUsers().size() + 1, account.getType(), account.getId());
+                    UserItem userItem =  new UserItem(getUserDao().loadUsers().size() + 1,account.getType(),account.getId());
                     getUserDao().insertUser(userItem);
 
                     callback.onNewAccountInserted();
@@ -133,13 +132,12 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             }
         });
     }
-
     @Override
     public void getUserList(final String nameOrDni, final GetUserListCallback callback) {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                if (callback != null) {
+                if(callback != null){
                     callback.setUsers(getUsers(nameOrDni));
                 }
             }
@@ -161,6 +159,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
 
     }
+
 
 
     //---------------------------- Métodos privados ----------------------------------
