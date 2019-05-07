@@ -62,6 +62,7 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity
     switch (item.getItemId()) {
       case android.R.id.home:
         presenter.backButtonPressed();
+        finish();
         return true;
       default:
         return super.onOptionsItemSelected(item);

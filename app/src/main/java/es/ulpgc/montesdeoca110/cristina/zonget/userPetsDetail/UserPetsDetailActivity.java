@@ -80,6 +80,7 @@ public class UserPetsDetailActivity
         int id = item.getItemId();
         if (id == android.R.id.home) {
             presenter.onBackButtonClicked();
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -84,6 +84,7 @@ public class AddPetForAdoptionActivity
         if (id == android.R.id.home) {
           //TODO destruir activity
           presenter.onBackButtonPressed();
+          finish();
           return true;
         }
         return super.onOptionsItemSelected(item);

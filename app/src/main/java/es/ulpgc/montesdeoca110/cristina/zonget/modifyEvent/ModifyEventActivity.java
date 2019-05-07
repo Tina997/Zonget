@@ -120,6 +120,7 @@ public class ModifyEventActivity
         if (id == android.R.id.home) {
           //TODO destruir activity
           navigateUpTo(new Intent(this, AdministratorAgendaActivity.class));
+          finish();
           return true;
         }
         return super.onOptionsItemSelected(item);

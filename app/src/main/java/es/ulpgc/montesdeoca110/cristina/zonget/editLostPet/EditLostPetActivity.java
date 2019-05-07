@@ -99,6 +99,7 @@ public class EditLostPetActivity
         if (id == android.R.id.home) {
           //TODO matar la activity
           presenter.onBackButtonPressed();
+          finish();
           return true;
         }
         return super.onOptionsItemSelected(item);

@@ -21,7 +21,7 @@
             android:id="@+id/user_queries_menu_new_query_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="?attr/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageView
@@ -51,7 +51,7 @@
             android:id="@+id/user_queries_menu_pending_queries_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="?attr/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageView
@@ -81,7 +81,7 @@
             android:id="@+id/user_queries_menu_finished_queries_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="?attr/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageView

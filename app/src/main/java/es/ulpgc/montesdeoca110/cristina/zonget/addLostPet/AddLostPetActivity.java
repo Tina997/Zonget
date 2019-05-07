@@ -86,6 +86,7 @@ public class AddLostPetActivity
         if (id == android.R.id.home) {
           //TODO matar la activity
           presenter.onBackButtonPressed();
+          finish();
           return true;
         }
         return super.onOptionsItemSelected(item);

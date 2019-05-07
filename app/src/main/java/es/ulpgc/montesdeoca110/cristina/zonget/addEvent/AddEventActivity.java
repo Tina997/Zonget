@@ -121,6 +121,7 @@ public class AddEventActivity
         if (id == android.R.id.home) {
           //TODO destruir activity
           presenter.onBackButtonPressed();
+          finish();
         }
         return super.onOptionsItemSelected(item);
     }

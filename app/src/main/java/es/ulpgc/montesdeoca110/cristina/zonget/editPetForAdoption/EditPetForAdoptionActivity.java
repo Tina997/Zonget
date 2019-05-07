@@ -81,12 +81,14 @@ public class EditPetForAdoptionActivity
     switch (item.getItemId()) {
       case R.id.action_accept:
         presenter.onAcceptButtonClicked();
+        finish();
         return true;
       default:
         int id = item.getItemId();
         if (id == android.R.id.home) {
           //TODO destruir activity
           presenter.onBackButtonPressed();
+          finish();
           return true;
         }
         return super.onOptionsItemSelected(item);

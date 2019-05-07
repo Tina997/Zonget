@@ -88,6 +88,7 @@ public class AdministratorSearchUsersActivity
         int id = item.getItemId();
         if (id == android.R.id.home) {
             presenter.onBackButtonPressed();
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

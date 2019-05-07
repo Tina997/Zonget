@@ -103,6 +103,7 @@ public class AdministratorUserPetsDetailActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     presenter.onBackButtonPressed();
+                    finish();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

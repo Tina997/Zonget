@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailActivity;
 
 public class AddLostPetRouter implements AddLostPetContract.Router {
@@ -43,7 +44,7 @@ public class AddLostPetRouter implements AddLostPetContract.Router {
   @Override
   public void onBackButtonPressed() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, LostPetsDetailActivity.class);
+    Intent intent = new Intent(context, LostPetsListActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }

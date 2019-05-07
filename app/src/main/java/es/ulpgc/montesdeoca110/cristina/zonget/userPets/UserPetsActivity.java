@@ -46,7 +46,7 @@ public class UserPetsActivity
 
         // do the setup
         UserPetsScreen.configure(this);
-
+        presenter.fetchUserPetsData();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class UserPetsActivity
         super.onResume();
 
         // do some work
-        presenter.fetchUserPetsData();
+
     }
 
     @Override
