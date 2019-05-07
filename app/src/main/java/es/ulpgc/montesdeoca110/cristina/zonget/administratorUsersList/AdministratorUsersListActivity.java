@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class AdministratorUsersListActivity
 
     private AdministratorUsersListContract.Presenter presenter;
     private ListView listView;
+    private static Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,11 @@ public class AdministratorUsersListActivity
     @Override
     protected void onResume() {
         super.onResume();
+        //restore ListView state
+        if(bundle != null){
+            Parcelable listState = bundle.getParcelable("state");
+            listView.onRestoreInstanceState(listState);
+        }
 
         // do some work
         presenter.fetchAdminUsersData();
@@ -75,6 +82,15 @@ public class AdministratorUsersListActivity
         }));
 
         // deal with the data
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        //Save ListView state
+      bundle = new Bundle();
+        Parcelable listState = listView.onSaveInstanceState();
+        bundle.putParcelable("state", listState);
     }
 
 

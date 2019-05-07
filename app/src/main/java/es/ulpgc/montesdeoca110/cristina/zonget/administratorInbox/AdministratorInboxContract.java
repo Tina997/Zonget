@@ -1,49 +1,48 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
+public interface AdministratorInboxContract {
 
-interface AdministratorInboxContract {
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+    void displayData(AdministratorInboxViewModel viewModel);
+  }
 
-        void displayData(AdministratorInboxViewModel viewModel);
-    }
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+    void injectModel(Model model);
 
-        void injectModel(Model model);
+    void injectRouter(Router router);
 
-        void injectRouter(Router router);
+    void fetchInboxData();
 
-        void fetchInboxData();
+    void goToAdministratorQueryDetailScreen();
 
-        void goToAdministratorQueryDetailScreen();
+    String getActualThemeName();
 
-        String getActualThemeName();
+    void onBackButtonPressed();
+  }
 
-        void onBackButtonPressed();
-    }
+  interface Model {
+    List<QueryItem> fetchData();
+  }
 
-    interface Model {
-        List<QueryItem> fetchData();
-    }
+  interface Router {
+    void navigateToNextScreen();
 
-    interface Router {
-        void navigateToNextScreen();
+    void passDataToNextScreen(AdministratorInboxState state);
 
-        void passDataToNextScreen(AdministratorInboxState state);
+    AdministratorInboxState getDataFromPreviousScreen();
 
-        AdministratorInboxState getDataFromPreviousScreen();
+    void navigateToAdministratorQueryDetailScreen();
 
-        void navigateToAdministratorQueryDetailScreen();
+    String getActualThemeName();
 
-        String getActualThemeName();
-
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }

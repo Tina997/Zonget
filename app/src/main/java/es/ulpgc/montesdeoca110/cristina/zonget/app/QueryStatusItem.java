@@ -13,9 +13,9 @@ import android.arch.persistence.room.PrimaryKey;
         ))
 public class QueryStatusItem {
 
-    @PrimaryKey
-    public int id;
+  @PrimaryKey
+  public int id;
 
-    @ColumnInfo(name = "query_id")
-    public int queryId;
+  @ColumnInfo(name = "query_id")
+  public int queryId;
 }

@@ -4,63 +4,63 @@ import java.lang.ref.WeakReference;
 
 interface UserQueriesMenuContract {
 
-    interface View {
+  interface View {
 
-        void injectPresenter(Presenter presenter);
+    void injectPresenter(Presenter presenter);
 
-        void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel);
+    void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel);
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        void injectView(WeakReference<View> view);
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void backButtonPressed();
+    void backButtonPressed();
 
-        void fetchUserQueriesMenuData();
+    void fetchUserQueriesMenuData();
 
-        void newQueryButtonPressed();
+    void newQueryButtonPressed();
 
-        void pendingQueriesButtonPressed();
+    void pendingQueriesButtonPressed();
 
-        void finishedQueriesButtonPressed();
+    void finishedQueriesButtonPressed();
 
-    }
+  }
 
-    interface Model {
+  interface Model {
 
-        String fetchUserQueriesMenuData();
+    String fetchUserQueriesMenuData();
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToUserMenuScreen();
+    void navigateToUserMenuScreen();
 
-        void navigateToUserNewQueryScreen();
+    void navigateToUserNewQueryScreen();
 
-        void navigateToUserPendingQueriesScreen();
+    void navigateToUserPendingQueriesScreen();
 
-        void navigateToUserFinishedQueriesScreen();
+    void navigateToUserFinishedQueriesScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataToUserNewQueryScreen();
+    void passDataToUserNewQueryScreen();
 
-        void passDataToUserPendingQueriesListScreen();
+    void passDataToUserPendingQueriesListScreen();
 
-        void passDataToUserFinishedQueriesListScreen();
+    void passDataToUserFinishedQueriesListScreen();
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-        //UserQueriesMenuState getDataFromPreviousScreen();
+    //UserQueriesMenuState getDataFromPreviousScreen();
 
-    }
+  }
 }

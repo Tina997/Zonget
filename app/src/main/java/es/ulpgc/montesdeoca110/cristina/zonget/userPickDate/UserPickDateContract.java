@@ -1,47 +1,47 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPickDate;
 
-import java.lang.ref.WeakReference;
-import java.util.List;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.HourItem;
+import java.lang.ref.WeakReference;
+
+import java.util.List;
 
 interface UserPickDateContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(UserPickDateViewModel viewModel);
-    }
+    void displayData(UserPickDateViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void saveState(String date, long calendarDate);
+    void saveState(String date, long calendarDate);
 
-        void onDateChanged(String date, long calendarDate);
-    }
+    void onDateChanged(String date, long calendarDate);
+  }
 
-    interface Model {
-        List<HourItem> fetchData();
+  interface Model {
+    List<HourItem> fetchData();
 
-        long fetchDateData();
-    }
+    long fetchDateData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(UserPickDateState state);
+    void passDataToNextScreen(UserPickDateState state);
 
-        UserPickDateState getDataFromPreviousScreen();
+    UserPickDateState getDataFromPreviousScreen();
 
-        String getActualThemeName();
-    }
+    String getActualThemeName();
+  }
 }

@@ -6,10 +6,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
 public class AdministratorAgendaViewModel {
 
-    public List<EventItem> eventList;
-    public String date;
-    public long calendarDate;
+  public List<EventItem> eventList;
+  public String date;
+  public long calendarDate;
 
-    //Prueba
-    public List<String> spinnerList;
 }

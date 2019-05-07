@@ -1,7 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
-import android.content.Intent;
 import android.content.Context;
+import android.content.Intent;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMenuListActivity;
@@ -11,65 +11,65 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList.UserPendin
 
 public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
-    private AppMediator mediator;
+  private AppMediator mediator;
 
-    public UserQueriesMenuRouter(AppMediator mediator) {
-        this.mediator = mediator;
-    }
+  public UserQueriesMenuRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
 
-    //UserButtonsMenuList
+  //UserButtonsMenuList
 
-    @Override
-    public void navigateToUserMenuScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToUserMenuScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    // UserNewQuery
+  // UserNewQuery
 
-    @Override
-    public void passDataToUserNewQueryScreen() {
+  @Override
+  public void passDataToUserNewQueryScreen() {
 
-    }
+  }
 
-    @Override
-    public void navigateToUserNewQueryScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserNewQueryActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToUserNewQueryScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserNewQueryActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    // UserPendingQueriesList
+  // UserPendingQueriesList
 
-    @Override
-    public void passDataToUserPendingQueriesListScreen() {
+  @Override
+  public void passDataToUserPendingQueriesListScreen() {
 
-    }
+  }
 
-    @Override
-    public void navigateToUserPendingQueriesScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserPendingQueriesListActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToUserPendingQueriesScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserPendingQueriesListActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    // UserFinishedQueriesList
+  // UserFinishedQueriesList
 
-    @Override
-    public void passDataToUserFinishedQueriesListScreen() {
+  @Override
+  public void passDataToUserFinishedQueriesListScreen() {
 
-    }
+  }
 
-    @Override
-    public void navigateToUserFinishedQueriesScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserFinishedQueriesListActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToUserFinishedQueriesScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserFinishedQueriesListActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
 }

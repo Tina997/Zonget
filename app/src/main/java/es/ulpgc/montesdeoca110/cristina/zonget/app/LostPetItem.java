@@ -15,19 +15,19 @@ import com.google.gson.annotations.SerializedName;
         ))
 public class LostPetItem {
 
-    @PrimaryKey
-    public int id;
+  @PrimaryKey
+  public int id;
 
-    public String name;
-    public String picture;
-    public String date;
-    public String breed;
+  public String name;
+  public String picture;
+  public String date;
+  public String breed;
 
-    public String chipNum;
-    public String details;
-    public String phoneNum;
+  public String chipNum;
+  public String details;
+  public String phoneNum;
 
-    @ColumnInfo(name= "pet_id")
-    public int petId;
+  @ColumnInfo(name = "pet_id")
+  public int petId;
 
 }

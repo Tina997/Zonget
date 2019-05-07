@@ -5,50 +5,50 @@ import java.util.Calendar;
 
 interface AddEventContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(AddEventViewModel viewModel);
-    }
+    void displayData(AddEventViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void addEvent();
+    void addEvent();
 
-        void navigateToAdministratorAgendaScreen();
+    void navigateToAdministratorAgendaScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
+    void onBackButtonPressed();
 
-        void saveState(int spinnerSelection, Calendar calendar);
+    void saveState(int spinnerSelection, Calendar calendar);
 
-        void fetchEventData();
-    }
+    void fetchEventData();
+  }
 
-    interface Model {
-        String fetchData();
+  interface Model {
+    String fetchData();
 
-        Calendar fetchCalendar();
+    Calendar fetchCalendar();
 
-    }
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(AddEventState state);
+    void passDataToNextScreen(AddEventState state);
 
-        AddEventState getDataFromPreviousScreen();
+    AddEventState getDataFromPreviousScreen();
 
-        void navigateToAdministratorAgendaScreen();
+    void navigateToAdministratorAgendaScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }

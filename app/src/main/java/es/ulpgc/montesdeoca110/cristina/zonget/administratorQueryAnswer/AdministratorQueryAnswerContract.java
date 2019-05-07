@@ -4,39 +4,39 @@ import java.lang.ref.WeakReference;
 
 interface AdministratorQueryAnswerContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(AdministratorQueryAnswerViewModel viewModel);
-    }
+    void displayData(AdministratorQueryAnswerViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void navigateToAdministratorInboxScreen();
+    void navigateToAdministratorInboxScreen();
 
-        String getActualThemeName();
-    }
+    String getActualThemeName();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorQueryAnswerState state);
+    void passDataToNextScreen(AdministratorQueryAnswerState state);
 
-        AdministratorQueryAnswerState getDataFromPreviousScreen();
+    AdministratorQueryAnswerState getDataFromPreviousScreen();
 
-        void navigateToAdministratorInboxScreen();
+    void navigateToAdministratorInboxScreen();
 
-        String getActualThemeName();
-    }
+    String getActualThemeName();
+  }
 }

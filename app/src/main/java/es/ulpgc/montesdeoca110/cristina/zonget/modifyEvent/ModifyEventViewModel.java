@@ -4,6 +4,6 @@ import java.util.Calendar;
 
 public class ModifyEventViewModel {
 
-    public int spinnerSelection;
-    public Calendar calendar;
+  public int spinnerSelection;
+  public Calendar calendar;
 }

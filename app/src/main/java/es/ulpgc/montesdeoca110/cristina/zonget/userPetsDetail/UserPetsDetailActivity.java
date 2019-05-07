@@ -74,6 +74,7 @@ public class UserPetsDetailActivity
             ((TextView)findViewById(R.id.numberAnimalClient)).setText(petClientItem.getChipNum());
         }
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

@@ -1,68 +1,67 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import java.lang.ref.WeakReference;
 
 public interface ChangeThemeContract {
 
-    interface View {
+  interface View {
 
-        void injectPresenter(Presenter presenter);
+    void injectPresenter(Presenter presenter);
 
-        void displayChangeThemeListData(ChangeThemeViewModel viewModel);
+    void displayChangeThemeListData(ChangeThemeViewModel viewModel);
 
-        void reboot();
+    void reboot();
 
-        void finish();
+    void finish();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        void injectView(WeakReference<View> view);
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void fetchChangeThemeListData();
+    void fetchChangeThemeListData();
 
-        void selectChangeThemeListData(ChangeThemeItem item);
+    void selectChangeThemeListData(ChangeThemeItem item);
 
-        void backButtonPressed();
-    }
+    void backButtonPressed();
+  }
 
-    interface Model {
+  interface Model {
 
-        void fetchChangeThemeListData(RepositoryContract.Settings.GetChangeThemeListCallback callback);
+    void fetchChangeThemeListData(RepositoryContract.Settings.GetChangeThemeListCallback callback);
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        //------------------------- Tema ---------------------
+    //------------------------- Tema ---------------------
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void changeActualTheme(String themeName);
+    void changeActualTheme(String themeName);
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToMenuScreen();
+    void navigateToMenuScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataToMenuScreen(ChangeThemeToMenuState state);
+    void passDataToMenuScreen(ChangeThemeToMenuState state);
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-        ChangeThemeState getDataFromPreviousScreen();
+    ChangeThemeState getDataFromPreviousScreen();
 
-    }
+  }
 }

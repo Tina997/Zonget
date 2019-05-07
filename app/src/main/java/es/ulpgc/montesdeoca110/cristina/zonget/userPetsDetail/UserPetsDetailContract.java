@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
-interface UserPetsDetailContract {
+public interface UserPetsDetailContract {
 
     interface View {
         void injectPresenter(Presenter presenter);

@@ -1,10 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList;
 
-import java.util.List;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
+import java.util.List;
 
 public class UserButtonsMenuListViewModel {
 
-    public List<UserButtonMenuItem> userButtons;
+  public List<UserButtonMenuItem> userButtons;
 }

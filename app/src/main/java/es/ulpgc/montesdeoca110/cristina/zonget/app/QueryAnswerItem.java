@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
-
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
@@ -14,32 +13,32 @@ import android.arch.persistence.room.PrimaryKey;
         ))
 public class QueryAnswerItem {
 
-    @PrimaryKey
-    public int id;
-    public String answer;
+  @PrimaryKey
+  public int id;
+  public String answer;
 
-    @ColumnInfo(name = "query_id")
-    public int queryId;
+  @ColumnInfo(name = "query_id")
+  public int queryId;
 
 
-    public QueryAnswerItem(int id, String answer) {
-        this.id = id;
-        this.answer = answer;
-    }
+  public QueryAnswerItem(int id, String answer) {
+    this.id = id;
+    this.answer = answer;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getAnswer() {
-        return answer;
-    }
+  public String getAnswer() {
+    return answer;
+  }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
+  public void setAnswer(String answer) {
+    this.answer = answer;
+  }
 }

@@ -2,41 +2,41 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
 import java.lang.ref.WeakReference;
 
-interface AdministratorQueryDetailContract {
+public interface AdministratorQueryDetailContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(AdministratorQueryDetailViewModel viewModel);
-    }
+    void displayData(AdministratorQueryDetailViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void navigateToAdministratorQueryAnswerScreen();
+    void navigateToAdministratorQueryAnswerScreen();
 
-        String getActualThemeName();
-    }
+    String getActualThemeName();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorQueryDetailState state);
+    void passDataToNextScreen(AdministratorQueryDetailState state);
 
-        AdministratorQueryDetailState getDataFromPreviousScreen();
+    AdministratorQueryDetailState getDataFromPreviousScreen();
 
-        void navigateToAdministratorQueryAnswerScreen();
+    void navigateToAdministratorQueryAnswerScreen();
 
-        String getActualThemeName();
-    }
+    String getActualThemeName();
+  }
 }

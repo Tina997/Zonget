@@ -4,41 +4,41 @@ import java.lang.ref.WeakReference;
 
 interface AdministratorUsersAddPetContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(AdministratorUsersAddPetViewModel viewModel);
-    }
+    void displayData(AdministratorUsersAddPetViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void insertNewPet();
+    void insertNewPet();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(AdministratorUsersAddPetState state);
+    void passDataToNextScreen(AdministratorUsersAddPetState state);
 
-        AdministratorUsersAddPetState getDataFromPreviousScreen();
+    AdministratorUsersAddPetState getDataFromPreviousScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }

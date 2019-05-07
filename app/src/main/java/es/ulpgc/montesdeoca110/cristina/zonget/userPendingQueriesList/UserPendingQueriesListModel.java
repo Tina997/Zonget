@@ -2,12 +2,12 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
 public class UserPendingQueriesListModel implements UserPendingQueriesListContract.Model {
 
-    public UserPendingQueriesListModel() {
+  public UserPendingQueriesListModel() {
 
-    }
+  }
 
-    @Override
-    public void fetchUserPendingQueriesListData() {
+  @Override
+  public void fetchUserPendingQueriesListData() {
 
-    }
+  }
 }

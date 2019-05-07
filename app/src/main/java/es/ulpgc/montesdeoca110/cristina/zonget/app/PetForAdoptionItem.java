@@ -13,17 +13,17 @@ import android.arch.persistence.room.PrimaryKey;
         ))
 public class PetForAdoptionItem {
 
-    @PrimaryKey
-    public int id;
+  @PrimaryKey
+  public int id;
 
-    public String picture;
-    public String date;
-    public String breed;
+  public String picture;
+  public String date;
+  public String breed;
 
-    public String details;
-    public String phoneNum;
+  public String details;
+  public String phoneNum;
 
-    @ColumnInfo(name = "pet_id")
-    public int petId;
+  @ColumnInfo(name = "pet_id")
+  public int petId;
 
 }

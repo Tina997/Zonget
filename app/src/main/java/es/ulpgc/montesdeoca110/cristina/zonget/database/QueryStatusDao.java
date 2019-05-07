@@ -6,26 +6,24 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
-
-import java.util.List;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryStatusItem;
+import java.util.List;
 
 @Dao
 public interface QueryStatusDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertQueryStatus(QueryStatusItem item);
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
+  void insertQueryStatus(QueryStatusItem item);
 
-    @Update
-    void updateQueryStatus(QueryStatusItem item);
+  @Update
+  void updateQueryStatus(QueryStatusItem item);
 
-    @Delete
-    void deleteQueryStatus(QueryStatusItem item);
+  @Delete
+  void deleteQueryStatus(QueryStatusItem item);
 
-    @Query("SELECT * FROM queryStatus")
-    List<QueryStatusItem> loadQueryStatus();
+  @Query("SELECT * FROM queryStatus")
+  List<QueryStatusItem> loadQueryStatus();
 
-    @Query("SELECT * FROM queryStatus WHERE id =:id LIMIT 1")
-    QueryStatusItem loadQueryStatus(int id);
+  @Query("SELECT * FROM queryStatus WHERE id =:id LIMIT 1")
+  QueryStatusItem loadQueryStatus(int id);
 }

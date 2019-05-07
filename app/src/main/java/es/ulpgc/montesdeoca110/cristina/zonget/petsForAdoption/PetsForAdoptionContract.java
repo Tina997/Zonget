@@ -1,51 +1,51 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import java.lang.ref.WeakReference;
 
 public interface PetsForAdoptionContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(PetsForAdoptionViewModel viewModel);
-    }
+    void displayData(PetsForAdoptionViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchPetsForAdoptionListData();
+    void fetchPetsForAdoptionListData();
 
-        void selectPet(PetForAdoptionItem petForAdoptionItem);
+    void selectPet(PetForAdoptionItem petForAdoptionItem);
 
-        void gotToAddPetForAdoption();
+    void gotToAddPetForAdoption();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 
-    interface Model {
-        void fetchPetsForAdoptionListData(RepositoryContract.PetsForAdoption.GetPetsForAdoptionListCallback callback);
-    }
+  interface Model {
+    void fetchPetsForAdoptionListData(RepositoryContract.PetsForAdoption
+                                              .GetPetsForAdoptionListCallback callback);
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToDetailScreen(PetForAdoptionItem petsForAdoptionItem);
+    void passDataToDetailScreen(PetForAdoptionItem petsForAdoptionItem);
 
-        PetsForAdoptionState getDataFromPreviousScreen();
+    PetsForAdoptionState getDataFromPreviousScreen();
 
-        void navigateToAddPetForAdoptionScreen();
+    void navigateToAddPetForAdoptionScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void onBackButtonPressed();
-    }
+    void onBackButtonPressed();
+  }
 }

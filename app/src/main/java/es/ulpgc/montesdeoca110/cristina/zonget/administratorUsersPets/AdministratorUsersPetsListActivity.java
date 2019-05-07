@@ -1,6 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,8 @@ public class AdministratorUsersPetsListActivity
     private ListView listView;
 
     private GridView administratorUsersPetsGridView;
+    private static Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,12 @@ public class AdministratorUsersPetsListActivity
     protected void onResume() {
         super.onResume();
 
+        //restore ListView state
+        if(bundle != null){
+            Parcelable listState = bundle.getParcelable("state");
+            listView.onRestoreInstanceState(listState);
+        }
+
         // do some work
         presenter.fetchUserPetsData();
     }
@@ -88,6 +97,17 @@ public class AdministratorUsersPetsListActivity
         }));
         // deal with the data
     }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        //Save ListView state
+        bundle = new Bundle();
+        Parcelable listState = listView.onSaveInstanceState();
+        bundle.putParcelable("state", listState);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar

@@ -5,45 +5,45 @@ import java.util.Calendar;
 
 interface ModifyEventContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(ModifyEventViewModel viewModel);
-    }
+    void displayData(ModifyEventViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void modifyEvent();
+    void modifyEvent();
 
-        void navigateToAdministratorAgendaScreen();
+    void navigateToAdministratorAgendaScreen();
 
-        String getActualThemeName();
+    String getActualThemeName();
 
-        void saveState(int spinnerSelection, Calendar calendar);
-    }
+    void saveState(int spinnerSelection, Calendar calendar);
+  }
 
-    interface Model {
-        String fetchData();
+  interface Model {
+    String fetchData();
 
-        Calendar fetchCalendar();
-    }
+    Calendar fetchCalendar();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(ModifyEventState state);
+    void passDataToNextScreen(ModifyEventState state);
 
-        ModifyEventState getDataFromPreviousScreen();
+    ModifyEventState getDataFromPreviousScreen();
 
-        void navigateToAdministratorAgendaScreen();
+    void navigateToAdministratorAgendaScreen();
 
-        String getActualThemeName();
-    }
+    String getActualThemeName();
+  }
 }

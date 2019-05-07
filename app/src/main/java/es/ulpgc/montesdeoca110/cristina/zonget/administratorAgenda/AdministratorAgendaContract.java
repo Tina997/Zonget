@@ -24,7 +24,7 @@ public interface AdministratorAgendaContract {
 
         void injectRouter(Router router);
 
-        void fetchDateListData();
+        void fetchAdministratorAgendaData();
 
         void gotToAddEvent();
 
