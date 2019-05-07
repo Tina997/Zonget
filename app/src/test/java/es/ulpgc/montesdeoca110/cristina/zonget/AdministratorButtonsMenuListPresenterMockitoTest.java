@@ -70,7 +70,7 @@ public class AdministratorButtonsMenuListPresenterMockitoTest {
         verify(modelMock).fetchAdministratorButtonsMenuListData(callbackCaptorOne);
         verify(repositoryMock).loadZonget(callbackCaptorTwo);
 
-        //TODO continuar y buscar una solución al error
+        //TODO continuar y buscar una solución al error (preguntar)
     }
 
 }
