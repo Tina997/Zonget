@@ -16,6 +16,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailMode
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailPresenter;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailState;
 
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -62,6 +63,7 @@ public class UserPetsDetailTests {
     configureUserPetsDetailScreen(new UserPetsDetailState());
     when(routerMock.getDataFromPreviousScreen()).thenReturn(null);
 
+    //Data is null
     UserPetsDetailState viewModel = new UserPetsDetailState();
     viewModel.pet = null;
 
@@ -80,13 +82,15 @@ public class UserPetsDetailTests {
     configureUserPetsDetailScreen(new UserPetsDetailState());
     when(routerMock.getDataFromPreviousScreen()).thenReturn(notNullUserPetItem);
 
+    //Data is not null
     UserPetsDetailState viewModel = new UserPetsDetailState();
     viewModel.pet = notNullUserPetItem;
 
     //When loading data is requested
     presenter.fetchPetsData();
 
-    //Then
+    //Then view has not null data
+    verify(routerMock, times(1)).getDataFromPreviousScreen();
     verify(viewMock).displayData(viewModel);
   }
 }
