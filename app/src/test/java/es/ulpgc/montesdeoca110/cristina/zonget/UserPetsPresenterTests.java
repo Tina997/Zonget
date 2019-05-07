@@ -20,6 +20,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsPresenter;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
 
+import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -65,39 +66,6 @@ public class UserPetsPresenterTests {
 
     presenter.injectRouter(routerMock);
 
-  }
-
-  @Test
-  public void fetchUserPetsDataWithNullState(){
-    //Given an initialized UserPetsPresenter
-    //and a null UserPetsState
-    //and a new empty state in generated
-    configureUserPetsScreen(new UserPetsState());
-    when(routerMock.getDataFromPreviousScreen()).thenReturn(null);
-
-    UserPetsState viewModel = new UserPetsState();
-
-    //When loading data is requested
-    presenter.fetchUserPetsData();
-
-    //Then
-    verify(viewMock).displayUserPetsData(viewModel);
-  }
-
-  @Test
-  public void fetchUserPetsDataWithNotNullSignInState(){
-    //Given an initialized UserPetsPresenter
-    //and a not null UserPetsState
-    configureUserPetsScreen(new UserPetsState());
-    when(routerMock.getDataFromSignIn()).thenReturn(accountItem);
-
-    UserPetsState viewModel = new UserPetsState();
-
-    //When loading data is requested
-    presenter.fetchUserPetsData();
-
-    //Then model is called
-    verify(modelMock, times(1)).fetchPetsData(accountItem, null);
   }
 
   @Test
