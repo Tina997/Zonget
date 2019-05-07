@@ -56,7 +56,6 @@ public class SignInPresenter implements SignInContract.Presenter {
             public void setCheckAccountExist(boolean exist, AccountItem account) {
                 if(exist){
                     SignInToMenuState state = new SignInToMenuState(account);
-                    Log.e("Cuenta: "+account.getName(), "Animales" + account.getPets());
                     view.get().finish();
                     router.passDataToMenuScreen(state);
                     router.navigateToMenuScreen();

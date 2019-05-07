@@ -121,6 +121,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if (callback != null) {
+
                     AccountBDItem accountBDItem =  new AccountBDItem(account.getId(),account.getName(),account.getDni(),account.getEmail(),account.getPassword());
                     getAccountDao().insertAccount(accountBDItem);
 
@@ -228,6 +229,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
                         PetsItem petsItem = new PetsItem(pet.getId(),pet.getBreed(),account.getId());
                         getPetsDao().insertPet(petsItem);
+
                         int userPetId = getUserPetDao().loadUserPets().size() + 1;
                         UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId,pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getId());
                         getUserPetDao().insertUserPet(userPetBDItem);
@@ -269,31 +271,18 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private List<UserPetItem> accountGetPets(int userId){
 
-
-        Log.e("Cuenta: "+ userId,"(Yguanira = 1)");
-
         List<UserPetItem> pets =  new ArrayList<>();
 
         List<PetsItem>  petsBD = getPetsDao().loadPets(userId);
 
-        Log.e("Cuenta: "+ userId,"PetsBD " + petsBD);
-
         for (int i = 0; i < petsBD.size(); i++){
 
-            Log.e("Cuenta: "+ userId,"PetsBD size " + petsBD.size());
-
             PetsItem userPet = petsBD.get(i);
-
-            Log.e("Cuenta: "+ userId,"PetsBD: " + petsBD.get(i).getId() +" "+petsBD.get(i).getBreed() +" "+petsBD.get(i).getUserId());
-
             UserPetBDItem infoUserPet = getUserPetDao().loadUserPet(userPet.getId());
-
-            Log.e("Cuenta: "+ userId,"infoPet: " + infoUserPet);
-
-            Log.e("Cuenta: "+ userId,"infoPet: " + getUserPetDao().loadUserPets());
 
             UserPetItem userPetItem = new UserPetItem(infoUserPet.getId(),infoUserPet.getName(),infoUserPet.getSpecies(),userPet.getBreed(),infoUserPet.getChipNum(),infoUserPet.getBirthday());
             pets.add(userPetItem);
+
         }
         Log.e("Cantidad", pets.size()+"");
         return pets;

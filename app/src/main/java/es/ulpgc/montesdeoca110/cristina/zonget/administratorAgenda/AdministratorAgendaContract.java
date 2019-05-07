@@ -7,7 +7,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
-interface AdministratorAgendaContract {
+public interface AdministratorAgendaContract {
 
     interface View {
         void injectPresenter(Presenter presenter);

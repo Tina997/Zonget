@@ -6,7 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-interface SignUpContract {
+public interface SignUpContract {
 
     interface View {
 
