@@ -31,5 +31,5 @@ public interface PetsDao {
     PetsItem loadPet(int id);
 
     @Query("SELECT * FROM pets WHERE user_id =:userId")
-    List<PetsItem> loadPets(int userId);
+    List<PetsItem> loadPets(final int userId);
 }

@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".userPetsDetail.UserPetsDetailActivity"
     tools:listitem="@layout/pets_list_content"
-    android:divider="@color/colorPrimary"
+    android:divider="?attr/colorPrimary"
     android:dividerHeight="10dp"
 
      />

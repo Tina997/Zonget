@@ -32,5 +32,6 @@ public interface UsersPetDao {
 
     @Query("SELECT * FROM userPets WHERE pet_id =:petId")
     UserPetBDItem loadUserPet(int petId);
+
 }
 
