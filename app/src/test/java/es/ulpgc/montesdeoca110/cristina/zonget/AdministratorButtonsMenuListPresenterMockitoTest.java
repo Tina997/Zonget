@@ -122,7 +122,7 @@ public class AdministratorButtonsMenuListPresenterMockitoTest {
 
     @Test
     public void selectAdministratorButtonsMenuListData(){
-        // Given an initialized SignInPresenter
+        // Given an initialized AdministratorButtonsMenuListPresenter
         // and a null state
         configureAdministratorButtonsMenuListScreen(new AdministratorButtonsMenuListState());
 
@@ -146,14 +146,14 @@ public class AdministratorButtonsMenuListPresenterMockitoTest {
 
     @Test
     public void signOutButtonPressed(){
-        // Given an initialized SignInPresenter
+        // Given an initialized AdministratorButtonsMenuListPresenter
         // and a null state
         configureAdministratorButtonsMenuListScreen(new AdministratorButtonsMenuListState());
 
         //When SignOut button pressed
         presenter.signOutButtonPressed();
 
-        //Then router pass data and navigate to SignIn
+        //Then router pass data and navigate to SignOut
         MenuToSignInState state = new MenuToSignInState();
         verify(viewMock,times(1)).finish();
         verify(routerMock,times(1)).passDataToSignInScreen(refEq(state));
@@ -163,7 +163,7 @@ public class AdministratorButtonsMenuListPresenterMockitoTest {
 
     @Test
     public void themeChangedWithStateNull(){
-        // Given an initialized SignInPresenter
+        // Given an initialized AdministratorButtonsMenuListPresenter
         // and a null state from ChangeTheme
         configureAdministratorButtonsMenuListScreen(new AdministratorButtonsMenuListState());
         when(routerMock.getDataFromChangeThemeScreen()).thenReturn(null);
@@ -178,7 +178,7 @@ public class AdministratorButtonsMenuListPresenterMockitoTest {
 
     @Test
     public void themeNotChanged(){
-        // Given an initialized SignInPresenter
+        // Given an initialized AdministratorButtonsMenuListPresenter
         // and in the state from ChangeTheme the variable is false
         configureAdministratorButtonsMenuListScreen(new AdministratorButtonsMenuListState());
 
@@ -199,7 +199,7 @@ public class AdministratorButtonsMenuListPresenterMockitoTest {
 
     @Test
     public void themeChanged(){
-        // Given an initialized SignInPresenter
+        // Given an initialized AdministratorButtonsMenuListPresenter
         // and in the state from ChangeTheme the variable is false
         configureAdministratorButtonsMenuListScreen(new AdministratorButtonsMenuListState());
 

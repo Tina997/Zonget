@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -18,6 +19,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInModel;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInPresenter;
 import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInState;
 
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -50,7 +52,7 @@ public class SignInPresenterMockitoTests {
     private void configureSignInScreen(SignInState state){
         presenter =  new SignInPresenter(state);
 
-        modelMock = new SignInModel(repositoryMock);
+        modelMock = Mockito.spy(new SignInModel(repositoryMock));
 
         presenter.injectView(new WeakReference<>(viewMock));
         presenter.injectModel(modelMock);
@@ -71,7 +73,7 @@ public class SignInPresenterMockitoTests {
         presenter.signInButtonPressed(accountName,accountPassword);
 
         // Callback is captured and invoked with false and null
-        verify(modelMock).checkAccount(accountName,accountPassword,callbackCaptor.capture());
+        verify(modelMock).checkAccount(eq(accountName),eq(accountPassword),callbackCaptor.capture());
         callbackCaptor.getValue().setCheckAccountExist(false,null);
         verify(viewMock,never()).finish();
         verify(routerMock,never()).navigateToMenuScreen();
@@ -97,7 +99,7 @@ public class SignInPresenterMockitoTests {
         presenter.signInButtonPressed(accountName,accountPassword);
 
         // Callback is captured and invoked with correct data
-        verify(modelMock).checkAccount(accountName,accountPassword,callbackCaptor.capture());
+        verify(modelMock).checkAccount(eq(accountName),eq(accountPassword),callbackCaptor.capture());
         callbackCaptor.getValue().setCheckAccountExist(true,adminAccount);
         verify(viewMock,times(1)).finish();
         verify(routerMock,times(1)).navigateToMenuScreen();
