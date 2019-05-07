@@ -5,6 +5,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorUsersListPresenter implements AdministratorUsersListContract.Presenter {
@@ -40,15 +41,16 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         // Log.e(TAG, "fetchPetsForAdoptionListData()");
         // set passed state
         //AdministratorUsersListState state = router.getDataFromPreviousScreen();
-        model.fetchUsersData(new RepositoryContract.Users.GetUsersListCallback() {
+        SearchToListUserState state = router.getSearchToListUserState();
+        model.fetchUsersData(state.nameOrDni, new RepositoryContract.Accounts.GetUserListCallback() {
             @Override
-            public void setUsersList(List<AccountItem> users) {
+            public void setUsers(List<AccountItem> users) {
                 viewModel.users = users;
                 view.get().displayData(viewModel);
             }
         });
         // update the view
-        view.get().displayData(viewModel);
+        //view.get().displayData(viewModel);
 
     }
     @Override

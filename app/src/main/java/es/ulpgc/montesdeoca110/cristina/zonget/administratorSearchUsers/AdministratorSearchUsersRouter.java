@@ -6,7 +6,7 @@ import android.content.Context;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
 
 public class AdministratorSearchUsersRouter implements AdministratorSearchUsersContract.Router {
 
@@ -28,8 +28,8 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
     }
     //Envio de informacion a la siguiente vista
     @Override
-    public void passDataToNextScreen(AdministratorSearchUsersState state) {
-        mediator.setadminSearchUsersState(state);
+    public void passDataToNextScreen(SearchToListUserState state) {
+        mediator.setSearchToListUserState(state);
     }
     //TODO metodo a limpiar
     @Override

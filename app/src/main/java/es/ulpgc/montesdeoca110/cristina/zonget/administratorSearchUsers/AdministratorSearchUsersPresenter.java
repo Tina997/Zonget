@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
+
 public class AdministratorSearchUsersPresenter implements AdministratorSearchUsersContract.Presenter {
 
     public static String TAG = AdministratorSearchUsersPresenter.class.getSimpleName();
@@ -44,8 +46,8 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
 
     @Override
     public void searchButtonClicked(String nameOrDni) {
-        AdministratorSearchUsersState state = new AdministratorSearchUsersState();
-        state.dataSearched = nameOrDni;
+        SearchToListUserState state = new SearchToListUserState();
+        state.nameOrDni = nameOrDni;
         router.passDataToNextScreen(state);
         router.navigateToNextScreen();
     }

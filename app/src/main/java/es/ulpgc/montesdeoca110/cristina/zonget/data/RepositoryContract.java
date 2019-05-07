@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
+import android.accounts.Account;
+
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -84,6 +86,12 @@ public interface RepositoryContract {
 
         void getUserPetsList(int userId, AccountsRepository.GetUserPetsListCallback callback);
 
+        void getUserList(String nameOrDni, AccountsRepository.GetUserListCallback callback);
+
+        interface GetUserListCallback{
+            void setUsers(List<AccountItem> users);
+        }
+
     }
     interface LostPets{
 
@@ -96,7 +104,7 @@ public interface RepositoryContract {
         interface GetLostPetsCallback{
             void setLostPets(LostPetItem lostPet);
         }
-        void loadLostPets(boolean clearFirst, LostPetsRepository.FetchLostPetsDataCallBack callback);
+        void loadLostPets(LostPetsRepository.FetchLostPetsDataCallBack callback);
         void getLostPetsList(LostPetsRepository.GetLostPetsListCallback callback);
 
         void getLostPets(int id, LostPetsRepository.GetLostPetsCallback callback);
@@ -118,41 +126,4 @@ public interface RepositoryContract {
 
         void getPetsForAdoption(int id, PetsForAdoptionRepository.GetPetsForAdoptionCallback callback);
     }
-    interface Users {
-
-        interface FetchUsersDataCallBack {
-            void onUsersDataFetched(boolean error);
-        }
-
-        interface GetUsersListCallback {
-            void setUsersList(List<AccountItem> users);
-        }
-
-        interface GetUsersCallback {
-            void setUsers(UserItem user);
-        }
-
-        void loadUsers(boolean clearFirst, UsersRepository.FetchUsersDataCallBack callback);
-
-        void getUsersList(UsersRepository.GetUsersListCallback callback);
-    }
-   /* interface UserPets {
-
-        interface FetchUserPetsDataCallBack {
-            void onUserPetsDataFetched(boolean error);
-        }
-
-        interface GetUserPetsListCallback {
-            void setUserPetsList(List<PetsItem> userPets);
-        }
-
-        interface GetUserPetsCallback {
-            void setUserPets(PetsItem user);
-        }
-
-        void loadUserPets(boolean clearFirst, UserPetsRepository.FetchUserPetsDataCallBack callback);
-
-        void getUserPetsList(UserPetsRepository.GetUserPetsListCallback callback);
-    }*/
-
     }

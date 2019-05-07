@@ -35,4 +35,7 @@ public interface AccountDao {
 
     @Query("SELECT * FROM accounts WHERE dni=:dni AND email=:email")
     AccountBDItem checkAccountExist(String dni, String email);
+
+    @Query("SELECT * FROM accounts WHERE dni=:nameOrDni OR name=:nameOrDni")
+    List<AccountBDItem> loadAccountFromNameOrDni(String nameOrDni);
 }

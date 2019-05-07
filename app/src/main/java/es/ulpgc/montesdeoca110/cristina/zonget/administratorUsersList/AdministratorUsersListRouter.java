@@ -9,6 +9,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.Administra
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
 
 public class AdministratorUsersListRouter implements AdministratorUsersListContract.Router {
 
@@ -51,5 +52,11 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
         Intent intent = new Intent(context, AdministratorSearchUsersActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    @Override
+    public SearchToListUserState getSearchToListUserState() {
+        SearchToListUserState state = mediator.getUserToListUserState();
+        return state;
     }
 }

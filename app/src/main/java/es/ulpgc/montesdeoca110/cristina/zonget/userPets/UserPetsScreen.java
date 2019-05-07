@@ -4,10 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.UsersRepository;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
 
 public class UserPetsScreen {
