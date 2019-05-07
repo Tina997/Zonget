@@ -270,21 +270,18 @@ public class AccountsRepository implements RepositoryContract.Accounts {
     }
 
     private List<UserPetItem> accountGetPets(int userId){
-
         List<UserPetItem> pets =  new ArrayList<>();
-
-        List<PetsItem>  petsBD = getPetsDao().loadPets(userId);
-
-        for (int i = 0; i < petsBD.size(); i++){
-
-            PetsItem userPet = petsBD.get(i);
-            UserPetBDItem infoUserPet = getUserPetDao().loadUserPet(userPet.getId());
-
-            UserPetItem userPetItem = new UserPetItem(infoUserPet.getId(),infoUserPet.getName(),infoUserPet.getSpecies(),userPet.getBreed(),infoUserPet.getChipNum(),infoUserPet.getBirthday());
-            pets.add(userPetItem);
+        List<UserPetBDItem> petBDItems = getUserPetDao().loadUserPets();
+        for(int i = 0; i < petBDItems.size();i++){
+            int petId = petBDItems.get(i).getPetId();
+            PetsItem pet = getPetsDao().loadPet(petId);
+            if(pet.getUserId() == userId) {
+                UserPetBDItem userPetBDItem = getUserPetDao().loadUserPet(pet.getId());
+                UserPetItem userPetItem = new UserPetItem(userPetBDItem.getId(),userPetBDItem.getName(),userPetBDItem.getSpecies(),pet.getBreed(),userPetBDItem.getChipNum(),userPetBDItem.getBirthday());
+                pets.add(userPetItem);
+            }
 
         }
-        Log.e("Cantidad", pets.size()+"");
         return pets;
     }
     private List<AccountItem> getUsers(String nameOrDni){

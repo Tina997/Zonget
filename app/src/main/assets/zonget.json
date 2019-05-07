@@ -20,7 +20,7 @@
         {
           "id": 0,
           "name": "Nyu",
-          "specie": "Gato",
+          "species": "Gato",
           "breed": "Común Europeo",
           "chipNum": "981020009173356",
           "birthday": "31/05/2016"
@@ -36,17 +36,17 @@
       "password": "caterina",
       "pets": [
         {
-          "id": 0,
+          "id": 1,
           "name": "Nuba",
-          "specie": "Perro",
+          "species": "Perro",
           "breed": "Cruce",
           "chipNum": "xxxxxxxxxxxxx",
           "birthday": "dd/mm/aaaa"
         },
         {
-          "id": 1,
+          "id": 2,
           "name": "Kira",
-          "specie": "Perro",
+          "species": "Perro",
           "breed": "Cruce",
           "chipNum": "xxxxxxxxxxxxx",
           "birthday": "dd/mm/aaaa"
@@ -62,9 +62,9 @@
       "password": "cristina",
       "pets": [
         {
-          "id": 0,
+          "id": 3,
           "name": "Negrito",
-          "specie": "Gato",
+          "species": "Gato",
           "breed": "Común europeo",
           "chipNum": "xxxxxxxxxxxxx",
           "birthday": "15/04/2018"
