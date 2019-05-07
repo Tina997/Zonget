@@ -43,7 +43,7 @@ public class UserPetsDetailRouter implements UserPetsDetailContract.Router {
     @Override
     public void onBackButtonClicked() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserPetsActivity.class);
+        Intent intent = new Intent(context, UserPetsDetailActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

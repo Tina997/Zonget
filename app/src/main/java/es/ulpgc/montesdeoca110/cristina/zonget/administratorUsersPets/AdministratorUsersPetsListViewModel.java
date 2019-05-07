@@ -2,10 +2,12 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUsersPetsListViewModel {
 
-    public List<UserPetItem> animales;
+    public AccountItem user;
+    public List<UserPetItem> pets;
 }

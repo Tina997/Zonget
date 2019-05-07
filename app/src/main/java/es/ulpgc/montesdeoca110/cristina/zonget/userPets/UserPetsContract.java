@@ -34,7 +34,6 @@ public interface UserPetsContract {
     interface Model {
         void fetchPetsData(AccountItem item, RepositoryContract.Accounts.GetUserPetsListCallback callback);
 
-       // List<PetsItem> fetchPetsData();
     }
 
     interface Router {

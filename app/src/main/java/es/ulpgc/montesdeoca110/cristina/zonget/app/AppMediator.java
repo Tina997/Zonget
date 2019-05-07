@@ -327,7 +327,6 @@ public class AppMediator extends Application {
     public AdministratorUsersListState getAdministratorUsersListState() {
     return administratorUsersListState;
     }
-
     //UsersPetList Admin
     public void setAdministratorUsersPetsListState(AdministratorUsersPetsListState state) {
         this.administratorUsersPetsListState = state;
@@ -528,4 +527,6 @@ public class AppMediator extends Application {
     public void setSearchToListUserState(SearchToListUserState searchToListUserState){
         this.searchToListUserState = searchToListUserState;
     }
+
+
 }

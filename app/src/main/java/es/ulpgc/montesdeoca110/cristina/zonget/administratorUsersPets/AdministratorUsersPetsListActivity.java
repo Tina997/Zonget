@@ -88,7 +88,7 @@ public class AdministratorUsersPetsListActivity
     @Override
     public void displayUserPetsData(AdministratorUsersPetsListViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-        listView.setAdapter(new UserPetsAdapter(this, viewModel.animales, new View.OnClickListener() {
+        listView.setAdapter(new UserPetsAdapter(this, viewModel.pets, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 UserPetItem item = (UserPetItem) v.getTag();
@@ -125,6 +125,7 @@ public class AdministratorUsersPetsListActivity
                 int id = item.getItemId();
                 if (id == android.R.id.home) {
                     presenter.onBackButtonPressed();
+                    finish();
                     return true;
                 }
                 return super.onOptionsItemSelected(item);

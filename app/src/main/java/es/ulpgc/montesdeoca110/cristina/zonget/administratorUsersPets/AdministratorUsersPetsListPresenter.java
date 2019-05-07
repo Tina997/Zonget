@@ -1,8 +1,13 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
-import java.lang.ref.WeakReference;
+import android.util.Log;
 
+import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorUsersPetsListPresenter implements AdministratorUsersPetsListContract.Presenter {
 
@@ -37,10 +42,16 @@ public class AdministratorUsersPetsListPresenter implements AdministratorUsersPe
         // Log.e(TAG, "fetchInboxData()");
 
         // set passed state
-        AdministratorUsersPetsListState state = router.getDataFromPreviousScreen();
-        viewModel.animales = model.fetchPetsData();
-        view.get().displayUserPetsData(viewModel);
-
+        AccountItem item = router.getDataFromPreviousScreen().user;
+        model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
+            @Override
+            public void setUserPetsList(List<UserPetItem> userPets) {
+                Log.e(TAG, userPets.get(0).getName());
+                viewModel.pets = userPets;
+                Log.e(TAG,viewModel.pets.get(0).getName());
+                view.get().displayUserPetsData(viewModel);
+            }
+        });
     }
 
     @Override
