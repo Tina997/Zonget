@@ -8,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuT
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-interface UserButtonsMenuListContract {
+public interface UserButtonsMenuListContract {
 
     interface View {
 
