@@ -49,6 +49,8 @@ public interface RepositoryContract {
 
         void insertNewPet(int userID, String name, String species, String breed, String chipNum, String birthday, InsertNewUserPetCallback callback);
 
+        void deleteUserPet(UserPetItem pet, DeleteUserPetCallback deleteUserPetCallback);
+
         interface FecthZongetDataCallback {
             void onZongetDataFetched(boolean error);
         }
@@ -74,7 +76,10 @@ public interface RepositoryContract {
         void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
         interface InsertNewUserPetCallback{
-            void onNewUserPetInserted();
+            //void onNewUserPetInserted();
+        }
+        interface DeleteUserPetCallback{
+
         }
         interface GetUserPetsListCallback {
             void setUserPetsList(List<UserPetItem> userPets);

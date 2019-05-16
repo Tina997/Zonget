@@ -7,6 +7,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface AdministratorUserPetsDetailContract {
 
@@ -38,6 +39,8 @@ interface AdministratorUserPetsDetailContract {
 
     interface Model {
         String fetchData();
+
+        void deletePet(UserPetItem pet, RepositoryContract.Accounts.DeleteUserPetCallback deleteUserPetCallback);
     }
 
     interface Router {

@@ -8,6 +8,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract.Accounts;
 
 public class AdministratorUserPetsDetailPresenter implements AdministratorUserPetsDetailContract.Presenter {
 
@@ -59,6 +61,9 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
 
     @Override
     public void onDeleteButtonClicked() {
+        model.deletePet(viewModel.pet, new RepositoryContract.Accounts.DeleteUserPetCallback(){
+
+        });
         router.navigateToPetListScreen();
     }
 

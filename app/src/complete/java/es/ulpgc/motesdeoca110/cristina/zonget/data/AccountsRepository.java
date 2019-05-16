@@ -171,12 +171,26 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                     getPetsDao().insertPet(petsItem);
                     UserPetBDItem userPetBDItem = new UserPetBDItem(petsItem.getId(),name,species,chipNum,birthday,petsItem.getId());
                     getUserPetDao().insertUserPet(userPetBDItem);
+
                 }
             }
         });
     }
 
-
+    @Override
+    public void deleteUserPet(final UserPetItem pet, final DeleteUserPetCallback deleteUserPetCallback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(deleteUserPetCallback != null){
+                    UserPetBDItem userPetBDItem = getUserPetDao().loadUserPet(pet.getId());
+                    getUserPetDao().deleteCategory(userPetBDItem);
+                    PetsItem petsItem = getPetsDao().loadPet(pet.getId());
+                    getPetsDao().deletePet(petsItem);
+                }
+            }
+        });
+    }
 
 
     //---------------------------- Métodos privados ----------------------------------

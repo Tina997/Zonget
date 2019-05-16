@@ -52,10 +52,6 @@ public class AdministratorUsersAddPetPresenter
   public void insertNewPet(String name, String species, String breed, String chipNum, String birthday) {
     int userID = router.getDataFromPreviousScreen().user.getId();
     model.insertNewPet(userID, name, species, breed, chipNum, birthday, new RepositoryContract.Accounts.InsertNewUserPetCallback() {
-                @Override
-                public void onNewUserPetInserted() {
-
-                }
             }
     );
     router.navigateToNextScreen();
