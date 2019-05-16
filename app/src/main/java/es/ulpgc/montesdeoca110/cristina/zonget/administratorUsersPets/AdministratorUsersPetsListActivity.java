@@ -93,6 +93,7 @@ public class AdministratorUsersPetsListActivity
             public void onClick(View v) {
                 UserPetItem item = (UserPetItem) v.getTag();
                 presenter.selectUserPetsData(item);
+                finish();
             }
         }));
         // deal with the data

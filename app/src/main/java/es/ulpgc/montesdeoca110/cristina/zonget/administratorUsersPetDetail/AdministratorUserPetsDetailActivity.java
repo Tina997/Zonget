@@ -86,6 +86,7 @@ public class AdministratorUserPetsDetailActivity
     @Override
     public void onDeleteButtonClicked() {
         presenter.onDeleteButtonClicked();
+        finish();
     }
 
     @Override

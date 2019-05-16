@@ -77,6 +77,7 @@ public class AdministratorUsersListActivity
             public void onClick(View v) {
                 AccountItem item = (AccountItem) v.getTag();
                 presenter.selectAdminUserData(item);
+                finish();
 
             }
         }));
