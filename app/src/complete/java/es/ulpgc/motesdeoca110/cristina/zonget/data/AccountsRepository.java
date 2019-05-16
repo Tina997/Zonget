@@ -56,6 +56,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         database = Room.databaseBuilder(context, ZongetDatabase.class, DB_FILE).build();
     }
 
+
+
     @Override
     public void loadZonget(final boolean clearFirst, final FecthZongetDataCallback callback) {
         AsyncTask.execute(new Runnable() {
@@ -165,8 +167,10 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(callback != null){
-                    Log.e("Pets",getPetsDao().loadPets().size()+"");
-                    //TODO Implementacion insertar nueva mascota en listas
+                    PetsItem petsItem = new PetsItem(getPetsDao().loadPets().size()+1,breed,userID);
+                    getPetsDao().insertPet(petsItem);
+                    UserPetBDItem userPetBDItem = new UserPetBDItem(petsItem.getId(),name,species,chipNum,birthday,petsItem.getId());
+                    getUserPetDao().insertUserPet(userPetBDItem);
                 }
             }
         });

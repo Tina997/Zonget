@@ -103,6 +103,7 @@
             android:background="?attr/colorPrimaryDarkTrans"
             android:layout_marginLeft="20dp"
             android:textColorHint="?attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/ID_Number"
             android:paddingLeft="20dp"/>
     </LinearLayout>
@@ -128,6 +129,7 @@
             android:background="?attr/colorPrimaryDarkTrans"
             android:layout_marginLeft="20dp"
             android:textColorHint="?attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/date_model"
             android:paddingLeft="20dp"
             android:inputType="date"/>

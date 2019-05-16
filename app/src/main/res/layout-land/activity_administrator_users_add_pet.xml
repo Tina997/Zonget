@@ -110,6 +110,7 @@
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"
             android:background="?attr/colorPrimaryDarkTrans"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/ID_Number"
             android:paddingLeft="20dp"
             android:textColorHint="?attr/colorAccent" />
@@ -135,6 +136,7 @@
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"
             android:background="?attr/colorPrimaryDarkTrans"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/date_model"
             android:inputType="date"
             android:paddingLeft="20dp"
