@@ -24,6 +24,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/addUserPetName_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"
@@ -50,6 +51,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/addUserPetSpecies_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"
@@ -76,6 +78,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/addUserPetBreed_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"
@@ -102,6 +105,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/addUserPetChipNum_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"
@@ -126,6 +130,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/addUserPetBirth_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:layout_marginLeft="20dp"

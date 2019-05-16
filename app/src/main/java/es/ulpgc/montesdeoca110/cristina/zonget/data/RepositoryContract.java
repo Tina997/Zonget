@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
-import android.accounts.Account;
-
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -9,9 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
@@ -51,6 +47,8 @@ public interface RepositoryContract {
 
     interface Accounts {
 
+        void insertNewPet(int userID, String name, String species, String breed, String chipNum, String birthday, InsertNewUserPetCallback callback);
+
         interface FecthZongetDataCallback {
             void onZongetDataFetched(boolean error);
         }
@@ -75,7 +73,9 @@ public interface RepositoryContract {
 
         void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
-
+        interface InsertNewUserPetCallback{
+            void onNewUserPetInserted();
+        }
         interface GetUserPetsListCallback {
             void setUserPetsList(List<UserPetItem> userPets);
         }

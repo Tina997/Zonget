@@ -1,6 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorUsersAddPetPresenter
         implements AdministratorUsersAddPetContract.Presenter {
@@ -43,7 +49,15 @@ public class AdministratorUsersAddPetPresenter
   }
 
   @Override
-  public void insertNewPet() {
+  public void insertNewPet(String name, String species, String breed, String chipNum, String birthday) {
+    int userID = router.getDataFromPreviousScreen().user.getId();
+    model.insertNewPet(userID, name, species, breed, chipNum, birthday, new RepositoryContract.Accounts.InsertNewUserPetCallback() {
+                @Override
+                public void onNewUserPetInserted() {
+
+                }
+            }
+    );
     router.navigateToNextScreen();
   }
 

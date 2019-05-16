@@ -159,6 +159,19 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
 
     }
+    @Override
+    public void insertNewPet(final int userID, final String name, final String species, final String breed, final String chipNum, final String birthday, final InsertNewUserPetCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    Log.e("Pets",getPetsDao().loadPets().size()+"");
+                    //TODO Implementacion insertar nueva mascota en listas
+                }
+            }
+        });
+    }
+
 
 
 
@@ -270,7 +283,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private List<UserPetItem> accountGetPets(int userId) {
         List<UserPetItem> pets = new ArrayList<>();
-        List<UserPetBDItem> petBDItems = getUserPetDao().loadUserPets();
         List<PetsItem> petsItems = getPetsDao().loadPets(userId);
         for (int i = 0; i < petsItems.size(); i++) {
             int petId = petsItems.get(i).getId();
@@ -307,6 +319,5 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
         return true;
     }
-
 
 }

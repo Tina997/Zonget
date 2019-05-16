@@ -38,7 +38,7 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:text="@string/new_query_text_view"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -68,7 +68,7 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:text="@string/pending_queries_text_view"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -98,7 +98,7 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:text="@string/finished_queries_text_view"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="18sp" />
 
 

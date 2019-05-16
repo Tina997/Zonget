@@ -80,6 +80,7 @@ public class AdministratorUserEditPetActivity
     switch (item.getItemId()) {
       case R.id.action_accept:
         presenter.insertNewPet();
+        finish();
         return true;
       default:
         int id = item.getItemId();

@@ -42,6 +42,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
         // set passed state
         //AdministratorUsersListState state = router.getDataFromPreviousScreen();
         SearchToListUserState state = router.getSearchToListUserState();
+
         model.fetchUsersData(state.nameOrDni, new RepositoryContract.Accounts.GetUserListCallback() {
             @Override
             public void setUsers(List<AccountItem> users) {

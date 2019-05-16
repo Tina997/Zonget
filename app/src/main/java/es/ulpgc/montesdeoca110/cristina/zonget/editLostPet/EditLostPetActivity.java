@@ -97,7 +97,6 @@ public class EditLostPetActivity
       default:
         int id = item.getItemId();
         if (id == android.R.id.home) {
-          //TODO matar la activity
           presenter.onBackButtonPressed();
           finish();
           return true;

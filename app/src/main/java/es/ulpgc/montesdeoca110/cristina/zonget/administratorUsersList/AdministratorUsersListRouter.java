@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersActivity;
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -34,6 +35,9 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
         AdministratorUsersPetsListState state = new AdministratorUsersPetsListState();
         state.user = item;
         mediator.setAdministratorUsersPetsListState(state);
+        AdministratorUsersAddPetState state1 = new AdministratorUsersAddPetState();
+        state1.user = item;
+        mediator.setAdministratorUsersAddPetState(state1);
     }
 
     @Override

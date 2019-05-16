@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 interface AdministratorUsersAddPetContract {
 
   interface View {
@@ -19,7 +21,7 @@ interface AdministratorUsersAddPetContract {
 
     void fetchData();
 
-    void insertNewPet();
+    void insertNewPet(String name, String species, String breed, String chipNum, String birthday);
 
     String getActualThemeName();
 
@@ -28,6 +30,8 @@ interface AdministratorUsersAddPetContract {
 
   interface Model {
     String fetchData();
+
+    void insertNewPet(int userID, String name, String species, String breed, String chipNum, String birthday, RepositoryContract.Accounts.InsertNewUserPetCallback callback);
   }
 
   interface Router {

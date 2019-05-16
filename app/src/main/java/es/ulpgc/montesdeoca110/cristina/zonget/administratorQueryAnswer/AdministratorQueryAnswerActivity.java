@@ -78,5 +78,6 @@ public class AdministratorQueryAnswerActivity
 
   public void onSendButtonClicked(View v) {
     presenter.navigateToAdministratorInboxScreen();
+    finish();
   }
 }

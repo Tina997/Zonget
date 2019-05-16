@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 public class AdministratorUsersAddPetActivity
@@ -16,6 +18,12 @@ public class AdministratorUsersAddPetActivity
   public static String TAG = AdministratorUsersAddPetActivity.class.getSimpleName();
 
   private AdministratorUsersAddPetContract.Presenter presenter;
+
+  private EditText nameText;
+  private EditText speciesText;
+  private EditText breedText;
+  private EditText chipNumText;
+  private EditText birthdayText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,11 @@ public class AdministratorUsersAddPetActivity
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.add_pet_tittle);
     }
+    nameText = findViewById(R.id.addUserPetName_Text);
+    speciesText = findViewById(R.id.addUserPetSpecies_Text);
+    breedText = findViewById(R.id.addUserPetBreed_Text);
+    chipNumText = findViewById(R.id.addUserPetChipNum_Text);
+    birthdayText = findViewById(R.id.addUserPetBirth_Text);
     // do the setup
     AdministratorUsersAddPetScreen.configure(this);
   }
@@ -74,7 +87,8 @@ public class AdministratorUsersAddPetActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case R.id.action_accept:
-        presenter.insertNewPet();
+        insertPet();
+        finish();
         return true;
       default:
         int id = item.getItemId();
@@ -85,5 +99,13 @@ public class AdministratorUsersAddPetActivity
         }
         return super.onOptionsItemSelected(item);
     }
+  }
+  private void insertPet(){
+      String name = nameText.getText().toString();
+      String species = speciesText.getText().toString();
+      String breed = breedText.getText().toString();
+      String chipNum = chipNumText.getText().toString();
+      String birthday = birthdayText.getText().toString();
+      presenter.insertNewPet(name,species,breed,chipNum,birthday);
   }
 }

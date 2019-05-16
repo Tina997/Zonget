@@ -23,7 +23,7 @@
             android:layout_margin="5dp"
             android:gravity="center"
             android:text="@string/new_query_tittle_text_view"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -32,12 +32,12 @@
             android:layout_height="40dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:ems="10"
             android:gravity="left|center_vertical"
             android:inputType="textShortMessage"
             android:padding="5dp"
-            android:textColor="@color/colorAccent" />
+            android:textColor="?attr/colorAccent" />
 
         <ImageButton
             android:id="@+id/user_new_query_attach_image_button"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="?attr/colorPrimaryDark"
             android:src="@drawable/ic_attach_image" />
 
     </LinearLayout>
@@ -63,11 +63,11 @@
             android:layout_width="match_parent"
             android:layout_height="397dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDarkTrans"
+            android:background="?attr/colorPrimaryDarkTrans"
             android:gravity="left|center_vertical"
             android:inputType="textLongMessage"
             android:padding="5dp"
-            android:textColor="@color/colorAccent" />
+            android:textColor="?attr/colorAccent" />
 
         <Space
             android:layout_width="match_parent"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="?attr/colorPrimaryDark"
             android:src="@drawable/ic_send" />
 
     </LinearLayout>

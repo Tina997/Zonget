@@ -98,6 +98,7 @@ public class AdministratorUserPetsDetailActivity
                 return true;
             case R.id.action_edit:
                 presenter.onEditButtonClicked();
+                finish();
                 return true;
             default:
                 int id = item.getItemId();

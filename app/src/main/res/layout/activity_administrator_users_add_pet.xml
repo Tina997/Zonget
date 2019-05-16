@@ -23,6 +23,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/addUserPetName_Text"
             android:layout_width="217dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -46,6 +47,7 @@
             android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
         <EditText
+            android:id="@+id/addUserPetSpecies_Text"
             android:layout_width="217dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -69,6 +71,7 @@
             android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
         <EditText
+            android:id="@+id/addUserPetBreed_Text"
             android:layout_width="217dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -94,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
         <EditText
+            android:id="@+id/addUserPetChipNum_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -118,6 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
         <EditText
+            android:id="@+id/addUserPetBirth_Text"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"

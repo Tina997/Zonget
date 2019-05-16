@@ -63,7 +63,7 @@ public class AdministratorUsersPetsListActivity
 
         // do the setup
         AdministratorUsersPetsListScreen.configure(this);
-
+        presenter.fetchUserPetsData();
     }
 
     @Override
@@ -77,7 +77,7 @@ public class AdministratorUsersPetsListActivity
         }
 
         // do some work
-        presenter.fetchUserPetsData();
+
     }
 
     @Override
@@ -120,6 +120,7 @@ public class AdministratorUsersPetsListActivity
         switch (item.getItemId()) {
             case R.id.action_add:
                 presenter.onClickAddButton();
+                finish();
                 return true;
             default:
                 int id = item.getItemId();

@@ -115,6 +115,7 @@ public class AddEventActivity
     switch (item.getItemId()) {
       case R.id.action_accept:
         presenter.navigateToAdministratorAgendaScreen();
+        finish();
         return true;
       default:
         int id = item.getItemId();

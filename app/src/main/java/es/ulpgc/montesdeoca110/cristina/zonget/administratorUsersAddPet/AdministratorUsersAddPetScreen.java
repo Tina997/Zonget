@@ -3,6 +3,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
+
 import java.lang.ref.WeakReference;
 
 public class AdministratorUsersAddPetScreen {
@@ -14,11 +17,12 @@ public class AdministratorUsersAddPetScreen {
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
     AdministratorUsersAddPetState state = mediator.getAdministratorUsersAddPetState();
+    RepositoryContract.Accounts repository = AccountsRepository.getInstance(context.get());
 
     AdministratorUsersAddPetContract.Router router = new AdministratorUsersAddPetRouter(mediator);
     AdministratorUsersAddPetContract.Presenter presenter =
             new AdministratorUsersAddPetPresenter(state);
-    AdministratorUsersAddPetContract.Model model = new AdministratorUsersAddPetModel();
+    AdministratorUsersAddPetContract.Model model = new AdministratorUsersAddPetModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));
