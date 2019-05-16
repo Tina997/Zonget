@@ -183,10 +183,16 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(deleteUserPetCallback != null){
-                    UserPetBDItem userPetBDItem = getUserPetDao().loadUserPet(pet.getId());
+                    //TODO Revisar que cuando la lista de mascotas se queda vacia la app crashea
+                    Log.e("ID",pet.getId()+"");
+                    Log.e("PETID",pet.getPetId()+"");
+                    //PetsItem petsItem = getPetsDao().loadPet(pet.getId());
+                    UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(),pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getPetId());
+                    Log.e("Name",userPetBDItem.getName());
+                    //UserPetBDItem userPetBDItem = getUserPetDao().loadUserPet(pet.getId());
                     getUserPetDao().deleteCategory(userPetBDItem);
-                    PetsItem petsItem = getPetsDao().loadPet(pet.getId());
-                    getPetsDao().deletePet(petsItem);
+                    //getPetsDao().deletePet(petsItem);
+
                 }
             }
         });
@@ -306,8 +312,10 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             int petId = petsItems.get(i).getId();
             PetsItem pet = getPetsDao().loadPet(petId);
             UserPetBDItem userPetBDItem = getUserPetDao().loadUserPet(pet.getId());
-            UserPetItem userPetItem = new UserPetItem(userPetBDItem.getId(), userPetBDItem.getName(), userPetBDItem.getSpecies(), pet.getBreed(), userPetBDItem.getChipNum(), userPetBDItem.getBirthday());
-            pets.add(userPetItem);
+            if(userPetBDItem!=null) {
+                UserPetItem userPetItem = new UserPetItem(userPetBDItem.getId(), userPetBDItem.getName(), userPetBDItem.getSpecies(), pet.getBreed(), userPetBDItem.getChipNum(), userPetBDItem.getBirthday());
+                pets.add(userPetItem);
+            }
         }
         return pets;
     }

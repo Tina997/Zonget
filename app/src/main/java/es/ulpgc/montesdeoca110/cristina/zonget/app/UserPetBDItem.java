@@ -5,11 +5,14 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
+import static android.arch.persistence.room.ForeignKey.CASCADE;
+
 @Entity(tableName = "userPets",
         foreignKeys = @ForeignKey(
                 entity = PetsItem.class,
                 parentColumns = "id",
-                childColumns = "pet_id"
+                childColumns = "pet_id",
+                onDelete = CASCADE
         ))
 public class UserPetBDItem {
 
