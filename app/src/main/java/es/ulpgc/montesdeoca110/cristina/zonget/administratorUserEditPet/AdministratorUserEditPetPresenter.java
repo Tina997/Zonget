@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+
 public class AdministratorUserEditPetPresenter
         implements AdministratorUserEditPetContract.Presenter {
 
@@ -36,7 +38,7 @@ public class AdministratorUserEditPetPresenter
     // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
     // set passed state
-    AdministratorUserEditPetState state = router.getDataFromPreviousScreen();
+    /*AdministratorUserEditPetState state = router.getDataFromPreviousScreen();
     if (state != null) {
       viewModel.data = state.data;
     }
@@ -51,7 +53,7 @@ public class AdministratorUserEditPetPresenter
 
     // update the view
     view.get().displayData(viewModel);
-
+*/
   }
 
   @Override
@@ -67,6 +69,12 @@ public class AdministratorUserEditPetPresenter
   @Override
   public void onBackButtonPressed() {
     router.onBackButtonPressed();
+  }
+
+  @Override
+  public UserPetItem fetchPetData() {
+    UserPetItem userPetItem = router.getDataFromPreviousScreen();
+    return userPetItem;
   }
 
 

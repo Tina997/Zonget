@@ -21,6 +21,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/editPetName"
             android:layout_width="217dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -44,6 +45,7 @@
             android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
         <EditText
+            android:id="@+id/editPetSpecies"
             android:layout_width="217dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -67,6 +69,7 @@
             android:textColor="?attr/colorPrimaryDark"
             android:textSize="20dp" />
         <EditText
+            android:id="@+id/editPetBreed"
             android:layout_width="217dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
@@ -92,11 +95,13 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
         <EditText
+            android:id="@+id/editPetChipNum"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
             android:layout_marginLeft="20dp"
             android:textColorHint="?attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/ID_Number"
             android:paddingLeft="20dp" />
     </LinearLayout>
@@ -116,11 +121,13 @@
             android:layout_width="match_parent"
             android:layout_height="10dp" />
         <EditText
+            android:id="@+id/editPetBirth"
             android:layout_width="280dp"
             android:layout_height="34dp"
             android:background="?attr/colorPrimaryDarkTrans"
             android:layout_marginLeft="20dp"
             android:textColorHint="?attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:hint="@string/date_model"
             android:paddingLeft="20dp"
             android:inputType="date"/>

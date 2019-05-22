@@ -183,15 +183,11 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(deleteUserPetCallback != null){
-                    //TODO Revisar que cuando la lista de mascotas se queda vacia la app crashea
                     Log.e("ID",pet.getId()+"");
                     Log.e("PETID",pet.getPetId()+"");
-                    //PetsItem petsItem = getPetsDao().loadPet(pet.getId());
                     UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(),pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getPetId());
                     Log.e("Name",userPetBDItem.getName());
-                    //UserPetBDItem userPetBDItem = getUserPetDao().loadUserPet(pet.getId());
                     getUserPetDao().deleteCategory(userPetBDItem);
-                    //getPetsDao().deletePet(petsItem);
 
                 }
             }

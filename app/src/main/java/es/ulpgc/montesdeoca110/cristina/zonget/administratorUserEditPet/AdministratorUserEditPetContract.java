@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+
 interface AdministratorUserEditPetContract {
 
   interface View {
@@ -24,6 +26,8 @@ interface AdministratorUserEditPetContract {
     String getActualThemeName();
 
     void onBackButtonPressed();
+
+    UserPetItem fetchPetData();
   }
 
   interface Model {
@@ -35,7 +39,7 @@ interface AdministratorUserEditPetContract {
 
     void passDataToNextScreen(AdministratorUserEditPetState state);
 
-    AdministratorUserEditPetState getDataFromPreviousScreen();
+    UserPetItem getDataFromPreviousScreen();
 
     String getActualThemeName();
 

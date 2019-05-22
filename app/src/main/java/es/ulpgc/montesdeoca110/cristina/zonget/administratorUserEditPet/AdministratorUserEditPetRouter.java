@@ -5,6 +5,7 @@ import android.content.Intent;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUserEditPetRouter implements AdministratorUserEditPetContract.Router {
 
@@ -30,9 +31,9 @@ public class AdministratorUserEditPetRouter implements AdministratorUserEditPetC
   }
 
   @Override
-  public AdministratorUserEditPetState getDataFromPreviousScreen() {
-    AdministratorUserEditPetState state = mediator.getAdministratorUserEditPetState();
-    return state;
+  public UserPetItem getDataFromPreviousScreen() {
+    UserPetItem petItem = mediator.getAnimal();
+    return petItem;
   }
 
   @Override
