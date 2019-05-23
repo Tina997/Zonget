@@ -20,6 +20,8 @@ public interface UsersPetDao {
 
     @Update
     void updateCategory(UserPetBDItem item);
+ //   @Query("UPDATE userPets SET species = :species WHERE id =: id")
+  //  void update(String species, int id);
 
     @Delete
     void deleteCategory(UserPetBDItem item);

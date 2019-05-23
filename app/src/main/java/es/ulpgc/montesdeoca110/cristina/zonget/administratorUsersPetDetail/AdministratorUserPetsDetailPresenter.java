@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
 
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -48,7 +50,6 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
         if(animal != null){
             viewModel.pet = animal;
         }
-
         // update the view
         view.get().displayData(viewModel);
 

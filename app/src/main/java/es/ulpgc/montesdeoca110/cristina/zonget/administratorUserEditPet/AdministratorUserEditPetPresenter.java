@@ -1,8 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorUserEditPetPresenter
         implements AdministratorUserEditPetContract.Presenter {
@@ -33,31 +36,12 @@ public class AdministratorUserEditPetPresenter
     this.router = router;
   }
 
-  @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchPetsForAdoptionListData()");
-
-    // set passed state
-    /*AdministratorUserEditPetState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-*/
-  }
 
   @Override
-  public void insertNewPet() {
+  public void insertNewPet(UserPetItem userPetItem) {
+    model.editPet(userPetItem, new RepositoryContract.Accounts.UpdateNewUserPetCallback(){
+
+    });
     router.navigateToNextScreen();
   }
 

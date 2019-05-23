@@ -18,6 +18,9 @@ public interface PetsDao {
   @Insert(onConflict = OnConflictStrategy.REPLACE)
   void insertPet(PetsItem item);
 
+  @Query("UPDATE pets SET breed = :breed WHERE id =:id")
+  void update(String breed, int id);
+
   @Update
   void updatePet(PetsItem item);
 

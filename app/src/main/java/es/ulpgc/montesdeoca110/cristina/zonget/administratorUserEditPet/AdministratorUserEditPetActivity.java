@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -60,6 +61,7 @@ public class AdministratorUserEditPetActivity
     @Override
     protected void onResume() {
         super.onResume();
+        // do some work
         UserPetItem userPetItem = presenter.fetchPetData();
         nameText.setText(userPetItem.getName());
         speciesText.setText(userPetItem.getSpecies());
@@ -67,9 +69,6 @@ public class AdministratorUserEditPetActivity
         chipNumText.setText(userPetItem.getChipNum());
         birthdayText.setText(userPetItem.getBirthday());
 
-
-        // do some work
-        //presenter.fetchData();
     }
 
     //Añadir botones a la tabBar
@@ -98,7 +97,8 @@ public class AdministratorUserEditPetActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_accept:
-                presenter.insertNewPet();
+                UserPetItem userPetItem = newPet();
+                presenter.insertNewPet(userPetItem);
                 finish();
                 return true;
             default:
@@ -110,5 +110,12 @@ public class AdministratorUserEditPetActivity
                 }
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private UserPetItem newPet() {
+        int id = presenter.fetchPetData().getId();
+        UserPetItem userPetItem = new UserPetItem(id,nameText.getText().toString(),speciesText.getText().toString(),breedText.getText().toString(),
+                chipNumText.getText().toString(),birthdayText.getText().toString());
+        return userPetItem;
     }
 }

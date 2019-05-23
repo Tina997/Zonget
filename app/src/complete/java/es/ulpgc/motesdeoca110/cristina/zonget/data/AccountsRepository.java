@@ -167,7 +167,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(callback != null){
-                    PetsItem petsItem = new PetsItem(getPetsDao().loadPets().size()+1,breed,userID);
+                    PetsItem petsItem = new PetsItem(getPetsDao().loadPets().size()+2 ,breed,userID);
                     getPetsDao().insertPet(petsItem);
                     UserPetBDItem userPetBDItem = new UserPetBDItem(petsItem.getId(),name,species,chipNum,birthday,petsItem.getId());
                     getUserPetDao().insertUserPet(userPetBDItem);
@@ -183,11 +183,23 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             @Override
             public void run() {
                 if(deleteUserPetCallback != null){
-                    Log.e("ID",pet.getId()+"");
-                    Log.e("PETID",pet.getPetId()+"");
                     UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(),pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getPetId());
-                    Log.e("Name",userPetBDItem.getName());
                     getUserPetDao().deleteCategory(userPetBDItem);
+
+                }
+            }
+        });
+    }
+
+    @Override
+    public void updatePet(final UserPetItem pet, final UpdateNewUserPetCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(),pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getId());
+                    getUserPetDao().updateCategory(userPetBDItem);
+                    getPetsDao().update(pet.getBreed(),pet.getId());
 
                 }
             }
@@ -262,8 +274,9 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                         PetsItem petsItem = new PetsItem(pet.getId(), pet.getBreed(), account.getId());
                         getPetsDao().insertPet(petsItem);
 
-                        int userPetId = getUserPetDao().loadUserPets().size() + 1;
-                        UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId, pet.getName(), pet.getSpecies(), pet.getChipNum(), pet.getBirthday(), pet.getId());
+                        //int userPetId = getUserPetDao().loadUserPets().size();
+                        //UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId, pet.getName(), pet.getSpecies(), pet.getChipNum(), pet.getBirthday(), pet.getId());
+                        UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(), pet.getName(), pet.getSpecies(), pet.getChipNum(), pet.getBirthday(), pet.getId());
                         getUserPetDao().insertUserPet(userPetBDItem);
 
                     }
@@ -313,6 +326,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 pets.add(userPetItem);
             }
         }
+
         return pets;
     }
 

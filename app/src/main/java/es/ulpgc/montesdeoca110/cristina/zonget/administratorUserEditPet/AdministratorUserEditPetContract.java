@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 interface AdministratorUserEditPetContract {
 
@@ -19,9 +20,7 @@ interface AdministratorUserEditPetContract {
 
     void injectRouter(Router router);
 
-    void fetchData();
-
-    void insertNewPet();
+    void insertNewPet(UserPetItem userPetItem);
 
     String getActualThemeName();
 
@@ -32,6 +31,8 @@ interface AdministratorUserEditPetContract {
 
   interface Model {
     String fetchData();
+
+    void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateNewUserPetCallback updateNewUserPetCallback);
   }
 
   interface Router {

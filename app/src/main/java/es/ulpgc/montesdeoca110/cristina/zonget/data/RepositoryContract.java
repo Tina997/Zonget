@@ -51,6 +51,8 @@ public interface RepositoryContract {
 
         void deleteUserPet(UserPetItem pet, DeleteUserPetCallback deleteUserPetCallback);
 
+        void updatePet(UserPetItem userPetItem, UpdateNewUserPetCallback callback);
+
         interface FecthZongetDataCallback {
             void onZongetDataFetched(boolean error);
         }
@@ -76,7 +78,8 @@ public interface RepositoryContract {
         void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
         interface InsertNewUserPetCallback{
-            //void onNewUserPetInserted();
+        }
+        interface UpdateNewUserPetCallback{
         }
         interface DeleteUserPetCallback{
 
