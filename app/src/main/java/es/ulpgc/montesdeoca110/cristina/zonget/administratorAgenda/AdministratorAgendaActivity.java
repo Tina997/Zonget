@@ -98,7 +98,7 @@ public class AdministratorAgendaActivity
                 dialogo.show(fragmentManager, "tagAlert");
               }
             }));
-    //calendarView.setDate(viewModel.calendarDate, true, true);
+   // calendarView.setDate(viewModel.calendarDate, true, true);
     selectedDate.setText(viewModel.date);
   }
 
