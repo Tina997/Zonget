@@ -246,6 +246,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     private boolean loadZongetFromJSON(String json) {
 
+
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
 
@@ -274,8 +275,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                         PetsItem petsItem = new PetsItem(pet.getId(), pet.getBreed(), account.getId());
                         getPetsDao().insertPet(petsItem);
 
-                        //int userPetId = getUserPetDao().loadUserPets().size();
-                        //UserPetBDItem userPetBDItem = new UserPetBDItem(userPetId, pet.getName(), pet.getSpecies(), pet.getChipNum(), pet.getBirthday(), pet.getId());
                         UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(), pet.getName(), pet.getSpecies(), pet.getChipNum(), pet.getBirthday(), pet.getId());
                         getUserPetDao().insertUserPet(userPetBDItem);
 

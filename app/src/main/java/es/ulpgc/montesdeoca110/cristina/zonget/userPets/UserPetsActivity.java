@@ -3,13 +3,13 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPets;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class UserPetsActivity
@@ -18,7 +18,8 @@ public class UserPetsActivity
     public static String TAG = UserPetsActivity.class.getSimpleName();
 
     private UserPetsContract.Presenter presenter;
-    private ListView listView;
+    //private ListView listView;
+    private RecyclerView recyclerView;
     private UserPetsAdapter listAdapter;
 
     @Override
@@ -42,7 +43,17 @@ public class UserPetsActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(R.string.animal_client_tittle);
         }
-        listView = findViewById(R.id.animal_list);
+        listAdapter = new UserPetsAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserPetItem item = (UserPetItem) v.getTag();
+                presenter.selectUserPetsData(item);
+            }
+        });
+
+        recyclerView = findViewById(R.id.pets_list);
+        recyclerView.setAdapter(listAdapter);
+        //listView = findViewById(R.id.pets_list);
 
         // do the setup
         UserPetsScreen.configure(this);
@@ -65,13 +76,19 @@ public class UserPetsActivity
     @Override
     public void displayUserPetsData(final UserPetsViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-        listView.setAdapter(new UserPetsAdapter(this, viewModel.pets, new View.OnClickListener() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                listAdapter.setItems(viewModel.pets);
+            }
+        });
+        /*listView.setAdapter(new UserPetsAdapter(this, viewModel.pets, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 UserPetItem item = (UserPetItem) v.getTag();
                 presenter.selectUserPetsData(item);
             }
-        }));
+        }));*/
        // deal with the data
     }
     @Override

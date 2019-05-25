@@ -1,5 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class AdministratorUsersPetsListModel implements AdministratorUsersPetsLi
     }
     @Override
     public void fetchPetsData(final AccountItem item, final RepositoryContract.Accounts.GetUserPetsListCallback callback){
+        Log.e(TAG, "fetchPetsData()");
         repository.getUserPetsList(item.getId(),callback);
     }
 }
