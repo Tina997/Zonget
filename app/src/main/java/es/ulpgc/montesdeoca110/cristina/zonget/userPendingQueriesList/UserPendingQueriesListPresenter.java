@@ -21,6 +21,11 @@ public class UserPendingQueriesListPresenter implements UserPendingQueriesListCo
   }
 
   @Override
+  public String getActualThemeName() {
+    return router.getActualThemeName();
+  }
+
+  @Override
   public void fetchUserPendingQueriesListData() {
 
     SignInToMenuState state = router.getDataFromSignInToMenuState();

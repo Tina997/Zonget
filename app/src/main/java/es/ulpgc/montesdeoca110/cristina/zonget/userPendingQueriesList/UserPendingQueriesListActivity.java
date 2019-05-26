@@ -26,6 +26,16 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    UserPendingQueriesListScreen.configure(this);
+
+    //Theme
+    String themeName = presenter.getActualThemeName();
+    if (themeName != null) {
+      int themeID = getResources().getIdentifier(themeName, "style", getPackageName());
+      setTheme(themeID);
+    }
+
     setContentView(R.layout.activity_user_pending_queries_list);
 
     //Configuracion de la toolBar/actionBar
@@ -42,9 +52,6 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
     listAdapter = new UserPendingQueriesListAdapter(this);
     pendingQueriesList.setAdapter(listAdapter);
 
-
-    // do the setup
-    UserPendingQueriesListScreen.configure(this);
   }
 
   @Override
