@@ -56,8 +56,6 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         database = Room.databaseBuilder(context, ZongetDatabase.class, DB_FILE).build();
     }
 
-
-
     @Override
     public void loadZonget(final boolean clearFirst, final FecthZongetDataCallback callback) {
         AsyncTask.execute(new Runnable() {
