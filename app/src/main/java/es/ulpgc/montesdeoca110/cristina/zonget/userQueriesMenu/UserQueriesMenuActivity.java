@@ -25,6 +25,16 @@ public class UserQueriesMenuActivity extends AppCompatActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    UserQueriesMenuScreen.configure(this);
+
+    //Theme
+    String themeName = presenter.getActualThemeName();
+    if (themeName != null) {
+      int themeID = getResources().getIdentifier(themeName, "style", getPackageName());
+      setTheme(themeID);
+    }
+
     setContentView(R.layout.activity_user_queries_menu);
 
     //Configuracion de la toolBar/actionBar
@@ -61,10 +71,6 @@ public class UserQueriesMenuActivity extends AppCompatActivity
         presenter.finishedQueriesButtonPressed();
       }
     });
-
-
-    // do the setup
-    UserQueriesMenuScreen.configure(this);
   }
 
   @Override

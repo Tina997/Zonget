@@ -32,6 +32,11 @@ public class UserNewQueryPresenter implements UserNewQueryContract.Presenter {
   }
 
   @Override
+  public String getActualThemeName() {
+    return router.getActualThemeName();
+  }
+
+  @Override
   public void backButtonPressed() {
     router.navigateToUserQueriesMenuScreen();
   }

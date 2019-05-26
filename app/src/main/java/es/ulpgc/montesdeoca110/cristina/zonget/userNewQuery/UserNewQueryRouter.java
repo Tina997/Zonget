@@ -14,12 +14,15 @@ public class UserNewQueryRouter implements UserNewQueryContract.Router {
     this.mediator = mediator;
   }
 
+  @Override
+  public String getActualThemeName() {
+    return mediator.getactualThemeName();
+  }
+
   // UserQueriesMenu
 
   @Override
-  public void passDataToUserQueriesMenuScreen() {
-
-  }
+  public void passDataToUserQueriesMenuScreen() {}
 
   @Override
   public void navigateToUserQueriesMenuScreen() {

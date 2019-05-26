@@ -28,6 +28,8 @@ interface UserNewQueryContract {
 
     void injectRouter(Router router);
 
+    String getActualThemeName();
+
     void backButtonPressed();
 
     void fetchUserNewQueryData();
@@ -44,6 +46,10 @@ interface UserNewQueryContract {
   }
 
   interface Router {
+
+    //------------------------- Tema ---------------------
+
+    String getActualThemeName();
 
     //--------------- Navegación entre pantallas -----------
 

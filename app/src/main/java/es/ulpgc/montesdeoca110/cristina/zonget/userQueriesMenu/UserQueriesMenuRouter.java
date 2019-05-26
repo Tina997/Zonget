@@ -17,6 +17,11 @@ public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
     this.mediator = mediator;
   }
 
+  @Override
+  public String getActualThemeName() {
+    return mediator.getactualThemeName();
+  }
+
   //UserButtonsMenuList
 
   @Override

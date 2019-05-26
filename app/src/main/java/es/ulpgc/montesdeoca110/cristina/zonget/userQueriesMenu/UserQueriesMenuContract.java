@@ -22,6 +22,8 @@ interface UserQueriesMenuContract {
 
     void injectRouter(Router router);
 
+    String getActualThemeName();
+
     void backButtonPressed();
 
     void fetchUserQueriesMenuData();
@@ -41,6 +43,10 @@ interface UserQueriesMenuContract {
   }
 
   interface Router {
+
+    //------------------------- Tema ---------------------
+
+    String getActualThemeName();
 
     //--------------- Navegación entre pantallas -----------
 

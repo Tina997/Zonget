@@ -34,6 +34,16 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    UserNewQueryScreen.configure(this);
+
+    //Theme
+    String themeName = presenter.getActualThemeName();
+    if (themeName != null) {
+      int themeID = getResources().getIdentifier(themeName, "style", getPackageName());
+      setTheme(themeID);
+    }
+
     setContentView(R.layout.activity_user_new_query);
 
     //Configuracion de la toolBar/actionBar
@@ -59,9 +69,6 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
         presenter.sendButtonPressed(queryTitleEditText.getText()+ "",queryDescriptionEditText.getText()+"");
       }
     });
-
-    // do the setup
-    UserNewQueryScreen.configure(this);
   }
 
   @Override
@@ -110,7 +117,7 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     switch (item.getItemId()) {
       case android.R.id.home:
         presenter.backButtonPressed();
-        finish();
+        super.finish();
         return true;
       default:
         return super.onOptionsItemSelected(item);

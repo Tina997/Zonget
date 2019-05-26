@@ -64,8 +64,9 @@
             android:layout_height="397dp"
             android:layout_weight="1"
             android:background="?attr/colorPrimaryDarkTrans"
-            android:gravity="left|center_vertical"
-            android:inputType="textLongMessage"
+            android:ems="10"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
             android:padding="5dp"
             android:textColor="?attr/colorAccent" />
 
