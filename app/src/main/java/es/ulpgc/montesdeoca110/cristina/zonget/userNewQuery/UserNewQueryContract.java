@@ -2,6 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 interface UserNewQueryContract {
 
   interface View {
@@ -10,6 +13,7 @@ interface UserNewQueryContract {
 
     void displayUserNewQueryData(UserNewQueryViewModel viewModel);
 
+    void displayToastMessage(String message);
   }
 
   interface Presenter {
@@ -24,11 +28,14 @@ interface UserNewQueryContract {
 
     void fetchUserNewQueryData();
 
+    void sendButtonPressed(String title, String content);
   }
 
   interface Model {
 
     void fetchUserNewQueryData();
+
+    void setNewQuery(int userId, String title, String content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
   }
 
@@ -46,5 +53,6 @@ interface UserNewQueryContract {
 
     //UserNewQueryState getDataFromPreviousScreen();
 
+    SignInToMenuState getDataFromSignInToMenuState();
   }
 }

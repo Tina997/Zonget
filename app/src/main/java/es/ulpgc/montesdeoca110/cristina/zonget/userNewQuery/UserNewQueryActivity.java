@@ -6,10 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 public class UserNewQueryActivity extends AppCompatActivity implements UserNewQueryContract.View {
 
@@ -41,6 +45,14 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
     sendQueryButton = findViewById(R.id.user_new_query_send_button);
 
+    //Listeners
+    sendQueryButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.sendButtonPressed(queryTitleEditText.getText()+ "",queryDescriptionEditText.getText()+"");
+      }
+    });
+
     // do the setup
     UserNewQueryScreen.configure(this);
   }
@@ -59,11 +71,19 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
   }
 
   @Override
-  public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {
+  public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {}
 
-  }
+    @Override
+    public void displayToastMessage(final String message) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(),message, LENGTH_LONG).show();
+            }
+        });
+    }
 
-  @Override
+    @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     // Handle presses on the action bar items
     switch (item.getItemId()) {

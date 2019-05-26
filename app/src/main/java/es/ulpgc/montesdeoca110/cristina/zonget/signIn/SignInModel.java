@@ -10,7 +10,6 @@ public class SignInModel implements SignInContract.Model {
     this.repository = repository;
   }
 
-
   @Override
   public void checkAccount(final String accountName, final String accountPassword,
                            final RepositoryContract.Accounts

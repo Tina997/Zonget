@@ -2,6 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 public class UserNewQueryPresenter implements UserNewQueryContract.Presenter {
 
   private WeakReference<UserNewQueryContract.View> view;
@@ -34,8 +37,22 @@ public class UserNewQueryPresenter implements UserNewQueryContract.Presenter {
   }
 
   @Override
-  public void fetchUserNewQueryData() {
+  public void fetchUserNewQueryData() {}
 
+  @Override
+  public void sendButtonPressed(String title, String content) {
+    if(title == null || content == null){
+      SignInToMenuState state = router.getDataFromSignInToMenuState();
+      model.setNewQuery(state.account.getId(), title, content, new RepositoryContract.Queries.SetNewQueryCallback() {
+        @Override
+        public void onNewQuerySet(boolean correct) {
+          if(!correct){
+            view.get().displayToastMessage("La pregunta no ha sido enviada correctamemte.");
+          }
+          view.get().displayToastMessage("La pregunta ha sido enviada correctamemte.");
+        }
+      });
+    }
   }
 
 }

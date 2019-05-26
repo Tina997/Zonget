@@ -28,7 +28,6 @@ public interface RepositoryContract {
             void setChangeThemeList(List<ChangeThemeItem> themeList);
         }
 
-
         void getChangeThemeList(SettingsRepository.GetChangeThemeListCallback callback);
 
         // ---------------- Administrator ------------------
@@ -143,7 +142,7 @@ public interface RepositoryContract {
             void onNewQuerySet(boolean correct);
         }
 
-        void setNewQuery(String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
+        void setNewQuery(int userId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
         interface GetPendingQueriesListCallback {
             void setQueriesList(List<QueryItem> pendingQueriesList);

@@ -30,7 +30,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
     }
 
     @Override
-    public void setNewQuery(String title, String Content, SetNewQueryCallback callback) {
+    public void setNewQuery(int userId, String title, String Content, SetNewQueryCallback callback) {
 
     }
 
@@ -54,7 +54,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
         return database.queryStatusDao();
     }
 
-    private QueryAnswersDao getQueryAnswerDao(){
+    private QueryAnswersDao getQueriesAnswerDao(){
         return database.queryAnswersDao();
     }
 
