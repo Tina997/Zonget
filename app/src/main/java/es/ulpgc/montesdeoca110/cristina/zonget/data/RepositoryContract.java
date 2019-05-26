@@ -142,7 +142,7 @@ public interface RepositoryContract {
             void onNewQuerySet(boolean correct);
         }
 
-        void setNewQuery(int userId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
+        void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
         interface GetPendingQueriesListCallback {
             void setQueriesList(List<QueryItem> pendingQueriesList);

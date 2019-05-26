@@ -53,7 +53,7 @@ public class AdministratorInboxListAdapter
     holder.itemView.setTag(queryItemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    holder.userID.setText(queryItemList.get(position).sender);
+    //holder.userID.setText(queryItemList.get(position).sender);
     holder.title.setText(queryItemList.get(position).title);
   }
 

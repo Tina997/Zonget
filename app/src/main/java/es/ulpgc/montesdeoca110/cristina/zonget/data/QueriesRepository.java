@@ -2,7 +2,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.os.AsyncTask;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryStatusItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.QueriesDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.QueryAnswersDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.QueryStatusDao;
@@ -30,8 +33,24 @@ public class QueriesRepository implements RepositoryContract.Queries {
     }
 
     @Override
-    public void setNewQuery(int userId, String title, String Content, SetNewQueryCallback callback) {
+    public void setNewQuery(final int senderUserId, final String title, final String content, final SetNewQueryCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    int queryId = getQueriesDao().loadQueries().size() +1 ;
+                    QueryItem query = new QueryItem(queryId,title, content);
+                    query.userId = senderUserId;
 
+                    QueryStatusItem queryStatus = new QueryStatusItem(queryId,false);
+
+                    getQueriesDao().insertQuery(query);
+                    getQueryStatusDao().insertQueryStatus(queryStatus);
+
+                    callback.onNewQuerySet(true);
+                }
+            }
+        });
     }
 
     @Override

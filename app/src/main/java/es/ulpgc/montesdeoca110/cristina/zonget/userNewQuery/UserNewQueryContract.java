@@ -14,6 +14,10 @@ interface UserNewQueryContract {
     void displayUserNewQueryData(UserNewQueryViewModel viewModel);
 
     void displayToastMessage(String message);
+
+    void startSendQuery();
+
+    void finish();
   }
 
   interface Presenter {
@@ -35,7 +39,7 @@ interface UserNewQueryContract {
 
     void fetchUserNewQueryData();
 
-    void setNewQuery(int userId, String title, String content, RepositoryContract.Queries.SetNewQueryCallback callback);
+    void setNewQuery(int senderUserId, String title, String content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
   }
 

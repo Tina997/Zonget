@@ -2,15 +2,18 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import dmax.dialog.SpotsDialog;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -18,6 +21,8 @@ import static android.widget.Toast.LENGTH_LONG;
 public class UserNewQueryActivity extends AppCompatActivity implements UserNewQueryContract.View {
 
   private UserNewQueryContract.Presenter presenter;
+
+  private SpotsDialog dialog;
 
   //Elementos de la vista
   private Toolbar toolbar;
@@ -44,6 +49,8 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     queryDescriptionEditText = findViewById(R.id.user_new_query_desciption_edit_text);
     attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
     sendQueryButton = findViewById(R.id.user_new_query_send_button);
+
+    dialog = new SpotsDialog(this,R.style.SentEmailDialogProgressTheme);
 
     //Listeners
     sendQueryButton.setOnClickListener(new View.OnClickListener() {
@@ -73,14 +80,28 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
   @Override
   public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {}
 
+
+  @Override
+  public void startSendQuery(){
+    dialog.show();
+  }
+
+  @Override
+  public void displayToastMessage(final String message) {
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        Toast.makeText(getApplicationContext(), message, LENGTH_LONG).show();
+      }
+    });
+  }
+
     @Override
-    public void displayToastMessage(final String message) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(getApplicationContext(),message, LENGTH_LONG).show();
-            }
-        });
+    public void finish() {
+      dialog.dismiss();
+      displayToastMessage("La consulta se ha enviado correctamente.");
+
+      super.finish();
     }
 
     @Override

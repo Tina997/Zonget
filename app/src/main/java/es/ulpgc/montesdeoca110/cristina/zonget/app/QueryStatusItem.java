@@ -18,4 +18,11 @@ public class QueryStatusItem {
 
   @ColumnInfo(name = "query_id")
   public int queryId;
+
+  public boolean finished;
+
+  public QueryStatusItem(int queryId, boolean finished) {
+    this.queryId = queryId;
+    this.finished = finished;
+  }
 }

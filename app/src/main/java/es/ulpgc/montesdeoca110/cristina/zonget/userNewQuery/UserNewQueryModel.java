@@ -14,8 +14,8 @@ public class UserNewQueryModel implements UserNewQueryContract.Model {
   public void fetchUserNewQueryData() {}
 
   @Override
-  public void setNewQuery(int userId, String title, String content, RepositoryContract.Queries.SetNewQueryCallback callback) {
-    repository.setNewQuery(userId,title,content,callback);
+  public void setNewQuery(int senderUserId, String title, String content, RepositoryContract.Queries.SetNewQueryCallback callback) {
+    repository.setNewQuery(senderUserId,title,content,callback);
   }
 
 

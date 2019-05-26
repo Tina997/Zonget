@@ -10,6 +10,8 @@ interface UserQueriesMenuContract {
 
     void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel);
 
+    void finish();
+
   }
 
   interface Presenter {
