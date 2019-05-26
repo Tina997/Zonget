@@ -3,6 +3,11 @@ package es.ulpgc.montesdeoca110.cristina.zonget.data;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryStatusItem;
@@ -38,15 +43,15 @@ public class QueriesRepository implements RepositoryContract.Queries {
             @Override
             public void run() {
                 if(callback != null){
-                    int queryId = getQueriesDao().loadQueries().size() +1 ;
+                    int queryId = getQueriesDao().loadQueries().size();
                     QueryItem query = new QueryItem(queryId,title, content);
                     query.userId = senderUserId;
 
-                    QueryStatusItem queryStatus = new QueryStatusItem(queryId,false);
+                    int queryStatusId = getQueryStatusDao().loadQueryStatus().size();
+                    QueryStatusItem queryStatus = new QueryStatusItem(queryStatusId,queryId,false);
 
                     getQueriesDao().insertQuery(query);
                     getQueryStatusDao().insertQueryStatus(queryStatus);
-
                     callback.onNewQuerySet(true);
                 }
             }
@@ -54,7 +59,32 @@ public class QueriesRepository implements RepositoryContract.Queries {
     }
 
     @Override
-    public void getPendindQueriesList(int userId, GetPendingQueriesListCallback callback) {
+    public void getPendindQueriesList(final int userId, final GetPendingQueriesListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null){
+
+                    List<QueryItem> pendindQueriesList = loadPendingQueries(userId);
+
+                    List<String> queriesTitlesList = new ArrayList<>();
+                    HashMap<String,List<String>> queriesDetailList = new HashMap<>();
+
+                    for (int i = 0; i < pendindQueriesList.size(); i++){
+                        QueryItem query = pendindQueriesList.get(i);
+
+                        queriesTitlesList.add(query.title);
+
+                        List<String> queryDetails = new ArrayList<>();
+                        queryDetails.add(query.content);
+
+                        queriesDetailList.put(query.title,queryDetails);
+                    }
+
+                    callback.setQueriesList(queriesTitlesList, queriesDetailList);
+                }
+            }
+        });
 
     }
 
@@ -75,6 +105,24 @@ public class QueriesRepository implements RepositoryContract.Queries {
 
     private QueryAnswersDao getQueriesAnswerDao(){
         return database.queryAnswersDao();
+    }
+
+    private List<QueryItem> loadQueries(int userId){
+        return getQueriesDao().loadQueries(userId);
+    }
+
+    private List<QueryItem> loadPendingQueries(int userId){
+        List<QueryItem> pendingQueriesList =  new ArrayList<>();
+        List<QueryItem> list = loadQueries(userId);
+
+        for(int i = 0; i < list.size(); i++ ){
+            QueryStatusItem queryStatus = getQueryStatusDao().loadQueryStatus(list.get(i).id);
+            if (!queryStatus.finished){
+                pendingQueriesList.add(list.get(i));
+            }
+        }
+
+        return pendingQueriesList;
     }
 
 }

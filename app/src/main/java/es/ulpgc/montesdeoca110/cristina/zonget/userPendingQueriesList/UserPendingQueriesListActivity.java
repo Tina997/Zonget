@@ -5,20 +5,23 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
-public class UserPendingQueriesListActivity extends AppCompatActivity
-        implements UserPendingQueriesListContract.View {
+public class UserPendingQueriesListActivity extends AppCompatActivity implements UserPendingQueriesListContract.View {
 
   private UserPendingQueriesListContract.Presenter presenter;
 
   //Elementos de la vista
   private Toolbar toolbar;
   private ExpandableListView pendingQueriesList;
+
+  private UserPendingQueriesListAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,8 @@ public class UserPendingQueriesListActivity extends AppCompatActivity
     //Búsqueda de los elementos de la vista
     pendingQueriesList = findViewById(R.id.user_pending_queries_list);
 
-    UserPendingQueriesListAdapter adapter = new UserPendingQueriesListAdapter();
-    pendingQueriesList.setAdapter((ExpandableListAdapter) adapter);
+    listAdapter = new UserPendingQueriesListAdapter(this);
+    pendingQueriesList.setAdapter(listAdapter);
 
 
     // do the setup
@@ -58,8 +61,14 @@ public class UserPendingQueriesListActivity extends AppCompatActivity
   }
 
   @Override
-  public void displayUserPendingQueriesListData(UserPendingQueriesListViewModel viewModel) {
+  public void displayUserPendingQueriesListData(final UserPendingQueriesListViewModel viewModel) {
+    runOnUiThread(new Runnable() {
 
+      @Override
+      public void run() {
+        listAdapter.setItems(viewModel.titleList,viewModel.detailList);
+      }
+    });
   }
 
   @Override

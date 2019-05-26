@@ -21,7 +21,8 @@ public class QueryStatusItem {
 
   public boolean finished;
 
-  public QueryStatusItem(int queryId, boolean finished) {
+  public QueryStatusItem(int id, int queryId, boolean finished) {
+    this.id = id;
     this.queryId = queryId;
     this.finished = finished;
   }

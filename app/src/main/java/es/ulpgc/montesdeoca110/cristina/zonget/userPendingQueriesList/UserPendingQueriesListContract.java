@@ -2,6 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 public interface UserPendingQueriesListContract {
 
   interface View {
@@ -28,7 +31,7 @@ public interface UserPendingQueriesListContract {
 
   interface Model {
 
-    void fetchUserPendingQueriesListData();
+    void fetchUserPendingQueriesListData(int userId, RepositoryContract.Queries.GetPendingQueriesListCallback callback);
 
   }
 
@@ -45,6 +48,8 @@ public interface UserPendingQueriesListContract {
     //------------- Obtener datos entre pantallas ----------
 
     //UserPendingQueriesListState getDataFromPreviousScreen();
+
+    SignInToMenuState getDataFromSignInToMenuState();
 
   }
 }

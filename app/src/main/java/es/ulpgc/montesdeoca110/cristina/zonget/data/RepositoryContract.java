@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
+import java.util.HashMap;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -145,7 +146,7 @@ public interface RepositoryContract {
         void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
         interface GetPendingQueriesListCallback {
-            void setQueriesList(List<QueryItem> pendingQueriesList);
+            void setQueriesList(List<String> queriesTitleList, HashMap<String,List<String>> queriesDetailList);
         }
 
         void getPendindQueriesList(int userId,RepositoryContract.Queries.GetPendingQueriesListCallback callback);

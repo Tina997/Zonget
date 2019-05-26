@@ -1,6 +1,13 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserPendingQueriesListPresenter implements UserPendingQueriesListContract.Presenter {
 
@@ -16,6 +23,18 @@ public class UserPendingQueriesListPresenter implements UserPendingQueriesListCo
   @Override
   public void fetchUserPendingQueriesListData() {
 
+    SignInToMenuState state = router.getDataFromSignInToMenuState();
+
+    model.fetchUserPendingQueriesListData(state.account.getId(),new RepositoryContract.Queries.GetPendingQueriesListCallback() {
+      @Override
+      public void setQueriesList(List<String> queriesTitleList, HashMap<String, List<String>> queriesDetailList) {
+
+        viewModel.titleList = queriesTitleList;
+        viewModel.detailList = queriesDetailList;
+
+        view.get().displayUserPendingQueriesListData(viewModel);
+      }
+    });
   }
 
   @Override

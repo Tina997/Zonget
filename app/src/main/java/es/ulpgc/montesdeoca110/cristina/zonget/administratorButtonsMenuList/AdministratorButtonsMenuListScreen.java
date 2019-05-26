@@ -16,12 +16,9 @@ public class AdministratorButtonsMenuListScreen {
     AdministratorButtonsMenuListState state = mediator.getAdministratorMenuListState();
     RepositoryContract.Settings repository = SettingsRepository.getInstance(context.get());
 
-    AdministratorButtonsMenuListContract.Router router =
-            new AdministratorButtonsMenuListRouter(mediator);
-    AdministratorButtonsMenuListContract.Presenter presenter =
-            new AdministratorButtonsMenuListPresenter(state);
-    AdministratorButtonsMenuListContract.Model model =
-            new AdministratorButtonsMenuListModel(repository);
+    AdministratorButtonsMenuListContract.Router router = new AdministratorButtonsMenuListRouter(mediator);
+    AdministratorButtonsMenuListContract.Presenter presenter = new AdministratorButtonsMenuListPresenter(state);
+    AdministratorButtonsMenuListContract.Model model = new AdministratorButtonsMenuListModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));

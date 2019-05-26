@@ -24,6 +24,6 @@ public interface QueryStatusDao {
   @Query("SELECT * FROM queryStatus")
   List<QueryStatusItem> loadQueryStatus();
 
-  @Query("SELECT * FROM queryStatus WHERE id =:id LIMIT 1")
-  QueryStatusItem loadQueryStatus(int id);
+  @Query("SELECT * FROM queryStatus WHERE query_id =:queryId LIMIT 1")
+  QueryStatusItem loadQueryStatus(int queryId);
 }

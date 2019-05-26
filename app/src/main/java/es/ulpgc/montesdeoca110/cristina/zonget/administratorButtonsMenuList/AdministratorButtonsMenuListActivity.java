@@ -105,8 +105,7 @@ public class AdministratorButtonsMenuListActivity
   }
 
   @Override
-  public void displayAdministratorButtonsMenuListData(
-          final AdministratorButtonsMenuListViewModel viewModel) {
+  public void displayAdministratorButtonsMenuListData(final AdministratorButtonsMenuListViewModel viewModel) {
     runOnUiThread(new Runnable() {
 
       @Override
