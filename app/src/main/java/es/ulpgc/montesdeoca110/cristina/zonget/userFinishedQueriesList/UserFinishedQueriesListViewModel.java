@@ -2,10 +2,10 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
 
 import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.FinishedQueryItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 public class UserFinishedQueriesListViewModel {
 
-    public List<FinishedQueryItem> finishedQueriesList;
+    public List<Query> finishedQueriesList;
 
 }

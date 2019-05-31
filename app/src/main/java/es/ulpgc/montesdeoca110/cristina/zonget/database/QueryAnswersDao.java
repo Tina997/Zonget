@@ -24,6 +24,6 @@ public interface QueryAnswersDao {
   @Query("SELECT * FROM queryAnswers")
   List<QueryAnswerItem> loadQueryAnswers();
 
-  @Query("SELECT * FROM queryAnswers WHERE id =:id LIMIT 1")
-  QueryAnswerItem loadQueryAnswer(int id);
+  @Query("SELECT * FROM queryAnswers WHERE query_id =:queryId LIMIT 1")
+  QueryAnswerItem loadQueryAnswer(int queryId);
 }

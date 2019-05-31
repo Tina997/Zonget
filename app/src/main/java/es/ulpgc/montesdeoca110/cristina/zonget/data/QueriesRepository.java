@@ -3,12 +3,13 @@ package es.ulpgc.montesdeoca110.cristina.zonget.data;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryData;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryStatusItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.QueriesDao;
@@ -89,8 +90,30 @@ public class QueriesRepository implements RepositoryContract.Queries {
     }
 
     @Override
-    public void getFinishedQueriesList(int userId, GetFinishedQueriesListCallback callback) {
+    public void getFinishedQueriesList(final int userId, final GetFinishedQueriesListCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    List<Query>  finishedQueriesList = //loadFinishedQueries(userId);
 
+
+                            new ArrayList<>();
+                    ArrayList<QueryData> data1 = new ArrayList<>();
+                    data1.add(new QueryData("Content 1","Answer 2"));
+
+                    finishedQueriesList.add(new Query("Hola 1",data1));
+
+                    ArrayList<QueryData> data2 = new ArrayList<>();
+                    data2.add(new QueryData("Content 2","Answer 2"));
+
+                    finishedQueriesList.add(new Query("Hola 2",data2));
+
+
+                    callback.setQueriesList(finishedQueriesList);
+                }
+            }
+        });
     }
 
     //---------------------------- Métodos privados ----------------------------------
@@ -125,4 +148,29 @@ public class QueriesRepository implements RepositoryContract.Queries {
         return pendingQueriesList;
     }
 
+    private List<Query> loadFinishedQueries(int userId){
+        List<Query> finishedQueriesList =  new ArrayList<>();
+
+        List<QueryItem> list = loadQueries(userId);
+
+        for(int i = 0; i < list.size(); i++ ){
+            QueryStatusItem queryStatus = getQueryStatusDao().loadQueryStatus(list.get(i).id);
+            if (queryStatus.finished){
+
+                String title = list.get(i).title;
+                String content =  list.get(i).content;
+                String answer = getQueriesAnswerDao().loadQueryAnswer(list.get(i).id).answer;
+
+                List<QueryData> queryDataList =  new ArrayList<>();
+                queryDataList.add(new QueryData(content,answer));
+
+                Query query = new Query(title,queryDataList);
+
+                finishedQueriesList.add(query);
+            }
+        }
+
+        return finishedQueriesList;
+
+    }
 }

@@ -6,10 +6,9 @@ import java.util.List;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.FinishedQueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
@@ -152,7 +151,7 @@ public interface RepositoryContract {
         void getPendindQueriesList(int userId,RepositoryContract.Queries.GetPendingQueriesListCallback callback);
 
         interface GetFinishedQueriesListCallback {
-            void setQueriesList(List<FinishedQueryItem> finishedQueriesList);
+            void setQueriesList(List<Query> finishedQueriesList);
         }
 
         void getFinishedQueriesList(int userId,RepositoryContract.Queries.GetFinishedQueriesListCallback callback);

@@ -9,7 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 
 public class UserFinishedQueriesListActivity extends AppCompatActivity implements UserFinishedQueriesListContract.View {
@@ -33,7 +36,7 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
     actionBar.setTitle("Consultas finalizadas");
     actionBar.setDisplayHomeAsUpEnabled(true);
 
-    listAdapter = new UserFinishedQueriesListAdapter(this);
+    listAdapter = new UserFinishedQueriesListAdapter(this,new ArrayList<Query>());
 
     //RecycleView
     RecyclerView recyclerView = findViewById(R.id.user_finished_queries_list_recycleView);
@@ -43,6 +46,18 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
 
     // do the setup
     UserFinishedQueriesListScreen.configure(this);
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+    listAdapter.onSaveInstanceState(outState);
+  }
+
+  @Override
+  protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+    listAdapter.onRestoreInstanceState(savedInstanceState);
   }
 
   @Override
@@ -62,7 +77,7 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
       runOnUiThread(new Runnable() {
           @Override
           public void run() {
-              listAdapter.setItems(viewModel.finishedQueriesList);
+            listAdapter.setItems(viewModel.finishedQueriesList);
           }
       });
   }
