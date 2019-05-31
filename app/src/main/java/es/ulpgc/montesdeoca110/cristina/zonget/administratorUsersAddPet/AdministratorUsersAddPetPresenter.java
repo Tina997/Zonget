@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet;
 
+import android.text.Editable;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
@@ -65,6 +66,14 @@ public class AdministratorUsersAddPetPresenter
   @Override
   public void onBackButtonPressed() {
     router.onBackButtonPressed();
+  }
+
+  @Override
+  public boolean checkAllDataIntroduced(Editable name, Editable species, Editable breed, Editable chip, Editable birthday) {
+    if(name.length()==0||species.length()==0||breed.length()==0||chip.length()==0||birthday.length()==0){
+      return false;
+    }
+    return true;
   }
 
 
