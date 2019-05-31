@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -17,7 +18,7 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
 
   //Elementos de la vista
   private Toolbar toolbar;
-  private RecyclerView finishedQueriesList;
+  private UserFinishedQueriesListAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,13 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
     actionBar.setTitle("Consultas finalizadas");
     actionBar.setDisplayHomeAsUpEnabled(true);
 
-    //Búsqueda de los elementos de la vista
+    listAdapter = new UserFinishedQueriesListAdapter(this);
 
+    //RecycleView
+    RecyclerView recyclerView = findViewById(R.id.user_finished_queries_list_recycleView);
+    recyclerView.setAdapter(listAdapter);
+
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     // do the setup
     UserFinishedQueriesListScreen.configure(this);
@@ -43,7 +49,6 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
   protected void onResume() {
     super.onResume();
 
-    // load the data
     presenter.fetchUserFinishedQueriesListData();
   }
 
@@ -53,8 +58,13 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
   }
 
   @Override
-  public void displayUserFinishedQueriesListData(UserFinishedQueriesListViewModel viewModel) {
-
+  public void displayUserFinishedQueriesListData(final UserFinishedQueriesListViewModel viewModel) {
+      runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+              listAdapter.setItems(viewModel.finishedQueriesList);
+          }
+      });
   }
 
   @Override

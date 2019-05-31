@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
@@ -23,9 +24,9 @@ public class UserFinishedQueriesListAdapter extends RecyclerView.Adapter<UserFin
 
     private static int currentPosition = 0;
 
-    public UserFinishedQueriesListAdapter(Context context, List<FinishedQueryItem> queriesList) {
+    public UserFinishedQueriesListAdapter(Context context) {
         this.context = context;
-        this.itemList = queriesList;
+        this.itemList = new ArrayList<>();
     }
 
     public void addItem(FinishedQueryItem item) {

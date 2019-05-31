@@ -1,6 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userFinishedQueriesList;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.FinishedQueryItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserFinishedQueriesListPresenter implements UserFinishedQueriesListContract.Presenter {
 
@@ -15,6 +20,17 @@ public class UserFinishedQueriesListPresenter implements UserFinishedQueriesList
 
   @Override
   public void fetchUserFinishedQueriesListData() {
+
+    SignInToMenuState state = router.getDataFromSignInToMenuState();
+
+    model.fetchUserFinishedQueriesListData(state.account.getId(), new RepositoryContract.Queries.GetFinishedQueriesListCallback() {
+      @Override
+      public void setQueriesList(List<FinishedQueryItem> finishedQueriesList) {
+        viewModel.finishedQueriesList = finishedQueriesList;
+
+        view.get().displayUserFinishedQueriesListData(viewModel);
+      }
+    });
 
   }
 
