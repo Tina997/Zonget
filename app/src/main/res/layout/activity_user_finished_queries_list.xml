@@ -9,11 +9,11 @@
 
     <include layout="@layout/toolbar"></include>
 
-    <ExpandableListView
-        android:id="@+id/user_finished_queries_list"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/user_finisehd_queries_list_recycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"></ExpandableListView>
+        android:layout_margin="20dp"/>
 
 </LinearLayout>
 

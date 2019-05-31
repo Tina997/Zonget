@@ -4,19 +4,20 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 
-public class UserFinishedQueriesListActivity extends AppCompatActivity
-        implements UserFinishedQueriesListContract.View {
+public class UserFinishedQueriesListActivity extends AppCompatActivity implements UserFinishedQueriesListContract.View {
 
   private UserFinishedQueriesListContract.Presenter presenter;
 
   //Elementos de la vista
   private Toolbar toolbar;
+  private RecyclerView finishedQueriesList;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
