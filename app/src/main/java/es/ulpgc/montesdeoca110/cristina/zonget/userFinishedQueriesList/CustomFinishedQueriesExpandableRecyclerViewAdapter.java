@@ -20,11 +20,11 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryData;
 
 import static android.view.animation.Animation.RELATIVE_TO_SELF;
 
-public abstract class CustomExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAdapter<CustomExpandableRecyclerViewAdapter.QueryViewHolder, CustomExpandableRecyclerViewAdapter.QueryDataViewHolder> {
+public abstract class CustomFinishedQueriesExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAdapter<CustomFinishedQueriesExpandableRecyclerViewAdapter.QueryViewHolder, CustomFinishedQueriesExpandableRecyclerViewAdapter.QueryDataViewHolder> {
 
     private Context context;
 
-    public CustomExpandableRecyclerViewAdapter(Context context, List<? extends ExpandableGroup> groups) {
+    public CustomFinishedQueriesExpandableRecyclerViewAdapter(Context context, List<? extends ExpandableGroup> groups) {
         super(groups);
         this.context = context;
     }
@@ -42,7 +42,7 @@ public abstract class CustomExpandableRecyclerViewAdapter extends ExpandableRecy
     }
 
     @Override
-    public void onBindGroupViewHolder(CustomExpandableRecyclerViewAdapter.QueryViewHolder holder, int flatPosition, ExpandableGroup group) {
+    public void onBindGroupViewHolder(CustomFinishedQueriesExpandableRecyclerViewAdapter.QueryViewHolder holder, int flatPosition, ExpandableGroup group) {
         holder.setQueryTitle(group);
     }
 

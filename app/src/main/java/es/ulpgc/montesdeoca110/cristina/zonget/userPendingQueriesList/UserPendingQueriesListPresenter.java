@@ -6,6 +6,7 @@ import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -32,10 +33,9 @@ public class UserPendingQueriesListPresenter implements UserPendingQueriesListCo
 
     model.fetchUserPendingQueriesListData(state.account.getId(),new RepositoryContract.Queries.GetPendingQueriesListCallback() {
       @Override
-      public void setQueriesList(List<String> queriesTitleList, HashMap<String, List<String>> queriesDetailList) {
+      public void setQueriesList(List<Query> pendingQueries) {
 
-        viewModel.titleList = queriesTitleList;
-        viewModel.detailList = queriesDetailList;
+        viewModel.pendingQueriesList = pendingQueries;
 
         view.get().displayUserPendingQueriesListData(viewModel);
       }

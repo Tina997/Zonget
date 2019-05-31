@@ -66,23 +66,8 @@ public class QueriesRepository implements RepositoryContract.Queries {
             public void run() {
                 if (callback != null){
 
-                    List<QueryItem> pendindQueriesList = loadPendingQueries(userId);
-
-                    List<String> queriesTitlesList = new ArrayList<>();
-                    HashMap<String,List<String>> queriesDetailList = new HashMap<>();
-
-                    for (int i = 0; i < pendindQueriesList.size(); i++){
-                        QueryItem query = pendindQueriesList.get(i);
-
-                        queriesTitlesList.add(query.title);
-
-                        List<String> queryDetails = new ArrayList<>();
-                        queryDetails.add(query.content);
-
-                        queriesDetailList.put(query.title,queryDetails);
-                    }
-
-                    callback.setQueriesList(queriesTitlesList, queriesDetailList);
+                    List<Query> pendindQueriesList = loadPendingQueries(userId);
+                    callback.setQueriesList(pendindQueriesList);
                 }
             }
         });
@@ -120,17 +105,26 @@ public class QueriesRepository implements RepositoryContract.Queries {
         return getQueriesDao().loadQueries(userId);
     }
 
-    private List<QueryItem> loadPendingQueries(int userId){
-        List<QueryItem> pendingQueriesList =  new ArrayList<>();
+    private List<Query> loadPendingQueries(int userId){
+        List<Query> pendingQueriesList =  new ArrayList<>();
+
         List<QueryItem> list = loadQueries(userId);
 
         for(int i = 0; i < list.size(); i++ ){
             QueryStatusItem queryStatus = getQueryStatusDao().loadQueryStatus(list.get(i).id);
             if (!queryStatus.finished){
-                pendingQueriesList.add(list.get(i));
+
+                String title = list.get(i).title;
+                String content =  list.get(i).content;
+
+                List<QueryData> queryDataList =  new ArrayList<>();
+                queryDataList.add(new QueryData(content,null));
+
+                Query query = new Query(title,queryDataList);
+
+                pendingQueriesList.add(query);
             }
         }
-
         return pendingQueriesList;
     }
 

@@ -1,11 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
-import java.util.HashMap;
 import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 public class UserPendingQueriesListViewModel {
 
-    public List<String> titleList;
-    public HashMap<String,List<String>> detailList;
+    public List<Query> pendingQueriesList;
 
 }

@@ -145,7 +145,7 @@ public interface RepositoryContract {
         void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
         interface GetPendingQueriesListCallback {
-            void setQueriesList(List<String> queriesTitleList, HashMap<String,List<String>> queriesDetailList);
+            void setQueriesList(List<Query> pendingQueriesList);
         }
 
         void getPendindQueriesList(int userId,RepositoryContract.Queries.GetPendingQueriesListCallback callback);

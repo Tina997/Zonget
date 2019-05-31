@@ -3,6 +3,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +12,10 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 
 public class UserPendingQueriesListActivity extends AppCompatActivity implements UserPendingQueriesListContract.View {
@@ -19,7 +24,6 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
 
   //Elementos de la vista
   private Toolbar toolbar;
-  private ExpandableListView pendingQueriesList;
 
   private UserPendingQueriesListAdapter listAdapter;
 
@@ -46,12 +50,26 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
     actionBar.setTitle("Consultas pendientes");
     actionBar.setDisplayHomeAsUpEnabled(true);
 
-    //Búsqueda de los elementos de la vista
-    pendingQueriesList = findViewById(R.id.user_pending_queries_list);
+    listAdapter = new UserPendingQueriesListAdapter(this,new ArrayList<Query>());
 
-    listAdapter = new UserPendingQueriesListAdapter(this);
-    pendingQueriesList.setAdapter(listAdapter);
+    //RecycleView
+    RecyclerView recyclerView = findViewById(R.id.user_pending_queries_list_recycleView);
+    recyclerView.setAdapter(listAdapter);
 
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+    listAdapter.onSaveInstanceState(outState);
+  }
+
+  @Override
+  protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+    listAdapter.onRestoreInstanceState(savedInstanceState);
   }
 
   @Override
@@ -73,7 +91,7 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
 
       @Override
       public void run() {
-        listAdapter.setItems(viewModel.titleList,viewModel.detailList);
+        listAdapter.setItems(viewModel.pendingQueriesList);
       }
     });
   }
