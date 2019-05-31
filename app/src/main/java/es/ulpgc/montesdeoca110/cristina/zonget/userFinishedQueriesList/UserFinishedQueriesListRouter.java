@@ -17,6 +17,11 @@ public class UserFinishedQueriesListRouter implements UserFinishedQueriesListCon
   }
 
   @Override
+  public String getActualThemeName() {
+    return mediator.getactualThemeName();
+  }
+
+  @Override
   public SignInToMenuState getDataFromSignInToMenuState() {
     return mediator.getSignInToMenuState();
   }

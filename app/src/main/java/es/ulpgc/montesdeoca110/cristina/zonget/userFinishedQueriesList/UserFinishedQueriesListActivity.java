@@ -26,6 +26,16 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    UserFinishedQueriesListScreen.configure(this);
+
+    //Theme
+    String themeName = presenter.getActualThemeName();
+    if (themeName != null) {
+      int themeID = getResources().getIdentifier(themeName, "style", getPackageName());
+      setTheme(themeID);
+    }
+
     setContentView(R.layout.activity_user_finished_queries_list);
 
     //Configuracion de la toolBar/actionBar
@@ -44,8 +54,6 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
 
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-    // do the setup
-    UserFinishedQueriesListScreen.configure(this);
   }
 
   @Override

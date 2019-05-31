@@ -95,21 +95,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
             @Override
             public void run() {
                 if(callback != null){
-                    List<Query>  finishedQueriesList = //loadFinishedQueries(userId);
-
-
-                            new ArrayList<>();
-                    ArrayList<QueryData> data1 = new ArrayList<>();
-                    data1.add(new QueryData("Content 1","Answer 2"));
-
-                    finishedQueriesList.add(new Query("Hola 1",data1));
-
-                    ArrayList<QueryData> data2 = new ArrayList<>();
-                    data2.add(new QueryData("Content 2","Answer 2"));
-
-                    finishedQueriesList.add(new Query("Hola 2",data2));
-
-
+                    List<Query>  finishedQueriesList = loadFinishedQueries(userId);
                     callback.setQueriesList(finishedQueriesList);
                 }
             }

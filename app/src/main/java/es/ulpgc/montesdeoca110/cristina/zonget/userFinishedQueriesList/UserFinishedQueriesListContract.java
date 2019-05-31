@@ -23,6 +23,8 @@ public interface UserFinishedQueriesListContract {
 
     void injectRouter(Router router);
 
+    String getActualThemeName();
+
     void backButtonPressed();
 
     void fetchUserFinishedQueriesListData();
@@ -36,6 +38,10 @@ public interface UserFinishedQueriesListContract {
   }
 
   interface Router {
+
+    //------------------------- Tema ---------------------
+
+    String getActualThemeName();
 
     //--------------- Navegación entre pantallas -----------
 

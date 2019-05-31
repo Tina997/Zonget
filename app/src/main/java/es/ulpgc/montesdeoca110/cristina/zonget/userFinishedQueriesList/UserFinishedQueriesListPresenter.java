@@ -19,6 +19,11 @@ public class UserFinishedQueriesListPresenter implements UserFinishedQueriesList
   }
 
   @Override
+  public String getActualThemeName() {
+    return router.getActualThemeName();
+  }
+
+  @Override
   public void fetchUserFinishedQueriesListData() {
 
     SignInToMenuState state = router.getDataFromSignInToMenuState();
