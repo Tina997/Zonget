@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList;
 import android.support.v4.app.FragmentActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.SettingsRepository;
 import java.lang.ref.WeakReference;
 
 public class AdministratorButtonsMenuListScreen {

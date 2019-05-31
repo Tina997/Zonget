@@ -1,4 +1,4 @@
-package es.ulpgc.motesdeoca110.cristina.zonget.data;
+package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
@@ -15,7 +15,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetBDItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.AccountDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.PetsDao;
 import es.ulpgc.montesdeoca110.cristina.zonget.database.UserDao;

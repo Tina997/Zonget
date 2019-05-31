@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
-import java.util.HashMap;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -11,8 +10,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
 
 public interface RepositoryContract {
 

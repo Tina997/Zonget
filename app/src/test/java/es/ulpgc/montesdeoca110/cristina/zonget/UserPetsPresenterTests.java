@@ -18,13 +18,11 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsModel;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsPresenter;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.AccountsRepository;
 
-import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserPetsPresenterTests {
