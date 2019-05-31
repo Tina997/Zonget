@@ -68,12 +68,6 @@ public class AddLostPetActivity
     return super.onCreateOptionsMenu(menu);
   }
 
-  @Override
-  public void displayData(AddLostPetViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
-
-    // deal with the data
-  }
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {

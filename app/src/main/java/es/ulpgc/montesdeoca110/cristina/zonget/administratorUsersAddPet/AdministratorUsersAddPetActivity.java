@@ -5,10 +5,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
@@ -87,8 +89,12 @@ public class AdministratorUsersAddPetActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case R.id.action_accept:
-        insertPet();
-        finish();
+        if(presenter.checkAllDataIntroduced(nameText.getText(),speciesText.getText(),breedText.getText(),chipNumText.getText(),birthdayText.getText())) {
+          insertPet();
+          finish();
+        } else {
+          displayAlertMesaje("Faltan datos por introducir.");
+        }
         return true;
       default:
         int id = item.getItemId();
@@ -100,6 +106,11 @@ public class AdministratorUsersAddPetActivity
         return super.onOptionsItemSelected(item);
     }
   }
+
+  private void displayAlertMesaje(String s) {
+    Toast.makeText(getBaseContext(), s, Toast.LENGTH_LONG).show();
+  }
+
   private void insertPet(){
       String name = nameText.getText().toString();
       String species = speciesText.getText().toString();
@@ -108,4 +119,5 @@ public class AdministratorUsersAddPetActivity
       String birthday = birthdayText.getText().toString();
       presenter.insertNewPet(name,species,breed,chipNum,birthday);
   }
+
 }

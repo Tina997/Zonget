@@ -48,8 +48,6 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
       viewModel.data = data;
     }
 
-    // update the view
-    view.get().displayData(viewModel);
 
   }
 

@@ -60,10 +60,6 @@ public class AddPetForAdoptionActivity
     this.presenter = presenter;
   }
 
-  @Override
-  public void displayData(AddPetForAdoptionViewModel viewModel) {
-
-  }
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

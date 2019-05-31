@@ -14,8 +14,7 @@ interface AddEventContract {
 
     /**
      * Rellena la información de la vista con la información del viewModel
-     * @param viewModel: viewModel donde se encuentra la información
-     *                 para rellenar la vista
+     * @param viewModel: viewModel donde se encuentra la información para rellenar la vista
      */
     void displayData(AddEventViewModel viewModel);
   }
@@ -91,7 +90,7 @@ interface AddEventContract {
     void navigateToNextScreen();
 
     /**
-     * Metodo que pasa la informacion de como estaba el estado de como estaba la vista en un momento dado
+     * Metodo que edita el estado de la vista almacenado en el mediador
      * @param state: El estado de la vista en cuestion
      */
     void passDataToNextScreen(AddEventState state);
