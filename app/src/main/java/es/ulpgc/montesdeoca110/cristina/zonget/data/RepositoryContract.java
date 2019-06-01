@@ -363,6 +363,14 @@ public interface RepositoryContract {
          */
         void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
+        //TODO Comentar
+
+        interface GetQueriesListSizeCallback {
+            void setQueriesListSize(int pendingQueriesListSize, int finishedQueriesListSize);
+        }
+
+        void getQueriesListSize(int userId, RepositoryContract.Queries.GetQueriesListSizeCallback callback);
+
         interface GetPendingQueriesListCallback {
             /** Este método se encarga de actualizar la lista de consultas pendientes con la pasada
              * por parámetro.

@@ -43,6 +43,21 @@ public class QueriesRepository implements RepositoryContract.Queries {
 
 
     @Override
+    public void getQueriesListSize(final int userId, final GetQueriesListSizeCallback callback) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if (callback != null){
+                    List<Query> pendindQueriesList = loadPendingQueries(userId);
+                    List<Query>  finishedQueriesList = loadFinishedQueries(userId);
+
+                    callback.setQueriesListSize(pendindQueriesList.size(),finishedQueriesList.size());
+                }
+            }
+        });
+    }
+
+    @Override
     public void setNewQuery(final int senderUserId, final String title, final String content, final SetNewQueryCallback callback) {
         AsyncTask.execute(new Runnable() {
             @Override
