@@ -15,7 +15,6 @@ interface AdministratorUserEditPetContract {
      */
     void injectPresenter(Presenter presenter);
 
-    void displayData(AdministratorUserEditPetViewModel viewModel);
   }
 
   interface Presenter {
@@ -63,7 +62,6 @@ interface AdministratorUserEditPetContract {
 
   interface Model {
 
-      String fetchData();
 
     /**
      * Metodo que la pasa al repositorio la nueva mascota para cambiar la que ya se encuentra en la BD con ese ID por la nueva

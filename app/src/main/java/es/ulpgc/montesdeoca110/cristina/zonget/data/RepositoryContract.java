@@ -175,6 +175,7 @@ public interface RepositoryContract {
 
         interface UpdateUserPetCallback {
             //TODO Incluir método en la interfaz
+            void onUserPetUpdate();
         }
 
         /** Este método actualiza la información existente de una mascota de un usuario.

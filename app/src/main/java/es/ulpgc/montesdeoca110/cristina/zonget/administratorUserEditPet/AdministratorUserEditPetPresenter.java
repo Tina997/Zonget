@@ -38,9 +38,12 @@ public class AdministratorUserEditPetPresenter
   @Override
   public void insertNewPet(UserPetItem userPetItem) {
     model.editPet(userPetItem, new RepositoryContract.Accounts.UpdateUserPetCallback(){
-
+      @Override
+      public void onUserPetUpdate() {
+        router.navigateToNextScreen();
+      }
     });
-    router.navigateToNextScreen();
+
   }
 
   @Override
