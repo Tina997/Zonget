@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 public class SettingsRepository implements RepositoryContract.Settings {
 
+  // ============================= Variables globales =============================================
   private static SettingsRepository INSTANCE;
   private Context context;
 
@@ -28,7 +29,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
   public static final String JSON_ADMINISTRATOR = "administratorButtonsMenu";
   public static final String JSON_USER = "userButtonsMenu";
 
-  private String actualThemeName;
+  // --- Listas
   private List<ChangeThemeItem> themeList;
   private List<AdministratorButtonMenuItem> administratorButtonsMenuList;
   private List<UserButtonMenuItem> userButtonsMenuList;
@@ -44,6 +45,70 @@ public class SettingsRepository implements RepositoryContract.Settings {
     this.context = context;
   }
 
+  @Override
+  public void loadZonget(final FecthZongetDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+
+      @Override
+      public void run() {
+
+        boolean error = !loadZongetFromJSON(loadJSONFromAsset());
+
+        if (callback != null) {
+          callback.onZongetDataFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getChangeThemeList(final GetChangeThemeListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setChangeThemeList(themeList);
+        }
+      }
+    });
+  }
+
+  // ---------------------------------- Administrator ---------------------------------------------
+
+  @Override
+  public void getAdministratorMenuButtonsList(
+          final GetAdministratorMenuButtonsListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setAdministratorMenuButtonsList(administratorButtonsMenuList);
+        }
+      }
+    });
+  }
+
+  // -------------------------------------- User --------------------------------------------------
+
+  @Override
+  public void getUserMenuButtonsList(final GetUserMenuButtonsListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setUserMenuButtonsList(userButtonsMenuList);
+        }
+      }
+    });
+  }
+
+  // ================================= Métodos privados ===========================================
+
+  /** Este método carga desde la carpeta Assets del proyecto el json con la información de la
+   * aplicación.
+   *
+   * @return La información que contiene el json.
+   */
   private String loadJSONFromAsset() {
     String json = null;
 
@@ -62,6 +127,12 @@ public class SettingsRepository implements RepositoryContract.Settings {
     return json;
   }
 
+  /** Este método divide la información que contiene el json y pasa la que indicamos a las
+   * variables del repositorio.
+   *
+   * @param json Archivo JSON que contiene la información de la aplicación.
+   * @return boobleas
+   */
   private boolean loadZongetFromJSON(String json) {
 
     GsonBuilder gsonBuilder = new GsonBuilder();
@@ -119,73 +190,28 @@ public class SettingsRepository implements RepositoryContract.Settings {
     return false;
   }
 
+  /** Este método inserta en la lista de temas un nuevo tema.
+   *
+   * @param theme Tema.
+   */
   private void insertTheme(ChangeThemeItem theme) {
     themeList.add(theme);
   }
 
+  /** Este método inserta en la lista de los botones del menú del administrador un nuevo botón.
+   *
+   * @param button Botón de administrador.
+   */
   private void insertAdministratorButton(AdministratorButtonMenuItem button) {
     administratorButtonsMenuList.add(button);
   }
 
+  /** Este método inserta en la lista de los botones del menú del usuario un nuevo botón.
+   *
+   * @param button Botón de usuario.
+   */
   private void insertUserButton(UserButtonMenuItem button) {
     userButtonsMenuList.add(button);
-  }
-
-  @Override
-  public void loadZonget(final FecthZongetDataCallback callback) {
-    AsyncTask.execute(new Runnable() {
-
-      @Override
-      public void run() {
-
-        boolean error = !loadZongetFromJSON(loadJSONFromAsset());
-
-        if (callback != null) {
-          callback.onZongetDataFetched(error);
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getChangeThemeList(final GetChangeThemeListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setChangeThemeList(themeList);
-        }
-      }
-    });
-  }
-
-  // ------------------------- Administrator ---------------------------
-
-  @Override
-  public void getAdministratorMenuButtonsList(
-          final GetAdministratorMenuButtonsListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setAdministratorMenuButtonsList(administratorButtonsMenuList);
-        }
-      }
-    });
-  }
-
-  // ------------------------------ User --------------------------------
-
-  @Override
-  public void getUserMenuButtonsList(final GetUserMenuButtonsListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setUserMenuButtonsList(userButtonsMenuList);
-        }
-      }
-    });
   }
 
 }
