@@ -119,8 +119,8 @@ public class QueriesRepository implements RepositoryContract.Queries {
     return getQueriesDao().loadQueries(userId);
   }
 
-  private List<QueryItem> loadAllQueries(){ return getQueriesDao().loadQueries();
-  }
+  private List<QueryItem> loadAllQueries(){ return getQueriesDao().loadQueries(); }
+
 
   private List<Query> loadPendingQueries(int userId) {
     List<Query> pendingQueriesList = new ArrayList<>();

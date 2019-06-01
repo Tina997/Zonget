@@ -16,6 +16,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.Administra
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail.AdministratorUserPetsDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.ChangeThemeToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSelectedActivityState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.MenuToSignInState;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SearchToListUserState;
@@ -120,6 +121,7 @@ public class AppMediator extends Application {
     private MenuToSelectedActivityState menuToSelectedActivityState;
     private UserMenuToUserPickDateState userMenuToUserPickDateState;
     private SearchToListUserState searchToListUserState = new SearchToListUserState();
+    private InboxToQueryDetailState inboxToQueryDetailState;
 
     @Override
     public void onCreate() {
@@ -527,6 +529,16 @@ public class AppMediator extends Application {
     public void setSearchToListUserState(SearchToListUserState searchToListUserState){
         this.searchToListUserState = searchToListUserState;
     }
+
+    //InboxToQueryDetail
+    public InboxToQueryDetailState getInboxToQueryDetailState() {
+      return inboxToQueryDetailState;
+    }
+
+    public void setInboxToQueryDetailState(InboxToQueryDetailState inboxToQueryDetailState) {
+    this.inboxToQueryDetailState = inboxToQueryDetailState;
+    }
+
 
 
 }

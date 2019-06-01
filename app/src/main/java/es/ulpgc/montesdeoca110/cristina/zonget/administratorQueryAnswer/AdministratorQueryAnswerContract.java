@@ -1,6 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer;
 
+import android.text.Editable;
+
 import java.lang.ref.WeakReference;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
 interface AdministratorQueryAnswerContract {
 
@@ -43,10 +48,14 @@ interface AdministratorQueryAnswerContract {
      * @return String con el nombre del tema que esta siendo usado
      */
     String getActualThemeName();
+
+    void onSendButtonClicked(String text);
   }
 
   interface Model {
     String fetchData();
+
+    void setQueryAnswer(Query query, String answer);
   }
 
   interface Router {
@@ -58,7 +67,7 @@ interface AdministratorQueryAnswerContract {
      */
     void passDataToNextScreen(AdministratorQueryAnswerState state);
 
-    AdministratorQueryAnswerState getDataFromPreviousScreen();
+    InboxToQueryDetailState getDataFromPreviousScreen();
 
     void navigateToAdministratorInboxScreen();
 

@@ -63,7 +63,8 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
   }
 
   @Override
-  public void goToAdministratorQueryDetailScreen() {
+  public void selectQueryItemState(Query item) {
+    router.passDataToQueryDetailScreen(item);
     router.navigateToAdministratorQueryDetailScreen();
   }
 

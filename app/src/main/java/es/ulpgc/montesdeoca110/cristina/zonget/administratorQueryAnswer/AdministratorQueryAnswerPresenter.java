@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
+
 public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnswerContract.Presenter {
 
   public static String TAG = AdministratorQueryAnswerPresenter.class.getSimpleName();
@@ -37,27 +39,21 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
     // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
     // set passed state
-    AdministratorQueryAnswerState state = router.getDataFromPreviousScreen();
+    InboxToQueryDetailState state = router.getDataFromPreviousScreen();
     if (state != null) {
-      viewModel.data = state.data;
+      viewModel.query = state.query;
     }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
 
   }
 
   @Override
   public String getActualThemeName() {
     return router.getActualThemeName();
+  }
+
+  @Override
+  public void onSendButtonClicked(String answer){
+    model.setQueryAnswer(viewModel.query, answer);
   }
 
   @Override

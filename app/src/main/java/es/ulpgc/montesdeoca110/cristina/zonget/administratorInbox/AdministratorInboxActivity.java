@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 public class AdministratorInboxActivity
         extends AppCompatActivity implements AdministratorInboxContract.View {
@@ -52,7 +53,8 @@ public class AdministratorInboxActivity
     listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        presenter.goToAdministratorQueryDetailScreen();
+        Query item = (Query) v.getTag();
+        presenter.selectQueryItemState(item);
       }
     });
     recyclerView = findViewById(R.id.inbox_list);

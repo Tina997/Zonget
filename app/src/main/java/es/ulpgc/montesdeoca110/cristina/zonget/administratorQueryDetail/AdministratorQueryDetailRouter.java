@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer.AdministratorQueryAnswerActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
 public class AdministratorQueryDetailRouter implements AdministratorQueryDetailContract.Router {
 
@@ -29,8 +30,8 @@ public class AdministratorQueryDetailRouter implements AdministratorQueryDetailC
   }
 
   @Override
-  public AdministratorQueryDetailState getDataFromPreviousScreen() {
-    AdministratorQueryDetailState state = mediator.getAdministratorQueryDetailState();
+  public InboxToQueryDetailState getDataFromPreviousScreen() {
+    InboxToQueryDetailState state = mediator.getInboxToQueryDetailState();
     return state;
   }
 

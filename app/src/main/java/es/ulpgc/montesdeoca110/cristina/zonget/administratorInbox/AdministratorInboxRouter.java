@@ -6,6 +6,8 @@ import android.content.Intent;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
 public class AdministratorInboxRouter implements AdministratorInboxContract.Router {
 
@@ -54,5 +56,12 @@ public class AdministratorInboxRouter implements AdministratorInboxContract.Rout
     Intent intent = new Intent(context, AdministratorQueryDetailActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
+  }
+
+  @Override
+  public void passDataToQueryDetailScreen(Query item){
+    InboxToQueryDetailState state = new InboxToQueryDetailState();
+    state.query = item;
+    mediator.setInboxToQueryDetailState(state);
   }
 }

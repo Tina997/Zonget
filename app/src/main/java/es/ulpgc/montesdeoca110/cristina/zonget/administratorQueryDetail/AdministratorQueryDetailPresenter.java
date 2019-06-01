@@ -1,6 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryData;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
 public class AdministratorQueryDetailPresenter
         implements AdministratorQueryDetailContract.Presenter {
@@ -36,17 +41,11 @@ public class AdministratorQueryDetailPresenter
     // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
     // set passed state
-    AdministratorQueryDetailState state = router.getDataFromPreviousScreen();
+    InboxToQueryDetailState state = router.getDataFromPreviousScreen();
     if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
+      viewModel.title = state.query.getTitle();
+      List<QueryData> list = state.query.getItems();
+      viewModel.message = list.get(0).getContent();
     }
 
     // update the view

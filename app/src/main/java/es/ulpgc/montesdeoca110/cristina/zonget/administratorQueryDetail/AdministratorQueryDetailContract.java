@@ -2,6 +2,8 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
+
 public interface AdministratorQueryDetailContract {
 
   interface View {
@@ -58,7 +60,7 @@ public interface AdministratorQueryDetailContract {
      */
     void passDataToNextScreen(AdministratorQueryDetailState state);
 
-    AdministratorQueryDetailState getDataFromPreviousScreen();
+    InboxToQueryDetailState getDataFromPreviousScreen();
 
     void navigateToAdministratorQueryAnswerScreen();
 

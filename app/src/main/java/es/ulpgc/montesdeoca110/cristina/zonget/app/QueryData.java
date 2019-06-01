@@ -18,6 +18,11 @@ public class QueryData implements Parcelable {
         answer = in.readString();
     }
 
+    public String getContent() {
+        return content;
+    }
+
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(content);

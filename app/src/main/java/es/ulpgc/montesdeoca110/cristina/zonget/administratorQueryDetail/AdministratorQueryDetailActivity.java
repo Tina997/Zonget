@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 
@@ -17,6 +19,8 @@ public class AdministratorQueryDetailActivity
   public static String TAG = AdministratorQueryDetailActivity.class.getSimpleName();
 
   private AdministratorQueryDetailContract.Presenter presenter;
+  TextView queryTitle;
+  TextView queryDescription;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,9 @@ public class AdministratorQueryDetailActivity
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(getString(R.string.administrator_query_detail_activity_name));
     }
+
+    queryTitle = findViewById(R.id.queryTitle);
+    queryDescription = findViewById(R.id.queryDescription);
 
 
   }
@@ -85,6 +92,7 @@ public class AdministratorQueryDetailActivity
 
   @Override
   public void displayData(AdministratorQueryDetailViewModel viewModel) {
-
+    queryTitle.setText(viewModel.title);
+    queryDescription.setText(viewModel.message);
   }
 }
