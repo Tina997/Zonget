@@ -32,7 +32,7 @@ public class AddLostPetPresenter implements AddLostPetContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    // Log.e(TAG, "fetchAdministratorQueriesListData()");
 
     // set passed state
     AddLostPetState state = router.getDataFromPreviousScreen();

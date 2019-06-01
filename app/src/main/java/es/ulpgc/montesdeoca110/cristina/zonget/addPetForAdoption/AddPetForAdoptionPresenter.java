@@ -32,7 +32,7 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    // Log.e(TAG, "fetchAdministratorQueriesListData()");
 
     // set passed state
     AddPetForAdoptionState state = router.getDataFromPreviousScreen();

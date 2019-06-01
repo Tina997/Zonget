@@ -52,14 +52,11 @@ public class AdministratorInboxActivity
     listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-
         presenter.goToAdministratorQueryDetailScreen();
       }
     });
-
     recyclerView = findViewById(R.id.inbox_list);
     recyclerView.setAdapter(listAdapter);
-
 
   }
 
@@ -102,7 +99,6 @@ public class AdministratorInboxActivity
       default:
         int id = item.getItemId();
         if (id == android.R.id.home) {
-          //TODO destruir activity
           presenter.onBackButtonPressed();
           finish();
           return true;

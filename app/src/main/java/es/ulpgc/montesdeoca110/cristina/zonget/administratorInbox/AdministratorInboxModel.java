@@ -1,35 +1,29 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdministratorInboxModel implements AdministratorInboxContract.Model {
 
+  private RepositoryContract.Queries queriesRepository;
+  private RepositoryContract.Accounts accountsRepository;
+
   public static String TAG = AdministratorInboxModel.class.getSimpleName();
 
-  private final List<QueryItem> queryItems = new ArrayList<>();
-  private final int Count = 5;
 
-  public AdministratorInboxModel() {
-    for (int i = 0; i <= Count; i++) {
-      addQuery(createQuery(i));
-    }
+  public AdministratorInboxModel(RepositoryContract.Queries queriesRepository,
+                                 RepositoryContract.Accounts accountsRepository) {
+   this.queriesRepository = queriesRepository;
+   this.accountsRepository = accountsRepository;
   }
 
   @Override
-  public List<QueryItem> fetchData() {
-    return queryItems;
+  public void fetchAdministratorQueriesListData(RepositoryContract.Queries.
+                                GetAdministratorQueriesListCallback callback) {
+    queriesRepository.getAdministratorQueriesList(callback);
   }
 
-  private void addQuery(QueryItem item) {
-    queryItems.add(item);
-  }
-
-  private QueryItem createQuery(int position) {
-    String sender = "Usuario " + position;
-    String title = "Asunto " + position;
-    //return new QueryItem(sender, data,,in position);
-    return null;
-  }
 }

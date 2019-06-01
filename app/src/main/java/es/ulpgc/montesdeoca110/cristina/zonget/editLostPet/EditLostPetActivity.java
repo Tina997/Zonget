@@ -65,7 +65,7 @@ public class EditLostPetActivity
     super.onResume();
 
     // do some work
-    //presenter.fetchData();
+    //presenter.fetchAdministratorQueriesListData();
   }
 
   @Override

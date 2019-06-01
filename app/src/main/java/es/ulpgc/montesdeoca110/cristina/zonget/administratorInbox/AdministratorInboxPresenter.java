@@ -1,6 +1,9 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -36,16 +39,17 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
   @Override
   public void fetchInboxData() {
 
-    if (viewModel.inboxList == null) {
+    //set passed state
 
-      //llamar al modelo
-      List<QueryItem> data = model.fetchData();
-
-      viewModel.inboxList = data;
-    }
-    // update the view
-    view.get().displayData(viewModel);
-
+    //llamar al modelo
+    model.fetchAdministratorQueriesListData(new RepositoryContract.Queries.GetAdministratorQueriesListCallback() {
+      @Override
+      public void setQueriesList(List<Query> administratorQueriesList) {
+        viewModel.inboxList = administratorQueriesList;
+        // update the view
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override

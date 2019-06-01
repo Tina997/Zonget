@@ -152,6 +152,12 @@ public interface RepositoryContract {
         }
 
         void getFinishedQueriesList(int userId,RepositoryContract.Queries.GetFinishedQueriesListCallback callback);
+
+        interface GetAdministratorQueriesListCallback {
+            void setQueriesList(List<Query> administratorQueriesList);
+        }
+
+        void getAdministratorQueriesList(final GetAdministratorQueriesListCallback callback);
     }
 
 }

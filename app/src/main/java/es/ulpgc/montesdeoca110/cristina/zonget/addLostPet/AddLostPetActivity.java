@@ -52,7 +52,7 @@ public class AddLostPetActivity
     super.onResume();
 
     // do some work
-    //presenter.fetchData();
+    //presenter.fetchAdministratorQueriesListData();
   }
 
   @Override

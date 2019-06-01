@@ -32,7 +32,7 @@ public class EditPetForAdoptionPresenter implements EditPetForAdoptionContract.P
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    // Log.e(TAG, "fetchAdministratorQueriesListData()");
 
     // set passed state
     EditPetForAdoptionState state = router.getDataFromPreviousScreen();

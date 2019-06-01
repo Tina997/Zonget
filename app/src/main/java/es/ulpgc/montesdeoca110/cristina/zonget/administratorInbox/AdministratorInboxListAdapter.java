@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 import java.util.ArrayList;
@@ -15,30 +17,30 @@ import java.util.List;
 public class AdministratorInboxListAdapter
         extends RecyclerView.Adapter<AdministratorInboxListAdapter.ViewHolder> {
 
-  private List<QueryItem> queryItemList;
+  private List<Query> queryList;
   private final View.OnClickListener clickListener;
 
-  public AdministratorInboxListAdapter(View.OnClickListener clickListener) {
-    queryItemList = new ArrayList<>();
+  public AdministratorInboxListAdapter( View.OnClickListener clickListener) {
+    this.queryList = new ArrayList<>();
     this.clickListener = clickListener;
   }
 
-  public void setItems(List<QueryItem> items) {
-    queryItemList = items;
+  public void setItems(List<Query> items) {
+    queryList = items;
     notifyDataSetChanged();
   }
 
-  public void addItem(QueryItem item) {
-    queryItemList.add(item);
+  public void addItem(Query item) {
+    queryList.add(item);
   }
 
-  public void addItems(List<QueryItem> items) {
-    queryItemList.addAll(items);
+  public void addItems(List<Query> items) {
+    queryList.addAll(items);
   }
 
   @Override
   public int getItemCount() {
-    return queryItemList.size();
+    return queryList.size();
   }
 
   @Override
@@ -50,11 +52,11 @@ public class AdministratorInboxListAdapter
 
   @Override
   public void onBindViewHolder(ViewHolder holder, int position) {
-    holder.itemView.setTag(queryItemList.get(position));
+    holder.itemView.setTag(queryList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
     //holder.userID.setText(queryItemList.get(position).sender);
-    holder.title.setText(queryItemList.get(position).title);
+    holder.title.setText(queryList.get(position).getTitle());
   }
 
 
