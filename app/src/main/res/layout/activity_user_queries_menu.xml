@@ -30,6 +30,7 @@
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
+                android:tint="?attr/colorPrimary"
                 app:srcCompat="@drawable/ic_new_query" />
 
             <TextView
@@ -60,6 +61,7 @@
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
+                android:tint="?attr/colorPrimary"
                 app:srcCompat="@drawable/ic_pending_queries" />
 
             <TextView
@@ -90,6 +92,7 @@
                 android:layout_weight="1"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
+                android:tint="?attr/colorPrimary"
                 app:srcCompat="@drawable/ic_finished_queries" />
 
             <TextView

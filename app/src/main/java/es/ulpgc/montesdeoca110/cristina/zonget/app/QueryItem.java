@@ -17,18 +17,18 @@ public class QueryItem {
   @PrimaryKey
   public final int id;
 
-  public final String sender;
   public final String title;
+  public final String content;
 
   @ColumnInfo(name = "user_id")
   public int userId;
 
 
-  //TODO añadir resto de propiedades: descripción. archivos?? cómo diablos metemos los archivos?
+  //TODO añadir resto de propiedades: archivos?? cómo diablos metemos los archivos?
 
-  public QueryItem(String sender, String title, int id) {
-    this.sender = sender;
-    this.title = title;
+  public QueryItem(int id, String title, String content) {
     this.id = id;
+    this.title = title;
+    this.content = content;
   }
 }

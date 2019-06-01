@@ -4,23 +4,38 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 
-public class UserFinishedQueriesListActivity extends AppCompatActivity
-        implements UserFinishedQueriesListContract.View {
+public class UserFinishedQueriesListActivity extends AppCompatActivity implements UserFinishedQueriesListContract.View {
 
   private UserFinishedQueriesListContract.Presenter presenter;
 
   //Elementos de la vista
   private Toolbar toolbar;
+  private UserFinishedQueriesListAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    UserFinishedQueriesListScreen.configure(this);
+
+    //Theme
+    String themeName = presenter.getActualThemeName();
+    if (themeName != null) {
+      int themeID = getResources().getIdentifier(themeName, "style", getPackageName());
+      setTheme(themeID);
+    }
+
     setContentView(R.layout.activity_user_finished_queries_list);
 
     //Configuracion de la toolBar/actionBar
@@ -31,18 +46,32 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity
     actionBar.setTitle("Consultas finalizadas");
     actionBar.setDisplayHomeAsUpEnabled(true);
 
-    //Búsqueda de los elementos de la vista
+    listAdapter = new UserFinishedQueriesListAdapter(this,new ArrayList<Query>());
 
+    //RecycleView
+    RecyclerView recyclerView = findViewById(R.id.user_finished_queries_list_recycleView);
+    recyclerView.setAdapter(listAdapter);
 
-    // do the setup
-    UserFinishedQueriesListScreen.configure(this);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+    listAdapter.onSaveInstanceState(outState);
+  }
+
+  @Override
+  protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+    listAdapter.onRestoreInstanceState(savedInstanceState);
   }
 
   @Override
   protected void onResume() {
     super.onResume();
 
-    // load the data
     presenter.fetchUserFinishedQueriesListData();
   }
 
@@ -52,8 +81,13 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity
   }
 
   @Override
-  public void displayUserFinishedQueriesListData(UserFinishedQueriesListViewModel viewModel) {
-
+  public void displayUserFinishedQueriesListData(final UserFinishedQueriesListViewModel viewModel) {
+      runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+            listAdapter.setItems(viewModel.finishedQueriesList);
+          }
+      });
   }
 
   @Override

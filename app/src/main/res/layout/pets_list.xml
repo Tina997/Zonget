@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView
+<android.support.v7.widget.RecyclerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/animal_list"
+    android:id="@+id/pets_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".userPetsDetail.UserPetsDetailActivity"
-    tools:listitem="@layout/pets_list_content"
-    android:divider="?attr/colorPrimary"
-    android:dividerHeight="10dp"
+    app:layoutManager="LinearLayoutManager"
+    tools:context=".administratorUsersPets.AdministratorUsersPetsListActivity"
+    tools:listitem="@layout/pets_list_content" />
 
-     />

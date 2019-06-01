@@ -4,6 +4,7 @@ import android.content.Context;
 
 import android.content.Intent;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuActivity;
 
 public class UserPendingQueriesListRouter implements UserPendingQueriesListContract.Router {
@@ -12,6 +13,16 @@ public class UserPendingQueriesListRouter implements UserPendingQueriesListContr
 
   public UserPendingQueriesListRouter(AppMediator mediator) {
     this.mediator = mediator;
+  }
+
+  @Override
+  public String getActualThemeName() {
+    return mediator.getactualThemeName();
+  }
+
+  @Override
+  public SignInToMenuState getDataFromSignInToMenuState() {
+    return mediator.getSignInToMenuState();
   }
 
   // UserQueriesMenu

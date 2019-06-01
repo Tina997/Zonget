@@ -29,6 +29,11 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
   }
 
   @Override
+  public String getActualThemeName() {
+    return router.getActualThemeName();
+  }
+
+  @Override
   public void backButtonPressed() {
     router.navigateToUserMenuScreen();
   }

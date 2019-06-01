@@ -45,7 +45,7 @@ public class ModifyEventActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    // Show the title in the action bar
+    // Show the data in the action bar
     ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setTitle(getString(R.string.modifyEvent_activity_name));

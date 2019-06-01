@@ -40,7 +40,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
     public void fetchAdminUsersData() {
         // Log.e(TAG, "fetchPetsForAdoptionListData()");
         // set passed state
-        //AdministratorUsersListState state = router.getDataFromPreviousScreen();
+        //AdministratorUsersListState stateA = router.getDataFromPreviousScreen();
         SearchToListUserState state = router.getSearchToListUserState();
 
         model.fetchUsersData(state.nameOrDni, new RepositoryContract.Accounts.GetUserListCallback() {
@@ -50,6 +50,7 @@ public class AdministratorUsersListPresenter implements AdministratorUsersListCo
                 view.get().displayData(viewModel);
             }
         });
+
         // update the view
         //view.get().displayData(viewModel);
 

@@ -2,18 +2,27 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import dmax.dialog.SpotsDialog;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 public class UserNewQueryActivity extends AppCompatActivity implements UserNewQueryContract.View {
 
   private UserNewQueryContract.Presenter presenter;
+
+  private SpotsDialog dialog;
 
   //Elementos de la vista
   private Toolbar toolbar;
@@ -25,6 +34,16 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    UserNewQueryScreen.configure(this);
+
+    //Theme
+    String themeName = presenter.getActualThemeName();
+    if (themeName != null) {
+      int themeID = getResources().getIdentifier(themeName, "style", getPackageName());
+      setTheme(themeID);
+    }
+
     setContentView(R.layout.activity_user_new_query);
 
     //Configuracion de la toolBar/actionBar
@@ -41,8 +60,15 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
     sendQueryButton = findViewById(R.id.user_new_query_send_button);
 
-    // do the setup
-    UserNewQueryScreen.configure(this);
+    dialog = new SpotsDialog(this,R.style.SentEmailDialogProgressTheme);
+
+    //Listeners
+    sendQueryButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.sendButtonPressed(queryTitleEditText.getText()+ "",queryDescriptionEditText.getText()+"");
+      }
+    });
   }
 
   @Override
@@ -59,17 +85,39 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
   }
 
   @Override
-  public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {
+  public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {}
 
+
+  @Override
+  public void startSendQuery(){
+    dialog.show();
   }
 
   @Override
+  public void displayToastMessage(final String message) {
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        Toast.makeText(getApplicationContext(), message, LENGTH_LONG).show();
+      }
+    });
+  }
+
+    @Override
+    public void finish() {
+      dialog.dismiss();
+      displayToastMessage("La consulta se ha enviado correctamente.");
+
+      super.finish();
+    }
+
+    @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     // Handle presses on the action bar items
     switch (item.getItemId()) {
       case android.R.id.home:
         presenter.backButtonPressed();
-        finish();
+        super.finish();
         return true;
       default:
         return super.onOptionsItemSelected(item);

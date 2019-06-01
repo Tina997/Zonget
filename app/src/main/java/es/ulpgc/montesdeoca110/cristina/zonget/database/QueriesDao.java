@@ -26,4 +26,7 @@ public interface QueriesDao {
 
   @Query("SELECT * FROM queries WHERE id =:id LIMIT 1")
   QueryItem loadQuery(int id);
+
+  @Query("SELECT * FROM queries WHERE user_id=:userId")
+  List<QueryItem> loadQueries(int userId);
 }

@@ -42,7 +42,6 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
 
     @Override
     public void fetchAdministratorButtonsMenuListData() {
-
         model.fetchAdministratorButtonsMenuListData(new RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback() {
            @Override
            public void setAdministratorMenuButtonsList(List<AdministratorButtonMenuItem> administratorButtons) {
@@ -50,7 +49,6 @@ public class AdministratorButtonsMenuListPresenter implements AdministratorButto
                view.get().displayAdministratorButtonsMenuListData(viewModel);
            }
         });
-
     }
 
     @Override

@@ -43,16 +43,19 @@ public class AdministratorUsersPetsListPresenter implements AdministratorUsersPe
 
         // set passed state
         AccountItem item = router.getDataFromPreviousScreen().user;
-    if(item != null){
-        model.fetchPetsData(item, new RepositoryContract.Accounts.GetUserPetsListCallback() {
+        if(item!=null) {
+            viewModel.user = item;
+        }
+        model.fetchPetsData(viewModel.user, new RepositoryContract.Accounts.GetUserPetsListCallback() {
             @Override
             public void setUserPetsList(List<UserPetItem> userPets) {
-  //              Log.e(TAG, userPets.get(0).getName());
+                //Log.e(TAG, userPets.get(0).getName());
                 viewModel.pets = userPets;
-//                Log.e(TAG,viewModel.pets.get(0).getName());
+                Log.e(TAG, viewModel.pets.get(0).getName());
                 view.get().displayUserPetsData(viewModel);
             }
-        });}
+        });
+
     }
 
     @Override

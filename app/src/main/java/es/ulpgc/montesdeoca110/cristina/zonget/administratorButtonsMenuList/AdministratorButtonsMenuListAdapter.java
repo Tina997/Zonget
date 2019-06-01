@@ -15,8 +15,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdministratorButtonsMenuListAdapter
-        extends RecyclerView.Adapter<AdministratorButtonsMenuListAdapter.ViewHolder> {
+public class AdministratorButtonsMenuListAdapter extends RecyclerView.Adapter<AdministratorButtonsMenuListAdapter.ViewHolder> {
 
   private List<AdministratorButtonMenuItem> itemList;
   private final View.OnClickListener clickListener;

@@ -7,10 +7,9 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.AccountsRepository;
-import es.ulpgc.motesdeoca110.cristina.zonget.data.SettingsRepository;
 
 public interface RepositoryContract {
 
@@ -25,7 +24,6 @@ public interface RepositoryContract {
         interface GetChangeThemeListCallback {
             void setChangeThemeList(List<ChangeThemeItem> themeList);
         }
-
 
         void getChangeThemeList(SettingsRepository.GetChangeThemeListCallback callback);
 
@@ -134,4 +132,26 @@ public interface RepositoryContract {
 
         void getPetsForAdoption(int id, PetsForAdoptionRepository.GetPetsForAdoptionCallback callback);
     }
+
+    interface Queries {
+
+        interface SetNewQueryCallback {
+            void onNewQuerySet(boolean correct);
+        }
+
+        void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
+
+        interface GetPendingQueriesListCallback {
+            void setQueriesList(List<Query> pendingQueriesList);
+        }
+
+        void getPendindQueriesList(int userId,RepositoryContract.Queries.GetPendingQueriesListCallback callback);
+
+        interface GetFinishedQueriesListCallback {
+            void setQueriesList(List<Query> finishedQueriesList);
+        }
+
+        void getFinishedQueriesList(int userId,RepositoryContract.Queries.GetFinishedQueriesListCallback callback);
     }
+
+}

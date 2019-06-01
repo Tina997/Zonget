@@ -36,7 +36,7 @@ public class UserPetsDetailActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Mostrar el botón atras y el title en la action bar
+        //Mostrar el botón atras y el data en la action bar
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);

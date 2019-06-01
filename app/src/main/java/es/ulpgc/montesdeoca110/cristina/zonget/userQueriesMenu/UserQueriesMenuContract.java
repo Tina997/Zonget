@@ -10,6 +10,8 @@ interface UserQueriesMenuContract {
 
     void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel);
 
+    void finish();
+
   }
 
   interface Presenter {
@@ -19,6 +21,8 @@ interface UserQueriesMenuContract {
     void injectModel(Model model);
 
     void injectRouter(Router router);
+
+    String getActualThemeName();
 
     void backButtonPressed();
 
@@ -39,6 +43,10 @@ interface UserQueriesMenuContract {
   }
 
   interface Router {
+
+    //------------------------- Tema ---------------------
+
+    String getActualThemeName();
 
     //--------------- Navegación entre pantallas -----------
 

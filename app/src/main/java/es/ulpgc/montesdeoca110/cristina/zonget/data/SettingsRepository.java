@@ -1,4 +1,4 @@
-package es.ulpgc.motesdeoca110.cristina.zonget.data;
+package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -8,7 +8,7 @@ import com.google.gson.GsonBuilder;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;

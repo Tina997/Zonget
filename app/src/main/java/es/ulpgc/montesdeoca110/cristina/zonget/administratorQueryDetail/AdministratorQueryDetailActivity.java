@@ -36,7 +36,7 @@ public class AdministratorQueryDetailActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    // Show the title in the action bar
+    // Show the data in the action bar
     ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
