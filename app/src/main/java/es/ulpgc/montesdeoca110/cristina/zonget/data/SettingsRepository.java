@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -11,8 +12,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +22,8 @@ import org.json.JSONObject;
 public class SettingsRepository implements RepositoryContract.Settings {
 
   // ============================= Variables globales =============================================
+
+  @SuppressLint("StaticFieldLeak")
   private static SettingsRepository INSTANCE;
   private Context context;
 
@@ -44,6 +47,8 @@ public class SettingsRepository implements RepositoryContract.Settings {
   private SettingsRepository(Context context) {
     this.context = context;
   }
+
+  // ==================================== Métodos =================================================
 
   @Override
   public void loadZonget(final FecthZongetDataCallback callback) {
@@ -119,11 +124,9 @@ public class SettingsRepository implements RepositoryContract.Settings {
       byte[] buffer = new byte[size];
       is.read(buffer);
       is.close();
-      json = new String(buffer, "UTF-8");
+      json = new String(buffer, StandardCharsets.UTF_8);
 
-    } catch (IOException error) {
-    }
-
+    } catch (IOException ignored) {}
     return json;
   }
 
@@ -131,7 +134,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
    * variables del repositorio.
    *
    * @param json Archivo JSON que contiene la información de la aplicación.
-   * @return boobleas
+   * @return boolean que nos indica si se ha cargado la información correctamente o no.
    */
   private boolean loadZongetFromJSON(String json) {
 
@@ -157,25 +160,24 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
       if (jsonArrayAdministrator.length() > 0 && jsonArrayUser.length() > 0
               && jsonArrayTheme.length() > 0) {
-        final List<ChangeThemeItem> themeList = Arrays.asList(
-                gson.fromJson(jsonArrayTheme.toString(), ChangeThemeItem[].class));
+        final ChangeThemeItem[] themeList = gson.fromJson(jsonArrayTheme.toString(), ChangeThemeItem[].class);
 
         for (ChangeThemeItem theme : themeList) {
           insertTheme(theme);
         }
 
         // ---------- Administrator -------------
-        final List<AdministratorButtonMenuItem> administratorButtonMenuList =
-                Arrays.asList(gson.fromJson(jsonArrayAdministrator.toString(),
-                        AdministratorButtonMenuItem[].class));
+        final AdministratorButtonMenuItem[] administratorButtonMenuList =
+                gson.fromJson(jsonArrayAdministrator.toString(),
+                        AdministratorButtonMenuItem[].class);
 
         for (AdministratorButtonMenuItem button : administratorButtonMenuList) {
           insertAdministratorButton(button);
         }
 
         // -------------- User ------------------
-        final List<UserButtonMenuItem> userButtonMenuList =
-                Arrays.asList(gson.fromJson(jsonArrayUser.toString(), UserButtonMenuItem[].class));
+        final UserButtonMenuItem[] userButtonMenuList =
+                gson.fromJson(jsonArrayUser.toString(), UserButtonMenuItem[].class);
 
         for (UserButtonMenuItem button : userButtonMenuList) {
           insertUserButton(button);
@@ -184,7 +186,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
         return true;
       }
 
-    } catch (JSONException error) {
+    } catch (JSONException ignored) {
     }
 
     return false;

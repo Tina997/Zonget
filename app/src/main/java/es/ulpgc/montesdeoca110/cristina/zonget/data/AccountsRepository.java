@@ -1,5 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 
@@ -27,20 +28,24 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AccountsRepository implements RepositoryContract.Accounts {
 
-    public static final String DB_FILE = "zonget.db";
-    public static final String JSON_FILE = "zonget.json";
-    public static final String JSON_ROOT = "accounts";
+    // ============================= Variables globales ===========================================
 
+    @SuppressLint("StaticFieldLeak")
     private static AccountsRepository INSTANCE;
+    private Context context;
+
+    private static final String DB_FILE = "zonget.db";
+    private static final String JSON_FILE = "zonget.json";
+    private static final String JSON_ROOT = "accounts";
 
     private ZongetDatabase database;
-    private Context context;
+
 
     public static AccountsRepository getInstance(Context context) {
         if (INSTANCE == null) {
@@ -54,6 +59,8 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
         database = Room.databaseBuilder(context, ZongetDatabase.class, DB_FILE).build();
     }
+
+    // ==================================== Métodos ===============================================
 
     @Override
     public void loadZonget(final boolean clearFirst, final FecthZongetDataCallback callback) {
@@ -76,7 +83,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
     }
 
-    //---------------------------- Métodos de usuarios ----------------------------------
+    //-------------------------------- Métodos de cuentas ----------------------------------------
 
     @Override
     public void getCheckAccount(final String accountName, final String accountPassword, final GetCheckAccountExistCallback callback) {
@@ -144,7 +151,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     }
 
-    //----------------------------Métodos de mascotas---------------------------------
+    //--------------------------------- Métodos de mascotas----------------------------------------
 
     @Override
     public void getUserPetsList(final int userId, final GetUserPetsListCallback callback) {
@@ -206,25 +213,46 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         });
     }
 
+    // ================================= Métodos privados =========================================
 
-    //---------------------------- Métodos privados ----------------------------------
-
+    /** Este método obtiene la tabla de base de datos correspondiente a las cuentas.
+     *
+     * @return Tabla "account".
+     */
     private AccountDao getAccountDao() {
         return database.accountDao();
     }
 
+    /** Este método obtiene la tabla de base de datos correspondiente a los roles de las cuentas.
+     *
+     * @return Tabla "user".
+     */
     private UserDao getUserDao() {
         return database.userDao();
     }
 
+    /** Este método obtiene la tabla de base de datos correspondiente a los animales.
+     *
+     * @return Tabla "pet".
+     */
     private PetsDao getPetsDao() {
         return database.petsDao();
     }
 
+    /** Este método obtiene la tabla de base de datos correspondiente a las masotas de los
+     * usuarios.
+     *
+     * @return Tabla "userPet".
+     */
     private UsersPetDao getUserPetDao() {
         return database.usersPetDao();
     }
 
+    /** Este método carga desde la carpeta Assets del proyecto el json con la información de la
+     * aplicación.
+     *
+     * @return La información que contiene el json.
+     */
     private String loadJSONFromAsset() {
         String json = null;
 
@@ -235,7 +263,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            json = new String(buffer, "UTF-8");
+            json = new String(buffer, StandardCharsets.UTF_8);
 
         } catch (IOException error) {
             Log.e("AccountsRepository", "error: " + error);
@@ -244,8 +272,13 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         return json;
     }
 
+    /** Este método divide la información que contiene el json y pasa la que indicamos a las
+     * tablas de la base de datos correspondiente.
+     *
+     * @param json Archivo JSON que contiene la información de la aplicación.
+     * @return boolean que nos indica si se ha cargado la información correctamente o no.
+     */
     private boolean loadZongetFromJSON(String json) {
-
 
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
@@ -257,7 +290,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
             if (jsonArray.length() > 0) {
 
-                final List<AccountItem> accounts = Arrays.asList(gson.fromJson(jsonArray.toString(), AccountItem[].class));
+                final AccountItem[] accounts = gson.fromJson(jsonArray.toString(), AccountItem[].class);
 
                 for (AccountItem account : accounts) {
 
@@ -280,30 +313,37 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
                     }
                 }
-
                 return true;
             }
 
         } catch (JSONException error) {
             Log.e("AccountsRepository", "error: " + error);
         }
-
         return false;
     }
 
+    /** Este método chequea si los datos pasados por parámetos concuerdan con alguna cuenta
+     * existente en la base de datos o no.
+     *
+     * @param accountName Nombre de la cuenta introducida.
+     * @param accountPassword Contraseña de la cuenta introducida.
+     * @return boolean que indica si los datos corrsponden a una cuenta existente o no.
+     */
     private boolean checkAccount(String accountName, String accountPassword) {
-
         AccountBDItem account = getAccountDao().findAccount(accountName, accountPassword);
 
-        if (account != null) {
-            return true;
-        }
+        return account != null;
 
-        return false;
     }
 
+    /** Este método obtiene un cuenta de la base de datos a partir de los datos pasados por
+     * parámetro.
+     *
+     * @param accountName Nombre de la cuenta introducida.
+     * @param accountPassword Contraseña de la cuenta introducida.
+     * @return La cuenta del usuario que ha iniciado sesión.
+     */
     private AccountItem getAccountchecked(String accountName, String accountPassword) {
-
         AccountBDItem accountBDItem = getAccountDao().findAccount(accountName, accountPassword);
         UserItem userItem = getUserDao().loadUser(accountBDItem.getId());
 
@@ -313,6 +353,11 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         return account;
     }
 
+    /** Este método obtiene la lista de las mascotas de un usuario.
+     *
+     * @param userId Identificador de la cuenta de usuario.
+     * @return Lista de mascotas del usuario.
+     */
     private List<UserPetItem> accountGetPets(int userId) {
         List<UserPetItem> pets = new ArrayList<>();
         List<PetsItem> petsItems = getPetsDao().loadPets(userId);
@@ -325,10 +370,14 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 pets.add(userPetItem);
             }
         }
-
         return pets;
     }
 
+    /** Este método obtiene la lista usuarios según su DNI o nombre.
+     *
+     * @param nameOrDni Nombre o DNI del usuario.
+     * @return Lista de usuarios que cumplen la característica pasada por parámetro.
+     */
     private List<AccountItem> getUsers(String nameOrDni) {
         List<AccountItem> accountItems = new ArrayList<>();
         List<AccountBDItem> accountBDItems = new ArrayList<>();
@@ -344,15 +393,17 @@ public class AccountsRepository implements RepositoryContract.Accounts {
         return accountItems;
     }
 
+    /** Este método chequea si los datos pasados por parámetro de una nueva ya existen o no.
+     *
+     * @param accountDni DNI del usuario de la nueva cuenta.
+     * @param accountEmail Email del usuario de la nueva cuenta.
+     * @return boolean que indica si ya existe o no una cuenta con los mismos datos.
+     */
     private boolean checkNewAccountData(String accountDni, String accountEmail) {
 
         AccountBDItem account = getAccountDao().checkAccountExist(accountDni, accountEmail);
 
-        if (account == null) {
-            return false;
-        }
-
-        return true;
+        return account != null;
     }
 
 }

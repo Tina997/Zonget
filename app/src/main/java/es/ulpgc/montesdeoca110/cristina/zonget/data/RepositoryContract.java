@@ -371,6 +371,24 @@ public interface RepositoryContract {
          */
         void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
+        interface GetQueriesListSizeCallback {
+            /** Este método se encarga de actualizar los contadores del viewmodel con el tamaño de
+             * las listas.
+             *
+             * @param pendingQueriesListSize Tamaño de la lista de consultas pendientes.
+             * @param finishedQueriesListSize Tamaño de la lista de consultas finalizadas.
+             */
+            void setQueriesListSize(int pendingQueriesListSize, int finishedQueriesListSize);
+        }
+
+        /** Este método obtiene el tamaño de las listas de consultas pendientes y finalizadas de un
+         *  usuario.
+         *
+         * @param userId Identificador de la cuenta del usuario.
+         * @param callback Que posteriormete actualizará la información de la activity.
+         */
+        void getQueriesListSize(int userId, RepositoryContract.Queries.GetQueriesListSizeCallback callback);
+
         interface GetPendingQueriesListCallback {
             /** Este método se encarga de actualizar la lista de consultas pendientes con la pasada
              * por parámetro.

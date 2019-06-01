@@ -1,6 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
+import android.util.Log;
+import android.view.View;
+
 import java.lang.ref.WeakReference;
+
+import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignInToMenuState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Presenter {
 
@@ -39,6 +45,32 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
   }
 
   @Override
+  public void fetchUserQueriesMenuData() {
+    SignInToMenuState state = router.getSignInToMenuState();
+
+    model.fetchUserQueriesMenuData(state.account.getId(), new RepositoryContract.Queries.GetQueriesListSizeCallback() {
+      @Override
+      public void setQueriesListSize(int pendingQueriesListSize, int finishedQueriesListSize) {
+        if(pendingQueriesListSize > 0){
+          viewModel.penndingQueriesCardViewVisibility = View.VISIBLE;
+          viewModel.pendingQueriesCounter = pendingQueriesListSize;
+        }else{
+          viewModel.penndingQueriesCardViewVisibility = View.GONE;
+        }
+
+        if(finishedQueriesListSize > 0){
+          viewModel.finishedQueriesCardViewVisibility = View.VISIBLE;
+          viewModel.finishedQueriesCounter = finishedQueriesListSize;
+        }else{
+          viewModel.finishedQueriesCardViewVisibility = View.GONE;
+        }
+
+        view.get().displayUserQueriesMenuData(viewModel);
+      }
+    });
+  }
+
+  @Override
   public void newQueryButtonPressed() {
     router.passDataToUserNewQueryScreen();
     router.navigateToUserNewQueryScreen();
@@ -55,11 +87,5 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
     router.passDataToUserFinishedQueriesListScreen();
     router.navigateToUserFinishedQueriesScreen();
   }
-
-  @Override
-  public void fetchUserQueriesMenuData() {
-
-  }
-
 
 }
