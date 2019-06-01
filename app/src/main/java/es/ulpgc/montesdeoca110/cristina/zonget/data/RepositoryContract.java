@@ -174,7 +174,9 @@ public interface RepositoryContract {
         void getUserPetsList(int userId, RepositoryContract.Accounts.GetUserPetsListCallback callback);
 
         interface UpdateUserPetCallback {
-            //TODO Incluir método en la interfaz
+            /**
+             * Metodo que cambia la vista tras haber editado la mascota
+             */
             void onUserPetUpdate();
         }
 
@@ -186,7 +188,10 @@ public interface RepositoryContract {
         void updatePet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateUserPetCallback callback);
 
         interface DeleteUserPetCallback{
-            //TODO Incluir método en la interfaz
+            /**
+             * Metodo que cambia la vista tras haber borrado la mascota
+             */
+            void onUserPetDelete();
         }
 
         /** Este método elimina la mascota de un usuario.
@@ -197,7 +202,10 @@ public interface RepositoryContract {
         void deleteUserPet(UserPetItem pet, RepositoryContract.Accounts.DeleteUserPetCallback deleteUserPetCallback);
 
         interface InsertNewUserPetCallback{
-            //TODO Incluir método en la interfaz
+            /**
+             * Metodo que cambia de vista tras añadir una nueva mascota en la lista
+             */
+            void onUserPetInsert();
         }
 
         /** Este método inserta una nueva máscota a un usuario.

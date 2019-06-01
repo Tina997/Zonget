@@ -168,6 +168,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                     getPetsDao().insertPet(petsItem);
                     UserPetBDItem userPetBDItem = new UserPetBDItem(petsItem.getId(),name,species,chipNum,birthday,petsItem.getId());
                     getUserPetDao().insertUserPet(userPetBDItem);
+                    callback.onUserPetInsert();
 
                 }
             }
@@ -182,6 +183,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                 if(deleteUserPetCallback != null){
                     UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(),pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getPetId());
                     getUserPetDao().deleteCategory(userPetBDItem);
+                    deleteUserPetCallback.onUserPetDelete();
 
                 }
             }
