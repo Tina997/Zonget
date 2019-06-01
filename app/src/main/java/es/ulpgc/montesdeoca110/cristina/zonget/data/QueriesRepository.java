@@ -1,11 +1,11 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryData;
@@ -19,11 +19,14 @@ import es.ulpgc.montesdeoca110.cristina.zonget.database.ZongetDatabase;
 
 public class QueriesRepository implements RepositoryContract.Queries {
 
-    public static final String DB_FILE = "zonget.db";
+    // ============================= Variables globales ===========================================
+
+    @SuppressLint("StaticFieldLeak")
     private static QueriesRepository INSTANCE;
 
+    private static final String DB_FILE = "zonget.db";
+
     private ZongetDatabase database;
-    private Context context;
 
     public static QueriesRepository getInstance(Context context) {
         if (INSTANCE == null) {
@@ -33,10 +36,11 @@ public class QueriesRepository implements RepositoryContract.Queries {
     }
 
     private QueriesRepository(Context context) {
-        this.context = context;
-
         database = Room.databaseBuilder(context, ZongetDatabase.class, DB_FILE).build();
     }
+
+    // ==================================== Métodos ===============================================
+
 
     @Override
     public void setNewQuery(final int senderUserId, final String title, final String content, final SetNewQueryCallback callback) {
@@ -87,24 +91,47 @@ public class QueriesRepository implements RepositoryContract.Queries {
         });
     }
 
-    //---------------------------- Métodos privados ----------------------------------
+    // ================================= Métodos privados =========================================
 
+    /** Este método obtiene la tabla de base de datos correspondiente a las consultas.
+     *
+     * @return Tabla "query".
+     */
     private QueriesDao getQueriesDao(){
         return database.queriesDao();
     }
 
+    /** Este método obtiene la tabla de base de datos correspondiente al estado de las consultas.
+     *
+     * @return Tabla "queryStatus".
+     */
     private QueryStatusDao getQueryStatusDao(){
         return database.queryStatusDao();
     }
 
+    /** Este método obtiene la tabla de base de datos correspondiente a las respuestas de las
+     * consultas.
+     *
+     * @return Tabla "queryAnswer".
+     */
     private QueryAnswersDao getQueriesAnswerDao(){
         return database.queryAnswersDao();
     }
 
+    /** Este método obtiene todas las consultas de una determinada cuenta.
+     *
+     * @param userId Identificador de la cuenta.
+     * @return Lista de consultas.
+     */
     private List<QueryItem> loadQueries(int userId){
         return getQueriesDao().loadQueries(userId);
     }
 
+    /** Este método obtiene todas las consultas pendientes de un usuario.
+     *
+     * @param userId Identificador de la cuenta.
+     * @return Lista de consultas pendientes de respuesta.
+     */
     private List<Query> loadPendingQueries(int userId){
         List<Query> pendingQueriesList =  new ArrayList<>();
 
@@ -128,6 +155,11 @@ public class QueriesRepository implements RepositoryContract.Queries {
         return pendingQueriesList;
     }
 
+    /** Este método obtiene todas las consultas finalizadas de un usuario.
+     *
+     * @param userId Identificador de la cuenta.
+     * @return Lista de consultas con respuesta.
+     */
     private List<Query> loadFinishedQueries(int userId){
         List<Query> finishedQueriesList =  new ArrayList<>();
 
@@ -149,8 +181,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
                 finishedQueriesList.add(query);
             }
         }
-
         return finishedQueriesList;
-
     }
+
 }
