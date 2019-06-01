@@ -34,19 +34,28 @@ interface AddPetForAdoptionContract {
      */
     void injectRouter(Router router);
 
+      /**
+       *
+       */
     void fetchData();
 
+    /**
+     * Metodo que guarda el objeto a añadir en la lista
+     */
     void onAcceptButtonClicked();
     /**
      * Metodo que devuelve el tema actual que esta siendo usado en ese momento
      * @return String con el nombre del tema que esta siendo usado
      */
     String getActualThemeName();
-
+    /**
+     * Metodo llamado al pulsar el boton back el cual llama al router para cambiar de vista
+     */
     void onBackButtonPressed();
   }
 
   interface Model {
+    //TODO Metodo inutilizado
     String fetchData();
   }
 

@@ -17,17 +17,6 @@ public class AddLostPetRouter implements AddLostPetContract.Router {
     this.mediator = mediator;
   }
 
-  @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, AddLostPetActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
-  public void passDataToNextScreen(AddLostPetState state) {
-    //mediator.setAddLostPetState(state);
-  }
 
   @Override
   public AddLostPetState getDataFromPreviousScreen() {

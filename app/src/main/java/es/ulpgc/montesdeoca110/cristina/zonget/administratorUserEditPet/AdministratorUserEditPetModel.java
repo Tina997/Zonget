@@ -13,10 +13,6 @@ public class AdministratorUserEditPetModel implements AdministratorUserEditPetCo
     this.repository = repository;
   }
 
-  @Override
-  public String fetchData() {
-    return null;
-  }
 
   @Override
   public void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateUserPetCallback callback) {

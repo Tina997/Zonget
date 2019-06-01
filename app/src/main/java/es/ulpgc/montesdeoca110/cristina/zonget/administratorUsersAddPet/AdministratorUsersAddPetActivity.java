@@ -78,12 +78,6 @@ public class AdministratorUsersAddPetActivity
     return super.onCreateOptionsMenu(menu);
   }
 
-  @Override
-  public void displayData(AdministratorUsersAddPetViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
-
-    // deal with the data
-  }
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {

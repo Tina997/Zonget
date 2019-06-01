@@ -12,10 +12,6 @@ public class AdministratorUsersAddPetModel implements AdministratorUsersAddPetCo
     this.repository = repository;
   }
 
-  @Override
-  public String fetchData() {
-    return null;
-  }
 
   @Override
   public void insertNewPet(int userID, String name, String species, String breed, String chipNum, String birthday, final RepositoryContract.Accounts.InsertNewUserPetCallback callback) {

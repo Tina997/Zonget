@@ -33,18 +33,6 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchInboxData()");
-
-        // set passed state
-        AdministratorSearchUsersState state = router.getDataFromPreviousScreen();
-
-        // update the view
-        view.get().displayData(viewModel);
-
-    }
-
-    @Override
     public void searchButtonClicked(String nameOrDni) {
         SearchToListUserState state = new SearchToListUserState();
         state.nameOrDni = nameOrDni;
