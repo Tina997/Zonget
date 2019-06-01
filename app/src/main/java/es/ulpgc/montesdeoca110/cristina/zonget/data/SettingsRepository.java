@@ -24,10 +24,10 @@ public class SettingsRepository implements RepositoryContract.Settings {
   private static SettingsRepository INSTANCE;
   private Context context;
 
-  public static final String JSON_FILE = "zonget.json";
-  public static final String JSON_THEME = "theme";
-  public static final String JSON_ADMINISTRATOR = "administratorButtonsMenu";
-  public static final String JSON_USER = "userButtonsMenu";
+  private static final String JSON_FILE = "zonget.json";
+  private static final String JSON_THEME = "theme";
+  private static final String JSON_ADMINISTRATOR = "administratorButtonsMenu";
+  private static final String JSON_USER = "userButtonsMenu";
 
   // --- Listas
   private List<ChangeThemeItem> themeList;
