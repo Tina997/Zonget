@@ -85,13 +85,6 @@ public class AdministratorUserEditPetActivity
         this.presenter = presenter;
     }
 
-    @Override
-    public void displayData(AdministratorUserEditPetViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
-
-        // deal with the data
-    }
-
     //Funcionalidad botones barra tareas
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

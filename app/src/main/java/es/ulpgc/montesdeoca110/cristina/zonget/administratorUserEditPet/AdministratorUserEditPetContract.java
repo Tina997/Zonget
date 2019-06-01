@@ -15,7 +15,6 @@ interface AdministratorUserEditPetContract {
      */
     void injectPresenter(Presenter presenter);
 
-    void displayData(AdministratorUserEditPetViewModel viewModel);
   }
 
   interface Presenter {
@@ -38,6 +37,10 @@ interface AdministratorUserEditPetContract {
      */
     void injectRouter(Router router);
 
+    /**
+     * Metodo que le pasa al modelo una mascota para ser añadida a la lista de mascotas del cliente
+     * @param userPetItem: Mascota que sera añadida
+     */
     void insertNewPet(UserPetItem userPetItem);
     /**
      * Metodo que devuelve el tema actual que esta siendo usado en ese momento
@@ -45,18 +48,32 @@ interface AdministratorUserEditPetContract {
      */
     String getActualThemeName();
 
+    /**
+     * Metodo que llama al router para regresar a la pantalla anterior
+     */
     void onBackButtonPressed();
 
+    /**
+     * Metodo que se utiliza obtiene la mascota a editar para rellenar la informacion de la vista
+     * @return la mascota que se va a editar
+     */
     UserPetItem fetchPetData();
   }
 
   interface Model {
-    String fetchData();
-
+    /**
+     * Metodo que la pasa al repositorio la nueva mascota para cambiar la que ya se encuentra en la BD con ese ID por la nueva
+     * @param userPetItem: Nueva mascota a añadir
+     * @param updateNewUserPetCallback: Callback que realizara las operaciones
+     */
     void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateNewUserPetCallback updateNewUserPetCallback);
   }
 
   interface Router {
+
+    /**
+    * Metodo que cambia la vista mostrada por la vista de la lista de mascotas
+    */
     void navigateToNextScreen();
 
     /**
@@ -65,6 +82,10 @@ interface AdministratorUserEditPetContract {
      */
     void passDataToNextScreen(AdministratorUserEditPetState state);
 
+      /**
+       * Metodo que obtiene desde el mediator la mascota que se esta editando
+       * @return : la mascota que se esta editando
+       */
     UserPetItem getDataFromPreviousScreen();
 
     /**
@@ -73,6 +94,9 @@ interface AdministratorUserEditPetContract {
      */
     String getActualThemeName();
 
+    /**
+     * Metodo que cambia la vista por la vista anterior
+     */
     void onBackButtonPressed();
   }
 }

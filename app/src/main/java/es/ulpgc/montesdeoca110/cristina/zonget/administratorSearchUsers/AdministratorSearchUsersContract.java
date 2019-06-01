@@ -36,8 +36,10 @@ public interface AdministratorSearchUsersContract {
          */
         void injectRouter(Router router);
 
-        void fetchData();
-
+        /**
+         * Metodo que llama al modelo el parametro a buscar en la lista
+         * @param nameOrDni: parametro de la busqueda del usuario
+         */
         void searchButtonClicked(String nameOrDni);
         /**
          * Metodo que devuelve el tema actual que esta siendo usado en ese momento
@@ -45,23 +47,26 @@ public interface AdministratorSearchUsersContract {
          */
         String getActualThemeName();
 
+        /**
+         * Metodo que llama al router para realizar el cambio de vista a la anterior
+         */
         void onBackButtonPressed();
     }
 
     interface Model {
-        String fetchData();
     }
 
     interface Router {
+        /**
+         * Metodo que cambia la vista por la de la lista de usuarios que cumplan el requisito
+         */
         void navigateToNextScreen();
 
         /**
-         * Metodo que edita el estado de la vista almacenado en el mediador
+         * Metodo que edita el estado searchToListUser almacenado en el mediador
          * @param state: El estado de la vista en cuestion
          */
         void passDataToNextScreen(SearchToListUserState state);
-
-        AdministratorSearchUsersState getDataFromPreviousScreen();
 
         /**
          * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
@@ -69,6 +74,9 @@ public interface AdministratorSearchUsersContract {
          */
         String getActualThemeName();
 
+        /**
+         * Metodo que cambia la vista a la del menu principal del administrador
+         */
         void onBackButtonPressed();
     }
 }

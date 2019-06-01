@@ -38,16 +38,6 @@ public class AdministratorUsersAddPetPresenter
     this.router = router;
   }
 
-  @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchPetsForAdoptionListData()");
-
-    // set passed state
-
-    // update the view
-    view.get().displayData(viewModel);
-
-  }
 
   @Override
   public void insertNewPet(String name, String species, String breed, String chipNum, String birthday) {

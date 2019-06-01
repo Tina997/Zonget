@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
@@ -42,20 +43,20 @@ public class AdministratorUsersPetsListPresenter implements AdministratorUsersPe
         // Log.e(TAG, "fetchInboxData()");
 
         // set passed state
+
         AccountItem item = router.getDataFromPreviousScreen().user;
         if(item!=null) {
             viewModel.user = item;
+            model.fetchPetsData(viewModel.user, new RepositoryContract.Accounts.GetUserPetsListCallback() {
+                @Override
+                public void setUserPetsList(List<UserPetItem> userPets) {
+                    viewModel.pets = userPets;
+                    view.get().displayUserPetsData(viewModel);
+                }
+            });
+        }else {
+            viewModel.pets = new ArrayList<UserPetItem>();
         }
-        model.fetchPetsData(viewModel.user, new RepositoryContract.Accounts.GetUserPetsListCallback() {
-            @Override
-            public void setUserPetsList(List<UserPetItem> userPets) {
-                //Log.e(TAG, userPets.get(0).getName());
-                viewModel.pets = userPets;
-                Log.e(TAG, viewModel.pets.get(0).getName());
-                view.get().displayUserPetsData(viewModel);
-            }
-        });
-
     }
 
     @Override

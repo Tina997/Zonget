@@ -18,7 +18,6 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
         this.mediator = mediator;
     }
 
-    //Cambio de vista
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
@@ -32,11 +31,11 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
         mediator.setSearchToListUserState(state);
     }
     //TODO metodo a limpiar
-    @Override
+    /*@Override
     public AdministratorSearchUsersState getDataFromPreviousScreen() {
         AdministratorSearchUsersState state = mediator.getadminSearchUsersState();
         return state;
-    }
+    }*/
 
     @Override
     public String getActualThemeName() {

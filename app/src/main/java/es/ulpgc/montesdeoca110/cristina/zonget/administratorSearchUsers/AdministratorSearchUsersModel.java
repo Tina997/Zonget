@@ -8,9 +8,4 @@ public class AdministratorSearchUsersModel implements AdministratorSearchUsersCo
 
   }
 
-  //TODO metodo a limpiar
-  @Override
-  public String fetchData() {
-    return null;
-  }
 }
