@@ -57,8 +57,8 @@ public class UserQueriesMenuActivity extends AppCompatActivity
     pendingQueriesCardView = findViewById(R.id.user_queries_menu_pending_queries_counter_cardView);
     pendingQueriesCounter = findViewById(R.id.user_queries_menu_pending_queries_counter_textView);
     finishedQueriesButton = findViewById(R.id.user_queries_menu_finished_queries_linear_layout);
-    pendingQueriesCardView = findViewById(R.id.user_queries_menu_finished_queries_counter_cardView);
-    pendingQueriesCounter = findViewById(R.id.user_queries_menu_finished_queries_counter_textView);
+    finishedQueriesCardView = findViewById(R.id.user_queries_menu_finished_queries_counter_cardView);
+    finishedQueriesCounter = findViewById(R.id.user_queries_menu_finished_queries_counter_textView);
 
     //Listeners
     newQueryButton.setOnClickListener(new View.OnClickListener() {
@@ -96,8 +96,16 @@ public class UserQueriesMenuActivity extends AppCompatActivity
   }
 
   @Override
-  public void displayUserQueriesMenuData(UserQueriesMenuViewModel viewModel) {
-
+  public void displayUserQueriesMenuData(final UserQueriesMenuViewModel viewModel) {
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        pendingQueriesCardView.setVisibility(viewModel.penndingQueriesCardViewVisibility);
+        pendingQueriesCounter.setText(String.valueOf(viewModel.pendingQueriesCounter));
+        finishedQueriesCardView.setVisibility(viewModel.finishedQueriesCardViewVisibility);
+        finishedQueriesCounter.setText(String.valueOf(viewModel.finishedQueriesCounter));
+      }
+    });
   }
 
   @Override
