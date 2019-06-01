@@ -99,6 +99,12 @@ public interface RepositoryContract {
             void setUsers(List<AccountItem> users);
         }
 
+        interface GetUserNameCallback {
+            void getUserName(String userName);
+        }
+
+        void getUserName(int userId, AccountsRepository.GetUserNameCallback callback);
+
     }
     interface LostPets{
 

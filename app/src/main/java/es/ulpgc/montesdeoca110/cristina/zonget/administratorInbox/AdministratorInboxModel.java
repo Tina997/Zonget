@@ -26,4 +26,10 @@ public class AdministratorInboxModel implements AdministratorInboxContract.Model
     queriesRepository.getAdministratorQueriesList(callback);
   }
 
+  @Override
+  public void getUserName(int userId, RepositoryContract.Accounts.GetUserNameCallback callback){
+    accountsRepository.getUserName(userId, callback);
+  }
+
+
 }

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
@@ -54,7 +55,7 @@ public class AdministratorInboxActivity
     listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        QueryItem item = (QueryItem) v.getTag();
+        InboxItem item = (InboxItem) v.getTag();
         presenter.selectQueryItemState(item);
       }
     });

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 import java.util.ArrayList;
@@ -15,30 +15,30 @@ import java.util.List;
 public class AdministratorInboxListAdapter
         extends RecyclerView.Adapter<AdministratorInboxListAdapter.ViewHolder> {
 
-  private List<QueryItem> queryList;
+  private List<InboxItem> inboxItemList;
   private final View.OnClickListener clickListener;
 
   public AdministratorInboxListAdapter( View.OnClickListener clickListener) {
-    this.queryList = new ArrayList<>();
+    this.inboxItemList = new ArrayList<>();
     this.clickListener = clickListener;
   }
 
-  public void setItems(List<QueryItem> items) {
-    queryList = items;
+  public void setItems(List<InboxItem> items) {
+    inboxItemList = items;
     notifyDataSetChanged();
   }
 
-  public void addItem(QueryItem item) {
-    queryList.add(item);
+  public void addItem(InboxItem item) {
+    inboxItemList.add(item);
   }
 
-  public void addItems(List<QueryItem> items) {
-    queryList.addAll(items);
+  public void addItems(List<InboxItem> items) {
+    inboxItemList.addAll(items);
   }
 
   @Override
   public int getItemCount() {
-    return queryList.size();
+    return inboxItemList.size();
   }
 
   @Override
@@ -50,11 +50,11 @@ public class AdministratorInboxListAdapter
 
   @Override
   public void onBindViewHolder(ViewHolder holder, int position) {
-    holder.itemView.setTag(queryList.get(position));
+    holder.itemView.setTag(inboxItemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    //holder.userID.setText(queryItemList.get(position).sender);
-    holder.title.setText(queryList.get(position).title);
+    holder.userID.setText(inboxItemList.get(position).userName);
+    holder.title.setText(inboxItemList.get(position).queryItem.title);
   }
 
 

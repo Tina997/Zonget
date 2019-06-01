@@ -1,10 +1,12 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdministratorInboxPresenter implements AdministratorInboxContract.Presenter {
@@ -39,13 +41,25 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
   @Override
   public void fetchInboxData() {
 
-    //set passed state
+    final List<InboxItem> inboxItems = new ArrayList<>();
 
     //llamar al modelo
     model.fetchAdministratorQueriesListData(new RepositoryContract.Queries.GetAdministratorQueriesListCallback() {
       @Override
       public void setAdministratorQueriesList(List<QueryItem> administratorQueriesList) {
-        viewModel.inboxList = administratorQueriesList;
+        final List<QueryItem> queryItems = administratorQueriesList;
+        for(int i = 0; i< queryItems.size(); i++){
+          final QueryItem queryItem = queryItems.get(i);
+          String userName = null;
+          model.getUserName(queryItem.userId, new RepositoryContract.Accounts.GetUserNameCallback() {
+            @Override
+            public void getUserName(String userName) {
+              userName = userName;
+              inboxItems.add(new InboxItem(userName, queryItem));
+            }
+          });
+        }
+        viewModel.inboxList = inboxItems;
         // update the view
         view.get().displayData(viewModel);
       }
@@ -63,8 +77,9 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
   }
 
   @Override
-  public void selectQueryItemState(QueryItem item) {
-    router.passDataToQueryDetailScreen(item);
+  public void selectQueryItemState(InboxItem item) {
+    QueryItem queryItem = item.queryItem;
+    router.passDataToQueryDetailScreen(queryItem);
     router.navigateToAdministratorQueryDetailScreen();
   }
 

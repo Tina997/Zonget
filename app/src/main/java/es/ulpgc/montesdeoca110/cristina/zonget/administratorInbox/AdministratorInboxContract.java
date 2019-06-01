@@ -2,6 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -40,7 +41,7 @@ public interface AdministratorInboxContract {
 
     void fetchInboxData();
 
-    void selectQueryItemState(QueryItem item);
+    void selectQueryItemState(InboxItem item);
 
     /**
      * Metodo que devuelve el tema actual que esta siendo usado en ese momento
@@ -54,6 +55,8 @@ public interface AdministratorInboxContract {
   interface Model {
     void fetchAdministratorQueriesListData(RepositoryContract.Queries.
                            GetAdministratorQueriesListCallback callback);
+
+    void getUserName(int userId, RepositoryContract.Accounts.GetUserNameCallback callback);
   }
 
   interface Router {

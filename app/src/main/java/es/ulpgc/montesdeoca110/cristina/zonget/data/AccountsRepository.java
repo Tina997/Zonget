@@ -144,6 +144,19 @@ public class AccountsRepository implements RepositoryContract.Accounts {
 
     }
 
+    @Override
+    public void getUserName(final int id, final GetUserNameCallback callback){
+        AsyncTask.execute(new Runnable() {
+          @Override
+          public void run() {
+            if(callback != null){
+              String userName = getAccountDao().loadAccount(id).getName();
+              callback.getUserName(userName);
+            }
+          }
+        });
+    }
+
     //----------------------------Métodos de mascotas---------------------------------
 
     @Override
