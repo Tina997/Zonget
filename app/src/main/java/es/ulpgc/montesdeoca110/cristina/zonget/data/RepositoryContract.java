@@ -27,7 +27,7 @@ public interface RepositoryContract {
          *
          * @param callback Que realizará las operaciones oportunas tras cargar los datos de la aplicación.
          */
-        void loadZonget(SettingsRepository.FecthZongetDataCallback callback);
+        void loadZonget(RepositoryContract.Settings.FecthZongetDataCallback callback);
 
         interface GetChangeThemeListCallback {
             /** Este método se encarga de actualizar la lista de temas del viewmodel con la lista pasada por parámetro.
@@ -41,7 +41,7 @@ public interface RepositoryContract {
          *
          * @param callback Que posteriormente actualiza la lista de los temas en la activity.
          */
-        void getChangeThemeList(SettingsRepository.GetChangeThemeListCallback callback);
+        void getChangeThemeList(RepositoryContract.Settings.GetChangeThemeListCallback callback);
 
         // --------------------------------------------- Administrator -----------------------------------------------------
 
@@ -57,7 +57,7 @@ public interface RepositoryContract {
          *
          * @param callback Que posteriormente actualiza la lista de los botones en la activity.
          */
-        void getAdministratorMenuButtonsList(SettingsRepository.GetAdministratorMenuButtonsListCallback callback);
+        void getAdministratorMenuButtonsList(RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
 
         // ------------------------------------------------- User ---------------------------------------------------------
 
@@ -73,7 +73,7 @@ public interface RepositoryContract {
          *
          * @param callback Que posteriormente actualiza la lista de los botones en la activity.
          */
-        void getUserMenuButtonsList(SettingsRepository.GetUserMenuButtonsListCallback callback);
+        void getUserMenuButtonsList(RepositoryContract.Settings.GetUserMenuButtonsListCallback callback);
 
     }
 
@@ -94,7 +94,7 @@ public interface RepositoryContract {
          * @param clearFirst Indica si queremos eliminar todas las tablas de datos asociadas a la base de datos de la aplicación.
          * @param callback Que realizará las operaciones oportunas tras cargar los datos de la aplicación.
          */
-        void loadZonget(boolean clearFirst, AccountsRepository.FecthZongetDataCallback callback);
+        void loadZonget(boolean clearFirst, RepositoryContract.Accounts.FecthZongetDataCallback callback);
 
         interface GetCheckAccountExistCallback {
             /** Este método se encarga de actualizar la información con los datos de la cuenta que ha iniciado sesión en la aplicación, si existe.
@@ -157,7 +157,7 @@ public interface RepositoryContract {
          * @param userId Identificador del usuario.
          * @param callback Que posteriormete actualizará la información en la activity.
          */
-        void getUserPetsList(int userId, AccountsRepository.GetUserPetsListCallback callback);
+        void getUserPetsList(int userId, RepositoryContract.Accounts.GetUserPetsListCallback callback);
 
         interface UpdateUserPetCallback {
             //TODO Incluir método en la interfaz
@@ -168,7 +168,7 @@ public interface RepositoryContract {
          * @param userPetItem Mascota que de desea actualizar.
          * @param callback
          */
-        void updatePet(UserPetItem userPetItem, UpdateUserPetCallback callback);
+        void updatePet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateUserPetCallback callback);
 
         interface DeleteUserPetCallback{
             //TODO Incluir método en la interfaz
@@ -179,7 +179,7 @@ public interface RepositoryContract {
          * @param pet Mascota que se quiere eliminar.
          * @param deleteUserPetCallback
          */
-        void deleteUserPet(UserPetItem pet, DeleteUserPetCallback deleteUserPetCallback);
+        void deleteUserPet(UserPetItem pet, RepositoryContract.Accounts.DeleteUserPetCallback deleteUserPetCallback);
 
         interface InsertNewUserPetCallback{
             //TODO Incluir método en la interfaz
@@ -195,7 +195,7 @@ public interface RepositoryContract {
          * @param birthday Fecha de nacimiento de la mascota.
          * @param callback
          */
-        void insertNewPet(int userID, String name, String species, String breed, String chipNum, String birthday, InsertNewUserPetCallback callback);
+        void insertNewPet(int userID, String name, String species, String breed, String chipNum, String birthday, RepositoryContract.Accounts.InsertNewUserPetCallback callback);
 
 
         interface GetUserListCallback{
@@ -211,63 +211,159 @@ public interface RepositoryContract {
          * @param nameOrDni Nombre o DNI del usuario que desea buscar.
          * @param callback Que posteriormete actualizará la información en la activity.
          */
-        void getUserList(String nameOrDni, AccountsRepository.GetUserListCallback callback);
+        void getUserList(String nameOrDni, RepositoryContract.Accounts.GetUserListCallback callback);
 
     }
+
+    //=====================================================================================================================
 
     interface LostPets{
 
         interface FetchLostPetsDataCallBack{
+            /** Este método realizará las operaciones especificadas una vez cargada la información de la aplicación.
+             *
+             * @param error Especifica si la carga de datos se ha realizado correctamente o no.
+             */
             void onLostPetsDataFetched(boolean error);
         }
+
+        /** Este método se encarga de cargar los datos referentes a los animales perdidos de la aplicación.
+         *
+         * @param callback Que realizará las operaciones oportunas tras cargar los datos de la aplicación.
+         */
+        void loadLostPets(RepositoryContract.LostPets.FetchLostPetsDataCallBack callback);
+
         interface GetLostPetsListCallback{
+            /** Este método se encarga de actualizar la lista de animales perdidos del viewmodel con la lista pasada por parámetro.
+             *
+             * @param lostPets Lista de animales perdidos.
+             */
             void setLostPetsList(List<LostPetItem> lostPets);
         }
-        interface GetLostPetsCallback{
+
+        /** Este método obtiene una lista de animales perdidos.
+         *
+         * @param callback Que posteriormete actualizará la información en la activity.
+         */
+        void getLostPetsList(RepositoryContract.LostPets.GetLostPetsListCallback callback);
+
+        interface GetLostPetCallback {
+            /** Este método se encarga de actualizar el animal perdido del viewmodel con el pasado por parámetro.
+             *
+             * @param lostPet Animal perdido.
+             */
             void setLostPets(LostPetItem lostPet);
         }
-        void loadLostPets(LostPetsRepository.FetchLostPetsDataCallBack callback);
-        void getLostPetsList(LostPetsRepository.GetLostPetsListCallback callback);
 
-        void getLostPets(int id, LostPetsRepository.GetLostPetsCallback callback);
+        /** Este método obtiene la información relativa al identificador de animal perdido pasado por parámetro.
+         *
+         * @param id Identificador del animal perdido.
+         * @param callback Que posteriormete actualizará la información en la activity.
+         */
+        void getLostPet(int id, RepositoryContract.LostPets.GetLostPetCallback callback);
+
     }
+
+    //=====================================================================================================================
 
     interface PetsForAdoption{
 
         interface FetchPetsForAdoptionDataCallBack{
+            /** Este método realizará las operaciones especificadas una vez cargada la información de la aplicación.
+             *
+             * @param error Especifica si la carga de datos se ha realizado correctamente o no.
+             */
             void onPetsForAdoptionDataFetched(boolean error);
         }
+
+        /** Este método se encarga de cargar los datos referentes a los animales para adoptar de la aplicación.
+         *
+         * @param callback Que realizará las operaciones oportunas tras cargar los datos de la aplicación.
+         */
+        void loadCatalog(RepositoryContract.PetsForAdoption.FetchPetsForAdoptionDataCallBack callback);
+
         interface GetPetsForAdoptionListCallback{
+            /** Este método se encarga de actualizar la lista de animales perdidos del viewmodel con la lista pasada por parámetro.
+             *
+             * @param items Lista de animales para adoptar.
+             */
             void setPetsForAdoptionList(List<PetForAdoptionItem> items);
         }
-        interface GetPetsForAdoptionCallback{
+
+        /** Este método obtiene una lista de animales para adoptar.
+         *
+         * @param callback Que posteriormete actualizará la información en la activity.
+         */
+        void getPetsForAdoptionList(RepositoryContract.PetsForAdoption.GetPetsForAdoptionListCallback callback);
+
+        interface GetPetForAdoptionCallback {
+            /** Este método se encarga de actualizar el animal para adoptar del viewmodel con el pasado por parámetro.
+             *
+             * @param petForAdoption Animal para adoptar
+             */
             void setPetsForAdoption(PetForAdoptionItem petForAdoption);
         }
-        void loadCatalog(PetsForAdoptionRepository.FetchPetsForAdoptionDataCallBack callback);
-        void getPetsForAdoptionList(PetsForAdoptionRepository.GetPetsForAdoptionListCallback callback);
 
-        void getPetsForAdoption(int id, PetsForAdoptionRepository.GetPetsForAdoptionCallback callback);
+        /** Este método obtiene la información relativa al identificador de animal para adoptar pasado por parámetro.
+         *
+         * @param id Identificador del animal para adoptar.
+         * @param callback Que posteriormete actualizará la información en la activity.
+         */
+        void getPetForAdoption(int id, RepositoryContract.PetsForAdoption.GetPetForAdoptionCallback callback);
+
     }
+
+    //=====================================================================================================================
 
     interface Queries {
 
         interface SetNewQueryCallback {
+            /** Este método se encarga de informar al usuario de si ha habido algún problema al insertar o no la consulta en la base de datos
+             *
+             * @param correct Indica si la consulta se insertó en la base de datos correctamente.
+             */
             void onNewQuerySet(boolean correct);
         }
 
+        /** Este método insserta una consulta.
+         *
+         * @param senderUserId Identificador de la cuenta del usuario remitente.
+         * @param title Título de la consulta.
+         * @param Content Descripción de la consulta.
+         * @param callback Que posteriormete actualizará informará al usuario.
+         */
         void setNewQuery(int senderUserId, String title, String Content, RepositoryContract.Queries.SetNewQueryCallback callback);
 
         interface GetPendingQueriesListCallback {
+            /** Este método se encarga de actualizar la lista de consultas pendientes del viewmodel con la pasada por parámetro.
+             *
+             * @param pendingQueriesList Lista de consultas pendientes.
+             */
             void setQueriesList(List<Query> pendingQueriesList);
         }
 
+        /** Este método obtiene la lista de consultas pendientes de un usuario.
+         *
+         * @param userId Identificador de la cuenta de usuario.
+         * @param callback Que posteriormete actualizará la información en la activity.
+         */
         void getPendindQueriesList(int userId,RepositoryContract.Queries.GetPendingQueriesListCallback callback);
 
         interface GetFinishedQueriesListCallback {
+            /** Este método se encarga de actualizar la lista de consultas finalizadas del viewmodel con la pasada por parámetro.
+             *
+             * @param finishedQueriesList Lista de consultas finalizadas.
+             */
             void setQueriesList(List<Query> finishedQueriesList);
         }
 
+        /** Este método obtiene la lista de consultas finalizadas de un usuario.
+         *
+         * @param userId Identificador de la cuenta de usuario.
+         * @param callback Que posteriormete actualizará la información en la activity.
+         */
         void getFinishedQueriesList(int userId,RepositoryContract.Queries.GetFinishedQueriesListCallback callback);
+
     }
 
 }

@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.data;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -19,8 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.database.LostPetsDao;
-import es.ulpgc.montesdeoca110.cristina.zonget.database.ZongetDatabase;
 
 public class LostPetsRepository implements RepositoryContract.LostPets {
 
@@ -79,7 +76,7 @@ public class LostPetsRepository implements RepositoryContract.LostPets {
 
 
     @Override
-    public void getLostPets(final int id, final GetLostPetsCallback callback) {
+    public void getLostPet(final int id, final GetLostPetCallback callback) {
         AsyncTask.execute(new Runnable() {
 
             @Override

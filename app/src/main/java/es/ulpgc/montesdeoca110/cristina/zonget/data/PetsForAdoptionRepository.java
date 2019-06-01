@@ -77,7 +77,7 @@ public class PetsForAdoptionRepository implements RepositoryContract.PetsForAdop
 
 
     @Override
-    public void getPetsForAdoption(final int id, final GetPetsForAdoptionCallback callback) {
+    public void getPetForAdoption(final int id, final GetPetForAdoptionCallback callback) {
         AsyncTask.execute(new Runnable() {
 
             @Override
