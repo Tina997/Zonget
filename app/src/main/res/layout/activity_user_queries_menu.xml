@@ -10,100 +10,142 @@
     <include layout="@layout/toolbar"></include>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/user_queries_menu_new_query_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="?attr/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="152dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
                 android:tint="?attr/colorPrimary"
                 app:srcCompat="@drawable/ic_new_query" />
 
             <TextView
-                android:layout_width="216dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
                 android:text="@string/new_query_text_view"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
-        <Space
+        <android.support.v4.widget.Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <LinearLayout
             android:id="@+id/user_queries_menu_pending_queries_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimaryDark"
-            android:orientation="horizontal">
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:background="?attr/colorPrimaryDark">
 
             <ImageView
-                android:layout_width="152dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
                 android:tint="?attr/colorPrimary"
                 app:srcCompat="@drawable/ic_pending_queries" />
 
             <TextView
-                android:layout_width="216dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
                 android:text="@string/pending_queries_text_view"
                 android:textColor="?attr/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/user_queries_menu_pending_queries_counter_cardView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@android:color/black"
+                app:cardCornerRadius="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/user_queries_menu_pending_queries_counter_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:textColor="?attr/colorAccent"
+                    android:textSize="18sp"/>
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
-        <Space
+        <android.support.v4.widget.Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <LinearLayout
             android:id="@+id/user_queries_menu_finished_queries_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimaryDark"
-            android:orientation="horizontal">
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:background="?attr/colorPrimaryDark">
 
             <ImageView
-                android:layout_width="152dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
-                android:tint="?attr/colorPrimary"
-                app:srcCompat="@drawable/ic_finished_queries" />
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                app:srcCompat="@drawable/ic_finished_queries"
+                android:tint="?attr/colorPrimary"/>
 
             <TextView
-                android:layout_width="216dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center_vertical"
                 android:text="@string/finished_queries_text_view"
                 android:textColor="?attr/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
+            <android.support.v7.widget.CardView
+                android:id="@+id/user_queries_menu_finished_queries_counter_cardView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@android:color/black"
+                app:cardCornerRadius="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/user_queries_menu_finished_queries_counter_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:textColor="?attr/colorAccent"
+                    android:textSize="18sp"/>
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
