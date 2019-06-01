@@ -92,8 +92,8 @@ public class QueriesRepository implements RepositoryContract.Queries {
       @Override
       public void run() {
         if (callback != null) {
-          List<Query> administratorQueryList = loadAdministratorQueries();
-          callback.setQueriesList(administratorQueryList);
+          List<QueryItem> administratorQueryList = loadAdministratorQueries();
+          callback.setAdministratorQueriesList(administratorQueryList);
 
         }
       }
@@ -171,8 +171,8 @@ public class QueriesRepository implements RepositoryContract.Queries {
 
   }
 
-  private List<Query> loadAdministratorQueries() {
-    List<Query> administratorQueriesList = new ArrayList<>();
+  private List<QueryItem> loadAdministratorQueries() {
+    List<QueryItem> administratorQueriesList = new ArrayList<>();
 
     List<QueryItem> list = loadAllQueries();
 
@@ -180,15 +180,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
       QueryStatusItem queryStatus = getQueryStatusDao().loadQueryStatus(list.get(i).id);
       if (!queryStatus.finished) {
 
-        String title = list.get(i).title;
-        String content = list.get(i).content;
-
-        List<QueryData> queryDataList = new ArrayList<>();
-        queryDataList.add(new QueryData(content, null));
-
-        Query query = new Query(title, queryDataList);
-
-        administratorQueriesList.add(query);
+        administratorQueriesList.add(list.get(i));
       }
     }
     return administratorQueriesList;

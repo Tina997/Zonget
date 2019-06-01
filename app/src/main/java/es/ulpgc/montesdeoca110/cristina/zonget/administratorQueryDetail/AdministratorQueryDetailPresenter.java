@@ -43,9 +43,7 @@ public class AdministratorQueryDetailPresenter
     // set passed state
     InboxToQueryDetailState state = router.getDataFromPreviousScreen();
     if (state != null) {
-      viewModel.title = state.query.getTitle();
-      List<QueryData> list = state.query.getItems();
-      viewModel.message = list.get(0).getContent();
+      viewModel.queryItem = state.query;
     }
 
     // update the view

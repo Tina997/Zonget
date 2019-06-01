@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
-import android.content.Context;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +15,7 @@ import java.util.List;
 public class AdministratorInboxListAdapter
         extends RecyclerView.Adapter<AdministratorInboxListAdapter.ViewHolder> {
 
-  private List<Query> queryList;
+  private List<QueryItem> queryList;
   private final View.OnClickListener clickListener;
 
   public AdministratorInboxListAdapter( View.OnClickListener clickListener) {
@@ -25,16 +23,16 @@ public class AdministratorInboxListAdapter
     this.clickListener = clickListener;
   }
 
-  public void setItems(List<Query> items) {
+  public void setItems(List<QueryItem> items) {
     queryList = items;
     notifyDataSetChanged();
   }
 
-  public void addItem(Query item) {
+  public void addItem(QueryItem item) {
     queryList.add(item);
   }
 
-  public void addItems(List<Query> items) {
+  public void addItems(List<QueryItem> items) {
     queryList.addAll(items);
   }
 
@@ -56,7 +54,7 @@ public class AdministratorInboxListAdapter
     holder.itemView.setOnClickListener(clickListener);
 
     //holder.userID.setText(queryItemList.get(position).sender);
-    holder.title.setText(queryList.get(position).getTitle());
+    holder.title.setText(queryList.get(position).title);
   }
 
 

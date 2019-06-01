@@ -92,7 +92,7 @@ public class AdministratorQueryDetailActivity
 
   @Override
   public void displayData(AdministratorQueryDetailViewModel viewModel) {
-    queryTitle.setText(viewModel.title);
-    queryDescription.setText(viewModel.message);
+    queryTitle.setText(viewModel.queryItem.title);
+    queryDescription.setText(viewModel.queryItem.content);
   }
 }

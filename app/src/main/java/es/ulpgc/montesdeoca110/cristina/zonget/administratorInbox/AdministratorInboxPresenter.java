@@ -44,7 +44,7 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
     //llamar al modelo
     model.fetchAdministratorQueriesListData(new RepositoryContract.Queries.GetAdministratorQueriesListCallback() {
       @Override
-      public void setQueriesList(List<Query> administratorQueriesList) {
+      public void setAdministratorQueriesList(List<QueryItem> administratorQueriesList) {
         viewModel.inboxList = administratorQueriesList;
         // update the view
         view.get().displayData(viewModel);
@@ -63,7 +63,7 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
   }
 
   @Override
-  public void selectQueryItemState(Query item) {
+  public void selectQueryItemState(QueryItem item) {
     router.passDataToQueryDetailScreen(item);
     router.navigateToAdministratorQueryDetailScreen();
   }

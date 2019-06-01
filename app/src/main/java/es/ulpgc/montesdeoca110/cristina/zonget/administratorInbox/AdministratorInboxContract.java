@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public interface AdministratorInboxContract {
@@ -40,7 +40,7 @@ public interface AdministratorInboxContract {
 
     void fetchInboxData();
 
-    void selectQueryItemState(Query item);
+    void selectQueryItemState(QueryItem item);
 
     /**
      * Metodo que devuelve el tema actual que esta siendo usado en ese momento
@@ -65,7 +65,7 @@ public interface AdministratorInboxContract {
      */
     void passDataToNextScreen(AdministratorInboxState state);
 
-    void passDataToQueryDetailScreen(Query item);
+    void passDataToQueryDetailScreen(QueryItem item);
 
     AdministratorInboxState getDataFromPreviousScreen();
 

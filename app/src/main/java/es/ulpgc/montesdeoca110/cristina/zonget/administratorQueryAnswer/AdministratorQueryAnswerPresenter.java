@@ -39,10 +39,7 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
     // Log.e(TAG, "fetchPetsForAdoptionListData()");
 
     // set passed state
-    InboxToQueryDetailState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.query = state.query;
-    }
+
 
   }
 
@@ -53,7 +50,7 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
 
   @Override
   public void onSendButtonClicked(String answer){
-    model.setQueryAnswer(viewModel.query, answer);
+
   }
 
   @Override

@@ -13,6 +13,7 @@ import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 public class AdministratorInboxActivity
         extends AppCompatActivity implements AdministratorInboxContract.View {
@@ -53,7 +54,7 @@ public class AdministratorInboxActivity
     listAdapter = new AdministratorInboxListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Query item = (Query) v.getTag();
+        QueryItem item = (QueryItem) v.getTag();
         presenter.selectQueryItemState(item);
       }
     });

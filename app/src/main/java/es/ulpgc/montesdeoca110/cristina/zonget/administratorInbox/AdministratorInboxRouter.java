@@ -7,6 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.Admi
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
 public class AdministratorInboxRouter implements AdministratorInboxContract.Router {
@@ -59,7 +60,7 @@ public class AdministratorInboxRouter implements AdministratorInboxContract.Rout
   }
 
   @Override
-  public void passDataToQueryDetailScreen(Query item){
+  public void passDataToQueryDetailScreen(QueryItem item){
     InboxToQueryDetailState state = new InboxToQueryDetailState();
     state.query = item;
     mediator.setInboxToQueryDetailState(state);

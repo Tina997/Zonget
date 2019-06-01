@@ -53,9 +53,8 @@ interface AdministratorQueryAnswerContract {
   }
 
   interface Model {
-    String fetchData();
 
-    void setQueryAnswer(Query query, String answer);
+
   }
 
   interface Router {

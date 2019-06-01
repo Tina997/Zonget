@@ -8,6 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
@@ -154,7 +155,7 @@ public interface RepositoryContract {
         void getFinishedQueriesList(int userId,RepositoryContract.Queries.GetFinishedQueriesListCallback callback);
 
         interface GetAdministratorQueriesListCallback {
-            void setQueriesList(List<Query> administratorQueriesList);
+          void setAdministratorQueriesList(List<QueryItem> administratorQueriesList);
         }
 
         void getAdministratorQueriesList(final GetAdministratorQueriesListCallback callback);
