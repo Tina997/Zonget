@@ -105,6 +105,7 @@ public interface RepositoryContract {
 
         void getUserName(int userId, AccountsRepository.GetUserNameCallback callback);
 
+
     }
     interface LostPets{
 
@@ -165,6 +166,12 @@ public interface RepositoryContract {
         }
 
         void getAdministratorQueriesList(final GetAdministratorQueriesListCallback callback);
+
+        interface SetQueryAnswerCallback{
+            void onQueryAnswerSet(boolean correct);
+        }
+
+        void setQueryAnswer(final QueryItem query, final String answer, final SetQueryAnswerCallback callback);
     }
 
 }

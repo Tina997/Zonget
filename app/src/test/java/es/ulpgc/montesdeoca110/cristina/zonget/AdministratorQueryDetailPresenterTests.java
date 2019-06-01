@@ -51,7 +51,7 @@ public class AdministratorQueryDetailPresenterTests {
         configureAdministratorQueryDetailScreen(new AdministratorQueryDetailState());
 
         //When reply menu button is pressed
-        presenter.navigateToAdministratorQueryAnswerScreen();
+        presenter.onReplyButtonPressed();
 
         //Then router navigates up to QueryAnswerScreen
         verify(routerMock,times(1)).navigateToAdministratorQueryAnswerScreen();

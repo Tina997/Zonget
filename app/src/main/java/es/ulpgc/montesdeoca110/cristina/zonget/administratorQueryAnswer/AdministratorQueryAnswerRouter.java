@@ -46,4 +46,9 @@ public class AdministratorQueryAnswerRouter implements AdministratorQueryAnswerC
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }
+
+  @Override
+  public InboxToQueryDetailState getInboxToQueryDetailState(){
+    return mediator.getInboxToQueryDetailState();
+  }
 }

@@ -57,7 +57,7 @@ public class AdministratorQueryDetailPresenter
   }
 
   @Override
-  public void navigateToAdministratorQueryAnswerScreen() {
+  public void onReplyButtonPressed() {
     router.navigateToAdministratorQueryAnswerScreen();
   }
 

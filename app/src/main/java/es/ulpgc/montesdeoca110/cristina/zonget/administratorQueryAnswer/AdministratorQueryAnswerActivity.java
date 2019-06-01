@@ -87,7 +87,6 @@ public class AdministratorQueryAnswerActivity
   public void onSendButtonClicked(View v) {
     if(!answer.getText().equals(null)){
       presenter.onSendButtonClicked(answer.getText() + "");
-      presenter.navigateToAdministratorInboxScreen();
     }else{
       //toast
     }

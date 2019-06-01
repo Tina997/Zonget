@@ -78,7 +78,7 @@ public class AdministratorQueryDetailActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case R.id.action_reply:
-        presenter.navigateToAdministratorQueryAnswerScreen();
+        presenter.onReplyButtonPressed();
         return true;
       default:
         int id = item.getItemId();

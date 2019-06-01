@@ -38,7 +38,7 @@ public interface AdministratorQueryDetailContract {
 
     void fetchData();
 
-    void navigateToAdministratorQueryAnswerScreen();
+    void onReplyButtonPressed();
 
     /**
      * Metodo que devuelve el tema actual que esta siendo usado en ese momento

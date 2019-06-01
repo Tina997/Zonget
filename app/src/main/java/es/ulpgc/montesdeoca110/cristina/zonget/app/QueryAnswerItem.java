@@ -21,8 +21,9 @@ public class QueryAnswerItem {
   public int queryId;
 
 
-  public QueryAnswerItem(int id, String answer) {
+  public QueryAnswerItem(int id, int queryId, String answer) {
     this.id = id;
+    this.queryId = queryId;
     this.answer = answer;
   }
 

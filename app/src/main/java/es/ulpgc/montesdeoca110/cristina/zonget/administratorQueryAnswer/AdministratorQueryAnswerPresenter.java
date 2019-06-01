@@ -5,6 +5,7 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnswerContract.Presenter {
 
@@ -36,9 +37,11 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchPetsForAdoptionListData()");
-
-    // set passed state
+    //set passed state
+    InboxToQueryDetailState state = router.getInboxToQueryDetailState();
+    if(state != null){
+      viewModel.query = state.query;
+    }
 
 
   }
@@ -50,12 +53,18 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
 
   @Override
   public void onSendButtonClicked(String answer){
-
-  }
-
-  @Override
-  public void navigateToAdministratorInboxScreen() {
-    router.navigateToAdministratorInboxScreen();
+    InboxToQueryDetailState item = router.getInboxToQueryDetailState();
+    model.updateQueryAnswer(item.query, answer, new RepositoryContract.Queries.SetQueryAnswerCallback() {
+      @Override
+      public void onQueryAnswerSet(boolean correct) {
+        if(correct){
+          //view.get().finish();
+          router.navigateToAdministratorInboxScreen();
+        }else{
+          //view.get().displayToastMessage("La pregunta no ha sido enviada correctamemte.");
+        }
+      }
+    });
   }
 
 

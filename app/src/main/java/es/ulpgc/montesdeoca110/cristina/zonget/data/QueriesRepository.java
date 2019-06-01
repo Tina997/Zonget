@@ -3,10 +3,12 @@ package es.ulpgc.montesdeoca110.cristina.zonget.data;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryAnswerItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryData;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
@@ -87,6 +89,24 @@ public class QueriesRepository implements RepositoryContract.Queries {
   }
 
   @Override
+  public void setQueryAnswer(final QueryItem query, final String answer, final SetQueryAnswerCallback callback){
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if(callback!=null){
+          int queryAnswerId = getQueriesAnswerDao().loadQueryAnswers().size();
+          QueryAnswerItem queryAnswerItem = new QueryAnswerItem(queryAnswerId, query.id ,answer);
+          getQueriesAnswerDao().insertQueryAnswer(queryAnswerItem);
+          int queryStatusId = getQueryStatusDao().loadQueryStatus(query.id).id;
+          QueryStatusItem queryStatusItem = new QueryStatusItem(queryStatusId, query.id, true);
+          getQueryStatusDao().insertQueryStatus(queryStatusItem);
+          callback.onQueryAnswerSet(true);
+        }
+      }
+    });
+  }
+
+  @Override
   public void getAdministratorQueriesList(final GetAdministratorQueriesListCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
@@ -156,6 +176,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
 
         String title = list.get(i).title;
         String content = list.get(i).content;
+        Log.e("Miaucachis", getQueriesAnswerDao().loadQueryAnswer(list.get(i).id).answer);
         String answer = getQueriesAnswerDao().loadQueryAnswer(list.get(i).id).answer;
 
         List<QueryData> queryDataList = new ArrayList<>();
@@ -179,7 +200,6 @@ public class QueriesRepository implements RepositoryContract.Queries {
     for (int i = 0; i < list.size(); i++) {
       QueryStatusItem queryStatus = getQueryStatusDao().loadQueryStatus(list.get(i).id);
       if (!queryStatus.finished) {
-
         administratorQueriesList.add(list.get(i));
       }
     }
