@@ -96,9 +96,6 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     }
 
 
-    @Override
-    public void displaySignInData(SignInViewModel viewModel) {
-    }
 
     @Override
     public void displayCheckAccountError() {

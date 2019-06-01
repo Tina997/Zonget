@@ -197,6 +197,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
                     UserPetBDItem userPetBDItem = new UserPetBDItem(pet.getId(),pet.getName(),pet.getSpecies(),pet.getChipNum(),pet.getBirthday(),pet.getId());
                     getUserPetDao().updateCategory(userPetBDItem);
                     getPetsDao().update(pet.getBreed(),pet.getId());
+                    callback.onUserPetUpdate();
 
                 }
             }

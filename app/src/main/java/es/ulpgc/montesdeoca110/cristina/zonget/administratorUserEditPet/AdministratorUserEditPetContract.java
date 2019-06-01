@@ -15,7 +15,6 @@ interface AdministratorUserEditPetContract {
      */
     void injectPresenter(Presenter presenter);
 
-    void displayData(AdministratorUserEditPetViewModel viewModel);
   }
 
   interface Presenter {
