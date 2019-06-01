@@ -53,7 +53,7 @@ interface AdministratorUserEditPetContract {
   interface Model {
     String fetchData();
 
-    void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateNewUserPetCallback updateNewUserPetCallback);
+    void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateUserPetCallback updateNewUserPetCallback);
   }
 
   interface Router {

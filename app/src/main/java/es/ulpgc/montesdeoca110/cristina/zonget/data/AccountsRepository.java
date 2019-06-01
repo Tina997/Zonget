@@ -189,7 +189,7 @@ public class AccountsRepository implements RepositoryContract.Accounts {
     }
 
     @Override
-    public void updatePet(final UserPetItem pet, final UpdateNewUserPetCallback callback) {
+    public void updatePet(final UserPetItem pet, final UpdateUserPetCallback callback) {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {

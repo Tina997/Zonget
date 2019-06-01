@@ -19,7 +19,7 @@ public class AdministratorUserEditPetModel implements AdministratorUserEditPetCo
   }
 
   @Override
-  public void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateNewUserPetCallback callback) {
+  public void editPet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateUserPetCallback callback) {
     repository.updatePet(userPetItem,callback);
   }
 }
