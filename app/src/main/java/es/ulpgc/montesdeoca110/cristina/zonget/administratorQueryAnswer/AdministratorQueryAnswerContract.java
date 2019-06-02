@@ -54,6 +54,8 @@ interface AdministratorQueryAnswerContract {
     String getActualThemeName();
 
     void onSendButtonClicked(String text);
+
+    void onBackButtonPressed();
   }
 
   interface Model {
@@ -83,5 +85,7 @@ interface AdministratorQueryAnswerContract {
     String getActualThemeName();
 
     InboxToQueryDetailState getInboxToQueryDetailState();
+
+    void navigateToQueryDetailScreen();
   }
 }

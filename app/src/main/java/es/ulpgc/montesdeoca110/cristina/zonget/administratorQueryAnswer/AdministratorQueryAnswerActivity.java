@@ -80,7 +80,7 @@ public class AdministratorQueryAnswerActivity
       default:
         int id = item.getItemId();
         if (id == android.R.id.home) {
-          navigateUpTo(new Intent(this, AdministratorQueryDetailActivity.class));
+          presenter.onBackButtonPressed();
           return true;
         }
         return super.onOptionsItemSelected(item);
