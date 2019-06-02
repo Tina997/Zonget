@@ -53,18 +53,24 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
 
   @Override
   public void onSendButtonClicked(String answer){
-    InboxToQueryDetailState item = router.getInboxToQueryDetailState();
-    model.updateQueryAnswer(item.query, answer, new RepositoryContract.Queries.SetQueryAnswerCallback() {
-      @Override
-      public void onQueryAnswerSet(boolean correct) {
-        if(correct){
-          //view.get().finish();
-          router.navigateToAdministratorInboxScreen();
-        }else{
-          //view.get().displayToastMessage("La pregunta no ha sido enviada correctamemte.");
+    if(answer != ""){
+      view.get().startSendAnswer();
+      InboxToQueryDetailState item = router.getInboxToQueryDetailState();
+      model.updateQueryAnswer(item.query, answer, new RepositoryContract.Queries.SetQueryAnswerCallback() {
+        @Override
+        public void onQueryAnswerSet(boolean correct) {
+          if(correct){
+            view.get().finish();
+            router.navigateToAdministratorInboxScreen();
+          }else{
+            view.get().displayToastMessage("La respuesta no ha sido enviada correctamemte.");
+          }
         }
-      }
-    });
+      });
+    }else{
+      view.get().displayToastMessage("Falta por introducir información");
+    }
+
   }
 
 

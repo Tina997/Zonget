@@ -10,9 +10,13 @@ import android.view.View;
 import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import dmax.dialog.SpotsDialog;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 public class AdministratorQueryAnswerActivity
         extends AppCompatActivity implements AdministratorQueryAnswerContract.View {
@@ -21,7 +25,8 @@ public class AdministratorQueryAnswerActivity
 
   private AdministratorQueryAnswerContract.Presenter presenter;
 
- EditText answer;
+  private EditText answer;
+  private SpotsDialog dialog;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,7 @@ public class AdministratorQueryAnswerActivity
     }
 
     answer = findViewById(R.id.user_answer_query_edit_text);
+    dialog = new SpotsDialog(this,R.style.SentEmailDialogProgressTheme);
 
   }
 
@@ -76,7 +82,6 @@ public class AdministratorQueryAnswerActivity
       default:
         int id = item.getItemId();
         if (id == android.R.id.home) {
-          //TODO destruir activity
           navigateUpTo(new Intent(this, AdministratorQueryDetailActivity.class));
           return true;
         }
@@ -85,12 +90,30 @@ public class AdministratorQueryAnswerActivity
   }
 
   public void onSendButtonClicked(View v) {
-    if(!answer.getText().equals(null)){
       presenter.onSendButtonClicked(answer.getText() + "");
-    }else{
-      //toast
-    }
-
-    finish();
   }
+
+  @Override
+  public void startSendAnswer(){
+    dialog.show();
+  }
+
+  @Override
+  public void displayToastMessage(final String s){
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        Toast.makeText(getApplicationContext(), s, LENGTH_LONG).show();
+      }
+    });
+  }
+
+  @Override
+  public void finish(){
+    dialog.dismiss();
+    displayToastMessage("La respuesta se ha enviado correctamente.");
+    super.finish();
+  }
+
+
 }

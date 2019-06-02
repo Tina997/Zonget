@@ -3,6 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 import android.content.Context;
 import android.content.Intent;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer.AdministratorQueryAnswerActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
@@ -44,6 +45,14 @@ public class AdministratorQueryDetailRouter implements AdministratorQueryDetailC
   public void navigateToAdministratorQueryAnswerScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, AdministratorQueryAnswerActivity.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
+
+  @Override
+  public void navigateToAdministratorInboxScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, AdministratorInboxActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }

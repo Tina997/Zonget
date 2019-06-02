@@ -45,6 +45,8 @@ public interface AdministratorQueryDetailContract {
      * @return String con el nombre del tema que esta siendo usado
      */
     String getActualThemeName();
+
+    void onBackButtonPressed();
   }
 
   interface Model {
@@ -69,5 +71,7 @@ public interface AdministratorQueryDetailContract {
      * @return string con el nombre  del tema que se esta siendo utilizado
      */
     String getActualThemeName();
+
+    void navigateToAdministratorInboxScreen();
   }
 }

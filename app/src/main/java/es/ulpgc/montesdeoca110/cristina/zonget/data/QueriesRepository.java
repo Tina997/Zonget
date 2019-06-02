@@ -3,7 +3,6 @@ package es.ulpgc.montesdeoca110.cristina.zonget.data;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -176,7 +175,6 @@ public class QueriesRepository implements RepositoryContract.Queries {
 
         String title = list.get(i).title;
         String content = list.get(i).content;
-        Log.e("Miaucachis", getQueriesAnswerDao().loadQueryAnswer(list.get(i).id).answer);
         String answer = getQueriesAnswerDao().loadQueryAnswer(list.get(i).id).answer;
 
         List<QueryData> queryDataList = new ArrayList<>();

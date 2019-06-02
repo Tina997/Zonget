@@ -61,5 +61,10 @@ public class AdministratorQueryDetailPresenter
     router.navigateToAdministratorQueryAnswerScreen();
   }
 
+  @Override
+  public void onBackButtonPressed(){
+    router.navigateToAdministratorInboxScreen();
+  }
+
 
 }

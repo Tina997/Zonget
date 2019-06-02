@@ -79,11 +79,13 @@ public class AdministratorQueryDetailActivity
     switch (item.getItemId()) {
       case R.id.action_reply:
         presenter.onReplyButtonPressed();
+        finish();
         return true;
       default:
         int id = item.getItemId();
         if (id == android.R.id.home) {
-          navigateUpTo(new Intent(this, AdministratorInboxActivity.class));
+          presenter.onBackButtonPressed();
+          finish();
           return true;
         }
         return super.onOptionsItemSelected(item);

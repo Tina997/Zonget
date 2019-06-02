@@ -19,6 +19,12 @@ interface AdministratorQueryAnswerContract {
     void injectPresenter(Presenter presenter);
 
     void displayData(AdministratorQueryAnswerViewModel viewModel);
+
+    void finish();
+
+    void displayToastMessage(String s);
+
+    void startSendAnswer();
   }
 
   interface Presenter {
