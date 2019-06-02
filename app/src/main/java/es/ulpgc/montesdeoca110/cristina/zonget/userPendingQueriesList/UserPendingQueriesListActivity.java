@@ -18,7 +18,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 
-public class UserPendingQueriesListActivity extends AppCompatActivity implements UserPendingQueriesListContract.View {
+public class UserPendingQueriesListActivity extends AppCompatActivity
+        implements UserPendingQueriesListContract.View {
 
   private UserPendingQueriesListContract.Presenter presenter;
 
@@ -50,7 +51,7 @@ public class UserPendingQueriesListActivity extends AppCompatActivity implements
     actionBar.setTitle("Consultas pendientes");
     actionBar.setDisplayHomeAsUpEnabled(true);
 
-    listAdapter = new UserPendingQueriesListAdapter(this,new ArrayList<Query>());
+    listAdapter = new UserPendingQueriesListAdapter(this, new ArrayList<Query>());
 
     //RecycleView
     RecyclerView recyclerView = findViewById(R.id.user_pending_queries_list_recycleView);

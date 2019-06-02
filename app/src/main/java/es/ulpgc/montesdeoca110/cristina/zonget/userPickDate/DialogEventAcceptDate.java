@@ -40,6 +40,7 @@ public class DialogEventAcceptDate extends DialogFragment {
               }
             });
 
+    setRetainInstance(true);
     return builder.create();
   }
 }

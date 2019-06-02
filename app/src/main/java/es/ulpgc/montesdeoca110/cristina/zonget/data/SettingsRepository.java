@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserButtonMenuItem;
@@ -15,6 +16,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -109,7 +111,8 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
   // ================================= Métodos privados ===========================================
 
-  /** Este método carga desde la carpeta Assets del proyecto el json con la información de la
+  /**
+   * Este método carga desde la carpeta Assets del proyecto el json con la información de la
    * aplicación.
    *
    * @return La información que contiene el json.
@@ -126,11 +129,13 @@ public class SettingsRepository implements RepositoryContract.Settings {
       is.close();
       json = new String(buffer, StandardCharsets.UTF_8);
 
-    } catch (IOException ignored) {}
+    } catch (IOException ignored) {
+    }
     return json;
   }
 
-  /** Este método divide la información que contiene el json y pasa la que indicamos a las
+  /**
+   * Este método divide la información que contiene el json y pasa la que indicamos a las
    * variables del repositorio.
    *
    * @param json Archivo JSON que contiene la información de la aplicación.
@@ -192,7 +197,8 @@ public class SettingsRepository implements RepositoryContract.Settings {
     return false;
   }
 
-  /** Este método inserta en la lista de temas un nuevo tema.
+  /**
+   * Este método inserta en la lista de temas un nuevo tema.
    *
    * @param theme Tema.
    */
@@ -200,7 +206,8 @@ public class SettingsRepository implements RepositoryContract.Settings {
     themeList.add(theme);
   }
 
-  /** Este método inserta en la lista de los botones del menú del administrador un nuevo botón.
+  /**
+   * Este método inserta en la lista de los botones del menú del administrador un nuevo botón.
    *
    * @param button Botón de administrador.
    */
@@ -208,7 +215,8 @@ public class SettingsRepository implements RepositoryContract.Settings {
     administratorButtonsMenuList.add(button);
   }
 
-  /** Este método inserta en la lista de los botones del menú del usuario un nuevo botón.
+  /**
+   * Este método inserta en la lista de los botones del menú del usuario un nuevo botón.
    *
    * @param button Botón de usuario.
    */

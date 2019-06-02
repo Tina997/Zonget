@@ -10,14 +10,14 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 public class UserPendingQueriesListAdapter extends CustomPendingQueriesExpandableRecyclerViewAdapter {
 
-    public UserPendingQueriesListAdapter(Context context, List<? extends ExpandableGroup> groups) {
-        super(context, groups);
-    }
+  public UserPendingQueriesListAdapter(Context context, List<? extends ExpandableGroup> groups) {
+    super(context, groups);
+  }
 
-    public void setItems(List<Query> groups) {
-        getGroups().clear();
-        ((List<Query>)getGroups()).addAll(groups);
-        notifyGroupDataChanged();
-        notifyDataSetChanged();
-    }
+  public void setItems(List<Query> groups) {
+    getGroups().clear();
+    ((List<Query>) getGroups()).addAll(groups);
+    notifyGroupDataChanged();
+    notifyDataSetChanged();
+  }
 }

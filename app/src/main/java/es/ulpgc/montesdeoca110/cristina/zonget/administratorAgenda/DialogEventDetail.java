@@ -23,7 +23,6 @@ public class DialogEventDetail extends DialogFragment {
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-
     AlertDialog.Builder builder =
             new AlertDialog.Builder(getActivity(), R.style.DialogTheme);
     LayoutInflater layoutInflater = getActivity().getLayoutInflater();
@@ -45,6 +44,7 @@ public class DialogEventDetail extends DialogFragment {
               }
             });
 
+    setRetainInstance(true);
     return builder.create();
   }
 }

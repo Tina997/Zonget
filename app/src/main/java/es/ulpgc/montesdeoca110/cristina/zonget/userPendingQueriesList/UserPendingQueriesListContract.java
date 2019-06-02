@@ -33,7 +33,8 @@ public interface UserPendingQueriesListContract {
 
   interface Model {
 
-    void fetchUserPendingQueriesListData(int userId, RepositoryContract.Queries.GetPendingQueriesListCallback callback);
+    void fetchUserPendingQueriesListData(int userId,
+                                         RepositoryContract.Queries.GetPendingQueriesListCallback callback);
 
   }
 

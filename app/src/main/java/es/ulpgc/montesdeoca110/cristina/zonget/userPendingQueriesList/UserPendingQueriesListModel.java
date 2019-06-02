@@ -11,8 +11,9 @@ public class UserPendingQueriesListModel implements UserPendingQueriesListContra
   }
 
   @Override
-  public void fetchUserPendingQueriesListData(int userId, RepositoryContract.Queries.GetPendingQueriesListCallback callback) {
-    repository.getPendindQueriesList(userId,callback);
+  public void fetchUserPendingQueriesListData(int userId,
+                                              RepositoryContract.Queries.GetPendingQueriesListCallback callback) {
+    repository.getPendindQueriesList(userId, callback);
   }
 
 }

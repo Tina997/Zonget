@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Query extends ExpandableGroup<QueryData> {
 
-    public Query(String title, List<QueryData> items){
-        super(title,items);
-    }
+  public Query(String title, List<QueryData> items) {
+    super(title, items);
+  }
 }

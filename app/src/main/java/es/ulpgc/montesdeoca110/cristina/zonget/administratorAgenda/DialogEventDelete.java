@@ -30,6 +30,7 @@ public class DialogEventDelete extends DialogFragment {
               }
             });
 
+    setRetainInstance(true);
     return builder.create();
   }
 }

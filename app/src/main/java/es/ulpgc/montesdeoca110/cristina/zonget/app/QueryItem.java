@@ -23,9 +23,6 @@ public class QueryItem {
   @ColumnInfo(name = "user_id")
   public int userId;
 
-
-  //TODO añadir resto de propiedades: archivos?? cómo diablos metemos los archivos?
-
   public QueryItem(int id, String title, String content) {
     this.id = id;
     this.title = title;

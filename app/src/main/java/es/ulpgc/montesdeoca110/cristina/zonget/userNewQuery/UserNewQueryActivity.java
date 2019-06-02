@@ -60,13 +60,13 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
     sendQueryButton = findViewById(R.id.user_new_query_send_button);
 
-    dialog = new SpotsDialog(this,R.style.SentEmailDialogProgressTheme);
+    dialog = new SpotsDialog(this, R.style.SentEmailDialogProgressTheme);
 
     //Listeners
     sendQueryButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        presenter.sendButtonPressed(queryTitleEditText.getText()+ "",queryDescriptionEditText.getText()+"");
+        presenter.sendButtonPressed(queryTitleEditText.getText() + "", queryDescriptionEditText.getText() + "");
       }
     });
   }
@@ -85,11 +85,12 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
   }
 
   @Override
-  public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {}
+  public void displayUserNewQueryData(UserNewQueryViewModel viewModel) {
+  }
 
 
   @Override
-  public void startSendQuery(){
+  public void startSendQuery() {
     dialog.show();
   }
 
@@ -103,15 +104,15 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     });
   }
 
-    @Override
-    public void finish() {
-      dialog.dismiss();
-      displayToastMessage("La consulta se ha enviado correctamente.");
+  @Override
+  public void finish() {
+    dialog.dismiss();
+    displayToastMessage("La consulta se ha enviado correctamente.");
 
-      super.finish();
-    }
+    super.finish();
+  }
 
-    @Override
+  @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     // Handle presses on the action bar items
     switch (item.getItemId()) {

@@ -17,34 +17,34 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
         ))
 public class UserItem {
 
-    @PrimaryKey
-    private final int id;
+  @PrimaryKey
+  private final int id;
 
-    private final String rol;
+  private final String rol;
 
-    @ColumnInfo (name = "account_id")
-    private int accountId;
+  @ColumnInfo(name = "account_id")
+  private int accountId;
 
-    public UserItem(int id, String rol, int accountId) {
+  public UserItem(int id, String rol, int accountId) {
 
-        this.id = id;
-        this.rol = rol;
-        this.accountId =  accountId;
-    }
+    this.id = id;
+    this.rol = rol;
+    this.accountId = accountId;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getRol() {
-        return rol;
-    }
+  public String getRol() {
+    return rol;
+  }
 
-    public int getAccountId() {
-        return accountId;
-    }
+  public int getAccountId() {
+    return accountId;
+  }
 
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
-    }
+  public void setAccountId(int accountId) {
+    this.accountId = accountId;
+  }
 }

@@ -33,6 +33,7 @@ public class DialogUserEventDetail extends DialogFragment {
       }
     });
 
+    setRetainInstance(true);
     return builder.create();
   }
 }

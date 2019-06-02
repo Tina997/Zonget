@@ -42,26 +42,27 @@ public class UserNewQueryPresenter implements UserNewQueryContract.Presenter {
   }
 
   @Override
-  public void fetchUserNewQueryData() {}
+  public void fetchUserNewQueryData() {
+  }
 
   @Override
   public void sendButtonPressed(String title, String content) {
-    if(title != "" || content != ""){
+    if (title != "" || content != "") {
       view.get().startSendQuery();
       SignInToMenuState state = router.getDataFromSignInToMenuState();
       model.setNewQuery(state.account.getId(), title, content, new RepositoryContract.Queries.SetNewQueryCallback() {
         @Override
         public void onNewQuerySet(boolean correct) {
-          if(correct){
+          if (correct) {
             view.get().finish();
             router.navigateToUserQueriesMenuScreen();
-          }else{
+          } else {
             view.get().displayToastMessage("La pregunta no ha sido enviada correctamemte.");
           }
         }
       });
-    }else{
-        view.get().displayToastMessage("Falta información por introducir.");
+    } else {
+      view.get().displayToastMessage("Falta información por introducir.");
     }
   }
 

@@ -31,7 +31,7 @@ public class UserPendingQueriesListPresenter implements UserPendingQueriesListCo
 
     SignInToMenuState state = router.getDataFromSignInToMenuState();
 
-    model.fetchUserPendingQueriesListData(state.account.getId(),new RepositoryContract.Queries.GetPendingQueriesListCallback() {
+    model.fetchUserPendingQueriesListData(state.account.getId(), new RepositoryContract.Queries.GetPendingQueriesListCallback() {
       @Override
       public void setQueriesList(List<Query> pendingQueries) {
 

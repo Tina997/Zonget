@@ -37,6 +37,7 @@ public class DialogDelete extends DialogFragment {
               }
             });
 
+    setRetainInstance(true);
     return builder.create();
   }
 }
