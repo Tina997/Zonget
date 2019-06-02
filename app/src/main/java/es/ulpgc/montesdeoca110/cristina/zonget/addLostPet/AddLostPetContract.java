@@ -37,28 +37,30 @@ interface AddLostPetContract {
      * Metodo que rellena la vista con la informacion del modelo
      */
     void fetchData();
+
     /**
      * Metodo que devuelve el tema actual que esta siendo usado en ese momento
      * @return String con el nombre del tema que esta siendo usado
      */
     String getActualThemeName();
 
+    /**
+     * Metodo llamado al pulsar el boton back el cual llama al router para cambiar de vista
+     */
     void onBackButtonPressed();
   }
 
   interface Model {
-    String fetchData();
+      //TODO Metodo inutilizado
+      String fetchData();
   }
 
   interface Router {
-    void navigateToNextScreen();
 
     /**
-     * Metodo que edita el estado de la vista almacenado en el mediador
-     * @param state: El estado de la vista en cuestion
+     * Metodo que recupera el estado de la vista en un punto anterior de esta
+     * @return el estado de la vista.
      */
-    void passDataToNextScreen(AddLostPetState state);
-
     AddLostPetState getDataFromPreviousScreen();
 
     /**
@@ -67,6 +69,9 @@ interface AddLostPetContract {
      */
     String getActualThemeName();
 
+    /**
+     * Metodo que cambia la vista a la de la lista de mascotas perdidas
+     */
     void onBackButtonPressed();
   }
 }

@@ -17,6 +17,10 @@ interface AdministratorUsersListContract {
          */
         void injectPresenter(Presenter presenter);
 
+        /**
+         * Relleno de la lista de mascotas obteniendo la informacion del viewModel
+         * @param viewModel: del cual se extrae la informacion
+         */
         void displayData(AdministratorUsersListViewModel viewModel);
     }
 
@@ -40,8 +44,15 @@ interface AdministratorUsersListContract {
          */
         void injectRouter(Router router);
 
+        /**
+         * Cargar en el viewModel la informacion de lo obtenido del modelo
+         */
         void fetchAdminUsersData();
 
+        /**
+         * Metodo que al elegir un usuario pasa este al router
+         * @param userItem: Usuario escogido
+         */
         void selectAdminUserData(AccountItem userItem);
 
         /**
@@ -50,19 +61,32 @@ interface AdministratorUsersListContract {
          */
         String getActualThemeName();
 
+        /**
+         * Metodo que llama al presentador para cambiar de vista
+         */
         void onBackButtonPressed();
     }
 
     interface Model {
+        /**
+         * Metodo que le pide la informacion al repositorio que cumpla el requisito de que coincida con el nombre o DNI buscado
+         * @param nameOrDni: nombre o DNI buscado
+         * @param callback: callback que realiza la comunicacion entre modelo y el repositorio
+         */
         void fetchUsersData(String nameOrDni, RepositoryContract.Accounts.GetUserListCallback callback);
     }
 
     interface Router {
 
-        AdministratorUsersListState getDataFromPreviousScreen();
-
+        /**
+         * Metodo que manda a la clase detalle el usuario seleccionado
+         * @param item: El usuario seleccionado
+         */
         void passDataToUserDetailScreen(AccountItem item);
 
+        /**
+         * Metodo que cambia la vista por la vista del detalle de un usuario (Su lista de mascotas)
+         */
         void navigateToUserDetailScreen();
 
         /**
@@ -71,8 +95,15 @@ interface AdministratorUsersListContract {
          */
         String getActualThemeName();
 
+        /**
+         * Metodo que regresa la vista a la de la busqueda de usuarios
+         */
         void onBackButtonPressed();
 
+        /**
+         * Metodo que devuelve el estado de searchToListUserState del mediador el cual ha sido cambiado anteriormente por la vista search
+         * @return el estado el cual contiene la lista de usuarios que cumplen el requisito
+         */
         SearchToListUserState getSearchToListUserState();
     }
 }

@@ -16,10 +16,14 @@ public interface SignInContract {
          */
         void injectPresenter(Presenter presenter);
 
-        void displaySignInData(SignInViewModel viewModel);
-
+        /**
+         * Metodo que muestra por pantalla un toast en caso de que el user o password sean incorrectos
+         */
         void displayCheckAccountError();
 
+        /**
+         * Ampliacion del finish de la clase Application
+         */
         void finish();
 
     }

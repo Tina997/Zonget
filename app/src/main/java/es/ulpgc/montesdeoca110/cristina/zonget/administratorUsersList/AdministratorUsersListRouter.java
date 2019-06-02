@@ -25,12 +25,6 @@ public class AdministratorUsersListRouter implements AdministratorUsersListContr
 
 
     @Override
-    public AdministratorUsersListState getDataFromPreviousScreen() {
-        AdministratorUsersListState state = mediator.getAdministratorUsersListState();
-        return state;
-    }
-
-    @Override
     public void passDataToUserDetailScreen(AccountItem item) {
         AdministratorUsersPetsListState state = new AdministratorUsersPetsListState();
         state.user = item;

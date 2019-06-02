@@ -1,14 +1,18 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
+import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
+
 public class UserQueriesMenuModel implements UserQueriesMenuContract.Model {
 
-  public UserQueriesMenuModel() {
+  private RepositoryContract.Queries repository;
 
+  public UserQueriesMenuModel(RepositoryContract.Queries repository) {
+    this.repository = repository;
   }
 
   @Override
-  public String fetchUserQueriesMenuData() {
-    return null;
+  public void fetchUserQueriesMenuData(int userdId, RepositoryContract.Queries.GetQueriesListSizeCallback callback) {
+    repository.getQueriesListSize(userdId,callback);
   }
 
 }

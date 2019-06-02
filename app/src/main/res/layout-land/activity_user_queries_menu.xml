@@ -19,13 +19,13 @@
         <LinearLayout
             android:id="@+id/user_queries_menu_new_query_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:background="?attr/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 android:tint="?attr/colorPrimary"
@@ -45,18 +45,18 @@
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:id="@+id/user_queries_menu_pending_queries_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             android:background="?attr/colorPrimaryDark">
 
             <ImageView
                 android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 android:tint="?attr/colorPrimary"
@@ -98,7 +98,7 @@
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:id="@+id/user_queries_menu_finished_queries_linear_layout"
@@ -109,7 +109,7 @@
 
             <ImageView
                 android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 app:srcCompat="@drawable/ic_finished_queries"

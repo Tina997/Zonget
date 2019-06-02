@@ -55,7 +55,7 @@ interface AddEventContract {
     String getActualThemeName();
 
     /**
-     * Metodo llamado al pulsar el boton back que hace que la vista retroceda a la anterior
+     * Metodo llamado al pulsar el boton back el cual llama al router para cambiar de vista
      */
     void onBackButtonPressed();
 
@@ -96,7 +96,7 @@ interface AddEventContract {
     void passDataToNextScreen(AddEventState state);
 
     /**
-     * Metodo que da el estado de la vista en un momento anterior
+     * Metodo que recupera el estado de la vista en un punto anterior de esta
      * @return El estado de la vista de AddEvent obtenido del mediador
      */
     AddEventState getDataFromPreviousScreen();

@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
@@ -39,10 +37,13 @@ public class AdministratorUserEditPetPresenter
 
   @Override
   public void insertNewPet(UserPetItem userPetItem) {
-    model.editPet(userPetItem, new RepositoryContract.Accounts.UpdateNewUserPetCallback(){
-
+    model.editPet(userPetItem, new RepositoryContract.Accounts.UpdateUserPetCallback(){
+      @Override
+      public void onUserPetUpdate() {
+        router.navigateToNextScreen();
+      }
     });
-    router.navigateToNextScreen();
+
   }
 
   @Override
