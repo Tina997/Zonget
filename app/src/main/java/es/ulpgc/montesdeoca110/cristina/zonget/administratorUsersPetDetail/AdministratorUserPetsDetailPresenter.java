@@ -64,8 +64,12 @@ public class AdministratorUserPetsDetailPresenter implements AdministratorUserPe
     public void onDeleteButtonClicked() {
         model.deletePet(viewModel.pet, new RepositoryContract.Accounts.DeleteUserPetCallback(){
 
+            @Override
+            public void onUserPetDelete() {
+                router.navigateToPetListScreen();
+            }
         });
-        router.navigateToPetListScreen();
+
     }
 
     @Override

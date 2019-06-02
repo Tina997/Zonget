@@ -32,8 +32,17 @@ public class AdministratorUsersPetsListActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_administrator_users_pets_list);
 
+        // do the setup
+        AdministratorUsersPetsListScreen.configure(AdministratorUsersPetsListActivity.this);
+
+        //Theme
+        String themeName = presenter.getActualThemeName();
+        if (themeName != null){
+            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
+            setTheme(themeID);
+        }
+        setContentView(R.layout.activity_administrator_users_pets_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,20 +59,14 @@ public class AdministratorUsersPetsListActivity
             public void onClick(View v) {
                 UserPetItem item = (UserPetItem) v.getTag();
                 presenter.selectUserPetsData(item);
+                finish();
             }
         });
 
         recyclerView = findViewById(R.id.pets_list);
         recyclerView.setAdapter(listAdapter);
 
-        // do the setup
-        AdministratorUsersPetsListScreen.configure(AdministratorUsersPetsListActivity.this);
-        //Theme
-        String themeName = presenter.getActualThemeName();
-        if (themeName != null){
-            int themeID = getResources().getIdentifier(themeName,"style",getPackageName());
-            setTheme(themeID);
-        }
+
         presenter.fetchUserPetsData();
     }
 
