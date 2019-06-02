@@ -16,6 +16,8 @@ public class QueryStatusItem {
   @PrimaryKey
   public final int id;
 
+
+
   @ColumnInfo(name = "query_id")
   private final int queryId;
 
@@ -25,5 +27,8 @@ public class QueryStatusItem {
     this.id = id;
     this.queryId = queryId;
     this.finished = finished;
+  }
+  public int getQueryId() {
+    return queryId;
   }
 }

@@ -195,7 +195,6 @@ public interface RepositoryContract {
     void getUserPetsList(int userId, RepositoryContract.Accounts.GetUserPetsListCallback callback);
 
     interface UpdateUserPetCallback {
-      //TODO Incluir método en la interfaz
       void onUserPetUpdate();
     }
 

@@ -17,6 +17,8 @@ public class QueryAnswerItem {
   private int id;
   public String answer;
 
+
+
   @ColumnInfo(name = "query_id")
   private final int queryId;
 
@@ -41,5 +43,8 @@ public class QueryAnswerItem {
 
   public void setAnswer(String answer) {
     this.answer = answer;
+  }
+  public int getQueryId() {
+    return queryId;
   }
 }
