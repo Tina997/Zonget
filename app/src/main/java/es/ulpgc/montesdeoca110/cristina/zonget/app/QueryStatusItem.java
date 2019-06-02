@@ -14,12 +14,12 @@ import android.arch.persistence.room.PrimaryKey;
 public class QueryStatusItem {
 
   @PrimaryKey
-  public int id;
+  public final int id;
 
   @ColumnInfo(name = "query_id")
-  public int queryId;
+  private final int queryId;
 
-  public boolean finished;
+  public final boolean finished;
 
   public QueryStatusItem(int id, int queryId, boolean finished) {
     this.id = id;

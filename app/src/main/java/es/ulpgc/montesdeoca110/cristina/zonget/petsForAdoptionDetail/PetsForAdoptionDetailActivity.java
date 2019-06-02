@@ -29,8 +29,6 @@ public class PetsForAdoptionDetailActivity
 
   private PetsForAdoptionDetailContract.Presenter presenter;
 
-  private ActionBar actionBar;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -48,7 +46,7 @@ public class PetsForAdoptionDetailActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    actionBar = getSupportActionBar();
+    ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.animal_detail_tittle);

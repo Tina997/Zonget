@@ -22,10 +22,10 @@ import static android.view.animation.Animation.RELATIVE_TO_SELF;
 
 public abstract class CustomPendingQueriesExpandableRecyclerViewAdapter extends ExpandableRecyclerViewAdapter<CustomPendingQueriesExpandableRecyclerViewAdapter.QueryViewHolder, CustomPendingQueriesExpandableRecyclerViewAdapter.QueryDataViewHolder> {
 
-  private Context context;
+  private final Context context;
 
-  public CustomPendingQueriesExpandableRecyclerViewAdapter(Context context,
-                                                           List<? extends ExpandableGroup> groups) {
+  CustomPendingQueriesExpandableRecyclerViewAdapter(Context context,
+                                                    List<? extends ExpandableGroup> groups) {
     super(groups);
     this.context = context;
   }
@@ -57,7 +57,7 @@ public abstract class CustomPendingQueriesExpandableRecyclerViewAdapter extends 
     holder.content.setText(query.content);
   }
 
-  public void notifyGroupDataChanged() {
+  void notifyGroupDataChanged() {
     expandableList.expandedGroupIndexes = new boolean[getGroups().size()];
     for (int i = 0; i < getGroups().size(); i++) {
       expandableList.expandedGroupIndexes[i] = false;
@@ -66,16 +66,16 @@ public abstract class CustomPendingQueriesExpandableRecyclerViewAdapter extends 
 
   class QueryViewHolder extends GroupViewHolder {
 
-    private TextView queryTitle;
-    private ImageView arrow;
+    private final TextView queryTitle;
+    private final ImageView arrow;
 
-    public QueryViewHolder(View itemView) {
+    QueryViewHolder(View itemView) {
       super(itemView);
       this.queryTitle = itemView.findViewById(R.id.user_pending_queries_list_title);
       this.arrow = itemView.findViewById(R.id.user_pending_queries_list_arrow);
     }
 
-    public void setQueryTitle(ExpandableGroup group) {
+    void setQueryTitle(ExpandableGroup group) {
       this.queryTitle.setText(group.getTitle());
     }
 
@@ -109,9 +109,9 @@ public abstract class CustomPendingQueriesExpandableRecyclerViewAdapter extends 
 
   class QueryDataViewHolder extends ChildViewHolder {
 
-    private TextView content;
+    private final TextView content;
 
-    public QueryDataViewHolder(View itemView) {
+    QueryDataViewHolder(View itemView) {
       super(itemView);
       this.content = itemView.findViewById(R.id.user_pending_queries_list_content);
     }

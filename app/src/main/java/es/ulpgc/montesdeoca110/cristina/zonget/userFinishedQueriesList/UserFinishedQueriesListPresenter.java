@@ -10,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 public class UserFinishedQueriesListPresenter implements UserFinishedQueriesListContract.Presenter {
 
   private WeakReference<UserFinishedQueriesListContract.View> view;
-  private UserFinishedQueriesListViewModel viewModel;
+  private final UserFinishedQueriesListViewModel viewModel;
   private UserFinishedQueriesListContract.Model model;
   private UserFinishedQueriesListContract.Router router;
 

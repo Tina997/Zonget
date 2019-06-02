@@ -8,10 +8,10 @@ public class UserPickDateModel implements UserPickDateContract.Model {
 
   public static String TAG = UserPickDateModel.class.getSimpleName();
   private final List<HourItem> hourItems = new ArrayList<>();
-  private final int Count = 10;
 
   public UserPickDateModel() {
-    for (int index = 1; index <= Count; index++) {
+    int count = 10;
+    for (int index = 1; index <= count; index++) {
       addDate(createDate(index));
     }
 
@@ -34,7 +34,6 @@ public class UserPickDateModel implements UserPickDateContract.Model {
 
   @Override
   public long fetchDateData() {
-    long time = System.currentTimeMillis();
-    return time;
+    return System.currentTimeMillis();
   }
 }

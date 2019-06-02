@@ -21,7 +21,8 @@
             android:layout_height="80dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            android:tint="?attr/colorPrimary"/>
+            android:tint="?attr/colorPrimary"
+            android:contentDescription="TODO" />
 
         <Space
             android:layout_width="match_parent"

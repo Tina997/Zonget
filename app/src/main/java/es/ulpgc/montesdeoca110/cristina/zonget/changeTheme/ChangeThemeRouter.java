@@ -10,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userButtonsMenuList.UserButtonsMe
 
 public class ChangeThemeRouter implements ChangeThemeContract.Router {
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public ChangeThemeRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -55,7 +55,6 @@ public class ChangeThemeRouter implements ChangeThemeContract.Router {
 
   @Override
   public ChangeThemeState getDataFromPreviousScreen() {
-    ChangeThemeState state = mediator.getChangeThemeState();
-    return state;
+    return mediator.getChangeThemeState();
   }
 }

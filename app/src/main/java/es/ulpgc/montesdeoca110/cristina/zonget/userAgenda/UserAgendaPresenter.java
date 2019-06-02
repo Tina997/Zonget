@@ -11,7 +11,7 @@ public class UserAgendaPresenter implements UserAgendaContract.Presenter {
   public static String TAG = UserAgendaPresenter.class.getSimpleName();
 
   private WeakReference<UserAgendaContract.View> view;
-  private UserAgendaViewModel viewModel;
+  private final UserAgendaViewModel viewModel;
   private UserAgendaContract.Model model;
   private UserAgendaContract.Router router;
 
@@ -48,17 +48,15 @@ public class UserAgendaPresenter implements UserAgendaContract.Presenter {
     if (viewModel.eventList == null) {
 
       //llamar al modelo
-      List<EventItem> data = model.fetchData();
 
-      viewModel.eventList = data;
+      viewModel.eventList = model.fetchData();
     }
 
     if (viewModel.calendarDate == 0 || viewModel.date == null) {
       //Llamar al modelo
       long time = model.fetchDateData();
       viewModel.calendarDate = time;
-      String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
-      viewModel.date = currentDate;
+      viewModel.date = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
     }
 
 

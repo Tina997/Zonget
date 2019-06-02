@@ -4,7 +4,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserButtonsMenuListModel implements UserButtonsMenuListContract.Model {
 
-  public RepositoryContract.Settings repository;
+  private final RepositoryContract.Settings repository;
 
   public UserButtonsMenuListModel(RepositoryContract.Settings repository) {
     this.repository = repository;

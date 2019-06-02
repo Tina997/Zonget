@@ -19,8 +19,6 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
 
   private UserFinishedQueriesListContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
   private UserFinishedQueriesListAdapter listAdapter;
 
   @Override
@@ -39,7 +37,8 @@ public class UserFinishedQueriesListActivity extends AppCompatActivity implement
     setContentView(R.layout.activity_user_finished_queries_list);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();

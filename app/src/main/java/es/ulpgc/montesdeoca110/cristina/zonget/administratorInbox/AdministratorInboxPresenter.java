@@ -1,7 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -14,7 +13,7 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
   public static String TAG = AdministratorInboxPresenter.class.getSimpleName();
 
   private WeakReference<AdministratorInboxContract.View> view;
-  private AdministratorInboxViewModel viewModel;
+  private final AdministratorInboxViewModel viewModel;
   private AdministratorInboxContract.Model model;
   private AdministratorInboxContract.Router router;
 
@@ -47,14 +46,11 @@ public class AdministratorInboxPresenter implements AdministratorInboxContract.P
     model.fetchAdministratorQueriesListData(new RepositoryContract.Queries.GetAdministratorQueriesListCallback() {
       @Override
       public void setAdministratorQueriesList(List<QueryItem> administratorQueriesList) {
-        final List<QueryItem> queryItems = administratorQueriesList;
-        for(int i = 0; i< queryItems.size(); i++){
-          final QueryItem queryItem = queryItems.get(i);
-          String userName = null;
+        for(int i = 0; i< administratorQueriesList.size(); i++){
+          final QueryItem queryItem = administratorQueriesList.get(i);
           model.getUserName(queryItem.userId, new RepositoryContract.Accounts.GetUserNameCallback() {
             @Override
             public void getUserName(String userName) {
-              userName = userName;
               inboxItems.add(new InboxItem(userName, queryItem));
             }
           });

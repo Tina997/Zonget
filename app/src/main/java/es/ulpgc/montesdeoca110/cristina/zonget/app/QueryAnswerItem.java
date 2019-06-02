@@ -14,11 +14,11 @@ import android.arch.persistence.room.PrimaryKey;
 public class QueryAnswerItem {
 
   @PrimaryKey
-  public int id;
+  private int id;
   public String answer;
 
   @ColumnInfo(name = "query_id")
-  public int queryId;
+  private final int queryId;
 
 
   public QueryAnswerItem(int id, int queryId, String answer) {

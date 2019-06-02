@@ -7,9 +7,9 @@ import java.util.List;
 
 public class AccountItem {
 
-  private int id;
+  private final int id;
 
-  private String type;
+  private final String type;
   private String name;
   private String dni;
   private String email;

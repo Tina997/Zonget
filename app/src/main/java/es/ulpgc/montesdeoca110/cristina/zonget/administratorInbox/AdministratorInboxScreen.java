@@ -8,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 import java.lang.ref.WeakReference;
 
-public class AdministratorInboxScreen {
+class AdministratorInboxScreen {
 
   public static void configure(AdministratorInboxContract.View view) {
 

@@ -13,9 +13,6 @@ public class SignUpConfirmationActivity extends AppCompatActivity
 
   private SignUpConfirmationContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -32,7 +29,8 @@ public class SignUpConfirmationActivity extends AppCompatActivity
     setContentView(R.layout.activity_sign_up_confirmation);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();

@@ -7,7 +7,7 @@ public class EditPetForAdoptionPresenter implements EditPetForAdoptionContract.P
   public static String TAG = EditPetForAdoptionPresenter.class.getSimpleName();
 
   private WeakReference<EditPetForAdoptionContract.View> view;
-  private EditPetForAdoptionViewModel viewModel;
+  private final EditPetForAdoptionViewModel viewModel;
   private EditPetForAdoptionContract.Model model;
   private EditPetForAdoptionContract.Router router;
 
@@ -42,10 +42,9 @@ public class EditPetForAdoptionPresenter implements EditPetForAdoptionContract.P
 
     if (viewModel.data == null) {
       // call the model
-      String data = model.fetchData();
 
       // set initial state
-      viewModel.data = data;
+      viewModel.data = model.fetchData();
     }
 
     // update the view

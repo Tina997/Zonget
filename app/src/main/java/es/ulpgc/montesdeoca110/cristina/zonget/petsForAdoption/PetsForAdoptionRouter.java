@@ -12,7 +12,7 @@ public class PetsForAdoptionRouter implements PetsForAdoptionContract.Router {
 
   public static String TAG = PetsForAdoptionRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public PetsForAdoptionRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -33,8 +33,7 @@ public class PetsForAdoptionRouter implements PetsForAdoptionContract.Router {
 
   @Override
   public PetsForAdoptionState getDataFromPreviousScreen() {
-    PetsForAdoptionState state = mediator.getPetsForAdoptionState();
-    return state;
+    return mediator.getPetsForAdoptionState();
   }
 
   @Override

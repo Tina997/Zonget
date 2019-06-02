@@ -7,7 +7,7 @@ public class AdministratorUserPetsDetailModel implements AdministratorUserPetsDe
 
   public static String TAG = AdministratorUserPetsDetailModel.class.getSimpleName();
 
-  RepositoryContract.Accounts repository;
+  private final RepositoryContract.Accounts repository;
 
   public AdministratorUserPetsDetailModel(RepositoryContract.Accounts repository) {
     this.repository = repository;

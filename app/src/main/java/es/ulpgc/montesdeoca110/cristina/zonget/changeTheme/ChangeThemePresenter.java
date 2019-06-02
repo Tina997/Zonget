@@ -9,7 +9,7 @@ import java.util.List;
 public class ChangeThemePresenter implements ChangeThemeContract.Presenter {
 
   private WeakReference<ChangeThemeContract.View> view;
-  private ChangeThemeViewModel viewModel;
+  private final ChangeThemeViewModel viewModel;
   private ChangeThemeContract.Model model;
   private ChangeThemeContract.Router router;
 

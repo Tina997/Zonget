@@ -5,7 +5,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 public class AdministratorButtonsMenuListModel
         implements AdministratorButtonsMenuListContract.Model {
 
-  private RepositoryContract.Settings repository;
+  private final RepositoryContract.Settings repository;
 
   public AdministratorButtonsMenuListModel(RepositoryContract.Settings repository) {
     this.repository = repository;

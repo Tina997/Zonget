@@ -11,7 +11,7 @@ public class AddPetForAdoptionRouter implements AddPetForAdoptionContract.Router
 
   public static String TAG = AddPetForAdoptionRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AddPetForAdoptionRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -31,8 +31,7 @@ public class AddPetForAdoptionRouter implements AddPetForAdoptionContract.Router
 
   @Override
   public AddPetForAdoptionState getDataFromPreviousScreen() {
-    AddPetForAdoptionState state = mediator.getAddPetForAdoptionState();
-    return state;
+    return mediator.getAddPetForAdoptionState();
   }
 
   @Override

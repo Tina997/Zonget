@@ -5,13 +5,12 @@ import android.content.Intent;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailActivity;
 
 public class AddLostPetRouter implements AddLostPetContract.Router {
 
   public static String TAG = AddLostPetRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AddLostPetRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -20,8 +19,7 @@ public class AddLostPetRouter implements AddLostPetContract.Router {
 
   @Override
   public AddLostPetState getDataFromPreviousScreen() {
-    AddLostPetState state = mediator.getAddLostPetState();
-    return state;
+    return mediator.getAddLostPetState();
 
   }
 

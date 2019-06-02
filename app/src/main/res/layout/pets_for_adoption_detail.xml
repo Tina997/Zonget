@@ -22,7 +22,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
-            />
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/pet_for_adoption_breed"
@@ -32,7 +32,7 @@
             android:layout_marginTop="100dp"
             android:padding="0dp"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
         <Space
             android:layout_width="match_parent"
             android:layout_height="5dp" />
@@ -47,14 +47,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/birthday_text_label"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/pet_for_adoption_date"
                 android:textColor="@color/colorBlack"
                 android:layout_marginLeft="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
@@ -69,13 +69,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/details_pet_for_adoption"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/pet_for_adoption_details"
                 android:textColor="@color/colorBlack"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
@@ -90,14 +90,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lost_pet_phone"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/pet_for_adoption_phone"
                 android:textColor="@color/colorBlack"
                 android:layout_marginLeft="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
     </LinearLayout>
 

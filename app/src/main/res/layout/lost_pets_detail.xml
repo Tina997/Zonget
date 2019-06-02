@@ -24,7 +24,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
-            />
+            android:contentDescription="TODO" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
                     android:layout_marginTop="80dp"
                     android:padding="0dp"
                     android:textAlignment="center"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
         <TextView
             android:id="@+id/lost_pet_date"
             style="?android:attr/textAppearanceLarge"
@@ -46,7 +46,7 @@
             android:layout_marginTop="20dp"
             android:padding="0dp"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -59,14 +59,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/breed_text_label"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lost_pet_breed"
                 android:textColor="@color/colorBlack"
                 android:layout_marginLeft="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
@@ -81,14 +81,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/chipNum_text_label"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lost_pet_chipNum"
                 android:textColor="@color/colorBlack"
                 android:layout_marginLeft="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
@@ -103,13 +103,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/details_lost_pets"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lost_pet_details"
                 android:textColor="@color/colorBlack"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
@@ -124,14 +124,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lost_pet_phone"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lost_pet_phone"
                 android:textColor="@color/colorBlack"
                 android:layout_marginLeft="10dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

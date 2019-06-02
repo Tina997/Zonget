@@ -3,7 +3,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.changeTheme;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.ChangeThemeItem;
 import java.util.List;
 
-public class ChangeThemeViewModel {
+class ChangeThemeViewModel {
 
   public String themeChanged;
 

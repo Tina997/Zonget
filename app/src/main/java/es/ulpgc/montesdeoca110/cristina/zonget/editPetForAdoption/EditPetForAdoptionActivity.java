@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailActivity;
 
 public class EditPetForAdoptionActivity
         extends AppCompatActivity implements EditPetForAdoptionContract.View {
@@ -19,8 +18,6 @@ public class EditPetForAdoptionActivity
   public static String TAG = EditPetForAdoptionActivity.class.getSimpleName();
 
   private EditPetForAdoptionContract.Presenter presenter;
-
-  private ActionBar actionBar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +36,7 @@ public class EditPetForAdoptionActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    actionBar = getSupportActionBar();
+    ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.edit_pet_tittle);

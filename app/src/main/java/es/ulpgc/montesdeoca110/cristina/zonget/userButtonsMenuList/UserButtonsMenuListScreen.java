@@ -7,7 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.SettingsRepository;
 import java.lang.ref.WeakReference;
 
-public class UserButtonsMenuListScreen {
+class UserButtonsMenuListScreen {
 
   public static void configure(UserButtonsMenuListContract.View view) {
 

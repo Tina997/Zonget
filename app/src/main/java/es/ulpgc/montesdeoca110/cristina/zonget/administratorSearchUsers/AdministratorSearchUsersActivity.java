@@ -1,22 +1,15 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.AdministratorButtonMenuItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.lostPets.LostPetsListActivity;
 
 public class AdministratorSearchUsersActivity
         extends AppCompatActivity implements AdministratorSearchUsersContract.View {
@@ -24,8 +17,8 @@ public class AdministratorSearchUsersActivity
     public static String TAG = AdministratorSearchUsersActivity.class.getSimpleName();
 
     private AdministratorSearchUsersContract.Presenter presenter;
-    Button searchButton;
-    EditText dataSearched;
+    private Button searchButton;
+    private EditText dataSearched;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

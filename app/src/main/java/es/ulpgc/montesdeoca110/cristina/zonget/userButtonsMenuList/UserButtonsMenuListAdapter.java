@@ -74,13 +74,11 @@ public class UserButtonsMenuListAdapter
   }
 
   private static Bitmap decodeToImage(String imageString) {
-    String base64String = imageString;
-    String base64Image = base64String.split(",")[1];
+    String base64Image = imageString.split(",")[1];
 
     byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
-    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
-    return decodedByte;
+    return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
   }
 
 }

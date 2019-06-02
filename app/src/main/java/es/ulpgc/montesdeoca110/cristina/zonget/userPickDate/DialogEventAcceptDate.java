@@ -12,8 +12,8 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 @SuppressLint("ValidFragment")
 public class DialogEventAcceptDate extends DialogFragment {
 
-  String day;
-  String hour;
+  private final String day;
+  private final String hour;
   private AlertDialog.Builder builder;
 
   public DialogEventAcceptDate(String date, String hours) {

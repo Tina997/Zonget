@@ -27,7 +27,7 @@ public class QueriesRepository implements RepositoryContract.Queries {
 
   private static final String DB_FILE = "zonget.db";
 
-  private ZongetDatabase database;
+  private final ZongetDatabase database;
 
   public static QueriesRepository getInstance(Context context) {
     if (INSTANCE == null) {

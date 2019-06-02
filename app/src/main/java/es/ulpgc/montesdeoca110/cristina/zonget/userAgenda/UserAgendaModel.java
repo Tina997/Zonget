@@ -9,9 +9,9 @@ public class UserAgendaModel implements UserAgendaContract.Model {
   public static String TAG = UserAgendaModel.class.getSimpleName();
 
   private final List<EventItem> eventItems = new ArrayList<>();
-  private final int COUNT = 1;
 
   public UserAgendaModel() {
+    int COUNT = 1;
     for (int index = 1; index <= COUNT; index++) {
       addDate(createDate(index));
     }
@@ -34,7 +34,6 @@ public class UserAgendaModel implements UserAgendaContract.Model {
 
   @Override
   public long fetchDateData() {
-    long time = System.currentTimeMillis();
-    return time;
+    return System.currentTimeMillis();
   }
 }

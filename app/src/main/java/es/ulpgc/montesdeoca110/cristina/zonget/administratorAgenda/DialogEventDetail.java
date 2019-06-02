@@ -14,7 +14,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 @SuppressLint("ValidFragment")
 public class DialogEventDetail extends DialogFragment {
 
-  private AdministratorAgendaContract.View view;
+  private final AdministratorAgendaContract.View view;
 
   public DialogEventDetail(AdministratorAgendaContract.View view) {
     this.view = view;

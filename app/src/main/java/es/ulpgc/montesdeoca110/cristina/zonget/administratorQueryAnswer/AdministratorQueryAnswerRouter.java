@@ -10,7 +10,7 @@ public class AdministratorQueryAnswerRouter implements AdministratorQueryAnswerC
 
   public static String TAG = AdministratorQueryAnswerRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AdministratorQueryAnswerRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -30,8 +30,7 @@ public class AdministratorQueryAnswerRouter implements AdministratorQueryAnswerC
 
   @Override
   public InboxToQueryDetailState getDataFromPreviousScreen() {
-    InboxToQueryDetailState state = mediator.getInboxToQueryDetailState();
-    return state;
+    return mediator.getInboxToQueryDetailState();
   }
 
   @Override

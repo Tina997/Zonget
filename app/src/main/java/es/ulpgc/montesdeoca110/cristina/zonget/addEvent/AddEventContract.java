@@ -60,14 +60,18 @@ interface AddEventContract {
     void onBackButtonPressed();
 
     /**
-     * Metodo que guarda el estado tanto del spinner como del calendario para que permanezca igual al girar la pantalla
-     * @param spinnerSelection: Indica la posición en la que está el spinner antes de girar la pantalla
+     * Metodo que guarda el estado tanto del spinner como del
+     * calendario para que permanezca igual al girar la pantalla
+     * @param spinnerSelection: Indica la posición en la que está el
+     *                        spinner antes de girar la pantalla
      * @param calendar: Indica la fecha exacta del calendario antes de girar la pantalla
      */
     void saveState(int spinnerSelection, Calendar calendar);
 
     /**
-     * Metodo que rellena la vista con la información inicial del calendario (Fecha actual) cuando se rellena por primera vez esta, en caso de que sea tras girar la pantalla
+     * Metodo que rellena la vista con la información inicial del
+     * calendario (Fecha actual) cuando se rellena por primera vez esta,
+     * en caso de que sea tras girar la pantalla
      * esta informacion la rellena con la información de antes de girarla
      */
     void fetchEventData();
@@ -112,7 +116,8 @@ interface AddEventContract {
      */
     String getActualThemeName();
     /**
-     * Metodo llamado al pulsar el boton back que hace que la vista retroceda a la vista de la agenda del cliente
+     * Metodo llamado al pulsar el boton back que hace que la vista
+     * retroceda a la vista de la agenda del cliente
      */
     void onBackButtonPressed();
   }

@@ -22,7 +22,6 @@ public class UserAgendaActivity
   private UserAgendaContract.Presenter presenter;
   private ListView listView;
   private TextView selectedDate;
-  private CalendarView calendarView;
   private String date;
   private long calendarDate;
 
@@ -53,7 +52,7 @@ public class UserAgendaActivity
 
     listView = findViewById(R.id.event_list);
 
-    calendarView = findViewById(R.id.calendar);
+    CalendarView calendarView = findViewById(R.id.calendar);
     selectedDate = findViewById(R.id.selectedDay);
 
     calendarDate = calendarView.getDate();

@@ -1,6 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.editPetForAdoption;
 
-public class EditPetForAdoptionViewModel {
+class EditPetForAdoptionViewModel {
 
   public String data;
 }

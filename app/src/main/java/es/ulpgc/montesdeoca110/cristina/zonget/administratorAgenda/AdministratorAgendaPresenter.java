@@ -14,7 +14,7 @@ public class AdministratorAgendaPresenter extends FragmentActivity
   public static String TAG = AdministratorAgendaPresenter.class.getSimpleName();
 
   private WeakReference<AdministratorAgendaContract.View> view;
-  private AdministratorAgendaViewModel viewModel;
+  private final AdministratorAgendaViewModel viewModel;
   private AdministratorAgendaContract.Model model;
   private AdministratorAgendaContract.Router router;
 
@@ -50,16 +50,14 @@ public class AdministratorAgendaPresenter extends FragmentActivity
 
     if (viewModel.eventList == null) {
       //llamar al modelo
-      List<EventItem> data = model.fetchData();
-      viewModel.eventList = data;
+      viewModel.eventList = model.fetchData();
     }
 
     if (viewModel.calendarDate == 0 || viewModel.date == null) {
       //Llamar al modelo
       long time = model.fetchDateData();
       viewModel.calendarDate = time;
-      String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
-      viewModel.date = currentDate;
+      viewModel.date = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
     }
 
     view.get().displayData(viewModel);

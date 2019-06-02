@@ -13,7 +13,7 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
 
   public static String TAG = AdministratorAgendaRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AdministratorAgendaRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -34,8 +34,7 @@ public class AdministratorAgendaRouter implements AdministratorAgendaContract.Ro
 
   @Override
   public AdministratorAgendaState getDataFromPreviousScreen() {
-    AdministratorAgendaState state = mediator.getAdministratorAgendaState();
-    return state;
+    return mediator.getAdministratorAgendaState();
   }
 
   @Override

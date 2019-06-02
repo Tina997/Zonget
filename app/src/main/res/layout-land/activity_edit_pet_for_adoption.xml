@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/birthday_text_label"
                     android:textColor="?attr/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:layout_width="200dp"
@@ -39,7 +39,7 @@
                     android:paddingLeft="20dp"
                     android:textColor="?attr/colorAccent"
                     android:textColorHint="?attr/colorAccent"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/breed_text_label"
                     android:textColor="?attr/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:layout_width="200dp"
@@ -64,7 +64,7 @@
                     android:paddingLeft="20dp"
                     android:textColor="?attr/colorAccent"
                     android:textColorHint="?attr/colorAccent"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/details_pet_for_adoption"
                     android:textColor="?attr/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:layout_width="200dp"
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/lost_pet_phone"
                     android:textColor="?attr/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:layout_width="200dp"
@@ -130,7 +130,9 @@
                 android:background="?attr/colorAccent"
                 tools:srcCompat="@tools:sample/avatars"
                 android:clickable="true"
-                android:onClick="takePicture"/>
+                android:onClick="takePicture"
+                android:contentDescription="TODO"
+                android:focusable="true" />
         </LinearLayout>
 
     </LinearLayout>

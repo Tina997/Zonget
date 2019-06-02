@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +64,7 @@ public class AdministratorInboxListAdapter
     final TextView title;
 
 
-    public ViewHolder(View view) {
+    ViewHolder(View view) {
       super(view);
       userID = view.findViewById(R.id.userID);
       title = view.findViewById(R.id.title);

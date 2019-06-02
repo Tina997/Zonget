@@ -7,7 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.SettingsRepository;
 
 import java.lang.ref.WeakReference;
 
-public class ChangeThemeScreen {
+class ChangeThemeScreen {
 
   public static void configure(ChangeThemeContract.View view) {
 

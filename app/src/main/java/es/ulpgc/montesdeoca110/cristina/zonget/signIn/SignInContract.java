@@ -8,94 +8,100 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public interface SignInContract {
 
-    interface View {
+  interface View {
 
-        /**
-         * Metodo que inicializa el presentador asociado a la vista
-         * @param presenter: El presentador de la vista
-         */
-        void injectPresenter(Presenter presenter);
+    /**
+     * Metodo que inicializa el presentador asociado a la vista
+     *
+     * @param presenter: El presentador de la vista
+     */
+    void injectPresenter(Presenter presenter);
 
-        /**
-         * Metodo que muestra por pantalla un toast en caso de que el user o password sean incorrectos
-         */
-        void displayCheckAccountError();
+    /**
+     * Metodo que muestra por pantalla un toast en caso de que el user o password sean incorrectos
+     */
+    void displayCheckAccountError();
 
-        /**
-         * Ampliacion del finish de la clase Application
-         */
-        void finish();
+    /**
+     * Ampliacion del finish de la clase Application
+     */
+    void finish();
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        /**
-         * Método que inicializa la vista asociado a ese presentador
-         * @param view: La vista a iniciar
-         */
-        void injectView(WeakReference<View> view);
+    /**
+     * Método que inicializa la vista asociado a ese presentador
+     *
+     * @param view: La vista a iniciar
+     */
+    void injectView(WeakReference<View> view);
 
-        /**
-         * Metodo que inicializa el modelo asociado al presentador
-         * @param model: El modelo a iniciar
-         */
-        void injectModel(Model model);
+    /**
+     * Metodo que inicializa el modelo asociado al presentador
+     *
+     * @param model: El modelo a iniciar
+     */
+    void injectModel(Model model);
 
-        /**
-         * Metodo que incializa el router asociado al presentador
-         * @param router: El router a iniciar
-         */
-        void injectRouter(Router router);
+    /**
+     * Metodo que incializa el router asociado al presentador
+     *
+     * @param router: El router a iniciar
+     */
+    void injectRouter(Router router);
 
-        /**
-         * Metodo que devuelve el tema actual que esta siendo usado en ese momento
-         * @return String con el nombre del tema que esta siendo usado
-         */
-        String getActualThemeName();
+    /**
+     * Metodo que devuelve el tema actual que esta siendo usado en ese momento
+     *
+     * @return String con el nombre del tema que esta siendo usado
+     */
+    String getActualThemeName();
 
-        void fetchSignInData();
+    void fetchSignInData();
 
-        void forgetPasswordPressed();
+    void forgetPasswordPressed();
 
-        void signInButtonPressed(String accountName, String accountPassword);
+    void signInButtonPressed(String accountName, String accountPassword);
 
-        void signUpButtonPressed();
+    void signUpButtonPressed();
 
-        void pickForADateButtonPressed();
-    }
+    void pickForADateButtonPressed();
+  }
 
-    interface Model {
+  interface Model {
 
-        void checkAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
+    void checkAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        //------------------------- Tema ---------------------
+    //------------------------- Tema ---------------------
 
-        /**
-         * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
-         * @return string con el nombre  del tema que se esta siendo utilizado
-         */
-        String getActualThemeName();
+    /**
+     * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
+     *
+     * @return string con el nombre  del tema que se esta siendo utilizado
+     */
+    String getActualThemeName();
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToMenuScreen();
+    void navigateToMenuScreen();
 
-        void navigateToSignUpScreen();
+    void navigateToSignUpScreen();
 
-        void navigateToUserPickDateScreen();
+    void navigateToUserPickDateScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataToMenuScreen(SignInToMenuState state);
+    void passDataToMenuScreen(SignInToMenuState state);
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-        SplashToSignInState getDataFromSplashScreen();
+    SplashToSignInState getDataFromSplashScreen();
 
-    }
+  }
 }

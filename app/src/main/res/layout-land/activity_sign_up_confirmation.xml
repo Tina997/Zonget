@@ -41,7 +41,8 @@
             android:layout_gravity="center"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/logo"
-            android:tint="?attr/colorPrimaryDark"/>
+            android:tint="?attr/colorPrimaryDark"
+            android:contentDescription="TODO" />
 
     </LinearLayout>
 

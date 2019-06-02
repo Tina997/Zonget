@@ -20,7 +20,7 @@
             android:layout_marginLeft="40dp"
             android:text="@string/insert_name_text_label"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editPetName"
@@ -32,7 +32,7 @@
             android:paddingLeft="20dp"
             android:textColor="?attr/colorAccent"
             android:textColorHint="?attr/colorAccent"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,7 +47,7 @@
             android:layout_marginLeft="40dp"
             android:text="@string/species_text_label"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editPetSpecies"
@@ -59,7 +59,7 @@
             android:paddingLeft="20dp"
             android:textColor="?attr/colorAccent"
             android:textColorHint="?attr/colorAccent"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,7 +74,7 @@
             android:layout_marginLeft="40dp"
             android:text="@string/breed_text_label"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editPetBreed"
@@ -86,7 +86,7 @@
             android:paddingLeft="20dp"
             android:textColor="?attr/colorAccent"
             android:textColorHint="?attr/colorAccent"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:text="@string/insert_ID_text_label"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editPetChipNum"
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:text="@string/insert_birthday_text_label"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editPetBirth"

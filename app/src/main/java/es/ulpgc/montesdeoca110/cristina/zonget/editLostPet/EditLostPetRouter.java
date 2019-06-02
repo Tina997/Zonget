@@ -10,7 +10,7 @@ public class EditLostPetRouter implements EditLostPetContract.Router {
 
   public static String TAG = EditLostPetRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public EditLostPetRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -30,8 +30,7 @@ public class EditLostPetRouter implements EditLostPetContract.Router {
 
   @Override
   public EditLostPetState getDataFromPreviousScreen() {
-    EditLostPetState state = mediator.getEditLostPetState();
-    return state;
+    return mediator.getEditLostPetState();
 
   }
 

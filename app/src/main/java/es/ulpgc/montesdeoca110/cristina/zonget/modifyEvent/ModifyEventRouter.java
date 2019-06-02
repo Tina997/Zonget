@@ -10,7 +10,7 @@ public class ModifyEventRouter implements ModifyEventContract.Router {
 
   public static String TAG = ModifyEventRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public ModifyEventRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -30,8 +30,7 @@ public class ModifyEventRouter implements ModifyEventContract.Router {
 
   @Override
   public ModifyEventState getDataFromPreviousScreen() {
-    ModifyEventState state = mediator.getModifyEventState();
-    return state;
+    return mediator.getModifyEventState();
   }
 
   @Override

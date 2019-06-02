@@ -23,9 +23,9 @@ public class ModifyEventActivity
   public static String TAG = ModifyEventActivity.class.getSimpleName();
 
   private ModifyEventContract.Presenter presenter;
-  Spinner spinner;
-  DatePicker datePicker;
-  TimePicker timePicker;
+  private Spinner spinner;
+  private DatePicker datePicker;
+  private TimePicker timePicker;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

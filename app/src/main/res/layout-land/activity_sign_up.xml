@@ -68,7 +68,8 @@
                     android:inputType="textPersonName"
                     android:padding="5dp"
                     android:textSize="16sp"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="?attr/colorAccent"
+                    tools:ignore="LabelFor" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -86,7 +87,8 @@
                     android:inputType="textPersonName"
                     android:padding="5dp"
                     android:textSize="16sp"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="?attr/colorAccent"
+                    tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/user_sign_up_correct_email_edit_text"
@@ -99,7 +101,8 @@
                     android:gravity="left|center_vertical"
                     android:inputType="textPersonName"
                     android:padding="5dp"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="?attr/colorAccent"
+                    tools:ignore="LabelFor" />
 
             </LinearLayout>
 
@@ -120,7 +123,8 @@
                     android:layout_marginBottom="5dp"
                     android:elevation="24dp"
                     android:scaleType="fitCenter"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:contentDescription="TODO" />
 
             </LinearLayout>
 
@@ -170,7 +174,8 @@
                     android:inputType="textPersonName"
                     android:padding="5dp"
                     android:textSize="16sp"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="?attr/colorAccent"
+                    tools:ignore="LabelFor" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -188,7 +193,8 @@
                     android:inputType="textPassword"
                     android:padding="5dp"
                     android:textSize="16sp"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="?attr/colorAccent"
+                    tools:ignore="LabelFor" />
 
                 <EditText
                     android:id="@+id/user_sign_up_correct_password_edit_text"
@@ -202,7 +208,8 @@
                     android:inputType="textPassword"
                     android:padding="5dp"
                     android:textSize="16sp"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="?attr/colorAccent"
+                    tools:ignore="LabelFor" />
 
             </LinearLayout>
 
@@ -223,7 +230,8 @@
                     android:layout_marginBottom="5dp"
                     android:elevation="24dp"
                     android:scaleType="fitCenter"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"
+                    android:contentDescription="TODO" />
             </LinearLayout>
 
         </LinearLayout>

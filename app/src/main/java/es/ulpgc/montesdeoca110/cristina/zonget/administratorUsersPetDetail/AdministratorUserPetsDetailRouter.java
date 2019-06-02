@@ -1,26 +1,19 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPetDetail;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUserEditPet.AdministratorUserEditPetActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersList.AdministratorUsersListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersPets.AdministratorUsersPetsListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.PetsItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsDetailContract.Router {
 
     public static String TAG = AdministratorUserPetsDetailRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+    private final AppMediator mediator;
 
     public AdministratorUserPetsDetailRouter(AppMediator mediator) {
         this.mediator = mediator;
@@ -40,8 +33,7 @@ public class AdministratorUserPetsDetailRouter implements AdministratorUserPetsD
 
     @Override
     public UserPetItem getDataFromPreviousScreen() {
-        UserPetItem pet = mediator.getAnimal();
-        return pet;
+      return mediator.getAnimal();
     }
 
     @Override

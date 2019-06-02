@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
@@ -12,7 +10,7 @@ public class AdministratorQueryAnswerPresenter implements AdministratorQueryAnsw
   public static String TAG = AdministratorQueryAnswerPresenter.class.getSimpleName();
 
   private WeakReference<AdministratorQueryAnswerContract.View> view;
-  private AdministratorQueryAnswerViewModel viewModel;
+  private final AdministratorQueryAnswerViewModel viewModel;
   private AdministratorQueryAnswerContract.Model model;
   private AdministratorQueryAnswerContract.Router router;
 

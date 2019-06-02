@@ -23,10 +23,6 @@ public class UserButtonsMenuListActivity extends AppCompatActivity
 
   private UserButtonsMenuListContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
-  private Button pickForADateButton;
-
   private UserButtonsMenuListAdapter listAdapter;
 
   @Override
@@ -45,14 +41,15 @@ public class UserButtonsMenuListActivity extends AppCompatActivity
     setContentView(R.layout.activity_user_buttons_menu_list);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();
     actionBar.setTitle("Menú");
 
     //Búsqueda de los elementos de la vista
-    pickForADateButton = findViewById(R.id.user_buttons_menu_list_pick_for_a_date_button);
+    Button pickForADateButton = findViewById(R.id.user_buttons_menu_list_pick_for_a_date_button);
 
     //Listeners
     listAdapter = new UserButtonsMenuListAdapter(new View.OnClickListener() {

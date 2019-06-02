@@ -10,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.HourItem;
 import java.util.List;
 
-public class UserPickDateAdapter extends ArrayAdapter<HourItem> {
+class UserPickDateAdapter extends ArrayAdapter<HourItem> {
 
   private final List<HourItem> hoursItemList;
   private final View.OnClickListener clickListener;

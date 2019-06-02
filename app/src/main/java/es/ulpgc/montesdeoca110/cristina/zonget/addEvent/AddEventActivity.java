@@ -24,9 +24,9 @@ public class AddEventActivity
   public static String TAG = AddEventActivity.class.getSimpleName();
 
   private AddEventContract.Presenter presenter;
-  Spinner spinner;
-  DatePicker datePicker;
-  TimePicker timePicker;
+  private Spinner spinner;
+  private DatePicker datePicker;
+  private TimePicker timePicker;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

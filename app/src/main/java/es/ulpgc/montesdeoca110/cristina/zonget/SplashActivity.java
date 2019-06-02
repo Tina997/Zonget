@@ -10,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-  private Handler mWaitHandler = new Handler();
+  private final Handler mWaitHandler = new Handler();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

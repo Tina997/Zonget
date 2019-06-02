@@ -1,9 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
-import java.util.HashMap;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
@@ -13,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 public class UserPendingQueriesListPresenter implements UserPendingQueriesListContract.Presenter {
 
   private WeakReference<UserPendingQueriesListContract.View> view;
-  private UserPendingQueriesListViewModel viewModel;
+  private final UserPendingQueriesListViewModel viewModel;
   private UserPendingQueriesListContract.Model model;
   private UserPendingQueriesListContract.Router router;
 

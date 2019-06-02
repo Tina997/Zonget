@@ -6,8 +6,7 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
 
   public static String TAG = AddPetForAdoptionPresenter.class.getSimpleName();
 
-  private WeakReference<AddPetForAdoptionContract.View> view;
-  private AddPetForAdoptionViewModel viewModel;
+  private final AddPetForAdoptionViewModel viewModel;
   private AddPetForAdoptionContract.Model model;
   private AddPetForAdoptionContract.Router router;
 
@@ -17,7 +16,7 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
 
   @Override
   public void injectView(WeakReference<AddPetForAdoptionContract.View> view) {
-    this.view = view;
+    WeakReference<AddPetForAdoptionContract.View> view1 = view;
   }
 
   @Override
@@ -42,10 +41,9 @@ public class AddPetForAdoptionPresenter implements AddPetForAdoptionContract.Pre
 
     if (viewModel.data == null) {
       // call the model
-      String data = model.fetchData();
 
       // set initial state
-      viewModel.data = data;
+      viewModel.data = model.fetchData();
     }
 
 

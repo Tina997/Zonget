@@ -10,98 +10,106 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public interface AdministratorButtonsMenuListContract {
 
-    interface View {
+  interface View {
 
-        /**
-         * Metodo que inicializa el presentador asociado a la vista
-         * @param presenter: El presentador de la vista
-         */
-        void injectPresenter(Presenter presenter);
+    /**
+     * Metodo que inicializa el presentador asociado a la vista
+     *
+     * @param presenter: El presentador de la vista
+     */
+    void injectPresenter(Presenter presenter);
 
-        void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
+    void displayAdministratorButtonsMenuListData(AdministratorButtonsMenuListViewModel viewModel);
 
-        void reboot();
+    void reboot();
 
-        void finish();
+    void finish();
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        /**
-         * Método que inicializa la vista asociado a ese presentador
-         * @param view: La vista a iniciar
-         */
-        void injectView(WeakReference<View> view);
+    /**
+     * Método que inicializa la vista asociado a ese presentador
+     *
+     * @param view: La vista a iniciar
+     */
+    void injectView(WeakReference<View> view);
 
-        /**
-         * Metodo que inicializa el modelo asociado al presentador
-         * @param model: El modelo a iniciar
-         */
-        void injectModel(Model model);
+    /**
+     * Metodo que inicializa el modelo asociado al presentador
+     *
+     * @param model: El modelo a iniciar
+     */
+    void injectModel(Model model);
 
-        /**
-         * Metodo que incializa el router asociado al presentador
-         * @param router: El router a iniciar
-         */
-        void injectRouter(Router router);
-        /**
-         * Metodo que devuelve el tema actual que esta siendo usado en ese momento
-         * @return String con el nombre del tema que esta siendo usado
-         */
-        String getActualThemeName();
+    /**
+     * Metodo que incializa el router asociado al presentador
+     *
+     * @param router: El router a iniciar
+     */
+    void injectRouter(Router router);
 
-        void fetchAdministratorButtonsMenuListData();
+    /**
+     * Metodo que devuelve el tema actual que esta siendo usado en ese momento
+     *
+     * @return String con el nombre del tema que esta siendo usado
+     */
+    String getActualThemeName();
 
-        void signOutButtonPressed();
+    void fetchAdministratorButtonsMenuListData();
 
-        void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
+    void signOutButtonPressed();
 
-        void changeThemeButtonPressed();
+    void selectAdministratorButtonsMenuListData(AdministratorButtonMenuItem item);
 
-        void checkThemeChanged();
-    }
+    void changeThemeButtonPressed();
 
-    interface Model {
+    void checkThemeChanged();
+  }
 
-        
-        void fetchAdministratorButtonsMenuListData(RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
+  interface Model {
 
-    }
 
-    interface Router {
+    void fetchAdministratorButtonsMenuListData
+            (RepositoryContract.Settings.GetAdministratorMenuButtonsListCallback callback);
 
-        //------------------------- Tema ---------------------
+  }
 
-        /**
-         * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
-         * @return string con el nombre  del tema que se esta siendo utilizado
-         */
-        String getActualThemeName();
+  interface Router {
 
-        void setChangeThemeToMenuState(boolean isChanged);
+    //------------------------- Tema ---------------------
 
-        //--------------- Navegación entre pantallas -----------
+    /**
+     * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
+     *
+     * @return string con el nombre  del tema que se esta siendo utilizado
+     */
+    String getActualThemeName();
 
-        void navigateToSignInScreen();
+    void setChangeThemeToMenuState(boolean isChanged);
 
-        void navigateToSelectedActivityScreen(String activityClassName);
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToChangeThemeScreen();
+    void navigateToSignInScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    void navigateToSelectedActivityScreen(String activityClassName);
 
-        void passDataToSignInScreen(MenuToSignInState state);
+    void navigateToChangeThemeScreen();
 
-        void passDataToSelectedActivityScreen(MenuToSelectedActivityState state);
+    //------------- Paso de datos entre pantallas ----------
 
-        //void passDataToChangeThemeScreen();
+    void passDataToSignInScreen(MenuToSignInState state);
 
-        //------------- Obtener datos entre pantallas ----------
+    void passDataToSelectedActivityScreen(MenuToSelectedActivityState state);
 
-        //AdministratorButtonsMenuListState getDataFromSignInScreen();
+    //void passDataToChangeThemeScreen();
 
-        ChangeThemeToMenuState getDataFromChangeThemeScreen();
+    //------------- Obtener datos entre pantallas ----------
 
-    }
+    //AdministratorButtonsMenuListState getDataFromSignInScreen();
+
+    ChangeThemeToMenuState getDataFromChangeThemeScreen();
+
+  }
 }

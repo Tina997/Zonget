@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorInbox.AdministratorInboxActivity;
 
 public class AdministratorQueryDetailActivity
         extends AppCompatActivity implements AdministratorQueryDetailContract.View {
@@ -19,8 +17,8 @@ public class AdministratorQueryDetailActivity
   public static String TAG = AdministratorQueryDetailActivity.class.getSimpleName();
 
   private AdministratorQueryDetailContract.Presenter presenter;
-  TextView queryTitle;
-  TextView queryDescription;
+  private TextView queryTitle;
+  private TextView queryDescription;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

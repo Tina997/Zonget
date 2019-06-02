@@ -6,110 +6,116 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AccountItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.SignUpToSignUpConfirmationState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-public interface SignUpContract {
+interface SignUpContract {
 
-    interface View {
+  interface View {
 
-        /**
-         * Metodo que inicializa el presentador asociado a la vista
-         * @param presenter: El presentador de la vista
-         */
-        void injectPresenter(Presenter presenter);
+    /**
+     * Metodo que inicializa el presentador asociado a la vista
+     *
+     * @param presenter: El presentador de la vista
+     */
+    void injectPresenter(Presenter presenter);
 
-        void displaySignUpData(SignUpViewModel viewModel);
+    void displaySignUpData(SignUpViewModel viewModel);
 
-        void displayAlertMesaje(String mesaje);
+    void displayAlertMesaje(String mesaje);
 
-        void displayInsertNewAccountMesaje(String mesaje);
+    void displayInsertNewAccountMesaje(String mesaje);
 
-        void finish();
+    void finish();
 
-    }
+  }
 
-    interface Presenter {
+  interface Presenter {
 
-        /**
-         * Método que inicializa la vista asociado a ese presentador
-         * @param view: La vista a iniciar
-         */
-        void injectView(WeakReference<View> view);
+    /**
+     * Método que inicializa la vista asociado a ese presentador
+     *
+     * @param view: La vista a iniciar
+     */
+    void injectView(WeakReference<View> view);
 
-        /**
-         * Metodo que inicializa el modelo asociado al presentador
-         * @param model: El modelo a iniciar
-         */
-        void injectModel(Model model);
+    /**
+     * Metodo que inicializa el modelo asociado al presentador
+     *
+     * @param model: El modelo a iniciar
+     */
+    void injectModel(Model model);
 
-        /**
-         * Metodo que incializa el router asociado al presentador
-         * @param router: El router a iniciar
-         */
-        void injectRouter(Router router);
+    /**
+     * Metodo que incializa el router asociado al presentador
+     *
+     * @param router: El router a iniciar
+     */
+    void injectRouter(Router router);
 
-        /**
-         * Metodo que devuelve el tema actual que esta siendo usado en ese momento
-         * @return String con el nombre del tema que esta siendo usado
-         */
-        String getActualThemeName();
+    /**
+     * Metodo que devuelve el tema actual que esta siendo usado en ese momento
+     *
+     * @return String con el nombre del tema que esta siendo usado
+     */
+    String getActualThemeName();
 
-        void backButtonPressed();
+    void backButtonPressed();
 
-        void updateAccountNameEditText(String accountName);
+    void updateAccountNameEditText(String accountName);
 
-        void updateAccountDniEditText(String accountDni);
+    void updateAccountDniEditText(String accountDni);
 
-        void updateAccountEmailEditText(String accountEmail);
+    void updateAccountEmailEditText(String accountEmail);
 
-        void updateAccountSecondEmailEditText(String accountSecondEmail);
+    void updateAccountSecondEmailEditText(String accountSecondEmail);
 
-        void checkEmails();
+    void checkEmails();
 
-        void updateAccountPasswordEditText(String accountPassword);
+    void updateAccountPasswordEditText(String accountPassword);
 
-        void updateAccountSecondPasswordEditText(String accountSecondPassword);
+    void updateAccountSecondPasswordEditText(String accountSecondPassword);
 
-        void checkPasswords();
+    void checkPasswords();
 
-        void fetchSignUpData();
+    void fetchSignUpData();
 
-        boolean checkAllDataIntroduced();
+    boolean checkAllDataIntroduced();
 
-        void confirmedButtonPressed();
+    void confirmedButtonPressed();
 
-        void saveSignUpState();
-    }
+    void saveSignUpState();
+  }
 
-    interface Model {
+  interface Model {
 
-        void checkNewAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
+    void checkNewAccount(String accountDni, String accountEmail, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
 
-        void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
+    void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
-    }
+  }
 
-    interface Router {
+  interface Router {
 
-        void setSignUpState(SignUpState state);
+    void setSignUpState(SignUpState state);
 
-        //------------------------- Tema ---------------------
+    //------------------------- Tema ---------------------
 
-        /**
-         * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
-         * @return string con el nombre  del tema que se esta siendo utilizado
-         */
-        String getActualThemeName();
+    /**
+     * Metodo que devuelve el nombre del tema actual que esta siendo utilizado
+     *
+     * @return string con el nombre  del tema que se esta siendo utilizado
+     */
+    String getActualThemeName();
 
-        //--------------- Navegación entre pantallas -----------
+    //--------------- Navegación entre pantallas -----------
 
-        void navigateToSinInScreen();
+    void navigateToSinInScreen();
 
-        void navigateToSignUpConfirmationScreen();
+    void navigateToSignUpConfirmationScreen();
 
-        //------------- Paso de datos entre pantallas ----------
+    //------------- Paso de datos entre pantallas ----------
 
-        void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmationState state);
+    void passDataSignUpConfirmationScreen(SignUpToSignUpConfirmationState state);
 
-        //------------- Obtener datos entre pantallas ----------
+    //------------- Obtener datos entre pantallas ----------
 
-    }
+  }
 }

@@ -8,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 import java.lang.ref.WeakReference;
 
-public class AdministratorQueryAnswerScreen {
+class AdministratorQueryAnswerScreen {
 
   public static void configure(AdministratorQueryAnswerContract.View view) {
 

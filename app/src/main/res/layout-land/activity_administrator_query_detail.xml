@@ -69,7 +69,8 @@
                 android:id="@+id/filesImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_add" />
+                app:srcCompat="@android:drawable/ic_menu_add"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/files"
@@ -79,7 +80,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/administrator_query_detail_attached_files_text"
                 android:textColor="?attr/colorPrimary"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:textStyle="bold"/>
 
         </LinearLayout>

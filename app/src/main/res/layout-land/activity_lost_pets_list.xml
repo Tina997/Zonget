@@ -33,7 +33,8 @@
         android:onClick="goToAddLostPet"
         android:textAlignment="center"
         android:tint="?attr/colorPrimary"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:focusable="true" />
 
 </android.support.design.widget.CoordinatorLayout>
 

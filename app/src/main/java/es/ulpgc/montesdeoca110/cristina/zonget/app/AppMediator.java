@@ -65,13 +65,13 @@ public class AppMediator extends Application {
   private UserPendingQueriesListState userPendingQueriesListState;
   private UserFinishedQueriesListState userFinishedQueriesListState;
 
-  private UserPetsState clientPetsState = new UserPetsState();
+  private final UserPetsState clientPetsState = new UserPetsState();
 
   private UserAgendaState userAgendaState = new UserAgendaState();
 
   private AdministratorAgendaState administratorAgendaState = new AdministratorAgendaState();
 
-  private UserPetsDetailState userPetDetailState = new UserPetsDetailState();
+  private final UserPetsDetailState userPetDetailState = new UserPetsDetailState();
 
   private AddEventState addEventState = new AddEventState();
 
@@ -101,21 +101,20 @@ public class AppMediator extends Application {
   private AdministratorUserEditPetState administratorUserEditPetState =
           new AdministratorUserEditPetState();
   private UserPickDateState userPickDateState = new UserPickDateState();
-  private LostPetsListState lostPetsListState = new LostPetsListState();
-  private LostPetsDetailState lostPetsDetailState = new LostPetsDetailState();
+  private final LostPetsListState lostPetsListState = new LostPetsListState();
+  private final LostPetsDetailState lostPetsDetailState = new LostPetsDetailState();
 
   private PetsForAdoptionState petsForAdoptionState = new PetsForAdoptionState();
   private PetsForAdoptionDetailState petsForAdoptionDetailState = new PetsForAdoptionDetailState();
   private EditPetForAdoptionState editPetForAdoptionState = new EditPetForAdoptionState();
   private AddPetForAdoptionState addPetForAdoptionState = new AddPetForAdoptionState();
 
-  private AddLostPetState addLostPetState = new AddLostPetState();
-  private EditLostPetState editLostPetState = new EditLostPetState();
+  private final AddLostPetState addLostPetState = new AddLostPetState();
+  private final EditLostPetState editLostPetState = new EditLostPetState();
 
   //Variables de las activities
 
   private UserPetItem animal;
-  private UserItem userItem;
   private LostPetItem lostPet;
   private PetForAdoptionItem petForAdoptionItem;
 
@@ -255,7 +254,8 @@ public class AppMediator extends Application {
     return userPendingQueriesListState;
   }
 
-  public void setUserPendingQueriesListState(UserPendingQueriesListState userPendingQueriesListState) {
+  public void setUserPendingQueriesListState(UserPendingQueriesListState
+                                                     userPendingQueriesListState) {
     this.userPendingQueriesListState = userPendingQueriesListState;
   }
 
@@ -264,7 +264,8 @@ public class AppMediator extends Application {
     return userFinishedQueriesListState;
   }
 
-  public void setUserFinishedQueriesListState(UserFinishedQueriesListState userFinishedQueriesListState) {
+  public void setUserFinishedQueriesListState(UserFinishedQueriesListState
+                                                      userFinishedQueriesListState) {
     this.userFinishedQueriesListState = userFinishedQueriesListState;
   }
 
@@ -300,7 +301,8 @@ public class AppMediator extends Application {
     return administratorSearchUserState;
   }
 
-  public void setadminSearchUsersState(AdministratorSearchUsersState administratorSearchUsersState) {
+  public void setadminSearchUsersState(AdministratorSearchUsersState
+                                               administratorSearchUsersState) {
     administratorSearchUserState = administratorSearchUsersState;
   }
 
@@ -318,7 +320,8 @@ public class AppMediator extends Application {
     return administratorQueryDetailState;
   }
 
-  public void setAdministratorQueryDetailState(AdministratorQueryDetailState administratorQueryDetailState) {
+  public void setAdministratorQueryDetailState(AdministratorQueryDetailState
+                                                       administratorQueryDetailState) {
     this.administratorQueryDetailState = administratorQueryDetailState;
   }
 
@@ -327,7 +330,8 @@ public class AppMediator extends Application {
     return administratorQueryAnswerState;
   }
 
-  public void setAdministratorQueryAnswerState(AdministratorQueryAnswerState administratorQueryAnswerState) {
+  public void setAdministratorQueryAnswerState(AdministratorQueryAnswerState
+                                                       administratorQueryAnswerState) {
     this.administratorQueryAnswerState = administratorQueryAnswerState;
   }
 
@@ -337,7 +341,7 @@ public class AppMediator extends Application {
   }
 
   public void setUserItem(UserItem item) {
-    this.userItem = item;
+    UserItem userItem = item;
   }
 
   public AdministratorUsersListState getAdministratorUsersListState() {
@@ -417,7 +421,8 @@ public class AppMediator extends Application {
   }
 
   //AddPet
-  public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState administratorUsersAddPetState) {
+  public void setAdministratorUsersAddPetState(AdministratorUsersAddPetState
+                                                       administratorUsersAddPetState) {
     this.administratorUsersAddPetState = administratorUsersAddPetState;
   }
 
@@ -426,7 +431,8 @@ public class AppMediator extends Application {
   }
 
   //EditPet
-  public void setAdministratorUserEditPetState(AdministratorUserEditPetState administratorUserEditPetState) {
+  public void setAdministratorUserEditPetState(AdministratorUserEditPetState
+                                                       administratorUserEditPetState) {
     this.administratorUserEditPetState = administratorUserEditPetState;
   }
 
@@ -463,8 +469,8 @@ public class AppMediator extends Application {
   }
 
   //LostPets
-  public void setlostPetsListState(LostPetItem lostPetsItem) {
-    lostPetsItem = lostPet;
+  public void setlostPetsListState() {
+    LostPetItem lostPetsItem = lostPet;
   }
 
   public void setLostPet(LostPetItem lostPetItem) {
@@ -476,7 +482,7 @@ public class AppMediator extends Application {
     return lostPetsListState;
   }
 
-  //------------------------------------- Estados entre actividades ------------------------------------------
+  //------------------------------------- Estados entre actividades -------------------------------
 
   //SplashToSignIn
   public SplashToSignInState getSplashToSignInState() {
@@ -529,7 +535,8 @@ public class AppMediator extends Application {
     return menuToSelectedActivityState;
   }
 
-  public void setMenuToSelectedActivityState(MenuToSelectedActivityState menuToSelectedActivityState) {
+  public void setMenuToSelectedActivityState(MenuToSelectedActivityState
+                                                     menuToSelectedActivityState) {
     this.menuToSelectedActivityState = menuToSelectedActivityState;
   }
 
@@ -538,7 +545,8 @@ public class AppMediator extends Application {
     return userMenuToUserPickDateState;
   }
 
-  public void setUserMenuToUserPickDateState(UserMenuToUserPickDateState userMenuToUserPickDateState) {
+  public void setUserMenuToUserPickDateState(UserMenuToUserPickDateState
+                                                     userMenuToUserPickDateState) {
     this.userMenuToUserPickDateState = userMenuToUserPickDateState;
   }
 

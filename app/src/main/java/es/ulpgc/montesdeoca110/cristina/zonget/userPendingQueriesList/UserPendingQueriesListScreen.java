@@ -8,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 import java.lang.ref.WeakReference;
 
-public class UserPendingQueriesListScreen {
+class UserPendingQueriesListScreen {
 
   public static void configure(UserPendingQueriesListContract.View view) {
 

@@ -11,7 +11,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.signUpConfirmation.SignUpConfirma
 
 public class SignUpRouter implements SignUpContract.Router {
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public SignUpRouter(AppMediator mediator) {
     this.mediator = mediator;

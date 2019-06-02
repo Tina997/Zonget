@@ -19,8 +19,6 @@ public class PetsForAdoptionActivity
 
   private PetsForAdoptionContract.Presenter presenter;
 
-  private ActionBar actionBar;
-
   private PetsForAdoptionListAdapter listAdapter;
 
   @Override
@@ -41,7 +39,7 @@ public class PetsForAdoptionActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    actionBar = getSupportActionBar();
+    ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.pets_for_adoption_activity_name);

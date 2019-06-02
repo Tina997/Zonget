@@ -6,7 +6,7 @@ public class AdministratorUsersAddPetModel implements AdministratorUsersAddPetCo
 
   public static String TAG = AdministratorUsersAddPetModel.class.getSimpleName();
 
-  RepositoryContract.Accounts repository;
+  private final RepositoryContract.Accounts repository;
 
   public AdministratorUsersAddPetModel(RepositoryContract.Accounts repository) {
     this.repository = repository;

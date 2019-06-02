@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 
-public class AdministratorAgendaViewModel {
+class AdministratorAgendaViewModel {
 
   public List<EventItem> eventList;
   public String date;

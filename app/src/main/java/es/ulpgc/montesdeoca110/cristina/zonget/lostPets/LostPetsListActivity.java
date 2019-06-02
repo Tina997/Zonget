@@ -21,8 +21,6 @@ public class LostPetsListActivity
 
   private LostPetsListContract.Presenter presenter;
 
-  private ActionBar actionBar;
-
   private LostPetsListAdapter listAdapter;
 
   @Override
@@ -41,7 +39,7 @@ public class LostPetsListActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    actionBar = getSupportActionBar();
+    ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.lost_pets_tittle);

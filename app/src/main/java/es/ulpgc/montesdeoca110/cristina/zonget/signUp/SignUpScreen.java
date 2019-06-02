@@ -7,7 +7,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.AccountsRepository;
 import java.lang.ref.WeakReference;
 
-public class SignUpScreen {
+class SignUpScreen {
 
   public static void configure(SignUpContract.View view) {
 

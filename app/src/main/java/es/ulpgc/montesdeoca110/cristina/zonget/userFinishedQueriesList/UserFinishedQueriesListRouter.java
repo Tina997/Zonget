@@ -10,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu.UserQueriesMenuAc
 
 public class UserFinishedQueriesListRouter implements UserFinishedQueriesListContract.Router {
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public UserFinishedQueriesListRouter(AppMediator mediator) {
     this.mediator = mediator;

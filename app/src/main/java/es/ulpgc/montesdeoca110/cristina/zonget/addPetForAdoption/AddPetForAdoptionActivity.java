@@ -9,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoptionDetail.PetsForAdoptionDetailActivity;
 
 public class AddPetForAdoptionActivity
         extends AppCompatActivity implements AddPetForAdoptionContract.View {
@@ -17,8 +16,6 @@ public class AddPetForAdoptionActivity
   public static String TAG = AddPetForAdoptionActivity.class.getSimpleName();
 
   private AddPetForAdoptionContract.Presenter presenter;
-
-  private ActionBar actionBar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +36,7 @@ public class AddPetForAdoptionActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    actionBar = getSupportActionBar();
+    ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.add_pet_tittle);

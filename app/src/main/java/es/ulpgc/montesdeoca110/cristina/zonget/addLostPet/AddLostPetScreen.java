@@ -4,7 +4,7 @@ import android.support.v4.app.FragmentActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import java.lang.ref.WeakReference;
 
-public class AddLostPetScreen {
+class AddLostPetScreen {
 
   public static void configure(AddLostPetContract.View view) {
 

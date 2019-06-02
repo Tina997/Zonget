@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
@@ -8,7 +7,7 @@ public class AdministratorQueryAnswerModel implements AdministratorQueryAnswerCo
 
   public static String TAG = AdministratorQueryAnswerModel.class.getSimpleName();
 
-  private RepositoryContract.Queries queriesRepository;
+  private final RepositoryContract.Queries queriesRepository;
 
   public AdministratorQueryAnswerModel(RepositoryContract.Queries queriesRepository) {
     this.queriesRepository = queriesRepository;

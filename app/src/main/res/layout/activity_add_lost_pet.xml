@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/lost_date_text"
                     android:textColor="?attr/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:layout_width="140dp"
@@ -43,7 +43,7 @@
                     android:paddingLeft="10dp"
                     android:textColor="?attr/colorAccent"
                     android:textColorHint="?attr/colorAccent"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:inputType="datetime"
                     />
 
@@ -62,7 +62,9 @@
                     android:background="?attr/colorAccent"
                     tools:srcCompat="@mipmap/ic_pet_add_image"
                     android:clickable="true"
-                    android:onClick="takePicture"/>
+                    android:onClick="takePicture"
+                    android:contentDescription="TODO"
+                    android:focusable="true" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -76,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/insert_lost_pet_name_label"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="217dp"
@@ -86,7 +88,7 @@
                 android:paddingLeft="20dp"
                 android:textColor="?attr/colorAccent"
                 android:textColorHint="?attr/colorAccent"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/breed_text_label"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="217dp"
@@ -109,7 +111,7 @@
                 android:paddingLeft="20dp"
                 android:textColor="?attr/colorAccent"
                 android:textColorHint="?attr/colorAccent"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
 
@@ -124,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/details_lost_pets"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="280dp"
@@ -149,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/insert_ID_text_label"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="280dp"
@@ -173,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lost_pet_phone"
                 android:textColor="?attr/colorPrimaryDark"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="280dp"

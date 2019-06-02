@@ -22,7 +22,8 @@
         android:layout_marginLeft="500dp"
         android:backgroundTint="?attr/colorPrimaryDark"
         android:tint="?attr/colorPrimary"
-        android:onClick="goToAddEvent"/>
+        android:onClick="goToAddEvent"
+        android:focusable="true" />
 
     <!--Calendario -->
     <CalendarView

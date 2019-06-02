@@ -9,8 +9,7 @@ public class LostPetsDetailPresenter implements LostPetsDetailContract.Presenter
   public static String TAG = LostPetsDetailPresenter.class.getSimpleName();
 
   private WeakReference<LostPetsDetailContract.View> view;
-  private LostPetsDetailViewModel viewModel;
-  private LostPetsDetailContract.Model model;
+  private final LostPetsDetailViewModel viewModel;
   private LostPetsDetailContract.Router router;
 
   public LostPetsDetailPresenter(LostPetsDetailState state) {
@@ -24,7 +23,7 @@ public class LostPetsDetailPresenter implements LostPetsDetailContract.Presenter
 
   @Override
   public void injectModel(LostPetsDetailContract.Model model) {
-    this.model = model;
+    LostPetsDetailContract.Model model1 = model;
   }
 
   @Override

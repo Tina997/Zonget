@@ -9,7 +9,7 @@ public class EditPetForAdoptionRouter implements EditPetForAdoptionContract.Rout
 
   public static String TAG = EditPetForAdoptionRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public EditPetForAdoptionRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -29,8 +29,7 @@ public class EditPetForAdoptionRouter implements EditPetForAdoptionContract.Rout
 
   @Override
   public EditPetForAdoptionState getDataFromPreviousScreen() {
-    EditPetForAdoptionState state = mediator.getEditPetForAdoptionState();
-    return state;
+    return mediator.getEditPetForAdoptionState();
   }
 
   @Override

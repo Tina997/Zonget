@@ -4,7 +4,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserFinishedQueriesListModel implements UserFinishedQueriesListContract.Model {
 
-  private RepositoryContract.Queries repository;
+  private final RepositoryContract.Queries repository;
 
   public UserFinishedQueriesListModel(RepositoryContract.Queries repository) {
     this.repository = repository;

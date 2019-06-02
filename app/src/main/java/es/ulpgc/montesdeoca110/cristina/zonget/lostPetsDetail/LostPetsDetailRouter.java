@@ -12,7 +12,7 @@ public class LostPetsDetailRouter implements LostPetsDetailContract.Router {
 
   public static String TAG = LostPetsDetailRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public LostPetsDetailRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -33,8 +33,7 @@ public class LostPetsDetailRouter implements LostPetsDetailContract.Router {
 
   @Override
   public LostPetItem getDataFromLostPetsListScreen() {
-    LostPetItem lostPetItem = mediator.getLostPetsDetailItem();
-    return lostPetItem;
+    return mediator.getLostPetsDetailItem();
   }
 
   @Override

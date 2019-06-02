@@ -11,49 +11,47 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailActi
 
 public class UserPetsRouter implements UserPetsContract.Router {
 
-    public static String TAG = UserPetsRouter.class.getSimpleName();
+  public static String TAG = UserPetsRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+  private final AppMediator mediator;
 
-    public UserPetsRouter(AppMediator mediator) {
-        this.mediator = mediator;
-    }
+  public UserPetsRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
 
-    @Override
-    public void navigateToPetsDetailScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserPetsDetailActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToPetsDetailScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserPetsDetailActivity.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void passDataToPetsDetailScreen(UserPetItem item) {
-        mediator.setUserPetsState(item);
-    }
+  @Override
+  public void passDataToPetsDetailScreen(UserPetItem item) {
+    mediator.setUserPetsState(item);
+  }
 
-    @Override
-    public UserPetsState getDataFromPreviousScreen() {
-        UserPetsState state = mediator.getUserPetsState();
-        return state;
-    }
+  @Override
+  public UserPetsState getDataFromPreviousScreen() {
+    return mediator.getUserPetsState();
+  }
 
-    @Override
-    public String getActualThemeName() {
-        return mediator.getactualThemeName();
-    }
+  @Override
+  public String getActualThemeName() {
+    return mediator.getactualThemeName();
+  }
 
-    @Override
-    public void onBackButtonPressed() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void onBackButtonPressed() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserButtonsMenuListActivity.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public AccountItem getDataFromSignIn() {
-        AccountItem item = mediator.getSignInToMenuState().account;
-        return item;
-    }
+  @Override
+  public AccountItem getDataFromSignIn() {
+    return mediator.getSignInToMenuState().account;
+  }
 }

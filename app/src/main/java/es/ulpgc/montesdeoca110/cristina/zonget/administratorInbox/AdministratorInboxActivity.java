@@ -13,8 +13,6 @@ import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 
 public class AdministratorInboxActivity
         extends AppCompatActivity implements AdministratorInboxContract.View {

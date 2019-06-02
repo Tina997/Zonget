@@ -10,18 +10,16 @@ public class AdministratorUserEditPetPresenter
 
   public static String TAG = AdministratorUserEditPetPresenter.class.getSimpleName();
 
-  private WeakReference<AdministratorUserEditPetContract.View> view;
-  private AdministratorUserEditPetViewModel viewModel;
   private AdministratorUserEditPetContract.Model model;
   private AdministratorUserEditPetContract.Router router;
 
   public AdministratorUserEditPetPresenter(AdministratorUserEditPetState state) {
-    viewModel = state;
+    AdministratorUserEditPetViewModel viewModel = state;
   }
 
   @Override
   public void injectView(WeakReference<AdministratorUserEditPetContract.View> view) {
-    this.view = view;
+    WeakReference<AdministratorUserEditPetContract.View> view1 = view;
   }
 
   @Override
@@ -58,8 +56,7 @@ public class AdministratorUserEditPetPresenter
 
   @Override
   public UserPetItem fetchPetData() {
-    UserPetItem userPetItem = router.getDataFromPreviousScreen();
-    return userPetItem;
+    return router.getDataFromPreviousScreen();
   }
 
 

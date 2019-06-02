@@ -18,9 +18,6 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
 
   private ChangeThemeContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
-
   private ChangeThemeAdapter listAdapter;
 
   @Override
@@ -39,7 +36,8 @@ public class ChangeThemeActivity extends AppCompatActivity implements ChangeThem
     setContentView(R.layout.activity_change_theme);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();

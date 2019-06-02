@@ -6,7 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.InboxItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
-public interface AdministratorInboxContract {
+interface AdministratorInboxContract {
 
   interface View {
 

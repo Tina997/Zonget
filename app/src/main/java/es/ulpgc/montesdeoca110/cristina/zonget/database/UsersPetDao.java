@@ -10,30 +10,29 @@ import android.arch.persistence.room.Update;
 import java.util.List;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetBDItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
 
 @Dao
 public interface UsersPetDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertUserPet(UserPetBDItem item);
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
+  void insertUserPet(UserPetBDItem item);
 
-    @Update
-    void updateCategory(UserPetBDItem item);
- //   @Query("UPDATE userPets SET species = :species WHERE id =: id")
+  @Update
+  void updateCategory(UserPetBDItem item);
+  //   @Query("UPDATE userPets SET species = :species WHERE id =: id")
   //  void update(String species, int id);
 
-    @Delete
-    void deleteCategory(UserPetBDItem item);
+  @Delete
+  void deleteCategory(UserPetBDItem item);
 
-    @Query("SELECT * FROM userPets")
-    List<UserPetBDItem> loadUserPets();
+  @Query("SELECT * FROM userPets")
+  List<UserPetBDItem> loadUserPets();
 
-    @Query("SELECT * FROM userPets WHERE id =:id LIMIT 1")
-    UserPetBDItem loadPet(int id);
+  @Query("SELECT * FROM userPets WHERE id =:id LIMIT 1")
+  UserPetBDItem loadPet(int id);
 
-    @Query("SELECT * FROM userPets WHERE pet_id =:petId")
-    UserPetBDItem loadUserPet(int petId);
+  @Query("SELECT * FROM userPets WHERE pet_id =:petId")
+  UserPetBDItem loadUserPet(int petId);
 
 }
 

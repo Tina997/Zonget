@@ -10,7 +10,7 @@ public class UserAgendaRouter implements UserAgendaContract.Router {
 
   public static String TAG = UserAgendaRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public UserAgendaRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -30,8 +30,7 @@ public class UserAgendaRouter implements UserAgendaContract.Router {
 
   @Override
   public UserAgendaState getDataFromPreviousScreen() {
-    UserAgendaState state = mediator.getUserAgendaState();
-    return state;
+    return mediator.getUserAgendaState();
   }
 
   @Override

@@ -1,10 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryAnswer;
 
-import android.text.Editable;
-
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
@@ -62,7 +59,8 @@ interface AdministratorQueryAnswerContract {
   interface Model {
 
 
-    void updateQueryAnswer(QueryItem item, String answer, RepositoryContract.Queries.SetQueryAnswerCallback callback);
+    void updateQueryAnswer(QueryItem item, String answer,
+                           RepositoryContract.Queries.SetQueryAnswerCallback callback);
   }
 
   interface Router {

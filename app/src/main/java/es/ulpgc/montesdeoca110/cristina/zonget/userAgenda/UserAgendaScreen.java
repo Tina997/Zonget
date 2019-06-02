@@ -6,7 +6,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 
 import java.lang.ref.WeakReference;
 
-public class UserAgendaScreen {
+class UserAgendaScreen {
 
   public static void configure(UserAgendaContract.View view) {
 

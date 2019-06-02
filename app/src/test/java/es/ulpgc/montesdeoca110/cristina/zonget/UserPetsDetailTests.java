@@ -10,7 +10,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.app.UserPetItem;
-import es.ulpgc.montesdeoca110.cristina.zonget.userPets.UserPetsState;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailModel;
 import es.ulpgc.montesdeoca110.cristina.zonget.userPetsDetail.UserPetsDetailPresenter;

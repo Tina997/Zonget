@@ -8,7 +8,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.AccountsRepository;
 
 import java.lang.ref.WeakReference;
 
-public class AdministratorUsersPetsListScreen {
+class AdministratorUsersPetsListScreen {
 
   public static void configure(AdministratorUsersPetsListContract.View view) {
 

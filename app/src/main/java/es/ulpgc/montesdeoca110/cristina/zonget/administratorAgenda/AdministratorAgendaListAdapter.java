@@ -10,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.EventItem;
 import java.util.List;
 
-public class AdministratorAgendaListAdapter extends ArrayAdapter<EventItem> {
+class AdministratorAgendaListAdapter extends ArrayAdapter<EventItem> {
 
   private final List<EventItem> eventItemList;
   private final View.OnClickListener clickListener;

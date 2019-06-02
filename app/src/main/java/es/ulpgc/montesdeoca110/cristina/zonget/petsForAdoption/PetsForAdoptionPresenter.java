@@ -10,7 +10,7 @@ public class PetsForAdoptionPresenter implements PetsForAdoptionContract.Present
   public static String TAG = PetsForAdoptionPresenter.class.getSimpleName();
 
   private WeakReference<PetsForAdoptionContract.View> view;
-  private PetsForAdoptionViewModel viewModel;
+  private final PetsForAdoptionViewModel viewModel;
   private PetsForAdoptionContract.Model model;
   private PetsForAdoptionContract.Router router;
 

@@ -3,8 +3,6 @@ package es.ulpgc.montesdeoca110.cristina.zonget;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -13,9 +11,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersContract;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersPresenter;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersScreen;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorSearchUsers.AdministratorSearchUsersState;
-import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

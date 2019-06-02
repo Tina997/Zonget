@@ -12,7 +12,7 @@ public class AdministratorSearchUsersRouter implements AdministratorSearchUsersC
 
     public static String TAG = AdministratorSearchUsersRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+    private final AppMediator mediator;
 
     public AdministratorSearchUsersRouter(AppMediator mediator) {
         this.mediator = mediator;

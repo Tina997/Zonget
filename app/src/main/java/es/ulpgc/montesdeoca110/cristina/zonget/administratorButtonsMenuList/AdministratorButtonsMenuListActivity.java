@@ -23,9 +23,6 @@ public class AdministratorButtonsMenuListActivity
 
   private AdministratorButtonsMenuListContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
-
   private AdministratorButtonsMenuListAdapter listAdapter;
 
   @Override
@@ -44,7 +41,8 @@ public class AdministratorButtonsMenuListActivity
     setContentView(R.layout.activity_administrator_buttons_menu_list);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();

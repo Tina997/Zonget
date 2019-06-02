@@ -13,7 +13,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.signIn.SignInActivity;
 public class AdministratorButtonsMenuListRouter
         implements AdministratorButtonsMenuListContract.Router {
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AdministratorButtonsMenuListRouter(AppMediator mediator) {
     this.mediator = mediator;

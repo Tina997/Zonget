@@ -6,7 +6,7 @@ public class PetsForAdoptionModel implements PetsForAdoptionContract.Model {
 
   public static String TAG = PetsForAdoptionModel.class.getSimpleName();
 
-  private RepositoryContract.PetsForAdoption repository;
+  private final RepositoryContract.PetsForAdoption repository;
 
   public PetsForAdoptionModel(RepositoryContract.PetsForAdoption repository) {
     this.repository = repository;

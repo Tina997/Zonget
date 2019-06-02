@@ -9,7 +9,7 @@ public class UserPickDateRouter implements UserPickDateContract.Router {
 
   public static String TAG = UserPickDateRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public UserPickDateRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -29,8 +29,7 @@ public class UserPickDateRouter implements UserPickDateContract.Router {
 
   @Override
   public UserPickDateState getDataFromPreviousScreen() {
-    UserPickDateState state = mediator.getUserPickDateState();
-    return state;
+    return mediator.getUserPickDateState();
 
   }
 

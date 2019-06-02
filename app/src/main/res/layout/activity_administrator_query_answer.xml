@@ -44,7 +44,8 @@
             android:layout_marginTop="25dp"
             android:backgroundTint="?attr/colorPrimaryDark"
             android:src="@drawable/ic_send"
-            android:onClick="onSendButtonClicked"/>
+            android:onClick="onSendButtonClicked"
+            android:contentDescription="TODO" />
 
     </LinearLayout>
 

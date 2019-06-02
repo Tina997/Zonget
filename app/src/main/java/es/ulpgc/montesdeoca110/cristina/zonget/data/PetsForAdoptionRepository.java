@@ -22,13 +22,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.PetForAdoptionItem;
 
 public class PetsForAdoptionRepository implements RepositoryContract.PetsForAdoption {
 
-  public static String TAG = PetsForAdoptionRepository.class.getSimpleName();
+  private static final String TAG = PetsForAdoptionRepository.class.getSimpleName();
 
   // ============================= Variables globales ===========================================
 
   @SuppressLint("StaticFieldLeak")
   private static PetsForAdoptionRepository INSTANCE;
-  private Context context;
+  private final Context context;
 
   private static final String JSON_FILE = "petsForAdoption.json";
   private static final String JSON_ROOT = "petsForAdoption";

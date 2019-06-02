@@ -1,7 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.addEvent;
 
-import android.os.SystemClock;
-
 import java.util.Calendar;
 
 public class AddEventModel implements AddEventContract.Model {
@@ -19,8 +17,7 @@ public class AddEventModel implements AddEventContract.Model {
 
   @Override
   public Calendar fetchCalendar() {
-    Calendar calendar = Calendar.getInstance();
-    return calendar;
+    return Calendar.getInstance();
   }
 
 }

@@ -28,7 +28,6 @@ public class LostPetsDetailActivity
   public static String TAG = LostPetsDetailActivity.class.getSimpleName();
 
   private LostPetsDetailContract.Presenter presenter;
-  private ActionBar actionBar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class LostPetsDetailActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    actionBar = getSupportActionBar();
+    ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(R.string.animal_detail_tittle);

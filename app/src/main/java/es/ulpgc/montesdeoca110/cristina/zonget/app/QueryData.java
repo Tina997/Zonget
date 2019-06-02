@@ -5,15 +5,15 @@ import android.os.Parcelable;
 
 public class QueryData implements Parcelable {
 
-  public String content;
-  public String answer;
+  public final String content;
+  public final String answer;
 
   public QueryData(String content, String answer) {
     this.content = content;
     this.answer = answer;
   }
 
-  protected QueryData(Parcel in) {
+  private QueryData(Parcel in) {
     content = in.readString();
     answer = in.readString();
   }

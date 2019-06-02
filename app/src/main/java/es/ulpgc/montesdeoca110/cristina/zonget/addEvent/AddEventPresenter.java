@@ -8,7 +8,7 @@ public class AddEventPresenter implements AddEventContract.Presenter {
   public static String TAG = AddEventPresenter.class.getSimpleName();
 
   private WeakReference<AddEventContract.View> view;
-  private AddEventViewModel viewModel;
+  private final AddEventViewModel viewModel;
   private AddEventContract.Model model;
   private AddEventContract.Router router;
 
@@ -42,10 +42,9 @@ public class AddEventPresenter implements AddEventContract.Presenter {
 
     if (viewModel.calendar == null) {
       // call the model
-      Calendar calendar = model.fetchCalendar();
 
       // set initial state
-      viewModel.calendar = calendar;
+      viewModel.calendar = model.fetchCalendar();
     }
 
     // update the view

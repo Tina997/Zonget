@@ -12,7 +12,7 @@ public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContrac
 
   public static String TAG = PetsForAdoptionDetailRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public PetsForAdoptionDetailRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -32,8 +32,7 @@ public class PetsForAdoptionDetailRouter implements PetsForAdoptionDetailContrac
 
   @Override
   public PetForAdoptionItem getDataFromPreviousScreen() {
-    PetForAdoptionItem petForAdoptionItem = mediator.getPetForAdoptionItem();
-    return petForAdoptionItem;
+    return mediator.getPetForAdoptionItem();
   }
 
   @Override

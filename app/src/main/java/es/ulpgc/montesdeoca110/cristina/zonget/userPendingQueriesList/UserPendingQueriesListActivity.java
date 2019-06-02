@@ -7,10 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,9 +18,6 @@ public class UserPendingQueriesListActivity extends AppCompatActivity
         implements UserPendingQueriesListContract.View {
 
   private UserPendingQueriesListContract.Presenter presenter;
-
-  //Elementos de la vista
-  private Toolbar toolbar;
 
   private UserPendingQueriesListAdapter listAdapter;
 
@@ -44,7 +37,8 @@ public class UserPendingQueriesListActivity extends AppCompatActivity
     setContentView(R.layout.activity_user_pending_queries_list);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();

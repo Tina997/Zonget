@@ -6,7 +6,6 @@ import android.content.Intent;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorButtonsMenuList.AdministratorButtonsMenuListActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail.AdministratorQueryDetailActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryItem;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
@@ -14,7 +13,7 @@ public class AdministratorInboxRouter implements AdministratorInboxContract.Rout
 
   public static String TAG = AdministratorInboxRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AdministratorInboxRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -34,8 +33,7 @@ public class AdministratorInboxRouter implements AdministratorInboxContract.Rout
 
   @Override
   public AdministratorInboxState getDataFromPreviousScreen() {
-    AdministratorInboxState state = mediator.getAdministratorInboxState();
-    return state;
+    return mediator.getAdministratorInboxState();
   }
 
   @Override

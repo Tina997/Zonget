@@ -1,6 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.signUp;
 
-public class SignUpViewModel {
+class SignUpViewModel {
 
   public String accountName;
   public String accountDni;

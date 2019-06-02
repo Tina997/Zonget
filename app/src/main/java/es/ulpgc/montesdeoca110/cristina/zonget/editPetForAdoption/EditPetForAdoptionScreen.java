@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import java.lang.ref.WeakReference;
 
-public class EditPetForAdoptionScreen {
+class EditPetForAdoptionScreen {
 
   public static void configure(EditPetForAdoptionContract.View view) {
 

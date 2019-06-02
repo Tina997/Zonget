@@ -11,7 +11,7 @@ public class AdministratorUserEditPetRouter implements AdministratorUserEditPetC
 
   public static String TAG = AdministratorUserEditPetRouter.class.getSimpleName();
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public AdministratorUserEditPetRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -32,8 +32,7 @@ public class AdministratorUserEditPetRouter implements AdministratorUserEditPetC
 
   @Override
   public UserPetItem getDataFromPreviousScreen() {
-    UserPetItem petItem = mediator.getAnimal();
-    return petItem;
+    return mediator.getAnimal();
   }
 
   @Override

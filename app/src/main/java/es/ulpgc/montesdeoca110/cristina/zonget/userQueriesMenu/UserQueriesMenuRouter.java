@@ -12,7 +12,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPendingQueriesList.UserPendin
 
 public class UserQueriesMenuRouter implements UserQueriesMenuContract.Router {
 
-  private AppMediator mediator;
+  private final AppMediator mediator;
 
   public UserQueriesMenuRouter(AppMediator mediator) {
     this.mediator = mediator;

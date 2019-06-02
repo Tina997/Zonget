@@ -2,7 +2,7 @@ package es.ulpgc.montesdeoca110.cristina.zonget.app;
 
 public class AdministratorButtonMenuItem {
 
-  public final int id;
+  private final int id;
   public final String text;
   public final String image;
   public String activity;

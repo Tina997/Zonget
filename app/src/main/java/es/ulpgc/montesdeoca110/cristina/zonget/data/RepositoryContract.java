@@ -135,7 +135,8 @@ public interface RepositoryContract {
      * @param accountPassword Contraseña de la cuenta.
      * @param callback        Que posteriormente actualiza la información de la cuenta en la activity.
      */
-    void getCheckAccount(String accountName, String accountPassword, RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
+    void getCheckAccount(String accountName, String accountPassword,
+                         RepositoryContract.Accounts.GetCheckAccountExistCallback callback);
 
     interface CheckNewAccountDataExistCallback {
       /**
@@ -156,7 +157,8 @@ public interface RepositoryContract {
      * @param callback Que posteriormente con la información obtenida se decidirá si se inserta
      *                 o no la nueva cuenta.
      */
-    void checkNewAccountDataExist(String dni, String email, RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
+    void checkNewAccountDataExist(String dni, String email,
+                                  RepositoryContract.Accounts.CheckNewAccountDataExistCallback callback);
 
     interface InsertNewAccountCallback {
       /**
@@ -171,7 +173,8 @@ public interface RepositoryContract {
      * @param account  Cuenta de usuario que se va a insertar.
      * @param callback Que posteriormente informará al usuario.
      */
-    void insertNewAccount(AccountItem account, RepositoryContract.Accounts.InsertNewAccountCallback callback);
+    void insertNewAccount(AccountItem account,
+                          RepositoryContract.Accounts.InsertNewAccountCallback callback);
 
     interface GetUserPetsListCallback {
       /**
@@ -202,10 +205,11 @@ public interface RepositoryContract {
      * @param userPetItem Mascota que de desea actualizar.
      * @param callback
      */
-    void updatePet(UserPetItem userPetItem, RepositoryContract.Accounts.UpdateUserPetCallback callback);
+    void updatePet(UserPetItem userPetItem,
+                   RepositoryContract.Accounts.UpdateUserPetCallback callback);
 
     interface DeleteUserPetCallback {
-      //TODO Incluir método en la interfaz
+      void onUserPetDelete();
     }
 
     /**
@@ -214,11 +218,12 @@ public interface RepositoryContract {
      * @param pet                   Mascota que se quiere eliminar.
      * @param deleteUserPetCallback
      */
-    void deleteUserPet(UserPetItem pet, RepositoryContract.Accounts.DeleteUserPetCallback deleteUserPetCallback);
+    void deleteUserPet(UserPetItem pet,
+                       RepositoryContract.Accounts.DeleteUserPetCallback deleteUserPetCallback);
 
     interface InsertNewUserPetCallback {
-      //TODO Incluir método en la interfaz
-    }
+      void onUserPetInsert();
+  }
 
     /**
      * Este método inserta una nueva máscota a un usuario.

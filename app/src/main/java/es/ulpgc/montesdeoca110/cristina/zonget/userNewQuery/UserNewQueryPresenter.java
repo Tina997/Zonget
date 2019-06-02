@@ -8,12 +8,11 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 public class UserNewQueryPresenter implements UserNewQueryContract.Presenter {
 
   private WeakReference<UserNewQueryContract.View> view;
-  private UserNewQueryViewModel viewModel;
   private UserNewQueryContract.Model model;
   private UserNewQueryContract.Router router;
 
   public UserNewQueryPresenter(UserNewQueryState state) {
-    viewModel = state;
+    UserNewQueryViewModel viewModel = state;
   }
 
   @Override

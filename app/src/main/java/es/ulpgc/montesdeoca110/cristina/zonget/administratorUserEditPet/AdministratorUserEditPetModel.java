@@ -7,7 +7,7 @@ public class AdministratorUserEditPetModel implements AdministratorUserEditPetCo
 
   public static String TAG = AdministratorUserEditPetModel.class.getSimpleName();
 
-  RepositoryContract.Accounts repository;
+  private final RepositoryContract.Accounts repository;
 
   public AdministratorUserEditPetModel(RepositoryContract.Accounts repository) {
     this.repository = repository;

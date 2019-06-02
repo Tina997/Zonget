@@ -6,9 +6,9 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class LostPetsListModel implements LostPetsListContract.Model {
 
-    public static String TAG = LostPetsListModel.class.getSimpleName();
+    private static final String TAG = LostPetsListModel.class.getSimpleName();
 
-    private RepositoryContract.LostPets repository;
+    private final RepositoryContract.LostPets repository;
 
     public LostPetsListModel(RepositoryContract.LostPets repository) {
         this.repository = repository;

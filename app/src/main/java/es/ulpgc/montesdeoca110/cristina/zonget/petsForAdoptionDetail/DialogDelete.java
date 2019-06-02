@@ -11,7 +11,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.R;
 
 @SuppressLint("ValidFragment")
 public class DialogDelete extends DialogFragment {
-  private PetsForAdoptionDetailContract.View view;
+  private final PetsForAdoptionDetailContract.View view;
 
   public DialogDelete(PetsForAdoptionDetailContract.View view) {
     this.view = view;

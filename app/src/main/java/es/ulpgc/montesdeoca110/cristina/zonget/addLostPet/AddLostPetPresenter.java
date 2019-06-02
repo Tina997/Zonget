@@ -6,8 +6,7 @@ public class AddLostPetPresenter implements AddLostPetContract.Presenter {
 
   public static String TAG = AddLostPetPresenter.class.getSimpleName();
 
-  private WeakReference<AddLostPetContract.View> view;
-  private AddLostPetViewModel viewModel;
+  private final AddLostPetViewModel viewModel;
   private AddLostPetContract.Model model;
   private AddLostPetContract.Router router;
 
@@ -17,7 +16,7 @@ public class AddLostPetPresenter implements AddLostPetContract.Presenter {
 
   @Override
   public void injectView(WeakReference<AddLostPetContract.View> view) {
-    this.view = view;
+    WeakReference<AddLostPetContract.View> view1 = view;
   }
 
   @Override
@@ -42,10 +41,9 @@ public class AddLostPetPresenter implements AddLostPetContract.Presenter {
 
     if (viewModel.data == null) {
       // call the model
-      String data = model.fetchData();
 
       // set initial state
-      viewModel.data = data;
+      viewModel.data = model.fetchData();
     }
 
 

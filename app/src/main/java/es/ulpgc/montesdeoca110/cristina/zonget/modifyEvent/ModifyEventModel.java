@@ -17,7 +17,6 @@ public class ModifyEventModel implements ModifyEventContract.Model {
 
   @Override
   public Calendar fetchCalendar() {
-    Calendar calendar = Calendar.getInstance();
-    return calendar;
+    return Calendar.getInstance();
   }
 }

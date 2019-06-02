@@ -4,7 +4,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserQueriesMenuModel implements UserQueriesMenuContract.Model {
 
-  private RepositoryContract.Queries repository;
+  private final RepositoryContract.Queries repository;
 
   public UserQueriesMenuModel(RepositoryContract.Queries repository) {
     this.repository = repository;

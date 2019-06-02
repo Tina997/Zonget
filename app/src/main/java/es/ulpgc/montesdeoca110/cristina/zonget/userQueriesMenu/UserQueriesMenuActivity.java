@@ -18,13 +18,8 @@ public class UserQueriesMenuActivity extends AppCompatActivity
 
   private UserQueriesMenuContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
-  private LinearLayout newQueryButton;
-  private LinearLayout pendingQueriesButton;
   private CardView pendingQueriesCardView;
   private TextView pendingQueriesCounter;
-  private LinearLayout finishedQueriesButton;
   private CardView finishedQueriesCardView;
   private TextView finishedQueriesCounter;
 
@@ -44,7 +39,8 @@ public class UserQueriesMenuActivity extends AppCompatActivity
     setContentView(R.layout.activity_user_queries_menu);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();
@@ -52,11 +48,11 @@ public class UserQueriesMenuActivity extends AppCompatActivity
     actionBar.setDisplayHomeAsUpEnabled(true);
 
     //Búsqueda de los elementos de la vista
-    newQueryButton = findViewById(R.id.user_queries_menu_new_query_linear_layout);
-    pendingQueriesButton = findViewById(R.id.user_queries_menu_pending_queries_linear_layout);
+    LinearLayout newQueryButton = findViewById(R.id.user_queries_menu_new_query_linear_layout);
+    LinearLayout pendingQueriesButton = findViewById(R.id.user_queries_menu_pending_queries_linear_layout);
     pendingQueriesCardView = findViewById(R.id.user_queries_menu_pending_queries_counter_cardView);
     pendingQueriesCounter = findViewById(R.id.user_queries_menu_pending_queries_counter_textView);
-    finishedQueriesButton = findViewById(R.id.user_queries_menu_finished_queries_linear_layout);
+    LinearLayout finishedQueriesButton = findViewById(R.id.user_queries_menu_finished_queries_linear_layout);
     finishedQueriesCardView = findViewById(R.id.user_queries_menu_finished_queries_counter_cardView);
     finishedQueriesCounter = findViewById(R.id.user_queries_menu_finished_queries_counter_textView);
 

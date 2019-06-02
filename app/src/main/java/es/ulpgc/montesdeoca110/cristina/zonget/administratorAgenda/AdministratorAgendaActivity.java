@@ -22,7 +22,6 @@ public class AdministratorAgendaActivity
   private AdministratorAgendaContract.Presenter presenter;
   private ListView listView;
   private TextView selectedDate;
-  private CalendarView calendarView;
   private String date;
   private long calendarDate;
   private static Bundle bundle;
@@ -54,7 +53,7 @@ public class AdministratorAgendaActivity
 
     listView = findViewById(R.id.event_list);
 
-    calendarView = findViewById(R.id.calendar);
+    CalendarView calendarView = findViewById(R.id.calendar);
     selectedDate = findViewById(R.id.selectedDay);
 
     calendarDate = calendarView.getDate();
@@ -73,7 +72,7 @@ public class AdministratorAgendaActivity
   protected void onResume() {
     super.onResume();
     //restore ListView state
-    if(bundle != null){
+    if (bundle != null) {
       Parcelable listState = bundle.getParcelable("state");
       listView.onRestoreInstanceState(listState);
     }
@@ -91,14 +90,14 @@ public class AdministratorAgendaActivity
   public void displayData(AdministratorAgendaViewModel viewModel) {
     listView.setAdapter(new AdministratorAgendaListAdapter(this,
             viewModel.eventList, new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogEventDetail dialogo = new DialogEventDetail(AdministratorAgendaActivity.this);
-                dialogo.show(fragmentManager, "tagAlert");
-              }
-            }));
-   // calendarView.setDate(viewModel.calendarDate, true, true);
+      @Override
+      public void onClick(View v) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        DialogEventDetail dialogo = new DialogEventDetail(AdministratorAgendaActivity.this);
+        dialogo.show(fragmentManager, "tagAlert");
+      }
+    }));
+    // calendarView.setDate(viewModel.calendarDate, true, true);
     selectedDate.setText(viewModel.date);
   }
 

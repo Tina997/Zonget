@@ -1,6 +1,5 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
-import android.util.Log;
 import android.view.View;
 
 import java.lang.ref.WeakReference;
@@ -11,7 +10,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Presenter {
 
   private WeakReference<UserQueriesMenuContract.View> view;
-  private UserQueriesMenuViewModel viewModel;
+  private final UserQueriesMenuViewModel viewModel;
   private UserQueriesMenuContract.Model model;
   private UserQueriesMenuContract.Router router;
 
@@ -51,17 +50,17 @@ public class UserQueriesMenuPresenter implements UserQueriesMenuContract.Present
     model.fetchUserQueriesMenuData(state.account.getId(), new RepositoryContract.Queries.GetQueriesListSizeCallback() {
       @Override
       public void setQueriesListSize(int pendingQueriesListSize, int finishedQueriesListSize) {
-        if(pendingQueriesListSize > 0){
+        if (pendingQueriesListSize > 0) {
           viewModel.penndingQueriesCardViewVisibility = View.VISIBLE;
           viewModel.pendingQueriesCounter = pendingQueriesListSize;
-        }else{
+        } else {
           viewModel.penndingQueriesCardViewVisibility = View.GONE;
         }
 
-        if(finishedQueriesListSize > 0){
+        if (finishedQueriesListSize > 0) {
           viewModel.finishedQueriesCardViewVisibility = View.VISIBLE;
           viewModel.finishedQueriesCounter = finishedQueriesListSize;
-        }else{
+        } else {
           viewModel.finishedQueriesCardViewVisibility = View.GONE;
         }
 

@@ -5,7 +5,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.Chang
 import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 import java.lang.ref.WeakReference;
 
-public interface ChangeThemeContract {
+interface ChangeThemeContract {
 
   interface View {
 

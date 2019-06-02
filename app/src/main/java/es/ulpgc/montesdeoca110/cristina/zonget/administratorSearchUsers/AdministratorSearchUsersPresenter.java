@@ -8,23 +8,20 @@ public class AdministratorSearchUsersPresenter implements AdministratorSearchUse
 
     public static String TAG = AdministratorSearchUsersPresenter.class.getSimpleName();
 
-    private WeakReference<AdministratorSearchUsersContract.View> view;
-    private AdministratorSearchUsersViewModel viewModel;
-    private AdministratorSearchUsersContract.Model model;
-    private AdministratorSearchUsersContract.Router router;
+  private AdministratorSearchUsersContract.Router router;
 
     public AdministratorSearchUsersPresenter(AdministratorSearchUsersState state) {
-        viewModel = state;
+      AdministratorSearchUsersViewModel viewModel = state;
     }
 
     @Override
     public void injectView(WeakReference<AdministratorSearchUsersContract.View> view) {
-        this.view = view;
+      WeakReference<AdministratorSearchUsersContract.View> view1 = view;
     }
 
     @Override
     public void injectModel(AdministratorSearchUsersContract.Model model) {
-        this.model = model;
+      AdministratorSearchUsersContract.Model model1 = model;
     }
 
     @Override

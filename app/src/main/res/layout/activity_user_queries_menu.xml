@@ -29,7 +29,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 android:tint="?attr/colorPrimary"
-                app:srcCompat="@drawable/ic_new_query" />
+                app:srcCompat="@drawable/ic_new_query"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +61,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 android:tint="?attr/colorPrimary"
-                app:srcCompat="@drawable/ic_pending_queries" />
+                app:srcCompat="@drawable/ic_pending_queries"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,7 +115,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 app:srcCompat="@drawable/ic_finished_queries"
-                android:tint="?attr/colorPrimary"/>
+                android:tint="?attr/colorPrimary"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -21,18 +21,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
 
   private SignUpContract.Presenter presenter;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
   private EditText nameEditText;
   private EditText dniEditText;
   private EditText emailEditText;
-  private EditText secondEmailEditText;
   private EditText passwordEditText;
-  private EditText secondPasswordEditText;
   private ImageView passwordCorrectionImageView;
   private ImageView emailCorrectionImageView;
   private ProgressBar progressBar;
-  private Button confirmedButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +45,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
     setContentView(R.layout.activity_sign_up);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();
@@ -61,13 +57,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContract.
     nameEditText = findViewById(R.id.user_sing_up_name_edit_text);
     dniEditText = findViewById(R.id.user_sign_up_dni_edit_text);
     emailEditText = findViewById(R.id.user_sign_up_email_edit_text);
-    secondEmailEditText = findViewById(R.id.user_sign_up_correct_email_edit_text);
+    EditText secondEmailEditText = findViewById(R.id.user_sign_up_correct_email_edit_text);
     emailCorrectionImageView = findViewById(R.id.user_sign_up_email_correction_icon_view);
     passwordEditText = findViewById(R.id.user_sign_up_password_edit_text);
-    secondPasswordEditText = findViewById(R.id.user_sign_up_correct_password_edit_text);
+    EditText secondPasswordEditText = findViewById(R.id.user_sign_up_correct_password_edit_text);
     passwordCorrectionImageView = findViewById(R.id.user_sign_up_password_correction_icon_view);
     progressBar = findViewById(R.id.sign_up_progress_bar);
-    confirmedButton = findViewById(R.id.sign_up_accept_button);
+    Button confirmedButton = findViewById(R.id.sign_up_accept_button);
 
     //Listeners
     nameEditText.addTextChangedListener(new TextWatcher() {

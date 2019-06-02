@@ -13,60 +13,59 @@ import es.ulpgc.montesdeoca110.cristina.zonget.userPickDate.UserPickDateActivity
 
 public class SignInRouter implements SignInContract.Router {
 
-    private AppMediator mediator;
+  private final AppMediator mediator;
 
-    public SignInRouter(AppMediator mediator) {
-        this.mediator = mediator;
+  public SignInRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
+
+  @Override
+  public String getActualThemeName() {
+    return mediator.getactualThemeName();
+  }
+
+  @Override
+  public SplashToSignInState getDataFromSplashScreen() {
+    return mediator.getSplashToSignInState();
+  }
+
+  // To MenuActivity
+
+  @Override
+  public void passDataToMenuScreen(SignInToMenuState state) {
+    mediator.setSignInToMenuState(state);
+  }
+
+  @Override
+  public void navigateToMenuScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent;
+    intent = new Intent(context, UserButtonsMenuListActivity.class);
+    if (mediator.getSignInToMenuState().account.getType().equals("administrator")) {
+      intent = new Intent(context, AdministratorButtonsMenuListActivity.class);
     }
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public String getActualThemeName() {
-        return mediator.getactualThemeName();
-    }
+  //To SignUpActivity
 
-    @Override
-    public SplashToSignInState getDataFromSplashScreen() {
-        SplashToSignInState state = mediator.getSplashToSignInState();
-        return state;
-    }
+  @Override
+  public void navigateToSignUpScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, SignUpActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
-    // To MenuActivity
+  //To UserPickDateActivity
 
-    @Override
-    public void passDataToMenuScreen(SignInToMenuState state) {
-        mediator.setSignInToMenuState(state);
-    }
-
-    @Override
-    public void navigateToMenuScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent;
-        intent = new Intent(context, UserButtonsMenuListActivity.class);
-        if (mediator.getSignInToMenuState().account.getType().equals("administrator")){
-            intent = new Intent(context, AdministratorButtonsMenuListActivity.class);
-        }
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
-
-    //To SignUpActivity
-
-    @Override
-    public void navigateToSignUpScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SignUpActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
-
-    //To UserPickDateActivity
-
-    @Override
-    public void navigateToUserPickDateScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, UserPickDateActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToUserPickDateScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, UserPickDateActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+  }
 
 }

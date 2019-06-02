@@ -11,7 +11,7 @@ import java.lang.ref.WeakReference;
 public class SignUpPresenter implements SignUpContract.Presenter {
 
   private WeakReference<SignUpContract.View> view;
-  private SignUpViewModel viewModel;
+  private final SignUpViewModel viewModel;
   private SignUpContract.Model model;
   private SignUpContract.Router router;
 

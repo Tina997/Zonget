@@ -11,7 +11,7 @@ public class UserPickDatePresenter implements UserPickDateContract.Presenter {
   public static String TAG = UserPickDatePresenter.class.getSimpleName();
 
   private WeakReference<UserPickDateContract.View> view;
-  private UserPickDateViewModel viewModel;
+  private final UserPickDateViewModel viewModel;
   private UserPickDateContract.Model model;
   private UserPickDateContract.Router router;
 
@@ -48,17 +48,15 @@ public class UserPickDatePresenter implements UserPickDateContract.Presenter {
     if (viewModel.hourItemList == null) {
 
       //llamar al modelo
-      List<HourItem> data = model.fetchData();
 
-      viewModel.hourItemList = data;
+      viewModel.hourItemList = model.fetchData();
     }
 
     if (viewModel.calendarDate == 0 || viewModel.date == null) {
       //Llamar al modelo
       long time = model.fetchDateData();
       viewModel.calendarDate = time;
-      String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
-      viewModel.date = currentDate;
+      viewModel.date = new SimpleDateFormat("dd/MM/yyyy").format(new Date(time));
     }
 
     view.get().displayData(viewModel);

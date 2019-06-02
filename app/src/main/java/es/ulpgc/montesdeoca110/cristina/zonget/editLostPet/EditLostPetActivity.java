@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.administratorUsersAddPet.AdministratorUsersAddPetScreen;
-import es.ulpgc.montesdeoca110.cristina.zonget.lostPetsDetail.LostPetsDetailActivity;
 
 public class EditLostPetActivity
         extends AppCompatActivity implements EditLostPetContract.View {
@@ -21,12 +19,6 @@ public class EditLostPetActivity
   public static String TAG = EditLostPetActivity.class.getSimpleName();
 
   private EditLostPetContract.Presenter presenter;
-
-  private EditText dateText;
-  private EditText breedText;
-  private EditText detailsText;
-  private EditText chipNumText;
-  private EditText phoneNumText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +42,11 @@ public class EditLostPetActivity
       actionBar.setTitle(getString(R.string.edit_pet_tittle));
     }
 
-    dateText = findViewById(R.id.lostDateEdit);
-    breedText = findViewById(R.id.lostBreedEdit);
-    detailsText = findViewById(R.id.lostDetailsEdit);
-    chipNumText = findViewById(R.id.lostChipNumEdit);
-    phoneNumText = findViewById(R.id.lostPhoneEdit);
+    EditText dateText = findViewById(R.id.lostDateEdit);
+    EditText breedText = findViewById(R.id.lostBreedEdit);
+    EditText detailsText = findViewById(R.id.lostDetailsEdit);
+    EditText chipNumText = findViewById(R.id.lostChipNumEdit);
+    EditText phoneNumText = findViewById(R.id.lostPhoneEdit);
 
     // do the setup
     EditLostPetScreen.configure(this);

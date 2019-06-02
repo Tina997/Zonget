@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import es.ulpgc.montesdeoca110.cristina.zonget.R;
-import es.ulpgc.montesdeoca110.cristina.zonget.petsForAdoption.PetsForAdoptionActivity;
 
 public class AddLostPetActivity
         extends AppCompatActivity implements AddLostPetContract.View {

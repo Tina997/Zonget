@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="7dp"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textAlignment="center"
         android:textColor="?attr/colorPrimaryDark"
 
@@ -30,14 +30,14 @@
             android:text="@string/species_text_label"
             android:textAlignment="viewStart"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/speciesAnimalClient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pet_species"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="@color/colorBlack"
             android:layout_marginTop="0dp"
             android:textAlignment="viewStart"/>
@@ -59,7 +59,7 @@
             android:text="@string/breed_text_label"
             android:textAlignment="viewStart"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/breedAnimalClient"
@@ -68,7 +68,7 @@
             android:text="@string/pet_breed"
             android:textAlignment="viewStart"
             android:textColor="@color/colorBlack"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
     </LinearLayout>
     <Space
         android:layout_width="match_parent"
@@ -83,7 +83,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textAlignment="viewStart"
             android:textColor="?attr/colorPrimaryDark"
             android:layout_marginLeft="40dp"
@@ -97,7 +97,7 @@
             android:text="@string/ID_Number"
             android:textAlignment="viewStart"
             android:textColor="@color/colorBlack"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
     </LinearLayout>
     <Space
         android:layout_width="match_parent"
@@ -116,7 +116,7 @@
             android:text="@string/birthday_text_label"
             android:textAlignment="viewStart"
             android:textColor="?attr/colorPrimaryDark"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/birthdayAnimalClient"
@@ -125,6 +125,6 @@
             android:text="@string/date_model"
             android:textAlignment="viewStart"
             android:textColor="@color/colorBlack"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
     </LinearLayout>
 </LinearLayout>

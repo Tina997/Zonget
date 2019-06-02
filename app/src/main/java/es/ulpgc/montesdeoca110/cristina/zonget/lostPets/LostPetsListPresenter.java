@@ -10,7 +10,7 @@ public class LostPetsListPresenter implements LostPetsListContract.Presenter {
   public static String TAG = LostPetsListPresenter.class.getSimpleName();
 
   private WeakReference<LostPetsListContract.View> view;
-  private LostPetsListViewModel viewModel;
+  private final LostPetsListViewModel viewModel;
   private LostPetsListContract.Model model;
   private LostPetsListContract.Router router;
 

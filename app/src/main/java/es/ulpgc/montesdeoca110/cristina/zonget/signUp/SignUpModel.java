@@ -5,7 +5,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class SignUpModel implements SignUpContract.Model {
 
-  private RepositoryContract.Accounts repository;
+  private final RepositoryContract.Accounts repository;
 
   public SignUpModel(RepositoryContract.Accounts repository) {
     this.repository = repository;

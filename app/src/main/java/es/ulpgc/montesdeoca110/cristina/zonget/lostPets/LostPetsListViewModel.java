@@ -4,6 +4,6 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LostPetsListViewModel {
+class LostPetsListViewModel {
   List<LostPetItem> lostPetsItems = new ArrayList<>();
 }

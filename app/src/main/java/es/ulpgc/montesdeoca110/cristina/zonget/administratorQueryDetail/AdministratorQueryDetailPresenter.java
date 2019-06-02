@@ -1,10 +1,7 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.administratorQueryDetail;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
-import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
-import es.ulpgc.montesdeoca110.cristina.zonget.app.QueryData;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.statesBetweenActivities.InboxToQueryDetailState;
 
 public class AdministratorQueryDetailPresenter
@@ -13,8 +10,7 @@ public class AdministratorQueryDetailPresenter
   public static String TAG = AdministratorQueryDetailPresenter.class.getSimpleName();
 
   private WeakReference<AdministratorQueryDetailContract.View> view;
-  private AdministratorQueryDetailViewModel viewModel;
-  private AdministratorQueryDetailContract.Model model;
+  private final AdministratorQueryDetailViewModel viewModel;
   private AdministratorQueryDetailContract.Router router;
 
   public AdministratorQueryDetailPresenter(AdministratorQueryDetailState state) {
@@ -28,7 +24,7 @@ public class AdministratorQueryDetailPresenter
 
   @Override
   public void injectModel(AdministratorQueryDetailContract.Model model) {
-    this.model = model;
+    AdministratorQueryDetailContract.Model model1 = model;
   }
 
   @Override

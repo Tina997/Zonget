@@ -27,7 +27,7 @@ public class SettingsRepository implements RepositoryContract.Settings {
 
   @SuppressLint("StaticFieldLeak")
   private static SettingsRepository INSTANCE;
-  private Context context;
+  private final Context context;
 
   private static final String JSON_FILE = "zonget.json";
   private static final String JSON_THEME = "theme";

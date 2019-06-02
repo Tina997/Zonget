@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class AccountBDItem {
 
   @PrimaryKey
-  private int id;
+  private final int id;
 
   private String name;
   private String dni;

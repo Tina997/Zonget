@@ -66,6 +66,7 @@
             android:layout_height="200dp"
             android:layout_marginLeft="10dp"
             android:tint="?attr/colorPrimaryDark"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="TODO" />
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

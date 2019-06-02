@@ -22,13 +22,13 @@ import es.ulpgc.montesdeoca110.cristina.zonget.app.LostPetItem;
 
 public class LostPetsRepository implements RepositoryContract.LostPets {
 
-  public static String TAG = LostPetsRepository.class.getSimpleName();
+  private static final String TAG = LostPetsRepository.class.getSimpleName();
 
   // ============================= Variables globales ===========================================
 
   @SuppressLint("StaticFieldLeak")
   private static LostPetsRepository INSTANCE;
-  private Context context;
+  private final Context context;
 
   private static final String JSON_FILE = "lostPets.json";
   private static final String JSON_ROOT = "lostPets";

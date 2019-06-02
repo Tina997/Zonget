@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.AppMediator;
 import java.lang.ref.WeakReference;
 
-public class UserPickDateScreen {
+class UserPickDateScreen {
 
   public static void configure(UserPickDateContract.View view) {
 

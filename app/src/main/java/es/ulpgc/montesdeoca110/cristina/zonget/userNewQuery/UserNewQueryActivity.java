@@ -2,11 +2,9 @@ package es.ulpgc.montesdeoca110.cristina.zonget.userNewQuery;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -24,12 +22,8 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
 
   private SpotsDialog dialog;
 
-  //Elementos de la vista
-  private Toolbar toolbar;
   private EditText queryTitleEditText;
   private EditText queryDescriptionEditText;
-  private ImageButton attachImagesButton;
-  private ImageButton sendQueryButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +41,8 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     setContentView(R.layout.activity_user_new_query);
 
     //Configuracion de la toolBar/actionBar
-    toolbar = findViewById(R.id.toolbar);
+    //Elementos de la vista
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     ActionBar actionBar = getSupportActionBar();
@@ -57,8 +52,8 @@ public class UserNewQueryActivity extends AppCompatActivity implements UserNewQu
     //Búsqueda de los elementos de la vista
     queryTitleEditText = findViewById(R.id.user_new_query_title_edit_text);
     queryDescriptionEditText = findViewById(R.id.user_new_query_desciption_edit_text);
-    attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
-    sendQueryButton = findViewById(R.id.user_new_query_send_button);
+    ImageButton attachImagesButton = findViewById(R.id.user_new_query_attach_image_button);
+    ImageButton sendQueryButton = findViewById(R.id.user_new_query_send_button);
 
     dialog = new SpotsDialog(this, R.style.SentEmailDialogProgressTheme);
 

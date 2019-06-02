@@ -9,7 +9,7 @@ import java.util.List;
 import es.ulpgc.montesdeoca110.cristina.zonget.app.Query;
 
 
-public class UserFinishedQueriesListAdapter extends CustomFinishedQueriesExpandableRecyclerViewAdapter {
+class UserFinishedQueriesListAdapter extends CustomFinishedQueriesExpandableRecyclerViewAdapter {
 
     public UserFinishedQueriesListAdapter(Context context, List<? extends ExpandableGroup> groups) {
         super(context, groups);

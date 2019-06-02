@@ -21,7 +21,8 @@
             android:layout_height="136dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/logo"
-            android:tint="?attr/colorPrimary"/>
+            android:tint="?attr/colorPrimary"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,7 +68,8 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:textColor="?attr/colorAccent" />
+                android:textColor="?attr/colorAccent"
+                tools:ignore="LabelFor" />
         </LinearLayout>
 
         <LinearLayout

@@ -1,6 +1,6 @@
 package es.ulpgc.montesdeoca110.cristina.zonget.userQueriesMenu;
 
-public class UserQueriesMenuViewModel {
+class UserQueriesMenuViewModel {
 
     public int penndingQueriesCardViewVisibility;
     public int pendingQueriesCounter;

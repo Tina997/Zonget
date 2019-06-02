@@ -7,9 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import dmax.dialog.SpotsDialog;
@@ -54,7 +52,7 @@ public class AdministratorQueryAnswerActivity
     }
 
     answer = findViewById(R.id.user_answer_query_edit_text);
-    dialog = new SpotsDialog(this,R.style.SentEmailDialogProgressTheme);
+    dialog = new SpotsDialog(this, R.style.SentEmailDialogProgressTheme);
 
   }
 
@@ -90,16 +88,16 @@ public class AdministratorQueryAnswerActivity
   }
 
   public void onSendButtonClicked(View v) {
-      presenter.onSendButtonClicked(answer.getText() + "");
+    presenter.onSendButtonClicked(answer.getText() + "");
   }
 
   @Override
-  public void startSendAnswer(){
+  public void startSendAnswer() {
     dialog.show();
   }
 
   @Override
-  public void displayToastMessage(final String s){
+  public void displayToastMessage(final String s) {
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
@@ -109,7 +107,7 @@ public class AdministratorQueryAnswerActivity
   }
 
   @Override
-  public void finish(){
+  public void finish() {
     dialog.dismiss();
     displayToastMessage("La respuesta se ha enviado correctamente.");
     super.finish();

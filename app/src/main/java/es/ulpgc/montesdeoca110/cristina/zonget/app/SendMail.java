@@ -21,13 +21,12 @@ import javax.mail.internet.MimeMessage;
 public class SendMail extends AsyncTask<Void, Void, Void> {
 
   //Declaring Variables
-  private Context context;
-  private Session session;
+  private final Context context;
 
   //Information to send email
-  private String email;
-  private String subject;
-  private String message;
+  private final String email;
+  private final String subject;
+  private final String message;
 
   //Alertdialog to show while sending email
   private AlertDialog dialog;
@@ -68,14 +67,14 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
     props.put("mail.smtp.port", "465");
 
     //Creating a new session
-    session = Session.getDefaultInstance(props,
-          new javax.mail.Authenticator() {
-            //Authenticating the password
-            protected PasswordAuthentication getPasswordAuthentication() {
-              return new PasswordAuthentication(EmailConfig.ADMIN_EMAIL,
-                      EmailConfig.ADMIN_PASSWORD);
-            }
-          });
+    Session session = Session.getDefaultInstance(props,
+            new javax.mail.Authenticator() {
+              //Authenticating the password
+              protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(EmailConfig.ADMIN_EMAIL,
+                        EmailConfig.ADMIN_PASSWORD);
+              }
+            });
 
     try {
       //Creating MimeMessage object

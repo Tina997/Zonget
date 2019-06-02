@@ -4,7 +4,7 @@ import es.ulpgc.montesdeoca110.cristina.zonget.data.RepositoryContract;
 
 public class UserNewQueryModel implements UserNewQueryContract.Model {
 
-  private RepositoryContract.Queries repository;
+  private final RepositoryContract.Queries repository;
 
   public UserNewQueryModel(RepositoryContract.Queries repository) {
     this.repository = repository;

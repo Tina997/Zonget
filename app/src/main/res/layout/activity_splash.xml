@@ -14,5 +14,6 @@
         android:paddingStart="130dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/logo_completo"
-        android:tint="?attr/colorPrimary"/>
+        android:tint="?attr/colorPrimary"
+        android:contentDescription="TODO" />
 </LinearLayout>

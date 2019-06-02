@@ -37,7 +37,8 @@
             android:layout_gravity="bottom"
             android:scaleType="fitStart"
             app:srcCompat="@drawable/logo_completo"
-            android:tint="?attr/colorPrimaryDark"/>
+            android:tint="?attr/colorPrimaryDark"
+            android:contentDescription="TODO" />
 
     </LinearLayout>
 
